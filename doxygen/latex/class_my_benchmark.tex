@@ -1,0 +1,83 @@
+\hypertarget{class_my_benchmark}{\section{Dokumentacja klasy My\-Benchmark}
+\label{class_my_benchmark}\index{My\-Benchmark@{My\-Benchmark}}
+}
+
+
+Klasa bazowa/interface do testowania algorytmu.  
+
+
+
+
+{\ttfamily \#include $<$mybenchmark.\-h$>$}
+
+Diagram dziedziczenia dla My\-Benchmark\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_my_benchmark}
+\end{center}
+\end{figure}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_my_benchmark_a66576625ca37f8bc539c18ffceb69c9c}{test\-Algorithm} (unsigned int repetition)
+\begin{DoxyCompactList}\small\item\em Benchmarkuje algorytm główny. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_my_benchmark_a00de82c40680b41065eb402ac90f1736}{$\sim$\-My\-Benchmark} ()
+\begin{DoxyCompactList}\small\item\em Usuwam obiekt test biorąc pod uwage jego prawdziwy typ. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Metody chronione}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{execute\-Algorithm} ()=0
+\begin{DoxyCompactList}\small\item\em Interface metody algorytmu glownego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Dodatkowe Dziedziczone Składowe}
+
+
+\subsection{Opis szczegółowy}
+Używana jako interface dla wszystkich algorytmow aby testowac czas wykonywanego algorymtu. 
+
+Definicja w linii 20 pliku mybenchmark.\-h.
+
+
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_my_benchmark_a00de82c40680b41065eb402ac90f1736}{\index{My\-Benchmark@{My\-Benchmark}!$\sim$\-My\-Benchmark@{$\sim$\-My\-Benchmark}}
+\index{$\sim$\-My\-Benchmark@{$\sim$\-My\-Benchmark}!MyBenchmark@{My\-Benchmark}}
+\subsubsection[{$\sim$\-My\-Benchmark}]{\setlength{\rightskip}{0pt plus 5cm}virtual My\-Benchmark\-::$\sim$\-My\-Benchmark (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_my_benchmark_a00de82c40680b41065eb402ac90f1736}
+
+
+Definicja w linii 49 pliku mybenchmark.\-h.
+
+
+
+\subsection{Dokumentacja funkcji składowych}
+\hypertarget{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{\index{My\-Benchmark@{My\-Benchmark}!execute\-Algorithm@{execute\-Algorithm}}
+\index{execute\-Algorithm@{execute\-Algorithm}!MyBenchmark@{My\-Benchmark}}
+\subsubsection[{execute\-Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}virtual void My\-Benchmark\-::execute\-Algorithm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}
+Metoda abstrakcyjna, ktora jest interfacem do implementacji przez glowny algorytm. To znaczy, ze kazdy algorytm ma byc uruchamiany tą funkcja 
+
+Implementowany w \hyperlink{class_multiply_by_two_aad2080a1fdab088814170e529a14db1e}{Multiply\-By\-Two}.
+
+\hypertarget{class_my_benchmark_a66576625ca37f8bc539c18ffceb69c9c}{\index{My\-Benchmark@{My\-Benchmark}!test\-Algorithm@{test\-Algorithm}}
+\index{test\-Algorithm@{test\-Algorithm}!MyBenchmark@{My\-Benchmark}}
+\subsubsection[{test\-Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}double My\-Benchmark\-::test\-Algorithm (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{repetition}
+\end{DoxyParamCaption}
+)}}\label{class_my_benchmark_a66576625ca37f8bc539c18ffceb69c9c}
+Obliczam czas wykonywanego algorytmu dzięki zastosowaniu metody abstrakcyjnej \hyperlink{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{execute\-Algorithm()} i zaimplementowaniu tego interfacu w algorytmie głównym 
+
+Definicja w linii 12 pliku mybenchmark.\-cpp.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{mybenchmark_8h}{mybenchmark.\-h}\item 
+\hyperlink{mybenchmark_8cpp}{mybenchmark.\-cpp}\end{DoxyCompactItemize}

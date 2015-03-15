@@ -1,0 +1,98 @@
+\hypertarget{main_8cpp}{\subsection{main.\-cpp}
+\label{main_8cpp}\index{main.\-cpp@{main.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * main.cpp}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: Mar 6, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00008 \textcolor{preprocessor}{#include <iostream>}
+00009 \textcolor{preprocessor}{#include <unistd.h>}
+00010 \textcolor{preprocessor}{#include <stdlib.h>}
+00011 \textcolor{preprocessor}{#include "\hyperlink{multiplybytwo_8h}{multiplybytwo.h}"}
+00012 \textcolor{preprocessor}{#include "\hyperlink{numbergenerator_8h}{numbergenerator.h}"}
+00013 \textcolor{preprocessor}{#include "\hyperlink{dataframe_8h}{dataframe.h}"}
+00014 
+00015 
+\hypertarget{main_8cpp_source_l00016}{}\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00016} \textcolor{keywordtype}{int} \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])
+00017 \{
+00018         \hyperlink{class_data_frame}{DataFrame} podstawoweInfoIO;
+00019         \textcolor{keywordtype}{int} quantityRepetitionOfAlgorithm = 0;  
+00020 
+00021         \textcolor{keywordtype}{int} opt;        
+00022         \textcolor{keywordtype}{bool} isSetNumberGenerator=\textcolor{keyword}{false}; 
+00023 
+00024         \textcolor{keywordflow}{while} ((opt = getopt(argc, argv, \textcolor{stringliteral}{"n:t:o:i:g"})) != -1) \{
+00025                 \textcolor{keywordflow}{switch}(opt)\{
+00026                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'n'}:
+00027                         podstawoweInfoIO.\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable} = atoi(optarg);
+00028                         \textcolor{keywordflow}{break};
+00029 
+00030                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'}:
+00031                         quantityRepetitionOfAlgorithm = atoi(optarg);
+00032                         \textcolor{keywordflow}{break};
+00033 
+00034                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'o'}:
+00035                         podstawoweInfoIO.\hyperlink{class_data_frame_a824a73f019aec71281837abafd95a510}{outputFileName} = optarg;
+00036                         \textcolor{keywordflow}{break};
+00037 
+00038                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'i'}:
+00039                         podstawoweInfoIO.\hyperlink{class_data_frame_a90041bfdf474b0d7ce39bc3dbbb55aa9}{inputFileName}=optarg;
+00040                         \textcolor{keywordflow}{break};
+00041 
+00042                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'g'}:
+00043                         isSetNumberGenerator=\textcolor{keyword}{true};
+00044                         \textcolor{keywordflow}{break};
+00045 
+00046                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'?'}:
+00047                 \textcolor{keywordflow}{default}:
+00048                         std::cout<<\textcolor{stringliteral}{"\(\backslash\)nPodano zly argument"};
+00049                         \textcolor{keywordflow}{return} -1;
+00050 
+00051                 \}
+00052         \}
+00053         \textcolor{comment}{/*}
+00054 \textcolor{comment}{         * Sprawdzam czy program zostal uzyty tylko do wygenerowania liczb losowych}
+00055 \textcolor{comment}{         * jesli tak to tworze te liczby zgodnie quantityNumber i zamykam program}
+00056 \textcolor{comment}{         */}
+00057         \textcolor{keywordflow}{if}(isSetNumberGenerator) \{
+00058         \hyperlink{class_number_generator}{NumberGenerator} generator;
+00059         generator= podstawoweInfoIO;
+00060         generator.\hyperlink{class_number_generator_afe038fce2f1a2c90847fd483beea0494}{generateNumbers}();
+00061         generator.\hyperlink{class_data_frame_a03cc3ac606fdb8a2dbcaea5d429cf208}{saveDataToFile}();
+00062         std::cout<<\textcolor{stringliteral}{"\(\backslash\)nZapisane.\(\backslash\)n"};
+00063         \textcolor{keywordflow}{return} 0;
+00064         \}
+00065 
+00066 
+00067         \hyperlink{class_multiply_by_two}{MultiplyByTwo} algorytm\_x2 ;
+00068         algorytm\_x2= podstawoweInfoIO;
+00069 
+00070         \textcolor{comment}{// Laduje liczby do przeprowadzenia algorytmu}
+00071         \textcolor{keywordflow}{if}(algorytm\_x2.\hyperlink{class_data_frame_a617ef21804065f31115c01527155f499}{loadDataFromFile}()) \{
+00072                 std::cout<<\textcolor{stringliteral}{"\(\backslash\)nNie istnieje tyle liczb w pliku !\(\backslash\)nKoncze program"};
+00073                 \textcolor{keywordflow}{return} 1;
+00074         \}
+00075 
+00076         \textcolor{comment}{/*}
+00077 \textcolor{comment}{         * Sprawdzam czy otrzymalem agrument o testowaniu algorytmu,}
+00078 \textcolor{comment}{         * a nastepnie przeprawadzam test albo uruchamiam normalnie algorytm}
+00079 \textcolor{comment}{         */}
+00080         \textcolor{keywordflow}{if}(quantityRepetitionOfAlgorithm)\{
+00081                 std::cout<<\textcolor{stringliteral}{"\(\backslash\)nCzas algorytmu: "}<<algorytm\_x2.\hyperlink{class_my_benchmark_a66576625ca37f8bc539c18ffceb69c9c}{testAlgorithm}(
+      quantityRepetitionOfAlgorithm)<<\textcolor{charliteral}{'\(\backslash\)n'};
+00082         \}
+00083         \textcolor{keywordflow}{else} \{
+00084                 algorytm\_x2.\hyperlink{class_multiply_by_two_aad2080a1fdab088814170e529a14db1e}{executeAlgorithm}();
+00085         \}
+00086 
+00087 
+00088 
+00089         algorytm\_x2.\hyperlink{class_data_frame_a03cc3ac606fdb8a2dbcaea5d429cf208}{saveDataToFile}();
+00090 
+00091         \textcolor{keywordflow}{return} 0;
+00092 \}
+\end{DoxyCode}

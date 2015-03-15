@@ -1,0 +1,29 @@
+\hypertarget{mybenchmark_8cpp}{\subsection{mybenchmark.\-cpp}
+\label{mybenchmark_8cpp}\index{mybenchmark.\-cpp@{mybenchmark.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * mybenchmark.cpp}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: Mar 6, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00009 \textcolor{preprocessor}{#include "\hyperlink{mybenchmark_8h}{mybenchmark.h}"}
+00010 
+00011 
+\hypertarget{mybenchmark_8cpp_source_l00012}{}\hyperlink{class_my_benchmark_a66576625ca37f8bc539c18ffceb69c9c}{00012} \textcolor{keywordtype}{double} \hyperlink{class_my_benchmark_a66576625ca37f8bc539c18ffceb69c9c}{MyBenchmark::testAlgorithm}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} repetition)
+00013 \{
+00014         time\_t benchmarkTime = clock();
+00015 
+00016         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<repetition ; i++)      \{
+00017                 this->\hyperlink{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{executeAlgorithm}();
+00018         \}
+00019 
+00020         benchmarkTime = clock() - benchmarkTime;
+00021 
+00022         \textcolor{keywordflow}{return} (( (\textcolor{keywordtype}{double})benchmarkTime ) /CLOCKS\_PER\_SEC);
+00023 \}
+00024 
+00025 
+\end{DoxyCode}

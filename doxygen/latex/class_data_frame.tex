@@ -1,0 +1,131 @@
+\hypertarget{class_data_frame}{\section{Dokumentacja klasy Data\-Frame}
+\label{class_data_frame}\index{Data\-Frame@{Data\-Frame}}
+}
+
+
+{\ttfamily \#include $<$dataframe.\-h$>$}
+
+Diagram dziedziczenia dla Data\-Frame\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_data_frame}
+\end{center}
+\end{figure}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_data_frame_a617ef21804065f31115c01527155f499}{load\-Data\-From\-File} ()
+\begin{DoxyCompactList}\small\item\em Ładuje dane z pliku. \end{DoxyCompactList}\item 
+int \hyperlink{class_data_frame_a03cc3ac606fdb8a2dbcaea5d429cf208}{save\-Data\-To\-File} ()
+\begin{DoxyCompactList}\small\item\em Zapisuje dane do pliku. \end{DoxyCompactList}\item 
+\hyperlink{class_data_frame}{Data\-Frame} \hyperlink{class_data_frame_ab7dddb09f5ee9dc4a5783136dad01962}{operator=} (\hyperlink{class_data_frame}{Data\-Frame} dataframe)
+\begin{DoxyCompactList}\small\item\em Kopiuje elementy roznych obiektow. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_data_frame_a1360ddf00d717392fe1292bc1e1990ff}{$\sim$\-Data\-Frame} ()
+\end{DoxyCompactItemize}
+\subsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$ \hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{table\-Of\-Data}
+\begin{DoxyCompactList}\small\item\em Zawiera adres do tablicy \{size\} elementów. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{class_data_frame_a824a73f019aec71281837abafd95a510}{output\-File\-Name}
+\begin{DoxyCompactList}\small\item\em Zawiera nazwe pliku do zapisu. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{class_data_frame_a90041bfdf474b0d7ce39bc3dbbb55aa9}{input\-File\-Name}
+\begin{DoxyCompactList}\small\item\em Zawiera nazwe pliku do odczytu. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{size\-Of\-Table}
+\begin{DoxyCompactList}\small\item\em Rozmiar tablicy table\-Of\-Data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+
+
+Definicja w linii 15 pliku dataframe.\-h.
+
+
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_data_frame_a1360ddf00d717392fe1292bc1e1990ff}{\index{Data\-Frame@{Data\-Frame}!$\sim$\-Data\-Frame@{$\sim$\-Data\-Frame}}
+\index{$\sim$\-Data\-Frame@{$\sim$\-Data\-Frame}!DataFrame@{Data\-Frame}}
+\subsubsection[{$\sim$\-Data\-Frame}]{\setlength{\rightskip}{0pt plus 5cm}virtual Data\-Frame\-::$\sim$\-Data\-Frame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_data_frame_a1360ddf00d717392fe1292bc1e1990ff}
+
+
+Definicja w linii 60 pliku dataframe.\-h.
+
+
+
+\subsection{Dokumentacja funkcji składowych}
+\hypertarget{class_data_frame_a617ef21804065f31115c01527155f499}{\index{Data\-Frame@{Data\-Frame}!load\-Data\-From\-File@{load\-Data\-From\-File}}
+\index{load\-Data\-From\-File@{load\-Data\-From\-File}!DataFrame@{Data\-Frame}}
+\subsubsection[{load\-Data\-From\-File}]{\setlength{\rightskip}{0pt plus 5cm}int Data\-Frame\-::load\-Data\-From\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_data_frame_a617ef21804065f31115c01527155f499}
+Wczytuje dane z pliku i zapisuje je dynamicznie do tablicy jednowymiarowej, na ktora wskazuje wskaźnik $\ast$table\-Of\-Data
+
+Rozmiar tablicy jest przechowywany w size\-Of\-Table 
+
+Definicja w linii 13 pliku dataframe.\-cpp.
+
+\hypertarget{class_data_frame_ab7dddb09f5ee9dc4a5783136dad01962}{\index{Data\-Frame@{Data\-Frame}!operator=@{operator=}}
+\index{operator=@{operator=}!DataFrame@{Data\-Frame}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data\-Frame} Data\-Frame\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Frame}}]{dataframe}
+\end{DoxyParamCaption}
+)}}\label{class_data_frame_ab7dddb09f5ee9dc4a5783136dad01962}
+Zapisuje kolejne liczby do pliku o nazwie output\-File\-Name 
+
+Definicja w linii 37 pliku dataframe.\-cpp.
+
+\hypertarget{class_data_frame_a03cc3ac606fdb8a2dbcaea5d429cf208}{\index{Data\-Frame@{Data\-Frame}!save\-Data\-To\-File@{save\-Data\-To\-File}}
+\index{save\-Data\-To\-File@{save\-Data\-To\-File}!DataFrame@{Data\-Frame}}
+\subsubsection[{save\-Data\-To\-File}]{\setlength{\rightskip}{0pt plus 5cm}int Data\-Frame\-::save\-Data\-To\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_data_frame_a03cc3ac606fdb8a2dbcaea5d429cf208}
+Wczytuje liczby z pliku o nazwie intput\-File\-Name 
+
+Definicja w linii 25 pliku dataframe.\-cpp.
+
+
+
+\subsection{Dokumentacja atrybutów składowych}
+\hypertarget{class_data_frame_a90041bfdf474b0d7ce39bc3dbbb55aa9}{\index{Data\-Frame@{Data\-Frame}!input\-File\-Name@{input\-File\-Name}}
+\index{input\-File\-Name@{input\-File\-Name}!DataFrame@{Data\-Frame}}
+\subsubsection[{input\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Data\-Frame\-::input\-File\-Name}}\label{class_data_frame_a90041bfdf474b0d7ce39bc3dbbb55aa9}
+
+
+Definicja w linii 29 pliku dataframe.\-h.
+
+\hypertarget{class_data_frame_a824a73f019aec71281837abafd95a510}{\index{Data\-Frame@{Data\-Frame}!output\-File\-Name@{output\-File\-Name}}
+\index{output\-File\-Name@{output\-File\-Name}!DataFrame@{Data\-Frame}}
+\subsubsection[{output\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Data\-Frame\-::output\-File\-Name}}\label{class_data_frame_a824a73f019aec71281837abafd95a510}
+
+
+Definicja w linii 25 pliku dataframe.\-h.
+
+\hypertarget{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{\index{Data\-Frame@{Data\-Frame}!size\-Of\-Table@{size\-Of\-Table}}
+\index{size\-Of\-Table@{size\-Of\-Table}!DataFrame@{Data\-Frame}}
+\subsubsection[{size\-Of\-Table}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Data\-Frame\-::size\-Of\-Table}}\label{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}
+
+
+Definicja w linii 34 pliku dataframe.\-h.
+
+\hypertarget{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{\index{Data\-Frame@{Data\-Frame}!table\-Of\-Data@{table\-Of\-Data}}
+\index{table\-Of\-Data@{table\-Of\-Data}!DataFrame@{Data\-Frame}}
+\subsubsection[{table\-Of\-Data}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ Data\-Frame\-::table\-Of\-Data}}\label{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}
+
+
+Definicja w linii 21 pliku dataframe.\-h.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dataframe_8h}{dataframe.\-h}\item 
+\hyperlink{dataframe_8cpp}{dataframe.\-cpp}\end{DoxyCompactItemize}

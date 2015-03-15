@@ -1,0 +1,48 @@
+\hypertarget{dataframe_8cpp}{\subsection{dataframe.\-cpp}
+\label{dataframe_8cpp}\index{dataframe.\-cpp@{dataframe.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * dataframe.cpp}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: Mar 7, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00010 \textcolor{preprocessor}{#include "\hyperlink{dataframe_8h}{dataframe.h}"}
+00011 
+00012 
+\hypertarget{dataframe_8cpp_source_l00013}{}\hyperlink{class_data_frame_a617ef21804065f31115c01527155f499}{00013} \textcolor{keywordtype}{int} \hyperlink{class_data_frame_a617ef21804065f31115c01527155f499}{DataFrame :: loadDataFromFile}()
+00014 \{
+00015         std::ifstream streamToFile;
+00016         streamToFile.open (\hyperlink{class_data_frame_a90041bfdf474b0d7ce39bc3dbbb55aa9}{inputFileName}, std::ifstream::in);
+00017         this->\hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData} = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable}];
+00018         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable} ; i++) \{
+00019                 streamToFile >> this-> \hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData}[i];
+00020                 \textcolor{keywordflow}{if} (streamToFile.eof()) \textcolor{keywordflow}{return} 1; \textcolor{comment}{//[EoF reached]}
+00021         \}
+00022         \textcolor{keywordflow}{return} 0;
+00023 \}
+00024 
+\hypertarget{dataframe_8cpp_source_l00025}{}\hyperlink{class_data_frame_a03cc3ac606fdb8a2dbcaea5d429cf208}{00025} \textcolor{keywordtype}{int} \hyperlink{class_data_frame_a03cc3ac606fdb8a2dbcaea5d429cf208}{DataFrame :: saveDataToFile}()
+00026 \{
+00027         std::ofstream streamToFile;
+00028         streamToFile.open (\hyperlink{class_data_frame_a824a73f019aec71281837abafd95a510}{outputFileName}, std::ofstream::out);
+00029         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable} ; i++) \{
+00030                 streamToFile << this-> \hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData}[i] <<\textcolor{charliteral}{' '};
+00031         \}
+00032         \textcolor{keywordflow}{return} 0;
+00033 \}
+00034 
+00035 
+00036 
+\hypertarget{dataframe_8cpp_source_l00037}{}\hyperlink{class_data_frame_ab7dddb09f5ee9dc4a5783136dad01962}{00037} \hyperlink{class_data_frame}{DataFrame} \hyperlink{class_data_frame_ab7dddb09f5ee9dc4a5783136dad01962}{DataFrame :: operator= }(\hyperlink{class_data_frame}{DataFrame} dataframe)
+00038 \{
+00039         this->\hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData} = dataframe.\hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData};
+00040         this->\hyperlink{class_data_frame_a824a73f019aec71281837abafd95a510}{outputFileName} = dataframe.\hyperlink{class_data_frame_a824a73f019aec71281837abafd95a510}{outputFileName};
+00041         this->\hyperlink{class_data_frame_a90041bfdf474b0d7ce39bc3dbbb55aa9}{inputFileName} = dataframe.\hyperlink{class_data_frame_a90041bfdf474b0d7ce39bc3dbbb55aa9}{inputFileName};
+00042         this->\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable} = dataframe.\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable};
+00043         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+00044 \}
+\end{DoxyCode}
