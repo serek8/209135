@@ -9,6 +9,13 @@
 
 #include "dataframe.h"
 
+DataFrame::DataFrame()
+{
+	tableOfData = 0;
+	outputFileName = NULL;
+	inputFileName = NULL;
+	sizeOfTable = 0;
+}
 
 int DataFrame :: loadDataFromFile()
 {

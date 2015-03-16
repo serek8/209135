@@ -11,6 +11,7 @@
 #include "multiplybytwo.h"
 #include "numbergenerator.h"
 #include "dataframe.h"
+#include "mylist.h"
 
 
 int main(int argc, char *argv[])
@@ -20,14 +21,15 @@ int main(int argc, char *argv[])
 
 	int opt;	/// Zmienna uzywana przez GETOPT
 	bool isSetNumberGenerator=false; /// Flaga ktora mowi o tym czy wlaczyc generator liczb losowych
+	bool isTest=false;
 
-	while ((opt = getopt(argc, argv, "n:t:o:i:g")) != -1) {
+	while ((opt = getopt(argc, argv, "n:t:o:i:gx")) != -1) {
 		switch(opt){
-		case 'n':
+		case 'n':	// ilosc liczb do przetworzenia
 			podstawoweInfoIO.sizeOfTable = atoi(optarg);
 			break;
 
-		case 't':
+		case 't':	// wlacza benchmark i przyjmuje liczbe powtorzen dla benchmarka
 			quantityRepetitionOfAlgorithm = atoi(optarg);
 			break;
 
@@ -39,8 +41,12 @@ int main(int argc, char *argv[])
 			podstawoweInfoIO.inputFileName=optarg;
 			break;
 
-		case 'g':
+		case 'g':	// wlacza generator liczb, po zakonczeniu generowania konczy program
 			isSetNumberGenerator=true;
+			break;
+
+		case 'x':	// miejsce dla programisty dla sprawdzania kodu
+			isTest =1;
 			break;
 
 		case '?':
@@ -50,6 +56,23 @@ int main(int argc, char *argv[])
 
 		}
 	}
+	/**
+	 * Czesc testowa programu
+	 */
+	if(isTest)
+	{
+		MyList ml;
+		ml.push(4); ml.push(7); ml.push(13);
+		std::cout<<"\nPopuje: "<<ml.pop();
+		std::cout<<"\nPopuje: "<<ml.pop();
+		std::cout<<"\nPopuje: "<<ml.pop();
+		std::cout<<"\nPopuje: "<<ml.pop();
+		std::cout<<"\nPopuje: "<<ml.pop();
+		std::cout<<"\nPopuje: "<<ml.pop();
+		return 0;
+	}
+
+
 	/*
 	 * Sprawdzam czy program zostal uzyty tylko do wygenerowania liczb losowych
 	 * jesli tak to tworze te liczby zgodnie quantityNumber i zamykam program

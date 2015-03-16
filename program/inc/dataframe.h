@@ -34,6 +34,10 @@ public:
 	unsigned int sizeOfTable;
 
 	/**
+	 * @brief Przypisuje zmiennym wartosci domyslne
+	 */
+	DataFrame();
+	/**
 	 * @brief Ładuje dane z pliku
 	 *
 	 * Wczytuje dane z pliku i zapisuje je dynamicznie do tablicy
