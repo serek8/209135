@@ -7,11 +7,11 @@
 /** @file */
 #include <iostream>
 #include <unistd.h>
-#include <stdlib.h>
 #include "multiplybytwo.h"
 #include "numbergenerator.h"
 #include "dataframe.h"
-#include "mylist.h"
+#include "mystack.h"
+#include "myqueue.h"
 
 
 int main(int argc, char *argv[])
@@ -53,7 +53,6 @@ int main(int argc, char *argv[])
 		default:
 			std::cout<<"\nPodano zly argument";
 			return -1;
-
 		}
 	}
 	/**
@@ -61,14 +60,11 @@ int main(int argc, char *argv[])
 	 */
 	if(isTest)
 	{
-		MyList ml;
-		ml.push(4); ml.push(7); ml.push(13);
-		std::cout<<"\nPopuje: "<<ml.pop();
-		std::cout<<"\nPopuje: "<<ml.pop();
-		std::cout<<"\nPopuje: "<<ml.pop();
-		std::cout<<"\nPopuje: "<<ml.pop();
-		std::cout<<"\nPopuje: "<<ml.pop();
-		std::cout<<"\nPopuje: "<<ml.pop();
+		MyQueue stack;
+		stack.push(1); stack.push(2); stack.push(3);
+		std::cout<<stack.pop();
+		std::cout<<stack.pop();
+		std::cout<<stack.pop();
 		return 0;
 	}
 
@@ -90,7 +86,9 @@ int main(int argc, char *argv[])
 	MultiplyByTwo algorytm_x2 ;
 	algorytm_x2= podstawoweInfoIO;
 
-	// Laduje liczby do przeprowadzenia algorytmu
+	/*
+	 *  Wczytuje liczby z pliku do przeprowadzenia algorytmu
+	 */
 	if(algorytm_x2.loadDataFromFile()) {
 		std::cout<<"\nNie istnieje tyle liczb w pliku !\nKoncze program";
 		return 1;
@@ -107,8 +105,9 @@ int main(int argc, char *argv[])
 		algorytm_x2.executeAlgorithm();
 	}
 
-
-
+	/*
+	 * Zapisuje wyniki do pliku
+	 */
 	algorytm_x2.saveDataToFile();
 
 	return 0;

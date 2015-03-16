@@ -7,28 +7,22 @@
 
 #ifndef MYQUEUE_H_
 #define MYQUEUE_H_
+#include "mylist.h"
 
-
-class MyQueue
+class MyQueue : public MyList
 {
-	int headNumber, tailNumber;
-	MyQueue *beforeHead;
-	MyQueue NextElement;
-
-	int sizeOfQueue;
-
 public:
-	MyQueue();
-	void push(int arg);
-	int pop();
-	int size();
-
-
-
-
+	/*
+	 * @brief Dodaje element do kolejki
+	 * @param arg Liczba dodawana do kolejki
+	 */
+	void push(int arg) {
+		push_back(arg);
+	}
+	/// @brief Wyciaga element z kolejki
+	int pop() {
+		return pop_front();
+	}
 };
-
-
-
 
 #endif /* MYQUEUE_H_ */

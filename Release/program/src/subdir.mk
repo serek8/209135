@@ -8,24 +8,21 @@ CPP_SRCS += \
 ../program/src/main.cpp \
 ../program/src/multiplybytwo.cpp \
 ../program/src/mybenchmark.cpp \
-../program/src/mylist.cpp \
-../program/src/mystack.cpp 
+../program/src/mylist.cpp 
 
 OBJS += \
 ./program/src/dataframe.o \
 ./program/src/main.o \
 ./program/src/multiplybytwo.o \
 ./program/src/mybenchmark.o \
-./program/src/mylist.o \
-./program/src/mystack.o 
+./program/src/mylist.o 
 
 CPP_DEPS += \
 ./program/src/dataframe.d \
 ./program/src/main.d \
 ./program/src/multiplybytwo.d \
 ./program/src/mybenchmark.d \
-./program/src/mylist.d \
-./program/src/mystack.d 
+./program/src/mylist.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

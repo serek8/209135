@@ -10,35 +10,62 @@
 
 MyList::MyList()
 {
-	number=0;
-	pMyList=0;
-	sizeOfList=0;
+	firstElement = lastElement = new MyListElement(0);
+	sizeOfList = 0;
 }
 
-int MyList::pop()
+
+void MyList :: push_back(int arg)
 {
-	if(!sizeOfList) return 0;
-	//robie kopie objektu kolejnego
-	int tmpNumber = this -> number;
-	MyList *tmpMyList = this -> pMyList;
+	MyListElement *newMyListElement = new MyListElement(arg);
+	if(!sizeOfList++) {firstElement = lastElement = newMyListElement;}
+	//newMyListElement -> nextElement = 0;
+	newMyListElement -> previousElement = this -> lastElement;
+	this -> lastElement -> nextElement = newMyListElement;
+	this->lastElement = newMyListElement;
+}
+void MyList :: push_front(int arg)
+{
+	MyListElement *newMyListElement = new MyListElement(arg);
+	if(!sizeOfList++) {firstElement = lastElement = newMyListElement;}
+	//newMyListElement -> previousElement =  0;
+	newMyListElement -> nextElement = this -> firstElement;
+	this -> firstElement -> previousElement = newMyListElement;
+	this->firstElement = newMyListElement;
+}
 
-	this -> number  = this->pMyList->number;
-	this -> pMyList = this->pMyList->pMyList;
+int MyList :: pop_back()
+{
+	if(!(sizeOfList--)) { sizeOfList=0; return 0; }
+	int tmpNumber = this -> lastElement -> number;
+	MyListElement *originMyListElement = this -> lastElement;
+	this -> lastElement = this -> lastElement -> previousElement;
+	delete originMyListElement;
+	return tmpNumber;
+}
+int MyList :: pop_front()
+{
+	if(!(sizeOfList--)) { sizeOfList=0; return 0; }
+	int tmpNumber = this -> firstElement -> number;
+	MyListElement *originMyListElement = this -> firstElement;
+	this -> firstElement = this -> firstElement -> nextElement;
 
-	delete tmpMyList;
-	--sizeOfList;
+	delete originMyListElement;
 	return tmpNumber;
 }
 
-void MyList::push(int arg)
+MyList :: MyListElement :: MyListElement(int arg)
 {
-	MyList *tmpMyList = new MyList;
-	tmpMyList -> number = this -> number;
-	tmpMyList -> pMyList= this -> pMyList;
-	this -> pMyList = tmpMyList;
 	this -> number = arg;
-	++sizeOfList;
+	this -> nextElement =0;
+	this -> previousElement =0;
 }
+
+
+
+
+
+
 
 int MyList::size()
 {
