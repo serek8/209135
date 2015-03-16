@@ -1,0 +1,49 @@
+\hypertarget{mylist_8h}{\subsection{mylist.\-h}
+\label{mylist_8h}\index{mylist.\-h@{mylist.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * mylist.h}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: Mar 12, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00008 \textcolor{preprocessor}{#ifndef MYLIST\_H\_}
+00009 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define MYLIST\_H\_}
+00010 \textcolor{preprocessor}{}
+00011 \textcolor{preprocessor}{#include <iostream>}
+00012 
+\hypertarget{mylist_8h_source_l00018}{}\hyperlink{class_my_list}{00018} \textcolor{keyword}{class }\hyperlink{class_my_list}{MyList}\{
+00019 
+00020 \textcolor{keyword}{private}:
+\hypertarget{mylist_8h_source_l00022}{}\hyperlink{class_my_list_a77b7870f617b51fad7399463c9147668}{00022}         \textcolor{keywordtype}{int} \hyperlink{class_my_list_a77b7870f617b51fad7399463c9147668}{sizeOfList};
+00023 
+\hypertarget{mylist_8h_source_l00025}{}\hyperlink{class_my_list_1_1_my_list_element}{00025}         \textcolor{keyword}{class }\hyperlink{class_my_list_1_1_my_list_element}{MyListElement} \{
+00026         \textcolor{keyword}{public}:
+\hypertarget{mylist_8h_source_l00028}{}\hyperlink{class_my_list_1_1_my_list_element_acd6dbb6a8791f034f94678d46395b366}{00028}                 \textcolor{keywordtype}{int}  \hyperlink{class_my_list_1_1_my_list_element_acd6dbb6a8791f034f94678d46395b366}{number};
+00029 
+00034                 \hyperlink{class_my_list_1_1_my_list_element_ac57b6eddd2c28b199a87c3b2f8dda992}{MyListElement}(\textcolor{keywordtype}{int} arg);
+00035 
+\hypertarget{mylist_8h_source_l00037}{}\hyperlink{class_my_list_1_1_my_list_element_abd7af673552c8876f210cbea01c5e949}{00037}                 \hyperlink{class_my_list_1_1_my_list_element}{MyListElement} *\hyperlink{class_my_list_1_1_my_list_element_abd7af673552c8876f210cbea01c5e949}{nextElement};
+\hypertarget{mylist_8h_source_l00039}{}\hyperlink{class_my_list_1_1_my_list_element_adb7c0cbde93a90f30484637498690d0f}{00039}                 \hyperlink{class_my_list_1_1_my_list_element}{MyListElement} *\hyperlink{class_my_list_1_1_my_list_element_adb7c0cbde93a90f30484637498690d0f}{previousElement};
+00040         \};
+00041 
+\hypertarget{mylist_8h_source_l00043}{}\hyperlink{class_my_list_aa7e5ddd2dddeeccd304126130d73dead}{00043}         \hyperlink{class_my_list_1_1_my_list_element}{MyListElement} *\hyperlink{class_my_list_aa7e5ddd2dddeeccd304126130d73dead}{firstElement};
+\hypertarget{mylist_8h_source_l00045}{}\hyperlink{class_my_list_a287894c4add6b52be99826fb4d76594c}{00045}         \hyperlink{class_my_list_1_1_my_list_element}{MyListElement} *\hyperlink{class_my_list_a287894c4add6b52be99826fb4d76594c}{lastElement};
+00047 \textcolor{keyword}{public}:
+00048         \hyperlink{class_my_list_ae9cd2a6b068e02fa39ba3e539425c1c1}{MyList}();
+00049 
+00054         \textcolor{keywordtype}{int} \hyperlink{class_my_list_a6d21c8bfbd9cd31efdba81ba488f43f2}{size}();
+00059         \textcolor{keywordtype}{int} \hyperlink{class_my_list_a7361ad3b0da0402cb95adb225ebfaffd}{pop\_back}();
+00064         \textcolor{keywordtype}{int} \hyperlink{class_my_list_ae038b14e6cb5b54b8499b85ce5f03a0e}{pop\_front}();
+00068         \textcolor{keywordtype}{void} \hyperlink{class_my_list_a8428cca9d08fcf02e378aee0a232e971}{push\_back}(\textcolor{keywordtype}{int} arg);
+00072         \textcolor{keywordtype}{void} \hyperlink{class_my_list_a9ab5ae823e85df90662e42fab4229f09}{push\_front}(\textcolor{keywordtype}{int} arg);
+00073 
+00074 \};
+00075 
+00076 
+00077 
+00078 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* MYLIST\_H\_ */}\textcolor{preprocessor}{}
+\end{DoxyCode}

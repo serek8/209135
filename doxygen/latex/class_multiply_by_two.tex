@@ -1,4 +1,4 @@
-\hypertarget{class_multiply_by_two}{\section{Dokumentacja klasy Multiply\-By\-Two}
+\hypertarget{class_multiply_by_two}{\subsection{Dokumentacja klasy Multiply\-By\-Two}
 \label{class_multiply_by_two}\index{Multiply\-By\-Two@{Multiply\-By\-Two}}
 }
 
@@ -16,41 +16,45 @@ Diagram dziedziczenia dla Multiply\-By\-Two\begin{figure}[H]
 \includegraphics[height=3.000000cm]{class_multiply_by_two}
 \end{center}
 \end{figure}
-\subsection*{Metody publiczne}
+\subsubsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_multiply_by_two_aad2080a1fdab088814170e529a14db1e}{execute\-Algorithm} ()
 \begin{DoxyCompactList}\small\item\em Wykonuje algorytm mnozenie x2. \end{DoxyCompactList}\item 
 \hyperlink{class_multiply_by_two_ab84d2c946e0ac7d6eeef32d5800ce4a5}{$\sim$\-Multiply\-By\-Two} ()
 \end{DoxyCompactItemize}
-\subsection*{Dodatkowe Dziedziczone Składowe}
+\subsubsection*{Dodatkowe Dziedziczone Składowe}
 
 
-\subsection{Opis szczegółowy}
+\subsubsection{Opis szczegółowy}
 Algorytm mnozy kazda kolejna liczbe przez 2 
 
-Definicja w linii 20 pliku multiplybytwo.\-h.
+Definicja w linii \hyperlink{multiplybytwo_8h_source_l00020}{20} pliku \hyperlink{multiplybytwo_8h_source}{multiplybytwo.\-h}.
 
 
 
-\subsection{Dokumentacja konstruktora i destruktora}
+\subsubsection{Dokumentacja konstruktora i destruktora}
 \hypertarget{class_multiply_by_two_ab84d2c946e0ac7d6eeef32d5800ce4a5}{\index{Multiply\-By\-Two@{Multiply\-By\-Two}!$\sim$\-Multiply\-By\-Two@{$\sim$\-Multiply\-By\-Two}}
 \index{$\sim$\-Multiply\-By\-Two@{$\sim$\-Multiply\-By\-Two}!MultiplyByTwo@{Multiply\-By\-Two}}
-\subsubsection[{$\sim$\-Multiply\-By\-Two}]{\setlength{\rightskip}{0pt plus 5cm}Multiply\-By\-Two\-::$\sim$\-Multiply\-By\-Two (
+\paragraph[{$\sim$\-Multiply\-By\-Two}]{\setlength{\rightskip}{0pt plus 5cm}Multiply\-By\-Two\-::$\sim$\-Multiply\-By\-Two (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_multiply_by_two_ab84d2c946e0ac7d6eeef32d5800ce4a5}
 
 
-Definicja w linii 29 pliku multiplybytwo.\-h.
+Definicja w linii \hyperlink{multiplybytwo_8h_source_l00029}{29} pliku \hyperlink{multiplybytwo_8h_source}{multiplybytwo.\-h}.
 
 
+\begin{DoxyCode}
+00029 \{\}
+\end{DoxyCode}
 
-\subsection{Dokumentacja funkcji składowych}
+
+\subsubsection{Dokumentacja funkcji składowych}
 \hypertarget{class_multiply_by_two_aad2080a1fdab088814170e529a14db1e}{\index{Multiply\-By\-Two@{Multiply\-By\-Two}!execute\-Algorithm@{execute\-Algorithm}}
 \index{execute\-Algorithm@{execute\-Algorithm}!MultiplyByTwo@{Multiply\-By\-Two}}
-\subsubsection[{execute\-Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}void Multiply\-By\-Two\-::execute\-Algorithm (
+\paragraph[{execute\-Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}void Multiply\-By\-Two\-::execute\-Algorithm (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -61,8 +65,28 @@ Implementuje \hyperlink{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{My
 
 
 
-Definicja w linii 11 pliku multiplybytwo.\-cpp.
+Definicja w linii \hyperlink{multiplybytwo_8cpp_source_l00011}{11} pliku \hyperlink{multiplybytwo_8cpp_source}{multiplybytwo.\-cpp}.
 
+
+
+Odwołuje się do \hyperlink{dataframe_8h_source_l00034}{Data\-Frame\-::size\-Of\-Table} i \hyperlink{dataframe_8h_source_l00021}{Data\-Frame\-::table\-Of\-Data}.
+
+
+
+Odwołania w \hyperlink{main_8cpp_source_l00017}{main()}.
+
+
+\begin{DoxyCode}
+00012 \{
+00013         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable}; i++) \{
+00014 
+00015                 \hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData}[i]*=2;
+00016         \}
+00017 
+00018 
+00019 
+00020 \}
+\end{DoxyCode}
 
 
 Dokumentacja dla tej klasy została wygenerowana z plików\-:\begin{DoxyCompactItemize}

@@ -7,28 +7,34 @@
 \selectlanguage{polish}
 \usepackage{graphicx}
 \begin{document}
-\title{Laboratorium 1}
+\title{Laboratorium 2}
 \author{Jan Seredyński}
 \date{\today}
 \maketitle
 
 \section{Wstęp}
-Zadaniem laboratorium było stworzenie programu, który mnoży kolejne liczby przez 2,
- a następnie umożliwia uruchomienia części benchmarkującej, która sprawdza jak długo
-wykonywał się algorytm mnożenia lub seria takich algorytmów.
+Zadaniem laboratorium było opracowanie listy, stosu oraz kolejki, które dysponują funkcjami pop(), push(x), size() do ich sterowania.
 
 \section{Sposób wykonania}
-Głównym celem zadania bylo wykonanie funkcji benchmarkującej do podanego algorytmu.\\
-Dzięki zastosowaniu klas abstrakcyjnych i metod wirtualnych byłem w stanie klasę MyBenchmark, po której algorytm mnożenia dziedziczył wirtualną metodę wykonywania algorytmu, która włączała 'stoper' -> wykonywała algorytm -> 'zatrzymywała stoper'. To pozwoliło mi na zmierzenie czasu wykonywanych algorytmów w zależoći od ilości seri oraz liczb do obrobienia.
+Do wykonania zadania zastosowałem liste dwukierunkową z metodami, które pozwalają na dodawanie oraz pobieranie danych zarówno z początku jak i końca listy. Nastepnie na bazie listy dziedziczyły klasy stosu i kolejki, które w dwoich metodach pop i push korzystaja z odpowiednich metod listy.
+
+Wykonanlem przykładowa kolejke FIFO. Każda zmiana rodzaju kolejki będzie prosta dzięki implementacji listy dwukierunkowej. Dlatego nie tworzylem różnych rodzai kolejek.
 
 \section{Funkcje dodatkowe}
-Program posiada funkcję generowania liczb losowych na podstawie czasu działania maszyny oraz zapisywanie i wczytaywanie liczb z plików.
+Lista jest dwukierunkowa, po której dziedziczą stos i kolejka.
 
-\section{Benchmark}
-Utworzyłem graf pokazujący jak zmieniał się czas wykonania algorytmu od liczby powtórzen.
-\includegraphics[width=4in]{blank.png} 
+\section{Schematy odpowiednich struktur}
+
+Lista dwukierunkowa
+\includegraphics[width=5in]{lista2_1.png} 
+\par\vspace{\baselineskip}
+\hrule
+\par\vspace{\baselineskip}
+Stos, kolejka
+\includegraphics[width=3in]{stackqueue.png} 
+
 
 
 \section{Podsumowanie}
-Zadanie zostało wykonane poprawnie, o czym świadczy wykres czasu od liczby powtórzen. Wykres odzwierciedla funkcję liniową, czyli czas i liczba powtórzen zmieniają sie proporcjonalnie, co należało wykazać w tym zadaniu.
+Wszystkie zadania do laboratorium zostały wykonane poprawnie oraz zostały wprowadzone pewne dodatki jak np. lista dwukierunkowa.
 \end{document}

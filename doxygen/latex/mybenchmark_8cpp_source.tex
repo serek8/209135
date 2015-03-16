@@ -14,16 +14,25 @@
 00011 
 \hypertarget{mybenchmark_8cpp_source_l00012}{}\hyperlink{class_my_benchmark_a66576625ca37f8bc539c18ffceb69c9c}{00012} \textcolor{keywordtype}{double} \hyperlink{class_my_benchmark_a66576625ca37f8bc539c18ffceb69c9c}{MyBenchmark::testAlgorithm}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} repetition)
 00013 \{
-00014         time\_t benchmarkTime = clock();
-00015 
-00016         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<repetition ; i++)      \{
-00017                 this->\hyperlink{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{executeAlgorithm}();
-00018         \}
-00019 
-00020         benchmarkTime = clock() - benchmarkTime;
-00021 
-00022         \textcolor{keywordflow}{return} (( (\textcolor{keywordtype}{double})benchmarkTime ) /CLOCKS\_PER\_SEC);
-00023 \}
+00014         time\_t benchmarkTimeInTotal = 0;
+00015         time\_t benchmarkTimeForOneLoop = 0;
+00016 
+00017         \textcolor{keywordtype}{int} *originalTableOfData = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable}];
+00018         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable}; i++)
+00019                 originalTableOfData[i]=\hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData}[i];
+00020 
+00021         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<repetition ; i++)      \{
+00022                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable}; i++)
+00023                         \hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData}[i]=originalTableOfData[i];
 00024 
-00025 
+00025                 benchmarkTimeForOneLoop = clock();
+00026                         this->\hyperlink{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{executeAlgorithm}();
+00027                 benchmarkTimeInTotal += clock() - benchmarkTimeForOneLoop;
+00028         \}
+00029 
+00030 
+00031         \textcolor{keywordflow}{return} (( (\textcolor{keywordtype}{double})benchmarkTimeInTotal ) /CLOCKS\_PER\_SEC);
+00032 \}
+00033 
+00034 
 \end{DoxyCode}

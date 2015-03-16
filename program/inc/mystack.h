@@ -13,9 +13,7 @@
 /**
  * @brief Klasa reprezentuje stos
  *
- * Stos dziala na tablicy dynamicznej
  * Stos, którego index po pushu pokazuje na miejsce nastepne(nastepne za tym elementem)
- *
  */
 class MyStack : public MyList
 {

@@ -11,9 +11,9 @@
 #include <iostream>
 
 /**
- * @bief Lista dwukierunkowa
+ * @brief Lista dwukierunkowa
  *
- *
+ * Klasa przedstawia liste dwukierunkową dynamiczna
  */
 class MyList{
 
@@ -24,7 +24,7 @@ private:
 	/// @brief Klasa 'malych struktur' gdzie jest numer i wskaznik do nas elementu
 	class MyListElement {
 	public:
-		/// @brief Liczba przechowywana
+		///  Liczba przechowywana
 		int  number;
 
 		/**
@@ -33,17 +33,17 @@ private:
 		 */
 		MyListElement(int arg);
 
-		/// @bief wskaznik do nastepnej 'malej struktury' w liscie
+		///  wskaznik do nastepnej 'malej struktury' w liscie
 		MyListElement *nextElement;
-		/// @bief wskaznik do poprzedniej 'malej struktury' w liscie
+		///  wskaznik do poprzedniej 'malej struktury' w liscie
 		MyListElement *previousElement;
 	};
 
-	/// @bief wskaznik do 'malej struktury' ktora jest pierwsza na liscie
+	///  wskaznik do 'malej struktury' ktora jest pierwsza na liscie
 	MyListElement *firstElement;
-	/// @bief wskaznik do 'malej struktury' ktora jest ostatnia na liscie
+	///  wskaznik do 'malej struktury' ktora jest ostatnia na liscie
 	MyListElement *lastElement;
-	/// @bief Konstruktor listy
+	///  Konstruktor listy
 public:
 	MyList();
 

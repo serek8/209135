@@ -1,4 +1,4 @@
-\hypertarget{class_my_benchmark}{\section{Dokumentacja klasy My\-Benchmark}
+\hypertarget{class_my_benchmark}{\subsection{Dokumentacja klasy My\-Benchmark}
 \label{class_my_benchmark}\index{My\-Benchmark@{My\-Benchmark}}
 }
 
@@ -16,46 +16,50 @@ Diagram dziedziczenia dla My\-Benchmark\begin{figure}[H]
 \includegraphics[height=3.000000cm]{class_my_benchmark}
 \end{center}
 \end{figure}
-\subsection*{Metody publiczne}
+\subsubsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
 double \hyperlink{class_my_benchmark_a66576625ca37f8bc539c18ffceb69c9c}{test\-Algorithm} (unsigned int repetition)
 \begin{DoxyCompactList}\small\item\em Benchmarkuje algorytm główny. \end{DoxyCompactList}\item 
 virtual \hyperlink{class_my_benchmark_a00de82c40680b41065eb402ac90f1736}{$\sim$\-My\-Benchmark} ()
 \begin{DoxyCompactList}\small\item\em Usuwam obiekt test biorąc pod uwage jego prawdziwy typ. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Metody chronione}
+\subsubsection*{Metody chronione}
 \begin{DoxyCompactItemize}
 \item 
 virtual void \hyperlink{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{execute\-Algorithm} ()=0
 \begin{DoxyCompactList}\small\item\em Interface metody algorytmu glownego. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Dodatkowe Dziedziczone Składowe}
+\subsubsection*{Dodatkowe Dziedziczone Składowe}
 
 
-\subsection{Opis szczegółowy}
+\subsubsection{Opis szczegółowy}
 Używana jako interface dla wszystkich algorytmow aby testowac czas wykonywanego algorymtu. 
 
-Definicja w linii 20 pliku mybenchmark.\-h.
+Definicja w linii \hyperlink{mybenchmark_8h_source_l00020}{20} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
 
 
 
-\subsection{Dokumentacja konstruktora i destruktora}
+\subsubsection{Dokumentacja konstruktora i destruktora}
 \hypertarget{class_my_benchmark_a00de82c40680b41065eb402ac90f1736}{\index{My\-Benchmark@{My\-Benchmark}!$\sim$\-My\-Benchmark@{$\sim$\-My\-Benchmark}}
 \index{$\sim$\-My\-Benchmark@{$\sim$\-My\-Benchmark}!MyBenchmark@{My\-Benchmark}}
-\subsubsection[{$\sim$\-My\-Benchmark}]{\setlength{\rightskip}{0pt plus 5cm}virtual My\-Benchmark\-::$\sim$\-My\-Benchmark (
+\paragraph[{$\sim$\-My\-Benchmark}]{\setlength{\rightskip}{0pt plus 5cm}virtual My\-Benchmark\-::$\sim$\-My\-Benchmark (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_my_benchmark_a00de82c40680b41065eb402ac90f1736}
 
 
-Definicja w linii 49 pliku mybenchmark.\-h.
+Definicja w linii \hyperlink{mybenchmark_8h_source_l00049}{49} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
 
 
+\begin{DoxyCode}
+00049 \{\};
+\end{DoxyCode}
 
-\subsection{Dokumentacja funkcji składowych}
+
+\subsubsection{Dokumentacja funkcji składowych}
 \hypertarget{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{\index{My\-Benchmark@{My\-Benchmark}!execute\-Algorithm@{execute\-Algorithm}}
 \index{execute\-Algorithm@{execute\-Algorithm}!MyBenchmark@{My\-Benchmark}}
-\subsubsection[{execute\-Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}virtual void My\-Benchmark\-::execute\-Algorithm (
+\paragraph[{execute\-Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}virtual void My\-Benchmark\-::execute\-Algorithm (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -64,17 +68,52 @@ Metoda abstrakcyjna, ktora jest interfacem do implementacji przez glowny algoryt
 
 Implementowany w \hyperlink{class_multiply_by_two_aad2080a1fdab088814170e529a14db1e}{Multiply\-By\-Two}.
 
+
+
+Odwołania w \hyperlink{mybenchmark_8cpp_source_l00012}{test\-Algorithm()}.
+
 \hypertarget{class_my_benchmark_a66576625ca37f8bc539c18ffceb69c9c}{\index{My\-Benchmark@{My\-Benchmark}!test\-Algorithm@{test\-Algorithm}}
 \index{test\-Algorithm@{test\-Algorithm}!MyBenchmark@{My\-Benchmark}}
-\subsubsection[{test\-Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}double My\-Benchmark\-::test\-Algorithm (
+\paragraph[{test\-Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}double My\-Benchmark\-::test\-Algorithm (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{repetition}
 \end{DoxyParamCaption}
 )}}\label{class_my_benchmark_a66576625ca37f8bc539c18ffceb69c9c}
 Obliczam czas wykonywanego algorytmu dzięki zastosowaniu metody abstrakcyjnej \hyperlink{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{execute\-Algorithm()} i zaimplementowaniu tego interfacu w algorytmie głównym 
 
-Definicja w linii 12 pliku mybenchmark.\-cpp.
+Definicja w linii \hyperlink{mybenchmark_8cpp_source_l00012}{12} pliku \hyperlink{mybenchmark_8cpp_source}{mybenchmark.\-cpp}.
 
+
+
+Odwołuje się do \hyperlink{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{execute\-Algorithm()}, \hyperlink{dataframe_8h_source_l00034}{Data\-Frame\-::size\-Of\-Table} i \hyperlink{dataframe_8h_source_l00021}{Data\-Frame\-::table\-Of\-Data}.
+
+
+
+Odwołania w \hyperlink{main_8cpp_source_l00017}{main()}.
+
+
+\begin{DoxyCode}
+00013 \{
+00014         time\_t benchmarkTimeInTotal = 0;
+00015         time\_t benchmarkTimeForOneLoop = 0;
+00016 
+00017         \textcolor{keywordtype}{int} *originalTableOfData = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable}];
+00018         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable}; i++)
+00019                 originalTableOfData[i]=\hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData}[i];
+00020 
+00021         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<repetition ; i++)      \{
+00022                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable}; i++)
+00023                         \hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData}[i]=originalTableOfData[i];
+00024 
+00025                 benchmarkTimeForOneLoop = clock();
+00026                         this->\hyperlink{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{executeAlgorithm}();
+00027                 benchmarkTimeInTotal += clock() - benchmarkTimeForOneLoop;
+00028         \}
+00029 
+00030 
+00031         \textcolor{keywordflow}{return} (( (\textcolor{keywordtype}{double})benchmarkTimeInTotal ) /CLOCKS\_PER\_SEC);
+00032 \}
+\end{DoxyCode}
 
 
 Dokumentacja dla tej klasy została wygenerowana z plików\-:\begin{DoxyCompactItemize}

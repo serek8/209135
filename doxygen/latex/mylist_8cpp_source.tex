@@ -1,0 +1,79 @@
+\hypertarget{mylist_8cpp}{\subsection{mylist.\-cpp}
+\label{mylist_8cpp}\index{mylist.\-cpp@{mylist.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * mylist.cpp}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: Mar 15, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00008 
+00009 \textcolor{preprocessor}{#include "\hyperlink{mylist_8h}{mylist.h}"}
+00010 
+\hypertarget{mylist_8cpp_source_l00011}{}\hyperlink{class_my_list_ae9cd2a6b068e02fa39ba3e539425c1c1}{00011} \hyperlink{class_my_list_ae9cd2a6b068e02fa39ba3e539425c1c1}{MyList::MyList}()
+00012 \{
+00013         \hyperlink{class_my_list_aa7e5ddd2dddeeccd304126130d73dead}{firstElement} = \hyperlink{class_my_list_a287894c4add6b52be99826fb4d76594c}{lastElement} = \textcolor{keyword}{new} \hyperlink{class_my_list_1_1_my_list_element}{MyListElement}(0);
+00014         \hyperlink{class_my_list_a77b7870f617b51fad7399463c9147668}{sizeOfList} = 0;
+00015 \}
+00016 
+00017 
+\hypertarget{mylist_8cpp_source_l00018}{}\hyperlink{class_my_list_a8428cca9d08fcf02e378aee0a232e971}{00018} \textcolor{keywordtype}{void} \hyperlink{class_my_list_a8428cca9d08fcf02e378aee0a232e971}{MyList :: push\_back}(\textcolor{keywordtype}{int} arg)
+00019 \{
+00020         \hyperlink{class_my_list_1_1_my_list_element}{MyListElement} *newMyListElement = \textcolor{keyword}{new} \hyperlink{class_my_list_1_1_my_list_element}{MyListElement}(arg);
+00021         \textcolor{keywordflow}{if}(!\hyperlink{class_my_list_a77b7870f617b51fad7399463c9147668}{sizeOfList}++) \{\hyperlink{class_my_list_aa7e5ddd2dddeeccd304126130d73dead}{firstElement} = \hyperlink{class_my_list_a287894c4add6b52be99826fb4d76594c}{lastElement} = newMyListElement;\}
+00022         \textcolor{comment}{//newMyListElement -> nextElement = 0;}
+00023         newMyListElement -> previousElement = \textcolor{keyword}{this} -> \hyperlink{class_my_list_a287894c4add6b52be99826fb4d76594c}{lastElement};
+00024         \textcolor{keyword}{this} -> \hyperlink{class_my_list_a287894c4add6b52be99826fb4d76594c}{lastElement} -> nextElement = newMyListElement;
+00025         this->\hyperlink{class_my_list_a287894c4add6b52be99826fb4d76594c}{lastElement} = newMyListElement;
+00026 \}
+\hypertarget{mylist_8cpp_source_l00027}{}\hyperlink{class_my_list_a9ab5ae823e85df90662e42fab4229f09}{00027} \textcolor{keywordtype}{void} \hyperlink{class_my_list_a9ab5ae823e85df90662e42fab4229f09}{MyList :: push\_front}(\textcolor{keywordtype}{int} arg)
+00028 \{
+00029         \hyperlink{class_my_list_1_1_my_list_element}{MyListElement} *newMyListElement = \textcolor{keyword}{new} \hyperlink{class_my_list_1_1_my_list_element}{MyListElement}(arg);
+00030         \textcolor{keywordflow}{if}(!\hyperlink{class_my_list_a77b7870f617b51fad7399463c9147668}{sizeOfList}++) \{\hyperlink{class_my_list_aa7e5ddd2dddeeccd304126130d73dead}{firstElement} = \hyperlink{class_my_list_a287894c4add6b52be99826fb4d76594c}{lastElement} = newMyListElement;\}
+00031         \textcolor{comment}{//newMyListElement -> previousElement =  0;}
+00032         newMyListElement -> nextElement = \textcolor{keyword}{this} -> \hyperlink{class_my_list_aa7e5ddd2dddeeccd304126130d73dead}{firstElement};
+00033         \textcolor{keyword}{this} -> \hyperlink{class_my_list_aa7e5ddd2dddeeccd304126130d73dead}{firstElement} -> previousElement = newMyListElement;
+00034         this->\hyperlink{class_my_list_aa7e5ddd2dddeeccd304126130d73dead}{firstElement} = newMyListElement;
+00035 \}
+00036 
+\hypertarget{mylist_8cpp_source_l00037}{}\hyperlink{class_my_list_a7361ad3b0da0402cb95adb225ebfaffd}{00037} \textcolor{keywordtype}{int} \hyperlink{class_my_list_a7361ad3b0da0402cb95adb225ebfaffd}{MyList :: pop\_back}()
+00038 \{
+00039         \textcolor{keywordflow}{if}(!(\hyperlink{class_my_list_a77b7870f617b51fad7399463c9147668}{sizeOfList}--)) \{ \hyperlink{class_my_list_a77b7870f617b51fad7399463c9147668}{sizeOfList}=0; \textcolor{keywordflow}{return} 0; \}
+00040         \textcolor{keywordtype}{int} tmpNumber = \textcolor{keyword}{this} -> \hyperlink{class_my_list_a287894c4add6b52be99826fb4d76594c}{lastElement} -> number;
+00041         \hyperlink{class_my_list_1_1_my_list_element}{MyListElement} *originMyListElement = \textcolor{keyword}{this} -> \hyperlink{class_my_list_a287894c4add6b52be99826fb4d76594c}{lastElement};
+00042         \textcolor{keyword}{this} -> \hyperlink{class_my_list_a287894c4add6b52be99826fb4d76594c}{lastElement} = \textcolor{keyword}{this} -> \hyperlink{class_my_list_a287894c4add6b52be99826fb4d76594c}{lastElement} -> previousElement;
+00043         \textcolor{keyword}{delete} originMyListElement;
+00044         \textcolor{keywordflow}{return} tmpNumber;
+00045 \}
+\hypertarget{mylist_8cpp_source_l00046}{}\hyperlink{class_my_list_ae038b14e6cb5b54b8499b85ce5f03a0e}{00046} \textcolor{keywordtype}{int} \hyperlink{class_my_list_ae038b14e6cb5b54b8499b85ce5f03a0e}{MyList :: pop\_front}()
+00047 \{
+00048         \textcolor{keywordflow}{if}(!(\hyperlink{class_my_list_a77b7870f617b51fad7399463c9147668}{sizeOfList}--)) \{ \hyperlink{class_my_list_a77b7870f617b51fad7399463c9147668}{sizeOfList}=0; \textcolor{keywordflow}{return} 0; \}
+00049         \textcolor{keywordtype}{int} tmpNumber = \textcolor{keyword}{this} -> \hyperlink{class_my_list_aa7e5ddd2dddeeccd304126130d73dead}{firstElement} -> number;
+00050         \hyperlink{class_my_list_1_1_my_list_element}{MyListElement} *originMyListElement = \textcolor{keyword}{this} -> \hyperlink{class_my_list_aa7e5ddd2dddeeccd304126130d73dead}{firstElement};
+00051         \textcolor{keyword}{this} -> \hyperlink{class_my_list_aa7e5ddd2dddeeccd304126130d73dead}{firstElement} = \textcolor{keyword}{this} -> \hyperlink{class_my_list_aa7e5ddd2dddeeccd304126130d73dead}{firstElement} -> nextElement;
+00052 
+00053         \textcolor{keyword}{delete} originMyListElement;
+00054         \textcolor{keywordflow}{return} tmpNumber;
+00055 \}
+00056 
+\hypertarget{mylist_8cpp_source_l00057}{}\hyperlink{class_my_list_1_1_my_list_element_ac57b6eddd2c28b199a87c3b2f8dda992}{00057} \hyperlink{class_my_list_1_1_my_list_element_ac57b6eddd2c28b199a87c3b2f8dda992}{MyList :: MyListElement :: MyListElement}(\textcolor{keywordtype}{int} arg)
+00058 \{
+00059         \textcolor{keyword}{this} -> \hyperlink{class_my_list_1_1_my_list_element_acd6dbb6a8791f034f94678d46395b366}{number} = arg;
+00060         \textcolor{keyword}{this} -> \hyperlink{class_my_list_1_1_my_list_element_abd7af673552c8876f210cbea01c5e949}{nextElement} =0;
+00061         \textcolor{keyword}{this} -> \hyperlink{class_my_list_1_1_my_list_element_adb7c0cbde93a90f30484637498690d0f}{previousElement} =0;
+00062 \}
+00063 
+00064 
+00065 
+00066 
+00067 
+00068 
+00069 
+\hypertarget{mylist_8cpp_source_l00070}{}\hyperlink{class_my_list_a6d21c8bfbd9cd31efdba81ba488f43f2}{00070} \textcolor{keywordtype}{int} \hyperlink{class_my_list_a6d21c8bfbd9cd31efdba81ba488f43f2}{MyList::size}()
+00071 \{
+00072         \textcolor{keywordflow}{return} \hyperlink{class_my_list_a77b7870f617b51fad7399463c9147668}{sizeOfList};
+00073 \}
+\end{DoxyCode}

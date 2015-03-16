@@ -9,6 +9,10 @@
 #define MYQUEUE_H_
 #include "mylist.h"
 
+/**
+ * @brief Klasa reprezentuje kolejke
+ *
+ */
 class MyQueue : public MyList
 {
 public:

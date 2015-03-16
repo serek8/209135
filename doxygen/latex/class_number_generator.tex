@@ -1,4 +1,4 @@
-\hypertarget{class_number_generator}{\section{Dokumentacja klasy Number\-Generator}
+\hypertarget{class_number_generator}{\subsection{Dokumentacja klasy Number\-Generator}
 \label{class_number_generator}\index{Number\-Generator@{Number\-Generator}}
 }
 
@@ -16,49 +16,74 @@ Diagram dziedziczenia dla Number\-Generator\begin{figure}[H]
 \includegraphics[height=2.000000cm]{class_number_generator}
 \end{center}
 \end{figure}
-\subsection*{Metody publiczne}
+\subsubsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_number_generator_afe038fce2f1a2c90847fd483beea0494}{generate\-Numbers} ()
 \begin{DoxyCompactList}\small\item\em Generuje losowe liczby. \end{DoxyCompactList}\item 
 \hyperlink{class_number_generator_a828757cc2c9712e0b111584d1f1d5164}{$\sim$\-Number\-Generator} ()
 \end{DoxyCompactItemize}
-\subsection*{Dodatkowe Dziedziczone Składowe}
+\subsubsection*{Dodatkowe Dziedziczone Składowe}
 
 
-\subsection{Opis szczegółowy}
+\subsubsection{Opis szczegółowy}
 Klasa generujaca losowe liczby na podstawie czasu maszyny na ktorym jest uruchomiona Wszystkie funkcje zapisu pliku dziedziczy z klasy \hyperlink{class_data_frame}{Data\-Frame} 
 
-Definicja w linii 23 pliku numbergenerator.\-h.
+Definicja w linii \hyperlink{numbergenerator_8h_source_l00023}{23} pliku \hyperlink{numbergenerator_8h_source}{numbergenerator.\-h}.
 
 
 
-\subsection{Dokumentacja konstruktora i destruktora}
+\subsubsection{Dokumentacja konstruktora i destruktora}
 \hypertarget{class_number_generator_a828757cc2c9712e0b111584d1f1d5164}{\index{Number\-Generator@{Number\-Generator}!$\sim$\-Number\-Generator@{$\sim$\-Number\-Generator}}
 \index{$\sim$\-Number\-Generator@{$\sim$\-Number\-Generator}!NumberGenerator@{Number\-Generator}}
-\subsubsection[{$\sim$\-Number\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}Number\-Generator\-::$\sim$\-Number\-Generator (
+\paragraph[{$\sim$\-Number\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}Number\-Generator\-::$\sim$\-Number\-Generator (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_number_generator_a828757cc2c9712e0b111584d1f1d5164}
 
 
-Definicja w linii 44 pliku numbergenerator.\-h.
+Definicja w linii \hyperlink{numbergenerator_8h_source_l00044}{44} pliku \hyperlink{numbergenerator_8h_source}{numbergenerator.\-h}.
 
 
+\begin{DoxyCode}
+00044 \{\}
+\end{DoxyCode}
 
-\subsection{Dokumentacja funkcji składowych}
+
+\subsubsection{Dokumentacja funkcji składowych}
 \hypertarget{class_number_generator_afe038fce2f1a2c90847fd483beea0494}{\index{Number\-Generator@{Number\-Generator}!generate\-Numbers@{generate\-Numbers}}
 \index{generate\-Numbers@{generate\-Numbers}!NumberGenerator@{Number\-Generator}}
-\subsubsection[{generate\-Numbers}]{\setlength{\rightskip}{0pt plus 5cm}void Number\-Generator\-::generate\-Numbers (
+\paragraph[{generate\-Numbers}]{\setlength{\rightskip}{0pt plus 5cm}void Number\-Generator\-::generate\-Numbers (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_number_generator_afe038fce2f1a2c90847fd483beea0494}
 Generuje losowe liczby na podstawie czasu maszyny 
 
-Definicja w linii 31 pliku numbergenerator.\-h.
+Definicja w linii \hyperlink{numbergenerator_8h_source_l00031}{31} pliku \hyperlink{numbergenerator_8h_source}{numbergenerator.\-h}.
 
+
+
+Odwołuje się do \hyperlink{dataframe_8h_source_l00034}{Data\-Frame\-::size\-Of\-Table} i \hyperlink{dataframe_8h_source_l00021}{Data\-Frame\-::table\-Of\-Data}.
+
+
+
+Odwołania w \hyperlink{main_8cpp_source_l00017}{main()}.
+
+
+\begin{DoxyCode}
+00032 \{
+00033         time\_t randomTime = clock();
+00034         this->\hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData} = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable}];
+00035         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable} ; i++)
+00036         \{
+00037                 srand (randomTime = clock());
+00038                 this->\hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData}[i] = rand()%100;
+00039                 randomTime = clock();
+00040         \}
+00041 \}
+\end{DoxyCode}
 
 
 Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}

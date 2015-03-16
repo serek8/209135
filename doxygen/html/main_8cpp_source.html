@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Laboratorium 1: Plik źródłowy main.cpp</title>
+<title>Laboratorium 2: Plik źródłowy main.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Laboratorium 1
-   &#160;<span id="projectnumber">0.1</span>
+   <div id="projectname">Laboratorium 2
+   &#160;<span id="projectnumber">0.2</span>
    </div>
   </td>
  </tr>
@@ -75,111 +75,135 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html','');});
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="multiplybytwo_8h.html">multiplybytwo.h</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="numbergenerator_8h.html">numbergenerator.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dataframe_8h.html">dataframe.h</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="multiplybytwo_8h.html">multiplybytwo.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="numbergenerator_8h.html">numbergenerator.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dataframe_8h.html">dataframe.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mystack_8h.html">mystack.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="myqueue_8h.html">myqueue.h</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">   16</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="class_data_frame.html">DataFrame</a> podstawoweInfoIO;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">int</span> quantityRepetitionOfAlgorithm = 0;  </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">int</span> opt;        </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">bool</span> isSetNumberGenerator=<span class="keyword">false</span>; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">while</span> ((opt = getopt(argc, argv, <span class="stringliteral">&quot;n:t:o:i:g&quot;</span>)) != -1) {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordflow">switch</span>(opt){</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;n&#39;</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                        podstawoweInfoIO.<a class="code" href="class_data_frame.html#aa5d1905c6910cad07ab5189bd34b13ab">sizeOfTable</a> = atoi(optarg);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;t&#39;</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                        quantityRepetitionOfAlgorithm = atoi(optarg);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;o&#39;</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        podstawoweInfoIO.<a class="code" href="class_data_frame.html#a824a73f019aec71281837abafd95a510">outputFileName</a> = optarg;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;i&#39;</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        podstawoweInfoIO.<a class="code" href="class_data_frame.html#a90041bfdf474b0d7ce39bc3dbbb55aa9">inputFileName</a>=optarg;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;g&#39;</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        isSetNumberGenerator=<span class="keyword">true</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;?&#39;</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        std::cout&lt;&lt;<span class="stringliteral">&quot;\nPodano zly argument&quot;</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="comment">/*</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">         * Sprawdzam czy program zostal uzyty tylko do wygenerowania liczb losowych</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">         * jesli tak to tworze te liczby zgodnie quantityNumber i zamykam program</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">if</span>(isSetNumberGenerator) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="class_number_generator.html">NumberGenerator</a> generator;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        generator= podstawoweInfoIO;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        generator.<a class="code" href="class_number_generator.html#afe038fce2f1a2c90847fd483beea0494">generateNumbers</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        generator.<a class="code" href="class_data_frame.html#a03cc3ac606fdb8a2dbcaea5d429cf208">saveDataToFile</a>();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        std::cout&lt;&lt;<span class="stringliteral">&quot;\nZapisane.\n&quot;</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="class_multiply_by_two.html">MultiplyByTwo</a> algorytm_x2 ;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        algorytm_x2= podstawoweInfoIO;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">// Laduje liczby do przeprowadzenia algorytmu</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span>(algorytm_x2.<a class="code" href="class_data_frame.html#a617ef21804065f31115c01527155f499">loadDataFromFile</a>()) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                std::cout&lt;&lt;<span class="stringliteral">&quot;\nNie istnieje tyle liczb w pliku !\nKoncze program&quot;</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">/*</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">         * Sprawdzam czy otrzymalem agrument o testowaniu algorytmu,</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">         * a nastepnie przeprawadzam test albo uruchamiam normalnie algorytm</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span>(quantityRepetitionOfAlgorithm){</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                std::cout&lt;&lt;<span class="stringliteral">&quot;\nCzas algorytmu: &quot;</span>&lt;&lt;algorytm_x2.<a class="code" href="class_my_benchmark.html#a66576625ca37f8bc539c18ffceb69c9c">testAlgorithm</a>(quantityRepetitionOfAlgorithm)&lt;&lt;<span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                algorytm_x2.<a class="code" href="class_multiply_by_two.html#aad2080a1fdab088814170e529a14db1e">executeAlgorithm</a>();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">   17</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="class_data_frame.html">DataFrame</a> podstawoweInfoIO;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">int</span> quantityRepetitionOfAlgorithm = 0;  </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">int</span> opt;        </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">bool</span> isSetNumberGenerator=<span class="keyword">false</span>; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">bool</span> isTest=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">while</span> ((opt = getopt(argc, argv, <span class="stringliteral">&quot;n:t:o:i:gx&quot;</span>)) != -1) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keywordflow">switch</span>(opt){</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;n&#39;</span>:       <span class="comment">// ilosc liczb do przetworzenia</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                        podstawoweInfoIO.<a class="code" href="class_data_frame.html#aa5d1905c6910cad07ab5189bd34b13ab">sizeOfTable</a> = atoi(optarg);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;t&#39;</span>:       <span class="comment">// wlacza benchmark i przyjmuje liczbe powtorzen dla benchmarka</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        quantityRepetitionOfAlgorithm = atoi(optarg);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;o&#39;</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        podstawoweInfoIO.<a class="code" href="class_data_frame.html#a824a73f019aec71281837abafd95a510">outputFileName</a> = optarg;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;i&#39;</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                        podstawoweInfoIO.<a class="code" href="class_data_frame.html#a90041bfdf474b0d7ce39bc3dbbb55aa9">inputFileName</a>=optarg;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;g&#39;</span>:       <span class="comment">// wlacza generator liczb, po zakonczeniu generowania konczy program</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                        isSetNumberGenerator=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;x&#39;</span>:       <span class="comment">// miejsce dla programisty dla sprawdzania kodu</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        isTest =1;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;?&#39;</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        std::cout&lt;&lt;<span class="stringliteral">&quot;\nPodano zly argument&quot;</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span>(isTest)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <a class="code" href="class_my_queue.html">MyQueue</a> stack;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                stack.<a class="code" href="class_my_queue.html#abc623d6dea3f8ea4c364d4e755914b89">push</a>(1); stack.<a class="code" href="class_my_queue.html#abc623d6dea3f8ea4c364d4e755914b89">push</a>(2); stack.<a class="code" href="class_my_queue.html#abc623d6dea3f8ea4c364d4e755914b89">push</a>(3);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                std::cout&lt;&lt;stack.<a class="code" href="class_my_queue.html#a1515805489e2e6b4c955f8e1e62a0650">pop</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                std::cout&lt;&lt;stack.<a class="code" href="class_my_queue.html#a1515805489e2e6b4c955f8e1e62a0650">pop</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                std::cout&lt;&lt;stack.<a class="code" href="class_my_queue.html#a1515805489e2e6b4c955f8e1e62a0650">pop</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">         * Sprawdzam czy program zostal uzyty tylko do wygenerowania liczb losowych</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">         * jesli tak to tworze te liczby zgodnie quantityNumber i zamykam program</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span>(isSetNumberGenerator) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="class_number_generator.html">NumberGenerator</a> generator;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        generator= podstawoweInfoIO;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        generator.<a class="code" href="class_number_generator.html#afe038fce2f1a2c90847fd483beea0494">generateNumbers</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        generator.<a class="code" href="class_data_frame.html#a03cc3ac606fdb8a2dbcaea5d429cf208">saveDataToFile</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        std::cout&lt;&lt;<span class="stringliteral">&quot;\nZapisane.\n&quot;</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="class_multiply_by_two.html">MultiplyByTwo</a> algorytm_x2 ;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        algorytm_x2= podstawoweInfoIO;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        algorytm_x2.<a class="code" href="class_data_frame.html#a03cc3ac606fdb8a2dbcaea5d429cf208">saveDataToFile</a>();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">         *  Wczytuje liczby z pliku do przeprowadzenia algorytmu</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">if</span>(algorytm_x2.<a class="code" href="class_data_frame.html#a617ef21804065f31115c01527155f499">loadDataFromFile</a>()) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                std::cout&lt;&lt;<span class="stringliteral">&quot;\nNie istnieje tyle liczb w pliku !\nKoncze program&quot;</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">         * Sprawdzam czy otrzymalem agrument o testowaniu algorytmu,</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">         * a nastepnie przeprawadzam test albo uruchamiam normalnie algorytm</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">if</span>(quantityRepetitionOfAlgorithm){</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                std::cout&lt;&lt;<span class="stringliteral">&quot;\nCzas algorytmu: &quot;</span>&lt;&lt;algorytm_x2.<a class="code" href="class_my_benchmark.html#a66576625ca37f8bc539c18ffceb69c9c">testAlgorithm</a>(quantityRepetitionOfAlgorithm)&lt;&lt;<span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                algorytm_x2.<a class="code" href="class_multiply_by_two.html#aad2080a1fdab088814170e529a14db1e">executeAlgorithm</a>();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">         * Zapisuje wyniki do pliku</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        algorytm_x2.<a class="code" href="class_data_frame.html#a03cc3ac606fdb8a2dbcaea5d429cf208">saveDataToFile</a>();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
 <div class="ttc" id="numbergenerator_8h_html"><div class="ttname"><a href="numbergenerator_8h.html">numbergenerator.h</a></div></div>
 <div class="ttc" id="class_data_frame_html_a824a73f019aec71281837abafd95a510"><div class="ttname"><a href="class_data_frame.html#a824a73f019aec71281837abafd95a510">DataFrame::outputFileName</a></div><div class="ttdeci">char * outputFileName</div><div class="ttdoc">Zawiera nazwe pliku do zapisu. </div><div class="ttdef"><b>Definition:</b> <a href="dataframe_8h_source.html#l00025">dataframe.h:25</a></div></div>
 <div class="ttc" id="class_data_frame_html"><div class="ttname"><a href="class_data_frame.html">DataFrame</a></div><div class="ttdef"><b>Definition:</b> <a href="dataframe_8h_source.html#l00015">dataframe.h:15</a></div></div>
 <div class="ttc" id="class_number_generator_html_afe038fce2f1a2c90847fd483beea0494"><div class="ttname"><a href="class_number_generator.html#afe038fce2f1a2c90847fd483beea0494">NumberGenerator::generateNumbers</a></div><div class="ttdeci">void generateNumbers()</div><div class="ttdoc">Generuje losowe liczby. </div><div class="ttdef"><b>Definition:</b> <a href="numbergenerator_8h_source.html#l00031">numbergenerator.h:31</a></div></div>
-<div class="ttc" id="class_data_frame_html_a03cc3ac606fdb8a2dbcaea5d429cf208"><div class="ttname"><a href="class_data_frame.html#a03cc3ac606fdb8a2dbcaea5d429cf208">DataFrame::saveDataToFile</a></div><div class="ttdeci">int saveDataToFile()</div><div class="ttdoc">Zapisuje dane do pliku. </div><div class="ttdef"><b>Definition:</b> <a href="dataframe_8cpp_source.html#l00025">dataframe.cpp:25</a></div></div>
-<div class="ttc" id="class_data_frame_html_a617ef21804065f31115c01527155f499"><div class="ttname"><a href="class_data_frame.html#a617ef21804065f31115c01527155f499">DataFrame::loadDataFromFile</a></div><div class="ttdeci">int loadDataFromFile()</div><div class="ttdoc">Ładuje dane z pliku. </div><div class="ttdef"><b>Definition:</b> <a href="dataframe_8cpp_source.html#l00013">dataframe.cpp:13</a></div></div>
+<div class="ttc" id="class_data_frame_html_a03cc3ac606fdb8a2dbcaea5d429cf208"><div class="ttname"><a href="class_data_frame.html#a03cc3ac606fdb8a2dbcaea5d429cf208">DataFrame::saveDataToFile</a></div><div class="ttdeci">int saveDataToFile()</div><div class="ttdoc">Zapisuje dane do pliku. </div><div class="ttdef"><b>Definition:</b> <a href="dataframe_8cpp_source.html#l00032">dataframe.cpp:32</a></div></div>
+<div class="ttc" id="class_data_frame_html_a617ef21804065f31115c01527155f499"><div class="ttname"><a href="class_data_frame.html#a617ef21804065f31115c01527155f499">DataFrame::loadDataFromFile</a></div><div class="ttdeci">int loadDataFromFile()</div><div class="ttdoc">Ładuje dane z pliku. </div><div class="ttdef"><b>Definition:</b> <a href="dataframe_8cpp_source.html#l00020">dataframe.cpp:20</a></div></div>
+<div class="ttc" id="class_my_queue_html_abc623d6dea3f8ea4c364d4e755914b89"><div class="ttname"><a href="class_my_queue.html#abc623d6dea3f8ea4c364d4e755914b89">MyQueue::push</a></div><div class="ttdeci">void push(int arg)</div><div class="ttdef"><b>Definition:</b> <a href="myqueue_8h_source.html#l00023">myqueue.h:23</a></div></div>
+<div class="ttc" id="class_my_queue_html_a1515805489e2e6b4c955f8e1e62a0650"><div class="ttname"><a href="class_my_queue.html#a1515805489e2e6b4c955f8e1e62a0650">MyQueue::pop</a></div><div class="ttdeci">int pop()</div><div class="ttdoc">Wyciaga element z kolejki. </div><div class="ttdef"><b>Definition:</b> <a href="myqueue_8h_source.html#l00027">myqueue.h:27</a></div></div>
 <div class="ttc" id="class_multiply_by_two_html_aad2080a1fdab088814170e529a14db1e"><div class="ttname"><a href="class_multiply_by_two.html#aad2080a1fdab088814170e529a14db1e">MultiplyByTwo::executeAlgorithm</a></div><div class="ttdeci">void executeAlgorithm()</div><div class="ttdoc">Wykonuje algorytm mnozenie x2. </div><div class="ttdef"><b>Definition:</b> <a href="multiplybytwo_8cpp_source.html#l00011">multiplybytwo.cpp:11</a></div></div>
 <div class="ttc" id="class_number_generator_html"><div class="ttname"><a href="class_number_generator.html">NumberGenerator</a></div><div class="ttdoc">Klasa generujaca losowe liczby. </div><div class="ttdef"><b>Definition:</b> <a href="numbergenerator_8h_source.html#l00023">numbergenerator.h:23</a></div></div>
+<div class="ttc" id="class_my_queue_html"><div class="ttname"><a href="class_my_queue.html">MyQueue</a></div><div class="ttdoc">Klasa reprezentuje kolejke. </div><div class="ttdef"><b>Definition:</b> <a href="myqueue_8h_source.html#l00016">myqueue.h:16</a></div></div>
 <div class="ttc" id="class_data_frame_html_aa5d1905c6910cad07ab5189bd34b13ab"><div class="ttname"><a href="class_data_frame.html#aa5d1905c6910cad07ab5189bd34b13ab">DataFrame::sizeOfTable</a></div><div class="ttdeci">unsigned int sizeOfTable</div><div class="ttdoc">Rozmiar tablicy tableOfData. </div><div class="ttdef"><b>Definition:</b> <a href="dataframe_8h_source.html#l00034">dataframe.h:34</a></div></div>
 <div class="ttc" id="class_my_benchmark_html_a66576625ca37f8bc539c18ffceb69c9c"><div class="ttname"><a href="class_my_benchmark.html#a66576625ca37f8bc539c18ffceb69c9c">MyBenchmark::testAlgorithm</a></div><div class="ttdeci">double testAlgorithm(unsigned int repetition)</div><div class="ttdoc">Benchmarkuje algorytm główny. </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00012">mybenchmark.cpp:12</a></div></div>
 <div class="ttc" id="multiplybytwo_8h_html"><div class="ttname"><a href="multiplybytwo_8h.html">multiplybytwo.h</a></div></div>
 <div class="ttc" id="dataframe_8h_html"><div class="ttname"><a href="dataframe_8h.html">dataframe.h</a></div></div>
+<div class="ttc" id="myqueue_8h_html"><div class="ttname"><a href="myqueue_8h.html">myqueue.h</a></div></div>
 <div class="ttc" id="class_data_frame_html_a90041bfdf474b0d7ce39bc3dbbb55aa9"><div class="ttname"><a href="class_data_frame.html#a90041bfdf474b0d7ce39bc3dbbb55aa9">DataFrame::inputFileName</a></div><div class="ttdeci">char * inputFileName</div><div class="ttdoc">Zawiera nazwe pliku do odczytu. </div><div class="ttdef"><b>Definition:</b> <a href="dataframe_8h_source.html#l00029">dataframe.h:29</a></div></div>
-<div class="ttc" id="main_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00016">main.cpp:16</a></div></div>
+<div class="ttc" id="mystack_8h_html"><div class="ttname"><a href="mystack_8h.html">mystack.h</a></div></div>
+<div class="ttc" id="main_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00017">main.cpp:17</a></div></div>
 <div class="ttc" id="class_multiply_by_two_html"><div class="ttname"><a href="class_multiply_by_two.html">MultiplyByTwo</a></div><div class="ttdoc">Algorytm mnozy kazda liczbe razy 2. </div><div class="ttdef"><b>Definition:</b> <a href="multiplybytwo_8h_source.html#l00020">multiplybytwo.h:20</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_18e2455713f3e59eed32a10ee74a7b2b.html">Lab_1</a></li><li class="navelem"><a class="el" href="dir_c23c456dec35ff15482cfe451cf0a2f1.html">program</a></li><li class="navelem"><a class="el" href="dir_f389da02c83e9cd780cda41f7f780e80.html">src</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Wygenerowano Cz, 12 mar 2015 04:54:09 dla Laboratorium 1 programem
+    <li class="navelem"><a class="el" href="dir_463302e58bc74c0c35f534f40d40b0a3.html">program</a></li><li class="navelem"><a class="el" href="dir_630dc271d2c6bab74c75873b96c2431c.html">src</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
+    <li class="footer">Wygenerowano Wt, 17 mar 2015 00:16:03 dla Laboratorium 2 programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -1,0 +1,33 @@
+/**
+   \mainpage Laboratorium 1 
+
+   Aplikacja umozliwia uzytkownikowi na przeprowadzenia algorytmu mnozenia\n
+   przez dwa na dowolnej liczbie elementow.\n\n
+
+
+   <b>Najważniejsze cechy</b>\n
+   Możliwość włączenia opcji benchmarkującej służącej do sprawdzenia\n
+   ile czasu wykonywal sie dany algorytm lub seria tego samego algorytmu\n\n
+
+
+   <b>Argumenty wywołania</b>
+\verbatim
+-n liczba	Ilość liczb do odczytania/przerobienia przez algorytm
+-t liczba	Włącza opcje benchmarkującą dla seri powtorzen
+-o tekst	Wprowadza nazwe pliku do zapisu
+-i tekst	Wprowadza nazwe pliku do odczytu
+-g 		Generuje n liczb i zapisuje je do pliku (po wygenerowaniu konczy program)
+\endverbatim
+
+
+
+
+
+
+
+
+
+
+
+
+ */

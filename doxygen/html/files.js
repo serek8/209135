@@ -1,21 +1,28 @@
 var files =
 [
     [ "dataframe.cpp", "dataframe_8cpp.html", null ],
-    [ "dataframe.d", "dataframe_8d.html", null ],
     [ "dataframe.h", "dataframe_8h.html", [
       [ "DataFrame", "class_data_frame.html", "class_data_frame" ]
     ] ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
-    [ "main.d", "main_8d.html", null ],
     [ "multiplybytwo.cpp", "multiplybytwo_8cpp.html", null ],
-    [ "multiplybytwo.d", "multiplybytwo_8d.html", null ],
     [ "multiplybytwo.h", "multiplybytwo_8h.html", [
       [ "MultiplyByTwo", "class_multiply_by_two.html", "class_multiply_by_two" ]
     ] ],
     [ "mybenchmark.cpp", "mybenchmark_8cpp.html", null ],
-    [ "mybenchmark.d", "mybenchmark_8d.html", null ],
     [ "mybenchmark.h", "mybenchmark_8h.html", [
       [ "MyBenchmark", "class_my_benchmark.html", "class_my_benchmark" ]
+    ] ],
+    [ "mylist.cpp", "mylist_8cpp.html", null ],
+    [ "mylist.h", "mylist_8h.html", [
+      [ "MyList", "class_my_list.html", "class_my_list" ],
+      [ "MyListElement", "class_my_list_1_1_my_list_element.html", "class_my_list_1_1_my_list_element" ]
+    ] ],
+    [ "myqueue.h", "myqueue_8h.html", [
+      [ "MyQueue", "class_my_queue.html", "class_my_queue" ]
+    ] ],
+    [ "mystack.h", "mystack_8h.html", [
+      [ "MyStack", "class_my_stack.html", "class_my_stack" ]
     ] ],
     [ "numbergenerator.h", "numbergenerator_8h.html", [
       [ "NumberGenerator", "class_number_generator.html", "class_number_generator" ]

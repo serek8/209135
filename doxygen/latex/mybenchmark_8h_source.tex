@@ -13,8 +13,8 @@
 00009 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define MYBENCHMARK\_H\_}
 00010 \textcolor{preprocessor}{}
 00011 \textcolor{preprocessor}{#include <ctime>}
-00012 
-\hypertarget{mybenchmark_8h_source_l00020}{}\hyperlink{class_my_benchmark}{00020} \textcolor{keyword}{class }\hyperlink{class_my_benchmark}{MyBenchmark}
+00012 \textcolor{preprocessor}{#include "\hyperlink{dataframe_8h}{dataframe.h}"}
+\hypertarget{mybenchmark_8h_source_l00020}{}\hyperlink{class_my_benchmark}{00020} \textcolor{keyword}{class }\hyperlink{class_my_benchmark}{MyBenchmark} : \textcolor{keyword}{public} \hyperlink{class_data_frame}{DataFrame}
 00021 \{
 00022 \textcolor{keyword}{protected}:
 00031         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \hyperlink{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{executeAlgorithm}() = 0;
@@ -24,7 +24,7 @@
 00043         \textcolor{keywordtype}{double} \hyperlink{class_my_benchmark_a66576625ca37f8bc539c18ffceb69c9c}{testAlgorithm}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} repetition);
 00044 
 \hypertarget{mybenchmark_8h_source_l00049}{}\hyperlink{class_my_benchmark_a00de82c40680b41065eb402ac90f1736}{00049}         \textcolor{keyword}{virtual} \hyperlink{class_my_benchmark_a00de82c40680b41065eb402ac90f1736}{~MyBenchmark}() \{\};
-00050 
+00050         \textcolor{comment}{//using DataFrame::operator=;}
 00051 \};
 00052 
 00053 

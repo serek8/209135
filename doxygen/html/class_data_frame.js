@@ -1,5 +1,6 @@
 var class_data_frame =
 [
+    [ "DataFrame", "class_data_frame.html#a69a9dc47b7506b8062fd34aedacbf579", null ],
     [ "~DataFrame", "class_data_frame.html#a1360ddf00d717392fe1292bc1e1990ff", null ],
     [ "loadDataFromFile", "class_data_frame.html#a617ef21804065f31115c01527155f499", null ],
     [ "operator=", "class_data_frame.html#ab7dddb09f5ee9dc4a5783136dad01962", null ],
