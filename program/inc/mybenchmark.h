@@ -32,6 +32,10 @@ protected:
 
 
 public:
+
+	/// Czas stopera
+	static double timerValue;
+
 	/**
 	 * @brief Benchmarkuje algorytm główny
 	 *
@@ -43,11 +47,24 @@ public:
 	double testAlgorithm(unsigned int repetition);
 
 	/**
+	 *  @brief włączam stoper
+	 */
+	static void timerStart();
+
+	/**
+	 *  @brief wyłączam stoper
+	 *  @return Dlugosc dzialania stopera
+	 */
+	static double timerStop();
+
+	/**
 	 * @brief Usuwam obiekt test biorąc pod uwage jego prawdziwy typ
 	 *
 	 */
 	virtual ~MyBenchmark() {};
 	//using DataFrame::operator=;
+
+
 };
 
 

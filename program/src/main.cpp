@@ -10,6 +10,7 @@
 #include "multiplybytwo.h"
 #include "numbergenerator.h"
 #include "dataframe.h"
+#include "mybenchmark.h"
 #include "mystack.h"
 #include "myqueue.h"
 
@@ -55,60 +56,55 @@ int main(int argc, char *argv[])
 			return -1;
 		}
 	}
-	/**
-	 * Czesc testowa programu
-	 */
-	if(isTest)
-	{
-		MyQueue stack;
-		stack.push(1); stack.push(2); stack.push(3);
-		std::cout<<stack.pop();
-		std::cout<<stack.pop();
-		std::cout<<stack.pop();
-		return 0;
-	}
 
-
+	// Generator zostal wylaczony do tesow nad wydajnoscia listy
+	// poniewaz przy duzej ilosci liczb zjada za duzo RAM
 	/*
 	 * Sprawdzam czy program zostal uzyty tylko do wygenerowania liczb losowych
 	 * jesli tak to tworze te liczby zgodnie quantityNumber i zamykam program
 	 */
-	if(isSetNumberGenerator) {
+	/*if(isSetNumberGenerator) {
 	NumberGenerator generator;
+	std::cout<<"\n+ - - - - Tworzenie tablicy i generacja losowych liczb - - - +\n";
 	generator= podstawoweInfoIO;
+	MyBenchmark::timerStart();
 	generator.generateNumbers();
-	generator.saveDataToFile();
-	std::cout<<"\nZapisane.\n";
-	return 0;
+	std::cout<<"Czas alokowania tablicy:"<<MyBenchmark::timerStop()<<'\n';
+	podstawoweInfoIO = generator;
+
+
 	}
+*/
 
 
-	MultiplyByTwo algorytm_x2 ;
-	algorytm_x2= podstawoweInfoIO;
-
-	/*
-	 *  Wczytuje liczby z pliku do przeprowadzenia algorytmu
+	/**
+	 * Stos
 	 */
-	if(algorytm_x2.loadDataFromFile()) {
-		std::cout<<"\nNie istnieje tyle liczb w pliku !\nKoncze program";
-		return 1;
+	MyStack stack;
+	std::cout<<"\n+ - - - - - - - - Stos - - - - - - - - +\n";
+	MyBenchmark::timerStart();
+	for(unsigned int i=0; i<podstawoweInfoIO.sizeOfTable; i++)
+	{
+		stack.push(i);
 	}
+	std::cerr<<"Czas pushowania:"<<MyBenchmark::timerStop()<<'\n';
 
-	/*
-	 * Sprawdzam czy otrzymalem agrument o testowaniu algorytmu,
-	 * a nastepnie przeprawadzam test albo uruchamiam normalnie algorytm
+
+	/**
+	 * Kolejka
 	 */
-	if(quantityRepetitionOfAlgorithm){
-		std::cout<<"\nCzas algorytmu: "<<algorytm_x2.testAlgorithm(quantityRepetitionOfAlgorithm)<<'\n';
+	MyQueue queue;
+	std::cout<<"\n+ - - - - - - - - Kolejka - - - - - - - - +\n";
+	MyBenchmark::timerStart();
+	for(unsigned int i=0; i<podstawoweInfoIO.sizeOfTable; i++)
+	{
+		queue.push(i);
 	}
-	else {
-		algorytm_x2.executeAlgorithm();
-	}
+	std::cout<<"Czas pushowania:"<<MyBenchmark::timerStop()<<'\n';
 
-	/*
-	 * Zapisuje wyniki do pliku
-	 */
-	algorytm_x2.saveDataToFile();
 
+
+
+	std::cout<<'\n';
 	return 0;
 }

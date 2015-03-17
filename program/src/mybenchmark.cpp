@@ -31,4 +31,13 @@ double MyBenchmark::testAlgorithm(unsigned int repetition)
 	return (( (double)benchmarkTimeInTotal ) /CLOCKS_PER_SEC);
 }
 
+double MyBenchmark::timerValue=0;
+void MyBenchmark :: timerStart()
+{
+	MyBenchmark::timerValue = (( (double)clock() ) /CLOCKS_PER_SEC);
+}
 
+double MyBenchmark :: timerStop()
+{
+	return (( (double)clock() ) /CLOCKS_PER_SEC) - MyBenchmark::timerValue;
+}
