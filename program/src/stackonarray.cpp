@@ -20,12 +20,51 @@ void StackOnArray::pushByOneAlloc(int arg)
 {
 	if(index==0){
 		tableOfData[0] = arg;
+		++index; // teraz index = 1
+		return;
+	}
+	if(index==sizeOfTable) 
+	{
+		int *tmpTableOfData = new int[index+1];	//index pokazuje zawsze na nastepny element ktory jest jeszcze pusty
+		for(int i =0 ; i<index; i++)
+		{
+			tmpTableOfData[i] = tableOfData[i];
+		}
+	}
+	tmpTableOfData[index] = arg;
+	sizeOfTable = ++index ;
+	delete[] tableOfData;
+	tableOfData = tmpTableOfData;
+	//Po zakonczeniu tej funkcji index i sizeOfTable musza byc sobie rowne
+}
+
+void StackOnArray::pushByDoubleAlloc(int arg)
+{
+	if(index==0){
+		tableOfData[0] = arg;
 		++index;
 		return;
 	}
-	int *tmpTableOfData = new int[sizeOfTable+1];
-	for(int i =0 ; i<index)
-
-
-
+	
+	if(sizeOfTable==index)
+	{
+		
+		int *tmpTableOfData = new int[2*index];
+		sizeOfTable = 2*index;
+		for(int i =0 ; i<index; i++)
+		{
+			tmpTableOfData[i] = tableOfData[i];
+		}
+		delete[] tableOfData;
+		tableOfData = tmpTableOfData;
+	}
+	tmpTableOfData[index++] = arg; // powiekszam index po przypisaniu nowej wartosci
 }
+
+int StackOnArray::pop()
+{
+	int tmpNumber = tableOfData[--index];
+}
+
+
+
