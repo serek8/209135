@@ -11,14 +11,33 @@
 
 class StackOnArray
 {
+	/// rozmiar tablicy
 	int sizeOfTable;
+	/// index zawsze pokazuje na pozycje poprzedzającą ostatni dodany element
 	int index;
+	/// wskaznik do tablicy w ktorej przechowuje liczby
 	int *tableOfData;
 
 public:
+/**
+ * Konstruktor tablicy
+ */
 	StackOnArray();
+	/**
+	 * @brief Dodaje do stosu kolejny element
+	 * 
+	 * Gdy brakuje w tablicy stosu miejsca alokuje nową większą o jeden i kopiuje tam dane
+	 */
 	void pushByOneAlloc(int arg);
+	
+	/**
+	 *  @brief Dodaje do stosu kolejny element
+	 * Gdy brakuje w tablicy stosu miejsca alokuje nową większą o 2 razy i kopiuje tam dane
+	 */
 	void pushByDoubleAlloc(int arg);
+	/**
+	 *  @brief Pobiera jeden element ze stosu
+	 */
 	int pop();
 };
 
