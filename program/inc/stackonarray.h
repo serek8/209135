@@ -18,8 +18,8 @@ class StackOnArray
 public:
 	StackOnArray();
 	void pushByOneAlloc(int arg);
-
-
+	void pushByDoubleAlloc(int arg);
+	int pop();
 };
 
 
