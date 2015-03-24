@@ -1,6 +1,7 @@
 var NAVTREE =
 [
-  [ "Laboratorium 2", "index.html", [
+  [ "Laboratorium 3", "index.html", [
+    [ "Laboratorium 2", "index.html", null ],
     [ "Klasy", null, [
       [ "Lista klas", "annotated.html", "annotated" ],
       [ "Indeks klas", "classes.html", null ],

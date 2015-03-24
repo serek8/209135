@@ -10,5 +10,6 @@ var hierarchy =
       [ "MyQueue", "class_my_queue.html", null ],
       [ "MyStack", "class_my_stack.html", null ]
     ] ],
-    [ "MyList::MyListElement", "class_my_list_1_1_my_list_element.html", null ]
+    [ "MyList::MyListElement", "class_my_list_1_1_my_list_element.html", null ],
+    [ "StackOnArray", "class_stack_on_array.html", null ]
 ];

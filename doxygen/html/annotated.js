@@ -6,5 +6,6 @@ var annotated =
     [ "MyList", "class_my_list.html", "class_my_list" ],
     [ "MyQueue", "class_my_queue.html", "class_my_queue" ],
     [ "MyStack", "class_my_stack.html", "class_my_stack" ],
-    [ "NumberGenerator", "class_number_generator.html", "class_number_generator" ]
+    [ "NumberGenerator", "class_number_generator.html", "class_number_generator" ],
+    [ "StackOnArray", "class_stack_on_array.html", "class_stack_on_array" ]
 ];

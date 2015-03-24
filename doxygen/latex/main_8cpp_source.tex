@@ -14,104 +14,108 @@
 00010 \textcolor{preprocessor}{#include "\hyperlink{multiplybytwo_8h}{multiplybytwo.h}"}
 00011 \textcolor{preprocessor}{#include "\hyperlink{numbergenerator_8h}{numbergenerator.h}"}
 00012 \textcolor{preprocessor}{#include "\hyperlink{dataframe_8h}{dataframe.h}"}
-00013 \textcolor{preprocessor}{#include "\hyperlink{mystack_8h}{mystack.h}"}
-00014 \textcolor{preprocessor}{#include "\hyperlink{myqueue_8h}{myqueue.h}"}
-00015 
-00016 
-\hypertarget{main_8cpp_source_l00017}{}\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00017} \textcolor{keywordtype}{int} \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])
-00018 \{
-00019         \hyperlink{class_data_frame}{DataFrame} podstawoweInfoIO;
-00020         \textcolor{keywordtype}{int} quantityRepetitionOfAlgorithm = 0;  
-00021 
-00022         \textcolor{keywordtype}{int} opt;        
-00023         \textcolor{keywordtype}{bool} isSetNumberGenerator=\textcolor{keyword}{false}; 
-00024         \textcolor{keywordtype}{bool} isTest=\textcolor{keyword}{false};
-00025 
-00026         \textcolor{keywordflow}{while} ((opt = getopt(argc, argv, \textcolor{stringliteral}{"n:t:o:i:gx"})) != -1) \{
-00027                 \textcolor{keywordflow}{switch}(opt)\{
-00028                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'n'}:       \textcolor{comment}{// ilosc liczb do przetworzenia}
-00029                         podstawoweInfoIO.\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable} = atoi(optarg);
-00030                         \textcolor{keywordflow}{break};
-00031 
-00032                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'}:       \textcolor{comment}{// wlacza benchmark i przyjmuje liczbe powtorzen dla benchmarka}
-00033                         quantityRepetitionOfAlgorithm = atoi(optarg);
-00034                         \textcolor{keywordflow}{break};
-00035 
-00036                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'o'}:
-00037                         podstawoweInfoIO.\hyperlink{class_data_frame_a824a73f019aec71281837abafd95a510}{outputFileName} = optarg;
-00038                         \textcolor{keywordflow}{break};
-00039 
-00040                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'i'}:
-00041                         podstawoweInfoIO.\hyperlink{class_data_frame_a90041bfdf474b0d7ce39bc3dbbb55aa9}{inputFileName}=optarg;
-00042                         \textcolor{keywordflow}{break};
-00043 
-00044                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'g'}:       \textcolor{comment}{// wlacza generator liczb, po zakonczeniu generowania konczy program}
-00045                         isSetNumberGenerator=\textcolor{keyword}{true};
-00046                         \textcolor{keywordflow}{break};
-00047 
-00048                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'x'}:       \textcolor{comment}{// miejsce dla programisty dla sprawdzania kodu}
-00049                         isTest =1;
-00050                         \textcolor{keywordflow}{break};
-00051 
-00052                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'?'}:
-00053                 \textcolor{keywordflow}{default}:
-00054                         std::cout<<\textcolor{stringliteral}{"\(\backslash\)nPodano zly argument"};
-00055                         \textcolor{keywordflow}{return} -1;
-00056                 \}
-00057         \}
-00061         \textcolor{keywordflow}{if}(isTest)
-00062         \{
-00063                 \hyperlink{class_my_queue}{MyQueue} stack;
-00064                 stack.\hyperlink{class_my_queue_abc623d6dea3f8ea4c364d4e755914b89}{push}(1); stack.\hyperlink{class_my_queue_abc623d6dea3f8ea4c364d4e755914b89}{push}(2); stack.\hyperlink{class_my_queue_abc623d6dea3f8ea4c364d4e755914b89}{push}(3);
-00065                 std::cout<<stack.\hyperlink{class_my_queue_a1515805489e2e6b4c955f8e1e62a0650}{pop}();
-00066                 std::cout<<stack.\hyperlink{class_my_queue_a1515805489e2e6b4c955f8e1e62a0650}{pop}();
-00067                 std::cout<<stack.\hyperlink{class_my_queue_a1515805489e2e6b4c955f8e1e62a0650}{pop}();
-00068                 \textcolor{keywordflow}{return} 0;
-00069         \}
-00070 
-00071 
-00072         \textcolor{comment}{/*}
-00073 \textcolor{comment}{         * Sprawdzam czy program zostal uzyty tylko do wygenerowania liczb losowych}
-00074 \textcolor{comment}{         * jesli tak to tworze te liczby zgodnie quantityNumber i zamykam program}
-00075 \textcolor{comment}{         */}
-00076         \textcolor{keywordflow}{if}(isSetNumberGenerator) \{
-00077         \hyperlink{class_number_generator}{NumberGenerator} generator;
-00078         generator= podstawoweInfoIO;
-00079         generator.\hyperlink{class_number_generator_afe038fce2f1a2c90847fd483beea0494}{generateNumbers}();
-00080         generator.\hyperlink{class_data_frame_a03cc3ac606fdb8a2dbcaea5d429cf208}{saveDataToFile}();
-00081         std::cout<<\textcolor{stringliteral}{"\(\backslash\)nZapisane.\(\backslash\)n"};
-00082         \textcolor{keywordflow}{return} 0;
-00083         \}
-00084 
-00085 
-00086         \hyperlink{class_multiply_by_two}{MultiplyByTwo} algorytm\_x2 ;
-00087         algorytm\_x2= podstawoweInfoIO;
-00088 
-00089         \textcolor{comment}{/*}
-00090 \textcolor{comment}{         *  Wczytuje liczby z pliku do przeprowadzenia algorytmu}
-00091 \textcolor{comment}{         */}
-00092         \textcolor{keywordflow}{if}(algorytm\_x2.\hyperlink{class_data_frame_a617ef21804065f31115c01527155f499}{loadDataFromFile}()) \{
-00093                 std::cout<<\textcolor{stringliteral}{"\(\backslash\)nNie istnieje tyle liczb w pliku !\(\backslash\)nKoncze program"};
-00094                 \textcolor{keywordflow}{return} 1;
-00095         \}
-00096 
-00097         \textcolor{comment}{/*}
-00098 \textcolor{comment}{         * Sprawdzam czy otrzymalem agrument o testowaniu algorytmu,}
-00099 \textcolor{comment}{         * a nastepnie przeprawadzam test albo uruchamiam normalnie algorytm}
-00100 \textcolor{comment}{         */}
-00101         \textcolor{keywordflow}{if}(quantityRepetitionOfAlgorithm)\{
-00102                 std::cout<<\textcolor{stringliteral}{"\(\backslash\)nCzas algorytmu: "}<<algorytm\_x2.\hyperlink{class_my_benchmark_a66576625ca37f8bc539c18ffceb69c9c}{testAlgorithm}(
-      quantityRepetitionOfAlgorithm)<<\textcolor{charliteral}{'\(\backslash\)n'};
-00103         \}
-00104         \textcolor{keywordflow}{else} \{
-00105                 algorytm\_x2.\hyperlink{class_multiply_by_two_aad2080a1fdab088814170e529a14db1e}{executeAlgorithm}();
-00106         \}
-00107 
-00108         \textcolor{comment}{/*}
-00109 \textcolor{comment}{         * Zapisuje wyniki do pliku}
-00110 \textcolor{comment}{         */}
-00111         algorytm\_x2.\hyperlink{class_data_frame_a03cc3ac606fdb8a2dbcaea5d429cf208}{saveDataToFile}();
-00112 
-00113         \textcolor{keywordflow}{return} 0;
-00114 \}
+00013 \textcolor{preprocessor}{#include "\hyperlink{mybenchmark_8h}{mybenchmark.h}"}
+00014 \textcolor{preprocessor}{#include "\hyperlink{mystack_8h}{mystack.h}"}
+00015 \textcolor{preprocessor}{#include "\hyperlink{myqueue_8h}{myqueue.h}"}
+00016 \textcolor{preprocessor}{#include "\hyperlink{stackonarray_8h}{stackonarray.h}"}
+00017 
+00018 
+\hypertarget{main_8cpp_source_l00019}{}\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00019} \textcolor{keywordtype}{int} \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])
+00020 \{
+00021         \hyperlink{class_data_frame}{DataFrame} podstawoweInfoIO;
+00022         \textcolor{keywordtype}{int} quantityRepetitionOfAlgorithm = 0;  
+00023 
+00024         \textcolor{keywordtype}{int} opt;        
+00025         \textcolor{keywordtype}{bool} isSetNumberGenerator=\textcolor{keyword}{false}; 
+00026         \textcolor{keywordtype}{bool} isTest=\textcolor{keyword}{false};
+00027 
+00028         \textcolor{keywordflow}{while} ((opt = getopt(argc, argv, \textcolor{stringliteral}{"n:t:o:i:gx"})) != -1) \{
+00029                 \textcolor{keywordflow}{switch}(opt)\{
+00030                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'n'}:       \textcolor{comment}{// ilosc liczb do przetworzenia}
+00031                         podstawoweInfoIO.\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable} = atoi(optarg);
+00032                         \textcolor{keywordflow}{break};
+00033 
+00034                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'}:       \textcolor{comment}{// wlacza benchmark i przyjmuje liczbe powtorzen dla benchmarka}
+00035                         quantityRepetitionOfAlgorithm = atoi(optarg);
+00036                         \textcolor{keywordflow}{break};
+00037 
+00038                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'o'}:
+00039                         podstawoweInfoIO.\hyperlink{class_data_frame_a824a73f019aec71281837abafd95a510}{outputFileName} = optarg;
+00040                         \textcolor{keywordflow}{break};
+00041 
+00042                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'i'}:
+00043                         podstawoweInfoIO.\hyperlink{class_data_frame_a90041bfdf474b0d7ce39bc3dbbb55aa9}{inputFileName}=optarg;
+00044                         \textcolor{keywordflow}{break};
+00045 
+00046                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'g'}:       \textcolor{comment}{// wlacza generator liczb, po zakonczeniu generowania konczy program}
+00047                         isSetNumberGenerator=\textcolor{keyword}{true};
+00048                         \textcolor{keywordflow}{break};
+00049 
+00050                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'x'}:       \textcolor{comment}{// miejsce dla programisty dla sprawdzania kodu}
+00051                         isTest =1;
+00052                         \textcolor{keywordflow}{break};
+00053 
+00054                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'?'}:
+00055                 \textcolor{keywordflow}{default}:
+00056                         std::cout<<\textcolor{stringliteral}{"\(\backslash\)nPodano zly argument"};
+00057                         \textcolor{keywordflow}{return} -1;
+00058                 \}
+00059         \}
+00060 
+00061         \textcolor{comment}{// Generator zostal wylaczony do tesow nad wydajnoscia listy}
+00062         \textcolor{comment}{// poniewaz przy duzej ilosci liczb zjada za duzo RAM}
+00063         \textcolor{comment}{/*}
+00064 \textcolor{comment}{         * Sprawdzam czy program zostal uzyty tylko do wygenerowania liczb losowych}
+00065 \textcolor{comment}{         * jesli tak to tworze te liczby zgodnie quantityNumber i zamykam program}
+00066 \textcolor{comment}{         */}
+00067         \textcolor{comment}{/*if(isSetNumberGenerator) \{}
+00068 \textcolor{comment}{        NumberGenerator generator;}
+00069 \textcolor{comment}{        std::cout<<"\(\backslash\)n+ - - - - Tworzenie tablicy i generacja losowych liczb - - - +\(\backslash\)n";}
+00070 \textcolor{comment}{        generator= podstawoweInfoIO;}
+00071 \textcolor{comment}{        MyBenchmark::timerStart();}
+00072 \textcolor{comment}{        generator.generateNumbers();}
+00073 \textcolor{comment}{        std::cout<<"Czas alokowania tablicy:"<<MyBenchmark::timerStop()<<'\(\backslash\)n';}
+00074 \textcolor{comment}{        podstawoweInfoIO = generator;}
+00075 \textcolor{comment}{}
+00076 \textcolor{comment}{}
+00077 \textcolor{comment}{        \}}
+00078 \textcolor{comment}{*/}
+00079 
+00080         \hyperlink{class_stack_on_array}{StackOnArray} *arraystack = \textcolor{keyword}{new} \hyperlink{class_stack_on_array}{StackOnArray}();
+00081         std::cout<<\textcolor{stringliteral}{"\(\backslash\)n+ - - - - - Stos (tablica alokowanie o jeden)- - - - - - +\(\backslash\)n"};
+00082         \hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{MyBenchmark::timerStart}();
+00083                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<podstawoweInfoIO.\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable}; i++)
+00084                 \{
+00085                         (*arraystack).pushByOneAlloc(i);
+00086                 \}
+00087         std::cerr<<\textcolor{stringliteral}{"Czas pushowania:"}<<\hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{MyBenchmark::timerStop}()<<\textcolor{charliteral}{'\(\backslash\)n'};
+00088         \textcolor{keyword}{delete} arraystack;
+00089 
+00090         \textcolor{comment}{/* kolejny test*/}
+00091 
+00092         arraystack  = \textcolor{keyword}{new} \hyperlink{class_stack_on_array}{StackOnArray}();
+00093         std::cout<<\textcolor{stringliteral}{"\(\backslash\)n+ - - - - - Stos (tablica alokowanie o jeden)- - - - - - +\(\backslash\)n"};
+00094         \hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{MyBenchmark::timerStart}();
+00095                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i< podstawoweInfoIO.\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable} ; i++)
+00096                 \{
+00097                         (*arraystack).pushByDoubleAlloc(i);
+00098                 \}
+00099         std::cerr<<\textcolor{stringliteral}{"Czas pushowania:"}<<\hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{MyBenchmark::timerStop}()<<\textcolor{charliteral}{'\(\backslash\)n'};
+00100         \textcolor{keyword}{delete} arraystack;
+00101 
+00105         \hyperlink{class_my_stack}{MyStack} stack;
+00106         std::cout<<\textcolor{stringliteral}{"\(\backslash\)n+ - - - - - - - - Stos (lista)- - - - - - - - +\(\backslash\)n"};
+00107         \hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{MyBenchmark::timerStart}();
+00108         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<podstawoweInfoIO.\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable}; i++)
+00109         \{
+00110                 stack.\hyperlink{class_my_stack_a481713bcbaecb7509a8903911db89331}{push}(i);
+00111         \}
+00112         std::cerr<<\textcolor{stringliteral}{"Czas pushowania:"}<<\hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{MyBenchmark::timerStop}()<<\textcolor{charliteral}{'\(\backslash\)n'};
+00113 
+00114 
+00115 
+00116 
+00117         std::cout<<\textcolor{charliteral}{'\(\backslash\)n'};
+00118         \textcolor{keywordflow}{return} 0;
+00119 \}
 \end{DoxyCode}

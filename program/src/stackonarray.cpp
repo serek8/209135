@@ -5,7 +5,7 @@
  *      Author: serek8
  */
 
-
+#include "stackonarray.h"
 
 
 StackOnArray::StackOnArray()
@@ -30,11 +30,11 @@ void StackOnArray::pushByOneAlloc(int arg)
 		{
 			tmpTableOfData[i] = tableOfData[i];
 		}
+		delete[] tableOfData;
+		tableOfData = tmpTableOfData;
 	}
-	tmpTableOfData[index] = arg;
+	tableOfData[index] = arg;
 	sizeOfTable = ++index ;
-	delete[] tableOfData;
-	tableOfData = tmpTableOfData;
 	//Po zakonczeniu tej funkcji index i sizeOfTable musza byc sobie rowne
 }
 
@@ -58,13 +58,16 @@ void StackOnArray::pushByDoubleAlloc(int arg)
 		delete[] tableOfData;
 		tableOfData = tmpTableOfData;
 	}
-	tmpTableOfData[index++] = arg; // powiekszam index po przypisaniu nowej wartosci
+	tableOfData[index++] = arg; // powiekszam index po przypisaniu nowej wartosci
 }
 
 int StackOnArray::pop()
 {
-	int tmpNumber = tableOfData[--index];
+	return tableOfData[--index];
 }
 
-
+StackOnArray:: ~StackOnArray()
+{
+delete [] 	tableOfData;
+}
 

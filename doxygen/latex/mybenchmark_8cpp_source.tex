@@ -34,5 +34,14 @@
 00031         \textcolor{keywordflow}{return} (( (\textcolor{keywordtype}{double})benchmarkTimeInTotal ) /CLOCKS\_PER\_SEC);
 00032 \}
 00033 
-00034 
+00034 \textcolor{keywordtype}{double} \hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{MyBenchmark::timerValue}=0;
+\hypertarget{mybenchmark_8cpp_source_l00035}{}\hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{00035} \textcolor{keywordtype}{void} \hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{MyBenchmark :: timerStart}()
+00036 \{
+00037         \hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{MyBenchmark::timerValue} = (( (double)clock() ) /CLOCKS\_PER\_SEC);
+00038 \}
+00039 
+\hypertarget{mybenchmark_8cpp_source_l00040}{}\hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{00040} \textcolor{keywordtype}{double} \hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{MyBenchmark :: timerStop}()
+00041 \{
+00042         \textcolor{keywordflow}{return} (( (\textcolor{keywordtype}{double})clock() ) /CLOCKS\_PER\_SEC) - \hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{MyBenchmark::timerValue};
+00043 \}
 \end{DoxyCode}

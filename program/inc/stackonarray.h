@@ -8,9 +8,14 @@
 #ifndef STACKONARRAY_H_
 #define STACKONARRAY_H_
 
-
+/**
+ * Klasa przedstawia stos stworzony na tablicy dynamicznej.
+ * Powiekszanie tablicy przeprowadza sie albo o jeden element albo o polowe dotychczasowego rozmiatu
+ *
+ */
 class StackOnArray
 {
+public:
 	/// rozmiar tablicy
 	int sizeOfTable;
 	/// index zawsze pokazuje na pozycje poprzedzającą ostatni dodany element
@@ -39,6 +44,7 @@ public:
 	 *  @brief Pobiera jeden element ze stosu
 	 */
 	int pop();
+	~StackOnArray();
 };
 
 

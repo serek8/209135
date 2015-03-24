@@ -7,21 +7,14 @@
 \selectlanguage{polish}
 \usepackage{graphicx}
 \begin{document}
-\title{Laboratorium 2}
+\title{Laboratorium 3}
 \author{Jan Seredyński}
 \date{\today}
 \maketitle
 
 \section{Wstęp}
-Zadaniem laboratorium było opracowanie listy, stosu oraz kolejki, które dysponują funkcjami pop(), push(x), size() do ich sterowania.
+Zadaniem laboratorium jest pomiar czasu wykonania operacji wypelnienia stosu. Do wykonania analizy zstosowałem trzy implementacje:dwie tablicowe i jedna oparta na liście.
 
-\section{Sposób wykonania}
-Do wykonania zadania zastosowałem liste dwukierunkową z metodami, które pozwalają na dodawanie oraz pobieranie danych zarówno z początku jak i końca listy. Nastepnie na bazie listy dziedziczyły klasy stosu i kolejki, które w dwoich metodach pop i push korzystaja z odpowiednich metod listy.
-
-Wykonanlem przykładowa kolejke FIFO. Każda zmiana rodzaju kolejki będzie prosta dzięki implementacji listy dwukierunkowej. Dlatego nie tworzylem różnych rodzai kolejek.
-
-\section{Funkcje dodatkowe}
-Lista jest dwukierunkowa, po której dziedziczą stos i kolejka.
 
 \section{Schematy odpowiednich struktur}
 
@@ -34,10 +27,17 @@ Stos, kolejka
 \includegraphics[width=3in]{stackqueue.png} 
 \newpage
 
-\section{Wydajność odpowiednich struktur}
-\includegraphics[width=6.5in]{wykres_stos_kolejka.png} \\\
-Stos - kolor czerwony\\\
-Kolejka - kolor niebieski
+\section{Wydajność stosu na tablicy}
+Podczas tej próby stos jest opraty na tablicy dynamicznej, która przy każdym pushowaniu twory nową tablice większą o 1, a następnie kopiuje pozostałe elementy do nowoutworznej tablicy, a na końcu wpisuje nowy element.
+\includegraphics[width=6.5in]{3stos_dyn_o_1.png}
+Na podstawie wykresu można stwierdzić, że ta implementacja ma przyrost geometryczny - kwadratowy.
+\section{Wydajność stosu na tablicy i liscie}
+Podczas tej próby stos jest opraty na tablicy dynamicznej, która przy każdym pushowaniu sprawdza czy tablica pomieśći nowy element, a gdy jest potrzeba zaalokowania nowej pamięci tworzy nową tablice większą o 100\%, a następnie kopiuje pozostałe elementy do nowoutworznej tablicy, a na końcu pushuje nowy element.\\\
+Na tym samym wykresie została również złożoność obliczeniowa przy implementacji listy.
+\includegraphics[width=6.5in]{3stos_dyn_o_200ilista.png}
+Na podstawie wykresu można stwierdzić, że obie te implementacje mają przyrost liniowy
 \section{Podsumowanie}
-Wszystkie zadania do laboratorium zostały wykonane poprawnie oraz zostały wprowadzone pewne dodatki jak np. lista dwukierunkowa.
+Pomimo dobrze opracowanej metody pomiarowej czasu, na wykresach widać zakłócenia spowodowane pracą programów w tle.///
+
+ 
 \end{document}

@@ -26,5 +26,9 @@ var files =
     ] ],
     [ "numbergenerator.h", "numbergenerator_8h.html", [
       [ "NumberGenerator", "class_number_generator.html", "class_number_generator" ]
+    ] ],
+    [ "stackonarray.cpp", "stackonarray_8cpp.html", null ],
+    [ "stackonarray.h", "stackonarray_8h.html", [
+      [ "StackOnArray", "class_stack_on_array.html", "class_stack_on_array" ]
     ] ]
 ];

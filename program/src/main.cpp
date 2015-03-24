@@ -13,6 +13,7 @@
 #include "mybenchmark.h"
 #include "mystack.h"
 #include "myqueue.h"
+#include "stackonarray.h"
 
 
 int main(int argc, char *argv[])
@@ -76,31 +77,39 @@ int main(int argc, char *argv[])
 	}
 */
 
+	StackOnArray *arraystack = new StackOnArray();
+	std::cout<<"\n+ - - - - - Stos (tablica alokowanie o jeden)- - - - - - +\n";
+	MyBenchmark::timerStart();
+		for(unsigned int i=0; i<podstawoweInfoIO.sizeOfTable; i++)
+		{
+			(*arraystack).pushByOneAlloc(i);
+		}
+	std::cout<<"Czas pushowania:"<<MyBenchmark::timerStop()<<'\n';
+	delete arraystack;
+
+	/* kolejny test*/
+
+	arraystack  = new StackOnArray();
+	std::cout<<"\n+ - - - - - Stos (tablica alokowanie o 200%)- - - - - - +\n";
+	MyBenchmark::timerStart();
+		for(unsigned int i=0; i< podstawoweInfoIO.sizeOfTable ; i++)
+		{
+			(*arraystack).pushByDoubleAlloc(i);
+		}
+	std::cout<<"Czas pushowania:"<<MyBenchmark::timerStop()<<'\n';
+	delete arraystack;
 
 	/**
 	 * Stos
 	 */
 	MyStack stack;
-	std::cout<<"\n+ - - - - - - - - Stos - - - - - - - - +\n";
+	std::cout<<"\n+ - - - - - - - - Stos (lista)- - - - - - - - +\n";
 	MyBenchmark::timerStart();
 	for(unsigned int i=0; i<podstawoweInfoIO.sizeOfTable; i++)
 	{
 		stack.push(i);
 	}
 	std::cerr<<"Czas pushowania:"<<MyBenchmark::timerStop()<<'\n';
-
-
-	/**
-	 * Kolejka
-	 */
-	MyQueue queue;
-	std::cout<<"\n+ - - - - - - - - Kolejka - - - - - - - - +\n";
-	MyBenchmark::timerStart();
-	for(unsigned int i=0; i<podstawoweInfoIO.sizeOfTable; i++)
-	{
-		queue.push(i);
-	}
-	std::cout<<"Czas pushowania:"<<MyBenchmark::timerStop()<<'\n';
 
 
 
