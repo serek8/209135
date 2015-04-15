@@ -6,6 +6,8 @@ var hierarchy =
       ] ],
       [ "NumberGenerator", "class_number_generator.html", null ]
     ] ],
+    [ "Dictionary", "class_dictionary.html", null ],
+    [ "Hashowanie", "class_hashowanie.html", null ],
     [ "MyList", "class_my_list.html", [
       [ "MyQueue", "class_my_queue.html", null ],
       [ "MyStack", "class_my_stack.html", null ]

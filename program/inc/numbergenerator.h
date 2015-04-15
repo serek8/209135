@@ -12,7 +12,10 @@
 #include <time.h>       /* time */
 #include <iostream>
 #include "dataframe.h"
+#include <string>
 
+#define MAX_HEX_ASCII_KOD 127
+#define ROZMIAR_STRINGU 20
 /**
  * @brief Klasa generujaca losowe liczby
  *
@@ -25,20 +28,31 @@ class NumberGenerator : public DataFrame
 public:
 /**
  * @brief Generuje losowe liczby
- *
  * Generuje losowe liczby na podstawie czasu maszyny
+ *
+ * @param zakres Zakres liczb do wygenerowania
  */
-void generateNumbers()
+void generateNumbers(int zakres=10000000)
 {
 	time_t randomTime = clock();
 	this->tableOfData = new int[sizeOfTable];
 	for(unsigned int i=0; i<sizeOfTable ; i++)
 	{
 		srand (randomTime = clock());
-		this->tableOfData[i] = rand()%100;
+		this->tableOfData[i] = rand()%zakres;
 		randomTime = clock();
 	}
 }
+
+/**
+ * @brief Generuje losowe stringi
+ *
+ * @param ileStringow Ilosc stringow do stworzenia
+ * Generuje losowe stringi na podstawie czasu maszyny
+ */
+static std::string *generateStrings(int ileStringow);
+
+
 
 using DataFrame::operator=;
  ~NumberGenerator() {}

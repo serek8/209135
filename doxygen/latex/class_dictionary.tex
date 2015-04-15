@@ -1,0 +1,191 @@
+\hypertarget{class_dictionary}{\subsection{Dokumentacja klasy Dictionary}
+\label{class_dictionary}\index{Dictionary@{Dictionary}}
+}
+
+
+Klasa tworzy tablicy asocjacyjną -\/ słownik.  
+
+
+
+
+{\ttfamily \#include $<$dictionary.\-h$>$}
+
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_dictionary_aee8d612bc9d323c38faba045ba384b8b}{Dictionary} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor tworzacy kolumne\-List Tworze 367 miejsc bo mam tylko trzy pierwsze znaki uzywane przy hashowaniu. \end{DoxyCompactList}\item 
+int \& \hyperlink{class_dictionary_a5a82ede9a412aa8a9b7bee9b2a423427}{operator\mbox{[}$\,$\mbox{]}} (string str)
+\begin{DoxyCompactList}\small\item\em Operator pozwalajacy odnosic sie do slownika Gdy element o danym kluczu nie istnieje, a użytkownik próbuje sie do niego odwołać to dany element jest tworzony i dodawany do tablicy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Statyczne metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{class_dictionary_a53981ac20e3ab2b7544d6f6f3111cdf4}{str2int} (string str)
+\begin{DoxyCompactList}\small\item\em Funkcja hashująca trzy pierwsze znaki. \end{DoxyCompactList}\item 
+static int \hyperlink{class_dictionary_a7dd06f1225844c860a73d98b8a814da7}{str2int\-All} (string str)
+\begin{DoxyCompactList}\small\item\em Funkcja hashująca wszystkie znaki. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_my_list}{My\-List} $\ast$ \hyperlink{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}{kolumna\-List}
+\begin{DoxyCompactList}\small\item\em Tablica list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Opis szczegółowy}
+Tworzy tablice asocjacyjną, na podstawie kluczba podanego przez operator \mbox{[}\mbox{]} Gdy element o danym kluczu nie istnieje, a użytkownik próbuje sie do niego odwołać to dany element jest tworzony i dodawany do tablicy 
+
+Definicja w linii \hyperlink{dictionary_8h_source_l00025}{25} pliku \hyperlink{dictionary_8h_source}{dictionary.\-h}.
+
+
+
+\subsubsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_dictionary_aee8d612bc9d323c38faba045ba384b8b}{\index{Dictionary@{Dictionary}!Dictionary@{Dictionary}}
+\index{Dictionary@{Dictionary}!Dictionary@{Dictionary}}
+\paragraph[{Dictionary}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary\-::\-Dictionary (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_dictionary_aee8d612bc9d323c38faba045ba384b8b}
+
+
+Definicja w linii \hyperlink{dictionary_8h_source_l00037}{37} pliku \hyperlink{dictionary_8h_source}{dictionary.\-h}.
+
+
+
+Odwołuje się do \hyperlink{dictionary_8h_source_l00010}{L\-I\-C\-Z\-B\-A\-\_\-\-Z\-N\-A\-K\-O\-W\-\_\-\-D\-O\-\_\-\-H\-A\-S\-H\-U} i \hyperlink{numbergenerator_8h_source_l00017}{M\-A\-X\-\_\-\-H\-E\-X\-\_\-\-A\-S\-C\-I\-I\-\_\-\-K\-O\-D}.
+
+
+\begin{DoxyCode}
+00037 \{       \hyperlink{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}{kolumnaList} = \textcolor{keyword}{new} \hyperlink{class_my_list}{MyList}[ \hyperlink{dictionary_8h_a562499e66e3ed9cc37111ac1ddafa1eb}{LICZBA\_ZNAKOW\_DO\_HASHU} * 
+      \hyperlink{numbergenerator_8h_ad234b171c744b5f476c1685da37bb7ca}{MAX\_HEX\_ASCII\_KOD}+1]; \}
+\end{DoxyCode}
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_dictionary_a5a82ede9a412aa8a9b7bee9b2a423427}{\index{Dictionary@{Dictionary}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!Dictionary@{Dictionary}}
+\paragraph[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}int \& Dictionary\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{string}]{str}
+\end{DoxyParamCaption}
+)}}\label{class_dictionary_a5a82ede9a412aa8a9b7bee9b2a423427}
+
+\begin{DoxyParams}{Parametry}
+{\em str} & Klucz elementu do odwolania \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \hyperlink{dictionary_8cpp_source_l00011}{11} pliku \hyperlink{dictionary_8cpp_source}{dictionary.\-cpp}.
+
+
+
+Odwołuje się do \hyperlink{dictionary_8h_source_l00030}{kolumna\-List}, \hyperlink{mylist_8h_source_l00030}{My\-List\-::\-My\-List\-Element\-::nazwa}, \hyperlink{mylist_8h_source_l00029}{My\-List\-::\-My\-List\-Element\-::number}, \hyperlink{mylist_8cpp_source_l00044}{My\-List\-::pop\-\_\-back()}, \hyperlink{mylist_8cpp_source_l00053}{My\-List\-::pop\-\_\-front()}, \hyperlink{mylist_8cpp_source_l00034}{My\-List\-::push\-\_\-front()}, \hyperlink{mylist_8cpp_source_l00079}{My\-List\-::show\-\_\-front()}, \hyperlink{mylist_8cpp_source_l00086}{My\-List\-::size()} i \hyperlink{dictionary_8cpp_source_l00051}{str2int()}.
+
+
+\begin{DoxyCode}
+00012         \{
+00013                 \hyperlink{class_my_list}{MyList} tmpList;
+00014                 \hyperlink{class_my_list_1_1_my_list_element}{MyList::MyListElement} tmpListElement;
+00015                 \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = \hyperlink{class_dictionary_a53981ac20e3ab2b7544d6f6f3111cdf4}{str2int}(str);
+00016                 \textcolor{comment}{// jezeli sa elementy na liscie}
+00017                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nSize listy na wejsciu do funkcji []: "<<kolumnaList[id].size();}
+00018                 \textcolor{keywordflow}{while}(\hyperlink{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}{kolumnaList}[\textcolor{keywordtype}{id}].size())
+00019                 \{
+00020                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nSize listy na wejsciu do while I []: "<<kolumnaList[id].size();}
+00021                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nhash id:"<<id;}
+00022                 tmpListElement = \hyperlink{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}{kolumnaList}[id].\hyperlink{class_my_list_a84369accd705913f85b770770f06767a}{pop\_front}();
+00023                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nWyjalem klucz z liczba: "<<tmpListElement.number;}
+00024                         \textcolor{keywordflow}{if}( !(tmpListElement.\hyperlink{class_my_list_1_1_my_list_element_af610aeae835150be1a12d538e67a579c}{nazwa}.compare(str)) ) \textcolor{comment}{// znalazlem taki sam klucz w
+       slowniku}
+00025                                 \{
+00026                                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nZnalazlem takie same klucze";}
+00027                                         \textcolor{keywordflow}{while}(tmpList.\hyperlink{class_my_list_a6d21c8bfbd9cd31efdba81ba488f43f2}{size}())
+00028                                         \{
+00029                                                 \hyperlink{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}{kolumnaList}[id].
+      \hyperlink{class_my_list_ac703cd9be1c465722e683dbdcececa6b}{push\_front}(tmpList.\hyperlink{class_my_list_afc006104d8156154ad3849d0e4cc6109}{pop\_back}());
+00030                                         \}
+00031                                         \hyperlink{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}{kolumnaList}[id].\hyperlink{class_my_list_ac703cd9be1c465722e683dbdcececa6b}{push\_front}(tmpListElement);
+00032                                         \textcolor{keywordflow}{return} (\hyperlink{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}{kolumnaList}[\textcolor{keywordtype}{id}]).show\_front().number;
+00033                                 \}
+00034                         \textcolor{keywordflow}{else}
+00035                         \{
+00036                                 tmpList.\hyperlink{class_my_list_ac703cd9be1c465722e683dbdcececa6b}{push\_front}(tmpListElement);
+00037                         \}
+00038                 \}
+00039                 \textcolor{comment}{//Czyli nie znalazlem takiego elementu, to go tworze}
+00040                 tmpListElement.\hyperlink{class_my_list_1_1_my_list_element_acd6dbb6a8791f034f94678d46395b366}{number}=0;
+00041                 tmpListElement.\hyperlink{class_my_list_1_1_my_list_element_af610aeae835150be1a12d538e67a579c}{nazwa}=str;
+00042                 tmpList.\hyperlink{class_my_list_ac703cd9be1c465722e683dbdcececa6b}{push\_front}(tmpListElement);
+00043                 \hyperlink{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}{kolumnaList}[id] = tmpList;
+00044                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nZapisalem nowy element: "<<kolumnaList[id].show\_front().number;}
+00045                 \textcolor{keywordflow}{return} \hyperlink{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}{kolumnaList}[id].\hyperlink{class_my_list_a9d7990c6a8b96d4c0d267fe46582fd6b}{show\_front}().\hyperlink{class_my_list_1_1_my_list_element_acd6dbb6a8791f034f94678d46395b366}{number};
+00046         \}
+\end{DoxyCode}
+\hypertarget{class_dictionary_a53981ac20e3ab2b7544d6f6f3111cdf4}{\index{Dictionary@{Dictionary}!str2int@{str2int}}
+\index{str2int@{str2int}!Dictionary@{Dictionary}}
+\paragraph[{str2int}]{\setlength{\rightskip}{0pt plus 5cm}int Dictionary\-::str2int (
+\begin{DoxyParamCaption}
+\item[{string}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_dictionary_a53981ac20e3ab2b7544d6f6f3111cdf4}
+
+\begin{DoxyParams}{Parametry}
+{\em str} & Obiekt string do zhashowania \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \hyperlink{dictionary_8cpp_source_l00051}{51} pliku \hyperlink{dictionary_8cpp_source}{dictionary.\-cpp}.
+
+
+
+Odwołuje się do \hyperlink{dictionary_8h_source_l00010}{L\-I\-C\-Z\-B\-A\-\_\-\-Z\-N\-A\-K\-O\-W\-\_\-\-D\-O\-\_\-\-H\-A\-S\-H\-U}.
+
+
+
+Odwołania w \hyperlink{dictionary_8cpp_source_l00011}{operator\mbox{[}$\,$\mbox{]}()}.
+
+
+\begin{DoxyCode}
+00051                                          \{
+00052                 \textcolor{keywordtype}{int} hash=0;
+00053                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; ( i<\hyperlink{dictionary_8h_a562499e66e3ed9cc37111ac1ddafa1eb}{LICZBA\_ZNAKOW\_DO\_HASHU} && i<str.size() );i+
+      +)
+00054                         hash += (\textcolor{keywordtype}{int})str[i];
+00055                 \textcolor{comment}{//std::cout<<"\(\backslash\)nHash:"<<hash;}
+00056                 \textcolor{keywordflow}{return} hash;
+00057         \}
+\end{DoxyCode}
+\hypertarget{class_dictionary_a7dd06f1225844c860a73d98b8a814da7}{\index{Dictionary@{Dictionary}!str2int\-All@{str2int\-All}}
+\index{str2int\-All@{str2int\-All}!Dictionary@{Dictionary}}
+\paragraph[{str2int\-All}]{\setlength{\rightskip}{0pt plus 5cm}static int Dictionary\-::str2int\-All (
+\begin{DoxyParamCaption}
+\item[{string}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_dictionary_a7dd06f1225844c860a73d98b8a814da7}
+
+\begin{DoxyParams}{Parametry}
+{\em str} & Obiekt string do zhashowania \\
+\hline
+\end{DoxyParams}
+
+
+\subsubsection{Dokumentacja atrybutów składowych}
+\hypertarget{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}{\index{Dictionary@{Dictionary}!kolumna\-List@{kolumna\-List}}
+\index{kolumna\-List@{kolumna\-List}!Dictionary@{Dictionary}}
+\paragraph[{kolumna\-List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf My\-List}$\ast$ Dictionary\-::kolumna\-List\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}
+
+
+Definicja w linii \hyperlink{dictionary_8h_source_l00030}{30} pliku \hyperlink{dictionary_8h_source}{dictionary.\-h}.
+
+
+
+Odwołania w \hyperlink{dictionary_8cpp_source_l00011}{operator\mbox{[}$\,$\mbox{]}()}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dictionary_8h}{dictionary.\-h}\item 
+\hyperlink{dictionary_8cpp}{dictionary.\-cpp}\end{DoxyCompactItemize}

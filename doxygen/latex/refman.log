@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.12)  24 MAR 2015 11:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.12)  1 APR 2015 02:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -951,6 +951,12 @@ LaTeX Warning: Label `mystack_8h' multiply defined.
 
 LaTeX Warning: Label `numbergenerator_8h' multiply defined.
 
+
+LaTeX Warning: Label `stackonarray_8cpp' multiply defined.
+
+
+LaTeX Warning: Label `stackonarray_8h' multiply defined.
+
 )
 \openout1 = `refman.aux'.
 
@@ -1132,10 +1138,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 69.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.29996pt on input line 69.
-[2])
+(Font)              scaled to size 6.29996pt on input line 72.
+[2]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.22644pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[3])
 \tf@toc=\write5
 \openout5 = `refman.toc'.
 
@@ -1143,45 +1156,25 @@ Package hyperref Info: Option `pageanchor' set `true' on input line 129.
  (./index.tex
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 7.19995pt on input line 12.
- [1]
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 12.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)) (./hierarchy.tex
+))
+(./hierarchy.tex
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 10.79993pt on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 10.79993pt on input line 1.
-
-
-LaTeX Warning: Reference `class_stack_on_array' on page 2 undefined on input li
-ne 17.
-
-) (./annotated.tex
+) (./annotated.tex [1]) (./files.tex) (./class_data_frame.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2]
-
-LaTeX Warning: Reference `class_stack_on_array' on page 3 undefined on input li
-ne 11.
-
-) (./files.tex
-
-LaTeX Warning: Reference `stackonarray_8cpp' on page 3 undefined on input line 
-15.
-
-
-LaTeX Warning: Reference `stackonarray_8h' on page 3 undefined on input line 16
-.
-
-) (./class_data_frame.tex
-<class_data_frame.pdf, id=420, 501.875pt x 248.85973pt>
+[2] <class_data_frame.pdf, id=494, 501.875pt x 248.85973pt>
 File: class_data_frame.pdf Graphic file (type pdf)
 
 <use class_data_frame.pdf>
@@ -1196,7 +1189,6 @@ File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 17.
- [3 <./class_data_frame.pdf>]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 18.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
@@ -1208,125 +1200,138 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 LaTeX Font Warning: Font shape `T1/pcr/bc/n' undefined
 (Font)              using `T1/pcr/m/n' instead on input line 78.
 
+[3 <./class_data_frame.pdf>]
+LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <10> not available
+(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 126.
+LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
+(Font)              scaled to size 8.99994pt on input line 126.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4]
-LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <10> not available
-(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 126.
-LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
-(Font)              scaled to size 8.99994pt on input line 126.
- [5]) (./class_multiply_by_two.tex
-<class_multiply_by_two.pdf, id=586, 501.875pt x 590.44589pt>
+[4]) (./class_multiply_by_two.tex
+<class_multiply_by_two.pdf, id=634, 501.875pt x 590.44589pt>
 File: class_multiply_by_two.pdf Graphic file (type pdf)
 
 <use class_multiply_by_two.pdf>
 Package pdftex.def Info: class_multiply_by_two.pdf used on input line 16.
 (pdftex.def)             Requested size: 72.55176pt x 85.35826pt.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 12.22644pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[6 <./class_multiply_by_two.pdf>]) (./class_my_benchmark.tex
-<class_my_benchmark.pdf, id=624, 501.875pt x 590.44589pt>
+ [5 <./class_multiply_by_two.pdf>])
+(./class_my_benchmark.tex
+<class_my_benchmark.pdf, id=674, 501.875pt x 590.44589pt>
 File: class_my_benchmark.pdf Graphic file (type pdf)
 
 <use class_my_benchmark.pdf>
 Package pdftex.def Info: class_my_benchmark.pdf used on input line 16.
 (pdftex.def)             Requested size: 72.55176pt x 85.35826pt.
- [7 <./class_my_benchmark.pdf>]
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8]
+[6 <./class_my_benchmark.pdf>] [7]
 Underfull \hbox (badness 10000) detected at line 157
 [][][]
  []
 
-) (./class_my_list.tex <class_my_list.pdf, id=699, 501.875pt x 264.14685pt>
+) (./class_my_list.tex <class_my_list.pdf, id=750, 501.875pt x 264.14685pt>
 File: class_my_list.pdf Graphic file (type pdf)
 
 <use class_my_list.pdf>
 Package pdftex.def Info: class_my_list.pdf used on input line 16.
 (pdftex.def)             Requested size: 108.11543pt x 56.9055pt.
- [9 <./class_my_list.pdf>]
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.22644pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8 <./class_my_list.pdf>]
 Underfull \hbox (badness 10000) detected at line 90
 [][][]
  []
 
-
+[9]
 Underfull \hbox (badness 10000) detected at line 123
 [][][]
  []
 
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 12.22644pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[10]
 Underfull \hbox (badness 10000) detected at line 213
 [][][]
  []
 
-[11]) (./class_my_list_1_1_my_list_element.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12]
+[10]) (./class_my_list_1_1_my_list_element.tex [11]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 42.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.99994pt on input line 42.
 ) (./class_my_queue.tex
-<class_my_queue.pdf, id=894, 501.875pt x 528.2937pt>
+<class_my_queue.pdf, id=945, 501.875pt x 528.2937pt>
 File: class_my_queue.pdf Graphic file (type pdf)
  <use class_my_queue.pdf>
 Package pdftex.def Info: class_my_queue.pdf used on input line 16.
 (pdftex.def)             Requested size: 54.05771pt x 56.9055pt.
 
-[13 <./class_my_queue.pdf>]) (./class_my_stack.tex
-<class_my_stack.pdf, id=930, 501.875pt x 581.88394pt>
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.22644pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12 <./class_my_queue.pdf>]) (./class_my_stack.tex
+<class_my_stack.pdf, id=980, 501.875pt x 581.88394pt>
 File: class_my_stack.pdf Graphic file (type pdf)
  <use class_my_stack.pdf>
 Package pdftex.def Info: class_my_stack.pdf used on input line 16.
 (pdftex.def)             Requested size: 49.08002pt x 56.9055pt.
 
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 12.22644pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[14 <./class_my_stack.pdf>]) (./class_number_generator.tex
-<class_number_generator.pdf, id=962, 501.875pt x 331.81966pt>
+[13 <./class_my_stack.pdf>]) (./class_number_generator.tex
+<class_number_generator.pdf, id=1013, 501.875pt x 331.81966pt>
 File: class_number_generator.pdf Graphic file (type pdf)
 
 <use class_number_generator.pdf>
 Package pdftex.def Info: class_number_generator.pdf used on input line 16.
 (pdftex.def)             Requested size: 86.0681pt x 56.9055pt.
- [15 <./class_number_generator.pdf>])
-(./class_stack_on_array.tex
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[16] [17]) (./dataframe_8cpp.tex) (./dataframe_8cpp_source.tex
+[14 <./class_number_generator.pdf>]) (./class_stack_on_array.tex [15]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.22644pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16]) (./dataframe_8cpp.tex) (./dataframe_8cpp_source.tex [17pdfTeX warning (ex
+t4): destination with the same identifier (name{dataframe_8cpp}) has been alrea
+dy used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.6 00001 \textcolor{comment}{/*}
+                                 ]) (./dataframe_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+) (./dataframe_8h_source.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
@@ -1334,34 +1339,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [18pdfTeX warning (ext4): destination with the same identifier (name{dataframe_
-8cpp}) has been already used, duplicate ignored
+8h}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.9 ...color{comment}{ *  Created on: Mar 7, 2015}
-                                                  ]) (./dataframe_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-
- []
-
-) (./dataframe_8h_source.tex [19pdfTeX warning (ext4): destination with the sam
-e identifier (name{dataframe_8h}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.25 ...05c6910cad07ab5189bd34b13ab}{sizeOfTable};
-                                                  ]) (./main_8cpp.tex
+l.20 00016 \{
+             ]) (./main_8cpp.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--13
 
  []
 
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 12.22644pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[20]
+[19]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
@@ -1371,7 +1359,7 @@ ifier (name{main_8cpp}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.3 }
-      [21]
+     
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1381,39 +1369,39 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[22]) (./multiplybytwo_8cpp.tex) (./multiplybytwo_8cpp_source.tex)
+[20] [21]) (./multiplybytwo_8cpp.tex) (./multiplybytwo_8cpp_source.tex)
 (./multiplybytwo_8h.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
  []
 
-) (./multiplybytwo_8h_source.tex [23pdfTeX warning (ext4): destination with the
- same identifier (name{multiplybytwo_8cpp}) has been already used, duplicate ig
-nored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.8 00003 \textcolor{comment}{ *}
-                                 pdfTeX warning (ext4): destination with the sa
-me identifier (name{multiplybytwo_8h}) has been already used, duplicate ignored
-
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.8 00003 \textcolor{comment}{ *}
-                                 ]) (./mybenchmark_8cpp.tex)
-(./mybenchmark_8cpp_source.tex) (./mybenchmark_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--6
-
- []
-
+) (./multiplybytwo_8h_source.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[24pdfTeX warning (ext4): destination with the same identifier (name{mybenchmar
+[22pdfTeX warning (ext4): destination with the same identifier (name{multiplyby
+two_8cpp}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.6 00001 \textcolor{comment}{/*}
+                                 pdfTeX warning (ext4): destination with the sa
+me identifier (name{multiplybytwo_8h}) has been already used, duplicate ignored
+
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.6 00001 \textcolor{comment}{/*}
+                                 ]) (./mybenchmark_8cpp.tex)
+(./mybenchmark_8cpp_source.tex) (./mybenchmark_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+[23pdfTeX warning (ext4): destination with the same identifier (name{mybenchmar
 k_8cpp}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1425,9 +1413,15 @@ ady used, duplicate ignored
 <to be read again> 
                    \relax 
 l.3 }
-     ) (./mylist_8cpp.tex) (./mylist_8cpp_source.tex [25pdfTeX warning (ext4): 
-destination with the same identifier (name{mylist_8cpp}) has been already used,
- duplicate ignored
+     ) (./mylist_8cpp.tex) (./mylist_8cpp_source.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.22644pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[24pdfTeX warning (ext4): destination with the same identifier (name{mylist_8cp
+p}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -1437,15 +1431,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
-) (./mylist_8h_source.tex
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 12.22644pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[26pdfTeX warning (ext4): destination with the same identifier (name{mylist_8h}
-) has been already used, duplicate ignored
+) (./mylist_8h_source.tex [25pdfTeX warning (ext4): destination with the same i
+dentifier (name{mylist_8h}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -1455,8 +1442,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
-) (./myqueue_8h_source.tex [27pdfTeX warning (ext4): destination with the same 
-identifier (name{myqueue_8h}) has been already used, duplicate ignored
+) (./myqueue_8h_source.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.22644pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[26pdfTeX warning (ext4): destination with the same identifier (name{myqueue_8h
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -1471,15 +1465,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--8
 
  []
 
-) (./numbergenerator_8h_source.tex
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 12.22644pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[28pdfTeX warning (ext4): destination with the same identifier (name{mystack_8h
-}) has been already used, duplicate ignored
+) (./numbergenerator_8h_source.tex [27pdfTeX warning (ext4): destination with t
+he same identifier (name{mystack_8h}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -1492,23 +1479,22 @@ ed
                                                   \fi \fi 
 l.8 00003 \textcolor{comment}{ *}
                                  ]) (./stackonarray_8cpp.tex)
-(./stackonarray_8cpp_source.tex [29pdfTeX warning (ext4): destination with the 
-same identifier (name{stackonarray_8cpp}) has been already used, duplicate igno
-red
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.45 00039 \}
-             ]) (./stackonarray_8h.tex) (./stackonarray_8h_source.tex)
-(./strona-glowna_8dox.tex)
+(./stackonarray_8cpp_source.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[30pdfTeX warning (ext4): destination with the same identifier (name{stackonarr
-ay_8h}) has been already used, duplicate ignored
+[28pdfTeX warning (ext4): destination with the same identifier (name{stackonarr
+ay_8cpp}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.45 00039 \}
+             ]) (./stackonarray_8h.tex) (./stackonarray_8h_source.tex)
+(./strona-glowna_8dox.tex) [29pdfTeX warning (ext4): destination with the same 
+identifier (name{stackonarray_8h}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -1520,20 +1506,11 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 188.
 (./refman.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 188.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 188.
+Package rerunfilecheck Info: File `refman.out' has not changed.
+(rerunfilecheck)             Checksum: 0DA8C1B62D2DAC3271F81B1AEBB70201;14677.
 
-
-Package rerunfilecheck Warning: File `refman.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `refman.out':
-(rerunfilecheck)             Before: 9D114C809D5C59FAE9969D8CE2231435;12569
-(rerunfilecheck)             After:  0DA8C1B62D2DAC3271F81B1AEBB70201;14677.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1541,13 +1518,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 188.
  ) 
 Here is how much of TeX's memory you used:
- 12863 strings out of 494952
- 182734 string characters out of 6179606
- 260794 words of memory out of 5000000
- 15463 multiletter control sequences out of 15000+600000
+ 12872 strings out of 494952
+ 182916 string characters out of 6179606
+ 262508 words of memory out of 5000000
+ 15473 multiletter control sequences out of 15000+600000
  68413 words of font info for 100 fonts, out of 8000000 for 9000
  56 hyphenation exceptions out of 8191
- 48i,13n,43p,618b,522s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,13n,43p,618b,512s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{main_8cpp_source} has been referenced but does no
 t exist, replaced by a fixed one
 
@@ -1598,10 +1575,10 @@ w/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/u
 hvb8ac.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8ac.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (32 pages, 204056 bytes).
+Output written on refman.pdf (32 pages, 203715 bytes).
 PDF statistics:
- 1626 PDF objects out of 1728 (max. 8388607)
- 1554 compressed objects within 16 object streams
- 320 named destinations out of 1000 (max. 500000)
- 572 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1669 PDF objects out of 1728 (max. 8388607)
+ 1597 compressed objects within 16 object streams
+ 319 named destinations out of 1000 (max. 500000)
+ 652 words of extra memory for PDF output out of 10000 (max. 10000000)
 

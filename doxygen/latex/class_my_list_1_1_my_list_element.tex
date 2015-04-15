@@ -6,93 +6,209 @@
 Klasa 'malych struktur' gdzie jest numer i wskaznik do nas elementu.  
 
 
+
+
+{\ttfamily \#include $<$mylist.\-h$>$}
+
 \subsubsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_my_list_1_1_my_list_element_ac57b6eddd2c28b199a87c3b2f8dda992}{My\-List\-Element} (int arg)
-\begin{DoxyCompactList}\small\item\em Konstruktor wewnetrznej klasy 'malych struktur'. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{class_my_list_1_1_my_list_element_a75e80ebaeaa29e1d357ed0deab11c5a5}{My\-List\-Element} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor wewnetrznej klasy 'malych struktur'. \end{DoxyCompactList}\item 
+\hyperlink{class_my_list_1_1_my_list_element_a6eda7fa9d2943deafe254dad392dfe12}{My\-List\-Element} (int arg, std\-::string str)
+\begin{DoxyCompactList}\small\item\em Konstruktor wewnetrznej klasy 'malych struktur'. \end{DoxyCompactList}\item 
+\hyperlink{class_my_list_1_1_my_list_element_a0bb4f6a8b5ef3b163698eee03624bfb9}{My\-List\-Element} (const \hyperlink{class_my_list_1_1_my_list_element}{My\-List\-Element} \&my\-List\-Element)
+\begin{DoxyCompactList}\small\item\em Konstruktor kopiujacy wewnetrznej klasy 'malych struktur'. \end{DoxyCompactList}\item 
+void \hyperlink{class_my_list_1_1_my_list_element_a817658ac5c1d6de5d8232877e4251bd9}{set} (int arg, std\-::string str)
+\begin{DoxyCompactList}\small\item\em Ustawia liczbe oraz klucz slowanika dla elementu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsubsection*{Atrybuty publiczne}
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{class_my_list_1_1_my_list_element_acd6dbb6a8791f034f94678d46395b366}{number}
 \begin{DoxyCompactList}\small\item\em Liczba przechowywana. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_my_list_1_1_my_list_element_af610aeae835150be1a12d538e67a579c}{nazwa}
+\item 
 \hyperlink{class_my_list_1_1_my_list_element}{My\-List\-Element} $\ast$ \hyperlink{class_my_list_1_1_my_list_element_abd7af673552c8876f210cbea01c5e949}{next\-Element}
 \begin{DoxyCompactList}\small\item\em wskaznik do nastepnej 'malej struktury' w liscie \end{DoxyCompactList}\item 
 \hyperlink{class_my_list_1_1_my_list_element}{My\-List\-Element} $\ast$ \hyperlink{class_my_list_1_1_my_list_element_adb7c0cbde93a90f30484637498690d0f}{previous\-Element}
 \begin{DoxyCompactList}\small\item\em wskaznik do poprzedniej 'malej struktury' w liscie \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Przyjaciele}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_my_list_1_1_my_list_element_a3aca1c680e3cc534773a005bb24bfed4}{My\-List}
+\end{DoxyCompactItemize}
 
 
 \subsubsection{Opis szczegółowy}
 
 
-Definicja w linii \hyperlink{mylist_8h_source_l00025}{25} pliku \hyperlink{mylist_8h_source}{mylist.\-h}.
+Definicja w linii \hyperlink{mylist_8h_source_l00026}{26} pliku \hyperlink{mylist_8h_source}{mylist.\-h}.
 
 
 
 \subsubsection{Dokumentacja konstruktora i destruktora}
-\hypertarget{class_my_list_1_1_my_list_element_ac57b6eddd2c28b199a87c3b2f8dda992}{\index{My\-List\-::\-My\-List\-Element@{My\-List\-::\-My\-List\-Element}!My\-List\-Element@{My\-List\-Element}}
+\hypertarget{class_my_list_1_1_my_list_element_a75e80ebaeaa29e1d357ed0deab11c5a5}{\index{My\-List\-::\-My\-List\-Element@{My\-List\-::\-My\-List\-Element}!My\-List\-Element@{My\-List\-Element}}
 \index{My\-List\-Element@{My\-List\-Element}!MyList::MyListElement@{My\-List\-::\-My\-List\-Element}}
 \paragraph[{My\-List\-Element}]{\setlength{\rightskip}{0pt plus 5cm}My\-List\-::\-My\-List\-Element\-::\-My\-List\-Element (
 \begin{DoxyParamCaption}
-\item[{int}]{arg}
+{}
 \end{DoxyParamCaption}
-)}}\label{class_my_list_1_1_my_list_element_ac57b6eddd2c28b199a87c3b2f8dda992}
+)}}\label{class_my_list_1_1_my_list_element_a75e80ebaeaa29e1d357ed0deab11c5a5}
+
+
+Definicja w linii \hyperlink{mylist_8cpp_source_l00071}{71} pliku \hyperlink{mylist_8cpp_source}{mylist.\-cpp}.
+
+
+\begin{DoxyCode}
+00072 \{
+00073         \textcolor{keyword}{this} -> \hyperlink{class_my_list_1_1_my_list_element_acd6dbb6a8791f034f94678d46395b366}{number} = 0;
+00074         \textcolor{keyword}{this} -> \hyperlink{class_my_list_1_1_my_list_element_af610aeae835150be1a12d538e67a579c}{nazwa} = \textcolor{stringliteral}{""};
+00075         \textcolor{keyword}{this} -> \hyperlink{class_my_list_1_1_my_list_element_abd7af673552c8876f210cbea01c5e949}{nextElement} =0;
+00076         \textcolor{keyword}{this} -> \hyperlink{class_my_list_1_1_my_list_element_adb7c0cbde93a90f30484637498690d0f}{previousElement} =0;
+00077 \}
+\end{DoxyCode}
+\hypertarget{class_my_list_1_1_my_list_element_a6eda7fa9d2943deafe254dad392dfe12}{\index{My\-List\-::\-My\-List\-Element@{My\-List\-::\-My\-List\-Element}!My\-List\-Element@{My\-List\-Element}}
+\index{My\-List\-Element@{My\-List\-Element}!MyList::MyListElement@{My\-List\-::\-My\-List\-Element}}
+\paragraph[{My\-List\-Element}]{\setlength{\rightskip}{0pt plus 5cm}My\-List\-::\-My\-List\-Element\-::\-My\-List\-Element (
+\begin{DoxyParamCaption}
+\item[{int}]{arg, }
+\item[{std\-::string}]{str}
+\end{DoxyParamCaption}
+)}}\label{class_my_list_1_1_my_list_element_a6eda7fa9d2943deafe254dad392dfe12}
 
 \begin{DoxyParams}{Parametry}
 {\em arg} & liczba do zapisania w kolejnym elemencie listy \\
 \hline
+{\em str} & klucz tablicy asocjacyjnej \\
+\hline
 \end{DoxyParams}
 
 
-Definicja w linii \hyperlink{mylist_8cpp_source_l00057}{57} pliku \hyperlink{mylist_8cpp_source}{mylist.\-cpp}.
-
-
-
-Odwołuje się do \hyperlink{mylist_8h_source_l00037}{next\-Element}, \hyperlink{mylist_8h_source_l00028}{number} i \hyperlink{mylist_8h_source_l00039}{previous\-Element}.
+Definicja w linii \hyperlink{mylist_8cpp_source_l00064}{64} pliku \hyperlink{mylist_8cpp_source}{mylist.\-cpp}.
 
 
 \begin{DoxyCode}
-00058 \{
-00059         \textcolor{keyword}{this} -> \hyperlink{class_my_list_1_1_my_list_element_acd6dbb6a8791f034f94678d46395b366}{number} = arg;
-00060         \textcolor{keyword}{this} -> \hyperlink{class_my_list_1_1_my_list_element_abd7af673552c8876f210cbea01c5e949}{nextElement} =0;
-00061         \textcolor{keyword}{this} -> \hyperlink{class_my_list_1_1_my_list_element_adb7c0cbde93a90f30484637498690d0f}{previousElement} =0;
-00062 \}
+00065 \{
+00066         \textcolor{keyword}{this} -> \hyperlink{class_my_list_1_1_my_list_element_acd6dbb6a8791f034f94678d46395b366}{number} = arg;
+00067         \textcolor{keyword}{this} -> \hyperlink{class_my_list_1_1_my_list_element_af610aeae835150be1a12d538e67a579c}{nazwa} = str;
+00068         \textcolor{keyword}{this} -> \hyperlink{class_my_list_1_1_my_list_element_abd7af673552c8876f210cbea01c5e949}{nextElement} =0;
+00069         \textcolor{keyword}{this} -> \hyperlink{class_my_list_1_1_my_list_element_adb7c0cbde93a90f30484637498690d0f}{previousElement} =0;
+00070 \}
+\end{DoxyCode}
+\hypertarget{class_my_list_1_1_my_list_element_a0bb4f6a8b5ef3b163698eee03624bfb9}{\index{My\-List\-::\-My\-List\-Element@{My\-List\-::\-My\-List\-Element}!My\-List\-Element@{My\-List\-Element}}
+\index{My\-List\-Element@{My\-List\-Element}!MyList::MyListElement@{My\-List\-::\-My\-List\-Element}}
+\paragraph[{My\-List\-Element}]{\setlength{\rightskip}{0pt plus 5cm}My\-List\-::\-My\-List\-Element\-::\-My\-List\-Element (
+\begin{DoxyParamCaption}
+\item[{const {\bf My\-List\-Element} \&}]{my\-List\-Element}
+\end{DoxyParamCaption}
+)}}\label{class_my_list_1_1_my_list_element_a0bb4f6a8b5ef3b163698eee03624bfb9}
+
+\begin{DoxyParams}{Parametry}
+{\em my\-List\-Element} & Element o przekopiowania \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \hyperlink{mylist_8cpp_source_l00017}{17} pliku \hyperlink{mylist_8cpp_source}{mylist.\-cpp}.
+
+
+
+Odwołuje się do \hyperlink{mylist_8h_source_l00030}{nazwa}, \hyperlink{mylist_8h_source_l00032}{next\-Element}, \hyperlink{mylist_8h_source_l00029}{number} i \hyperlink{mylist_8h_source_l00034}{previous\-Element}.
+
+
+\begin{DoxyCode}
+00018 \{
+00019         this->\hyperlink{class_my_list_1_1_my_list_element_acd6dbb6a8791f034f94678d46395b366}{number} = myListElement.number;
+00020         this->\hyperlink{class_my_list_1_1_my_list_element_af610aeae835150be1a12d538e67a579c}{nazwa} = myListElement.nazwa;
+00021         this->\hyperlink{class_my_list_1_1_my_list_element_abd7af673552c8876f210cbea01c5e949}{nextElement} = myListElement.\hyperlink{class_my_list_1_1_my_list_element_abd7af673552c8876f210cbea01c5e949}{nextElement};
+00022         this->\hyperlink{class_my_list_1_1_my_list_element_adb7c0cbde93a90f30484637498690d0f}{previousElement} = myListElement.\hyperlink{class_my_list_1_1_my_list_element_adb7c0cbde93a90f30484637498690d0f}{previousElement};
+00023 \}
 \end{DoxyCode}
 
 
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_my_list_1_1_my_list_element_a817658ac5c1d6de5d8232877e4251bd9}{\index{My\-List\-::\-My\-List\-Element@{My\-List\-::\-My\-List\-Element}!set@{set}}
+\index{set@{set}!MyList::MyListElement@{My\-List\-::\-My\-List\-Element}}
+\paragraph[{set}]{\setlength{\rightskip}{0pt plus 5cm}void My\-List\-::\-My\-List\-Element\-::set (
+\begin{DoxyParamCaption}
+\item[{int}]{arg, }
+\item[{std\-::string}]{str}
+\end{DoxyParamCaption}
+)}}\label{class_my_list_1_1_my_list_element_a817658ac5c1d6de5d8232877e4251bd9}
+
+\begin{DoxyParams}{Parametry}
+{\em arg} & Liczba do zapisania \\
+\hline
+{\em str} & String do zapisania \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \hyperlink{mylist_8cpp_source_l00091}{91} pliku \hyperlink{mylist_8cpp_source}{mylist.\-cpp}.
+
+
+\begin{DoxyCode}
+00091                                                    \{
+00092         \textcolor{keyword}{this} -> \hyperlink{class_my_list_1_1_my_list_element_acd6dbb6a8791f034f94678d46395b366}{number} = arg;
+00093         \textcolor{keyword}{this} -> \hyperlink{class_my_list_1_1_my_list_element_af610aeae835150be1a12d538e67a579c}{nazwa} = str;
+00094 \}
+\end{DoxyCode}
+
+
+\subsubsection{Dokumentacja przyjaciół i funkcji związanych}
+\hypertarget{class_my_list_1_1_my_list_element_a3aca1c680e3cc534773a005bb24bfed4}{\index{My\-List\-::\-My\-List\-Element@{My\-List\-::\-My\-List\-Element}!My\-List@{My\-List}}
+\index{My\-List@{My\-List}!MyList::MyListElement@{My\-List\-::\-My\-List\-Element}}
+\paragraph[{My\-List}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf My\-List}\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_my_list_1_1_my_list_element_a3aca1c680e3cc534773a005bb24bfed4}
+
+
+Definicja w linii \hyperlink{mylist_8h_source_l00057}{57} pliku \hyperlink{mylist_8h_source}{mylist.\-h}.
+
+
+
 \subsubsection{Dokumentacja atrybutów składowych}
+\hypertarget{class_my_list_1_1_my_list_element_af610aeae835150be1a12d538e67a579c}{\index{My\-List\-::\-My\-List\-Element@{My\-List\-::\-My\-List\-Element}!nazwa@{nazwa}}
+\index{nazwa@{nazwa}!MyList::MyListElement@{My\-List\-::\-My\-List\-Element}}
+\paragraph[{nazwa}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string My\-List\-::\-My\-List\-Element\-::nazwa}}\label{class_my_list_1_1_my_list_element_af610aeae835150be1a12d538e67a579c}
+
+
+Definicja w linii \hyperlink{mylist_8h_source_l00030}{30} pliku \hyperlink{mylist_8h_source}{mylist.\-h}.
+
+
+
+Odwołania w \hyperlink{mylist_8cpp_source_l00017}{My\-List\-Element()}, \hyperlink{dictionary_8cpp_source_l00011}{Dictionary\-::operator\mbox{[}$\,$\mbox{]}()} i \hyperlink{mylist_8cpp_source_l00095}{My\-List\-::save\-Data\-To\-File()}.
+
 \hypertarget{class_my_list_1_1_my_list_element_abd7af673552c8876f210cbea01c5e949}{\index{My\-List\-::\-My\-List\-Element@{My\-List\-::\-My\-List\-Element}!next\-Element@{next\-Element}}
 \index{next\-Element@{next\-Element}!MyList::MyListElement@{My\-List\-::\-My\-List\-Element}}
 \paragraph[{next\-Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf My\-List\-Element}$\ast$ My\-List\-::\-My\-List\-Element\-::next\-Element}}\label{class_my_list_1_1_my_list_element_abd7af673552c8876f210cbea01c5e949}
 
 
-Definicja w linii \hyperlink{mylist_8h_source_l00037}{37} pliku \hyperlink{mylist_8h_source}{mylist.\-h}.
+Definicja w linii \hyperlink{mylist_8h_source_l00032}{32} pliku \hyperlink{mylist_8h_source}{mylist.\-h}.
 
 
 
-Odwołania w \hyperlink{mylist_8cpp_source_l00057}{My\-List\-Element()}.
+Odwołania w \hyperlink{mylist_8cpp_source_l00017}{My\-List\-Element()}.
 
 \hypertarget{class_my_list_1_1_my_list_element_acd6dbb6a8791f034f94678d46395b366}{\index{My\-List\-::\-My\-List\-Element@{My\-List\-::\-My\-List\-Element}!number@{number}}
 \index{number@{number}!MyList::MyListElement@{My\-List\-::\-My\-List\-Element}}
 \paragraph[{number}]{\setlength{\rightskip}{0pt plus 5cm}int My\-List\-::\-My\-List\-Element\-::number}}\label{class_my_list_1_1_my_list_element_acd6dbb6a8791f034f94678d46395b366}
 
 
-Definicja w linii \hyperlink{mylist_8h_source_l00028}{28} pliku \hyperlink{mylist_8h_source}{mylist.\-h}.
+Definicja w linii \hyperlink{mylist_8h_source_l00029}{29} pliku \hyperlink{mylist_8h_source}{mylist.\-h}.
 
 
 
-Odwołania w \hyperlink{mylist_8cpp_source_l00057}{My\-List\-Element()}.
+Odwołania w \hyperlink{mylist_8cpp_source_l00017}{My\-List\-Element()}, \hyperlink{dictionary_8cpp_source_l00011}{Dictionary\-::operator\mbox{[}$\,$\mbox{]}()} i \hyperlink{mylist_8cpp_source_l00095}{My\-List\-::save\-Data\-To\-File()}.
 
 \hypertarget{class_my_list_1_1_my_list_element_adb7c0cbde93a90f30484637498690d0f}{\index{My\-List\-::\-My\-List\-Element@{My\-List\-::\-My\-List\-Element}!previous\-Element@{previous\-Element}}
 \index{previous\-Element@{previous\-Element}!MyList::MyListElement@{My\-List\-::\-My\-List\-Element}}
 \paragraph[{previous\-Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf My\-List\-Element}$\ast$ My\-List\-::\-My\-List\-Element\-::previous\-Element}}\label{class_my_list_1_1_my_list_element_adb7c0cbde93a90f30484637498690d0f}
 
 
-Definicja w linii \hyperlink{mylist_8h_source_l00039}{39} pliku \hyperlink{mylist_8h_source}{mylist.\-h}.
+Definicja w linii \hyperlink{mylist_8h_source_l00034}{34} pliku \hyperlink{mylist_8h_source}{mylist.\-h}.
 
 
 
-Odwołania w \hyperlink{mylist_8cpp_source_l00057}{My\-List\-Element()}.
+Odwołania w \hyperlink{mylist_8cpp_source_l00017}{My\-List\-Element()}.
 
 
 

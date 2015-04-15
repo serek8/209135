@@ -1,0 +1,68 @@
+\hypertarget{dictionary_8cpp}{\subsection{dictionary.\-cpp}
+\label{dictionary_8cpp}\index{dictionary.\-cpp@{dictionary.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * dictionary.cpp}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: Apr 14, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00008 \textcolor{preprocessor}{#include "\hyperlink{dictionary_8h}{dictionary.h}"}
+00009 
+00010 
+\hypertarget{dictionary_8cpp_source_l00011}{}\hyperlink{class_dictionary_a5a82ede9a412aa8a9b7bee9b2a423427}{00011}         \textcolor{keywordtype}{int} &\hyperlink{class_dictionary_a5a82ede9a412aa8a9b7bee9b2a423427}{Dictionary::operator[]}(\textcolor{keywordtype}{string} str)
+00012         \{
+00013                 \hyperlink{class_my_list}{MyList} tmpList;
+00014                 \hyperlink{class_my_list_1_1_my_list_element}{MyList::MyListElement} tmpListElement;
+00015                 \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = \hyperlink{class_dictionary_a53981ac20e3ab2b7544d6f6f3111cdf4}{str2int}(str);
+00016                 \textcolor{comment}{// jezeli sa elementy na liscie}
+00017                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nSize listy na wejsciu do funkcji []: "<<kolumnaList[id].size();}
+00018                 \textcolor{keywordflow}{while}(\hyperlink{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}{kolumnaList}[\textcolor{keywordtype}{id}].size())
+00019                 \{
+00020                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nSize listy na wejsciu do while I []: "<<kolumnaList[id].size();}
+00021                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nhash id:"<<id;}
+00022                 tmpListElement = \hyperlink{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}{kolumnaList}[id].\hyperlink{class_my_list_a84369accd705913f85b770770f06767a}{pop\_front}();
+00023                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nWyjalem klucz z liczba: "<<tmpListElement.number;}
+00024                         \textcolor{keywordflow}{if}( !(tmpListElement.\hyperlink{class_my_list_1_1_my_list_element_af610aeae835150be1a12d538e67a579c}{nazwa}.compare(str)) ) \textcolor{comment}{// znalazlem taki sam klucz w
+       slowniku}
+00025                                 \{
+00026                                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nZnalazlem takie same klucze";}
+00027                                         \textcolor{keywordflow}{while}(tmpList.\hyperlink{class_my_list_a6d21c8bfbd9cd31efdba81ba488f43f2}{size}())
+00028                                         \{
+00029                                                 \hyperlink{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}{kolumnaList}[id].
+      \hyperlink{class_my_list_ac703cd9be1c465722e683dbdcececa6b}{push\_front}(tmpList.\hyperlink{class_my_list_afc006104d8156154ad3849d0e4cc6109}{pop\_back}());
+00030                                         \}
+00031                                         \hyperlink{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}{kolumnaList}[id].\hyperlink{class_my_list_ac703cd9be1c465722e683dbdcececa6b}{push\_front}(tmpListElement);
+00032                                         \textcolor{keywordflow}{return} (\hyperlink{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}{kolumnaList}[\textcolor{keywordtype}{id}]).show\_front().number;
+00033                                 \}
+00034                         \textcolor{keywordflow}{else}
+00035                         \{
+00036                                 tmpList.\hyperlink{class_my_list_ac703cd9be1c465722e683dbdcececa6b}{push\_front}(tmpListElement);
+00037                         \}
+00038                 \}
+00039                 \textcolor{comment}{//Czyli nie znalazlem takiego elementu, to go tworze}
+00040                 tmpListElement.\hyperlink{class_my_list_1_1_my_list_element_acd6dbb6a8791f034f94678d46395b366}{number}=0;
+00041                 tmpListElement.\hyperlink{class_my_list_1_1_my_list_element_af610aeae835150be1a12d538e67a579c}{nazwa}=str;
+00042                 tmpList.\hyperlink{class_my_list_ac703cd9be1c465722e683dbdcececa6b}{push\_front}(tmpListElement);
+00043                 \hyperlink{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}{kolumnaList}[id] = tmpList;
+00044                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nZapisalem nowy element: "<<kolumnaList[id].show\_front().number;}
+00045                 \textcolor{keywordflow}{return} \hyperlink{class_dictionary_a36adbe694dbbdcbd577d9e8486bdf40a}{kolumnaList}[id].\hyperlink{class_my_list_a9d7990c6a8b96d4c0d267fe46582fd6b}{show\_front}().\hyperlink{class_my_list_1_1_my_list_element_acd6dbb6a8791f034f94678d46395b366}{number};
+00046         \}
+00047 
+00048 
+00049 
+00050 
+\hypertarget{dictionary_8cpp_source_l00051}{}\hyperlink{class_dictionary_a53981ac20e3ab2b7544d6f6f3111cdf4}{00051}         \textcolor{keywordtype}{int} \hyperlink{class_dictionary_a53981ac20e3ab2b7544d6f6f3111cdf4}{Dictionary::str2int}(\textcolor{keywordtype}{string} str)\{
+00052                 \textcolor{keywordtype}{int} hash=0;
+00053                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; ( i<\hyperlink{dictionary_8h_a562499e66e3ed9cc37111ac1ddafa1eb}{LICZBA\_ZNAKOW\_DO\_HASHU} && i<str.size() );i+
+      +)
+00054                         hash += (\textcolor{keywordtype}{int})str[i];
+00055                 \textcolor{comment}{//std::cout<<"\(\backslash\)nHash:"<<hash;}
+00056                 \textcolor{keywordflow}{return} hash;
+00057         \}
+00058 
+00059 
+\end{DoxyCode}

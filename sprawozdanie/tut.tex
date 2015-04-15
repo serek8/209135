@@ -7,13 +7,13 @@
 \selectlanguage{polish}
 \usepackage{graphicx}
 \begin{document}
-\title{Laboratorium 3}
+\title{Laboratorium 4}
 \author{Jan Seredyński}
 \date{\today}
 \maketitle
 
 \section{Wstęp}
-Zadaniem laboratorium jest pomiar czasu wykonania operacji wypelnienia stosu. Do wykonania analizy zstosowałem trzy implementacje:dwie tablicowe i jedna oparta na liście.
+Zadaniem laboratorium jest pomiar czasu wykonania operacji wypelnienia tablicy asocjacyjnej (słownika). Do wykonania analizy zstosowałem wcześniej przygotowaną listę dwukierunkową(nie opartą na tablicy).
 
 
 \section{Schematy odpowiednich struktur}
@@ -23,23 +23,24 @@ Lista dwukierunkowa
 \par\vspace{\baselineskip}
 \hrule
 \par\vspace{\baselineskip}
-Stos, kolejka
-\includegraphics[width=3in]{stackqueue.png} 
-\newpage
 
-\section{Wydajność stosu na tablicy}
-Podczas tej próby stos jest opraty na tablicy dynamicznej, która przy każdym pushowaniu twory nową tablice większą o 1, a następnie kopiuje pozostałe elementy do nowoutworznej tablicy, a na końcu wpisuje nowy element.\\\
-\includegraphics[width=6.5in]{3stos_dyn_o_1.png}
-Na podstawie wykresu można stwierdzić, że ta implementacja ma przyrost geometryczny - kwadratowy.
-\section{Wydajność stosu na tablicy i liscie}
-Podczas tej próby stos jest opraty na tablicy dynamicznej, która przy każdym pushowaniu sprawdza czy tablica pomieśći nowy element, a gdy jest potrzeba zaalokowania nowej pamięci tworzy nową tablice większą o 100\%, a następnie kopiuje pozostałe elementy do nowoutworznej tablicy, a na końcu pushuje nowy element.\\\
-Na tym samym wykresie została również złożoność obliczeniowa przy implementacji listy.\\\
-\includegraphics[width=6.5in]{3stos_dyn_o_200ilista.png}
-Na podstawie wykresu można stwierdzić, że obie te implementacje mają przyrost liniowy
+
+\section{Wydajność listy}
+Podczas poprzednich laboratoriow przygotowałem implementacje listy dwukierunkowej(kolor fioletowy na wykresie, której zlożoność obliczeniowa wynosi O(n) przy wypelnianiu jej o jeden element(przykład stosu)
+\par\vspace{\baselineskip}
+
+\includegraphics[width=4.5in]{3stos_dyn_o_200ilista.png}
+
+\section{Wydajność słownika}
+Wykorzystałem metode łańcuchową transformacji kluczowej, której idee pokazuje obraz poniżej.
+\par\vspace{\baselineskip}
+\includegraphics[width=5in]{lancuchowa.png}\\\
+W mojej implementacji złożoność obliczeniowa słownika wynosi $O(n^2)$), ponieważ algorytm żeby dostać się do odpowiedniego elementu kX na liscie potrzebuje najpierw wypopowac elementy na tymczasową liste, a gdy go znajdzie(i doda/odczyta) to następnie musi zpushować je spowrotem z tymczasowej listy na oryginalną.\\\
+To doprowadza do momentu, w którym otrzymujemy liniowy wykres dla popowania i pushowania, więc ich iloczyn daje nam funkcję kwadratową.\\\
+\includegraphics[width=6in]{slownik.png}
+
+
 \section{Podsumowanie}
-Pomimo dobrze opracowanej metody pomiarowej czasu, na wykresach widać zakłócenia spowodowane pracą programów w tle.
-
-
-Najbardziej wydajnyą implementacją jest zoptymalizowany stos na tablicy(200\%), a następnie oprta na liście. Najdłuższy czas do przeprowadzaenia pushowania odnotowano przy niezoptymalizowanym stosie na tablicy, co jest spowodowane ciągłym kopiowaniem 
- elementów do nowej powiększonej tablicy.
+Mógłbym ulepszyć moją tablice asocjacyjną poprzez zrobienie jej na liscie opartej na tablicy i zastosowainu sortowania binarnego.
+Kolejnym ulepszeniem byłoby ulepszenie mojej implementacji listy, tak aby mogła wyszukiwać elementy w liscie bez potrzeby popowania wczesniejszych elementów.
 \end{document}

@@ -4,6 +4,11 @@ var files =
     [ "dataframe.h", "dataframe_8h.html", [
       [ "DataFrame", "class_data_frame.html", "class_data_frame" ]
     ] ],
+    [ "dictionary.cpp", "dictionary_8cpp.html", null ],
+    [ "dictionary.h", "dictionary_8h.html", "dictionary_8h" ],
+    [ "hashowanie.h", "hashowanie_8h.html", [
+      [ "Hashowanie", "class_hashowanie.html", null ]
+    ] ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
     [ "multiplybytwo.cpp", "multiplybytwo_8cpp.html", null ],
     [ "multiplybytwo.h", "multiplybytwo_8h.html", [
@@ -24,9 +29,8 @@ var files =
     [ "mystack.h", "mystack_8h.html", [
       [ "MyStack", "class_my_stack.html", "class_my_stack" ]
     ] ],
-    [ "numbergenerator.h", "numbergenerator_8h.html", [
-      [ "NumberGenerator", "class_number_generator.html", "class_number_generator" ]
-    ] ],
+    [ "numbergenerator.cpp", "numbergenerator_8cpp.html", null ],
+    [ "numbergenerator.h", "numbergenerator_8h.html", "numbergenerator_8h" ],
     [ "stackonarray.cpp", "stackonarray_8cpp.html", null ],
     [ "stackonarray.h", "stackonarray_8h.html", [
       [ "StackOnArray", "class_stack_on_array.html", "class_stack_on_array" ]

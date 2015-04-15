@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "Laboratorium 3", "index.html", [
+  [ "Laboratorium 5", "index.html", [
     [ "Laboratorium 2", "index.html", null ],
     [ "Klasy", null, [
       [ "Lista klas", "annotated.html", "annotated" ],
@@ -9,14 +9,16 @@ var NAVTREE =
       [ "Składowe klas", "functions.html", [
         [ "All", "functions.html", null ],
         [ "Funkcje", "functions_func.html", null ],
-        [ "Zmienne", "functions_vars.html", null ]
+        [ "Zmienne", "functions_vars.html", null ],
+        [ "Funkcje powiązane", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Pliki", null, [
       [ "Lista plików", "files.html", "files" ],
       [ "Składowe plików", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Funkcje", "globals_func.html", null ]
+        [ "Funkcje", "globals_func.html", null ],
+        [ "Definicje", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]

@@ -1,6 +1,8 @@
 var annotated =
 [
     [ "DataFrame", "class_data_frame.html", "class_data_frame" ],
+    [ "Dictionary", "class_dictionary.html", "class_dictionary" ],
+    [ "Hashowanie", "class_hashowanie.html", null ],
     [ "MultiplyByTwo", "class_multiply_by_two.html", "class_multiply_by_two" ],
     [ "MyBenchmark", "class_my_benchmark.html", "class_my_benchmark" ],
     [ "MyList", "class_my_list.html", "class_my_list" ],

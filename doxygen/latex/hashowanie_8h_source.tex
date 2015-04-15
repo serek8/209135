@@ -1,0 +1,37 @@
+\hypertarget{hashowanie_8h}{\subsection{hashowanie.\-h}
+\label{hashowanie_8h}\index{hashowanie.\-h@{hashowanie.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * hashowanie.h}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: Apr 9, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00008 \textcolor{preprocessor}{#ifndef HASHOWANIE\_H\_}
+00009 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define HASHOWANIE\_H\_}
+00010 \textcolor{preprocessor}{}\textcolor{preprocessor}{#include <string>}
+00011 \textcolor{preprocessor}{#include <iostream>}
+00012 \textcolor{keyword}{using namespace }std;
+\hypertarget{hashowanie_8h_source_l00013}{}\hyperlink{class_hashowanie}{00013} \textcolor{keyword}{class }\hyperlink{class_hashowanie}{Hashowanie}
+00014 \{
+00015 \textcolor{keyword}{public}:
+\hypertarget{hashowanie_8h_source_l00016}{}\hyperlink{class_hashowanie_a110b055bf2be74d6588c9ff20baddbbb}{00016}         \textcolor{keyword}{static} \textcolor{keywordtype}{int} \hyperlink{class_hashowanie_a110b055bf2be74d6588c9ff20baddbbb}{str2int}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* str)\{
+00017                 \textcolor{keywordtype}{int} hash;
+00018                 hash = (int)str[0]+(\textcolor{keywordtype}{int})str[1]+(int)str[2];
+00019                 std::cout<<\textcolor{stringliteral}{"\(\backslash\)nHash:"}<<hash;
+00020                 \textcolor{keywordflow}{return} hash;
+00021         \}
+00022 
+00023 
+00024 
+00025 \};
+00026 
+00027 
+00028 
+00029 
+00030 
+00031 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* HASHOWANIE\_H\_ */}\textcolor{preprocessor}{}
+\end{DoxyCode}
