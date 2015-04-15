@@ -27,17 +27,32 @@ Stos, kolejka
 \includegraphics[width=3in]{stackqueue.png} 
 \newpage
 
-\section{Wydajność stosu na tablicy}
-Podczas tej próby stos jest opraty na tablicy dynamicznej, która przy każdym pushowaniu twory nową tablice większą o 1, a następnie kopiuje pozostałe elementy do nowoutworznej tablicy, a na końcu wpisuje nowy element.
+\section{Wydajność stosu na tablicy - strategia inkrementacyjna}
+Podczas tej próby stos jest opraty na tablicy dynamicznej, która przy każdym pushowaniu twory nową tablice większą o 1, a następnie kopiuje pozostałe elementy do nowoutworznej tablicy, a na końcu wpisuje nowy element.\\\
+Całkowity czas T(n) wykonania n operacji push jest proporcjonalny do: \\\
+n + c + 2c + 3c + 4c + ... + kc =
+n + c(1 + 2 + 3 + ... + k)=
+n + ck(k+1)/2
+gdzie c jest stałą,
+k-wielokrotność zastąpień,
+T(n) jest w $O(n+k^2)$, tj. $O(n^2)$
 \includegraphics[width=6.5in]{3stos_dyn_o_1.png}
-Na podstawie wykresu można stwierdzić, że ta implementacja ma przyrost geometryczny - kwadratowy.
-\section{Wydajność stosu na tablicy i liscie}
+Na podstawie wykresu można stwierdzić, że ta implementacja ma przyrost geometryczny - kwadratowy, czyli złożoność obliczniowa wynosi $O(n^2)$.
+\section{Wydajność stosu na tablicy - strategia podwajania}
 Podczas tej próby stos jest opraty na tablicy dynamicznej, która przy każdym pushowaniu sprawdza czy tablica pomieśći nowy element, a gdy jest potrzeba zaalokowania nowej pamięci tworzy nową tablice większą o 100\%, a następnie kopiuje pozostałe elementy do nowoutworznej tablicy, a na końcu pushuje nowy element.\\\
-Na tym samym wykresie została również złożoność obliczeniowa przy implementacji listy.
-\includegraphics[width=6.5in]{3stos_dyn_o_200ilista.png}
-Na podstawie wykresu można stwierdzić, że obie te implementacje mają przyrost liniowy
-\section{Podsumowanie}
-Pomimo dobrze opracowanej metody pomiarowej czasu, na wykresach widać zakłócenia spowodowane pracą programów w tle.///
 
- 
+
+Tablica zostanie zastąpiona k = $log_2n$ razy
+Całkowity czas T(n) jest proporcjonalny do:
+$n+1+2+4+8+...+2^k$
+
+
+Na tym samym wykresie została również złożoność obliczeniowa przy implementacji listy.\\\
+\includegraphics[width=6.5in]{3stos_dyn_o_200ilista.png}
+Na podstawie wykresu można stwierdzić, że obie te implementacje mają przyrost liniowy, co spełdnia założenie, że charakteryzują się złożonością obliczniową O(n).
+\section{Podsumowanie}
+Pomimo dobrze opracowanej metody pomiarowej czasu, na wykresach widać zakłócenia spowodowane pracą programów w tle.
+
+
+Najbardziej wydajnyą implementacją jest zoptymalizowany stos na tablicy(200\%), a następnie oprta na liście(obie ze złożonością obliczniową O(n)). Najdłuższy czas do przeprowadzaenia pushowania odnotowano przy niezoptymalizowanym stosie na tablicy, co jest spowodowane ciągłym kopiowaniem elementów do nowej powiększonej tablicy.
 \end{document}
