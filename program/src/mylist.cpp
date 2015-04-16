@@ -68,6 +68,12 @@ MyList :: MyListElement :: MyListElement(int arg, std::string str)
 	this -> nextElement =0;
 	this -> previousElement =0;
 }
+MyList :: MyListElement :: MyListElement(int arg)
+{
+	this -> number = arg;
+	this -> nextElement =0;
+	this -> previousElement =0;
+}
 MyList :: MyListElement :: MyListElement()
 {
 	this -> number = 0;
@@ -103,3 +109,111 @@ int MyList :: saveDataToFile()
 	}
 	return 0;
 }
+
+
+void MyList :: scalanieSort(MyList lista)
+{
+	if(this->sizeOfList > 2)
+	{
+		MyList tmpLista1, tmpLista2;
+		// dziele zbior na nwa podzbiory
+		for(int i=0; i<(lista.sizeOfList/2); i++)
+			tmpLista1.push_front(lista.pop_front());
+		for(int i=0; i<lista.sizeOfList/2; i++)
+			tmpLista2.push_front(lista.pop_front());
+
+	}
+	else
+	{
+		int tmp = lista.pop_front().number;
+		MyList::MyListElement *elem = new MyList::MyListElement(tmp);
+		if(tmp < lista.show_front().number ) lista.push_front(*elem);
+		else lista.push_back(*elem);
+
+	}
+
+}
+
+int MyList :: splitList(MyList &tmpLista1, MyList &tmpLista2)
+{
+	int size = this->sizeOfList;
+	std::cout<<"\nRozmiar listy to: "<<size;;
+	for(int i=0; i<(size/2); i++)
+		tmpLista1.push_back(this->pop_front());
+
+	for(int i=0; i<size/2; i++)
+		tmpLista2.push_back(this->pop_front());
+
+	std::cout<<"\nPo podzieleniu listy: ";
+	tmpLista1.printList();
+	tmpLista2.printList();
+	return 0;
+}
+
+void  MyList :: printList()
+{
+	MyList::MyListElement *elem = (this->firstElement);
+	std::cout<<"\nWyswietlam liste (size:"<<this->sizeOfList<<"): ";
+	for(int i=0; i< this->sizeOfList; i++)
+	{
+		std::cout<<" "<<elem->number;
+		elem = elem->nextElement;
+	}
+}
+
+
+MyList MyList::mergeLists(MyList a, MyList b){
+
+    MyList mergedList;
+
+    if (!a.sizeOfList){
+        return b;
+    }else if (!b.sizeOfList){
+        return a;
+    }
+
+
+    if (a.show_front().number <= b.show_front().number){
+        mergedList = a;
+        //mergedList->next = mergeLists(a->next, b);
+        MyList::MyListElement elem = a.pop_front();
+        mergedList.push_back(elem);
+        mergeLists(a, b);
+
+    }else{
+        mergedList = b;
+        //mergedList->next = mergeLists(a, b->next);
+        MyList::MyListElement elem = b.pop_front();
+         mergedList.push_back(elem);
+         mergeLists(a, b);
+    }
+
+    return mergedList;
+
+}
+
+void MyList::mergeSort(){
+
+    MyList head = *this;
+    MyList a;
+    MyList b;
+
+    if(!head.sizeOfList){
+
+        return;
+
+    }
+
+    head.splitList(a, b);
+
+    a.mergeSort();
+    b.mergeSort();
+
+    head = mergeLists(a, b);
+
+}
+
+
+
+
+

@@ -53,6 +53,7 @@ public:
 		 * @param arg Liczba do zapisania
 		 * @param str String do zapisania
 		 */
+		MyListElement(int arg);
 		void set(int arg, std::string str);
 		friend class MyList;
 	};
@@ -101,6 +102,11 @@ public:
 	MyListElement &show_back();
 
 	int saveDataToFile();
+	void scalanieSort(MyList lista);
+	int splitList(MyList &tmpLista1, MyList &tmpLista2);
+	void  printList();
+	MyList mergeLists(MyList a, MyList b);
+	void mergeSort();
 };
 
 
