@@ -175,14 +175,12 @@ MyList MyList::mergeLists(MyList a, MyList b){
 
     if (a.show_front().number <= b.show_front().number){
         mergedList = a;
-        //mergedList->next = mergeLists(a->next, b);
         MyList::MyListElement elem = a.pop_front();
         mergedList.push_back(elem);
         mergeLists(a, b);
 
     }else{
         mergedList = b;
-        //mergedList->next = mergeLists(a, b->next);
         MyList::MyListElement elem = b.pop_front();
          mergedList.push_back(elem);
          mergeLists(a, b);
