@@ -1,6 +1,4 @@
 # 209135
-Zajęcia z Projektowania Algorytmów Sztucznej Inteligencji
-
 <h1>Raport</h1>
 <h2>Sortowanie przez scalanie</h2>
 
@@ -15,6 +13,6 @@ Ilość operacji wykonywanych na węzłach na poziomie i to O(n)
 Czyli cała złożoność obliczeniowa sortowania przez scalanie wynosi O(n*log(n))
 
 Wykokane pomiary to:
-![alt tag](https://github.com/serek8/209135/tree/Lab_6/sprawozdanie/mergesort.png)
+![alt tag](https://github.com/serek8/209135/blob/Lab_6/sprawozdanie/mergesort.png)
 Co zgadza się z założeniem o złożonośi obliczniowej sortowania przez scalanie.
 <br />
