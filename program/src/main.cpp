@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 
 
 	// na potrzeby slownika wlaczam generowanie automatyczne
-	//isSetNumberGenerator = true;
+	isSetNumberGenerator = true;
 	if(isSetNumberGenerator) {
 		NumberGenerator generator;
 		std::cout<<"\n+ - - - - Tworzenie tablicy i generacja losowych liczb - - - +\n";
@@ -64,18 +64,19 @@ int main(int argc, char *argv[])
 		podstawoweInfoIO.saveDataToFile();
 	}
 
-	MyList lista;
-	MyList::MyListElement *elem = new MyList::MyListElement(4);
-	lista.push_back(*elem);
-	elem = new MyList::MyListElement(5);
-	lista.push_back(*elem);
-	elem = new MyList::MyListElement(2);
-	lista.push_back(*elem);
-	elem = new MyList::MyListElement(7);
-	lista.push_back(*elem);
-	lista.printList();
-	lista.mergeSort();
-	lista.printList();
+	MyList lista; MyList::MyListElement elem;
+	for (unsigned int i=0; i<podstawoweInfoIO.sizeOfTable ; i++)
+	{
+		elem.number = podstawoweInfoIO.tableOfData[i];
+		lista.push_back(elem);
+	}
+
+	//lista.printList();
+	std::cout<<"\n+ - - - - Zaczynam sortowanie - - - +\n";
+	MyBenchmark::timerStart();
+		lista=lista.mergeSort(lista);
+	std::cout<<"Generuje losowe liczby:"<<MyBenchmark::timerStop()<<'\n';
+	//lista.printList();
 
 
 	std::cout<<std::endl;

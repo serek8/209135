@@ -101,12 +101,30 @@ public:
 	 */
 	MyListElement &show_back();
 
+	/**
+	 * @brief Zapisuje liste do pliku
+	 * @return Zwraca 0 gdy zapisywanie powiodlo sie
+	 */
 	int saveDataToFile();
-	void scalanieSort(MyList lista);
-	int splitList(MyList &tmpLista1, MyList &tmpLista2);
+	/**
+	 * @brief Wyswietla elementy listy
+	 */
 	void  printList();
-	MyList mergeLists(MyList a, MyList b);
-	void mergeSort();
+	/**
+	 * @brief Scala listy sortujac elementy
+	 * Funkcja potrzeba do pracy sortowanie mergeSort
+	 * @param left jedna czesc listy do sklejenia
+	 * @param right druga czesc listy do sklejenia
+	 * @return zwraca liste
+	 */
+	MyList merge(MyList left, MyList right);
+	/**
+	 * @brief Sortuje liste przez scalanie
+	 * @param m Lista do posotrowania
+	 * @return zwraca posotrowana liste
+	 */
+	MyList mergeSort(MyList m);
+	MyListElement operator[](int numberOfElement);
 };
 
 

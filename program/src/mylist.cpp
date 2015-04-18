@@ -109,45 +109,15 @@ int MyList :: saveDataToFile()
 	}
 	return 0;
 }
-
-
-void MyList :: scalanieSort(MyList lista)
+MyList::MyListElement  MyList::operator[](int numberOfElement)
 {
-	if(this->sizeOfList > 2)
+	MyList::MyListElement elem;
+	elem = *(this->firstElement);
+	for (int i =0; i< numberOfElement ; i++)
 	{
-		MyList tmpLista1, tmpLista2;
-		// dziele zbior na nwa podzbiory
-		for(int i=0; i<(lista.sizeOfList/2); i++)
-			tmpLista1.push_front(lista.pop_front());
-		for(int i=0; i<lista.sizeOfList/2; i++)
-			tmpLista2.push_front(lista.pop_front());
-
+		elem = *(elem.nextElement);
 	}
-	else
-	{
-		int tmp = lista.pop_front().number;
-		MyList::MyListElement *elem = new MyList::MyListElement(tmp);
-		if(tmp < lista.show_front().number ) lista.push_front(*elem);
-		else lista.push_back(*elem);
-
-	}
-
-}
-
-int MyList :: splitList(MyList &tmpLista1, MyList &tmpLista2)
-{
-	int size = this->sizeOfList;
-	std::cout<<"\nRozmiar listy to: "<<size;;
-	for(int i=0; i<(size/2); i++)
-		tmpLista1.push_back(this->pop_front());
-
-	for(int i=0; i<size/2; i++)
-		tmpLista2.push_back(this->pop_front());
-
-	std::cout<<"\nPo podzieleniu listy: ";
-	tmpLista1.printList();
-	tmpLista2.printList();
-	return 0;
+	return elem;
 }
 
 void  MyList :: printList()
@@ -162,53 +132,56 @@ void  MyList :: printList()
 }
 
 
-MyList MyList::mergeLists(MyList a, MyList b){
-
-    MyList mergedList;
-
-    if (!a.sizeOfList){
-        return b;
-    }else if (!b.sizeOfList){
-        return a;
-    }
-
-
-    if (a.show_front().number <= b.show_front().number){
-        mergedList = a;
-        MyList::MyListElement elem = a.pop_front();
-        mergedList.push_back(elem);
-        mergeLists(a, b);
-
-    }else{
-        mergedList = b;
-        MyList::MyListElement elem = b.pop_front();
-         mergedList.push_back(elem);
-         mergeLists(a, b);
-    }
-
-    return mergedList;
-
+MyList MyList::merge(MyList left, MyList right)
+{
+	MyList result;
+	//Gdy jest jeszcze cos do sortowania
+	while (left.size() > 0 || right.size() > 0)
+	{
+		// Jak oba to zamieniamy
+		if (left.size() > 0 && right.size() > 0)
+		{
+			// Sprawdzam czy zamieniac
+			if (left.show_front().number <= right.show_front().number)
+				{
+					result.push_back(left.show_front()); left.pop_front();
+				}
+			else
+			{
+				result.push_back(right.show_front()); right.pop_front();
+			}
+		}
+		// pojedyncze listy (nieparzyse)
+		else if (left.size() > 0)
+		{
+			for (int i = 0; i < left.size(); i++) result.push_back(left[i]); break;
+		}
+		// pojedyncze listy (nieparzyse- taka sama sytuacja jak wyzej)
+		else if ((int)right.size() > 0)
+		{
+			for (int i = 0; i < (int)right.size(); i++) result.push_back(right[i]); break;
+		}
+	}
+	return result;
 }
 
-void MyList::mergeSort(){
-
-    MyList head = *this;
-    MyList a;
-    MyList b;
-
-    if(!head.sizeOfList){
-
-        return;
-
-    }
-
-    head.splitList(a, b);
-
-    a.mergeSort();
-    b.mergeSort();
-
-    head = mergeLists(a, b);
-
+MyList MyList::mergeSort(MyList m)
+{
+	if (m.size() <= 1) return m; // gdy juz nic nie ma do sotrowania
+	MyList left, right, result;
+	int middle = (m.size()+ 1) / 2; // anty-nieparzyscie
+	for (int i = 0; i < middle; i++)
+		{
+			left.push_back(m[i]);
+		}
+	for (int i = middle; i < m.size(); i++)
+		{
+			right.push_back(m[i]);
+		}
+	left = mergeSort(left);
+	right = mergeSort(right);
+	result = merge(left, right);
+	return result;
 }
 
 
