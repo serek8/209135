@@ -7,7 +7,7 @@
 
 #ifndef DICTIONARY_H_
 #define DICTIONARY_H_
-#define LICZBA_ZNAKOW_DO_HASHU 3
+#define LICZBA_ZNAKOW_DO_HASHU 5
 
 #include <string>
 #include <iostream>
@@ -54,6 +54,7 @@ public:
 	 * @param str Klucz elementu do odwolania
 	 */
 	int &operator[](string str);
+	static int alfabetyczneSprawdzanieKolejnosci(string str_1, string str_2);
 };
 
 

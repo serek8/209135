@@ -9,7 +9,6 @@
 #include <unistd.h>
 #include "numbergenerator.h"
 #include "dataframe.h"
-#include "hashowanie.h"
 #include "mylist.h"
 #include "mybenchmark.h"
 #include "dictionary.h"
@@ -71,8 +70,14 @@ int main(int argc, char *argv[])
 		for(unsigned int i=0; i<podstawoweInfoIO.sizeOfTable; i++)
 		{
 			dict[str[i]] = podstawoweInfoIO.tableOfData[i];
+			//TEST: std::cout<<"\n(Zapisuje do slownika) dict["<<str[i]<<"]="<<podstawoweInfoIO.tableOfData[i];
 		}
 	std::cout<<"\nCzas alokowania slownika:"<<MyBenchmark::timerStop()<<'\n';
+
+	//TEST: for(unsigned int i=0; i<podstawoweInfoIO.sizeOfTable; i++) std::cout<<"\n(Czytam ze slownika) dict["<<str[i]<<"]="<<dict[str[i]];
+
+
+
 
 	std::cout<<std::endl;
 	return 0;

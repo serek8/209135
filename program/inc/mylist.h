@@ -64,8 +64,9 @@ public:
 	///  Konstruktor listy
 public:
 	MyList();
-
-
+	MyListElement *iterator;
+	int iteratorElementId; // nie ruszac !
+	int isIteratorAfterPop;
 	/**
 	 * @brief Zwraca ilosc elementow listy
 	 * @return ilosc elementow tablicy
@@ -99,8 +100,27 @@ public:
 	 * @return zwraca kopie tego elementu
 	 */
 	MyListElement &show_back();
-
+	/**
+	 * @brief Zapisuje liste do pliku
+	 * @return Zwraca 0 gdy zapisywanie powiodlo sie
+	 */
 	int saveDataToFile();
+
+	/**
+	 * @brief Wyswietla elementy listy
+	 */
+	void  printList();
+
+	/**
+	 * @brief Pobiera element z listy
+	 * @return Zwraca 0 gdy zapisywanie powiodlo sie
+	 */
+	MyListElement &operator[](int numberOfElement);
+
+	/**
+	 * @brief Wsadza element po obiekcie iteratora
+	 */
+	void insertAfter(MyListElement arg, int iteratorID);
 };
 
 

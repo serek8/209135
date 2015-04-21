@@ -12,6 +12,9 @@ MyList::MyList()
 {
 	firstElement = lastElement = new MyListElement();
 	sizeOfList = 0;
+	iteratorElementId =0;
+	iterator=NULL;
+	isIteratorAfterPop = 1; //to znaczy ze jeszcze raz trzeba bedzie sprawdzic pozycje iteratora 1- znaczy ze trzeba sprawdzic
 }
 
 MyList :: MyListElement::MyListElement(const MyListElement &myListElement)
@@ -39,6 +42,21 @@ void MyList :: push_front(MyListElement arg)
 	newMyListElement -> nextElement = this -> firstElement;
 	this -> firstElement -> previousElement = newMyListElement;
 	this->firstElement = newMyListElement;
+	++iteratorElementId;
+}
+
+void MyList :: insertAfter(MyListElement arg, int iteratorID)
+{
+	if(iteratorID==0)  {push_front(arg); return;}
+	if(iteratorID==this->sizeOfList-1)  {push_back(arg); return;}
+	MyListElement *newMyListElement = new MyListElement(arg);
+	MyListElement &tmpThis=(*this)[iteratorID], &tmpNext=(*this)[iteratorID+1];
+	if(!sizeOfList++) {firstElement = lastElement = newMyListElement;}
+	newMyListElement -> nextElement = tmpThis.nextElement;
+	newMyListElement -> previousElement = &tmpThis;
+	tmpThis.nextElement = newMyListElement;
+	tmpNext.previousElement = newMyListElement;
+	isIteratorAfterPop=1;
 }
 
 MyList::MyListElement  MyList::pop_back()
@@ -48,6 +66,7 @@ MyList::MyListElement  MyList::pop_back()
 	MyListElement *originMyListElement = this -> lastElement;
 	this -> lastElement = this -> lastElement -> previousElement;
 	delete originMyListElement;
+	isIteratorAfterPop=1;
 	return tmpNumber;
 }
 MyList::MyListElement  MyList :: pop_front()
@@ -58,6 +77,7 @@ MyList::MyListElement  MyList :: pop_front()
 	this -> firstElement = this -> firstElement -> nextElement;
 
 	delete originMyListElement;
+	isIteratorAfterPop=1;
 	return tmpNumber;
 }
 
@@ -102,4 +122,51 @@ int MyList :: saveDataToFile()
 		streamToFile << '{'<<el.nazwa <<':'<<el.number<<"} ";
 	}
 	return 0;
+}
+MyList::MyListElement &MyList::operator[](int numberOfElement)
+{
+	//std::cerr<<"\nJestem w ["<<numberOfElement<<"] iterator="<<iteratorElementId;
+	if(numberOfElement > (sizeOfList-1)) // jezeli wyszedlem poza liste
+		{
+			std::cerr<<"\n! Error indeks o numerze: "<<numberOfElement<<" nie istnieje !";
+			return *iterator;
+		}
+	if(isIteratorAfterPop)
+		{
+			iteratorElementId=0;  // czyli iterator byl zpopowany
+			iterator = firstElement;
+			isIteratorAfterPop=0;
+		}
+	//std::cerr<<"\nsprawdzam w ["<<numberOfElement<<"] iterator="<<iteratorElementId;
+	if((numberOfElement <= iteratorElementId-numberOfElement) &&(iteratorElementId-numberOfElement>=0))
+	{
+		//std::cerr<<"\nJestem w if_1";
+		iterator = (this->firstElement);
+		for (int i =0; i< numberOfElement ; i++)
+			iterator = (iterator->nextElement);
+	}
+	else if(numberOfElement > iteratorElementId)
+	{
+		//std::cerr<<"\nJestem w if_2";
+		for (; iteratorElementId< numberOfElement ; iteratorElementId++)
+					iterator = (iterator->nextElement);
+	}
+	else if( numberOfElement < iteratorElementId)
+	{
+		//std::cerr<<"\nJestem w if_3";
+		for (; iteratorElementId> numberOfElement ; iteratorElementId--)
+					iterator = (iterator->previousElement);
+	}
+	return *iterator;
+}
+
+void  MyList :: printList()
+{
+	MyList::MyListElement *elem = (this->firstElement);
+	std::cout<<"\nWyswietlam liste (size:"<<this->sizeOfList<<"): ";
+	for(int i=0; i< this->sizeOfList; i++)
+	{
+		std::cout<<" "<<elem->number;
+		elem = elem->nextElement;
+	}
 }

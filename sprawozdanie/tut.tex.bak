@@ -7,7 +7,7 @@
 \selectlanguage{polish}
 \usepackage{graphicx}
 \begin{document}
-\title{Laboratorium 3}
+\title{Laboratorium 4}
 \author{Jan Seredyński}
 \date{\today}
 \maketitle
@@ -16,28 +16,16 @@
 Zadaniem laboratorium jest pomiar czasu wykonania operacji wypelnienia tablicy asocjacyjnej (słownika). Do wykonania analizy zstosowałem wcześniej przygotowaną listę dwukierunkową(nie opartą na tablicy).
 
 
-\section{Schematy odpowiednich struktur}
-
-Lista dwukierunkowa
-\includegraphics[width=5in]{lista2_1.png} 
-\par\vspace{\baselineskip}
-\hrule
-\par\vspace{\baselineskip}
-
-
-\section{Wydajność listy}
-Podczas poprzednich laboratoriow przygotowałem implementacje listy dwukierunkowej(kolor fioletowy na wykresie, której zlożoność obliczeniowa wynosi O(n) przy wypelnianiu jej o jeden element(przykład stosu)
-\par\vspace{\baselineskip}
-
-\includegraphics[width=4.5in]{3stos_dyn_o_200ilista.png}
+\section{Moja implementacja słownika}
+Przy utworzenia klasy słownik uznałem, że najważniejszą metodą którą się używa jest operator[], więc pełni on główną rolę w moim kodzie. Dzięki niemu możemy zapisywać oraz odczytywać elementy z tablicy dzięki zastosowaniu referencji.
 
 \section{Wydajność słownika}
 Wykorzystałem metode łańcuchową transformacji kluczowej, której idee pokazuje obraz poniżej.
 \par\vspace{\baselineskip}
 \includegraphics[width=5in]{lancuchowa.png}\\\
-W mojej implementacji złożoność obliczeniowa słownika wynosi $O(n^2)$), ponieważ algorytm żeby dostać się do odpowiedniego elementu kX na liscie potrzebuje najpierw wypopowac elementy na tymczasową liste, a gdy go znajdzie(i doda/odczyta) to następnie musi zpushować je spowrotem z tymczasowej listy na oryginalną.\\\
-To doprowadza do momentu, w którym otrzymujemy liniowy wykres dla popowania i pushowania, więc ich iloczyn daje nam funkcję kwadratową.
-\includegraphics[width=6.5in]{slownik.png}
+W mojej implementacji złożoność obliczeniowa słownika wynosi $O(n*log^n)$),co można zaobserwować na wykresie poniżej.\\\
+Do testów napisałem oddzielny modul generujący losowe wyrazy i liczby, które nastepnie zapisuje do słownika.
+\includegraphics[width=6in]{slownik.png}
 
 
 \section{Podsumowanie}

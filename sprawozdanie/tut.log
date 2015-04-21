@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.12)  16 APR 2015 00:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.12)  21 APR 2015 10:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -496,55 +496,48 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 13.
 
-<lista2_1.png, id=1, 459.21562pt x 91.09032pt>
-File: lista2_1.png Graphic file (type png)
- <use lista2_1.png>
-Package pdftex.def Info: lista2_1.png used on input line 22.
-(pdftex.def)             Requested size: 361.34999pt x 71.68117pt.
-
-<3stos_dyn_o_200ilista.png, id=3, 1099.10625pt x 808.01875pt>
-File: 3stos_dyn_o_200ilista.png Graphic file (type png)
-
-<use 3stos_dyn_o_200ilista.png>
-Package pdftex.def Info: 3stos_dyn_o_200ilista.png used on input line 32.
-(pdftex.def)             Requested size: 325.215pt x 239.07857pt.
-
-<lancuchowa.png, id=4, 664.4825pt x 328.22626pt> [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./lista2_1.png> <./3stos_d
-yn_o_200ilista.png (PNG copy)>]
+<lancuchowa.png, id=1, 664.4825pt x 328.22626pt>
 File: lancuchowa.png Graphic file (type png)
  <use lancuchowa.png>
-Package pdftex.def Info: lancuchowa.png used on input line 37.
+Package pdftex.def Info: lancuchowa.png used on input line 25.
 (pdftex.def)             Requested size: 361.34999pt x 178.49161pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 38.
- <slownik.png, id=15, 1099.10625pt x 808.01875pt>
-File: slownik.png Graphic file (type png)
+(Font)              <10.95> on input line 26.
 
-<use slownik.png>
-Package pdftex.def Info: slownik.png used on input line 40.
+<slownik.png, id=3, 1099.10625pt x 808.01875pt>
+File: slownik.png Graphic file (type png)
+ <use slownik.png>
+Package pdftex.def Info: slownik.png used on input line 28.
 (pdftex.def)             Requested size: 433.62pt x 318.77553pt.
- [2 <./lancuchowa.png> <./slownik.png (PNG copy)>] [3]
-(./tut.aux) ) 
+
+Overfull \hbox (12.8254pt too wide) in paragraph at lines 25--29
+\T1/lmr/m/n/10.95 sªow-nika. [] 
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./lancuchowa.png>]
+[2 <./slownik.png (PNG copy)>] (./tut.aux) ) 
 Here is how much of TeX's memory you used:
- 2976 strings out of 494952
- 40126 string characters out of 6179606
+ 2966 strings out of 494952
+ 39903 string characters out of 6179606
  102544 words of memory out of 5000000
- 6135 multiletter control sequences out of 15000+600000
+ 6127 multiletter control sequences out of 15000+600000
  34340 words of font info for 34 fonts, out of 8000000 for 9000
  56 hyphenation exceptions out of 8191
- 37i,6n,23p,359b,210s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/f
-onts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}
-</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/
-share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb>
-Output written on tut.pdf (3 pages, 235606 bytes).
+ 37i,6n,23p,272b,210s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/l
+m/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/
+texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.e
+nc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></u
+sr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmsy10.pfb>
+Output written on tut.pdf (2 pages, 179691 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 49 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
