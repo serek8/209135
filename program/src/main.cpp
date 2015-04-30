@@ -64,7 +64,8 @@ int main(int argc, char *argv[])
 		podstawoweInfoIO.saveDataToFile();
 	}
 
-	MyListObserved lista; MyList::MyListElement elem;
+	MyListObserved lista;
+	MyList::MyListElement elem;
 	Observer *obsBench = new MyBenchmarkObserver();
 	lista.dodaj(obsBench);
 
@@ -78,7 +79,7 @@ int main(int argc, char *argv[])
 		std::cout<<"\n+ - - - - Zaczynam sortowanie - - - +\n";
 		MyBenchmark::timerStart();
 		lista.mergeSort(lista);
-		std::cout<<"Generuje losowe liczby:"<<MyBenchmark::timerStop()<<'\n';
+		//std::cout<<"Generuje losowe liczby:"<<MyBenchmark::timerStop()<<'\n';
 		lista.printList();
 
 
