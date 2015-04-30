@@ -47,7 +47,7 @@ void MyList :: push_front(MyListElement arg)
 
 void MyList :: insertAfter(MyListElement arg, int iteratorID)
 {
-	if(iteratorID==0)  {push_front(arg); return;}
+	if(iteratorID==0 && this->sizeOfList==0)  {push_front(arg); return;}
 	if(iteratorID==this->sizeOfList-1)  {push_back(arg); return;}
 	MyListElement *newMyListElement = new MyListElement(arg);
 	MyListElement &tmpThis=(*this)[iteratorID], &tmpNext=(*this)[iteratorID+1];
@@ -169,4 +169,58 @@ void  MyList :: printList()
 		std::cout<<" "<<elem->number;
 		elem = elem->nextElement;
 	}
+}
+
+MyList MyList::merge(MyList left, MyList right)
+{
+	MyList result;
+	//Gdy jest jeszcze cos do sortowania
+	while (left.size() > 0 || right.size() > 0)
+	{
+		// Jak oba to zamieniamy
+		if (left.size() > 0 && right.size() > 0)
+		{
+			// Sprawdzam czy zamieniac
+			if (left.show_front().number <= right.show_front().number)
+				{
+					result.push_back(left.show_front()); left.pop_front();
+				}
+			else
+			{
+				result.push_back(right.show_front()); right.pop_front();
+			}
+		}
+		// pojedyncze listy (nieparzyse)
+		else if (left.size() > 0)
+		{
+			for (int i = 0; i < left.size(); i++) result.push_back(left[i]); break;
+		}
+		// pojedyncze listy (nieparzyse- taka sama sytuacja jak wyzej)
+		else if ((int)right.size() > 0)
+		{
+			for (int i = 0; i < (int)right.size(); i++) result.push_back(right[i]); break;
+		}
+	}
+	return result;
+}
+
+MyList MyList::mergeSort(MyList m)
+{
+	if (m.size() <= 1) return m; // gdy juz nic nie ma do sotrowania
+	MyList left, right, result;
+	int middle = (m.size()+ 1) / 2; // anty-nieparzyscie
+	for (int i = 0; i < middle; i++)
+		{
+			left.push_back(m[i]);
+		}
+	for (int i = middle; i < m.size(); i++)
+		{
+			right.push_back(m[i]);
+		}
+	left = mergeSort(left);
+	right = mergeSort(right);
+	result = merge(left, right);
+	// zapisuje do oryginalu
+	(*this) = result;
+	return result;
 }

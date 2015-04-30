@@ -11,6 +11,7 @@ CPP_SRCS += \
 ../program/src/mybenchmark.cpp \
 ../program/src/mylist.cpp \
 ../program/src/numbergenerator.cpp \
+../program/src/observer.cpp \
 ../program/src/stackonarray.cpp 
 
 OBJS += \
@@ -21,6 +22,7 @@ OBJS += \
 ./program/src/mybenchmark.o \
 ./program/src/mylist.o \
 ./program/src/numbergenerator.o \
+./program/src/observer.o \
 ./program/src/stackonarray.o 
 
 CPP_DEPS += \
@@ -31,6 +33,7 @@ CPP_DEPS += \
 ./program/src/mybenchmark.d \
 ./program/src/mylist.d \
 ./program/src/numbergenerator.d \
+./program/src/observer.d \
 ./program/src/stackonarray.d 
 
 

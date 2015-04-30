@@ -13,6 +13,7 @@
 #include "mybenchmark.h"
 #include "dictionary.h"
 #include <string>
+#include "observer.h"
 
 int main(int argc, char *argv[])
 {
@@ -63,19 +64,22 @@ int main(int argc, char *argv[])
 		podstawoweInfoIO.saveDataToFile();
 	}
 
-	Dictionary dict;
-	std::cout<<"\nHashuje pierwsze "<<LICZBA_ZNAKOW_DO_HASHU<< " znaki.";
-	std::string *str = NumberGenerator::generateStrings(podstawoweInfoIO.sizeOfTable);
-	MyBenchmark::timerStart();
-		for(unsigned int i=0; i<podstawoweInfoIO.sizeOfTable; i++)
+	MyListObserved lista; MyList::MyListElement elem;
+	Observer *obsBench = new MyBenchmarkObserver();
+	lista.dodaj(obsBench);
+
+		for (unsigned int i=0; i<podstawoweInfoIO.sizeOfTable ; i++)
 		{
-			dict[str[i]] = podstawoweInfoIO.tableOfData[i];
-			//TEST: std::cout<<"\n(Zapisuje do slownika) dict["<<str[i]<<"]="<<podstawoweInfoIO.tableOfData[i];
+			elem.number = podstawoweInfoIO.tableOfData[i];
+			lista.push_back(elem);
 		}
-	std::cout<<"\nCzas alokowania slownika:"<<MyBenchmark::timerStop()<<'\n';
 
-	//TEST: for(unsigned int i=0; i<podstawoweInfoIO.sizeOfTable; i++) std::cout<<"\n(Czytam ze slownika) dict["<<str[i]<<"]="<<dict[str[i]];
-
+		lista.printList();
+		std::cout<<"\n+ - - - - Zaczynam sortowanie - - - +\n";
+		MyBenchmark::timerStart();
+		lista.mergeSort(lista);
+		std::cout<<"Generuje losowe liczby:"<<MyBenchmark::timerStop()<<'\n';
+		lista.printList();
 
 
 

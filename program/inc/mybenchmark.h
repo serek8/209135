@@ -10,6 +10,8 @@
 
 #include <ctime>
 #include "dataframe.h"
+#include "observer.h"
+#include <iostream>
 /**
  * @brief Klasa bazowa/interface do testowania algorytmu
  *
@@ -64,6 +66,22 @@ public:
 	virtual ~MyBenchmark() {};
 	//using DataFrame::operator=;
 
+};
+
+
+class MyBenchmarkObserver : public MyBenchmark, public Observer
+{
+public:
+	MyBenchmarkObserver()
+	{
+		timerStart();
+	}
+
+	void update () {
+		std::cout<<"\nCzas trwania algorytmu to " <<timerStop();
+
+	}
+	void executeAlgorithm(){};
 
 };
 

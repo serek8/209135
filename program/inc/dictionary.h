@@ -13,6 +13,7 @@
 #include <iostream>
 #include "mylist.h"
 #include "numbergenerator.h"
+#include "observer.h"
 using namespace std;
 
 /**

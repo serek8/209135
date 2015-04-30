@@ -11,6 +11,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "observer.h"
 /**
  * @brief Lista dwukierunkowa
  *
@@ -121,8 +122,31 @@ public:
 	 * @brief Wsadza element po obiekcie iteratora
 	 */
 	void insertAfter(MyListElement arg, int iteratorID);
+
+	MyList merge(MyList left, MyList right);
+	/**
+	 * @brief Sortuje liste przez scalanie
+	 * @param m Lista do posotrowania
+	 * @return zwraca posotrowana liste
+	 */
+	MyList mergeSort(MyList m);
+	//MyListElement operator[](int numberOfElement);
+
 };
 
+class MyListObserved : public MyList, public Observed
+{
+public:
+	void mergeSort(MyList m)
+	{
+	MyList::mergeSort(m);
+	powiadom();
 
+	}
+	MyListObserved(){};
+	~MyListObserved(){};
+
+
+};
 
 #endif /* MYLIST_H_ */
