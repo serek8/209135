@@ -10,8 +10,9 @@
 #include "numbergenerator.h"
 #include "dataframe.h"
 #include "mylist.h"
+#include "mergesort.h"
 #include "mybenchmark.h"
-#include "dictionary.h"
+//#include "dictionary.h"
 #include <string>
 #include "observer.h"
 
@@ -64,23 +65,23 @@ int main(int argc, char *argv[])
 		podstawoweInfoIO.saveDataToFile();
 	}
 
-	MyListObserved lista;
-	MyList::MyListElement elem;
-	Observer *obsBench = new MyBenchmarkObserver();
-	lista.dodaj(obsBench);
+	MyList<int> *lista = new MergeSort<int>;
+	MyList<int>::MyListElement elem;
+
+
 
 		for (unsigned int i=0; i<podstawoweInfoIO.sizeOfTable ; i++)
 		{
-			elem.number = podstawoweInfoIO.tableOfData[i];
-			lista.push_back(elem);
+			elem.content = podstawoweInfoIO.tableOfData[i];
+			(*lista).push_back(elem);
 		}
 
-		lista.printList();
+		(*lista).printList();
 		std::cout<<"\n+ - - - - Zaczynam sortowanie - - - +\n";
+
 		MyBenchmark::timerStart();
-		lista.mergeSort(lista);
+		(*lista).sort((*lista)).printList();;
 		//std::cout<<"Generuje losowe liczby:"<<MyBenchmark::timerStop()<<'\n';
-		lista.printList();
 
 
 
