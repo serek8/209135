@@ -8,7 +8,7 @@
 #ifndef SORTER_H_
 #define SORTER_H_
 
-#include "mylist.h"
+#include "list.h"
 
 
 template <typename MyListElementType>

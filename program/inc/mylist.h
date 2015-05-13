@@ -45,6 +45,19 @@ public:
 		iterator=NULL;
 		isIteratorAfterPop = 1; //to znaczy ze jeszcze raz trzeba bedzie sprawdzic pozycje iteratora 1- znaczy ze trzeba sprawdzic
 	}
+	MyList(List<MyListElementType> &list)
+	{
+		firstElement = lastElement = new MyListElement<MyListElementType>;
+		sizeOfList = 0;
+		iteratorElementId =0;
+		iterator=NULL;
+		isIteratorAfterPop = 1; //to znaczy ze jeszcze raz trzeba bedzie sprawdzic pozycje iteratora 1- znaczy ze trzeba sprawdzic
+		for(int i=0; i<list.size(); i++)
+		{
+			this->push_back(list[i]);
+		}
+
+	}
 	virtual ~MyList(){};
 
 	/**

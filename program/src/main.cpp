@@ -48,12 +48,12 @@ int main(int argc, char *argv[])
 		std::cout<<"\n+ - - - - Zaczynam sortowanie - - - +\n";
 
 		MyBenchmark::timerStart();
-		std::cout<<"\n! ! !";
-		MergeSorter<int> heapSorter(lista);
-		std::cout<<"\n! ! !";
+		QuickSorter<int> heapSorter(lista);
+
 		heapSorter.sort();
-		std::cout<<"\nPOrownanie";
+		std::cout<<"\nheapSorter:";
 		(heapSorter).printList();
+		std::cout<<"\nlista:";
 		lista.printList();
 		//std::cout<<"Generuje losowe liczby:"<<MyBenchmark::timerStop()<<'\n';
 

@@ -11,7 +11,7 @@
 #include "sorter.h"
 
 template <typename MyListElementType>
-class MergeSorter: public Sorter<MyListElementType> {
+class MergeSorter: public MyList<MyListElementType> {
 public:
 
 
