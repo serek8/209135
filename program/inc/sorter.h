@@ -12,10 +12,11 @@
 
 
 template <typename MyListElementType>
-class Sorter: public MyList<MyListElementType>
+class Sorter
 {
 public:
-	virtual MyList<MyListElementType> sort() = 0;
+
+	virtual List<MyListElementType> &sort() = 0;
 	virtual ~Sorter(){};
 };
 

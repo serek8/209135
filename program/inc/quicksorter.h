@@ -9,6 +9,7 @@
 #define QUICKSORT_H_
 
 #include "sorter.h"
+#include "list.h"
 #include <iostream>
 /**
  * Szybkie sortowanie Janka
@@ -19,36 +20,35 @@ class QuickSorter : public Sorter<MyListElementType>
 {
 public:
 	int enablePivot;
+	List<MyListElementType> &list;
 
 
-	QuickSorter(MyList<MyListElementType> &myList)
+
+	QuickSorter(List<MyListElementType> &list)
+	:list(list.createObjectFromAbstractReference())
 	{
-		this->cloneFrom(myList);
+		this->list.cloneFrom(list);
 		this->enablePivot=1;
 	}
 
-	QuickSorter(int isEnablePivot)
-	{
-		this->enablePivot = isEnablePivot;
-	}
 	virtual ~QuickSorter(){};
 	//void quicksort(int lewy, int prawy, int enablePivot)
 	void quicksort(int lewy, int prawy)
 	{
-	    int pivot=(*this)[(int)(lewy+prawy)/2].content;
+	    int pivot=list[(int)(lewy+prawy)/2].content;
 	    int i,j,x;
 	    i=lewy;
 	    j=prawy;
-	    if(enablePivot) pivot=((*this)[(int)(lewy+prawy)/2].content + (*this)[lewy].content + (*this)[prawy].content)/3;
+	    if(enablePivot) pivot=(list[(int)(lewy+prawy)/2].content + list[lewy].content + list[prawy].content)/3;
 	    do
 	    {
-	        while((*this)[i].content<pivot) {i++; }
-	        while((*this)[j].content>pivot) {j--; }
+	        while(list[i].content<pivot) {i++; }
+	        while(list[j].content>pivot) {j--; }
 	        if(i<=j)
 	        {
-	            x=(*this)[i].content;
-	            (*this)[i].content=(*this)[j].content;
-	            (*this)[j].content=x;
+	            x=list[i].content;
+	            list[i].content=list[j].content;
+	            list[j].content=x;
 	            i++;
 	            j--;
 	        }
@@ -57,12 +57,12 @@ public:
 	    if(j>lewy) quicksort(lewy, j);
 	    if(i<prawy) quicksort(i, prawy);
 	}
-public:
-	MyList<MyListElementType> sort()
+
+	List<MyListElementType> &sort()
 	{
 		std::cout<<"(QuickSort)";
-		quicksort(0, this->sizeOfList-1);
-		return (*this);
+		quicksort(0, list.size()-1);
+		return list;
 	}
 };
 

@@ -45,6 +45,7 @@ public:
 		iterator=NULL;
 		isIteratorAfterPop = 1; //to znaczy ze jeszcze raz trzeba bedzie sprawdzic pozycje iteratora 1- znaczy ze trzeba sprawdzic
 	}
+
 	MyList(List<MyListElementType> &list)
 	{
 		firstElement = lastElement = new MyListElement<MyListElementType>;
@@ -56,7 +57,6 @@ public:
 		{
 			this->push_back(list[i]);
 		}
-
 	}
 	virtual ~MyList(){};
 
@@ -110,7 +110,7 @@ public:
 	/**
 	 * @brief Wklada element na ostatnie miejsce na liscie
 	 */
-	void push_back(MyListElement<MyListElementType> arg)
+	void push_back(MyListElementType arg)
 	{
 		//std::cerr<<"\n(push_back): arg.content="<<arg.content;
 		MyListElement<MyListElementType> *newMyListElement = new MyListElement<MyListElementType>(arg);
@@ -123,7 +123,7 @@ public:
 	/**
 	 * @brief Wklada element na pierwsze miejsce na liscie
 	 */
-	void push_front(MyListElement<MyListElementType> arg)
+	void push_front(MyListElementType arg)
 	{
 		MyListElement<MyListElementType> *newMyListElement = new MyListElement<MyListElementType>(arg);
 		if(!sizeOfList++) {firstElement = lastElement = newMyListElement;}
@@ -188,7 +188,7 @@ public:
 		//std::cerr<<"\nJestem w ["<<numberOfElement<<"] iterator="<<iteratorElementId;
 		if(numberOfElement > (sizeOfList-1)) // jezeli wyszedlem poza liste
 			{
-				//std::cerr<<"\n! Error indeks o numerze: "<<numberOfElement<<" nie istnieje !";
+				std::cerr<<"\n! Error indeks o numerze: "<<numberOfElement<<" nie istnieje !";
 				return *iterator;
 			}
 		if(isIteratorAfterPop)
@@ -226,8 +226,8 @@ public:
 	 */
 	void insertAfter(MyListElement<MyListElementType> arg, int iteratorID)
 	{
-		if(iteratorID==0 && this->sizeOfList==0)  {push_front(arg); return;}
-		if(iteratorID==this->sizeOfList-1)  {push_back(arg); return;}
+		if(iteratorID==0 && this->sizeOfList==0)  {push_front(arg.content); return;}
+		if(iteratorID==this->sizeOfList-1)  {push_back(arg.content); return;}
 		MyListElement<MyListElementType> *newMyListElement = new MyListElement<MyListElementType>(arg);
 		MyListElement<MyListElementType> &tmpThis=(*this)[iteratorID], &tmpNext=(*this)[iteratorID+1];
 		if(!sizeOfList++) {firstElement = lastElement = newMyListElement;}
@@ -266,6 +266,14 @@ public:
 		*this = clonedList;
 	}
 */
+
+	List<MyListElementType> &createObjectFromAbstractReference(/*MyList<MyListElementType> abstractPattern*/)
+	{
+		return *new MyList<MyListElementType>;
+	}
+
+
+
 };
 ////////////
 

@@ -20,12 +20,13 @@
 int main(int argc, char *argv[])
 {
 	MyList<int> lista;
-
+	int isSetN = 0;
 	int opt;	/// Zmienna uzywana przez GETOPT
 	while ((opt = getopt(argc, argv, "n:o:i:gx")) != -1) {
 		switch(opt){
 		case 'n':	// ilosc liczb do przetworzenia
 			lista = NumberGenerator::generateNumbers<int>(10000000, atoi(optarg));
+			isSetN = 1;
 			break;
 
 		case 'o':
@@ -41,7 +42,7 @@ int main(int argc, char *argv[])
 			return -1;
 		}
 	}
-
+	if(!isSetN) {std::cerr<<"\nNie podano argumentu: -n X\n"; return -1;}
 
 
 		(lista).printList();
@@ -52,9 +53,9 @@ int main(int argc, char *argv[])
 
 		heapSorter.sort();
 		std::cout<<"\nheapSorter:";
-		(heapSorter).printList();
+		(heapSorter).list.printList();
 		std::cout<<"\nlista:";
-		lista.printList();
+		//lista.printList();
 		//std::cout<<"Generuje losowe liczby:"<<MyBenchmark::timerStop()<<'\n';
 
 

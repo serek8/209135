@@ -19,9 +19,9 @@ public:
 	int virtual &size() = 0;
 	ListElement<MyListElementType> virtual pop_back()	=	0;
 	ListElement<MyListElementType> virtual pop_front() 		= 	0;
-
-	void virtual push_back(MyListElement<MyListElementType> arg)	=	0;
-	void virtual push_front(MyListElement<MyListElementType> arg)	=	0;
+	void virtual printList()	=	0;
+	void virtual push_back(MyListElementType arg)	=	0;
+	void virtual push_front(MyListElementType arg)	=	0;
 	MyListElement<MyListElementType> virtual &operator[](int numberOfElement)		=	0;
 	void virtual insertAfter(MyListElement<MyListElementType> arg, int iteratorID)	=	0;
 	//MyList<MyListElementType> virtual &operator=(const MyList<MyListElementType> &pattern)	= 	0;
@@ -32,8 +32,9 @@ public:
 		// release memory from main list
 		while(this->size()) pop_back();
 		for(int i=0; i<patternList.size(); i++)
-			this->push_back(patternList[i]);
+			this->push_back(patternList[i].content);
 	}
+	List<MyListElementType> virtual &createObjectFromAbstractReference() = 0;
 	virtual ~List(){};
 };
 
