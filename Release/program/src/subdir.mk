@@ -6,7 +6,6 @@
 CPP_SRCS += \
 ../program/src/dataframe.cpp \
 ../program/src/main.cpp \
-../program/src/multiplybytwo.cpp \
 ../program/src/mybenchmark.cpp \
 ../program/src/numbergenerator.cpp \
 ../program/src/observer.cpp \
@@ -15,7 +14,6 @@ CPP_SRCS += \
 OBJS += \
 ./program/src/dataframe.o \
 ./program/src/main.o \
-./program/src/multiplybytwo.o \
 ./program/src/mybenchmark.o \
 ./program/src/numbergenerator.o \
 ./program/src/observer.o \
@@ -24,7 +22,6 @@ OBJS += \
 CPP_DEPS += \
 ./program/src/dataframe.d \
 ./program/src/main.d \
-./program/src/multiplybytwo.d \
 ./program/src/mybenchmark.d \
 ./program/src/numbergenerator.d \
 ./program/src/observer.d \
