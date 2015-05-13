@@ -8,18 +8,28 @@
 #ifndef MERGESORT_H_
 #define MERGESORT_H_
 
-#include "mylist.h"
+#include "sorter.h"
 
 template <typename MyListElementType>
-class MergeSort: public MyList<MyListElementType> {
+class MergeSorter: public Sorter<MyListElementType> {
 public:
-	MergeSort(){}
-	virtual ~MergeSort(){}
 
 
-	MyList<MyListElementType> merge(MyList<MyListElementType> left, MyList<MyListElementType> right)
+	MergeSorter(){};
+	MergeSorter(MyList<MyListElementType> &myList)
 	{
-		MyList<MyListElementType> result;
+		this->sizeOfList = myList.sizeOfList;
+		this->firstElement = myList.firstElement;
+		this->lastElement = myList.lastElement;
+		this->iterator=myList.iterator;
+		this->isIteratorAfterPop = myList.isIteratorAfterPop;
+	}
+	virtual ~MergeSorter(){}
+
+
+	MergeSorter<MyListElementType> merge(MergeSorter<MyListElementType> left, MergeSorter<MyListElementType> right)
+	{
+		MergeSorter<MyListElementType> result;
 		//Gdy jest jeszcze cos do sortowania
 		while (left.size() > 0 || right.size() > 0)
 		{
@@ -54,10 +64,10 @@ public:
 	 * @param m Lista do posotrowania
 	 * @return zwraca posotrowana liste
 	 */
-	MyList<MyListElementType> mergeSort(MyList<MyListElementType> m)
+	MergeSorter<MyListElementType> mergeSort(MergeSorter<MyListElementType> &m)
 	{
 		if (m.size() <= 1) return m; // gdy juz nic nie ma do sotrowania
-		MyList<MyListElementType> left, right, result;
+		MergeSorter<MyListElementType> left, right, result;
 		int middle = (m.size()+ 1) / 2; // anty-nieparzyscie
 		for (int i = 0; i < middle; i++)
 			{
@@ -77,11 +87,13 @@ public:
 		return result;
 	}
 
-	MyList<MyListElementType> sort(MyList<MyListElementType> m)
+
+	MyList<MyListElementType> sort()
 	{	std::cerr<<"\nSortowanie z MergeSort";
-		MyList<MyListElementType> result;
-		result = mergeSort(m);
-		//(MyList<MyListElementType>)(*this) = result;
+		MergeSorter <MyListElementType> result;
+		result= mergeSort(*this);
+		*this = result;
+		std::cout<<"\n(MergeSort - exit)";
 		return result;
 	}
 

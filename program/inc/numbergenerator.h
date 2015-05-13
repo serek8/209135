@@ -11,7 +11,7 @@
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
 #include <iostream>
-#include "dataframe.h"
+#include "mylist.h"
 #include <string>
 
 #define MAX_HEX_ASCII_KOD 127
@@ -23,25 +23,38 @@
  * Wszystkie funkcje zapisu pliku dziedziczy z klasy DataFrame
  *
  */
-class NumberGenerator : public DataFrame
+
+class NumberGenerator
 {
 public:
+	//int static range;
+	//int static quantity;
+	/*NumberGenerator()
+	{
+		std::cout<<"\nSTATIC SIE ROBI";
+		range = 10000000;
+		quantity = 10;
+	}*/
+
 /**
  * @brief Generuje losowe liczby
  * Generuje losowe liczby na podstawie czasu maszyny
  *
  * @param zakres Zakres liczb do wygenerowania
  */
-void generateNumbers(int zakres=10000000)
+template <typename MyListElementType>
+MyList<MyListElementType> static generateNumbers(int range, int quantity)
 {
+	MyList<MyListElementType> &myList = *new MyList<MyListElementType>();
 	time_t randomTime = clock();
-	this->tableOfData = new int[sizeOfTable];
-	for(unsigned int i=0; i<sizeOfTable ; i++)
+
+	for(int i=0; i<quantity ; i++)
 	{
 		srand (randomTime = clock());
-		this->tableOfData[i] = rand()%zakres;
+		myList.push_back(rand()%range);
 		randomTime = clock();
 	}
+	return myList;
 }
 
 /**
@@ -54,8 +67,8 @@ static std::string *generateStrings(int ileStringow);
 
 
 
-using DataFrame::operator=;
- ~NumberGenerator() {}
+//using DataFrame::operator=;
+
 };
 
 #endif /* NUMBERGENERATOR_H_ */

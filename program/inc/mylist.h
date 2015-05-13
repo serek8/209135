@@ -11,99 +11,47 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "mylistelement.h"
 #include "observer.h"
+#include "list.h"
+#include "listelement.h"
 /**
  * @brief Lista dwukierunkowa
  *
  * Klasa przedstawia liste dwukierunkową dynamiczna
  */
 template <typename MyListElementType>
-class MyList{
+class MyList : public List<MyListElementType>{
 
 public:
 	/// liczba elementow listy
 	int sizeOfList;
-public:
-	/// @brief Klasa 'malych struktur' gdzie jest numer i wskaznik do nas elementu
-	class MyListElement {
-		///  Liczba przechowywana
-	public:
-		MyListElementType content;
-		///  wskaznik do nastepnej 'malej struktury' w liscie
-		MyListElement *nextElement;
-		///  wskaznik do poprzedniej 'malej struktury' w liscie
-		MyListElement *previousElement;
-	public:
 
-		/**
-		 * @brief Konstruktor wewnetrznej klasy 'malych struktur'
-		 */
-		MyListElement()
-		{
-			this -> nextElement =0;
-			this -> previousElement =0;
-		}
-		/**
-		 * @brief Konstruktor wewnetrznej klasy 'malych struktur'
-		 * @param arg liczba do zapisania w kolejnym elemencie listy
-		 * @param str klucz tablicy asocjacyjnej
-		 */
-		MyListElement(MyListElementType arg)
-		{
-			this -> content = arg;
-			this -> nextElement =0;
-			this -> previousElement =0;
-			//std::cerr<<"\n(konstruktor MyListElement): content="<<arg;
-		}
-		/**
-		 * @brief Konstruktor kopiujacy wewnetrznej klasy 'malych struktur'
-		 * @param myListElement Element o przekopiowania
-		 */
-		MyListElement(const MyListElement &myListElement)
-		{
-			//this->number = myListElement.number;
-			//this->nazwa = myListElement.nazwa;
-			this->content = myListElement.content;
-			this->nextElement = myListElement.nextElement;
-			this->previousElement = myListElement.previousElement;
-			//std::cerr<<"\n(konstruktor kopiujacy MyListElement): content="<<content;
-		}
-		/**
-		 * @brief Ustawia liczbe oraz klucz slowanika dla elementu
-		 * @param arg Liczba do zapisania
-		 * @param str String do zapisania
-		 */
-		void set(MyListElementType arg)
-		{
-			this -> content = arg;
-			//this -> nazwa = str;
-		}
-		friend class MyList;
-	};
 
 	///  wskaznik do 'malej struktury' ktora jest pierwsza na liscie
-	MyListElement *firstElement;
+	MyListElement<MyListElementType> *firstElement;
 	///  wskaznik do 'malej struktury' ktora jest ostatnia na liscie
-	MyListElement *lastElement;
+	MyListElement<MyListElementType> *lastElement;
+	MyListElement<MyListElementType> *iterator;
+	int iteratorElementId; // nie ruszac !
+	int isIteratorAfterPop;
 	///  Konstruktor listy
-public:
+
 	MyList()
 	{
-		firstElement = lastElement = new MyListElement();
+		firstElement = lastElement = new MyListElement<MyListElementType>;
 		sizeOfList = 0;
 		iteratorElementId =0;
 		iterator=NULL;
 		isIteratorAfterPop = 1; //to znaczy ze jeszcze raz trzeba bedzie sprawdzic pozycje iteratora 1- znaczy ze trzeba sprawdzic
 	}
 	virtual ~MyList(){};
-	MyListElement *iterator;
-	int iteratorElementId; // nie ruszac !
-	int isIteratorAfterPop;
+
 	/**
 	 * @brief Zwraca ilosc elementow listy
 	 * @return ilosc elementow tablicy
 	 */
-	int size()
+	int &size()
 	{
 		return sizeOfList;
 	}
@@ -111,11 +59,21 @@ public:
 	 * @brief Zwraca element ostatni w liscie
 	 * @return Zwraca element ostatni w liscie
 	 */
-	MyListElement pop_back()
+	/*MyListElement<MyListElementType> &pop_back()
 	{
-		if(!(sizeOfList--)) { sizeOfList=0; return (*(new MyListElement())); }
-		MyListElement tmpNumber = *(this -> lastElement);
-		MyListElement *originMyListElement = this -> lastElement;
+		if(!(sizeOfList--)) { sizeOfList=0; return (*(new MyListElement<MyListElementType>)); }
+		MyListElement<MyListElementType> tmpNumber = *(this -> lastElement);
+		MyListElement<MyListElementType> *originMyListElement = this -> lastElement;
+		this -> lastElement = this -> lastElement -> previousElement;
+		delete originMyListElement;
+		isIteratorAfterPop=1;
+		return tmpNumber;
+	}*/
+	ListElement<MyListElementType> pop_back()
+	{
+		if(!(sizeOfList--)) { sizeOfList=0; return (*(new MyListElement<MyListElementType>)); }
+		MyListElement<MyListElementType> tmpNumber = *(this -> lastElement);
+		MyListElement<MyListElementType> *originMyListElement = this -> lastElement;
 		this -> lastElement = this -> lastElement -> previousElement;
 		delete originMyListElement;
 		isIteratorAfterPop=1;
@@ -125,11 +83,11 @@ public:
 	 * @brief Zwraca element pierwszy w liscie
 	 * @return Zwraca element pierwszy w liscie
 	 */
-	MyListElement pop_front()
+	ListElement<MyListElementType> pop_front()
 	{
-		if(!(sizeOfList--)) { sizeOfList=0; return (*(new MyListElement())); }
-		MyListElement tmpNumber = *(this -> firstElement);
-		MyListElement *originMyListElement = this -> firstElement;
+		if(!(sizeOfList--)) { sizeOfList=0; return (*(new MyListElement<MyListElementType>())); }
+		MyListElement<MyListElementType> tmpNumber = *(this -> firstElement);
+		MyListElement<MyListElementType> *originMyListElement = this -> firstElement;
 		this -> firstElement = this -> firstElement -> nextElement;
 
 		delete originMyListElement;
@@ -139,10 +97,10 @@ public:
 	/**
 	 * @brief Wklada element na ostatnie miejsce na liscie
 	 */
-	void push_back(MyListElement arg)
+	void push_back(MyListElement<MyListElementType> arg)
 	{
 		//std::cerr<<"\n(push_back): arg.content="<<arg.content;
-		MyListElement *newMyListElement = new MyListElement(arg);
+		MyListElement<MyListElementType> *newMyListElement = new MyListElement<MyListElementType>(arg);
 		if(!sizeOfList++) {firstElement = lastElement = newMyListElement;}
 		//newMyListElement -> nextElement = 0;
 		newMyListElement -> previousElement = this -> lastElement;
@@ -152,9 +110,9 @@ public:
 	/**
 	 * @brief Wklada element na pierwsze miejsce na liscie
 	 */
-	void push_front(MyListElement arg)
+	void push_front(MyListElement<MyListElementType> arg)
 	{
-		MyListElement *newMyListElement = new MyListElement(arg);
+		MyListElement<MyListElementType> *newMyListElement = new MyListElement<MyListElementType>(arg);
 		if(!sizeOfList++) {firstElement = lastElement = newMyListElement;}
 		//newMyListElement -> previousElement =  0;
 		newMyListElement -> nextElement = this -> firstElement;
@@ -166,7 +124,7 @@ public:
 	 * @brief Pokazuje element po poczatku listy
 	 * @return zwraca kopie tego elementu
 	 */
-	MyListElement &show_front()
+	MyListElement<MyListElementType> &show_front()
 	{
 		return *firstElement;
 	}
@@ -174,7 +132,7 @@ public:
 	 * @brief Pokazuje element po koncu listy
 	 * @return zwraca kopie tego elementu
 	 */
-	MyListElement &show_back()
+	MyListElement<MyListElementType> &show_back()
 	{
 		return *lastElement;
 	}
@@ -186,7 +144,7 @@ public:
 	{
 		std::ofstream streamToFile;
 		streamToFile.open ("myList.log", std::ofstream::out);
-		MyListElement el;
+		MyListElement<MyListElementType> el;
 		for(int i=0; i<sizeOfList ; i++) {
 			el = pop_front();
 			streamToFile << '{'<<el.content<<"} ";
@@ -199,7 +157,7 @@ public:
 	 */
 	void  printList()
 	{
-		MyList::MyListElement *elem = (this->firstElement);
+		MyListElement<MyListElementType> *elem = (this->firstElement);
 		std::cout<<"\nWyswietlam liste (size:"<<this->sizeOfList<<"): ";
 		for(int i=0; i< this->sizeOfList; i++)
 		{
@@ -212,12 +170,12 @@ public:
 	 * @brief Pobiera element z listy
 	 * @return Zwraca 0 gdy zapisywanie powiodlo sie
 	 */
-	MyListElement &operator[](int numberOfElement)
+	MyListElement<MyListElementType> &operator[](int numberOfElement)
 	{
 		//std::cerr<<"\nJestem w ["<<numberOfElement<<"] iterator="<<iteratorElementId;
 		if(numberOfElement > (sizeOfList-1)) // jezeli wyszedlem poza liste
 			{
-				std::cerr<<"\n! Error indeks o numerze: "<<numberOfElement<<" nie istnieje !";
+				//std::cerr<<"\n! Error indeks o numerze: "<<numberOfElement<<" nie istnieje !";
 				return *iterator;
 			}
 		if(isIteratorAfterPop)
@@ -231,7 +189,8 @@ public:
 		{
 			//std::cerr<<"\nJestem w if_1";
 			iterator = (this->firstElement);
-			for (int i =0; i< numberOfElement ; i++)
+			iteratorElementId = 0;
+			for (; iteratorElementId< numberOfElement ; iteratorElementId++)
 				iterator = (iterator->nextElement);
 		}
 		else if(numberOfElement > iteratorElementId)
@@ -252,12 +211,12 @@ public:
 	/**
 	 * @brief Wsadza element po obiekcie iteratora
 	 */
-	void insertAfter(MyListElement arg, int iteratorID)
+	void insertAfter(MyListElement<MyListElementType> arg, int iteratorID)
 	{
 		if(iteratorID==0 && this->sizeOfList==0)  {push_front(arg); return;}
 		if(iteratorID==this->sizeOfList-1)  {push_back(arg); return;}
-		MyListElement *newMyListElement = new MyListElement(arg);
-		MyListElement &tmpThis=(*this)[iteratorID], &tmpNext=(*this)[iteratorID+1];
+		MyListElement<MyListElementType> *newMyListElement = new MyListElement<MyListElementType>(arg);
+		MyListElement<MyListElementType> &tmpThis=(*this)[iteratorID], &tmpNext=(*this)[iteratorID+1];
 		if(!sizeOfList++) {firstElement = lastElement = newMyListElement;}
 		newMyListElement -> nextElement = tmpThis.nextElement;
 		newMyListElement -> previousElement = &tmpThis;
@@ -268,12 +227,32 @@ public:
 
 
 	//MyListElement operator[](int numberOfElement);
-	virtual MyList sort(MyList m)
+	//virtual MyList<MyListElementType> sort()
+	//{
+	//	std::cerr<<"\nError: Sortowanie z klasy MyList !!!";
+	//	//return m;
+	//}
+
+	MyList<MyListElementType> &operator=(const MyList<MyListElementType> &pattern)
 	{
-		std::cerr<<"\nError: Sortowanie z klasy MyList !!!";
-		return m;
+		this->sizeOfList = pattern.sizeOfList;
+		this->firstElement = pattern.firstElement;
+		this->lastElement = pattern.lastElement;
+		this->iterator=pattern.iterator;
+		this->isIteratorAfterPop = pattern.isIteratorAfterPop;
+		return *this;
 	}
 
+/*	void cloneFrom(MyList<MyListElementType> patternList)
+	{
+		MyList<MyListElementType> &clonedList = *new MyList<MyListElementType>;
+		// release memory from main list
+		while(this->size()) pop_back();
+		for(int i=0; i<patternList.size(); i++)
+			clonedList.push_back(patternList[i]);
+		*this = clonedList;
+	}
+*/
 };
 ////////////
 

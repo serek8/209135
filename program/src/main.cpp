@@ -8,79 +8,53 @@
 #include <iostream>
 #include <unistd.h>
 #include "numbergenerator.h"
-#include "dataframe.h"
 #include "mylist.h"
-#include "mergesort.h"
+#include "mergesorter.h"
+#include "heapsorter.h"
 #include "mybenchmark.h"
+#include "quicksorter.h"
 //#include "dictionary.h"
 #include <string>
 #include "observer.h"
 
 int main(int argc, char *argv[])
 {
-	DataFrame podstawoweInfoIO;
+	MyList<int> lista;
 
 	int opt;	/// Zmienna uzywana przez GETOPT
-	bool isSetNumberGenerator=false; /// Flaga ktora mowi o tym czy wlaczyc generator liczb losowych
-	//bool isTest=false;
-
 	while ((opt = getopt(argc, argv, "n:o:i:gx")) != -1) {
 		switch(opt){
 		case 'n':	// ilosc liczb do przetworzenia
-			podstawoweInfoIO.sizeOfTable = atoi(optarg);
+			lista = NumberGenerator::generateNumbers<int>(10000000, atoi(optarg));
 			break;
 
-
 		case 'o':
-			podstawoweInfoIO.outputFileName = optarg;
+			//podstawoweInfoIO.outputFileName = optarg;
 			break;
 
 		case 'i':
-			podstawoweInfoIO.inputFileName=optarg;
+			//podstawoweInfoIO.inputFileName=optarg;
 			break;
 
-		case 'g':	// wlacza generator liczb, po zakonczeniu generowania konczy program
-			isSetNumberGenerator=true;
-			break;
-
-
-		case '?':
-		default:
+		case '?':	default:
 			std::cout<<"\nPodano zly argument";
 			return -1;
 		}
 	}
 
 
-	// na potrzeby slownika wlaczam generowanie automatyczne
-	isSetNumberGenerator = true;
-	if(isSetNumberGenerator) {
-		NumberGenerator generator;
-		std::cout<<"\n+ - - - - Tworzenie tablicy i generacja losowych liczb - - - +\n";
-		generator= podstawoweInfoIO;
-		MyBenchmark::timerStart();
-			generator.generateNumbers();
-		std::cout<<"Generuje losowe liczby:"<<MyBenchmark::timerStop()<<'\n';
-		podstawoweInfoIO = generator;
-		podstawoweInfoIO.saveDataToFile();
-	}
 
-	MyList<int> *lista = new MergeSort<int>;
-	MyList<int>::MyListElement elem;
-
-
-
-		for (unsigned int i=0; i<podstawoweInfoIO.sizeOfTable ; i++)
-		{
-			elem.content = podstawoweInfoIO.tableOfData[i];
-			(*lista).push_back(elem);
-		}
-
-		(*lista).printList();
+		(lista).printList();
 		std::cout<<"\n+ - - - - Zaczynam sortowanie - - - +\n";
 
 		MyBenchmark::timerStart();
-		(*lista).sort((*lista)).printList();;
+		std::cout<<"\n! ! !";
+		MergeSorter<int> heapSorter(lista);
+		std::cout<<"\n! ! !";
+		heapSorter.sort();
+		std::cout<<"\nPOrownanie";
+		(heapSorter).printList();
+		lista.printList();
 		//std::cout<<"Generuje losowe liczby:"<<MyBenchmark::timerStop()<<'\n';
 
 

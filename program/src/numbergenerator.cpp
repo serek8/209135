@@ -7,7 +7,7 @@
 #include "numbergenerator.h"
 
 
-std::string *NumberGenerator::generateStrings(int ileStringow){
+/*std::string *NumberGenerator::generateStrings(int ileStringow){
 	std::string *tablicaStringow = new std::string[ileStringow];
 	NumberGenerator liczby;
 
@@ -31,4 +31,4 @@ std::string *NumberGenerator::generateStrings(int ileStringow){
 	}
 
 	return tablicaStringow;
-}
+}*/
