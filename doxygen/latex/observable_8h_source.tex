@@ -1,0 +1,47 @@
+\hypertarget{observable_8h}{\subsection{observable.\-h}
+\label{observable_8h}\index{observable.\-h@{observable.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * observable.h}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: May 14, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00008 \textcolor{preprocessor}{#ifndef OBSERVABLE\_H\_}
+00009 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define OBSERVABLE\_H\_}
+00010 \textcolor{preprocessor}{}
+00011 \textcolor{preprocessor}{#include <iostream>}
+00012 \textcolor{preprocessor}{#include "\hyperlink{mylist_8h}{mylist.h}"}
+00013 
+\hypertarget{observable_8h_source_l00016}{}\hyperlink{class_observable}{00016} \textcolor{keyword}{class }\hyperlink{class_observable}{Observable} \{
+00017 \textcolor{keyword}{public}:
+\hypertarget{observable_8h_source_l00019}{}\hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{00019}         \hyperlink{class_my_list}{MyList<Observer*>} \hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters};
+00020 
+\hypertarget{observable_8h_source_l00023}{}\hyperlink{class_observable_a18e7700c59126dbeb97d24844c6ed131}{00023}     \textcolor{keywordtype}{void} \hyperlink{class_observable_a18e7700c59126dbeb97d24844c6ed131}{add}(\hyperlink{class_observer}{Observer} *obserwator) \{
+00024         \hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}.\hyperlink{class_my_list_a52dad29ecf7522b86df8daa3aa74702d}{push\_back}(obserwator);
+00025     \}
+00026 
+\hypertarget{observable_8h_source_l00029}{}\hyperlink{class_observable_a78df64057f152342a43f27979186a6ba}{00029}     \textcolor{keywordtype}{void} \hyperlink{class_observable_a78df64057f152342a43f27979186a6ba}{sendStartUpdateToObservers} () \{
+00030         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}.\hyperlink{class_my_list_a267f669859ef3541333082cad6b28ab7}{size}(); i++)
+00031         \{
+00032                 \textcolor{comment}{//std::cout<<"Wysylam start update";}
+00033                 \hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}[i].content->receivedStartUpdate();
+00034         \}
+00035     \}
+00036 
+\hypertarget{observable_8h_source_l00039}{}\hyperlink{class_observable_a16f75ed1514a0cb7526b5a5d2b7ca7c6}{00039}     \textcolor{keywordtype}{void} \hyperlink{class_observable_a16f75ed1514a0cb7526b5a5d2b7ca7c6}{sendStopUpdateToObservers} () \{
+00040         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}.\hyperlink{class_my_list_a267f669859ef3541333082cad6b28ab7}{size}(); i++)
+00041                 \hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}[i].content->receivedStopUpdate();
+00042     \}
+00043 
+\hypertarget{observable_8h_source_l00044}{}\hyperlink{class_observable_a42f551d4d64ffa48a2ea8d7f0a4e42d4}{00044}         \textcolor{keyword}{virtual} \hyperlink{class_observable_a42f551d4d64ffa48a2ea8d7f0a4e42d4}{~Observable}()\{\}
+00045 
+00046 
+00047 
+00048 \};
+00049 
+00050 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* OBSERVABLE\_H\_ */}\textcolor{preprocessor}{}
+\end{DoxyCode}

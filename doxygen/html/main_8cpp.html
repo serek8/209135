@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Laboratorium 5: Dokumentacja pliku main.cpp</title>
+<title>Laboratorium 7: Dokumentacja pliku main.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Laboratorium 5
-   &#160;<span id="projectnumber">5.0</span>
+   <div id="projectname">Laboratorium 7
    </div>
   </td>
  </tr>
@@ -64,6 +63,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html','');});
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#define-members">Definicje</a> &#124;
 <a href="#func-members">Funkcje</a>  </div>
   <div class="headertitle">
 <div class="title">Dokumentacja pliku main.cpp</div>  </div>
@@ -72,20 +72,44 @@ $(document).ready(function(){initNavTree('main_8cpp.html','');});
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;unistd.h&gt;</code><br/>
 <code>#include &quot;<a class="el" href="numbergenerator_8h_source.html">numbergenerator.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="dataframe_8h_source.html">dataframe.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="hashowanie_8h_source.html">hashowanie.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="mylist_8h_source.html">mylist.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="mybenchmark_8h_source.html">mybenchmark.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="dictionary_8h_source.html">dictionary.h</a>&quot;</code><br/>
-<code>#include &lt;string&gt;</code><br/>
+<code>#include &quot;<a class="el" href="observable_8h_source.html">observable.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="observer_8h_source.html">observer.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="observableheapsorter_8h_source.html">observableheapsorter.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="observablequicksorter_8h_source.html">observablequicksorter.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="observablemergesorter_8h_source.html">observablemergesorter.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="filestreamer_8h_source.html">filestreamer.h</a>&quot;</code><br/>
 </div>
 <p><a href="main_8cpp_source.html">Idź do kodu źródłowego tego pliku.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definicje</h2></td></tr>
+<tr class="memitem:a1e1ad0a49252a8ba7ee63e4d476c06b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1e1ad0a49252a8ba7ee63e4d476c06b9">ILOSC_LICZB_DO_SORTOWANIA</a>&#160;&#160;&#160;1000</td></tr>
+<tr class="separator:a1e1ad0a49252a8ba7ee63e4d476c06b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funkcje</h2></td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Dokumentacja definicji</h2>
+<a class="anchor" id="a1e1ad0a49252a8ba7ee63e4d476c06b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ILOSC_LICZB_DO_SORTOWANIA&#160;&#160;&#160;1000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="main_8cpp_source.html#l00020">20</a> pliku <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+<p>Odwołania w <a class="el" href="main_8cpp_source.html#l00022">main()</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Dokumentacja funkcji</h2>
 <a class="anchor" id="a0ddf1224851353fc92bfbff6f499fa97"></a>
 <div class="memitem">
@@ -110,86 +134,91 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Zmienna uzywana przez GETOPT</p>
-<p>Flaga ktora mowi o tym czy wlaczyc generator liczb losowych </p>
+<p>Zmienna uzywana przez GETOPT </p>
 
-<p>Definicja w linii <a class="el" href="main_8cpp_source.html#l00018">18</a> pliku <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="main_8cpp_source.html#l00022">22</a> pliku <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p>Odwołuje się do <a class="el" href="numbergenerator_8h_source.html#l00035">NumberGenerator::generateNumbers()</a>, <a class="el" href="numbergenerator_8cpp_source.html#l00010">NumberGenerator::generateStrings()</a>, <a class="el" href="dataframe_8h_source.html#l00029">DataFrame::inputFileName</a>, <a class="el" href="dictionary_8h_source.html#l00010">LICZBA_ZNAKOW_DO_HASHU</a>, <a class="el" href="dataframe_8h_source.html#l00025">DataFrame::outputFileName</a>, <a class="el" href="dataframe_8cpp_source.html#l00032">DataFrame::saveDataToFile()</a>, <a class="el" href="dataframe_8h_source.html#l00034">DataFrame::sizeOfTable</a>, <a class="el" href="dataframe_8h_source.html#l00021">DataFrame::tableOfData</a>, <a class="el" href="mybenchmark_8cpp_source.html#l00035">MyBenchmark::timerStart()</a> i <a class="el" href="mybenchmark_8cpp_source.html#l00040">MyBenchmark::timerStop()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="class_data_frame.html">DataFrame</a> podstawoweInfoIO;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">int</span> opt;        </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">bool</span> isSetNumberGenerator=<span class="keyword">false</span>; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="comment">//bool isTest=false;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">while</span> ((opt = getopt(argc, argv, <span class="stringliteral">&quot;n:o:i:gx&quot;</span>)) != -1) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keywordflow">switch</span>(opt){</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;n&#39;</span>:       <span class="comment">// ilosc liczb do przetworzenia</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                        podstawoweInfoIO.<a class="code" href="class_data_frame.html#aa5d1905c6910cad07ab5189bd34b13ab">sizeOfTable</a> = atoi(optarg);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;o&#39;</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                        podstawoweInfoIO.<a class="code" href="class_data_frame.html#a824a73f019aec71281837abafd95a510">outputFileName</a> = optarg;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;i&#39;</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        podstawoweInfoIO.<a class="code" href="class_data_frame.html#a90041bfdf474b0d7ce39bc3dbbb55aa9">inputFileName</a>=optarg;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;g&#39;</span>:       <span class="comment">// wlacza generator liczb, po zakonczeniu generowania konczy program</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        isSetNumberGenerator=<span class="keyword">true</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;?&#39;</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        std::cout&lt;&lt;<span class="stringliteral">&quot;\nPodano zly argument&quot;</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment">// na potrzeby slownika wlaczam generowanie automatyczne</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        isSetNumberGenerator = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span>(isSetNumberGenerator) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <a class="code" href="class_number_generator.html">NumberGenerator</a> generator;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                std::cout&lt;&lt;<span class="stringliteral">&quot;\n+ - - - - Tworzenie tablicy i generacja losowych liczb - - - +\n&quot;</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                generator= podstawoweInfoIO;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <a class="code" href="class_my_benchmark.html#a802577db97fd440a3920add30c35a676">MyBenchmark::timerStart</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                        generator.<a class="code" href="class_number_generator.html#a511673bb245d14a048702558d12deb63">generateNumbers</a>();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                std::cout&lt;&lt;<span class="stringliteral">&quot;Generuje losowe liczby:&quot;</span>&lt;&lt;<a class="code" href="class_my_benchmark.html#a7e3fa28fab999435bd4c51d915e42809">MyBenchmark::timerStop</a>()&lt;&lt;<span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                podstawoweInfoIO = generator;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                podstawoweInfoIO.<a class="code" href="class_data_frame.html#a03cc3ac606fdb8a2dbcaea5d429cf208">saveDataToFile</a>();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="class_dictionary.html">Dictionary</a> dict;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        std::cout&lt;&lt;<span class="stringliteral">&quot;\nHashuje pierwsze &quot;</span>&lt;&lt;<a class="code" href="dictionary_8h.html#a562499e66e3ed9cc37111ac1ddafa1eb">LICZBA_ZNAKOW_DO_HASHU</a>&lt;&lt; <span class="stringliteral">&quot; znaki.&quot;</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        std::string *str = <a class="code" href="class_number_generator.html#af434d1cd0b338d22b11b24fbd2e14dce">NumberGenerator::generateStrings</a>(podstawoweInfoIO.<a class="code" href="class_data_frame.html#aa5d1905c6910cad07ab5189bd34b13ab">sizeOfTable</a>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="class_my_benchmark.html#a802577db97fd440a3920add30c35a676">MyBenchmark::timerStart</a>();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;podstawoweInfoIO.<a class="code" href="class_data_frame.html#aa5d1905c6910cad07ab5189bd34b13ab">sizeOfTable</a>; i++)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        dict[str[i]] = podstawoweInfoIO.<a class="code" href="class_data_frame.html#a8edc4ce524483e2e5069067267ccdcbf">tableOfData</a>[i];</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        std::cout&lt;&lt;<span class="stringliteral">&quot;\nCzas alokowania slownika:&quot;</span>&lt;&lt;<a class="code" href="class_my_benchmark.html#a7e3fa28fab999435bd4c51d915e42809">MyBenchmark::timerStop</a>()&lt;&lt;<span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        std::cout&lt;&lt;std::endl;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-<div class="ttc" id="class_my_benchmark_html_a7e3fa28fab999435bd4c51d915e42809"><div class="ttname"><a href="class_my_benchmark.html#a7e3fa28fab999435bd4c51d915e42809">MyBenchmark::timerStop</a></div><div class="ttdeci">static double timerStop()</div><div class="ttdoc">wyłączam stoper </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00040">mybenchmark.cpp:40</a></div></div>
-<div class="ttc" id="dictionary_8h_html_a562499e66e3ed9cc37111ac1ddafa1eb"><div class="ttname"><a href="dictionary_8h.html#a562499e66e3ed9cc37111ac1ddafa1eb">LICZBA_ZNAKOW_DO_HASHU</a></div><div class="ttdeci">#define LICZBA_ZNAKOW_DO_HASHU</div><div class="ttdef"><b>Definition:</b> <a href="dictionary_8h_source.html#l00010">dictionary.h:10</a></div></div>
-<div class="ttc" id="class_data_frame_html_a824a73f019aec71281837abafd95a510"><div class="ttname"><a href="class_data_frame.html#a824a73f019aec71281837abafd95a510">DataFrame::outputFileName</a></div><div class="ttdeci">char * outputFileName</div><div class="ttdoc">Zawiera nazwe pliku do zapisu. </div><div class="ttdef"><b>Definition:</b> <a href="dataframe_8h_source.html#l00025">dataframe.h:25</a></div></div>
-<div class="ttc" id="class_my_benchmark_html_a802577db97fd440a3920add30c35a676"><div class="ttname"><a href="class_my_benchmark.html#a802577db97fd440a3920add30c35a676">MyBenchmark::timerStart</a></div><div class="ttdeci">static void timerStart()</div><div class="ttdoc">włączam stoper </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00035">mybenchmark.cpp:35</a></div></div>
-<div class="ttc" id="class_data_frame_html"><div class="ttname"><a href="class_data_frame.html">DataFrame</a></div><div class="ttdef"><b>Definition:</b> <a href="dataframe_8h_source.html#l00015">dataframe.h:15</a></div></div>
-<div class="ttc" id="class_data_frame_html_a03cc3ac606fdb8a2dbcaea5d429cf208"><div class="ttname"><a href="class_data_frame.html#a03cc3ac606fdb8a2dbcaea5d429cf208">DataFrame::saveDataToFile</a></div><div class="ttdeci">int saveDataToFile()</div><div class="ttdoc">Zapisuje dane do pliku. </div><div class="ttdef"><b>Definition:</b> <a href="dataframe_8cpp_source.html#l00032">dataframe.cpp:32</a></div></div>
-<div class="ttc" id="class_number_generator_html_af434d1cd0b338d22b11b24fbd2e14dce"><div class="ttname"><a href="class_number_generator.html#af434d1cd0b338d22b11b24fbd2e14dce">NumberGenerator::generateStrings</a></div><div class="ttdeci">static std::string * generateStrings(int ileStringow)</div><div class="ttdoc">Generuje losowe stringi. </div><div class="ttdef"><b>Definition:</b> <a href="numbergenerator_8cpp_source.html#l00010">numbergenerator.cpp:10</a></div></div>
-<div class="ttc" id="class_number_generator_html"><div class="ttname"><a href="class_number_generator.html">NumberGenerator</a></div><div class="ttdoc">Klasa generujaca losowe liczby. </div><div class="ttdef"><b>Definition:</b> <a href="numbergenerator_8h_source.html#l00026">numbergenerator.h:26</a></div></div>
-<div class="ttc" id="class_dictionary_html"><div class="ttname"><a href="class_dictionary.html">Dictionary</a></div><div class="ttdoc">Klasa tworzy tablicy asocjacyjną - słownik. </div><div class="ttdef"><b>Definition:</b> <a href="dictionary_8h_source.html#l00025">dictionary.h:25</a></div></div>
-<div class="ttc" id="class_data_frame_html_aa5d1905c6910cad07ab5189bd34b13ab"><div class="ttname"><a href="class_data_frame.html#aa5d1905c6910cad07ab5189bd34b13ab">DataFrame::sizeOfTable</a></div><div class="ttdeci">unsigned int sizeOfTable</div><div class="ttdoc">Rozmiar tablicy tableOfData. </div><div class="ttdef"><b>Definition:</b> <a href="dataframe_8h_source.html#l00034">dataframe.h:34</a></div></div>
-<div class="ttc" id="class_number_generator_html_a511673bb245d14a048702558d12deb63"><div class="ttname"><a href="class_number_generator.html#a511673bb245d14a048702558d12deb63">NumberGenerator::generateNumbers</a></div><div class="ttdeci">void generateNumbers(int zakres=10000000)</div><div class="ttdoc">Generuje losowe liczby Generuje losowe liczby na podstawie czasu maszyny. </div><div class="ttdef"><b>Definition:</b> <a href="numbergenerator_8h_source.html#l00035">numbergenerator.h:35</a></div></div>
-<div class="ttc" id="class_data_frame_html_a90041bfdf474b0d7ce39bc3dbbb55aa9"><div class="ttname"><a href="class_data_frame.html#a90041bfdf474b0d7ce39bc3dbbb55aa9">DataFrame::inputFileName</a></div><div class="ttdeci">char * inputFileName</div><div class="ttdoc">Zawiera nazwe pliku do odczytu. </div><div class="ttdef"><b>Definition:</b> <a href="dataframe_8h_source.html#l00029">dataframe.h:29</a></div></div>
-<div class="ttc" id="class_data_frame_html_a8edc4ce524483e2e5069067267ccdcbf"><div class="ttname"><a href="class_data_frame.html#a8edc4ce524483e2e5069067267ccdcbf">DataFrame::tableOfData</a></div><div class="ttdeci">int * tableOfData</div><div class="ttdoc">Zawiera adres do tablicy {size} elementów. </div><div class="ttdef"><b>Definition:</b> <a href="dataframe_8h_source.html#l00021">dataframe.h:21</a></div></div>
+<p>Odwołuje się do <a class="el" href="observable_8h_source.html#l00023">Observable::add()</a>, <a class="el" href="filestreamer_8h_source.html#l00041">clearFile()</a>, <a class="el" href="list_8h_source.html#l00083">List&lt; MyListElementType &gt;::free()</a>, <a class="el" href="main_8cpp_source.html#l00020">ILOSC_LICZB_DO_SORTOWANIA</a>, <a class="el" href="mergesorter_8h_source.html#l00020">MergeSorter&lt; MyListElementType &gt;::list</a>, <a class="el" href="heapsorter_8h_source.html#l00021">HeapSorter&lt; MyListElementType &gt;::list</a>, <a class="el" href="quicksorter_8h_source.html#l00023">QuickSorter&lt; MyListElementType &gt;::list</a>, <a class="el" href="observable_8h_source.html#l00019">Observable::observaters</a>, <a class="el" href="observablequicksorter_8h_source.html#l00026">ObservableQuickSorter&lt; MyListElementType &gt;::sort()</a>, <a class="el" href="observablemergesorter_8h_source.html#l00026">ObservableMergeSorter&lt; MyListElementType &gt;::sort()</a>, <a class="el" href="observableheapsorter_8h_source.html#l00026">ObservableHeapSorter&lt; MyListElementType &gt;::sort()</a> i <a class="el" href="filestreamer_8h_source.html#l00015">writeStringToFile()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_my_list.html">MyList&lt;int&gt;</a> lista;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">//int isSetN = 0;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">int</span> opt;        </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">while</span> ((opt = getopt(argc, argv, <span class="stringliteral">&quot;n:o:i:gx&quot;</span>)) != -1) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keywordflow">switch</span>(opt){</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;n&#39;</span>:       <span class="comment">// ilosc liczb do przetworzenia</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                        lista = NumberGenerator::generateNumbers&lt;int&gt;(10000000, atoi(optarg));</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                        <span class="comment">//isSetN = 1;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;o&#39;</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        <span class="comment">//podstawoweInfoIO.outputFileName = optarg;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;i&#39;</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        <span class="comment">//podstawoweInfoIO.inputFileName=optarg;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;?&#39;</span>:       <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        std::cout&lt;&lt;<span class="stringliteral">&quot;\nPodano zly argument&quot;</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">//if(!isSetN) {std::cerr&lt;&lt;&quot;\nNie podano argumentu: -n X\n&quot;; return -1;}</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                std::cout&lt;&lt;<span class="stringliteral">&quot;\n -&gt; Prosze czekac trwa sortowanie\n&quot;</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <a class="code" href="filestreamer_8h.html#ac9fbd480fa2b14ca0bab9d162bb2b0a0">clearFile</a>(<span class="stringliteral">&quot;log.txt&quot;</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <a class="code" href="filestreamer_8h.html#a4b207a639eee81d20e9f96624a9a6c0a">writeStringToFile</a>(<span class="stringliteral">&quot;log.txt&quot;</span>, <span class="stringliteral">&quot;Ilosc\t&quot;</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <a class="code" href="filestreamer_8h.html#a4b207a639eee81d20e9f96624a9a6c0a">writeStringToFile</a>(<span class="stringliteral">&quot;log.txt&quot;</span>, <span class="stringliteral">&quot;HeapS.\t&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <a class="code" href="filestreamer_8h.html#a4b207a639eee81d20e9f96624a9a6c0a">writeStringToFile</a>(<span class="stringliteral">&quot;log.txt&quot;</span>, <span class="stringliteral">&quot;QuickS.\t&quot;</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <a class="code" href="filestreamer_8h.html#a4b207a639eee81d20e9f96624a9a6c0a">writeStringToFile</a>(<span class="stringliteral">&quot;log.txt&quot;</span>, <span class="stringliteral">&quot;MergeS.\n&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=<a class="code" href="main_8cpp.html#a1e1ad0a49252a8ba7ee63e4d476c06b9">ILOSC_LICZB_DO_SORTOWANIA</a>; i&lt;<a class="code" href="main_8cpp.html#a1e1ad0a49252a8ba7ee63e4d476c06b9">ILOSC_LICZB_DO_SORTOWANIA</a>*10; i+=<a class="code" href="main_8cpp.html#a1e1ad0a49252a8ba7ee63e4d476c06b9">ILOSC_LICZB_DO_SORTOWANIA</a>)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        lista.<a class="code" href="class_list.html#a5406b275bb8650707a1d2bd38f661095">free</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        lista = NumberGenerator::generateNumbers&lt;int&gt;(10000000, i);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <a class="code" href="class_my_benchmark_observer.html">MyBenchmarkObserver</a> *o1 = <span class="keyword">new</span> <a class="code" href="class_my_benchmark_observer.html">MyBenchmarkObserver</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <a class="code" href="class_observable_heap_sorter.html">ObservableHeapSorter&lt;int&gt;</a> heapSorter(lista);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <a class="code" href="class_observable_quick_sorter.html">ObservableQuickSorter&lt;int&gt;</a> quickSorter(lista);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <a class="code" href="class_observable_merge_sorter.html">ObservableMergeSorter&lt;int&gt;</a> mergeSorter(lista);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                heapSorter.add(o1);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                quickSorter.add(o1);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                mergeSorter.add(o1);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <a class="code" href="filestreamer_8h.html#a4b207a639eee81d20e9f96624a9a6c0a">writeStringToFile</a>(<span class="stringliteral">&quot;log.txt&quot;</span>, i);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <a class="code" href="filestreamer_8h.html#a4b207a639eee81d20e9f96624a9a6c0a">writeStringToFile</a>(<span class="stringliteral">&quot;log.txt&quot;</span>, <span class="stringliteral">&quot;\t&quot;</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                heapSorter.sort();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <a class="code" href="filestreamer_8h.html#a4b207a639eee81d20e9f96624a9a6c0a">writeStringToFile</a>(<span class="stringliteral">&quot;log.txt&quot;</span>, heapSorter.observaters[0].content-&gt;getTimerValue());</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <a class="code" href="filestreamer_8h.html#a4b207a639eee81d20e9f96624a9a6c0a">writeStringToFile</a>(<span class="stringliteral">&quot;log.txt&quot;</span>, <span class="stringliteral">&quot;\t&quot;</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                heapSorter.list.free();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                quickSorter.sort();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <a class="code" href="filestreamer_8h.html#a4b207a639eee81d20e9f96624a9a6c0a">writeStringToFile</a>(<span class="stringliteral">&quot;log.txt&quot;</span>, quickSorter.observaters[0].content-&gt;getTimerValue());</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="filestreamer_8h.html#a4b207a639eee81d20e9f96624a9a6c0a">writeStringToFile</a>(<span class="stringliteral">&quot;log.txt&quot;</span>, <span class="stringliteral">&quot;\t&quot;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                quickSorter.list.free();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                mergeSorter.sort();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <a class="code" href="filestreamer_8h.html#a4b207a639eee81d20e9f96624a9a6c0a">writeStringToFile</a>(<span class="stringliteral">&quot;log.txt&quot;</span>, mergeSorter.observaters[0].content-&gt;getTimerValue());</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <a class="code" href="filestreamer_8h.html#a4b207a639eee81d20e9f96624a9a6c0a">writeStringToFile</a>(<span class="stringliteral">&quot;log.txt&quot;</span>, <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                mergeSorter.list.free();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        std::cout&lt;&lt;<span class="stringliteral">&quot; -&gt; Sortowanie zakonczone\n&quot;</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        std::cout&lt;&lt;<span class="stringliteral">&quot; -&gt; Zapisano do pliku log.txt\n&quot;</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        std::cout&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="ttc" id="filestreamer_8h_html_ac9fbd480fa2b14ca0bab9d162bb2b0a0"><div class="ttname"><a href="filestreamer_8h.html#ac9fbd480fa2b14ca0bab9d162bb2b0a0">clearFile</a></div><div class="ttdeci">void clearFile(std::string fileName)</div><div class="ttdef"><b>Definition:</b> <a href="filestreamer_8h_source.html#l00041">filestreamer.h:41</a></div></div>
+<div class="ttc" id="class_list_html_a5406b275bb8650707a1d2bd38f661095"><div class="ttname"><a href="class_list.html#a5406b275bb8650707a1d2bd38f661095">List::free</a></div><div class="ttdeci">virtual void free()</div><div class="ttdoc">Zwalnia zasoby listy. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00083">list.h:83</a></div></div>
+<div class="ttc" id="class_my_benchmark_observer_html"><div class="ttname"><a href="class_my_benchmark_observer.html">MyBenchmarkObserver</a></div><div class="ttdoc">Mybenchmark obserwator Używana jako obserwator klasa sprawdzajaca odpowiednie objekty. </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8h_source.html#l00052">mybenchmark.h:52</a></div></div>
+<div class="ttc" id="class_observable_merge_sorter_html"><div class="ttname"><a href="class_observable_merge_sorter.html">ObservableMergeSorter</a></div><div class="ttdoc">Klasa sluzaca do obslugi sortowania przez Scalanie z dodaniem obserwatora. </div><div class="ttdef"><b>Definition:</b> <a href="observablemergesorter_8h_source.html#l00018">observablemergesorter.h:18</a></div></div>
+<div class="ttc" id="filestreamer_8h_html_a4b207a639eee81d20e9f96624a9a6c0a"><div class="ttname"><a href="filestreamer_8h.html#a4b207a639eee81d20e9f96624a9a6c0a">writeStringToFile</a></div><div class="ttdeci">void writeStringToFile(std::string fileName, std::string textToSave)</div><div class="ttdef"><b>Definition:</b> <a href="filestreamer_8h_source.html#l00015">filestreamer.h:15</a></div></div>
+<div class="ttc" id="class_observable_heap_sorter_html"><div class="ttname"><a href="class_observable_heap_sorter.html">ObservableHeapSorter</a></div><div class="ttdoc">Klasa sluzaca do obslugi sortowania przez kopcowanie z dodaniem obserwatora. </div><div class="ttdef"><b>Definition:</b> <a href="observableheapsorter_8h_source.html#l00018">observableheapsorter.h:18</a></div></div>
+<div class="ttc" id="class_my_list_html"><div class="ttname"><a href="class_my_list.html">MyList</a></div><div class="ttdoc">Lista dwukierunkowa. </div><div class="ttdef"><b>Definition:</b> <a href="mylist_8h_source.html#l00023">mylist.h:23</a></div></div>
+<div class="ttc" id="main_8cpp_html_a1e1ad0a49252a8ba7ee63e4d476c06b9"><div class="ttname"><a href="main_8cpp.html#a1e1ad0a49252a8ba7ee63e4d476c06b9">ILOSC_LICZB_DO_SORTOWANIA</a></div><div class="ttdeci">#define ILOSC_LICZB_DO_SORTOWANIA</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00020">main.cpp:20</a></div></div>
+<div class="ttc" id="class_observable_quick_sorter_html"><div class="ttname"><a href="class_observable_quick_sorter.html">ObservableQuickSorter</a></div><div class="ttdoc">Klasa sluzaca do obslugi sortowania przez Sortowanie szybkie z dodaniem obserwatora. </div><div class="ttdef"><b>Definition:</b> <a href="observablequicksorter_8h_source.html#l00018">observablequicksorter.h:18</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -199,7 +228,7 @@ Funkcje</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_463302e58bc74c0c35f534f40d40b0a3.html">program</a></li><li class="navelem"><a class="el" href="dir_630dc271d2c6bab74c75873b96c2431c.html">src</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Wygenerowano Cz, 16 kwi 2015 00:55:20 dla Laboratorium 5 programem
+    <li class="footer">Wygenerowano Cz, 14 maj 2015 23:21:54 dla Laboratorium 7 programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

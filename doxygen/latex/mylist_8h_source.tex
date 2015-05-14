@@ -15,44 +15,270 @@
 00010 \textcolor{preprocessor}{}
 00011 \textcolor{preprocessor}{#include <iostream>}
 00012 \textcolor{preprocessor}{#include <string>}
-00013 \textcolor{preprocessor}{#include <fstream>}
-\hypertarget{mylist_8h_source_l00019}{}\hyperlink{class_my_list}{00019} \textcolor{keyword}{class }\hyperlink{class_my_list}{MyList}\{
-00020 
-00021 \textcolor{keyword}{private}:
-\hypertarget{mylist_8h_source_l00023}{}\hyperlink{class_my_list_a77b7870f617b51fad7399463c9147668}{00023}         \textcolor{keywordtype}{int} \hyperlink{class_my_list_a77b7870f617b51fad7399463c9147668}{sizeOfList};
-00024 \textcolor{keyword}{public}:
-\hypertarget{mylist_8h_source_l00026}{}\hyperlink{class_my_list_1_1_my_list_element}{00026}         \textcolor{keyword}{class }\hyperlink{class_my_list_1_1_my_list_element}{MyListElement} \{
-00028         \textcolor{keyword}{public}:
-\hypertarget{mylist_8h_source_l00029}{}\hyperlink{class_my_list_1_1_my_list_element_acd6dbb6a8791f034f94678d46395b366}{00029}                 \textcolor{keywordtype}{int}  \hyperlink{class_my_list_1_1_my_list_element_acd6dbb6a8791f034f94678d46395b366}{number};
-\hypertarget{mylist_8h_source_l00030}{}\hyperlink{class_my_list_1_1_my_list_element_af610aeae835150be1a12d538e67a579c}{00030}                 std::string \hyperlink{class_my_list_1_1_my_list_element_af610aeae835150be1a12d538e67a579c}{nazwa};
-\hypertarget{mylist_8h_source_l00032}{}\hyperlink{class_my_list_1_1_my_list_element_abd7af673552c8876f210cbea01c5e949}{00032}                 \hyperlink{class_my_list_1_1_my_list_element}{MyListElement} *\hyperlink{class_my_list_1_1_my_list_element_abd7af673552c8876f210cbea01c5e949}{nextElement};
-\hypertarget{mylist_8h_source_l00034}{}\hyperlink{class_my_list_1_1_my_list_element_adb7c0cbde93a90f30484637498690d0f}{00034}                 \hyperlink{class_my_list_1_1_my_list_element}{MyListElement} *\hyperlink{class_my_list_1_1_my_list_element_adb7c0cbde93a90f30484637498690d0f}{previousElement};
-00035         \textcolor{keyword}{public}:
-00039                 \hyperlink{class_my_list_1_1_my_list_element_a75e80ebaeaa29e1d357ed0deab11c5a5}{MyListElement}();
-00045                 \hyperlink{class_my_list_1_1_my_list_element_a75e80ebaeaa29e1d357ed0deab11c5a5}{MyListElement}(\textcolor{keywordtype}{int} arg, std::string str);
-00050                 \hyperlink{class_my_list_1_1_my_list_element_a75e80ebaeaa29e1d357ed0deab11c5a5}{MyListElement}(\textcolor{keyword}{const} \hyperlink{class_my_list_1_1_my_list_element}{MyListElement} &myListElement);
-00056                 \textcolor{keywordtype}{void} \hyperlink{class_my_list_1_1_my_list_element_a817658ac5c1d6de5d8232877e4251bd9}{set}(\textcolor{keywordtype}{int} arg, std::string str);
-\hypertarget{mylist_8h_source_l00057}{}\hyperlink{class_my_list_1_1_my_list_element_a3aca1c680e3cc534773a005bb24bfed4}{00057}                 \textcolor{keyword}{friend} \textcolor{keyword}{class }\hyperlink{class_my_list}{MyList};
-00058         \};
-00059 
-\hypertarget{mylist_8h_source_l00061}{}\hyperlink{class_my_list_aa7e5ddd2dddeeccd304126130d73dead}{00061}         \hyperlink{class_my_list_1_1_my_list_element}{MyListElement} *\hyperlink{class_my_list_aa7e5ddd2dddeeccd304126130d73dead}{firstElement};
-\hypertarget{mylist_8h_source_l00063}{}\hyperlink{class_my_list_a287894c4add6b52be99826fb4d76594c}{00063}         \hyperlink{class_my_list_1_1_my_list_element}{MyListElement} *\hyperlink{class_my_list_a287894c4add6b52be99826fb4d76594c}{lastElement};
-00065 \textcolor{keyword}{public}:
-00066         \hyperlink{class_my_list_ae9cd2a6b068e02fa39ba3e539425c1c1}{MyList}();
-00067 
-00068 
-00073         \textcolor{keywordtype}{int} \hyperlink{class_my_list_a6d21c8bfbd9cd31efdba81ba488f43f2}{size}();
-00078         \hyperlink{class_my_list_1_1_my_list_element}{MyListElement} \hyperlink{class_my_list_afc006104d8156154ad3849d0e4cc6109}{pop\_back}();
-00083         \hyperlink{class_my_list_1_1_my_list_element}{MyListElement} \hyperlink{class_my_list_a84369accd705913f85b770770f06767a}{pop\_front}();
-00087         \textcolor{keywordtype}{void} \hyperlink{class_my_list_a06c2749553f559eb3d5d227e0ac07c53}{push\_back}(\hyperlink{class_my_list_1_1_my_list_element}{MyListElement} arg);
-00091         \textcolor{keywordtype}{void} \hyperlink{class_my_list_ac703cd9be1c465722e683dbdcececa6b}{push\_front}(\hyperlink{class_my_list_1_1_my_list_element}{MyListElement} arg);
-00096         \hyperlink{class_my_list_1_1_my_list_element}{MyListElement} &\hyperlink{class_my_list_a9d7990c6a8b96d4c0d267fe46582fd6b}{show\_front}();
-00101         \hyperlink{class_my_list_1_1_my_list_element}{MyListElement} &\hyperlink{class_my_list_ab67b7b37e96d5cb31742efbdf283fa9f}{show\_back}();
-00102 
-00103         \textcolor{keywordtype}{int} \hyperlink{class_my_list_a94a6183f4d3248ca593b51a173bd2d50}{saveDataToFile}();
-00104 \};
-00105 
-00106 
-00107 
-00108 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* MYLIST\_H\_ */}\textcolor{preprocessor}{}
+00013 \textcolor{preprocessor}{#include "\hyperlink{mylistelement_8h}{mylistelement.h}"}
+00014 \textcolor{preprocessor}{#include "\hyperlink{observer_8h}{observer.h}"}
+00015 \textcolor{preprocessor}{#include "\hyperlink{list_8h}{list.h}"}
+00016 \textcolor{preprocessor}{#include "\hyperlink{listelement_8h}{listelement.h}"}
+00022 \textcolor{keyword}{template} <\textcolor{keyword}{class} MyListElementType>
+\hypertarget{mylist_8h_source_l00023}{}\hyperlink{class_my_list}{00023} \textcolor{keyword}{class }\hyperlink{class_my_list}{MyList} : \textcolor{keyword}{public} \hyperlink{class_list}{List}<MyListElementType>\{
+00024 
+00025 \textcolor{keyword}{public}:
+\hypertarget{mylist_8h_source_l00027}{}\hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{00027}         \textcolor{keywordtype}{int} \hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList};
+00028 
+00029 
+\hypertarget{mylist_8h_source_l00031}{}\hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{00031}         \hyperlink{class_my_list_element}{MyListElement<MyListElementType>} *
+      \hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement};
+\hypertarget{mylist_8h_source_l00033}{}\hyperlink{class_my_list_a70831dde3a7f24c7d3dd5b30980e8c27}{00033}         \hyperlink{class_my_list_element}{MyListElement<MyListElementType>} *
+      \hyperlink{class_my_list_a70831dde3a7f24c7d3dd5b30980e8c27}{lastElement};
+\hypertarget{mylist_8h_source_l00034}{}\hyperlink{class_my_list_aecf059ed6926a3d6eb82641d46a3e3ff}{00034}         \hyperlink{class_my_list_element}{MyListElement<MyListElementType>} *
+      \hyperlink{class_my_list_aecf059ed6926a3d6eb82641d46a3e3ff}{iterator};
+\hypertarget{mylist_8h_source_l00035}{}\hyperlink{class_my_list_ad27795091bcc0c321d81c2196bc1cbb0}{00035}         \textcolor{keywordtype}{int} \hyperlink{class_my_list_ad27795091bcc0c321d81c2196bc1cbb0}{iteratorElementId}; \textcolor{comment}{// nie ruszac !}
+\hypertarget{mylist_8h_source_l00036}{}\hyperlink{class_my_list_a1041f18464ae98367844d13aa2e7b5a6}{00036}         \textcolor{keywordtype}{int} \hyperlink{class_my_list_a1041f18464ae98367844d13aa2e7b5a6}{isIteratorAfterPop};
+00038 
+\hypertarget{mylist_8h_source_l00039}{}\hyperlink{class_my_list_acda6bd1dd01b31aa3947e3e26695d219}{00039}         \hyperlink{class_my_list_acda6bd1dd01b31aa3947e3e26695d219}{MyList}()
+00040         \{
+00041                 \hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement} = \hyperlink{class_my_list_a70831dde3a7f24c7d3dd5b30980e8c27}{lastElement} = \textcolor{keyword}{new} 
+      \hyperlink{class_my_list_element}{MyListElement<MyListElementType>};
+00042                 \hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList} = 0;
+00043                 \hyperlink{class_my_list_ad27795091bcc0c321d81c2196bc1cbb0}{iteratorElementId} =0;
+00044                 \hyperlink{class_my_list_aecf059ed6926a3d6eb82641d46a3e3ff}{iterator}=NULL;
+00045                 \hyperlink{class_my_list_a1041f18464ae98367844d13aa2e7b5a6}{isIteratorAfterPop} = 1; \textcolor{comment}{//to znaczy ze jeszcze raz trzeba bedzie
+       sprawdzic pozycje iteratora 1- znaczy ze trzeba sprawdzic}
+00046         \}
+00047 
+\hypertarget{mylist_8h_source_l00048}{}\hyperlink{class_my_list_aec4c7d8da8bffbe1e6bfd68765fa4981}{00048}         \hyperlink{class_my_list_aec4c7d8da8bffbe1e6bfd68765fa4981}{MyList}(\hyperlink{class_list}{List<MyListElementType>} &list)
+00049         \{
+00050                 \hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement} = \hyperlink{class_my_list_a70831dde3a7f24c7d3dd5b30980e8c27}{lastElement} = \textcolor{keyword}{new} 
+      \hyperlink{class_my_list_element}{MyListElement<MyListElementType>};
+00051                 \hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList} = 0;
+00052                 \hyperlink{class_my_list_ad27795091bcc0c321d81c2196bc1cbb0}{iteratorElementId} =0;
+00053                 \hyperlink{class_my_list_aecf059ed6926a3d6eb82641d46a3e3ff}{iterator}=NULL;
+00054                 \hyperlink{class_my_list_a1041f18464ae98367844d13aa2e7b5a6}{isIteratorAfterPop} = 1; \textcolor{comment}{//to znaczy ze jeszcze raz trzeba bedzie
+       sprawdzic pozycje iteratora 1- znaczy ze trzeba sprawdzic}
+00055                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<list.\hyperlink{class_list_ac769a9bcdfa13a032783bac75d8957bd}{size}(); i++)
+00056                 \{
+00057                         this->\hyperlink{class_my_list_a52dad29ecf7522b86df8daa3aa74702d}{push\_back}(list[i]);
+00058                 \}
+00059         \}
+\hypertarget{mylist_8h_source_l00060}{}\hyperlink{class_my_list_ae2bed585526d0215f0afd6fd82a03cc9}{00060}         \textcolor{keyword}{virtual} \hyperlink{class_my_list_ae2bed585526d0215f0afd6fd82a03cc9}{~MyList}()\{\};
+00061 
+\hypertarget{mylist_8h_source_l00066}{}\hyperlink{class_my_list_a267f669859ef3541333082cad6b28ab7}{00066}         \textcolor{keywordtype}{int} &\hyperlink{class_my_list_a267f669859ef3541333082cad6b28ab7}{size}()
+00067         \{
+00068                 \textcolor{keywordflow}{return} \hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList};
+00069         \}
+00074         \textcolor{comment}{/*MyListElement<MyListElementType> &pop\_back()}
+00075 \textcolor{comment}{        \{}
+00076 \textcolor{comment}{                if(!(sizeOfList--)) \{ sizeOfList=0; return (*(new MyListElement<MyListElementType>)); \}}
+00077 \textcolor{comment}{                MyListElement<MyListElementType> tmpNumber = *(this -> lastElement);}
+00078 \textcolor{comment}{                MyListElement<MyListElementType> *originMyListElement = this -> lastElement;}
+00079 \textcolor{comment}{                this -> lastElement = this -> lastElement -> previousElement;}
+00080 \textcolor{comment}{                delete originMyListElement;}
+00081 \textcolor{comment}{                isIteratorAfterPop=1;}
+00082 \textcolor{comment}{                return tmpNumber;}
+00083 \textcolor{comment}{        \}*/}
+\hypertarget{mylist_8h_source_l00084}{}\hyperlink{class_my_list_a8ebb806121d42e08834c7d244521c008}{00084}         \hyperlink{class_list_element}{ListElement<MyListElementType>} \hyperlink{class_my_list_a8ebb806121d42e08834c7d244521c008}{pop\_back}()
+00085         \{
+00086                 \textcolor{keywordflow}{if}(!(\hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList}--)) \{ \hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList}=0; \textcolor{keywordflow}{return} (*(\textcolor{keyword}{new} 
+      \hyperlink{class_my_list_element}{MyListElement<MyListElementType>})); \}
+00087                 \hyperlink{class_my_list_element}{MyListElement<MyListElementType>} tmpNumber = *(\textcolor{keyword}{this} -> 
+      \hyperlink{class_my_list_a70831dde3a7f24c7d3dd5b30980e8c27}{lastElement});
+00088                 \hyperlink{class_my_list_element}{MyListElement<MyListElementType>} *originMyListElement = \textcolor{keyword}{
+      this} -> \hyperlink{class_my_list_a70831dde3a7f24c7d3dd5b30980e8c27}{lastElement};
+00089                 \textcolor{keyword}{this} -> \hyperlink{class_my_list_a70831dde3a7f24c7d3dd5b30980e8c27}{lastElement} = \textcolor{keyword}{this} -> \hyperlink{class_my_list_a70831dde3a7f24c7d3dd5b30980e8c27}{lastElement} -> previousElement;
+00090                 \textcolor{keyword}{delete} originMyListElement;
+00091                 \hyperlink{class_my_list_a1041f18464ae98367844d13aa2e7b5a6}{isIteratorAfterPop}=1;
+00092                 \textcolor{keywordflow}{return} tmpNumber;
+00093         \}
+\hypertarget{mylist_8h_source_l00098}{}\hyperlink{class_my_list_a675af07472a5b7dde7ca602abb420efa}{00098}         \hyperlink{class_list_element}{ListElement<MyListElementType>} \hyperlink{class_my_list_a675af07472a5b7dde7ca602abb420efa}{pop\_front}()
+00099         \{
+00100                 \textcolor{keywordflow}{if}(!(\hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList}--)) \{ \hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList}=0; \textcolor{keywordflow}{return} (*(\textcolor{keyword}{new} 
+      \hyperlink{class_my_list_element}{MyListElement<MyListElementType>}())); \}
+00101                 \hyperlink{class_my_list_element}{MyListElement<MyListElementType>} tmpNumber = *(\textcolor{keyword}{this} -> 
+      \hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement});
+00102                 \hyperlink{class_my_list_element}{MyListElement<MyListElementType>} *originMyListElement = \textcolor{keyword}{
+      this} -> \hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement};
+00103                 \textcolor{keyword}{this} -> \hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement} = \textcolor{keyword}{this} -> \hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement} -> nextElement;
+00104 
+00105                 \textcolor{keyword}{delete} originMyListElement;
+00106                 \hyperlink{class_my_list_a1041f18464ae98367844d13aa2e7b5a6}{isIteratorAfterPop}=1;
+00107                 \textcolor{keywordflow}{return} tmpNumber;
+00108         \}
+\hypertarget{mylist_8h_source_l00112}{}\hyperlink{class_my_list_a52dad29ecf7522b86df8daa3aa74702d}{00112}         \textcolor{keywordtype}{void} \hyperlink{class_my_list_a52dad29ecf7522b86df8daa3aa74702d}{push\_back}(MyListElementType arg)
+00113         \{
+00114                 \textcolor{comment}{//std::cerr<<"\(\backslash\)n(push\_back): arg.content="<<arg.content;}
+00115                 \hyperlink{class_my_list_element}{MyListElement<MyListElementType>} *newMyListElement = \textcolor{keyword}{new} 
+      \hyperlink{class_my_list_element}{MyListElement<MyListElementType>}(arg);
+00116                 \textcolor{keywordflow}{if}(!\hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList}++) \{\hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement} = 
+      \hyperlink{class_my_list_a70831dde3a7f24c7d3dd5b30980e8c27}{lastElement} = newMyListElement;\}
+00117                 \textcolor{comment}{//newMyListElement -> nextElement = 0;}
+00118                 newMyListElement -> previousElement = \textcolor{keyword}{this} -> \hyperlink{class_my_list_a70831dde3a7f24c7d3dd5b30980e8c27}{lastElement};
+00119                 \textcolor{keyword}{this} -> \hyperlink{class_my_list_a70831dde3a7f24c7d3dd5b30980e8c27}{lastElement} -> nextElement = newMyListElement;
+00120                 this->\hyperlink{class_my_list_a70831dde3a7f24c7d3dd5b30980e8c27}{lastElement} = newMyListElement;
+00121         \}
+\hypertarget{mylist_8h_source_l00125}{}\hyperlink{class_my_list_aafeb562fa9d79f171a21988afd08a833}{00125}         \textcolor{keywordtype}{void} \hyperlink{class_my_list_aafeb562fa9d79f171a21988afd08a833}{push\_front}(MyListElementType arg)
+00126         \{
+00127                 \hyperlink{class_my_list_element}{MyListElement<MyListElementType>} *newMyListElement = \textcolor{keyword}{new} 
+      \hyperlink{class_my_list_element}{MyListElement<MyListElementType>}(arg);
+00128                 \textcolor{keywordflow}{if}(!\hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList}++) \{\hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement} = 
+      \hyperlink{class_my_list_a70831dde3a7f24c7d3dd5b30980e8c27}{lastElement} = newMyListElement;\}
+00129                 \textcolor{comment}{//newMyListElement -> previousElement =  0;}
+00130                 newMyListElement -> nextElement = \textcolor{keyword}{this} -> \hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement};
+00131                 \textcolor{keyword}{this} -> \hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement} -> previousElement = newMyListElement;
+00132                 this->\hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement} = newMyListElement;
+00133                 ++\hyperlink{class_my_list_ad27795091bcc0c321d81c2196bc1cbb0}{iteratorElementId};
+00134         \}
+\hypertarget{mylist_8h_source_l00139}{}\hyperlink{class_my_list_a2fe6cb1e5caf9f1d7d9df4b44faf8506}{00139}         MyListElementType &\hyperlink{class_my_list_a2fe6cb1e5caf9f1d7d9df4b44faf8506}{show\_front}()
+00140         \{
+00141                 \textcolor{keywordflow}{return} \hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement}->content;
+00142         \}
+\hypertarget{mylist_8h_source_l00147}{}\hyperlink{class_my_list_a0ea03d38dcf8c5cdf1ff27ea56fe490b}{00147}         MyListElementType &\hyperlink{class_my_list_a0ea03d38dcf8c5cdf1ff27ea56fe490b}{show\_back}()
+00148         \{
+00149                 \textcolor{keywordflow}{return} \hyperlink{class_my_list_a70831dde3a7f24c7d3dd5b30980e8c27}{lastElement}->content;
+00150         \}
+00151 
+00152 
+\hypertarget{mylist_8h_source_l00156}{}\hyperlink{class_my_list_adc482b791b4ba4ce44a4561c2739a334}{00156}         \textcolor{keywordtype}{void}  \hyperlink{class_my_list_adc482b791b4ba4ce44a4561c2739a334}{printList}()
+00157         \{
+00158                 \hyperlink{class_my_list_element}{MyListElement<MyListElementType>} *elem = (this->
+      \hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement});
+00159                 std::cout<<\textcolor{stringliteral}{"\(\backslash\)nWyswietlam liste (size:"}<<this->\hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList}<<\textcolor{stringliteral}{"): "};
+00160                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i< this->\hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList}; i++)
+00161                 \{
+00162                         std::cout<<\textcolor{stringliteral}{" "}<<elem->\hyperlink{class_list_element_ad4ccf390c996e7a19b6dc270875276a1}{content};
+00163                         elem = elem->\hyperlink{class_my_list_element_a1d05f3ef872707c0f2dba4c8ba231230}{nextElement};
+00164                 \}
+00165         \}
+00166 
+\hypertarget{mylist_8h_source_l00171}{}\hyperlink{class_my_list_a21f48f2665a0c7e6916e40be613b16aa}{00171}         \hyperlink{class_my_list_element}{MyListElement<MyListElementType>} &
+      \hyperlink{class_my_list_a21f48f2665a0c7e6916e40be613b16aa}{operator[]}(\textcolor{keywordtype}{int} numberOfElement)
+00172         \{
+00173                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nJestem w ["<<numberOfElement<<"] iterator="<<iteratorElementId;}
+00174                 \textcolor{keywordflow}{if}(numberOfElement > (\hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList}-1)) \textcolor{comment}{// jezeli wyszedlem poza liste}
+00175                         \{
+00176                                 std::cerr<<\textcolor{stringliteral}{"\(\backslash\)n! Error indeks o numerze: "}<<numberOfElement<<\textcolor{stringliteral}{" nie istnieje
+       !"};
+00177                                 \textcolor{keywordflow}{return} *\hyperlink{class_my_list_aecf059ed6926a3d6eb82641d46a3e3ff}{iterator};
+00178                         \}
+00179                 \textcolor{keywordflow}{if}(\hyperlink{class_my_list_a1041f18464ae98367844d13aa2e7b5a6}{isIteratorAfterPop})
+00180                         \{
+00181                                 \hyperlink{class_my_list_ad27795091bcc0c321d81c2196bc1cbb0}{iteratorElementId}=0;  \textcolor{comment}{// czyli iterator byl zpopowany}
+00182                                 \hyperlink{class_my_list_aecf059ed6926a3d6eb82641d46a3e3ff}{iterator} = \hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement};
+00183                                 \hyperlink{class_my_list_a1041f18464ae98367844d13aa2e7b5a6}{isIteratorAfterPop}=0;
+00184                         \}
+00185                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nsprawdzam w ["<<numberOfElement<<"] iterator="<<iteratorElementId;}
+00186                 \textcolor{keywordflow}{if}((numberOfElement <= \hyperlink{class_my_list_ad27795091bcc0c321d81c2196bc1cbb0}{iteratorElementId}-numberOfElement) &&(
+      \hyperlink{class_my_list_ad27795091bcc0c321d81c2196bc1cbb0}{iteratorElementId}-numberOfElement>=0))
+00187                 \{
+00188                         \textcolor{comment}{//std::cerr<<"\(\backslash\)nJestem w if\_1";}
+00189                         \hyperlink{class_my_list_aecf059ed6926a3d6eb82641d46a3e3ff}{iterator} = (this->\hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement});
+00190                         \hyperlink{class_my_list_ad27795091bcc0c321d81c2196bc1cbb0}{iteratorElementId} = 0;
+00191                         \textcolor{keywordflow}{for} (; \hyperlink{class_my_list_ad27795091bcc0c321d81c2196bc1cbb0}{iteratorElementId}< numberOfElement ; 
+      \hyperlink{class_my_list_ad27795091bcc0c321d81c2196bc1cbb0}{iteratorElementId}++)
+00192                                 \hyperlink{class_my_list_aecf059ed6926a3d6eb82641d46a3e3ff}{iterator} = (\hyperlink{class_my_list_aecf059ed6926a3d6eb82641d46a3e3ff}{iterator}->nextElement);
+00193                 \}
+00194                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(numberOfElement > \hyperlink{class_my_list_ad27795091bcc0c321d81c2196bc1cbb0}{iteratorElementId})
+00195                 \{
+00196                         \textcolor{comment}{//std::cerr<<"\(\backslash\)nJestem w if\_2";}
+00197                         \textcolor{keywordflow}{for} (; \hyperlink{class_my_list_ad27795091bcc0c321d81c2196bc1cbb0}{iteratorElementId}< numberOfElement ; 
+      \hyperlink{class_my_list_ad27795091bcc0c321d81c2196bc1cbb0}{iteratorElementId}++)
+00198                                                 \hyperlink{class_my_list_aecf059ed6926a3d6eb82641d46a3e3ff}{iterator} = (\hyperlink{class_my_list_aecf059ed6926a3d6eb82641d46a3e3ff}{iterator}->nextElement);
+00199                 \}
+00200                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( numberOfElement < \hyperlink{class_my_list_ad27795091bcc0c321d81c2196bc1cbb0}{iteratorElementId})
+00201                 \{
+00202                         \textcolor{comment}{//std::cerr<<"\(\backslash\)nJestem w if\_3";}
+00203                         \textcolor{keywordflow}{for} (; \hyperlink{class_my_list_ad27795091bcc0c321d81c2196bc1cbb0}{iteratorElementId}> numberOfElement ; 
+      \hyperlink{class_my_list_ad27795091bcc0c321d81c2196bc1cbb0}{iteratorElementId}--)
+00204                                                 \hyperlink{class_my_list_aecf059ed6926a3d6eb82641d46a3e3ff}{iterator} = (\hyperlink{class_my_list_aecf059ed6926a3d6eb82641d46a3e3ff}{iterator}->previousElement);
+00205                 \}
+00206                 \textcolor{keywordflow}{return} *\hyperlink{class_my_list_aecf059ed6926a3d6eb82641d46a3e3ff}{iterator};
+00207         \}
+00208 
+\hypertarget{mylist_8h_source_l00212}{}\hyperlink{class_my_list_a4a37731b07380f33203de13f926f1ebf}{00212}         \textcolor{keywordtype}{void} \hyperlink{class_my_list_a4a37731b07380f33203de13f926f1ebf}{insertAfter}(\hyperlink{class_my_list_element}{MyListElement<MyListElementType>} arg, \textcolor{keywordtype}{
+      int} iteratorID)
+00213         \{
+00214                 \textcolor{keywordflow}{if}(iteratorID==0 && this->\hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList}==0)  \{\hyperlink{class_my_list_aafeb562fa9d79f171a21988afd08a833}{push\_front}(arg.
+      \hyperlink{class_list_element_ad4ccf390c996e7a19b6dc270875276a1}{content}); \textcolor{keywordflow}{return};\}
+00215                 \textcolor{keywordflow}{if}(iteratorID==this->\hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList}-1)  \{\hyperlink{class_my_list_a52dad29ecf7522b86df8daa3aa74702d}{push\_back}(arg.
+      \hyperlink{class_list_element_ad4ccf390c996e7a19b6dc270875276a1}{content}); \textcolor{keywordflow}{return};\}
+00216                 \hyperlink{class_my_list_element}{MyListElement<MyListElementType>} *newMyListElement = \textcolor{keyword}{new} 
+      \hyperlink{class_my_list_element}{MyListElement<MyListElementType>}(arg);
+00217                 \hyperlink{class_my_list_element}{MyListElement<MyListElementType>} &tmpThis=(*this)[
+      iteratorID], &tmpNext=(*this)[iteratorID+1];
+00218                 \textcolor{keywordflow}{if}(!\hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList}++) \{\hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement} = 
+      \hyperlink{class_my_list_a70831dde3a7f24c7d3dd5b30980e8c27}{lastElement} = newMyListElement;\}
+00219                 newMyListElement -> nextElement = tmpThis.\hyperlink{class_my_list_element_a1d05f3ef872707c0f2dba4c8ba231230}{nextElement};
+00220                 newMyListElement -> previousElement = &tmpThis;
+00221                 tmpThis.\hyperlink{class_my_list_element_a1d05f3ef872707c0f2dba4c8ba231230}{nextElement} = newMyListElement;
+00222                 tmpNext.\hyperlink{class_my_list_element_ae52a44c22eb3916df4bd87672e9423c7}{previousElement} = newMyListElement;
+00223                 \hyperlink{class_my_list_a1041f18464ae98367844d13aa2e7b5a6}{isIteratorAfterPop}=1;
+00224         \}
+00225 
+00226 
+00227         \textcolor{comment}{//MyListElement operator[](int numberOfElement);}
+00228         \textcolor{comment}{//virtual MyList<MyListElementType> sort()}
+00229         \textcolor{comment}{//\{}
+00230         \textcolor{comment}{//      std::cerr<<"\(\backslash\)nError: Sortowanie z klasy MyList !!!";}
+00231         \textcolor{comment}{//      //return m;}
+00232         \textcolor{comment}{//\}}
+00233 
+\hypertarget{mylist_8h_source_l00234}{}\hyperlink{class_my_list_abe6b0de77f1f5918ea26035060efff85}{00234}         \hyperlink{class_my_list}{MyList<MyListElementType>} &\hyperlink{class_my_list_abe6b0de77f1f5918ea26035060efff85}{operator=}(\textcolor{keyword}{const} 
+      \hyperlink{class_my_list}{MyList<MyListElementType>} &pattern)
+00235         \{
+00236                 \textcolor{comment}{//std::cerr<<" @@@";}
+00237                 this->\hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList} = pattern.\hyperlink{class_my_list_a5a3a323664c97313be3a8d0b36866c3f}{sizeOfList};
+00238                 this->\hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement} = pattern.\hyperlink{class_my_list_a15131c9e2f10a393a916c64e901a1290}{firstElement};
+00239                 this->\hyperlink{class_my_list_a70831dde3a7f24c7d3dd5b30980e8c27}{lastElement} = pattern.\hyperlink{class_my_list_a70831dde3a7f24c7d3dd5b30980e8c27}{lastElement};
+00240                 this->\hyperlink{class_my_list_aecf059ed6926a3d6eb82641d46a3e3ff}{iterator}=pattern.\hyperlink{class_my_list_aecf059ed6926a3d6eb82641d46a3e3ff}{iterator};
+00241                 this->\hyperlink{class_my_list_a1041f18464ae98367844d13aa2e7b5a6}{isIteratorAfterPop} = pattern.
+      \hyperlink{class_my_list_a1041f18464ae98367844d13aa2e7b5a6}{isIteratorAfterPop};
+00242                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+00243         \}
+00244 \textcolor{comment}{//      List<MyListElementType> &operator=(const List<MyListElementType> &pattern)}
+00245 \textcolor{comment}{//      \{}
+00246 \textcolor{comment}{//              std::cerr<<" ###";}
+00252 \textcolor{comment}{}\textcolor{comment}{//              //this->cloneFrom(pattern);}
+00253 \textcolor{comment}{//              return *this;}
+00254 \textcolor{comment}{//      \}}
+00255 
+00256 \textcolor{comment}{/*      void cloneFrom(MyList<MyListElementType> patternList)}
+00257 \textcolor{comment}{        \{}
+00258 \textcolor{comment}{                MyList<MyListElementType> &clonedList = *new MyList<MyListElementType>;}
+00259 \textcolor{comment}{                // release memory from main list}
+00260 \textcolor{comment}{                while(this->size()) pop\_back();}
+00261 \textcolor{comment}{                for(int i=0; i<patternList.size(); i++)}
+00262 \textcolor{comment}{                        clonedList.push\_back(patternList[i]);}
+00263 \textcolor{comment}{                *this = clonedList;}
+00264 \textcolor{comment}{        \}}
+00265 \textcolor{comment}{*/}
+00266 
+\hypertarget{mylist_8h_source_l00267}{}\hyperlink{class_my_list_a819195298125d5b7ee02f18bd4d1152a}{00267}         \hyperlink{class_list}{List<MyListElementType>} &
+      \hyperlink{class_my_list_a819195298125d5b7ee02f18bd4d1152a}{createObjectFromAbstractReference}(\textcolor{comment}{/*MyList<MyListElementType>
+       abstractPattern*/})
+00268         \{
+00269                 \textcolor{keywordflow}{return} *\textcolor{keyword}{new} \hyperlink{class_my_list}{MyList<MyListElementType>};
+00270         \}
+00271 
+00272 
+00273 
+00274 \};
+00276 
+00278 
+00279 
+00280 
+00281 \textcolor{comment}{/*class MyListObserved : public MyList, public Observed}
+00282 \textcolor{comment}{\{}
+00283 \textcolor{comment}{public:}
+00284 \textcolor{comment}{        void mergeSort(MyList m)}
+00285 \textcolor{comment}{        \{}
+00286 \textcolor{comment}{        MyList::mergeSort(m);}
+00287 \textcolor{comment}{        powiadom();}
+00288 \textcolor{comment}{}
+00289 \textcolor{comment}{        \}}
+00290 \textcolor{comment}{        MyListObserved()\{\};}
+00291 \textcolor{comment}{        ~MyListObserved()\{\};}
+00292 \textcolor{comment}{}
+00293 \textcolor{comment}{}
+00294 \textcolor{comment}{\};*/}
+00295 
+00296 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* MYLIST\_H\_ */}\textcolor{preprocessor}{}
 \end{DoxyCode}

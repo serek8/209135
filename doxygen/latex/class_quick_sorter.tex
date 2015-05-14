@@ -1,0 +1,209 @@
+\hypertarget{class_quick_sorter}{\subsection{Dokumentacja szablonu klasy Quick\-Sorter$<$ My\-List\-Element\-Type $>$}
+\label{class_quick_sorter}\index{Quick\-Sorter$<$ My\-List\-Element\-Type $>$@{Quick\-Sorter$<$ My\-List\-Element\-Type $>$}}
+}
+
+
+Klasa sluzaca do obslugi sortowania przez Scalanie.  
+
+
+
+
+{\ttfamily \#include $<$quicksorter.\-h$>$}
+
+Diagram dziedziczenia dla Quick\-Sorter$<$ My\-List\-Element\-Type $>$\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_quick_sorter}
+\end{center}
+\end{figure}
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_quick_sorter_a48497adf59b538717b4820721fd5d195}{Quick\-Sorter} (\hyperlink{class_list}{List}$<$ My\-List\-Element\-Type $>$ \&\hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list})
+\begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_quick_sorter_a43fa61b5b452ba73a7a2da7690e478ab}{$\sim$\-Quick\-Sorter} ()
+\item 
+void \hyperlink{class_quick_sorter_aefa16c2996c131443c10183219797632}{quicksort} (int lewy, int prawy)
+\begin{DoxyCompactList}\small\item\em Szuka liczb do porownaia z pivotem. \end{DoxyCompactList}\item 
+\hyperlink{class_list}{List}$<$ My\-List\-Element\-Type $>$ \& \hyperlink{class_quick_sorter_ae2b74900a972d05c06df3c9a06123c00}{sort} ()
+\begin{DoxyCompactList}\small\item\em Sortuje przez Sortowanie szybkie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_quick_sorter_aba28a6d8a0209191c937fc2bf8c83861}{enable\-Pivot}
+\item 
+\hyperlink{class_list}{List}$<$ My\-List\-Element\-Type $>$ \& \hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}
+\begin{DoxyCompactList}\small\item\em Skopiowana lista do przeprowadzania sortowania. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Opis szczegółowy}
+\subsubsection*{template$<$class My\-List\-Element\-Type$>$class Quick\-Sorter$<$ My\-List\-Element\-Type $>$}
+
+
+
+Definicja w linii \hyperlink{quicksorter_8h_source_l00018}{18} pliku \hyperlink{quicksorter_8h_source}{quicksorter.\-h}.
+
+
+
+\subsubsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_quick_sorter_a48497adf59b538717b4820721fd5d195}{\index{Quick\-Sorter@{Quick\-Sorter}!Quick\-Sorter@{Quick\-Sorter}}
+\index{Quick\-Sorter@{Quick\-Sorter}!QuickSorter@{Quick\-Sorter}}
+\paragraph[{Quick\-Sorter}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type $>$ {\bf Quick\-Sorter}$<$ My\-List\-Element\-Type $>$\-::{\bf Quick\-Sorter} (
+\begin{DoxyParamCaption}
+\item[{{\bf List}$<$ My\-List\-Element\-Type $>$ \&}]{list}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_quick_sorter_a48497adf59b538717b4820721fd5d195}
+
+\begin{DoxyParams}{Parametry}
+{\em \&list} & lista, która konstruktor kopiuje aby nie naruszać podanej przez uzytkownika \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \hyperlink{quicksorter_8h_source_l00028}{28} pliku \hyperlink{quicksorter_8h_source}{quicksorter.\-h}.
+
+
+
+Odwołuje się do \hyperlink{list_8h_source_l00069}{List$<$ My\-List\-Element\-Type $>$\-::clone\-From()} i \hyperlink{quicksorter_8h_source_l00021}{Quick\-Sorter$<$ My\-List\-Element\-Type $>$\-::enable\-Pivot}.
+
+
+\begin{DoxyCode}
+00029         :\hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}(list.\hyperlink{class_list_a37f6551e13258a321c806fffb7e2f068}{createObjectFromAbstractReference}())
+00030         \{
+00031                 this->list.\hyperlink{class_list_a40a3d94c7f3aa49470625d47e6485570}{cloneFrom}(list);
+00032                 this->\hyperlink{class_quick_sorter_aba28a6d8a0209191c937fc2bf8c83861}{enablePivot}=1;
+00033         \}
+\end{DoxyCode}
+\hypertarget{class_quick_sorter_a43fa61b5b452ba73a7a2da7690e478ab}{\index{Quick\-Sorter@{Quick\-Sorter}!$\sim$\-Quick\-Sorter@{$\sim$\-Quick\-Sorter}}
+\index{$\sim$\-Quick\-Sorter@{$\sim$\-Quick\-Sorter}!QuickSorter@{Quick\-Sorter}}
+\paragraph[{$\sim$\-Quick\-Sorter}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type $>$ virtual {\bf Quick\-Sorter}$<$ My\-List\-Element\-Type $>$\-::$\sim${\bf Quick\-Sorter} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_quick_sorter_a43fa61b5b452ba73a7a2da7690e478ab}
+
+
+Definicja w linii \hyperlink{quicksorter_8h_source_l00035}{35} pliku \hyperlink{quicksorter_8h_source}{quicksorter.\-h}.
+
+
+\begin{DoxyCode}
+00035 \{\};
+\end{DoxyCode}
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_quick_sorter_aefa16c2996c131443c10183219797632}{\index{Quick\-Sorter@{Quick\-Sorter}!quicksort@{quicksort}}
+\index{quicksort@{quicksort}!QuickSorter@{Quick\-Sorter}}
+\paragraph[{quicksort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type $>$ void {\bf Quick\-Sorter}$<$ My\-List\-Element\-Type $>$\-::quicksort (
+\begin{DoxyParamCaption}
+\item[{int}]{lewy, }
+\item[{int}]{prawy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_quick_sorter_aefa16c2996c131443c10183219797632}
+
+\begin{DoxyParams}{Parametry}
+{\em lewy} & brzeg poszukiwan \\
+\hline
+{\em prawy} & brzeg poszukiwan \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \hyperlink{quicksorter_8h_source_l00042}{42} pliku \hyperlink{quicksorter_8h_source}{quicksorter.\-h}.
+
+
+
+Odwołuje się do \hyperlink{quicksorter_8h_source_l00021}{Quick\-Sorter$<$ My\-List\-Element\-Type $>$\-::enable\-Pivot} i \hyperlink{quicksorter_8h_source_l00023}{Quick\-Sorter$<$ My\-List\-Element\-Type $>$\-::list}.
+
+
+
+Odwołania w \hyperlink{quicksorter_8h_source_l00069}{Quick\-Sorter$<$ My\-List\-Element\-Type $>$\-::sort()}.
+
+
+\begin{DoxyCode}
+00043         \{
+00044             \textcolor{keywordtype}{int} pivot=\hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[(int)(lewy+prawy)/2].content;
+00045             \textcolor{keywordtype}{int} i,j,x;
+00046             i=lewy;
+00047             j=prawy;
+00048             \textcolor{keywordflow}{if}(\hyperlink{class_quick_sorter_aba28a6d8a0209191c937fc2bf8c83861}{enablePivot}) pivot=(\hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[(int)(lewy+prawy)/2].content + 
+      \hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[lewy].content + \hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[prawy].content)/3;
+00049             \textcolor{keywordflow}{do}
+00050             \{
+00051                 \textcolor{keywordflow}{while}(\hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[i].content<pivot) \{i++; \}
+00052                 \textcolor{keywordflow}{while}(\hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[j].content>pivot) \{j--; \}
+00053                 \textcolor{keywordflow}{if}(i<=j)
+00054                 \{
+00055                     x=\hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[i].content;
+00056                     \hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[i].content=\hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[j].content;
+00057                     \hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[j].content=x;
+00058                     i++;
+00059                     j--;
+00060                 \}
+00061             \}
+00062             \textcolor{keywordflow}{while}(i<=j);
+00063             \textcolor{keywordflow}{if}(j>lewy) \hyperlink{class_quick_sorter_aefa16c2996c131443c10183219797632}{quicksort}(lewy, j);
+00064             \textcolor{keywordflow}{if}(i<prawy) \hyperlink{class_quick_sorter_aefa16c2996c131443c10183219797632}{quicksort}(i, prawy);
+00065         \}
+\end{DoxyCode}
+\hypertarget{class_quick_sorter_ae2b74900a972d05c06df3c9a06123c00}{\index{Quick\-Sorter@{Quick\-Sorter}!sort@{sort}}
+\index{sort@{sort}!QuickSorter@{Quick\-Sorter}}
+\paragraph[{sort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type $>$ {\bf List}$<$My\-List\-Element\-Type$>$\& {\bf Quick\-Sorter}$<$ My\-List\-Element\-Type $>$\-::sort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_quick_sorter_ae2b74900a972d05c06df3c9a06123c00}
+
+
+Implementuje \hyperlink{class_sorter_a4a82d8151d6172802d1e60cb30c7d7d3}{Sorter$<$ My\-List\-Element\-Type $>$}.
+
+
+
+Definicja w linii \hyperlink{quicksorter_8h_source_l00069}{69} pliku \hyperlink{quicksorter_8h_source}{quicksorter.\-h}.
+
+
+
+Odwołuje się do \hyperlink{quicksorter_8h_source_l00023}{Quick\-Sorter$<$ My\-List\-Element\-Type $>$\-::list} i \hyperlink{quicksorter_8h_source_l00042}{Quick\-Sorter$<$ My\-List\-Element\-Type $>$\-::quicksort()}.
+
+
+
+Odwołania w \hyperlink{observablequicksorter_8h_source_l00026}{Observable\-Quick\-Sorter$<$ My\-List\-Element\-Type $>$\-::sort()}.
+
+
+\begin{DoxyCode}
+00070         \{
+00071                 \textcolor{comment}{//std::cout<<"(QuickSort)";}
+00072                 \hyperlink{class_quick_sorter_aefa16c2996c131443c10183219797632}{quicksort}(0, \hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}.size()-1);
+00073                 \textcolor{keywordflow}{return} \hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list};
+00074         \}
+\end{DoxyCode}
+
+
+\subsubsection{Dokumentacja atrybutów składowych}
+\hypertarget{class_quick_sorter_aba28a6d8a0209191c937fc2bf8c83861}{\index{Quick\-Sorter@{Quick\-Sorter}!enable\-Pivot@{enable\-Pivot}}
+\index{enable\-Pivot@{enable\-Pivot}!QuickSorter@{Quick\-Sorter}}
+\paragraph[{enable\-Pivot}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type $>$ int {\bf Quick\-Sorter}$<$ My\-List\-Element\-Type $>$\-::enable\-Pivot}}\label{class_quick_sorter_aba28a6d8a0209191c937fc2bf8c83861}
+
+
+Definicja w linii \hyperlink{quicksorter_8h_source_l00021}{21} pliku \hyperlink{quicksorter_8h_source}{quicksorter.\-h}.
+
+
+
+Odwołania w \hyperlink{quicksorter_8h_source_l00042}{Quick\-Sorter$<$ My\-List\-Element\-Type $>$\-::quicksort()} i \hyperlink{quicksorter_8h_source_l00028}{Quick\-Sorter$<$ My\-List\-Element\-Type $>$\-::\-Quick\-Sorter()}.
+
+\hypertarget{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{\index{Quick\-Sorter@{Quick\-Sorter}!list@{list}}
+\index{list@{list}!QuickSorter@{Quick\-Sorter}}
+\paragraph[{list}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type $>$ {\bf List}$<$My\-List\-Element\-Type$>$\& {\bf Quick\-Sorter}$<$ My\-List\-Element\-Type $>$\-::list}}\label{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}
+
+
+Definicja w linii \hyperlink{quicksorter_8h_source_l00023}{23} pliku \hyperlink{quicksorter_8h_source}{quicksorter.\-h}.
+
+
+
+Odwołania w \hyperlink{main_8cpp_source_l00022}{main()}, \hyperlink{quicksorter_8h_source_l00042}{Quick\-Sorter$<$ My\-List\-Element\-Type $>$\-::quicksort()}, \hyperlink{observablequicksorter_8h_source_l00026}{Observable\-Quick\-Sorter$<$ My\-List\-Element\-Type $>$\-::sort()} i \hyperlink{quicksorter_8h_source_l00069}{Quick\-Sorter$<$ My\-List\-Element\-Type $>$\-::sort()}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{quicksorter_8h}{quicksorter.\-h}\end{DoxyCompactItemize}

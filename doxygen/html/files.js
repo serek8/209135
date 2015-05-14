@@ -1,38 +1,53 @@
 var files =
 [
-    [ "dataframe.cpp", "dataframe_8cpp.html", null ],
-    [ "dataframe.h", "dataframe_8h.html", [
-      [ "DataFrame", "class_data_frame.html", "class_data_frame" ]
+    [ "filestreamer.h", "filestreamer_8h.html", "filestreamer_8h" ],
+    [ "heapsorter.h", "heapsorter_8h.html", [
+      [ "HeapSorter", "class_heap_sorter.html", "class_heap_sorter" ]
     ] ],
-    [ "dictionary.cpp", "dictionary_8cpp.html", null ],
-    [ "dictionary.h", "dictionary_8h.html", "dictionary_8h" ],
-    [ "hashowanie.h", "hashowanie_8h.html", [
-      [ "Hashowanie", "class_hashowanie.html", null ]
+    [ "list.h", "list_8h.html", [
+      [ "List", "class_list.html", "class_list" ]
+    ] ],
+    [ "listelement.h", "listelement_8h.html", [
+      [ "ListElement", "class_list_element.html", "class_list_element" ]
+    ] ],
+    [ "listsaver.h", "listsaver_8h.html", [
+      [ "ListSaver", "class_list_saver.html", "class_list_saver" ]
     ] ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
-    [ "multiplybytwo.cpp", "multiplybytwo_8cpp.html", null ],
-    [ "multiplybytwo.h", "multiplybytwo_8h.html", [
-      [ "MultiplyByTwo", "class_multiply_by_two.html", "class_multiply_by_two" ]
+    [ "mergesorter.h", "mergesorter_8h.html", [
+      [ "MergeSorter", "class_merge_sorter.html", "class_merge_sorter" ]
     ] ],
     [ "mybenchmark.cpp", "mybenchmark_8cpp.html", null ],
     [ "mybenchmark.h", "mybenchmark_8h.html", [
-      [ "MyBenchmark", "class_my_benchmark.html", "class_my_benchmark" ]
+      [ "MyBenchmark", "class_my_benchmark.html", "class_my_benchmark" ],
+      [ "MyBenchmarkObserver", "class_my_benchmark_observer.html", "class_my_benchmark_observer" ]
     ] ],
-    [ "mylist.cpp", "mylist_8cpp.html", null ],
     [ "mylist.h", "mylist_8h.html", [
-      [ "MyList", "class_my_list.html", "class_my_list" ],
-      [ "MyListElement", "class_my_list_1_1_my_list_element.html", "class_my_list_1_1_my_list_element" ]
+      [ "MyList", "class_my_list.html", "class_my_list" ]
     ] ],
-    [ "myqueue.h", "myqueue_8h.html", [
-      [ "MyQueue", "class_my_queue.html", "class_my_queue" ]
+    [ "mylistelement.h", "mylistelement_8h.html", [
+      [ "MyListElement", "class_my_list_element.html", "class_my_list_element" ]
     ] ],
-    [ "mystack.h", "mystack_8h.html", [
-      [ "MyStack", "class_my_stack.html", "class_my_stack" ]
-    ] ],
-    [ "numbergenerator.cpp", "numbergenerator_8cpp.html", null ],
     [ "numbergenerator.h", "numbergenerator_8h.html", "numbergenerator_8h" ],
-    [ "stackonarray.cpp", "stackonarray_8cpp.html", null ],
-    [ "stackonarray.h", "stackonarray_8h.html", [
-      [ "StackOnArray", "class_stack_on_array.html", "class_stack_on_array" ]
+    [ "observable.h", "observable_8h.html", [
+      [ "Observable", "class_observable.html", "class_observable" ]
+    ] ],
+    [ "observableheapsorter.h", "observableheapsorter_8h.html", [
+      [ "ObservableHeapSorter", "class_observable_heap_sorter.html", "class_observable_heap_sorter" ]
+    ] ],
+    [ "observablemergesorter.h", "observablemergesorter_8h.html", [
+      [ "ObservableMergeSorter", "class_observable_merge_sorter.html", "class_observable_merge_sorter" ]
+    ] ],
+    [ "observablequicksorter.h", "observablequicksorter_8h.html", [
+      [ "ObservableQuickSorter", "class_observable_quick_sorter.html", "class_observable_quick_sorter" ]
+    ] ],
+    [ "observer.h", "observer_8h.html", [
+      [ "Observer", "class_observer.html", "class_observer" ]
+    ] ],
+    [ "quicksorter.h", "quicksorter_8h.html", [
+      [ "QuickSorter", "class_quick_sorter.html", "class_quick_sorter" ]
+    ] ],
+    [ "sorter.h", "sorter_8h.html", [
+      [ "Sorter", "class_sorter.html", "class_sorter" ]
     ] ]
 ];

@@ -1,0 +1,161 @@
+\hypertarget{class_observable}{\subsection{Dokumentacja klasy Observable}
+\label{class_observable}\index{Observable@{Observable}}
+}
+
+
+Klasa abstrakcyjna-\/ bazowa dla objektow do obserowania.  
+
+
+
+
+{\ttfamily \#include $<$observable.\-h$>$}
+
+Diagram dziedziczenia dla Observable\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.282932cm]{class_observable}
+\end{center}
+\end{figure}
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_observable_a18e7700c59126dbeb97d24844c6ed131}{add} (\hyperlink{class_observer}{Observer} $\ast$obserwator)
+\begin{DoxyCompactList}\small\item\em Dodaje sie jako obiekt do obserowania dla danego obserwatora. \end{DoxyCompactList}\item 
+void \hyperlink{class_observable_a78df64057f152342a43f27979186a6ba}{send\-Start\-Update\-To\-Observers} ()
+\begin{DoxyCompactList}\small\item\em Wysyla powiadomienie do obserwatorow o rozpoczeciu algorytmu. \end{DoxyCompactList}\item 
+void \hyperlink{class_observable_a16f75ed1514a0cb7526b5a5d2b7ca7c6}{send\-Stop\-Update\-To\-Observers} ()
+\begin{DoxyCompactList}\small\item\em Wysyla powiadomienie do obserwatorow o zakonczeniu algorytmu. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_observable_a42f551d4d64ffa48a2ea8d7f0a4e42d4}{$\sim$\-Observable} ()
+\end{DoxyCompactItemize}
+\subsubsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_my_list}{My\-List}$<$ \hyperlink{class_observer}{Observer} $\ast$ $>$ \hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}
+\begin{DoxyCompactList}\small\item\em Lista obserwatorow. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Opis szczegółowy}
+
+
+Definicja w linii \hyperlink{observable_8h_source_l00016}{16} pliku \hyperlink{observable_8h_source}{observable.\-h}.
+
+
+
+\subsubsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_observable_a42f551d4d64ffa48a2ea8d7f0a4e42d4}{\index{Observable@{Observable}!$\sim$\-Observable@{$\sim$\-Observable}}
+\index{$\sim$\-Observable@{$\sim$\-Observable}!Observable@{Observable}}
+\paragraph[{$\sim$\-Observable}]{\setlength{\rightskip}{0pt plus 5cm}virtual Observable\-::$\sim$\-Observable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_observable_a42f551d4d64ffa48a2ea8d7f0a4e42d4}
+
+
+Definicja w linii \hyperlink{observable_8h_source_l00044}{44} pliku \hyperlink{observable_8h_source}{observable.\-h}.
+
+
+\begin{DoxyCode}
+00044 \{\}
+\end{DoxyCode}
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_observable_a18e7700c59126dbeb97d24844c6ed131}{\index{Observable@{Observable}!add@{add}}
+\index{add@{add}!Observable@{Observable}}
+\paragraph[{add}]{\setlength{\rightskip}{0pt plus 5cm}void Observable\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf Observer} $\ast$}]{obserwator}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_observable_a18e7700c59126dbeb97d24844c6ed131}
+
+
+Definicja w linii \hyperlink{observable_8h_source_l00023}{23} pliku \hyperlink{observable_8h_source}{observable.\-h}.
+
+
+
+Odwołuje się do \hyperlink{observable_8h_source_l00019}{observaters} i \hyperlink{mylist_8h_source_l00112}{My\-List$<$ My\-List\-Element\-Type $>$\-::push\-\_\-back()}.
+
+
+
+Odwołania w \hyperlink{main_8cpp_source_l00022}{main()}.
+
+
+\begin{DoxyCode}
+00023                                    \{
+00024         \hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}.\hyperlink{class_my_list_a52dad29ecf7522b86df8daa3aa74702d}{push\_back}(obserwator);
+00025     \}
+\end{DoxyCode}
+\hypertarget{class_observable_a78df64057f152342a43f27979186a6ba}{\index{Observable@{Observable}!send\-Start\-Update\-To\-Observers@{send\-Start\-Update\-To\-Observers}}
+\index{send\-Start\-Update\-To\-Observers@{send\-Start\-Update\-To\-Observers}!Observable@{Observable}}
+\paragraph[{send\-Start\-Update\-To\-Observers}]{\setlength{\rightskip}{0pt plus 5cm}void Observable\-::send\-Start\-Update\-To\-Observers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_observable_a78df64057f152342a43f27979186a6ba}
+
+
+Definicja w linii \hyperlink{observable_8h_source_l00029}{29} pliku \hyperlink{observable_8h_source}{observable.\-h}.
+
+
+
+Odwołuje się do \hyperlink{observable_8h_source_l00019}{observaters} i \hyperlink{mylist_8h_source_l00066}{My\-List$<$ My\-List\-Element\-Type $>$\-::size()}.
+
+
+
+Odwołania w \hyperlink{observableheapsorter_8h_source_l00026}{Observable\-Heap\-Sorter$<$ My\-List\-Element\-Type $>$\-::sort()}, \hyperlink{observablequicksorter_8h_source_l00026}{Observable\-Quick\-Sorter$<$ My\-List\-Element\-Type $>$\-::sort()} i \hyperlink{observablemergesorter_8h_source_l00026}{Observable\-Merge\-Sorter$<$ My\-List\-Element\-Type $>$\-::sort()}.
+
+
+\begin{DoxyCode}
+00029                                        \{
+00030         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}.\hyperlink{class_my_list_a267f669859ef3541333082cad6b28ab7}{size}(); i++)
+00031         \{
+00032                 \textcolor{comment}{//std::cout<<"Wysylam start update";}
+00033                 \hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}[i].content->receivedStartUpdate();
+00034         \}
+00035     \}
+\end{DoxyCode}
+\hypertarget{class_observable_a16f75ed1514a0cb7526b5a5d2b7ca7c6}{\index{Observable@{Observable}!send\-Stop\-Update\-To\-Observers@{send\-Stop\-Update\-To\-Observers}}
+\index{send\-Stop\-Update\-To\-Observers@{send\-Stop\-Update\-To\-Observers}!Observable@{Observable}}
+\paragraph[{send\-Stop\-Update\-To\-Observers}]{\setlength{\rightskip}{0pt plus 5cm}void Observable\-::send\-Stop\-Update\-To\-Observers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_observable_a16f75ed1514a0cb7526b5a5d2b7ca7c6}
+
+
+Definicja w linii \hyperlink{observable_8h_source_l00039}{39} pliku \hyperlink{observable_8h_source}{observable.\-h}.
+
+
+
+Odwołuje się do \hyperlink{observable_8h_source_l00019}{observaters} i \hyperlink{mylist_8h_source_l00066}{My\-List$<$ My\-List\-Element\-Type $>$\-::size()}.
+
+
+
+Odwołania w \hyperlink{observableheapsorter_8h_source_l00026}{Observable\-Heap\-Sorter$<$ My\-List\-Element\-Type $>$\-::sort()}, \hyperlink{observablequicksorter_8h_source_l00026}{Observable\-Quick\-Sorter$<$ My\-List\-Element\-Type $>$\-::sort()} i \hyperlink{observablemergesorter_8h_source_l00026}{Observable\-Merge\-Sorter$<$ My\-List\-Element\-Type $>$\-::sort()}.
+
+
+\begin{DoxyCode}
+00039                                       \{
+00040         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}.\hyperlink{class_my_list_a267f669859ef3541333082cad6b28ab7}{size}(); i++)
+00041                 \hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}[i].content->receivedStopUpdate();
+00042     \}
+\end{DoxyCode}
+
+
+\subsubsection{Dokumentacja atrybutów składowych}
+\hypertarget{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{\index{Observable@{Observable}!observaters@{observaters}}
+\index{observaters@{observaters}!Observable@{Observable}}
+\paragraph[{observaters}]{\setlength{\rightskip}{0pt plus 5cm}{\bf My\-List}$<${\bf Observer}$\ast$$>$ Observable\-::observaters}}\label{class_observable_a23f06cfbce27372d95fb556ca1f392ee}
+
+
+Definicja w linii \hyperlink{observable_8h_source_l00019}{19} pliku \hyperlink{observable_8h_source}{observable.\-h}.
+
+
+
+Odwołania w \hyperlink{observable_8h_source_l00023}{add()}, \hyperlink{main_8cpp_source_l00022}{main()}, \hyperlink{observable_8h_source_l00029}{send\-Start\-Update\-To\-Observers()} i \hyperlink{observable_8h_source_l00039}{send\-Stop\-Update\-To\-Observers()}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{observable_8h}{observable.\-h}\end{DoxyCompactItemize}

@@ -23,7 +23,7 @@ public:
 	List<MyListElementType> &list;
 
 	/** @brief Konstruktor
-	 *  @param &myList lista, która konstruktor kopiuje aby nie naruszać podanej przez uzytkownika
+	 *  @param &list lista, która konstruktor kopiuje aby nie naruszać podanej przez uzytkownika
 	 */
 	QuickSorter(List<MyListElementType> &list)
 	:list(list.createObjectFromAbstractReference())
@@ -64,7 +64,7 @@ public:
 	    if(i<prawy) quicksort(i, prawy);
 	}
 
-	/** @breif Sortuje przez Sortowanie szybkie
+	/** @brief Sortuje przez Sortowanie szybkie
 	 */
 	List<MyListElementType> &sort()
 	{

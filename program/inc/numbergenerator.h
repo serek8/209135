@@ -27,11 +27,7 @@
 class NumberGenerator
 {
 public:
-/**
- * @brief Generuje losowe liczby
- * Generuje losowe liczby na podstawie czasu maszyny
- *
- * @param zakres Zakres liczb do wygenerowania
+/**@brief Generuje losowe liczby
  */
 template <typename MyListElementType>
 MyList<MyListElementType> static generateNumbers(int range, int quantity)

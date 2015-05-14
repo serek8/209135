@@ -15,33 +15,38 @@
 00011 \textcolor{preprocessor}{#include <stdlib.h>}     \textcolor{comment}{/* srand, rand */}
 00012 \textcolor{preprocessor}{#include <time.h>}       \textcolor{comment}{/* time */}
 00013 \textcolor{preprocessor}{#include <iostream>}
-00014 \textcolor{preprocessor}{#include "\hyperlink{dataframe_8h}{dataframe.h}"}
+00014 \textcolor{preprocessor}{#include "\hyperlink{mylist_8h}{mylist.h}"}
 00015 \textcolor{preprocessor}{#include <string>}
 00016 
 \hypertarget{numbergenerator_8h_source_l00017}{}\hyperlink{numbergenerator_8h_ad234b171c744b5f476c1685da37bb7ca}{00017} \textcolor{preprocessor}{#define MAX\_HEX\_ASCII\_KOD 127}
 \hypertarget{numbergenerator_8h_source_l00018}{}\hyperlink{numbergenerator_8h_aa387743f75779d7abf5cd4224af4cffa}{00018} \textcolor{preprocessor}{}\textcolor{preprocessor}{#define ROZMIAR\_STRINGU 20}
 00019 \textcolor{preprocessor}{}
-\hypertarget{numbergenerator_8h_source_l00026}{}\hyperlink{class_number_generator}{00026} \textcolor{keyword}{class }\hyperlink{class_number_generator}{NumberGenerator} : \textcolor{keyword}{public} \hyperlink{class_data_frame}{DataFrame}
-00027 \{
-00028 \textcolor{keyword}{public}:
-\hypertarget{numbergenerator_8h_source_l00035}{}\hyperlink{class_number_generator_a511673bb245d14a048702558d12deb63}{00035} \textcolor{keywordtype}{void} \hyperlink{class_number_generator_a511673bb245d14a048702558d12deb63}{generateNumbers}(\textcolor{keywordtype}{int} zakres=10000000)
-00036 \{
-00037         time\_t randomTime = clock();
-00038         this->\hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData} = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable}];
-00039         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable} ; i++)
-00040         \{
-00041                 srand (randomTime = clock());
-00042                 this->\hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData}[i] = rand()%zakres;
-00043                 randomTime = clock();
-00044         \}
+\hypertarget{numbergenerator_8h_source_l00027}{}\hyperlink{class_number_generator}{00027} \textcolor{keyword}{class }\hyperlink{class_number_generator}{NumberGenerator}
+00028 \{
+00029 \textcolor{keyword}{public}:
+00032 \textcolor{keyword}{template} <\textcolor{keyword}{typename} MyListElementType>
+\hypertarget{numbergenerator_8h_source_l00033}{}\hyperlink{class_number_generator_ab3c0d704683453456684ec24fb771334}{00033} \hyperlink{class_my_list}{MyList<MyListElementType>} \textcolor{keyword}{static} \hyperlink{class_number_generator_ab3c0d704683453456684ec24fb771334}{generateNumbers}(\textcolor{keywordtype}{int} range, \textcolor{keywordtype}{int} 
+      quantity)
+00034 \{
+00035         \hyperlink{class_my_list}{MyList<MyListElementType>} &myList = *\textcolor{keyword}{new} 
+      \hyperlink{class_my_list}{MyList<MyListElementType>}();
+00036         time\_t randomTime = clock();
+00037 
+00038         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<quantity ; i++)
+00039         \{
+00040                 srand (randomTime = clock());
+00041                 myList.\hyperlink{class_my_list_a52dad29ecf7522b86df8daa3aa74702d}{push\_back}(rand()%range);
+00042                 randomTime = clock();
+00043         \}
+00044         \textcolor{keywordflow}{return} myList;
 00045 \}
 00046 
-00053 \textcolor{keyword}{static} std::string *\hyperlink{class_number_generator_af434d1cd0b338d22b11b24fbd2e14dce}{generateStrings}(\textcolor{keywordtype}{int} ileStringow);
+00053 \textcolor{keyword}{static} std::string *\hyperlink{class_number_generator_afed5ae8efb72655770753790714b7643}{generateStrings}(\textcolor{keywordtype}{int} ileStringow);
 00054 
 00055 
 00056 
-00057 \textcolor{keyword}{using} DataFrame::operator=;
-\hypertarget{numbergenerator_8h_source_l00058}{}\hyperlink{class_number_generator_a828757cc2c9712e0b111584d1f1d5164}{00058}  \hyperlink{class_number_generator_a828757cc2c9712e0b111584d1f1d5164}{~NumberGenerator}() \{\}
+00057 \textcolor{comment}{//using DataFrame::operator=;}
+00058 
 00059 \};
 00060 
 00061 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* NUMBERGENERATOR\_H\_ */}\textcolor{preprocessor}{}

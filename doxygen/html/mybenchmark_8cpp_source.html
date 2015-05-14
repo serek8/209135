@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Laboratorium 5: Plik źródłowy mybenchmark.cpp</title>
+<title>Laboratorium 7: Plik źródłowy mybenchmark.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Laboratorium 5
-   &#160;<span id="projectnumber">5.0</span>
+   <div id="projectname">Laboratorium 7
    </div>
   </td>
  </tr>
@@ -76,53 +75,26 @@ $(document).ready(function(){initNavTree('mybenchmark_8cpp_source.html','');});
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mybenchmark_8h.html">mybenchmark.h</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_my_benchmark.html#a66576625ca37f8bc539c18ffceb69c9c">   12</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_my_benchmark.html#a66576625ca37f8bc539c18ffceb69c9c">MyBenchmark::testAlgorithm</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> repetition)</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_my_benchmark.html#a802577db97fd440a3920add30c35a676">   12</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_my_benchmark.html#a802577db97fd440a3920add30c35a676">MyBenchmark :: timerStart</a>()</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        time_t benchmarkTimeInTotal = 0;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        time_t benchmarkTimeForOneLoop = 0;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="class_my_benchmark.html#a1cdab837ead670bd438f249ee82c8eff">timerValue</a> = (( (double)clock() ) /CLOCKS_PER_SEC);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">int</span> *originalTableOfData = <span class="keyword">new</span> <span class="keywordtype">int</span>[<a class="code" href="class_data_frame.html#aa5d1905c6910cad07ab5189bd34b13ab">sizeOfTable</a>];</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="class_data_frame.html#aa5d1905c6910cad07ab5189bd34b13ab">sizeOfTable</a>; i++)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                originalTableOfData[i]=<a class="code" href="class_data_frame.html#a8edc4ce524483e2e5069067267ccdcbf">tableOfData</a>[i];</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0 ; i&lt;repetition ; i++)      {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="class_data_frame.html#aa5d1905c6910cad07ab5189bd34b13ab">sizeOfTable</a>; i++)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                        <a class="code" href="class_data_frame.html#a8edc4ce524483e2e5069067267ccdcbf">tableOfData</a>[i]=originalTableOfData[i];</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                benchmarkTimeForOneLoop = clock();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                        this-&gt;<a class="code" href="class_my_benchmark.html#aaebbb9785ed7c460e33459464655a611">executeAlgorithm</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                benchmarkTimeInTotal += clock() - benchmarkTimeForOneLoop;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> (( (<span class="keywordtype">double</span>)benchmarkTimeInTotal ) /CLOCKS_PER_SEC);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_my_benchmark.html#a1cdab837ead670bd438f249ee82c8eff">MyBenchmark::timerValue</a>=0;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_my_benchmark.html#a802577db97fd440a3920add30c35a676">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_my_benchmark.html#a802577db97fd440a3920add30c35a676">MyBenchmark :: timerStart</a>()</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="class_my_benchmark.html#a1cdab837ead670bd438f249ee82c8eff">MyBenchmark::timerValue</a> = (( (double)clock() ) /CLOCKS_PER_SEC);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_my_benchmark.html#a7e3fa28fab999435bd4c51d915e42809">   40</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_my_benchmark.html#a7e3fa28fab999435bd4c51d915e42809">MyBenchmark :: timerStop</a>()</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> (( (<span class="keywordtype">double</span>)clock() ) /CLOCKS_PER_SEC) - <a class="code" href="class_my_benchmark.html#a1cdab837ead670bd438f249ee82c8eff">MyBenchmark::timerValue</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
-<div class="ttc" id="class_my_benchmark_html_a7e3fa28fab999435bd4c51d915e42809"><div class="ttname"><a href="class_my_benchmark.html#a7e3fa28fab999435bd4c51d915e42809">MyBenchmark::timerStop</a></div><div class="ttdeci">static double timerStop()</div><div class="ttdoc">wyłączam stoper </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00040">mybenchmark.cpp:40</a></div></div>
-<div class="ttc" id="class_my_benchmark_html_a1cdab837ead670bd438f249ee82c8eff"><div class="ttname"><a href="class_my_benchmark.html#a1cdab837ead670bd438f249ee82c8eff">MyBenchmark::timerValue</a></div><div class="ttdeci">static double timerValue</div><div class="ttdoc">Czas stopera. </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8h_source.html#l00037">mybenchmark.h:37</a></div></div>
-<div class="ttc" id="class_my_benchmark_html_a802577db97fd440a3920add30c35a676"><div class="ttname"><a href="class_my_benchmark.html#a802577db97fd440a3920add30c35a676">MyBenchmark::timerStart</a></div><div class="ttdeci">static void timerStart()</div><div class="ttdoc">włączam stoper </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00035">mybenchmark.cpp:35</a></div></div>
-<div class="ttc" id="class_my_benchmark_html_aaebbb9785ed7c460e33459464655a611"><div class="ttname"><a href="class_my_benchmark.html#aaebbb9785ed7c460e33459464655a611">MyBenchmark::executeAlgorithm</a></div><div class="ttdeci">virtual void executeAlgorithm()=0</div><div class="ttdoc">Interface metody algorytmu glownego. </div></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_my_benchmark.html#a7e3fa28fab999435bd4c51d915e42809">   17</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_my_benchmark.html#a7e3fa28fab999435bd4c51d915e42809">MyBenchmark :: timerStop</a>()</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">return</span> (( (<span class="keywordtype">double</span>)clock() ) /CLOCKS_PER_SEC) - <a class="code" href="class_my_benchmark.html#a1cdab837ead670bd438f249ee82c8eff">timerValue</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<div class="ttc" id="class_my_benchmark_html_a7e3fa28fab999435bd4c51d915e42809"><div class="ttname"><a href="class_my_benchmark.html#a7e3fa28fab999435bd4c51d915e42809">MyBenchmark::timerStop</a></div><div class="ttdeci">double timerStop()</div><div class="ttdoc">wyłączam stoper </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00017">mybenchmark.cpp:17</a></div></div>
+<div class="ttc" id="class_my_benchmark_html_a1cdab837ead670bd438f249ee82c8eff"><div class="ttname"><a href="class_my_benchmark.html#a1cdab837ead670bd438f249ee82c8eff">MyBenchmark::timerValue</a></div><div class="ttdeci">double timerValue</div><div class="ttdoc">Czas stopera. </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8h_source.html#l00025">mybenchmark.h:25</a></div></div>
+<div class="ttc" id="class_my_benchmark_html_a802577db97fd440a3920add30c35a676"><div class="ttname"><a href="class_my_benchmark.html#a802577db97fd440a3920add30c35a676">MyBenchmark::timerStart</a></div><div class="ttdeci">void timerStart()</div><div class="ttdoc">włączam stoper </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00012">mybenchmark.cpp:12</a></div></div>
 <div class="ttc" id="mybenchmark_8h_html"><div class="ttname"><a href="mybenchmark_8h.html">mybenchmark.h</a></div></div>
-<div class="ttc" id="class_data_frame_html_aa5d1905c6910cad07ab5189bd34b13ab"><div class="ttname"><a href="class_data_frame.html#aa5d1905c6910cad07ab5189bd34b13ab">DataFrame::sizeOfTable</a></div><div class="ttdeci">unsigned int sizeOfTable</div><div class="ttdoc">Rozmiar tablicy tableOfData. </div><div class="ttdef"><b>Definition:</b> <a href="dataframe_8h_source.html#l00034">dataframe.h:34</a></div></div>
-<div class="ttc" id="class_my_benchmark_html_a66576625ca37f8bc539c18ffceb69c9c"><div class="ttname"><a href="class_my_benchmark.html#a66576625ca37f8bc539c18ffceb69c9c">MyBenchmark::testAlgorithm</a></div><div class="ttdeci">double testAlgorithm(unsigned int repetition)</div><div class="ttdoc">Benchmarkuje algorytm główny. </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00012">mybenchmark.cpp:12</a></div></div>
-<div class="ttc" id="class_data_frame_html_a8edc4ce524483e2e5069067267ccdcbf"><div class="ttname"><a href="class_data_frame.html#a8edc4ce524483e2e5069067267ccdcbf">DataFrame::tableOfData</a></div><div class="ttdeci">int * tableOfData</div><div class="ttdoc">Zawiera adres do tablicy {size} elementów. </div><div class="ttdef"><b>Definition:</b> <a href="dataframe_8h_source.html#l00021">dataframe.h:21</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_463302e58bc74c0c35f534f40d40b0a3.html">program</a></li><li class="navelem"><a class="el" href="dir_630dc271d2c6bab74c75873b96c2431c.html">src</a></li><li class="navelem"><a class="el" href="mybenchmark_8cpp.html">mybenchmark.cpp</a></li>
-    <li class="footer">Wygenerowano Cz, 16 kwi 2015 00:55:20 dla Laboratorium 5 programem
+    <li class="footer">Wygenerowano Cz, 14 maj 2015 23:21:54 dla Laboratorium 7 programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

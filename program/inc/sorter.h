@@ -18,7 +18,7 @@ public:
 
 	virtual List<MyListElementType> &sort() = 0;
 
-	/** @breif Sortuje przez scalanie
+	/** @brief Sortuje przez scalanie
 	 */
 	virtual ~Sorter(){};
 };

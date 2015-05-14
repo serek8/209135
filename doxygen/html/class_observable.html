@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Laboratorium 7: Dokumentacja klasy Observable</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Laboratorium 7
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klasy</span></a></li>
+      <li><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;klas</span></a></li>
+      <li><a href="classes.html"><span>Indeks&#160;klas</span></a></li>
+      <li><a href="hierarchy.html"><span>Hierarchia&#160;klas</span></a></li>
+      <li><a href="functions.html"><span>Składowe&#160;klas</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_observable.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pub-attribs">Atrybuty publiczne</a> &#124;
+<a href="class_observable-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja klasy Observable</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Klasa abstrakcyjna- bazowa dla objektow do obserowania.  
+ <a href="class_observable.html#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="observable_8h_source.html">observable.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla Observable</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_observable.png" usemap="#Observable_map" alt=""/>
+  <map id="Observable_map" name="Observable_map">
+<area href="class_observable_heap_sorter.html" title="Klasa sluzaca do obslugi sortowania przez kopcowanie z dodaniem obserwatora. " alt="ObservableHeapSorter&lt; MyListElementType &gt;" shape="rect" coords="0,56,283,80"/>
+<area href="class_observable_merge_sorter.html" title="Klasa sluzaca do obslugi sortowania przez Scalanie z dodaniem obserwatora. " alt="ObservableMergeSorter&lt; MyListElementType &gt;" shape="rect" coords="293,56,576,80"/>
+<area href="class_observable_quick_sorter.html" title="Klasa sluzaca do obslugi sortowania przez Sortowanie szybkie z dodaniem obserwatora. " alt="ObservableQuickSorter&lt; MyListElementType &gt;" shape="rect" coords="586,56,869,80"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a18e7700c59126dbeb97d24844c6ed131"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable.html#a18e7700c59126dbeb97d24844c6ed131">add</a> (<a class="el" href="class_observer.html">Observer</a> *obserwator)</td></tr>
+<tr class="memdesc:a18e7700c59126dbeb97d24844c6ed131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dodaje sie jako obiekt do obserowania dla danego obserwatora.  <a href="#a18e7700c59126dbeb97d24844c6ed131">Więcej...</a><br/></td></tr>
+<tr class="separator:a18e7700c59126dbeb97d24844c6ed131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78df64057f152342a43f27979186a6ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable.html#a78df64057f152342a43f27979186a6ba">sendStartUpdateToObservers</a> ()</td></tr>
+<tr class="memdesc:a78df64057f152342a43f27979186a6ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wysyla powiadomienie do obserwatorow o rozpoczeciu algorytmu.  <a href="#a78df64057f152342a43f27979186a6ba">Więcej...</a><br/></td></tr>
+<tr class="separator:a78df64057f152342a43f27979186a6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16f75ed1514a0cb7526b5a5d2b7ca7c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable.html#a16f75ed1514a0cb7526b5a5d2b7ca7c6">sendStopUpdateToObservers</a> ()</td></tr>
+<tr class="memdesc:a16f75ed1514a0cb7526b5a5d2b7ca7c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wysyla powiadomienie do obserwatorow o zakonczeniu algorytmu.  <a href="#a16f75ed1514a0cb7526b5a5d2b7ca7c6">Więcej...</a><br/></td></tr>
+<tr class="separator:a16f75ed1514a0cb7526b5a5d2b7ca7c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42f551d4d64ffa48a2ea8d7f0a4e42d4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable.html#a42f551d4d64ffa48a2ea8d7f0a4e42d4">~Observable</a> ()</td></tr>
+<tr class="separator:a42f551d4d64ffa48a2ea8d7f0a4e42d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atrybuty publiczne</h2></td></tr>
+<tr class="memitem:a23f06cfbce27372d95fb556ca1f392ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_my_list.html">MyList</a>&lt; <a class="el" href="class_observer.html">Observer</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable.html#a23f06cfbce27372d95fb556ca1f392ee">observaters</a></td></tr>
+<tr class="memdesc:a23f06cfbce27372d95fb556ca1f392ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista obserwatorow.  <a href="#a23f06cfbce27372d95fb556ca1f392ee">Więcej...</a><br/></td></tr>
+<tr class="separator:a23f06cfbce27372d95fb556ca1f392ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock">
+<p>Definicja w linii <a class="el" href="observable_8h_source.html#l00016">16</a> pliku <a class="el" href="observable_8h_source.html">observable.h</a>.</p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a class="anchor" id="a42f551d4d64ffa48a2ea8d7f0a4e42d4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Observable::~Observable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="observable_8h_source.html#l00044">44</a> pliku <a class="el" href="observable_8h_source.html">observable.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a class="anchor" id="a18e7700c59126dbeb97d24844c6ed131"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Observable::add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_observer.html">Observer</a> *&#160;</td>
+          <td class="paramname"><em>obserwator</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="observable_8h_source.html#l00023">23</a> pliku <a class="el" href="observable_8h_source.html">observable.h</a>.</p>
+
+<p>Odwołuje się do <a class="el" href="observable_8h_source.html#l00019">observaters</a> i <a class="el" href="mylist_8h_source.html#l00112">MyList&lt; MyListElementType &gt;::push_back()</a>.</p>
+
+<p>Odwołania w <a class="el" href="main_8cpp_source.html#l00022">main()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                   {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_observable.html#a23f06cfbce27372d95fb556ca1f392ee">observaters</a>.<a class="code" href="class_my_list.html#a52dad29ecf7522b86df8daa3aa74702d">push_back</a>(obserwator);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="ttc" id="class_my_list_html_a52dad29ecf7522b86df8daa3aa74702d"><div class="ttname"><a href="class_my_list.html#a52dad29ecf7522b86df8daa3aa74702d">MyList::push_back</a></div><div class="ttdeci">void push_back(MyListElementType arg)</div><div class="ttdoc">Wklada element na ostatnie miejsce na liscie. </div><div class="ttdef"><b>Definition:</b> <a href="mylist_8h_source.html#l00112">mylist.h:112</a></div></div>
+<div class="ttc" id="class_observable_html_a23f06cfbce27372d95fb556ca1f392ee"><div class="ttname"><a href="class_observable.html#a23f06cfbce27372d95fb556ca1f392ee">Observable::observaters</a></div><div class="ttdeci">MyList&lt; Observer * &gt; observaters</div><div class="ttdoc">Lista obserwatorow. </div><div class="ttdef"><b>Definition:</b> <a href="observable_8h_source.html#l00019">observable.h:19</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a78df64057f152342a43f27979186a6ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Observable::sendStartUpdateToObservers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="observable_8h_source.html#l00029">29</a> pliku <a class="el" href="observable_8h_source.html">observable.h</a>.</p>
+
+<p>Odwołuje się do <a class="el" href="observable_8h_source.html#l00019">observaters</a> i <a class="el" href="mylist_8h_source.html#l00066">MyList&lt; MyListElementType &gt;::size()</a>.</p>
+
+<p>Odwołania w <a class="el" href="observableheapsorter_8h_source.html#l00026">ObservableHeapSorter&lt; MyListElementType &gt;::sort()</a>, <a class="el" href="observablequicksorter_8h_source.html#l00026">ObservableQuickSorter&lt; MyListElementType &gt;::sort()</a> i <a class="el" href="observablemergesorter_8h_source.html#l00026">ObservableMergeSorter&lt; MyListElementType &gt;::sort()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                       {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="class_observable.html#a23f06cfbce27372d95fb556ca1f392ee">observaters</a>.<a class="code" href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">size</a>(); i++)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="comment">//std::cout&lt;&lt;&quot;Wysylam start update&quot;;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <a class="code" href="class_observable.html#a23f06cfbce27372d95fb556ca1f392ee">observaters</a>[i].content-&gt;receivedStartUpdate();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="ttc" id="class_observable_html_a23f06cfbce27372d95fb556ca1f392ee"><div class="ttname"><a href="class_observable.html#a23f06cfbce27372d95fb556ca1f392ee">Observable::observaters</a></div><div class="ttdeci">MyList&lt; Observer * &gt; observaters</div><div class="ttdoc">Lista obserwatorow. </div><div class="ttdef"><b>Definition:</b> <a href="observable_8h_source.html#l00019">observable.h:19</a></div></div>
+<div class="ttc" id="class_my_list_html_a267f669859ef3541333082cad6b28ab7"><div class="ttname"><a href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">MyList::size</a></div><div class="ttdeci">int &amp; size()</div><div class="ttdoc">Zwraca ilosc elementow listy. </div><div class="ttdef"><b>Definition:</b> <a href="mylist_8h_source.html#l00066">mylist.h:66</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a16f75ed1514a0cb7526b5a5d2b7ca7c6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Observable::sendStopUpdateToObservers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="observable_8h_source.html#l00039">39</a> pliku <a class="el" href="observable_8h_source.html">observable.h</a>.</p>
+
+<p>Odwołuje się do <a class="el" href="observable_8h_source.html#l00019">observaters</a> i <a class="el" href="mylist_8h_source.html#l00066">MyList&lt; MyListElementType &gt;::size()</a>.</p>
+
+<p>Odwołania w <a class="el" href="observableheapsorter_8h_source.html#l00026">ObservableHeapSorter&lt; MyListElementType &gt;::sort()</a>, <a class="el" href="observablequicksorter_8h_source.html#l00026">ObservableQuickSorter&lt; MyListElementType &gt;::sort()</a> i <a class="el" href="observablemergesorter_8h_source.html#l00026">ObservableMergeSorter&lt; MyListElementType &gt;::sort()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                      {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="class_observable.html#a23f06cfbce27372d95fb556ca1f392ee">observaters</a>.<a class="code" href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">size</a>(); i++)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="class_observable.html#a23f06cfbce27372d95fb556ca1f392ee">observaters</a>[i].content-&gt;receivedStopUpdate();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="ttc" id="class_observable_html_a23f06cfbce27372d95fb556ca1f392ee"><div class="ttname"><a href="class_observable.html#a23f06cfbce27372d95fb556ca1f392ee">Observable::observaters</a></div><div class="ttdeci">MyList&lt; Observer * &gt; observaters</div><div class="ttdoc">Lista obserwatorow. </div><div class="ttdef"><b>Definition:</b> <a href="observable_8h_source.html#l00019">observable.h:19</a></div></div>
+<div class="ttc" id="class_my_list_html_a267f669859ef3541333082cad6b28ab7"><div class="ttname"><a href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">MyList::size</a></div><div class="ttdeci">int &amp; size()</div><div class="ttdoc">Zwraca ilosc elementow listy. </div><div class="ttdef"><b>Definition:</b> <a href="mylist_8h_source.html#l00066">mylist.h:66</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a class="anchor" id="a23f06cfbce27372d95fb556ca1f392ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_my_list.html">MyList</a>&lt;<a class="el" href="class_observer.html">Observer</a>*&gt; Observable::observaters</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="observable_8h_source.html#l00019">19</a> pliku <a class="el" href="observable_8h_source.html">observable.h</a>.</p>
+
+<p>Odwołania w <a class="el" href="observable_8h_source.html#l00023">add()</a>, <a class="el" href="main_8cpp_source.html#l00022">main()</a>, <a class="el" href="observable_8h_source.html#l00029">sendStartUpdateToObservers()</a> i <a class="el" href="observable_8h_source.html#l00039">sendStopUpdateToObservers()</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z pliku:<ul>
+<li><a class="el" href="observable_8h_source.html">observable.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_observable.html">Observable</a></li>
+    <li class="footer">Wygenerowano Cz, 14 maj 2015 23:21:56 dla Laboratorium 7 programem
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

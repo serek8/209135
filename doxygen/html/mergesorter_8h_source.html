@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Laboratorium 7: Plik źródłowy mergesorter.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Laboratorium 7
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('mergesorter_8h_source.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">mergesorter.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mergesorter_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * mergesort.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: May 11, 2015</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: serek8</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef MERGESORT_H_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MERGESORT_H_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sorter_8h.html">sorter.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="list_8h.html">list.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> MyListElementType&gt;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_merge_sorter.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_merge_sorter.html">MergeSorter</a>: <span class="keyword">public</span> <a class="code" href="class_sorter.html">Sorter</a>&lt;MyListElementType&gt; {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_merge_sorter.html#a8ac3ee938414809d7da627cf918f1f87">   20</a></span>&#160;        <a class="code" href="class_my_list.html">MyList&lt;MyListElementType&gt;</a> &amp;<a class="code" href="class_merge_sorter.html#a8ac3ee938414809d7da627cf918f1f87">list</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_merge_sorter.html#a0ffb06429d7ebcb8bd007ca5db53429f">   25</a></span>&#160;        <a class="code" href="class_merge_sorter.html#a0ffb06429d7ebcb8bd007ca5db53429f">MergeSorter</a>(<a class="code" href="class_my_list.html">MyList&lt;MyListElementType&gt;</a> &amp;listArg)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        :<a class="code" href="class_merge_sorter.html#a8ac3ee938414809d7da627cf918f1f87">list</a>(listArg)  {}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_merge_sorter.html#aa3e8fe75440511195aaf6dd7ef9dfcf1">   28</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_merge_sorter.html#aa3e8fe75440511195aaf6dd7ef9dfcf1">~MergeSorter</a>(){}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_merge_sorter.html#a9cde12ce9803e379ab421bf377103ba0">   36</a></span>&#160;        <a class="code" href="class_my_list.html">MyList&lt;MyListElementType&gt;</a> <a class="code" href="class_merge_sorter.html#a9cde12ce9803e379ab421bf377103ba0">merge</a>(<a class="code" href="class_my_list.html">MyList&lt;MyListElementType&gt;</a> left, <a class="code" href="class_my_list.html">MyList&lt;MyListElementType&gt;</a> right)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <a class="code" href="class_my_list.html">MyList&lt;MyListElementType&gt;</a> result;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="comment">//Gdy jest jeszcze cos do sortowania</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">while</span> (left.<a class="code" href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">size</a>() &gt; 0 || right.<a class="code" href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">size</a>() &gt; 0)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        <span class="comment">// Jak oba to zamieniamy</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        <span class="keywordflow">if</span> (left.<a class="code" href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">size</a>() &gt; 0 &amp;&amp; right.<a class="code" href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">size</a>() &gt; 0)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                <span class="comment">// Sprawdzam czy zamieniac</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                <span class="keywordflow">if</span> (left.<a class="code" href="class_my_list.html#a2fe6cb1e5caf9f1d7d9df4b44faf8506">show_front</a>() &lt;= right.<a class="code" href="class_my_list.html#a2fe6cb1e5caf9f1d7d9df4b44faf8506">show_front</a>())</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                        {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                                result.<a class="code" href="class_my_list.html#a52dad29ecf7522b86df8daa3aa74702d">push_back</a>(left.<a class="code" href="class_my_list.html#a2fe6cb1e5caf9f1d7d9df4b44faf8506">show_front</a>()); left.<a class="code" href="class_my_list.html#a675af07472a5b7dde7ca602abb420efa">pop_front</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                        }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                        result.<a class="code" href="class_my_list.html#a52dad29ecf7522b86df8daa3aa74702d">push_back</a>(right.<a class="code" href="class_my_list.html#a2fe6cb1e5caf9f1d7d9df4b44faf8506">show_front</a>()); right.<a class="code" href="class_my_list.html#a675af07472a5b7dde7ca602abb420efa">pop_front</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        <span class="comment">// pojedyncze listy (nieparzyse)</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (left.<a class="code" href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">size</a>() &gt; 0)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; left.<a class="code" href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">size</a>(); i++) result.<a class="code" href="class_my_list.html#a52dad29ecf7522b86df8daa3aa74702d">push_back</a>(left[i].content); <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        <span class="comment">// pojedyncze listy (nieparzyse- taka sama sytuacja jak wyzej)</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((<span class="keywordtype">int</span>)right.<a class="code" href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">size</a>() &gt; 0)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)right.<a class="code" href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">size</a>(); i++) result.<a class="code" href="class_my_list.html#a52dad29ecf7522b86df8daa3aa74702d">push_back</a>(right[i].content); <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                        }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="class_merge_sorter.html#ab945fd9934a6f47a851b40b23d18ee71">   73</a></span>&#160;        <a class="code" href="class_my_list.html">MyList&lt;MyListElementType&gt;</a> <a class="code" href="class_merge_sorter.html#ab945fd9934a6f47a851b40b23d18ee71">mergeSort</a>(<a class="code" href="class_my_list.html">MyList&lt;MyListElementType&gt;</a> m)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordflow">if</span> (m.<a class="code" href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">size</a>() &lt;= 1) <span class="keywordflow">return</span> m; <span class="comment">// gdy juz nic nie ma do sotrowania</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <a class="code" href="class_my_list.html">MyList&lt;MyListElementType&gt;</a> left, right, result;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordtype">int</span> middle = (m.<a class="code" href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">size</a>()+ 1) / 2; <span class="comment">// anty-nieparzyscie</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; middle; i++)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                left.<a class="code" href="class_my_list.html#a52dad29ecf7522b86df8daa3aa74702d">push_back</a>(m[i].content);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = middle; i &lt; m.<a class="code" href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">size</a>(); i++)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                right.<a class="code" href="class_my_list.html#a52dad29ecf7522b86df8daa3aa74702d">push_back</a>(m[i].content);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                left = <a class="code" href="class_merge_sorter.html#ab945fd9934a6f47a851b40b23d18ee71">mergeSort</a>(left);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                right = <a class="code" href="class_merge_sorter.html#ab945fd9934a6f47a851b40b23d18ee71">mergeSort</a>(right);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                result = <a class="code" href="class_merge_sorter.html#a9cde12ce9803e379ab421bf377103ba0">merge</a>(left, right);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_merge_sorter.html#aaee4333eb37af6401eca60da3398e507">   95</a></span>&#160;        <a class="code" href="class_list.html">List&lt;MyListElementType&gt;</a> &amp;<a class="code" href="class_merge_sorter.html#aaee4333eb37af6401eca60da3398e507">sort</a>()</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                this-&gt;<a class="code" href="class_merge_sorter.html#a8ac3ee938414809d7da627cf918f1f87">list</a>=<a class="code" href="class_merge_sorter.html#ab945fd9934a6f47a851b40b23d18ee71">mergeSort</a>(this-&gt;<a class="code" href="class_merge_sorter.html#a8ac3ee938414809d7da627cf918f1f87">list</a>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_merge_sorter.html#a8ac3ee938414809d7da627cf918f1f87">list</a>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;};</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MERGESORT_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="class_my_list_html_a675af07472a5b7dde7ca602abb420efa"><div class="ttname"><a href="class_my_list.html#a675af07472a5b7dde7ca602abb420efa">MyList::pop_front</a></div><div class="ttdeci">ListElement&lt; MyListElementType &gt; pop_front()</div><div class="ttdoc">Zwraca element pierwszy w liscie. </div><div class="ttdef"><b>Definition:</b> <a href="mylist_8h_source.html#l00098">mylist.h:98</a></div></div>
+<div class="ttc" id="sorter_8h_html"><div class="ttname"><a href="sorter_8h.html">sorter.h</a></div></div>
+<div class="ttc" id="class_my_list_html_a52dad29ecf7522b86df8daa3aa74702d"><div class="ttname"><a href="class_my_list.html#a52dad29ecf7522b86df8daa3aa74702d">MyList::push_back</a></div><div class="ttdeci">void push_back(MyListElementType arg)</div><div class="ttdoc">Wklada element na ostatnie miejsce na liscie. </div><div class="ttdef"><b>Definition:</b> <a href="mylist_8h_source.html#l00112">mylist.h:112</a></div></div>
+<div class="ttc" id="class_merge_sorter_html_a9cde12ce9803e379ab421bf377103ba0"><div class="ttname"><a href="class_merge_sorter.html#a9cde12ce9803e379ab421bf377103ba0">MergeSorter::merge</a></div><div class="ttdeci">MyList&lt; MyListElementType &gt; merge(MyList&lt; MyListElementType &gt; left, MyList&lt; MyListElementType &gt; right)</div><div class="ttdoc">Scalanie list. </div><div class="ttdef"><b>Definition:</b> <a href="mergesorter_8h_source.html#l00036">mergesorter.h:36</a></div></div>
+<div class="ttc" id="class_merge_sorter_html_aa3e8fe75440511195aaf6dd7ef9dfcf1"><div class="ttname"><a href="class_merge_sorter.html#aa3e8fe75440511195aaf6dd7ef9dfcf1">MergeSorter::~MergeSorter</a></div><div class="ttdeci">virtual ~MergeSorter()</div><div class="ttdef"><b>Definition:</b> <a href="mergesorter_8h_source.html#l00028">mergesorter.h:28</a></div></div>
+<div class="ttc" id="class_merge_sorter_html_a0ffb06429d7ebcb8bd007ca5db53429f"><div class="ttname"><a href="class_merge_sorter.html#a0ffb06429d7ebcb8bd007ca5db53429f">MergeSorter::MergeSorter</a></div><div class="ttdeci">MergeSorter(MyList&lt; MyListElementType &gt; &amp;listArg)</div><div class="ttdoc">Konstruktor. </div><div class="ttdef"><b>Definition:</b> <a href="mergesorter_8h_source.html#l00025">mergesorter.h:25</a></div></div>
+<div class="ttc" id="class_merge_sorter_html"><div class="ttname"><a href="class_merge_sorter.html">MergeSorter</a></div><div class="ttdoc">Klasa sluzaca do obslugi sortowania przez Scalanie. </div><div class="ttdef"><b>Definition:</b> <a href="mergesorter_8h_source.html#l00016">mergesorter.h:16</a></div></div>
+<div class="ttc" id="class_sorter_html"><div class="ttname"><a href="class_sorter.html">Sorter</a></div><div class="ttdoc">interfejs kazdego sortowania </div><div class="ttdef"><b>Definition:</b> <a href="sorter_8h_source.html#l00015">sorter.h:15</a></div></div>
+<div class="ttc" id="class_list_html"><div class="ttname"><a href="class_list.html">List</a></div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00017">list.h:17</a></div></div>
+<div class="ttc" id="class_merge_sorter_html_ab945fd9934a6f47a851b40b23d18ee71"><div class="ttname"><a href="class_merge_sorter.html#ab945fd9934a6f47a851b40b23d18ee71">MergeSorter::mergeSort</a></div><div class="ttdeci">MyList&lt; MyListElementType &gt; mergeSort(MyList&lt; MyListElementType &gt; m)</div><div class="ttdoc">Sortuje liste przez scalanie. </div><div class="ttdef"><b>Definition:</b> <a href="mergesorter_8h_source.html#l00073">mergesorter.h:73</a></div></div>
+<div class="ttc" id="list_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
+<div class="ttc" id="class_merge_sorter_html_aaee4333eb37af6401eca60da3398e507"><div class="ttname"><a href="class_merge_sorter.html#aaee4333eb37af6401eca60da3398e507">MergeSorter::sort</a></div><div class="ttdeci">List&lt; MyListElementType &gt; &amp; sort()</div><div class="ttdoc">Sortuje przez scalanie. </div><div class="ttdef"><b>Definition:</b> <a href="mergesorter_8h_source.html#l00095">mergesorter.h:95</a></div></div>
+<div class="ttc" id="class_my_list_html_a2fe6cb1e5caf9f1d7d9df4b44faf8506"><div class="ttname"><a href="class_my_list.html#a2fe6cb1e5caf9f1d7d9df4b44faf8506">MyList::show_front</a></div><div class="ttdeci">MyListElementType &amp; show_front()</div><div class="ttdoc">Pokazuje element po poczatku listy. </div><div class="ttdef"><b>Definition:</b> <a href="mylist_8h_source.html#l00139">mylist.h:139</a></div></div>
+<div class="ttc" id="class_my_list_html_a267f669859ef3541333082cad6b28ab7"><div class="ttname"><a href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">MyList::size</a></div><div class="ttdeci">int &amp; size()</div><div class="ttdoc">Zwraca ilosc elementow listy. </div><div class="ttdef"><b>Definition:</b> <a href="mylist_8h_source.html#l00066">mylist.h:66</a></div></div>
+<div class="ttc" id="class_merge_sorter_html_a8ac3ee938414809d7da627cf918f1f87"><div class="ttname"><a href="class_merge_sorter.html#a8ac3ee938414809d7da627cf918f1f87">MergeSorter::list</a></div><div class="ttdeci">MyList&lt; MyListElementType &gt; &amp; list</div><div class="ttdoc">Skopiowana lista do przeprowadzania sortowania. </div><div class="ttdef"><b>Definition:</b> <a href="mergesorter_8h_source.html#l00020">mergesorter.h:20</a></div></div>
+<div class="ttc" id="class_my_list_html"><div class="ttname"><a href="class_my_list.html">MyList</a></div><div class="ttdoc">Lista dwukierunkowa. </div><div class="ttdef"><b>Definition:</b> <a href="mylist_8h_source.html#l00023">mylist.h:23</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_463302e58bc74c0c35f534f40d40b0a3.html">program</a></li><li class="navelem"><a class="el" href="dir_16e14641fdda69a1405193b0d4291cd4.html">inc</a></li><li class="navelem"><a class="el" href="mergesorter_8h.html">mergesorter.h</a></li>
+    <li class="footer">Wygenerowano Cz, 14 maj 2015 23:21:54 dla Laboratorium 7 programem
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

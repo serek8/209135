@@ -33,7 +33,6 @@ public:
 	/**
 	 * @brief Konstruktor wewnetrznej klasy 'malych struktur'
 	 * @param arg liczba do zapisania w kolejnym elemencie listy
-	 * @param str klucz tablicy asocjacyjnej
 	 */
 	MyListElement(MyListElementType arg)
 	{
@@ -55,10 +54,8 @@ public:
 		this->previousElement = myListElement.previousElement;
 		//std::cerr<<"\n(konstruktor kopiujacy MyListElement): content="<<content;
 	}
-	/**
-	 * @brief Ustawia liczbe oraz klucz slowanika dla elementu
+	/**@brief Ustawia liczbe oraz klucz slowanika dla elementu
 	 * @param arg Liczba do zapisania
-	 * @param str String do zapisania
 	 */
 	void set(MyListElementType arg)
 	{

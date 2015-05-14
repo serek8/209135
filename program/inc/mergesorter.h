@@ -20,7 +20,7 @@ public:
 	MyList<MyListElementType> &list;
 
 	/** @brief Konstruktor
-	 *  @param &myList lista, która konstruktor kopiuje aby nie naruszać podanej przez uzytkownika
+	 *  @param listArg lista, która konstruktor kopiuje aby nie naruszać podanej przez uzytkownika
 	 */
 	MergeSorter(MyList<MyListElementType> &listArg)
 	:list(listArg)	{}
@@ -90,7 +90,7 @@ public:
 	}
 
 
-	/** @breif Sortuje przez scalanie
+	/** @brief Sortuje przez scalanie
 	 */
 	List<MyListElementType> &sort()
 	{

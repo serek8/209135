@@ -37,7 +37,7 @@ public:
 
 	virtual ~HeapSorter(){};
 
-	/** @breif Sortuje przez kopcowanie
+	/** @brief Sortuje przez kopcowanie
 	 */
 	List<MyListElementType> &sort()
 	{
