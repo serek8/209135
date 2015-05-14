@@ -12,12 +12,17 @@
 #include "sorter.h"
 #include "list.h"
 
+/// @brief Klasa sluzaca do obslugi sortowania przez kopcowanie
 template <class MyListElementType>
 class HeapSorter: public Sorter<MyListElementType>
 {
 public:
+	/// Skopiowana lista do przeprowadzania sortowania
 	List<MyListElementType> &list;
 
+	/** @brief Konstruktor
+	 *  @param &myList lista, która konstruktor kopiuje aby nie naruszać podanej przez uzytkownika
+	 */
 	HeapSorter(List<MyListElementType> &myList)
 	:list(myList.createObjectFromAbstractReference())
 
@@ -32,6 +37,8 @@ public:
 
 	virtual ~HeapSorter(){};
 
+	/** @breif Sortuje przez kopcowanie
+	 */
 	List<MyListElementType> &sort()
 	{
 		int n = this->list.size();

@@ -10,13 +10,16 @@
 
 #include "list.h"
 
-
+/// @brief interfejs kazdego sortowania
 template <class MyListElementType>
 class Sorter
 {
 public:
 
 	virtual List<MyListElementType> &sort() = 0;
+
+	/** @breif Sortuje przez scalanie
+	 */
 	virtual ~Sorter(){};
 };
 

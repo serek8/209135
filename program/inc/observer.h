@@ -12,11 +12,23 @@
 
 
 
-
+/** @brief obserwator
+ *
+ * Interfejs obserwatora
+ */
 class Observer {
 public:
+	/** @brief pobiera czas trwania algorytmu
+	 * @return czas trwania algorytmu
+	 */
 	virtual double getTimerValue() = 0;
+
+	/** @brief Odbiera powiadomienie o rozpoczeciu dzialania algorytmu
+	 */
     virtual void receivedStartUpdate() = 0;
+
+	/** @brief Odbiera powiadomienie o zakonczeniu dzialania algorytmu
+	 */
     virtual void receivedStopUpdate() = 0;
 	virtual ~Observer(){};
 };

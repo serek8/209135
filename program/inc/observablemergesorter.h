@@ -12,6 +12,8 @@
 #include "observable.h"
 #include "mergesorter.h"
 
+/** @brief Klasa sluzaca do obslugi sortowania przez Scalanie z dodaniem obserwatora
+ */
 template <class MyListElementType>
 class ObservableMergeSorter : public Observable, public MergeSorter<MyListElementType>
 {
@@ -19,7 +21,8 @@ public:
 	ObservableMergeSorter(MyList<MyListElementType> &myList):
 		MergeSorter<MyListElementType>::MergeSorter(myList){}
 
-
+	/** @brief sortuje przez scalanie
+	 */
 	List<MyListElementType> &sort()
 	{
 		sendStartUpdateToObservers();

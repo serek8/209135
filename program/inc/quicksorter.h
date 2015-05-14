@@ -11,19 +11,20 @@
 #include "sorter.h"
 #include "list.h"
 #include <iostream>
-/**
- * Szybkie sortowanie Janka
- *
- */
+
+
+/// @brief Klasa sluzaca do obslugi sortowania przez Scalanie
 template <class MyListElementType>
 class QuickSorter : public Sorter<MyListElementType>
 {
 public:
 	int enablePivot;
+	/// Skopiowana lista do przeprowadzania sortowania
 	List<MyListElementType> &list;
 
-
-
+	/** @brief Konstruktor
+	 *  @param &myList lista, która konstruktor kopiuje aby nie naruszać podanej przez uzytkownika
+	 */
 	QuickSorter(List<MyListElementType> &list)
 	:list(list.createObjectFromAbstractReference())
 	{
@@ -32,7 +33,12 @@ public:
 	}
 
 	virtual ~QuickSorter(){};
-	//void quicksort(int lewy, int prawy, int enablePivot)
+
+	/**
+	 * @brief Szuka liczb do porownaia z pivotem
+	 * @param lewy brzeg poszukiwan
+	 * @param prawy brzeg poszukiwan
+	 */
 	void quicksort(int lewy, int prawy)
 	{
 	    int pivot=list[(int)(lewy+prawy)/2].content;
@@ -58,6 +64,8 @@ public:
 	    if(i<prawy) quicksort(i, prawy);
 	}
 
+	/** @breif Sortuje przez Sortowanie szybkie
+	 */
 	List<MyListElementType> &sort()
 	{
 		//std::cout<<"(QuickSort)";

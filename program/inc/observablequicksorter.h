@@ -12,6 +12,8 @@
 #include "observable.h"
 #include "quicksorter.h"
 
+/** @brief Klasa sluzaca do obslugi sortowania przez Sortowanie szybkie z dodaniem obserwatora
+ */
 template <class MyListElementType>
 class ObservableQuickSorter : public Observable, public QuickSorter<MyListElementType>
 {
@@ -19,7 +21,8 @@ public:
 	ObservableQuickSorter(List<MyListElementType> &list):
 		QuickSorter<MyListElementType>::QuickSorter(list){}
 
-
+	/** @brief sortuje przez scalanie
+	 */
 	List<MyListElementType> &sort()
 	{
 		sendStartUpdateToObservers();

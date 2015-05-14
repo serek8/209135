@@ -11,8 +11,7 @@
 #include <ctime>
 #include "observer.h"
 #include <iostream>
-/**
- * @brief Klasa bazowa/interface do testowania algorytmu
+/** @brief Klasa bazowa/interface do testowania algorytmu
  *
  * Używana jako interface dla wszystkich algorytmow aby
  * testowac czas wykonywanego algorymtu.
@@ -20,18 +19,6 @@
  */
 class MyBenchmark
 {
-
-	/**
-	 * @brief Interface metody algorytmu glownego
-	 *
-	 * Metoda abstrakcyjna, ktora jest interfacem do
-	 * implementacji przez glowny algorytm.
-	 * To znaczy, ze kazdy algorytm ma byc uruchamiany tą funkcja
-	 *
-	 */
-
-
-
 public:
 
 	/// Czas stopera
@@ -41,8 +28,6 @@ public:
 	{
 		timerValue = 0;
 	}
-
-
 
 	///  @brief włączam stoper
 	void timerStart();
@@ -58,22 +43,32 @@ public:
 	 */
 	virtual ~MyBenchmark() {};
 	//using DataFrame::operator=;
-
 };
 
-
+/** @brief Mybenchmark obserwator
+ * Używana jako obserwator klasa
+ * sprawdzajaca odpowiednie objekty
+ */
 class MyBenchmarkObserver : public MyBenchmark, public Observer
 {
 public:
 	MyBenchmarkObserver(){};
+
+	/** @brief pobiera czas trwania algorytmu
+	 * @return czas trwania algorytmu
+	 */
 	double getTimerValue() {return this->timerValue;}
+
+	/** @brief Odbiera powiadomienie o rozpoczeciu dzialania algorytmu
+	 */
 	void receivedStartUpdate () {
-		//std::cout<<"\nWlaczam stoper...";
 		timerStart();
 	}
 
+	/** @brief Odbiera powiadomienie o zakonczeniu dzialania algorytmu
+	 */
 	void receivedStopUpdate () {
-		std::cout<<"\nCzas wykonywania operacji: "<<timerStop();
+		// std::cout<<"\nCzas wykonywania operacji: "<<timerStop();
 	}
 	virtual ~MyBenchmarkObserver(){};
 

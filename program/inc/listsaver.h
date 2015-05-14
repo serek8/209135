@@ -14,8 +14,13 @@
 template <class MyListElementType>
 class ListSaver
 {
+	/** @brief Klasa pozwalająca na zapis Listy do pliku
+	 */
 	List<MyListElementType> &list;
 
+	/**	@brief Konstruktor pobierajacy referencje do listy do zapisu
+	 *	@param listArgument lista do zapisu
+	 */
 	ListSaver(MyList<MyListElementType> &listArgument):
 		list(listArgument)
 	{}
@@ -24,14 +29,13 @@ class ListSaver
 	 * @brief Zapisuje liste do pliku
 	 * @return Zwraca 0 gdy zapisywanie powiodlo sie
 	 */
-	int saveToFile(std::string nazwaPliku)
+	void saveToFile(std::string nazwaPliku)
 	{
 		std::ofstream streamToFile;
 		streamToFile.open (nazwaPliku.c_str(), std::ofstream::out);
 		for(int i=0; i<list.size() ; i++)
 			streamToFile << '{'<<list[i].content<<"} ";
-
-		return 0;
+		streamToFile.close();
 	}
 
 };

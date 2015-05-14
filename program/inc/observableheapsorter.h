@@ -12,6 +12,8 @@
 #include "observable.h"
 #include "heapsorter.h"
 
+/** @brief Klasa sluzaca do obslugi sortowania przez kopcowanie z dodaniem obserwatora
+ */
 template <class MyListElementType>
 class ObservableHeapSorter : public Observable, public HeapSorter<MyListElementType>
 {
@@ -19,7 +21,8 @@ public:
 	ObservableHeapSorter(List<MyListElementType> &myList):
 		HeapSorter<MyListElementType>::HeapSorter(myList){}
 
-
+	/** @brief sortuje przez kopcowanie
+	 */
 	List<MyListElementType> &sort()
 	{
 		sendStartUpdateToObservers();

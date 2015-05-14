@@ -17,6 +17,8 @@
 #include "observablemergesorter.h"
 #include "filestreamer.h"
 
+#define ILOSC_LICZB_DO_SORTOWANIA 1000
+
 int main(int argc, char *argv[])
 {
 	MyList<int> lista;
@@ -45,13 +47,14 @@ int main(int argc, char *argv[])
 	//if(!isSetN) {std::cerr<<"\nNie podano argumentu: -n X\n"; return -1;}
 
 
-		std::cout<<"\n+ - - - - Zaczynam sortowanie - - - +\n";
+		std::cout<<"\n -> Prosze czekac trwa sortowanie\n";
 
 		clearFile("log.txt");
-		writeStringToFile("log.txt", "HeapSort\t");
-		writeStringToFile("log.txt", "QuickSort\t");
-		writeStringToFile("log.txt", "MergeSort\n");
-		for(int i=1000; i<10000; i+=1000)
+		writeStringToFile("log.txt", "Ilosc\t");
+		writeStringToFile("log.txt", "HeapS.\t");
+		writeStringToFile("log.txt", "QuickS.\t");
+		writeStringToFile("log.txt", "MergeS.\n");
+		for(int i=ILOSC_LICZB_DO_SORTOWANIA; i<ILOSC_LICZB_DO_SORTOWANIA*10; i+=ILOSC_LICZB_DO_SORTOWANIA)
 		{
 			lista.free();
 			lista = NumberGenerator::generateNumbers<int>(10000000, i);
@@ -64,20 +67,27 @@ int main(int argc, char *argv[])
 		mergeSorter.add(o1);
 
 
+		writeStringToFile("log.txt", i);
+		writeStringToFile("log.txt", "\t");
 
 		heapSorter.sort();
 		writeStringToFile("log.txt", heapSorter.observaters[0].content->getTimerValue());
 		writeStringToFile("log.txt", "\t");
+		heapSorter.list.free();
 
 		quickSorter.sort();
 		writeStringToFile("log.txt", quickSorter.observaters[0].content->getTimerValue());
 		writeStringToFile("log.txt", "\t");
+		quickSorter.list.free();
 
 		mergeSorter.sort();
 		writeStringToFile("log.txt", mergeSorter.observaters[0].content->getTimerValue());
 		writeStringToFile("log.txt", "\n");
+		mergeSorter.list.free();
 		}
 
+	std::cout<<" -> Sortowanie zakonczone\n";
+	std::cout<<" -> Zapisano do pliku log.txt\n";
 	std::cout<<std::endl;
 	return 0;
 }

@@ -11,15 +11,21 @@
 #include <iostream>
 #include "mylist.h"
 
+	/** @brief Klasa abstrakcyjna- bazowa dla objektow do obserowania
+	 */
 class Observable {
 public:
-	//MyList<int> observaterswww;
+	/// Lista obserwatorow
 	MyList<Observer*> observaters;
 
-    void add(Observer *o) {
-    	observaters.push_back(o);
+	/** @brief Dodaje sie jako obiekt do obserowania dla danego obserwatora
+	 */
+    void add(Observer *obserwator) {
+    	observaters.push_back(obserwator);
     }
 
+	/** @brief Wysyla powiadomienie do obserwatorow o rozpoczeciu algorytmu
+	 */
     void sendStartUpdateToObservers () {
     	for(int i=0; i<observaters.size(); i++)
     	{
@@ -27,6 +33,9 @@ public:
     		observaters[i].content->receivedStartUpdate();
     	}
     }
+
+    /** @brief Wysyla powiadomienie do obserwatorow o zakonczeniu algorytmu
+     */
     void sendStopUpdateToObservers () {
     	for(int i=0; i<observaters.size(); i++)
     		observaters[i].content->receivedStopUpdate();

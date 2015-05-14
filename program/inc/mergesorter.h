@@ -11,18 +11,28 @@
 #include "sorter.h"
 #include "list.h"
 
+/// @brief Klasa sluzaca do obslugi sortowania przez Scalanie
 template <class MyListElementType>
 class MergeSorter: public Sorter<MyListElementType> {
 public:
 
+	/// Skopiowana lista do przeprowadzania sortowania
 	MyList<MyListElementType> &list;
 
+	/** @brief Konstruktor
+	 *  @param &myList lista, która konstruktor kopiuje aby nie naruszać podanej przez uzytkownika
+	 */
 	MergeSorter(MyList<MyListElementType> &listArg)
 	:list(listArg)	{}
 
 	virtual ~MergeSorter(){}
 
-
+	/**
+	 * @brief Scalanie list
+	 * @param left lewa lista do scalania
+	 * @param right prawa lista do scalania
+	 * @return zwraca posotrowana liste
+	 */
 	MyList<MyListElementType> merge(MyList<MyListElementType> left, MyList<MyListElementType> right)
 	{
 		MyList<MyListElementType> result;
@@ -80,6 +90,8 @@ public:
 	}
 
 
+	/** @breif Sortuje przez scalanie
+	 */
 	List<MyListElementType> &sort()
 	{
 		this->list=mergeSort(this->list);
