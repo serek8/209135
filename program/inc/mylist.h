@@ -10,7 +10,6 @@
 
 #include <iostream>
 #include <string>
-#include <fstream>
 #include "mylistelement.h"
 #include "observer.h"
 #include "list.h"
@@ -20,7 +19,7 @@
  *
  * Klasa przedstawia liste dwukierunkową dynamiczna
  */
-template <typename MyListElementType>
+template <class MyListElementType>
 class MyList : public List<MyListElementType>{
 
 public:
@@ -137,33 +136,19 @@ public:
 	 * @brief Pokazuje element po poczatku listy
 	 * @return zwraca kopie tego elementu
 	 */
-	MyListElement<MyListElementType> &show_front()
+	MyListElementType &show_front()
 	{
-		return *firstElement;
+		return firstElement->content;
 	}
 	/**
 	 * @brief Pokazuje element po koncu listy
 	 * @return zwraca kopie tego elementu
 	 */
-	MyListElement<MyListElementType> &show_back()
+	MyListElementType &show_back()
 	{
-		return *lastElement;
+		return lastElement->content;
 	}
-	/**
-	 * @brief Zapisuje liste do pliku
-	 * @return Zwraca 0 gdy zapisywanie powiodlo sie
-	 */
-	int saveDataToFile()
-	{
-		std::ofstream streamToFile;
-		streamToFile.open ("myList.log", std::ofstream::out);
-		MyListElement<MyListElementType> el;
-		for(int i=0; i<sizeOfList ; i++) {
-			el = pop_front();
-			streamToFile << '{'<<el.content<<"} ";
-		}
-		return 0;
-	}
+
 
 	/**
 	 * @brief Wyswietla elementy listy
@@ -248,6 +233,7 @@ public:
 
 	MyList<MyListElementType> &operator=(const MyList<MyListElementType> &pattern)
 	{
+		//std::cerr<<" @@@";
 		this->sizeOfList = pattern.sizeOfList;
 		this->firstElement = pattern.firstElement;
 		this->lastElement = pattern.lastElement;
@@ -255,6 +241,17 @@ public:
 		this->isIteratorAfterPop = pattern.isIteratorAfterPop;
 		return *this;
 	}
+//	List<MyListElementType> &operator=(const List<MyListElementType> &pattern)
+//	{
+//		std::cerr<<" ###";
+////		this->sizeOfList = pattern.sizeOfList;
+////		this->firstElement = pattern.firstElement;
+////		this->lastElement = pattern.lastElement;
+////		this->iterator=pattern.iterator;
+////		this->isIteratorAfterPop = pattern.isIteratorAfterPop;
+//		//this->cloneFrom(pattern);
+//		return *this;
+//	}
 
 /*	void cloneFrom(MyList<MyListElementType> patternList)
 	{

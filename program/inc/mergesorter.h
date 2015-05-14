@@ -9,27 +9,23 @@
 #define MERGESORT_H_
 
 #include "sorter.h"
+#include "list.h"
 
-template <typename MyListElementType>
-class MergeSorter: public MyList<MyListElementType> {
+template <class MyListElementType>
+class MergeSorter: public Sorter<MyListElementType> {
 public:
 
+	MyList<MyListElementType> &list;
 
-	MergeSorter(){};
-	MergeSorter(MyList<MyListElementType> &myList)
-	{
-		this->sizeOfList = myList.sizeOfList;
-		this->firstElement = myList.firstElement;
-		this->lastElement = myList.lastElement;
-		this->iterator=myList.iterator;
-		this->isIteratorAfterPop = myList.isIteratorAfterPop;
-	}
+	MergeSorter(MyList<MyListElementType> &listArg)
+	:list(listArg)	{}
+
 	virtual ~MergeSorter(){}
 
 
-	MergeSorter<MyListElementType> merge(MergeSorter<MyListElementType> left, MergeSorter<MyListElementType> right)
+	MyList<MyListElementType> merge(MyList<MyListElementType> left, MyList<MyListElementType> right)
 	{
-		MergeSorter<MyListElementType> result;
+		MyList<MyListElementType> result;
 		//Gdy jest jeszcze cos do sortowania
 		while (left.size() > 0 || right.size() > 0)
 		{
@@ -37,7 +33,7 @@ public:
 			if (left.size() > 0 && right.size() > 0)
 			{
 				// Sprawdzam czy zamieniac
-				if (left.show_front().content <= right.show_front().content)
+				if (left.show_front() <= right.show_front())
 					{
 						result.push_back(left.show_front()); left.pop_front();
 					}
@@ -49,12 +45,12 @@ public:
 			// pojedyncze listy (nieparzyse)
 			else if (left.size() > 0)
 			{
-				for (int i = 0; i < left.size(); i++) result.push_back(left[i]); break;
+				for (int i = 0; i < left.size(); i++) result.push_back(left[i].content); break;
 			}
 			// pojedyncze listy (nieparzyse- taka sama sytuacja jak wyzej)
 			else if ((int)right.size() > 0)
 			{
-				for (int i = 0; i < (int)right.size(); i++) result.push_back(right[i]); break;
+				for (int i = 0; i < (int)right.size(); i++) result.push_back(right[i].content); break;
 			}
 		}
 		return result;
@@ -64,37 +60,30 @@ public:
 	 * @param m Lista do posotrowania
 	 * @return zwraca posotrowana liste
 	 */
-	MergeSorter<MyListElementType> mergeSort(MergeSorter<MyListElementType> &m)
+	MyList<MyListElementType> mergeSort(MyList<MyListElementType> m)
 	{
 		if (m.size() <= 1) return m; // gdy juz nic nie ma do sotrowania
-		MergeSorter<MyListElementType> left, right, result;
+		MyList<MyListElementType> left, right, result;
 		int middle = (m.size()+ 1) / 2; // anty-nieparzyscie
 		for (int i = 0; i < middle; i++)
 			{
-				left.push_back(m[i]);
+				left.push_back(m[i].content);
 			}
 		for (int i = middle; i < m.size(); i++)
 			{
-				right.push_back(m[i]);
+				right.push_back(m[i].content);
 			}
 		left = mergeSort(left);
 		right = mergeSort(right);
 		result = merge(left, right);
-		//(MyList<MyListElementType>)(*this)=result;
-		//result = merge(left, right);
-		// zapisuje do oryginalu
-		//(*this) = result;
 		return result;
 	}
 
 
-	MyList<MyListElementType> sort()
-	{	std::cerr<<"\nSortowanie z MergeSort";
-		MergeSorter <MyListElementType> result;
-		result= mergeSort(*this);
-		*this = result;
-		std::cout<<"\n(MergeSort - exit)";
-		return result;
+	List<MyListElementType> &sort()
+	{
+		this->list=mergeSort(this->list);
+		return this->list;
 	}
 
 };

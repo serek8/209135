@@ -6,26 +6,17 @@
 CPP_SRCS += \
 ../program/src/dataframe.cpp \
 ../program/src/main.cpp \
-../program/src/mybenchmark.cpp \
-../program/src/numbergenerator.cpp \
-../program/src/observer.cpp \
-../program/src/stackonarray.cpp 
+../program/src/mybenchmark.cpp 
 
 OBJS += \
 ./program/src/dataframe.o \
 ./program/src/main.o \
-./program/src/mybenchmark.o \
-./program/src/numbergenerator.o \
-./program/src/observer.o \
-./program/src/stackonarray.o 
+./program/src/mybenchmark.o 
 
 CPP_DEPS += \
 ./program/src/dataframe.d \
 ./program/src/main.d \
-./program/src/mybenchmark.d \
-./program/src/numbergenerator.d \
-./program/src/observer.d \
-./program/src/stackonarray.d 
+./program/src/mybenchmark.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

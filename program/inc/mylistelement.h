@@ -12,7 +12,7 @@
 #include "listelement.h"
 
 /// @brief Klasa 'malych struktur' gdzie jest numer i wskaznik do nas elementu
-template <typename MyListElementType>
+template <class MyListElementType>
 class MyListElement : public ListElement<MyListElementType>{
 	///  Liczba przechowywana
 public:

@@ -11,7 +11,7 @@
 #include "listelement.h"
 #include "list.h"
 
-template <typename MyListElementType>
+template <class MyListElementType>
 class List
 {
 public:
@@ -24,17 +24,20 @@ public:
 	void virtual push_front(MyListElementType arg)	=	0;
 	MyListElement<MyListElementType> virtual &operator[](int numberOfElement)		=	0;
 	void virtual insertAfter(MyListElement<MyListElementType> arg, int iteratorID)	=	0;
-	//MyList<MyListElementType> virtual &operator=(const MyList<MyListElementType> &pattern)	= 	0;
+	MyListElementType virtual &show_front()	=	0;
+	MyListElementType virtual &show_back()	=	0;
+	//List<MyListElementType> virtual &operator=(const List<MyListElementType> &pattern)	=	0;
+
 	void virtual cloneFrom(List<MyListElementType> &patternList)
 	{
-		//List<MyListElementType> &clonedList = *new List<MyListElementType>;
-
 		// release memory from main list
 		while(this->size()) pop_back();
 		for(int i=0; i<patternList.size(); i++)
 			this->push_back(patternList[i].content);
 	}
 	List<MyListElementType> virtual &createObjectFromAbstractReference() = 0;
+
+	void virtual free(){ while(size()) pop_back(); }
 	virtual ~List(){};
 };
 

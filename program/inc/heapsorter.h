@@ -10,14 +10,19 @@
 
 
 #include "sorter.h"
+#include "list.h"
 
-template <typename MyListElementType>
+template <class MyListElementType>
 class HeapSorter: public Sorter<MyListElementType>
 {
 public:
-	HeapSorter(MyList<MyListElementType> &myList)
+	List<MyListElementType> &list;
+
+	HeapSorter(List<MyListElementType> &myList)
+	:list(myList.createObjectFromAbstractReference())
+
 	{
-		this->cloneFrom(myList);
+		this->list.cloneFrom(myList);
 		/*this->sizeOfList = myList.sizeOfList;
 		this->firstElement = myList.firstElement;
 		this->lastElement = myList.lastElement;
@@ -27,42 +32,42 @@ public:
 
 	virtual ~HeapSorter(){};
 
-	MyList<MyListElementType> sort()
+	List<MyListElementType> &sort()
 	{
-		int n = this->sizeOfList;
+		int n = this->list.size();
 	    int parent = n/2, index, child, tmp; /* heap indexes */
 	    /* czekam az sie posortuje */
 	    while (1) {
 	        if (parent > 0)
 	        {
-	            tmp = (*this)[--parent].content;  /* kobie kopie do tmp */
+	            tmp = (this->list)[--parent].content;  /* kobie kopie do tmp */
 	        }
 	        else {
 	            n--;
 	            if (n == 0)
 	            {
-	                return *this; /* Zwraca posortowane */
+	                return this->list; /* Zwraca posortowane */
 	            }
-	            tmp = (*this)[n].content;
-	            (*this)[n].content = (*this)[0].content;
+	            tmp = this->list[n].content;
+	            this->list[n].content = this->list[0].content;
 	        }
 	        index = parent;
 	        child = index * 2 + 1;
 	        while (child < n) {
-	            if (child + 1 < n  &&  (*this)[child + 1].content > (*this)[child].content) {
+	            if (child + 1 < n  &&  this->list[child + 1].content > this->list[child].content) {
 	                child++;
 	            }
-	            if ((*this)[child].content > tmp) {
-	                (*this)[index].content = (*this)[child].content;
+	            if (this->list[child].content > tmp) {
+	                this->list[index].content = this->list[child].content;
 	                index = child;
 	                child = index * 2 + 1;
 	            } else {
 	                break;
 	            }
 	        }
-	        (*this)[index].content = tmp;
+	        this->list[index].content = tmp;
 	    }
-	    return *this;
+	    return this->list;
 	}
 
 

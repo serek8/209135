@@ -9,13 +9,13 @@
 #include <unistd.h>
 #include "numbergenerator.h"
 #include "mylist.h"
-#include "mergesorter.h"
-#include "heapsorter.h"
 #include "mybenchmark.h"
-#include "quicksorter.h"
-//#include "dictionary.h"
-#include <string>
+#include "observable.h"
 #include "observer.h"
+#include "observableheapsorter.h"
+#include "observablequicksorter.h"
+#include "observablemergesorter.h"
+#include "filestreamer.h"
 
 int main(int argc, char *argv[])
 {
@@ -42,23 +42,41 @@ int main(int argc, char *argv[])
 			return -1;
 		}
 	}
-	if(!isSetN) {std::cerr<<"\nNie podano argumentu: -n X\n"; return -1;}
+	//if(!isSetN) {std::cerr<<"\nNie podano argumentu: -n X\n"; return -1;}
 
 
-		(lista).printList();
 		std::cout<<"\n+ - - - - Zaczynam sortowanie - - - +\n";
 
-		MyBenchmark::timerStart();
-		QuickSorter<int> heapSorter(lista);
+		clearFile("log.txt");
+		writeStringToFile("log.txt", "HeapSort\t");
+		writeStringToFile("log.txt", "QuickSort\t");
+		writeStringToFile("log.txt", "MergeSort\n");
+		for(int i=1000; i<10000; i+=1000)
+		{
+			lista.free();
+			lista = NumberGenerator::generateNumbers<int>(10000000, i);
+		MyBenchmarkObserver *o1 = new MyBenchmarkObserver();
+		ObservableHeapSorter<int> heapSorter(lista);
+		ObservableQuickSorter<int> quickSorter(lista);
+		ObservableMergeSorter<int> mergeSorter(lista);
+		heapSorter.add(o1);
+		quickSorter.add(o1);
+		mergeSorter.add(o1);
+
+
 
 		heapSorter.sort();
-		std::cout<<"\nheapSorter:";
-		(heapSorter).list.printList();
-		std::cout<<"\nlista:";
-		//lista.printList();
-		//std::cout<<"Generuje losowe liczby:"<<MyBenchmark::timerStop()<<'\n';
+		writeStringToFile("log.txt", heapSorter.observaters[0].content->getTimerValue());
+		writeStringToFile("log.txt", "\t");
 
+		quickSorter.sort();
+		writeStringToFile("log.txt", heapSorter.observaters[0].content->getTimerValue());
+		writeStringToFile("log.txt", "\t");
 
+		mergeSorter.sort();
+		writeStringToFile("log.txt", heapSorter.observaters[0].content->getTimerValue());
+		writeStringToFile("log.txt", "\n");
+		}
 
 	std::cout<<std::endl;
 	return 0;

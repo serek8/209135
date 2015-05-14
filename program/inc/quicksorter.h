@@ -15,7 +15,7 @@
  * Szybkie sortowanie Janka
  *
  */
-template <typename MyListElementType>
+template <class MyListElementType>
 class QuickSorter : public Sorter<MyListElementType>
 {
 public:
@@ -60,7 +60,7 @@ public:
 
 	List<MyListElementType> &sort()
 	{
-		std::cout<<"(QuickSort)";
+		//std::cout<<"(QuickSort)";
 		quicksort(0, list.size()-1);
 		return list;
 	}

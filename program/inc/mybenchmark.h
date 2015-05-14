@@ -9,7 +9,6 @@
 #define MYBENCHMARK_H_
 
 #include <ctime>
-#include "dataframe.h"
 #include "observer.h"
 #include <iostream>
 /**
@@ -19,9 +18,9 @@
  * testowac czas wykonywanego algorymtu.
  *
  */
-class MyBenchmark : public DataFrame
+class MyBenchmark
 {
-protected:
+
 	/**
 	 * @brief Interface metody algorytmu glownego
 	 *
@@ -30,38 +29,32 @@ protected:
 	 * To znaczy, ze kazdy algorytm ma byc uruchamiany tą funkcja
 	 *
 	 */
-	virtual void executeAlgorithm() = 0;
+
 
 
 public:
 
 	/// Czas stopera
-	static double timerValue;
+	double timerValue;
 
-	/**
-	 * @brief Benchmarkuje algorytm główny
-	 *
-	 * Obliczam czas wykonywanego algorytmu dzięki zastosowaniu
-	 * metody abstrakcyjnej executeAlgorithm() i zaimplementowaniu
-	 * tego interfacu w algorytmie głównym
-	 *
-	 */
-	double testAlgorithm(unsigned int repetition);
+	MyBenchmark()
+	{
+		timerValue = 0;
+	}
 
-	/**
-	 *  @brief włączam stoper
-	 */
-	static void timerStart();
+
+
+	///  @brief włączam stoper
+	void timerStart();
 
 	/**
 	 *  @brief wyłączam stoper
 	 *  @return Dlugosc dzialania stopera
 	 */
-	static double timerStop();
+	double timerStop();
 
 	/**
 	 * @brief Usuwam obiekt test biorąc pod uwage jego prawdziwy typ
-	 *
 	 */
 	virtual ~MyBenchmark() {};
 	//using DataFrame::operator=;
@@ -72,16 +65,17 @@ public:
 class MyBenchmarkObserver : public MyBenchmark, public Observer
 {
 public:
-	MyBenchmarkObserver()
-	{
+	MyBenchmarkObserver(){};
+	double getTimerValue() {return this->timerValue;}
+	void receivedStartUpdate () {
+		//std::cout<<"\nWlaczam stoper...";
 		timerStart();
 	}
 
-	void update () {
-		std::cout<<"\nCzas trwania algorytmu to " <<timerStop();
-
+	void receivedStopUpdate () {
+		std::cout<<"\nCzas wykonywania operacji: "<<timerStop();
 	}
-	void executeAlgorithm(){};
+	virtual ~MyBenchmarkObserver(){};
 
 };
 

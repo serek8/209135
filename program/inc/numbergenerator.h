@@ -27,15 +27,6 @@
 class NumberGenerator
 {
 public:
-	//int static range;
-	//int static quantity;
-	/*NumberGenerator()
-	{
-		std::cout<<"\nSTATIC SIE ROBI";
-		range = 10000000;
-		quantity = 10;
-	}*/
-
 /**
  * @brief Generuje losowe liczby
  * Generuje losowe liczby na podstawie czasu maszyny
