@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
 		ObservableMergeSorter<int> mergeSorter(lista);
 		heapSorter.add(o1);
 		quickSorter.add(o1);
-		quickSorter.add(o1);
+		mergeSorter.add(o1);
 
 
 
@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
 		writeStringToFile("log.txt", "\t");
 
 		mergeSorter.sort();
-		writeStringToFile("log.txt", quickSorter.observaters[0].content->getTimerValue());
+		writeStringToFile("log.txt", mergeSorter.observaters[0].content->getTimerValue());
 		writeStringToFile("log.txt", "\n");
 		}
 
