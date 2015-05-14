@@ -14,19 +14,19 @@
 
 /** @brief Klasa sluzaca do obslugi sortowania przez kopcowanie z dodaniem obserwatora
  */
-template <class MyListElementType>
-class ObservableHeapSorter : public Observable, public HeapSorter<MyListElementType>
+template <class ContentType>
+class ObservableHeapSorter : public Observable, public HeapSorter<ContentType>
 {
 public:
-	ObservableHeapSorter(List<MyListElementType> &myList):
-		HeapSorter<MyListElementType>::HeapSorter(myList){}
+	ObservableHeapSorter(List<ContentType> &myList):
+		HeapSorter<ContentType>::HeapSorter(myList){}
 
 	/** @brief sortuje przez kopcowanie
 	 */
-	List<MyListElementType> &sort()
+	List<ContentType> &sort()
 	{
 		sendStartUpdateToObservers();
-		HeapSorter<MyListElementType>::sort();
+		HeapSorter<ContentType>::sort();
 		sendStopUpdateToObservers();
 		return this->list;
 	}

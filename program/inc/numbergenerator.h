@@ -29,10 +29,10 @@ class NumberGenerator
 public:
 /**@brief Generuje losowe liczby
  */
-template <typename MyListElementType>
-MyList<MyListElementType> static generateNumbers(int range, int quantity)
+template <typename ContentType>
+MyList<ContentType> static generateNumbers(int range, int quantity)
 {
-	MyList<MyListElementType> &myList = *new MyList<MyListElementType>();
+	MyList<ContentType> &myList = *new MyList<ContentType>();
 	time_t randomTime = clock();
 
 	for(int i=0; i<quantity ; i++)

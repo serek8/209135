@@ -19,8 +19,8 @@
  *
  * Klasa przedstawia liste dwukierunkową dynamiczna
  */
-template <class MyListElementType>
-class MyList : public List<MyListElementType>{
+template <class ContentType>
+class MyList : public List<ContentType>{
 
 public:
 	/// liczba elementow listy
@@ -28,26 +28,26 @@ public:
 
 
 	///  wskaznik do 'malej struktury' ktora jest pierwsza na liscie
-	MyListElement<MyListElementType> *firstElement;
+	MyListElement<ContentType> *firstElement;
 	///  wskaznik do 'malej struktury' ktora jest ostatnia na liscie
-	MyListElement<MyListElementType> *lastElement;
-	MyListElement<MyListElementType> *iterator;
+	MyListElement<ContentType> *lastElement;
+	MyListElement<ContentType> *iterator;
 	int iteratorElementId; // nie ruszac !
 	int isIteratorAfterPop;
 	///  Konstruktor listy
 
 	MyList()
 	{
-		firstElement = lastElement = new MyListElement<MyListElementType>;
+		firstElement = lastElement = new MyListElement<ContentType>;
 		sizeOfList = 0;
 		iteratorElementId =0;
 		iterator=NULL;
 		isIteratorAfterPop = 1; //to znaczy ze jeszcze raz trzeba bedzie sprawdzic pozycje iteratora 1- znaczy ze trzeba sprawdzic
 	}
 
-	MyList(List<MyListElementType> &list)
+	MyList(List<ContentType> &list)
 	{
-		firstElement = lastElement = new MyListElement<MyListElementType>;
+		firstElement = lastElement = new MyListElement<ContentType>;
 		sizeOfList = 0;
 		iteratorElementId =0;
 		iterator=NULL;
@@ -71,21 +71,21 @@ public:
 	 * @brief Zwraca element ostatni w liscie
 	 * @return Zwraca element ostatni w liscie
 	 */
-	/*MyListElement<MyListElementType> &pop_back()
+	/*MyListElement<ContentType> &pop_back()
 	{
-		if(!(sizeOfList--)) { sizeOfList=0; return (*(new MyListElement<MyListElementType>)); }
-		MyListElement<MyListElementType> tmpNumber = *(this -> lastElement);
-		MyListElement<MyListElementType> *originMyListElement = this -> lastElement;
+		if(!(sizeOfList--)) { sizeOfList=0; return (*(new MyListElement<ContentType>)); }
+		MyListElement<ContentType> tmpNumber = *(this -> lastElement);
+		MyListElement<ContentType> *originMyListElement = this -> lastElement;
 		this -> lastElement = this -> lastElement -> previousElement;
 		delete originMyListElement;
 		isIteratorAfterPop=1;
 		return tmpNumber;
 	}*/
-	ListElement<MyListElementType> pop_back()
+	ListElement<ContentType> pop_back()
 	{
-		if(!(sizeOfList--)) { sizeOfList=0; return (*(new MyListElement<MyListElementType>)); }
-		MyListElement<MyListElementType> tmpNumber = *(this -> lastElement);
-		MyListElement<MyListElementType> *originMyListElement = this -> lastElement;
+		if(!(sizeOfList--)) { sizeOfList=0; return (*(new MyListElement<ContentType>)); }
+		MyListElement<ContentType> tmpNumber = *(this -> lastElement);
+		MyListElement<ContentType> *originMyListElement = this -> lastElement;
 		this -> lastElement = this -> lastElement -> previousElement;
 		delete originMyListElement;
 		isIteratorAfterPop=1;
@@ -95,11 +95,11 @@ public:
 	 * @brief Zwraca element pierwszy w liscie
 	 * @return Zwraca element pierwszy w liscie
 	 */
-	ListElement<MyListElementType> pop_front()
+	ListElement<ContentType> pop_front()
 	{
-		if(!(sizeOfList--)) { sizeOfList=0; return (*(new MyListElement<MyListElementType>())); }
-		MyListElement<MyListElementType> tmpNumber = *(this -> firstElement);
-		MyListElement<MyListElementType> *originMyListElement = this -> firstElement;
+		if(!(sizeOfList--)) { sizeOfList=0; return (*(new MyListElement<ContentType>())); }
+		MyListElement<ContentType> tmpNumber = *(this -> firstElement);
+		MyListElement<ContentType> *originMyListElement = this -> firstElement;
 		this -> firstElement = this -> firstElement -> nextElement;
 
 		delete originMyListElement;
@@ -109,10 +109,10 @@ public:
 	/**
 	 * @brief Wklada element na ostatnie miejsce na liscie
 	 */
-	void push_back(MyListElementType arg)
+	void push_back(ContentType arg)
 	{
 		//std::cerr<<"\n(push_back): arg.content="<<arg.content;
-		MyListElement<MyListElementType> *newMyListElement = new MyListElement<MyListElementType>(arg);
+		MyListElement<ContentType> *newMyListElement = new MyListElement<ContentType>(arg);
 		if(!sizeOfList++) {firstElement = lastElement = newMyListElement;}
 		//newMyListElement -> nextElement = 0;
 		newMyListElement -> previousElement = this -> lastElement;
@@ -122,9 +122,9 @@ public:
 	/**
 	 * @brief Wklada element na pierwsze miejsce na liscie
 	 */
-	void push_front(MyListElementType arg)
+	void push_front(ContentType arg)
 	{
-		MyListElement<MyListElementType> *newMyListElement = new MyListElement<MyListElementType>(arg);
+		MyListElement<ContentType> *newMyListElement = new MyListElement<ContentType>(arg);
 		if(!sizeOfList++) {firstElement = lastElement = newMyListElement;}
 		//newMyListElement -> previousElement =  0;
 		newMyListElement -> nextElement = this -> firstElement;
@@ -136,7 +136,7 @@ public:
 	 * @brief Pokazuje element po poczatku listy
 	 * @return zwraca kopie tego elementu
 	 */
-	MyListElementType &show_front()
+	ContentType &show_front()
 	{
 		return firstElement->content;
 	}
@@ -144,7 +144,7 @@ public:
 	 * @brief Pokazuje element po koncu listy
 	 * @return zwraca kopie tego elementu
 	 */
-	MyListElementType &show_back()
+	ContentType &show_back()
 	{
 		return lastElement->content;
 	}
@@ -155,7 +155,7 @@ public:
 	 */
 	void  printList()
 	{
-		MyListElement<MyListElementType> *elem = (this->firstElement);
+		MyListElement<ContentType> *elem = (this->firstElement);
 		std::cout<<"\nWyswietlam liste (size:"<<this->sizeOfList<<"): ";
 		for(int i=0; i< this->sizeOfList; i++)
 		{
@@ -168,7 +168,7 @@ public:
 	 * @brief Pobiera element z listy
 	 * @return Zwraca 0 gdy zapisywanie powiodlo sie
 	 */
-	MyListElement<MyListElementType> &operator[](int numberOfElement)
+	MyListElement<ContentType> &operator[](int numberOfElement)
 	{
 		//std::cerr<<"\nJestem w ["<<numberOfElement<<"] iterator="<<iteratorElementId;
 		if(numberOfElement > (sizeOfList-1)) // jezeli wyszedlem poza liste
@@ -209,12 +209,12 @@ public:
 	/**
 	 * @brief Wsadza element po obiekcie iteratora
 	 */
-	void insertAfter(MyListElement<MyListElementType> arg, int iteratorID)
+	void insertAfter(MyListElement<ContentType> arg, int iteratorID)
 	{
 		if(iteratorID==0 && this->sizeOfList==0)  {push_front(arg.content); return;}
 		if(iteratorID==this->sizeOfList-1)  {push_back(arg.content); return;}
-		MyListElement<MyListElementType> *newMyListElement = new MyListElement<MyListElementType>(arg);
-		MyListElement<MyListElementType> &tmpThis=(*this)[iteratorID], &tmpNext=(*this)[iteratorID+1];
+		MyListElement<ContentType> *newMyListElement = new MyListElement<ContentType>(arg);
+		MyListElement<ContentType> &tmpThis=(*this)[iteratorID], &tmpNext=(*this)[iteratorID+1];
 		if(!sizeOfList++) {firstElement = lastElement = newMyListElement;}
 		newMyListElement -> nextElement = tmpThis.nextElement;
 		newMyListElement -> previousElement = &tmpThis;
@@ -225,13 +225,13 @@ public:
 
 
 	//MyListElement operator[](int numberOfElement);
-	//virtual MyList<MyListElementType> sort()
+	//virtual MyList<ContentType> sort()
 	//{
 	//	std::cerr<<"\nError: Sortowanie z klasy MyList !!!";
 	//	//return m;
 	//}
 
-	MyList<MyListElementType> &operator=(const MyList<MyListElementType> &pattern)
+	MyList<ContentType> &operator=(const MyList<ContentType> &pattern)
 	{
 		//std::cerr<<" @@@";
 		this->sizeOfList = pattern.sizeOfList;
@@ -241,7 +241,7 @@ public:
 		this->isIteratorAfterPop = pattern.isIteratorAfterPop;
 		return *this;
 	}
-//	List<MyListElementType> &operator=(const List<MyListElementType> &pattern)
+//	List<ContentType> &operator=(const List<ContentType> &pattern)
 //	{
 //		std::cerr<<" ###";
 ////		this->sizeOfList = pattern.sizeOfList;
@@ -253,9 +253,9 @@ public:
 //		return *this;
 //	}
 
-/*	void cloneFrom(MyList<MyListElementType> patternList)
+/*	void cloneFrom(MyList<ContentType> patternList)
 	{
-		MyList<MyListElementType> &clonedList = *new MyList<MyListElementType>;
+		MyList<ContentType> &clonedList = *new MyList<ContentType>;
 		// release memory from main list
 		while(this->size()) pop_back();
 		for(int i=0; i<patternList.size(); i++)
@@ -264,9 +264,9 @@ public:
 	}
 */
 
-	List<MyListElementType> &createObjectFromAbstractReference(/*MyList<MyListElementType> abstractPattern*/)
+	List<ContentType> &createObjectFromAbstractReference(/*MyList<ContentType> abstractPattern*/)
 	{
-		return *new MyList<MyListElementType>;
+		return *new MyList<ContentType>;
 	}
 
 

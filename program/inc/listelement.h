@@ -10,13 +10,13 @@
 
 /**	@brief klasa ma byc uzywana jako abstrakcyjna do implementacji pojedynczego elemenu listy
  */
-template <class MyListElementType>
+template <class ContentType>
 class ListElement
 {
 public:
 
 	/// Zawartość pojedynczego elelemntu tablicy
-	MyListElementType content;
+	ContentType content;
 
 	virtual ~ListElement(){};
 

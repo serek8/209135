@@ -71,8 +71,8 @@
 \fancyhead[RO]{\fancyplain{}{\bfseries\thepage}}
 \fancyfoot[LE]{\fancyplain{}{}}
 \fancyfoot[CE]{\fancyplain{}{}}
-\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize Wygenerowano Wt, 24 mar 2015 11\-:55\-:08 dla Laboratorium 3 programem Doxygen }}
-\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize Wygenerowano Wt, 24 mar 2015 11\-:55\-:08 dla Laboratorium 3 programem Doxygen }}
+\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize Wygenerowano Cz, 14 maj 2015 23\-:21\-:57 dla Laboratorium 7 programem Doxygen }}
+\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize Wygenerowano Cz, 14 maj 2015 23\-:21\-:57 dla Laboratorium 7 programem Doxygen }}
 \fancyfoot[CO]{\fancyplain{}{}}
 \fancyfoot[RO]{\fancyplain{}{}}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -117,11 +117,11 @@
 \begin{titlepage}
 \vspace*{7cm}
 \begin{center}%
-{\Large Laboratorium 3 \\[1ex]\large 3.\-0 }\\
+{\Large Laboratorium 7 }\\
 \vspace*{1cm}
 {\large Wygenerowano przez Doxygen 1.8.6}\\
 \vspace*{0.5cm}
-{\small Wt, 24 mar 2015 11:55:08}\\
+{\small Cz, 14 maj 2015 23:21:57}\\
 \end{center}
 \end{titlepage}
 \tableofcontents
@@ -129,8 +129,6 @@
 \hypersetup{pageanchor=true}
 
 %--- Begin generated contents ---
-\section{Laboratorium 2}
-\label{index}\hypertarget{index}{}\input{index}
 \section{Indeks hierarchiczny}
 \input{hierarchy}
 \section{Indeks klas}
@@ -138,45 +136,62 @@
 \section{Indeks plików}
 \input{files}
 \section{Dokumentacja klas}
-\input{class_data_frame}
-\input{class_multiply_by_two}
+\input{class_heap_sorter}
+\input{class_list}
+\input{class_list_element}
+\input{class_list_saver}
+\input{class_merge_sorter}
 \input{class_my_benchmark}
+\input{class_my_benchmark_observer}
 \input{class_my_list}
-\input{class_my_list_1_1_my_list_element}
-\input{class_my_queue}
-\input{class_my_stack}
+\input{class_my_list_element}
 \input{class_number_generator}
-\input{class_stack_on_array}
+\input{class_observable}
+\input{class_observable_heap_sorter}
+\input{class_observable_merge_sorter}
+\input{class_observable_quick_sorter}
+\input{class_observer}
+\input{class_quick_sorter}
+\input{class_sorter}
 \section{Dokumentacja plików}
-\input{dataframe_8cpp}
-\input{dataframe_8cpp_source}
-\input{dataframe_8h}
-\input{dataframe_8h_source}
+\input{filestreamer_8h}
+\input{filestreamer_8h_source}
+\input{heapsorter_8h}
+\input{heapsorter_8h_source}
+\input{list_8h}
+\input{list_8h_source}
+\input{listelement_8h}
+\input{listelement_8h_source}
+\input{listsaver_8h}
+\input{listsaver_8h_source}
 \input{main_8cpp}
 \input{main_8cpp_source}
-\input{multiplybytwo_8cpp}
-\input{multiplybytwo_8cpp_source}
-\input{multiplybytwo_8h}
-\input{multiplybytwo_8h_source}
+\input{mergesorter_8h}
+\input{mergesorter_8h_source}
 \input{mybenchmark_8cpp}
 \input{mybenchmark_8cpp_source}
 \input{mybenchmark_8h}
 \input{mybenchmark_8h_source}
-\input{mylist_8cpp}
-\input{mylist_8cpp_source}
 \input{mylist_8h}
 \input{mylist_8h_source}
-\input{myqueue_8h}
-\input{myqueue_8h_source}
-\input{mystack_8h}
-\input{mystack_8h_source}
+\input{mylistelement_8h}
+\input{mylistelement_8h_source}
 \input{numbergenerator_8h}
 \input{numbergenerator_8h_source}
-\input{stackonarray_8cpp}
-\input{stackonarray_8cpp_source}
-\input{stackonarray_8h}
-\input{stackonarray_8h_source}
-\input{strona-glowna_8dox}
+\input{observable_8h}
+\input{observable_8h_source}
+\input{observableheapsorter_8h}
+\input{observableheapsorter_8h_source}
+\input{observablemergesorter_8h}
+\input{observablemergesorter_8h_source}
+\input{observablequicksorter_8h}
+\input{observablequicksorter_8h_source}
+\input{observer_8h}
+\input{observer_8h_source}
+\input{quicksorter_8h}
+\input{quicksorter_8h_source}
+\input{sorter_8h}
+\input{sorter_8h_source}
 %--- End generated contents ---
 
 % Index

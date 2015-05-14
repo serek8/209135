@@ -11,12 +11,12 @@
 #include "list.h"
 
 /// @brief interfejs kazdego sortowania
-template <class MyListElementType>
+template <class ContentType>
 class Sorter
 {
 public:
 
-	virtual List<MyListElementType> &sort() = 0;
+	virtual List<ContentType> &sort() = 0;
 
 	/** @brief Sortuje przez scalanie
 	 */

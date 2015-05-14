@@ -13,7 +13,7 @@
 
 /** Interface dla klasy przedstawiających listy
  */
-template <class MyListElementType>
+template <class ContentType>
 class List
 {
 public:
@@ -27,46 +27,46 @@ public:
 	/**	@brief Zwraca ostatni element z listy
 	 *	@return ostatni element z listy
 	 */
-	ListElement<MyListElementType> virtual pop_back()	=	0;
+	ListElement<ContentType> virtual pop_back()	=	0;
 
 	/**	@brief Zwraca pierwszy element z listy
 	 *	@return pierwszy element z listy
 	 */
-	ListElement<MyListElementType> virtual pop_front() 		= 	0;
+	ListElement<ContentType> virtual pop_front() 		= 	0;
 
 	/**	@brief Wyswietla liste
 	 */
 	void virtual printList()	=	0;
-	void virtual push_back(MyListElementType arg)	=	0;
+	void virtual push_back(ContentType arg)	=	0;
 
-	/**	@brief Wsadza MyListElementType do listy na poczatek
+	/**	@brief Wsadza ContentType do listy na poczatek
 	 */
-	void virtual push_front(MyListElementType arg)	=	0;
+	void virtual push_front(ContentType arg)	=	0;
 
-	/**	@brief Wsadza MyListElementType do listy na koniec
+	/**	@brief Wsadza ContentType do listy na koniec
 	 */
-	MyListElement<MyListElementType> virtual &operator[](int numberOfElement)		=	0;
+	MyListElement<ContentType> virtual &operator[](int numberOfElement)		=	0;
 
-	/**	@brief Wsadza MyListElementType po elemencie
+	/**	@brief Wsadza ContentType po elemencie
 	 * 	@param arg Element do wsadzenia
 	 * 	@param iteratorID id elementu do wsadzenia
 	 */
-	void virtual insertAfter(MyListElement<MyListElementType> arg, int iteratorID)	=	0;
+	void virtual insertAfter(MyListElement<ContentType> arg, int iteratorID)	=	0;
 
 	/**	@brief Pokazue pierwszy element na liscie
 	 */
-	MyListElementType virtual &show_front()	=	0;
+	ContentType virtual &show_front()	=	0;
 
 	/**	@brief Pokazue ostatni element na liscie
 	 */
-	MyListElementType virtual &show_back()	=	0;
+	ContentType virtual &show_back()	=	0;
 
 
-	//List<MyListElementType> virtual &operator=(const List<MyListElementType> &pattern)	=	0;
+	//List<ContentType> virtual &operator=(const List<ContentType> &pattern)	=	0;
 
 	/**	@brief Klonuje listy przydzielajac dla nowej nową pamięć dla każdego z jej elementu
 	 */
-	void virtual cloneFrom(List<MyListElementType> &patternList)
+	void virtual cloneFrom(List<ContentType> &patternList)
 	{
 		// release memory from main list
 		while(this->size()) pop_back();
@@ -76,7 +76,7 @@ public:
 
 	/**	@brief Wzorzec projektowy - fabryki abstrakcyjnej
 	 */
-	List<MyListElementType> virtual &createObjectFromAbstractReference() = 0;
+	List<ContentType> virtual &createObjectFromAbstractReference() = 0;
 
 	/**	@brief Zwalnia zasoby listy
 	 */

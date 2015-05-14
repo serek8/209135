@@ -14,19 +14,19 @@
 
 /** @brief Klasa sluzaca do obslugi sortowania przez Sortowanie szybkie z dodaniem obserwatora
  */
-template <class MyListElementType>
-class ObservableQuickSorter : public Observable, public QuickSorter<MyListElementType>
+template <class ContentType>
+class ObservableQuickSorter : public Observable, public QuickSorter<ContentType>
 {
 public:
-	ObservableQuickSorter(List<MyListElementType> &list):
-		QuickSorter<MyListElementType>::QuickSorter(list){}
+	ObservableQuickSorter(List<ContentType> &list):
+		QuickSorter<ContentType>::QuickSorter(list){}
 
 	/** @brief sortuje przez scalanie
 	 */
-	List<MyListElementType> &sort()
+	List<ContentType> &sort()
 	{
 		sendStartUpdateToObservers();
-		QuickSorter<MyListElementType>::sort();
+		QuickSorter<ContentType>::sort();
 		sendStopUpdateToObservers();
 		return this->list;
 	}

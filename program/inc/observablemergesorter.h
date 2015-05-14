@@ -14,19 +14,19 @@
 
 /** @brief Klasa sluzaca do obslugi sortowania przez Scalanie z dodaniem obserwatora
  */
-template <class MyListElementType>
-class ObservableMergeSorter : public Observable, public MergeSorter<MyListElementType>
+template <class ContentType>
+class ObservableMergeSorter : public Observable, public MergeSorter<ContentType>
 {
 public:
-	ObservableMergeSorter(MyList<MyListElementType> &myList):
-		MergeSorter<MyListElementType>::MergeSorter(myList){}
+	ObservableMergeSorter(MyList<ContentType> &myList):
+		MergeSorter<ContentType>::MergeSorter(myList){}
 
 	/** @brief sortuje przez scalanie
 	 */
-	List<MyListElementType> &sort()
+	List<ContentType> &sort()
 	{
 		sendStartUpdateToObservers();
-		MergeSorter<MyListElementType>::sort();
+		MergeSorter<ContentType>::sort();
 		sendStopUpdateToObservers();
 		return this->list;
 	}

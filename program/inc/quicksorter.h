@@ -14,18 +14,18 @@
 
 
 /// @brief Klasa sluzaca do obslugi sortowania przez Scalanie
-template <class MyListElementType>
-class QuickSorter : public Sorter<MyListElementType>
+template <class ContentType>
+class QuickSorter : public Sorter<ContentType>
 {
 public:
 	int enablePivot;
 	/// Skopiowana lista do przeprowadzania sortowania
-	List<MyListElementType> &list;
+	List<ContentType> &list;
 
 	/** @brief Konstruktor
 	 *  @param &list lista, która konstruktor kopiuje aby nie naruszać podanej przez uzytkownika
 	 */
-	QuickSorter(List<MyListElementType> &list)
+	QuickSorter(List<ContentType> &list)
 	:list(list.createObjectFromAbstractReference())
 	{
 		this->list.cloneFrom(list);
@@ -66,7 +66,7 @@ public:
 
 	/** @brief Sortuje przez Sortowanie szybkie
 	 */
-	List<MyListElementType> &sort()
+	List<ContentType> &sort()
 	{
 		//std::cout<<"(QuickSort)";
 		quicksort(0, list.size()-1);

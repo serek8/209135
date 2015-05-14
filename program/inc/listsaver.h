@@ -11,17 +11,17 @@
 #include <string>
 #include <fstream>
 
-template <class MyListElementType>
+template <class ContentType>
 class ListSaver
 {
 	/** @brief Klasa pozwalająca na zapis Listy do pliku
 	 */
-	List<MyListElementType> &list;
+	List<ContentType> &list;
 
 	/**	@brief Konstruktor pobierajacy referencje do listy do zapisu
 	 *	@param listArgument lista do zapisu
 	 */
-	ListSaver(MyList<MyListElementType> &listArgument):
+	ListSaver(MyList<ContentType> &listArgument):
 		list(listArgument)
 	{}
 

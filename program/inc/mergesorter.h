@@ -12,17 +12,17 @@
 #include "list.h"
 
 /// @brief Klasa sluzaca do obslugi sortowania przez Scalanie
-template <class MyListElementType>
-class MergeSorter: public Sorter<MyListElementType> {
+template <class ContentType>
+class MergeSorter: public Sorter<ContentType> {
 public:
 
 	/// Skopiowana lista do przeprowadzania sortowania
-	MyList<MyListElementType> &list;
+	MyList<ContentType> &list;
 
 	/** @brief Konstruktor
 	 *  @param listArg lista, która konstruktor kopiuje aby nie naruszać podanej przez uzytkownika
 	 */
-	MergeSorter(MyList<MyListElementType> &listArg)
+	MergeSorter(MyList<ContentType> &listArg)
 	:list(listArg)	{}
 
 	virtual ~MergeSorter(){}
@@ -33,9 +33,9 @@ public:
 	 * @param right prawa lista do scalania
 	 * @return zwraca posotrowana liste
 	 */
-	MyList<MyListElementType> merge(MyList<MyListElementType> left, MyList<MyListElementType> right)
+	MyList<ContentType> merge(MyList<ContentType> left, MyList<ContentType> right)
 	{
-		MyList<MyListElementType> result;
+		MyList<ContentType> result;
 		//Gdy jest jeszcze cos do sortowania
 		while (left.size() > 0 || right.size() > 0)
 		{
@@ -70,10 +70,10 @@ public:
 	 * @param m Lista do posotrowania
 	 * @return zwraca posotrowana liste
 	 */
-	MyList<MyListElementType> mergeSort(MyList<MyListElementType> m)
+	MyList<ContentType> mergeSort(MyList<ContentType> m)
 	{
 		if (m.size() <= 1) return m; // gdy juz nic nie ma do sotrowania
-		MyList<MyListElementType> left, right, result;
+		MyList<ContentType> left, right, result;
 		int middle = (m.size()+ 1) / 2; // anty-nieparzyscie
 		for (int i = 0; i < middle; i++)
 			{
@@ -92,7 +92,7 @@ public:
 
 	/** @brief Sortuje przez scalanie
 	 */
-	List<MyListElementType> &sort()
+	List<ContentType> &sort()
 	{
 		this->list=mergeSort(this->list);
 		return this->list;

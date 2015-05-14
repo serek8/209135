@@ -13,17 +13,17 @@
 #include "list.h"
 
 /// @brief Klasa sluzaca do obslugi sortowania przez kopcowanie
-template <class MyListElementType>
-class HeapSorter: public Sorter<MyListElementType>
+template <class ContentType>
+class HeapSorter: public Sorter<ContentType>
 {
 public:
 	/// Skopiowana lista do przeprowadzania sortowania
-	List<MyListElementType> &list;
+	List<ContentType> &list;
 
 	/** @brief Konstruktor
 	 *  @param &myList lista, która konstruktor kopiuje aby nie naruszać podanej przez uzytkownika
 	 */
-	HeapSorter(List<MyListElementType> &myList)
+	HeapSorter(List<ContentType> &myList)
 	:list(myList.createObjectFromAbstractReference())
 
 	{
@@ -39,7 +39,7 @@ public:
 
 	/** @brief Sortuje przez kopcowanie
 	 */
-	List<MyListElementType> &sort()
+	List<ContentType> &sort()
 	{
 		int n = this->list.size();
 	    int parent = n/2, index, child, tmp; /* heap indexes */

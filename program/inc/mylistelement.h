@@ -12,11 +12,11 @@
 #include "listelement.h"
 
 /// @brief Klasa 'malych struktur' gdzie jest numer i wskaznik do nas elementu
-template <class MyListElementType>
-class MyListElement : public ListElement<MyListElementType>{
+template <class ContentType>
+class MyListElement : public ListElement<ContentType>{
 	///  Liczba przechowywana
 public:
-	//MyListElementType content;
+	//ContentType content;
 	///  wskaznik do nastepnej 'malej struktury' w liscie
 	MyListElement *nextElement;
 	///  wskaznik do poprzedniej 'malej struktury' w liscie
@@ -34,7 +34,7 @@ public:
 	 * @brief Konstruktor wewnetrznej klasy 'malych struktur'
 	 * @param arg liczba do zapisania w kolejnym elemencie listy
 	 */
-	MyListElement(MyListElementType arg)
+	MyListElement(ContentType arg)
 	{
 		this -> content = arg;
 		this -> nextElement =0;
@@ -57,7 +57,7 @@ public:
 	/**@brief Ustawia liczbe oraz klucz slowanika dla elementu
 	 * @param arg Liczba do zapisania
 	 */
-	void set(MyListElementType arg)
+	void set(ContentType arg)
 	{
 		this -> content = arg;
 		//this -> nazwa = str;
