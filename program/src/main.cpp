@@ -20,13 +20,13 @@
 int main(int argc, char *argv[])
 {
 	MyList<int> lista;
-	int isSetN = 0;
+	//int isSetN = 0;
 	int opt;	/// Zmienna uzywana przez GETOPT
 	while ((opt = getopt(argc, argv, "n:o:i:gx")) != -1) {
 		switch(opt){
 		case 'n':	// ilosc liczb do przetworzenia
 			lista = NumberGenerator::generateNumbers<int>(10000000, atoi(optarg));
-			isSetN = 1;
+			//isSetN = 1;
 			break;
 
 		case 'o':
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
 		ObservableMergeSorter<int> mergeSorter(lista);
 		heapSorter.add(o1);
 		quickSorter.add(o1);
-		mergeSorter.add(o1);
+		quickSorter.add(o1);
 
 
 
@@ -70,11 +70,11 @@ int main(int argc, char *argv[])
 		writeStringToFile("log.txt", "\t");
 
 		quickSorter.sort();
-		writeStringToFile("log.txt", heapSorter.observaters[0].content->getTimerValue());
+		writeStringToFile("log.txt", quickSorter.observaters[0].content->getTimerValue());
 		writeStringToFile("log.txt", "\t");
 
 		mergeSorter.sort();
-		writeStringToFile("log.txt", heapSorter.observaters[0].content->getTimerValue());
+		writeStringToFile("log.txt", quickSorter.observaters[0].content->getTimerValue());
 		writeStringToFile("log.txt", "\n");
 		}
 

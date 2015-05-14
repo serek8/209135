@@ -10,19 +10,22 @@
 
 #include <string>
 #include <fstream>
+#include <iomanip>
 
 void writeStringToFile(std::string fileName, std::string textToSave)
 {
 	std::ofstream streamToFile;
 	streamToFile.open (fileName.c_str(), std::ofstream::app);
-	streamToFile << textToSave;
+	streamToFile << std::fixed;
+	streamToFile << std::setprecision(5) <<textToSave;
 	streamToFile.close();
 }
 void writeStringToFile(std::string fileName, double textToSave)
 {
 	std::ofstream streamToFile;
 	streamToFile.open (fileName.c_str(), std::ofstream::app);
-	streamToFile << textToSave;
+	streamToFile << std::fixed;
+	streamToFile<<std::setprecision(5)  << textToSave;
 	streamToFile.close();
 }
 
@@ -30,7 +33,8 @@ void writeStringToFile(std::string fileName, int textToSave)
 {
 	std::ofstream streamToFile;
 	streamToFile.open (fileName.c_str(), std::ofstream::app);
-	streamToFile << textToSave;
+	streamToFile << std::fixed;
+	streamToFile <<std::setprecision(5) << textToSave;
 	streamToFile.close();
 }
 
