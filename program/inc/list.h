@@ -45,13 +45,13 @@ public:
 
 	/**	@brief Wsadza ContentType do listy na koniec
 	 */
-	MyListElement<ContentType> virtual &operator[](int numberOfElement)		=	0;
+	LinkedListElement<ContentType> virtual &operator[](int numberOfElement)		=	0;
 
 	/**	@brief Wsadza ContentType po elemencie
 	 * 	@param arg Element do wsadzenia
 	 * 	@param iteratorID id elementu do wsadzenia
 	 */
-	void virtual insertAfter(MyListElement<ContentType> arg, int iteratorID)	=	0;
+	void virtual insertAfter(LinkedListElement<ContentType> arg, int iteratorID)	=	0;
 
 	/**	@brief Pokazue pierwszy element na liscie
 	 */

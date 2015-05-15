@@ -9,14 +9,14 @@
 #define OBSERVABLE_H_
 
 #include <iostream>
-#include "mylist.h"
+#include "linkedlist.h"
 
 	/** @brief Klasa abstrakcyjna- bazowa dla objektow do obserowania
 	 */
 class Observable {
 public:
 	/// Lista obserwatorow
-	MyList<Observer*> observaters;
+	LinkedList<Observer*> observaters;
 
 	/** @brief Dodaje sie jako obiekt do obserowania dla danego obserwatora
 	 */

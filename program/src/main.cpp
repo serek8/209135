@@ -8,7 +8,7 @@
 #include <iostream>
 #include <unistd.h>
 #include "numbergenerator.h"
-#include "mylist.h"
+#include "linkedlist.h"
 #include "mybenchmark.h"
 #include "observable.h"
 #include "observer.h"
@@ -21,7 +21,7 @@
 
 int main(int argc, char *argv[])
 {
-	MyList<int> lista;
+	LinkedList<int> lista;
 	//int isSetN = 0;
 	int opt;	/// Zmienna uzywana przez GETOPT
 	while ((opt = getopt(argc, argv, "n:o:i:gx")) != -1) {

@@ -5,12 +5,12 @@
  *      Author: serek8
  */
 
-#ifndef MYLIST_H_
-#define MYLIST_H_
+#ifndef LINKEDLIST_H_
+#define LINKEDLIST_H_
 
 #include <iostream>
 #include <string>
-#include "mylistelement.h"
+#include "linkedlistelement.h"
 #include "observer.h"
 #include "list.h"
 #include "listelement.h"
@@ -20,7 +20,7 @@
  * Klasa przedstawia liste dwukierunkową dynamiczna
  */
 template <class ContentType>
-class MyList : public List<ContentType>{
+class LinkedList : public List<ContentType>{
 
 public:
 	/// liczba elementow listy
@@ -28,26 +28,26 @@ public:
 
 
 	///  wskaznik do 'malej struktury' ktora jest pierwsza na liscie
-	MyListElement<ContentType> *firstElement;
+	LinkedListElement<ContentType> *firstElement;
 	///  wskaznik do 'malej struktury' ktora jest ostatnia na liscie
-	MyListElement<ContentType> *lastElement;
-	MyListElement<ContentType> *iterator;
+	LinkedListElement<ContentType> *lastElement;
+	LinkedListElement<ContentType> *iterator;
 	int iteratorElementId; // nie ruszac !
 	int isIteratorAfterPop;
 	///  Konstruktor listy
 
-	MyList()
+	LinkedList()
 	{
-		firstElement = lastElement = new MyListElement<ContentType>;
+		firstElement = lastElement = new LinkedListElement<ContentType>;
 		sizeOfList = 0;
 		iteratorElementId =0;
 		iterator=NULL;
 		isIteratorAfterPop = 1; //to znaczy ze jeszcze raz trzeba bedzie sprawdzic pozycje iteratora 1- znaczy ze trzeba sprawdzic
 	}
 
-	MyList(List<ContentType> &list)
+	LinkedList(List<ContentType> &list)
 	{
-		firstElement = lastElement = new MyListElement<ContentType>;
+		firstElement = lastElement = new LinkedListElement<ContentType>;
 		sizeOfList = 0;
 		iteratorElementId =0;
 		iterator=NULL;
@@ -57,7 +57,7 @@ public:
 			this->push_back(list[i]);
 		}
 	}
-	virtual ~MyList(){};
+	virtual ~LinkedList(){};
 
 	/**
 	 * @brief Zwraca ilosc elementow listy
@@ -71,23 +71,23 @@ public:
 	 * @brief Zwraca element ostatni w liscie
 	 * @return Zwraca element ostatni w liscie
 	 */
-	/*MyListElement<ContentType> &pop_back()
+	/*LinkedListElement<ContentType> &pop_back()
 	{
-		if(!(sizeOfList--)) { sizeOfList=0; return (*(new MyListElement<ContentType>)); }
-		MyListElement<ContentType> tmpNumber = *(this -> lastElement);
-		MyListElement<ContentType> *originMyListElement = this -> lastElement;
+		if(!(sizeOfList--)) { sizeOfList=0; return (*(new LinkedListElement<ContentType>)); }
+		LinkedListElement<ContentType> tmpNumber = *(this -> lastElement);
+		LinkedListElement<ContentType> *originLinkedListElement = this -> lastElement;
 		this -> lastElement = this -> lastElement -> previousElement;
-		delete originMyListElement;
+		delete originLinkedListElement;
 		isIteratorAfterPop=1;
 		return tmpNumber;
 	}*/
 	ListElement<ContentType> pop_back()
 	{
-		if(!(sizeOfList--)) { sizeOfList=0; return (*(new MyListElement<ContentType>)); }
-		MyListElement<ContentType> tmpNumber = *(this -> lastElement);
-		MyListElement<ContentType> *originMyListElement = this -> lastElement;
+		if(!(sizeOfList--)) { sizeOfList=0; return (*(new LinkedListElement<ContentType>)); }
+		LinkedListElement<ContentType> tmpNumber = *(this -> lastElement);
+		LinkedListElement<ContentType> *originLinkedListElement = this -> lastElement;
 		this -> lastElement = this -> lastElement -> previousElement;
-		delete originMyListElement;
+		delete originLinkedListElement;
 		isIteratorAfterPop=1;
 		return tmpNumber;
 	}
@@ -97,12 +97,12 @@ public:
 	 */
 	ListElement<ContentType> pop_front()
 	{
-		if(!(sizeOfList--)) { sizeOfList=0; return (*(new MyListElement<ContentType>())); }
-		MyListElement<ContentType> tmpNumber = *(this -> firstElement);
-		MyListElement<ContentType> *originMyListElement = this -> firstElement;
+		if(!(sizeOfList--)) { sizeOfList=0; return (*(new LinkedListElement<ContentType>())); }
+		LinkedListElement<ContentType> tmpNumber = *(this -> firstElement);
+		LinkedListElement<ContentType> *originLinkedListElement = this -> firstElement;
 		this -> firstElement = this -> firstElement -> nextElement;
 
-		delete originMyListElement;
+		delete originLinkedListElement;
 		isIteratorAfterPop=1;
 		return tmpNumber;
 	}
@@ -112,24 +112,24 @@ public:
 	void push_back(ContentType arg)
 	{
 		//std::cerr<<"\n(push_back): arg.content="<<arg.content;
-		MyListElement<ContentType> *newMyListElement = new MyListElement<ContentType>(arg);
-		if(!sizeOfList++) {firstElement = lastElement = newMyListElement;}
-		//newMyListElement -> nextElement = 0;
-		newMyListElement -> previousElement = this -> lastElement;
-		this -> lastElement -> nextElement = newMyListElement;
-		this->lastElement = newMyListElement;
+		LinkedListElement<ContentType> *newLinkedListElement = new LinkedListElement<ContentType>(arg);
+		if(!sizeOfList++) {firstElement = lastElement = newLinkedListElement;}
+		//newLinkedListElement -> nextElement = 0;
+		newLinkedListElement -> previousElement = this -> lastElement;
+		this -> lastElement -> nextElement = newLinkedListElement;
+		this->lastElement = newLinkedListElement;
 	}
 	/**
 	 * @brief Wklada element na pierwsze miejsce na liscie
 	 */
 	void push_front(ContentType arg)
 	{
-		MyListElement<ContentType> *newMyListElement = new MyListElement<ContentType>(arg);
-		if(!sizeOfList++) {firstElement = lastElement = newMyListElement;}
-		//newMyListElement -> previousElement =  0;
-		newMyListElement -> nextElement = this -> firstElement;
-		this -> firstElement -> previousElement = newMyListElement;
-		this->firstElement = newMyListElement;
+		LinkedListElement<ContentType> *newLinkedListElement = new LinkedListElement<ContentType>(arg);
+		if(!sizeOfList++) {firstElement = lastElement = newLinkedListElement;}
+		//newLinkedListElement -> previousElement =  0;
+		newLinkedListElement -> nextElement = this -> firstElement;
+		this -> firstElement -> previousElement = newLinkedListElement;
+		this->firstElement = newLinkedListElement;
 		++iteratorElementId;
 	}
 	/**
@@ -155,7 +155,7 @@ public:
 	 */
 	void  printList()
 	{
-		MyListElement<ContentType> *elem = (this->firstElement);
+		LinkedListElement<ContentType> *elem = (this->firstElement);
 		std::cout<<"\nWyswietlam liste (size:"<<this->sizeOfList<<"): ";
 		for(int i=0; i< this->sizeOfList; i++)
 		{
@@ -168,7 +168,7 @@ public:
 	 * @brief Pobiera element z listy
 	 * @return Zwraca 0 gdy zapisywanie powiodlo sie
 	 */
-	MyListElement<ContentType> &operator[](int numberOfElement)
+	LinkedListElement<ContentType> &operator[](int numberOfElement)
 	{
 		//std::cerr<<"\nJestem w ["<<numberOfElement<<"] iterator="<<iteratorElementId;
 		if(numberOfElement > (sizeOfList-1)) // jezeli wyszedlem poza liste
@@ -209,29 +209,29 @@ public:
 	/**
 	 * @brief Wsadza element po obiekcie iteratora
 	 */
-	void insertAfter(MyListElement<ContentType> arg, int iteratorID)
+	void insertAfter(LinkedListElement<ContentType> arg, int iteratorID)
 	{
 		if(iteratorID==0 && this->sizeOfList==0)  {push_front(arg.content); return;}
 		if(iteratorID==this->sizeOfList-1)  {push_back(arg.content); return;}
-		MyListElement<ContentType> *newMyListElement = new MyListElement<ContentType>(arg);
-		MyListElement<ContentType> &tmpThis=(*this)[iteratorID], &tmpNext=(*this)[iteratorID+1];
-		if(!sizeOfList++) {firstElement = lastElement = newMyListElement;}
-		newMyListElement -> nextElement = tmpThis.nextElement;
-		newMyListElement -> previousElement = &tmpThis;
-		tmpThis.nextElement = newMyListElement;
-		tmpNext.previousElement = newMyListElement;
+		LinkedListElement<ContentType> *newLinkedListElement = new LinkedListElement<ContentType>(arg);
+		LinkedListElement<ContentType> &tmpThis=(*this)[iteratorID], &tmpNext=(*this)[iteratorID+1];
+		if(!sizeOfList++) {firstElement = lastElement = newLinkedListElement;}
+		newLinkedListElement -> nextElement = tmpThis.nextElement;
+		newLinkedListElement -> previousElement = &tmpThis;
+		tmpThis.nextElement = newLinkedListElement;
+		tmpNext.previousElement = newLinkedListElement;
 		isIteratorAfterPop=1;
 	}
 
 
-	//MyListElement operator[](int numberOfElement);
-	//virtual MyList<ContentType> sort()
+	//LinkedListElement operator[](int numberOfElement);
+	//virtual LinkedList<ContentType> sort()
 	//{
-	//	std::cerr<<"\nError: Sortowanie z klasy MyList !!!";
+	//	std::cerr<<"\nError: Sortowanie z klasy LinkedList !!!";
 	//	//return m;
 	//}
 
-	MyList<ContentType> &operator=(const MyList<ContentType> &pattern)
+	LinkedList<ContentType> &operator=(const LinkedList<ContentType> &pattern)
 	{
 		//std::cerr<<" @@@";
 		this->sizeOfList = pattern.sizeOfList;
@@ -253,9 +253,9 @@ public:
 //		return *this;
 //	}
 
-/*	void cloneFrom(MyList<ContentType> patternList)
+/*	void cloneFrom(LinkedList<ContentType> patternList)
 	{
-		MyList<ContentType> &clonedList = *new MyList<ContentType>;
+		LinkedList<ContentType> &clonedList = *new LinkedList<ContentType>;
 		// release memory from main list
 		while(this->size()) pop_back();
 		for(int i=0; i<patternList.size(); i++)
@@ -264,9 +264,9 @@ public:
 	}
 */
 
-	List<ContentType> &createObjectFromAbstractReference(/*MyList<ContentType> abstractPattern*/)
+	List<ContentType> &createObjectFromAbstractReference(/*LinkedList<ContentType> abstractPattern*/)
 	{
-		return *new MyList<ContentType>;
+		return *new LinkedList<ContentType>;
 	}
 
 
@@ -278,17 +278,17 @@ public:
 
 
 
-/*class MyListObserved : public MyList, public Observed
+/*class LinkedListObserved : public LinkedList, public Observed
 {
 public:
-	void mergeSort(MyList m)
+	void mergeSort(LinkedList m)
 	{
-	MyList::mergeSort(m);
+	LinkedList::mergeSort(m);
 	powiadom();
 
 	}
-	MyListObserved(){};
-	~MyListObserved(){};
+	LinkedListObserved(){};
+	~LinkedListObserved(){};
 
 
 };*/

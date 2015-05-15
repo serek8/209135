@@ -10,6 +10,7 @@
 
 #include "sorter.h"
 #include "list.h"
+#include "linkedlist.h"
 
 /// @brief Klasa sluzaca do obslugi sortowania przez Scalanie
 template <class ContentType>
@@ -17,12 +18,12 @@ class MergeSorter: public Sorter<ContentType> {
 public:
 
 	/// Skopiowana lista do przeprowadzania sortowania
-	MyList<ContentType> &list;
+	LinkedList<ContentType> &list;
 
 	/** @brief Konstruktor
 	 *  @param listArg lista, która konstruktor kopiuje aby nie naruszać podanej przez uzytkownika
 	 */
-	MergeSorter(MyList<ContentType> &listArg)
+	MergeSorter(LinkedList<ContentType> &listArg)
 	:list(listArg)	{}
 
 	virtual ~MergeSorter(){}
@@ -33,9 +34,9 @@ public:
 	 * @param right prawa lista do scalania
 	 * @return zwraca posotrowana liste
 	 */
-	MyList<ContentType> merge(MyList<ContentType> left, MyList<ContentType> right)
+	LinkedList<ContentType> merge(LinkedList<ContentType> left, LinkedList<ContentType> right)
 	{
-		MyList<ContentType> result;
+		LinkedList<ContentType> result;
 		//Gdy jest jeszcze cos do sortowania
 		while (left.size() > 0 || right.size() > 0)
 		{
@@ -70,10 +71,10 @@ public:
 	 * @param m Lista do posotrowania
 	 * @return zwraca posotrowana liste
 	 */
-	MyList<ContentType> mergeSort(MyList<ContentType> m)
+	LinkedList<ContentType> mergeSort(LinkedList<ContentType> m)
 	{
 		if (m.size() <= 1) return m; // gdy juz nic nie ma do sotrowania
-		MyList<ContentType> left, right, result;
+		LinkedList<ContentType> left, right, result;
 		int middle = (m.size()+ 1) / 2; // anty-nieparzyscie
 		for (int i = 0; i < middle; i++)
 			{

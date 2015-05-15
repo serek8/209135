@@ -18,7 +18,7 @@ template <class ContentType>
 class ObservableMergeSorter : public Observable, public MergeSorter<ContentType>
 {
 public:
-	ObservableMergeSorter(MyList<ContentType> &myList):
+	ObservableMergeSorter(LinkedList<ContentType> &myList):
 		MergeSorter<ContentType>::MergeSorter(myList){}
 
 	/** @brief sortuje przez scalanie

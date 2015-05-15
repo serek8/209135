@@ -11,7 +11,7 @@
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
 #include <iostream>
-#include "mylist.h"
+#include "linkedlist.h"
 #include <string>
 
 #define MAX_HEX_ASCII_KOD 127
@@ -30,9 +30,9 @@ public:
 /**@brief Generuje losowe liczby
  */
 template <typename ContentType>
-MyList<ContentType> static generateNumbers(int range, int quantity)
+LinkedList<ContentType> static generateNumbers(int range, int quantity)
 {
-	MyList<ContentType> &myList = *new MyList<ContentType>();
+	LinkedList<ContentType> &myList = *new LinkedList<ContentType>();
 	time_t randomTime = clock();
 
 	for(int i=0; i<quantity ; i++)
