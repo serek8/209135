@@ -13,6 +13,7 @@
 #include <iostream>
 #include "linkedlist.h"
 #include <string>
+#include "tablelist.h"
 
 #define MAX_HEX_ASCII_KOD 127
 #define ROZMIAR_STRINGU 20
@@ -30,15 +31,16 @@ public:
 /**@brief Generuje losowe liczby
  */
 template <typename ContentType>
-LinkedList<ContentType> static generateNumbers(int range, int quantity)
+LinkedList<ContentType> static &generateNumbers(int range, int quantity)
 {
 	LinkedList<ContentType> &myList = *new LinkedList<ContentType>();
 	time_t randomTime = clock();
-
+	int randomNumber;
 	for(int i=0; i<quantity ; i++)
 	{
 		srand (randomTime = clock());
-		myList.push_back(rand()%range);
+		randomNumber = rand()%range;
+		myList.push_back(randomNumber);
 		randomTime = clock();
 	}
 	return myList;

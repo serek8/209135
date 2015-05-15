@@ -56,12 +56,12 @@ public:
 			// pojedyncze listy (nieparzyse)
 			else if (left.size() > 0)
 			{
-				for (int i = 0; i < left.size(); i++) result.push_back(left[i].content); break;
+				for (int i = 0; i < left.size(); i++) result.push_back(left[i]); break;
 			}
 			// pojedyncze listy (nieparzyse- taka sama sytuacja jak wyzej)
 			else if ((int)right.size() > 0)
 			{
-				for (int i = 0; i < (int)right.size(); i++) result.push_back(right[i].content); break;
+				for (int i = 0; i < (int)right.size(); i++) result.push_back(right[i]); break;
 			}
 		}
 		return result;
@@ -78,11 +78,11 @@ public:
 		int middle = (m.size()+ 1) / 2; // anty-nieparzyscie
 		for (int i = 0; i < middle; i++)
 			{
-				left.push_back(m[i].content);
+				left.push_back(m[i]);
 			}
 		for (int i = middle; i < m.size(); i++)
 			{
-				right.push_back(m[i].content);
+				right.push_back(m[i]);
 			}
 		left = mergeSort(left);
 		right = mergeSort(right);

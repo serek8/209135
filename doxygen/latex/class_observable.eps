@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 45.819015
+%%BoundingBox: 0 0 500 52.700922
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,7 +19,7 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 10.912500 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 9.487500 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
@@ -174,9 +174,9 @@
 boxfont setfont
 1 boundaspect scale
 (Observable) cw
-(ObservableHeapSorter< MyListElementType >) cw
-(ObservableMergeSorter< MyListElementType >) cw
-(ObservableQuickSorter< MyListElementType >) cw
+(ObservableHeapSorter< ContentType >) cw
+(ObservableMergeSorter< ContentType >) cw
+(ObservableQuickSorter< ContentType >) cw
 /boxwidth boxwidth marginwidth 2 mul add def
 /xspacing boxwidth distx add def
 /yspacing boxheight disty add def
@@ -189,9 +189,9 @@ boundx scalefactor div boundy scalefactor div scale
 % ----- classes -----
 
  (Observable) 1.000000 1.000000 box
- (ObservableHeapSorter< MyListElementType >) 0.000000 0.000000 box
- (ObservableMergeSorter< MyListElementType >) 1.000000 0.000000 box
- (ObservableQuickSorter< MyListElementType >) 2.000000 0.000000 box
+ (ObservableHeapSorter< ContentType >) 0.000000 0.000000 box
+ (ObservableMergeSorter< ContentType >) 1.000000 0.000000 box
+ (ObservableQuickSorter< ContentType >) 2.000000 0.000000 box
 
 % ----- relations -----
 

@@ -47,7 +47,7 @@ public:
 	    while (1) {
 	        if (parent > 0)
 	        {
-	            tmp = (this->list)[--parent].content;  /* kobie kopie do tmp */
+	            tmp = (this->list)[--parent];  /* kobie kopie do tmp */
 	        }
 	        else {
 	            n--;
@@ -55,24 +55,25 @@ public:
 	            {
 	                return this->list; /* Zwraca posortowane */
 	            }
-	            tmp = this->list[n].content;
-	            this->list[n].content = this->list[0].content;
+	            tmp = this->list[n];
+	            //int tmp = this->list[0];
+	            this->list[n] = this->list[0];
 	        }
 	        index = parent;
 	        child = index * 2 + 1;
 	        while (child < n) {
-	            if (child + 1 < n  &&  this->list[child + 1].content > this->list[child].content) {
+	            if (child + 1 < n  &&  this->list[child + 1] > this->list[child]) {
 	                child++;
 	            }
-	            if (this->list[child].content > tmp) {
-	                this->list[index].content = this->list[child].content;
+	            if (this->list[child] > tmp) {
+	                this->list[index] = this->list[child];
 	                index = child;
 	                child = index * 2 + 1;
 	            } else {
 	                break;
 	            }
 	        }
-	        this->list[index].content = tmp;
+	        this->list[index] = tmp;
 	    }
 	    return this->list;
 	}

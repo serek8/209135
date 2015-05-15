@@ -18,7 +18,7 @@ Zadaniem laboratorium byl refaktoring dotychczas stworzonych klas do sortowania 
 \section{Moja implementacja zasady otwarte-zamknięte}
 Stworzyłem interfejsy/klasy abstrakcyjne bazowe dla obiektów typu lista, element listy, soter, benchmark oraz obserwator. Na podstawie nich można tworzyć dalej odpowiednie klasy. 
 Przykład
-Klasa MyList(linkedlist) implementuje interfejs List, ktory narzuca jej stworzenie
+Klasa LinkedList implementuje interfejs List, ktory narzuca jej stworzenie
  metod np push\_back, pop\_ack itp.
 
 
@@ -27,7 +27,7 @@ Stworzyłem klase abstrakcyjną Observer oraz Observable które są odzwierciedl
 
 \section{Wzorzez projektowy - Budowniczy}
 Dzięki zastosowaniu zastosowania Budowniczego do wszystkich* sortowań można użyć różnego rodzaju list. W moim programie mam stworzoną LinkedListe ale gdyby stworzyć inny rodzaj listy, który spełniałby mój interfejs List to równie dobrze można go wykorzystać w każdej implementacji.\\\
-*Wyjątkiem jest sortowanie przez scalanie które w mojej implementacji działa tylko na LinkedLisce (MyList)
+*Wyjątkiem jest sortowanie przez scalanie które w mojej implementacji działa tylko na LinkedList
 
 \section{Wzorzez projektowy - Fabryka abstrakcyjna}
 Przy stosowaniu wzorca - budowniczy napotkałem się na problem z kompatybilnością obiektów. Jako obiekty które zwracałem po każdej wywołanej metodzie z różnych sortowań były wskażniki/referencje na klase abstrakcyjną List. Co powodowało problem, gdy chciałem te otrzymane wartości wykorzystać do dalszych działań w klasach niżej. Jako rozwiązanie tego problemu zastosowałem fabryke abstrakcyjną.

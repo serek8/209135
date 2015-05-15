@@ -78,52 +78,54 @@ $(document).ready(function(){initNavTree('numbergenerator_8h_source.html','');})
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span>     <span class="comment">/* srand, rand */</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span>       <span class="comment">/* time */</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mylist_8h.html">mylist.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="linkedlist_8h.html">linkedlist.h</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="numbergenerator_8h.html#ad234b171c744b5f476c1685da37bb7ca">   17</a></span>&#160;<span class="preprocessor">#define MAX_HEX_ASCII_KOD 127</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="numbergenerator_8h.html#aa387743f75779d7abf5cd4224af4cffa">   18</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ROZMIAR_STRINGU 20</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_number_generator.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_number_generator.html">NumberGenerator</a></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MyListElementType&gt;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_number_generator.html#ab3c0d704683453456684ec24fb771334">   33</a></span>&#160;<a class="code" href="class_my_list.html">MyList&lt;MyListElementType&gt;</a> <span class="keyword">static</span> <a class="code" href="class_number_generator.html#ab3c0d704683453456684ec24fb771334">generateNumbers</a>(<span class="keywordtype">int</span> range, <span class="keywordtype">int</span> quantity)</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="class_my_list.html">MyList&lt;MyListElementType&gt;</a> &amp;myList = *<span class="keyword">new</span> <a class="code" href="class_my_list.html">MyList&lt;MyListElementType&gt;</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        time_t randomTime = clock();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;quantity ; i++)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                srand (randomTime = clock());</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                myList.<a class="code" href="class_my_list.html#a52dad29ecf7522b86df8daa3aa74702d">push_back</a>(rand()%range);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                randomTime = clock();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> myList;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">static</span> std::string *<a class="code" href="class_number_generator.html#afed5ae8efb72655770753790714b7643">generateStrings</a>(<span class="keywordtype">int</span> ileStringow);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;tablelist.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="numbergenerator_8h.html#ad234b171c744b5f476c1685da37bb7ca">   18</a></span>&#160;<span class="preprocessor">#define MAX_HEX_ASCII_KOD 127</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="numbergenerator_8h.html#aa387743f75779d7abf5cd4224af4cffa">   19</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ROZMIAR_STRINGU 20</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_number_generator.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_number_generator.html">NumberGenerator</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ContentType&gt;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_number_generator.html#a4a31ee39c34c77b01f19516fd5253389">   34</a></span>&#160;<a class="code" href="class_linked_list.html">LinkedList&lt;ContentType&gt;</a> <span class="keyword">static</span> &amp;<a class="code" href="class_number_generator.html#a4a31ee39c34c77b01f19516fd5253389">generateNumbers</a>(<span class="keywordtype">int</span> range, <span class="keywordtype">int</span> quantity)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="class_linked_list.html">LinkedList&lt;ContentType&gt;</a> &amp;myList = *<span class="keyword">new</span> <a class="code" href="class_linked_list.html">LinkedList&lt;ContentType&gt;</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        time_t randomTime = clock();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">int</span> randomNumber;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;quantity ; i++)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                srand (randomTime = clock());</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                randomNumber = rand()%range;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                myList.<a class="code" href="class_linked_list.html#a719c7b47925171fd7a72a35d0a581619">push_back</a>(randomNumber);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                randomTime = clock();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> myList;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">static</span> std::string *<a class="code" href="class_number_generator.html#afed5ae8efb72655770753790714b7643">generateStrings</a>(<span class="keywordtype">int</span> ileStringow);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//using DataFrame::operator=;</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">//using DataFrame::operator=;</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* NUMBERGENERATOR_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="class_my_list_html_a52dad29ecf7522b86df8daa3aa74702d"><div class="ttname"><a href="class_my_list.html#a52dad29ecf7522b86df8daa3aa74702d">MyList::push_back</a></div><div class="ttdeci">void push_back(MyListElementType arg)</div><div class="ttdoc">Wklada element na ostatnie miejsce na liscie. </div><div class="ttdef"><b>Definition:</b> <a href="mylist_8h_source.html#l00112">mylist.h:112</a></div></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* NUMBERGENERATOR_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="class_number_generator_html_a4a31ee39c34c77b01f19516fd5253389"><div class="ttname"><a href="class_number_generator.html#a4a31ee39c34c77b01f19516fd5253389">NumberGenerator::generateNumbers</a></div><div class="ttdeci">static LinkedList&lt; ContentType &gt; &amp; generateNumbers(int range, int quantity)</div><div class="ttdoc">Generuje losowe liczby. </div><div class="ttdef"><b>Definition:</b> <a href="numbergenerator_8h_source.html#l00034">numbergenerator.h:34</a></div></div>
 <div class="ttc" id="class_number_generator_html_afed5ae8efb72655770753790714b7643"><div class="ttname"><a href="class_number_generator.html#afed5ae8efb72655770753790714b7643">NumberGenerator::generateStrings</a></div><div class="ttdeci">static std::string * generateStrings(int ileStringow)</div><div class="ttdoc">Generuje losowe stringi. </div></div>
-<div class="ttc" id="mylist_8h_html"><div class="ttname"><a href="mylist_8h.html">mylist.h</a></div></div>
-<div class="ttc" id="class_number_generator_html"><div class="ttname"><a href="class_number_generator.html">NumberGenerator</a></div><div class="ttdoc">Klasa generujaca losowe liczby. </div><div class="ttdef"><b>Definition:</b> <a href="numbergenerator_8h_source.html#l00027">numbergenerator.h:27</a></div></div>
-<div class="ttc" id="class_number_generator_html_ab3c0d704683453456684ec24fb771334"><div class="ttname"><a href="class_number_generator.html#ab3c0d704683453456684ec24fb771334">NumberGenerator::generateNumbers</a></div><div class="ttdeci">static MyList&lt; MyListElementType &gt; generateNumbers(int range, int quantity)</div><div class="ttdoc">Generuje losowe liczby. </div><div class="ttdef"><b>Definition:</b> <a href="numbergenerator_8h_source.html#l00033">numbergenerator.h:33</a></div></div>
-<div class="ttc" id="class_my_list_html"><div class="ttname"><a href="class_my_list.html">MyList</a></div><div class="ttdoc">Lista dwukierunkowa. </div><div class="ttdef"><b>Definition:</b> <a href="mylist_8h_source.html#l00023">mylist.h:23</a></div></div>
+<div class="ttc" id="linkedlist_8h_html"><div class="ttname"><a href="linkedlist_8h.html">linkedlist.h</a></div></div>
+<div class="ttc" id="class_number_generator_html"><div class="ttname"><a href="class_number_generator.html">NumberGenerator</a></div><div class="ttdoc">Klasa generujaca losowe liczby. </div><div class="ttdef"><b>Definition:</b> <a href="numbergenerator_8h_source.html#l00028">numbergenerator.h:28</a></div></div>
+<div class="ttc" id="class_linked_list_html"><div class="ttname"><a href="class_linked_list.html">LinkedList</a></div><div class="ttdoc">Lista dwukierunkowa. </div><div class="ttdef"><b>Definition:</b> <a href="linkedlist_8h_source.html#l00022">linkedlist.h:22</a></div></div>
+<div class="ttc" id="class_linked_list_html_a719c7b47925171fd7a72a35d0a581619"><div class="ttname"><a href="class_linked_list.html#a719c7b47925171fd7a72a35d0a581619">LinkedList::push_back</a></div><div class="ttdeci">void push_back(ContentType &amp;arg)</div><div class="ttdoc">Wklada element na ostatnie miejsce na liscie. </div><div class="ttdef"><b>Definition:</b> <a href="linkedlist_8h_source.html#l00100">linkedlist.h:100</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_463302e58bc74c0c35f534f40d40b0a3.html">program</a></li><li class="navelem"><a class="el" href="dir_16e14641fdda69a1405193b0d4291cd4.html">inc</a></li><li class="navelem"><a class="el" href="numbergenerator_8h.html">numbergenerator.h</a></li>
-    <li class="footer">Wygenerowano Cz, 14 maj 2015 23:21:54 dla Laboratorium 7 programem
+    <li class="footer">Wygenerowano Pt, 15 maj 2015 20:17:25 dla Laboratorium 7 programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -80,17 +80,17 @@ $(document).ready(function(){initNavTree('heapsorter_8h_source.html','');});
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sorter_8h.html">sorter.h</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="list_8h.html">list.h</a>&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> MyListElementType&gt;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_heap_sorter.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_heap_sorter.html">HeapSorter</a>: <span class="keyword">public</span> <a class="code" href="class_sorter.html">Sorter</a>&lt;MyListElementType&gt;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> ContentType&gt;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_heap_sorter.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_heap_sorter.html">HeapSorter</a>: <span class="keyword">public</span> <a class="code" href="class_sorter.html">Sorter</a>&lt;ContentType&gt;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">   21</a></span>&#160;        <a class="code" href="class_list.html">List&lt;MyListElementType&gt;</a> &amp;<a class="code" href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">list</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">   21</a></span>&#160;        <a class="code" href="class_list.html">List&lt;ContentType&gt;</a> &amp;<a class="code" href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">list</a>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_heap_sorter.html#a7d5fba788aae93bcfc1a300615dba080">   26</a></span>&#160;        <a class="code" href="class_heap_sorter.html#a7d5fba788aae93bcfc1a300615dba080">HeapSorter</a>(<a class="code" href="class_list.html">List&lt;MyListElementType&gt;</a> &amp;myList)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        :<a class="code" href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">list</a>(myList.createObjectFromAbstractReference())</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_heap_sorter.html#a28b0447f09b338f37ab3413c2fb8a021">   26</a></span>&#160;        <a class="code" href="class_heap_sorter.html#a28b0447f09b338f37ab3413c2fb8a021">HeapSorter</a>(<a class="code" href="class_list.html">List&lt;ContentType&gt;</a> &amp;myList)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        :<a class="code" href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">list</a>(myList.createObjectFromAbstractReference())</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                this-&gt;<a class="code" href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">list</a>.cloneFrom(myList);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                this-&gt;<a class="code" href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">list</a>.cloneFrom(myList);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="comment">/*this-&gt;sizeOfList = myList.sizeOfList;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">                this-&gt;firstElement = myList.firstElement;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">                this-&gt;lastElement = myList.lastElement;</span></div>
@@ -98,60 +98,61 @@ $(document).ready(function(){initNavTree('heapsorter_8h_source.html','');});
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">                this-&gt;isIteratorAfterPop = myList.isIteratorAfterPop;*/</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_heap_sorter.html#ab661e8598cf879b9c8f721c644633e66">   38</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_heap_sorter.html#ab661e8598cf879b9c8f721c644633e66">~HeapSorter</a>(){};</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_heap_sorter.html#acc8436675592eade1a5dfda90ecb9947">   38</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_heap_sorter.html#acc8436675592eade1a5dfda90ecb9947">~HeapSorter</a>(){};</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_heap_sorter.html#a31220ba55d4478c50578c3a94dcbf26c">   42</a></span>&#160;        <a class="code" href="class_list.html">List&lt;MyListElementType&gt;</a> &amp;<a class="code" href="class_heap_sorter.html#a31220ba55d4478c50578c3a94dcbf26c">sort</a>()</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_heap_sorter.html#a0617d40d6d46a65535e7af76f2957898">   42</a></span>&#160;        <a class="code" href="class_list.html">List&lt;ContentType&gt;</a> &amp;<a class="code" href="class_heap_sorter.html#a0617d40d6d46a65535e7af76f2957898">sort</a>()</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordtype">int</span> n = this-&gt;<a class="code" href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">list</a>.size();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordtype">int</span> n = this-&gt;<a class="code" href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">list</a>.size();</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordtype">int</span> parent = n/2, index, child, tmp; <span class="comment">/* heap indexes */</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="comment">/* czekam az sie posortuje */</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">while</span> (1) {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">if</span> (parent &gt; 0)</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    tmp = (this-&gt;<a class="code" href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">list</a>)[--parent].content;  <span class="comment">/* kobie kopie do tmp */</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    tmp = (this-&gt;<a class="code" href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">list</a>)[--parent];  <span class="comment">/* kobie kopie do tmp */</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    n--;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    <span class="keywordflow">if</span> (n == 0)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">list</a>; <span class="comment">/* Zwraca posortowane */</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">list</a>; <span class="comment">/* Zwraca posortowane */</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    tmp = this-&gt;<a class="code" href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">list</a>[n].content;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    this-&gt;<a class="code" href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">list</a>[n].content = this-&gt;<a class="code" href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">list</a>[0].content;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                index = parent;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                child = index * 2 + 1;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">while</span> (child &lt; n) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <span class="keywordflow">if</span> (child + 1 &lt; n  &amp;&amp;  this-&gt;<a class="code" href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">list</a>[child + 1].content &gt; this-&gt;<a class="code" href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">list</a>[child].content) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        child++;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    <span class="keywordflow">if</span> (this-&gt;<a class="code" href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">list</a>[child].content &gt; tmp) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        this-&gt;<a class="code" href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">list</a>[index].content = this-&gt;<a class="code" href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">list</a>[child].content;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        index = child;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        child = index * 2 + 1;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                this-&gt;<a class="code" href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">list</a>[index].content = tmp;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">list</a>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    tmp = this-&gt;<a class="code" href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">list</a>[n];</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    <span class="comment">//int tmp = this-&gt;list[0];</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    this-&gt;<a class="code" href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">list</a>[n] = this-&gt;<a class="code" href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">list</a>[0];</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                index = parent;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                child = index * 2 + 1;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">while</span> (child &lt; n) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <span class="keywordflow">if</span> (child + 1 &lt; n  &amp;&amp;  this-&gt;<a class="code" href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">list</a>[child + 1] &gt; this-&gt;<a class="code" href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">list</a>[child]) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        child++;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    <span class="keywordflow">if</span> (this-&gt;<a class="code" href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">list</a>[child] &gt; tmp) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        this-&gt;<a class="code" href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">list</a>[index] = this-&gt;<a class="code" href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">list</a>[child];</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        index = child;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        child = index * 2 + 1;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                this-&gt;<a class="code" href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">list</a>[index] = tmp;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">list</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* HEAPSORTER_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* HEAPSORTER_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="sorter_8h_html"><div class="ttname"><a href="sorter_8h.html">sorter.h</a></div></div>
-<div class="ttc" id="class_heap_sorter_html_a31220ba55d4478c50578c3a94dcbf26c"><div class="ttname"><a href="class_heap_sorter.html#a31220ba55d4478c50578c3a94dcbf26c">HeapSorter::sort</a></div><div class="ttdeci">List&lt; MyListElementType &gt; &amp; sort()</div><div class="ttdoc">Sortuje przez kopcowanie. </div><div class="ttdef"><b>Definition:</b> <a href="heapsorter_8h_source.html#l00042">heapsorter.h:42</a></div></div>
-<div class="ttc" id="class_heap_sorter_html_a6b8ac615ff2de0c2e510ad215d0508d9"><div class="ttname"><a href="class_heap_sorter.html#a6b8ac615ff2de0c2e510ad215d0508d9">HeapSorter::list</a></div><div class="ttdeci">List&lt; MyListElementType &gt; &amp; list</div><div class="ttdoc">Skopiowana lista do przeprowadzania sortowania. </div><div class="ttdef"><b>Definition:</b> <a href="heapsorter_8h_source.html#l00021">heapsorter.h:21</a></div></div>
-<div class="ttc" id="class_heap_sorter_html_a7d5fba788aae93bcfc1a300615dba080"><div class="ttname"><a href="class_heap_sorter.html#a7d5fba788aae93bcfc1a300615dba080">HeapSorter::HeapSorter</a></div><div class="ttdeci">HeapSorter(List&lt; MyListElementType &gt; &amp;myList)</div><div class="ttdoc">Konstruktor. </div><div class="ttdef"><b>Definition:</b> <a href="heapsorter_8h_source.html#l00026">heapsorter.h:26</a></div></div>
+<div class="ttc" id="class_heap_sorter_html_a28b0447f09b338f37ab3413c2fb8a021"><div class="ttname"><a href="class_heap_sorter.html#a28b0447f09b338f37ab3413c2fb8a021">HeapSorter::HeapSorter</a></div><div class="ttdeci">HeapSorter(List&lt; ContentType &gt; &amp;myList)</div><div class="ttdoc">Konstruktor. </div><div class="ttdef"><b>Definition:</b> <a href="heapsorter_8h_source.html#l00026">heapsorter.h:26</a></div></div>
+<div class="ttc" id="class_heap_sorter_html_ae5061b641a597893a2e7f747c9cc15f2"><div class="ttname"><a href="class_heap_sorter.html#ae5061b641a597893a2e7f747c9cc15f2">HeapSorter::list</a></div><div class="ttdeci">List&lt; ContentType &gt; &amp; list</div><div class="ttdoc">Skopiowana lista do przeprowadzania sortowania. </div><div class="ttdef"><b>Definition:</b> <a href="heapsorter_8h_source.html#l00021">heapsorter.h:21</a></div></div>
+<div class="ttc" id="class_heap_sorter_html_a0617d40d6d46a65535e7af76f2957898"><div class="ttname"><a href="class_heap_sorter.html#a0617d40d6d46a65535e7af76f2957898">HeapSorter::sort</a></div><div class="ttdeci">List&lt; ContentType &gt; &amp; sort()</div><div class="ttdoc">Sortuje przez kopcowanie. </div><div class="ttdef"><b>Definition:</b> <a href="heapsorter_8h_source.html#l00042">heapsorter.h:42</a></div></div>
 <div class="ttc" id="class_sorter_html"><div class="ttname"><a href="class_sorter.html">Sorter</a></div><div class="ttdoc">interfejs kazdego sortowania </div><div class="ttdef"><b>Definition:</b> <a href="sorter_8h_source.html#l00015">sorter.h:15</a></div></div>
-<div class="ttc" id="class_list_html"><div class="ttname"><a href="class_list.html">List</a></div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00017">list.h:17</a></div></div>
+<div class="ttc" id="class_list_html"><div class="ttname"><a href="class_list.html">List</a></div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00016">list.h:16</a></div></div>
 <div class="ttc" id="list_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
-<div class="ttc" id="class_heap_sorter_html_ab661e8598cf879b9c8f721c644633e66"><div class="ttname"><a href="class_heap_sorter.html#ab661e8598cf879b9c8f721c644633e66">HeapSorter::~HeapSorter</a></div><div class="ttdeci">virtual ~HeapSorter()</div><div class="ttdef"><b>Definition:</b> <a href="heapsorter_8h_source.html#l00038">heapsorter.h:38</a></div></div>
+<div class="ttc" id="class_heap_sorter_html_acc8436675592eade1a5dfda90ecb9947"><div class="ttname"><a href="class_heap_sorter.html#acc8436675592eade1a5dfda90ecb9947">HeapSorter::~HeapSorter</a></div><div class="ttdeci">virtual ~HeapSorter()</div><div class="ttdef"><b>Definition:</b> <a href="heapsorter_8h_source.html#l00038">heapsorter.h:38</a></div></div>
 <div class="ttc" id="class_heap_sorter_html"><div class="ttname"><a href="class_heap_sorter.html">HeapSorter</a></div><div class="ttdoc">Klasa sluzaca do obslugi sortowania przez kopcowanie. </div><div class="ttdef"><b>Definition:</b> <a href="heapsorter_8h_source.html#l00017">heapsorter.h:17</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -159,7 +160,7 @@ $(document).ready(function(){initNavTree('heapsorter_8h_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_463302e58bc74c0c35f534f40d40b0a3.html">program</a></li><li class="navelem"><a class="el" href="dir_16e14641fdda69a1405193b0d4291cd4.html">inc</a></li><li class="navelem"><a class="el" href="heapsorter_8h.html">heapsorter.h</a></li>
-    <li class="footer">Wygenerowano Cz, 14 maj 2015 23:21:54 dla Laboratorium 7 programem
+    <li class="footer">Wygenerowano Pt, 15 maj 2015 20:17:25 dla Laboratorium 7 programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

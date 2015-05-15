@@ -4,11 +4,14 @@ var files =
     [ "heapsorter.h", "heapsorter_8h.html", [
       [ "HeapSorter", "class_heap_sorter.html", "class_heap_sorter" ]
     ] ],
+    [ "linkedlist.h", "linkedlist_8h.html", [
+      [ "LinkedList", "class_linked_list.html", "class_linked_list" ]
+    ] ],
+    [ "linkedlistelement.h", "linkedlistelement_8h.html", [
+      [ "LinkedListElement", "class_linked_list_element.html", "class_linked_list_element" ]
+    ] ],
     [ "list.h", "list_8h.html", [
       [ "List", "class_list.html", "class_list" ]
-    ] ],
-    [ "listelement.h", "listelement_8h.html", [
-      [ "ListElement", "class_list_element.html", "class_list_element" ]
     ] ],
     [ "listsaver.h", "listsaver_8h.html", [
       [ "ListSaver", "class_list_saver.html", "class_list_saver" ]
@@ -21,12 +24,6 @@ var files =
     [ "mybenchmark.h", "mybenchmark_8h.html", [
       [ "MyBenchmark", "class_my_benchmark.html", "class_my_benchmark" ],
       [ "MyBenchmarkObserver", "class_my_benchmark_observer.html", "class_my_benchmark_observer" ]
-    ] ],
-    [ "mylist.h", "mylist_8h.html", [
-      [ "MyList", "class_my_list.html", "class_my_list" ]
-    ] ],
-    [ "mylistelement.h", "mylistelement_8h.html", [
-      [ "MyListElement", "class_my_list_element.html", "class_my_list_element" ]
     ] ],
     [ "numbergenerator.h", "numbergenerator_8h.html", "numbergenerator_8h" ],
     [ "observable.h", "observable_8h.html", [

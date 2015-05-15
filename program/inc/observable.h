@@ -30,7 +30,7 @@ public:
     	for(int i=0; i<observaters.size(); i++)
     	{
     		//std::cout<<"Wysylam start update";
-    		observaters[i].content->receivedStartUpdate();
+    		observaters[i]->receivedStartUpdate();
     	}
     }
 
@@ -38,7 +38,7 @@ public:
      */
     void sendStopUpdateToObservers () {
     	for(int i=0; i<observaters.size(); i++)
-    		observaters[i].content->receivedStopUpdate();
+    		observaters[i]->receivedStopUpdate();
     }
 
 	virtual ~Observable(){}

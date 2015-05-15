@@ -12,7 +12,7 @@
 00008 \textcolor{preprocessor}{#include <iostream>}
 00009 \textcolor{preprocessor}{#include <unistd.h>}
 00010 \textcolor{preprocessor}{#include "\hyperlink{numbergenerator_8h}{numbergenerator.h}"}
-00011 \textcolor{preprocessor}{#include "\hyperlink{mylist_8h}{mylist.h}"}
+00011 \textcolor{preprocessor}{#include "\hyperlink{linkedlist_8h}{linkedlist.h}"}
 00012 \textcolor{preprocessor}{#include "\hyperlink{mybenchmark_8h}{mybenchmark.h}"}
 00013 \textcolor{preprocessor}{#include "\hyperlink{observable_8h}{observable.h}"}
 00014 \textcolor{preprocessor}{#include "\hyperlink{observer_8h}{observer.h}"}
@@ -21,11 +21,11 @@
 00017 \textcolor{preprocessor}{#include "\hyperlink{observablemergesorter_8h}{observablemergesorter.h}"}
 00018 \textcolor{preprocessor}{#include "\hyperlink{filestreamer_8h}{filestreamer.h}"}
 00019 
-\hypertarget{main_8cpp_source_l00020}{}\hyperlink{main_8cpp_a1e1ad0a49252a8ba7ee63e4d476c06b9}{00020} \textcolor{preprocessor}{#define ILOSC\_LICZB\_DO\_SORTOWANIA 1000}
+\hypertarget{main_8cpp_source_l00020}{}\hyperlink{main_8cpp_a1e1ad0a49252a8ba7ee63e4d476c06b9}{00020} \textcolor{preprocessor}{#define ILOSC\_LICZB\_DO\_SORTOWANIA 1}
 00021 \textcolor{preprocessor}{}
 \hypertarget{main_8cpp_source_l00022}{}\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00022} \textcolor{keywordtype}{int} \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])
 00023 \{
-00024         \hyperlink{class_my_list}{MyList<int>} lista;
+00024         \hyperlink{class_linked_list}{LinkedList<int>} lista;
 00025         \textcolor{comment}{//int isSetN = 0;}
 00026         \textcolor{keywordtype}{int} opt;        
 00027         \textcolor{keywordflow}{while} ((opt = getopt(argc, argv, \textcolor{stringliteral}{"n:o:i:gx"})) != -1) \{
@@ -62,7 +62,7 @@
       \hyperlink{main_8cpp_a1e1ad0a49252a8ba7ee63e4d476c06b9}{ILOSC\_LICZB\_DO\_SORTOWANIA}*10; i+=
       \hyperlink{main_8cpp_a1e1ad0a49252a8ba7ee63e4d476c06b9}{ILOSC\_LICZB\_DO\_SORTOWANIA})
 00058                 \{
-00059                         lista.\hyperlink{class_list_a5406b275bb8650707a1d2bd38f661095}{free}();
+00059                         lista.\hyperlink{class_list_a5c203187cbe44bdae313494542140a33}{free}();
 00060                         lista = NumberGenerator::generateNumbers<int>(10000000, i);
 00061                 \hyperlink{class_my_benchmark_observer}{MyBenchmarkObserver} *o1 = \textcolor{keyword}{new} 
       \hyperlink{class_my_benchmark_observer}{MyBenchmarkObserver}();
@@ -77,23 +77,23 @@
 00070                 \hyperlink{filestreamer_8h_a4b207a639eee81d20e9f96624a9a6c0a}{writeStringToFile}(\textcolor{stringliteral}{"log.txt"}, i);
 00071                 \hyperlink{filestreamer_8h_a4b207a639eee81d20e9f96624a9a6c0a}{writeStringToFile}(\textcolor{stringliteral}{"log.txt"}, \textcolor{stringliteral}{"\(\backslash\)t"});
 00072 
-00073                 heapSorter.\hyperlink{class_observable_heap_sorter_a5e92d70e5a769ba7249f974a48b94bd0}{sort}();
+00073                 heapSorter.\hyperlink{class_observable_heap_sorter_aa56ec2ca7bd6498f0a0085946c464f36}{sort}();
 00074                 \hyperlink{filestreamer_8h_a4b207a639eee81d20e9f96624a9a6c0a}{writeStringToFile}(\textcolor{stringliteral}{"log.txt"}, heapSorter.
-      \hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}[0].content->getTimerValue());
+      \hyperlink{class_observable_af5af34ef633e707ca1525415ee963b91}{observaters}[0]->getTimerValue());
 00075                 \hyperlink{filestreamer_8h_a4b207a639eee81d20e9f96624a9a6c0a}{writeStringToFile}(\textcolor{stringliteral}{"log.txt"}, \textcolor{stringliteral}{"\(\backslash\)t"});
-00076                 heapSorter.\hyperlink{class_heap_sorter_a6b8ac615ff2de0c2e510ad215d0508d9}{list}.free();
+00076                 heapSorter.\hyperlink{class_heap_sorter_ae5061b641a597893a2e7f747c9cc15f2}{list}.free();
 00077 
-00078                 quickSorter.\hyperlink{class_observable_quick_sorter_aa32fd1f6c024b3993c4d43302d0702f3}{sort}();
+00078                 quickSorter.\hyperlink{class_observable_quick_sorter_aef09bb6859fc79d85de104a4eddfa348}{sort}();
 00079                 \hyperlink{filestreamer_8h_a4b207a639eee81d20e9f96624a9a6c0a}{writeStringToFile}(\textcolor{stringliteral}{"log.txt"}, quickSorter.
-      \hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}[0].content->getTimerValue());
+      \hyperlink{class_observable_af5af34ef633e707ca1525415ee963b91}{observaters}[0]->getTimerValue());
 00080                 \hyperlink{filestreamer_8h_a4b207a639eee81d20e9f96624a9a6c0a}{writeStringToFile}(\textcolor{stringliteral}{"log.txt"}, \textcolor{stringliteral}{"\(\backslash\)t"});
-00081                 quickSorter.\hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}.free();
+00081                 quickSorter.\hyperlink{class_quick_sorter_a66cd768b6d8a77952f004be7aad87a0e}{list}.free();
 00082 
-00083                 mergeSorter.\hyperlink{class_observable_merge_sorter_ac845eed6758733f3935ffb5aa0b5f64a}{sort}();
+00083                 mergeSorter.\hyperlink{class_observable_merge_sorter_adc1960b58289c829ca9c77b7b6bc306f}{sort}();
 00084                 \hyperlink{filestreamer_8h_a4b207a639eee81d20e9f96624a9a6c0a}{writeStringToFile}(\textcolor{stringliteral}{"log.txt"}, mergeSorter.
-      \hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}[0].content->getTimerValue());
+      \hyperlink{class_observable_af5af34ef633e707ca1525415ee963b91}{observaters}[0]->getTimerValue());
 00085                 \hyperlink{filestreamer_8h_a4b207a639eee81d20e9f96624a9a6c0a}{writeStringToFile}(\textcolor{stringliteral}{"log.txt"}, \textcolor{stringliteral}{"\(\backslash\)n"});
-00086                 mergeSorter.\hyperlink{class_merge_sorter_a8ac3ee938414809d7da627cf918f1f87}{list}.free();
+00086                 mergeSorter.\hyperlink{class_merge_sorter_a2fdeadd95d226a04243bab8b5104e324}{list}.free();
 00087                 \}
 00088 
 00089         std::cout<<\textcolor{stringliteral}{" -> Sortowanie zakonczone\(\backslash\)n"};

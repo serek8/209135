@@ -13,57 +13,52 @@
 00008 \textcolor{preprocessor}{#ifndef LIST\_H\_}
 00009 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define LIST\_H\_}
 00010 \textcolor{preprocessor}{}
-00011 \textcolor{preprocessor}{#include "\hyperlink{listelement_8h}{listelement.h}"}
-00012 \textcolor{preprocessor}{#include "\hyperlink{list_8h}{list.h}"}
-00013 
-00016 \textcolor{keyword}{template} <\textcolor{keyword}{class} MyListElementType>
-\hypertarget{list_8h_source_l00017}{}\hyperlink{class_list}{00017} \textcolor{keyword}{class }\hyperlink{class_list}{List}
-00018 \{
-00019 \textcolor{keyword}{public}:
-00023         \textcolor{keywordtype}{int} \textcolor{keyword}{virtual} &\hyperlink{class_list_ac769a9bcdfa13a032783bac75d8957bd}{size}() = 0;
-00024 
-00025         \textcolor{comment}{// Zaczerpnite z wzorca projektowego Budowniczy}
-00026 
-00030         \hyperlink{class_list_element}{ListElement<MyListElementType>} \textcolor{keyword}{virtual} 
-      \hyperlink{class_list_a2e7dc3322b64d7fd29850efdd7c2697e}{pop\_back}()      =       0;
-00031 
-00035         \hyperlink{class_list_element}{ListElement<MyListElementType>} \textcolor{keyword}{virtual} 
-      \hyperlink{class_list_ae8ae20b4a199d5d44a8119e49d6f50a4}{pop\_front}()            =       0;
-00036 
-00039         \textcolor{keywordtype}{void} \textcolor{keyword}{virtual} \hyperlink{class_list_acfa94dc35be53ea0d7e5d4671e40dabc}{printList}()       =       0;
-00040         \textcolor{keywordtype}{void} \textcolor{keyword}{virtual} \hyperlink{class_list_a54af4864ee34e03aefac902744d5831f}{push\_back}(MyListElementType arg)  =       0;
-00041 
-00044         \textcolor{keywordtype}{void} \textcolor{keyword}{virtual} \hyperlink{class_list_ab87c08aded4d34550abc5df48afef599}{push\_front}(MyListElementType arg)        =       0;
-00045 
-00048         \hyperlink{class_my_list_element}{MyListElement<MyListElementType>} \textcolor{keyword}{virtual} &
-      \hyperlink{class_list_aa1c32f16b6e5a7936364f5640dccfd44}{operator[]}(\textcolor{keywordtype}{int} numberOfElement)               =       0;
-00049 
-00054         \textcolor{keywordtype}{void} \textcolor{keyword}{virtual} \hyperlink{class_list_a255ccc6785bf098a06f7a7f17aee134b}{insertAfter}(\hyperlink{class_my_list_element}{MyListElement<MyListElementType>}
-       arg, \textcolor{keywordtype}{int} iteratorID)    =       0;
-00055 
-00058         MyListElementType \textcolor{keyword}{virtual} &\hyperlink{class_list_acbb16d4f43592aa83d8c02c1ffcf9c31}{show\_front}()       =       0;
-00059 
-00062         MyListElementType \textcolor{keyword}{virtual} &\hyperlink{class_list_a5dc677b4022477232d48887dde6fb28f}{show\_back}() =       0;
+00011 \textcolor{preprocessor}{#include "\hyperlink{list_8h}{list.h}"}
+00012 
+00015 \textcolor{keyword}{template} <\textcolor{keyword}{class} ContentType>
+\hypertarget{list_8h_source_l00016}{}\hyperlink{class_list}{00016} \textcolor{keyword}{class }\hyperlink{class_list}{List}
+00017 \{
+00018 \textcolor{keyword}{public}:
+00022         \textcolor{keywordtype}{int} \textcolor{keyword}{virtual} &\hyperlink{class_list_a61bc4a0a8a2103d503f88b79d758f271}{size}() = 0;
+00023 
+00024         \textcolor{comment}{// Zaczerpnite z wzorca projektowego Budowniczy}
+00025 
+00029         ContentType \textcolor{keyword}{virtual} \hyperlink{class_list_a3d0a41deda48ee401b45d4c74ad7f3fb}{pop\_back}()  =       0;
+00030 
+00034         ContentType \textcolor{keyword}{virtual} \hyperlink{class_list_abfc64c5f02d6aca4140e626c03ac8f7c}{pop\_front}()                =       0;
+00035 
+00038         \textcolor{keywordtype}{void} \textcolor{keyword}{virtual} \hyperlink{class_list_ae9cd658323024b4fa3ce3be616d17f33}{print}()       =       0;
+00039         \textcolor{keywordtype}{void} \textcolor{keyword}{virtual} \hyperlink{class_list_aebfb58526e594d251d95d1a43bfa2edd}{push\_back}(ContentType &arg)       =       0;
+00040 
+00043         \textcolor{keywordtype}{void} \textcolor{keyword}{virtual} \hyperlink{class_list_a2040f9141e0f48783aed547d7209904c}{push\_front}(ContentType &arg)     =       0;
+00044 
+00047         ContentType \textcolor{keyword}{virtual} &\hyperlink{class_list_a85def545ed784186bc1cc8f47c80296e}{operator[]}(\textcolor{keywordtype}{int} numberOfElement)          =       0;
+00048 
+00053         \textcolor{keywordtype}{void} \textcolor{keyword}{virtual} \hyperlink{class_list_ade0efb407e46f2f049e07159da017996}{insertAfter}(ContentType &arg, \textcolor{keywordtype}{int} iteratorID)   =       0;
+00054 
+00057         ContentType \textcolor{keyword}{virtual} &\hyperlink{class_list_a2c7a4d0c74230bbf7486026cc25952fb}{show\_front}()     =       0;
+00058 
+00061         ContentType \textcolor{keyword}{virtual} &\hyperlink{class_list_ae6d8b6a4b0e8c18eca287821cbf3ee86}{show\_back}()       =       0;
+00062 
 00063 
-00064 
-00065         \textcolor{comment}{//List<MyListElementType> virtual &operator=(const List<MyListElementType> &pattern)    =       0;}
-00066 
-\hypertarget{list_8h_source_l00069}{}\hyperlink{class_list_a40a3d94c7f3aa49470625d47e6485570}{00069}         \textcolor{keywordtype}{void} \textcolor{keyword}{virtual} \hyperlink{class_list_a40a3d94c7f3aa49470625d47e6485570}{cloneFrom}(\hyperlink{class_list}{List<MyListElementType>} &patternList)
-00070         \{
-00071                 \textcolor{comment}{// release memory from main list}
-00072                 \textcolor{keywordflow}{while}(this->\hyperlink{class_list_ac769a9bcdfa13a032783bac75d8957bd}{size}()) \hyperlink{class_list_a2e7dc3322b64d7fd29850efdd7c2697e}{pop\_back}();
-00073                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<patternList.\hyperlink{class_list_ac769a9bcdfa13a032783bac75d8957bd}{size}(); i++)
-00074                         this->\hyperlink{class_list_a54af4864ee34e03aefac902744d5831f}{push\_back}(patternList[i].content);
-00075         \}
-00076 
-00079         \hyperlink{class_list}{List<MyListElementType>} \textcolor{keyword}{virtual} &
-      \hyperlink{class_list_a37f6551e13258a321c806fffb7e2f068}{createObjectFromAbstractReference}() = 0;
-00080 
-\hypertarget{list_8h_source_l00083}{}\hyperlink{class_list_a5406b275bb8650707a1d2bd38f661095}{00083}         \textcolor{keywordtype}{void} \textcolor{keyword}{virtual} \hyperlink{class_list_a5406b275bb8650707a1d2bd38f661095}{free}()\{ \textcolor{keywordflow}{while}(\hyperlink{class_list_ac769a9bcdfa13a032783bac75d8957bd}{size}()) \hyperlink{class_list_a2e7dc3322b64d7fd29850efdd7c2697e}{pop\_back}(); \}
-\hypertarget{list_8h_source_l00084}{}\hyperlink{class_list_a94653beeb9216aab0f06665bfa5694ab}{00084}         \textcolor{keyword}{virtual} \hyperlink{class_list_a94653beeb9216aab0f06665bfa5694ab}{~List}()\{\};
-00085 \};
+00064         \textcolor{comment}{//List<ContentType> virtual &operator=(const List<ContentType> &pattern)        =       0;}
+00065 
+\hypertarget{list_8h_source_l00068}{}\hyperlink{class_list_a8a1ebc7ce83d77b83f58bd8c2ce2d683}{00068}         \textcolor{keywordtype}{void} \textcolor{keyword}{virtual} \hyperlink{class_list_a8a1ebc7ce83d77b83f58bd8c2ce2d683}{cloneFrom}(\hyperlink{class_list}{List<ContentType>} &patternList)
+00069         \{
+00070                 \textcolor{comment}{// release memory from main list}
+00071                 \textcolor{keywordflow}{while}(this->\hyperlink{class_list_a61bc4a0a8a2103d503f88b79d758f271}{size}()) \hyperlink{class_list_a3d0a41deda48ee401b45d4c74ad7f3fb}{pop\_back}();
+00072                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<patternList.\hyperlink{class_list_a61bc4a0a8a2103d503f88b79d758f271}{size}(); i++)
+00073                         this->\hyperlink{class_list_aebfb58526e594d251d95d1a43bfa2edd}{push\_back}(patternList[i]);
+00074         \}
+00075 
+00078         \hyperlink{class_list}{List<ContentType>} \textcolor{keyword}{virtual} &
+      \hyperlink{class_list_a87870a63c8d7bb7530356d9278e766a9}{createObjectFromAbstractReference}() = 0;
+00079 
+\hypertarget{list_8h_source_l00082}{}\hyperlink{class_list_a5c203187cbe44bdae313494542140a33}{00082}         \textcolor{keywordtype}{void} \textcolor{keyword}{virtual} \hyperlink{class_list_a5c203187cbe44bdae313494542140a33}{free}()\{ \textcolor{keywordflow}{while}(\hyperlink{class_list_a61bc4a0a8a2103d503f88b79d758f271}{size}()) \hyperlink{class_list_a3d0a41deda48ee401b45d4c74ad7f3fb}{pop\_back}(); \}
+\hypertarget{list_8h_source_l00083}{}\hyperlink{class_list_a93822e6461a4e3e084269edce851f7d3}{00083}         \textcolor{keyword}{virtual} \hyperlink{class_list_a93822e6461a4e3e084269edce851f7d3}{~List}()\{\};
+00084 \};
+00085 
 00086 
 00087 
-00088 
-00089 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* LIST\_H\_ */}\textcolor{preprocessor}{}
+00088 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* LIST\_H\_ */}\textcolor{preprocessor}{}
 \end{DoxyCode}

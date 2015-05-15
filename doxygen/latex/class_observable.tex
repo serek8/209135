@@ -13,7 +13,7 @@ Klasa abstrakcyjna-\/ bazowa dla objektow do obserowania.
 Diagram dziedziczenia dla Observable\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=1.282932cm]{class_observable}
+\includegraphics[height=1.475626cm]{class_observable}
 \end{center}
 \end{figure}
 \subsubsection*{Metody publiczne}
@@ -30,7 +30,7 @@ virtual \hyperlink{class_observable_a42f551d4d64ffa48a2ea8d7f0a4e42d4}{$\sim$\-O
 \subsubsection*{Atrybuty publiczne}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_my_list}{My\-List}$<$ \hyperlink{class_observer}{Observer} $\ast$ $>$ \hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}
+\hyperlink{class_linked_list}{Linked\-List}$<$ \hyperlink{class_observer}{Observer} $\ast$ $>$ \hyperlink{class_observable_af5af34ef633e707ca1525415ee963b91}{observaters}
 \begin{DoxyCompactList}\small\item\em Lista obserwatorow. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -73,7 +73,7 @@ Definicja w linii \hyperlink{observable_8h_source_l00023}{23} pliku \hyperlink{o
 
 
 
-Odwołuje się do \hyperlink{observable_8h_source_l00019}{observaters} i \hyperlink{mylist_8h_source_l00112}{My\-List$<$ My\-List\-Element\-Type $>$\-::push\-\_\-back()}.
+Odwołuje się do \hyperlink{observable_8h_source_l00019}{observaters} i \hyperlink{linkedlist_8h_source_l00100}{Linked\-List$<$ Content\-Type $>$\-::push\-\_\-back()}.
 
 
 
@@ -82,7 +82,7 @@ Odwołania w \hyperlink{main_8cpp_source_l00022}{main()}.
 
 \begin{DoxyCode}
 00023                                    \{
-00024         \hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}.\hyperlink{class_my_list_a52dad29ecf7522b86df8daa3aa74702d}{push\_back}(obserwator);
+00024         \hyperlink{class_observable_af5af34ef633e707ca1525415ee963b91}{observaters}.\hyperlink{class_linked_list_a719c7b47925171fd7a72a35d0a581619}{push\_back}(obserwator);
 00025     \}
 \end{DoxyCode}
 \hypertarget{class_observable_a78df64057f152342a43f27979186a6ba}{\index{Observable@{Observable}!send\-Start\-Update\-To\-Observers@{send\-Start\-Update\-To\-Observers}}
@@ -98,19 +98,19 @@ Definicja w linii \hyperlink{observable_8h_source_l00029}{29} pliku \hyperlink{o
 
 
 
-Odwołuje się do \hyperlink{observable_8h_source_l00019}{observaters} i \hyperlink{mylist_8h_source_l00066}{My\-List$<$ My\-List\-Element\-Type $>$\-::size()}.
+Odwołuje się do \hyperlink{observable_8h_source_l00019}{observaters} i \hyperlink{linkedlist_8h_source_l00065}{Linked\-List$<$ Content\-Type $>$\-::size()}.
 
 
 
-Odwołania w \hyperlink{observableheapsorter_8h_source_l00026}{Observable\-Heap\-Sorter$<$ My\-List\-Element\-Type $>$\-::sort()}, \hyperlink{observablequicksorter_8h_source_l00026}{Observable\-Quick\-Sorter$<$ My\-List\-Element\-Type $>$\-::sort()} i \hyperlink{observablemergesorter_8h_source_l00026}{Observable\-Merge\-Sorter$<$ My\-List\-Element\-Type $>$\-::sort()}.
+Odwołania w \hyperlink{observableheapsorter_8h_source_l00026}{Observable\-Heap\-Sorter$<$ Content\-Type $>$\-::sort()}, \hyperlink{observablequicksorter_8h_source_l00026}{Observable\-Quick\-Sorter$<$ Content\-Type $>$\-::sort()} i \hyperlink{observablemergesorter_8h_source_l00026}{Observable\-Merge\-Sorter$<$ Content\-Type $>$\-::sort()}.
 
 
 \begin{DoxyCode}
 00029                                        \{
-00030         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}.\hyperlink{class_my_list_a267f669859ef3541333082cad6b28ab7}{size}(); i++)
+00030         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{class_observable_af5af34ef633e707ca1525415ee963b91}{observaters}.\hyperlink{class_linked_list_ab399f1dc929c705e9cba628ae1f29254}{size}(); i++)
 00031         \{
 00032                 \textcolor{comment}{//std::cout<<"Wysylam start update";}
-00033                 \hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}[i].content->receivedStartUpdate();
+00033                 \hyperlink{class_observable_af5af34ef633e707ca1525415ee963b91}{observaters}[i]->receivedStartUpdate();
 00034         \}
 00035     \}
 \end{DoxyCode}
@@ -127,25 +127,25 @@ Definicja w linii \hyperlink{observable_8h_source_l00039}{39} pliku \hyperlink{o
 
 
 
-Odwołuje się do \hyperlink{observable_8h_source_l00019}{observaters} i \hyperlink{mylist_8h_source_l00066}{My\-List$<$ My\-List\-Element\-Type $>$\-::size()}.
+Odwołuje się do \hyperlink{observable_8h_source_l00019}{observaters} i \hyperlink{linkedlist_8h_source_l00065}{Linked\-List$<$ Content\-Type $>$\-::size()}.
 
 
 
-Odwołania w \hyperlink{observableheapsorter_8h_source_l00026}{Observable\-Heap\-Sorter$<$ My\-List\-Element\-Type $>$\-::sort()}, \hyperlink{observablequicksorter_8h_source_l00026}{Observable\-Quick\-Sorter$<$ My\-List\-Element\-Type $>$\-::sort()} i \hyperlink{observablemergesorter_8h_source_l00026}{Observable\-Merge\-Sorter$<$ My\-List\-Element\-Type $>$\-::sort()}.
+Odwołania w \hyperlink{observableheapsorter_8h_source_l00026}{Observable\-Heap\-Sorter$<$ Content\-Type $>$\-::sort()}, \hyperlink{observablequicksorter_8h_source_l00026}{Observable\-Quick\-Sorter$<$ Content\-Type $>$\-::sort()} i \hyperlink{observablemergesorter_8h_source_l00026}{Observable\-Merge\-Sorter$<$ Content\-Type $>$\-::sort()}.
 
 
 \begin{DoxyCode}
 00039                                       \{
-00040         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}.\hyperlink{class_my_list_a267f669859ef3541333082cad6b28ab7}{size}(); i++)
-00041                 \hyperlink{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{observaters}[i].content->receivedStopUpdate();
+00040         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{class_observable_af5af34ef633e707ca1525415ee963b91}{observaters}.\hyperlink{class_linked_list_ab399f1dc929c705e9cba628ae1f29254}{size}(); i++)
+00041                 \hyperlink{class_observable_af5af34ef633e707ca1525415ee963b91}{observaters}[i]->receivedStopUpdate();
 00042     \}
 \end{DoxyCode}
 
 
 \subsubsection{Dokumentacja atrybutów składowych}
-\hypertarget{class_observable_a23f06cfbce27372d95fb556ca1f392ee}{\index{Observable@{Observable}!observaters@{observaters}}
+\hypertarget{class_observable_af5af34ef633e707ca1525415ee963b91}{\index{Observable@{Observable}!observaters@{observaters}}
 \index{observaters@{observaters}!Observable@{Observable}}
-\paragraph[{observaters}]{\setlength{\rightskip}{0pt plus 5cm}{\bf My\-List}$<${\bf Observer}$\ast$$>$ Observable\-::observaters}}\label{class_observable_a23f06cfbce27372d95fb556ca1f392ee}
+\paragraph[{observaters}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Linked\-List}$<${\bf Observer}$\ast$$>$ Observable\-::observaters}}\label{class_observable_af5af34ef633e707ca1525415ee963b91}
 
 
 Definicja w linii \hyperlink{observable_8h_source_l00019}{19} pliku \hyperlink{observable_8h_source}{observable.\-h}.

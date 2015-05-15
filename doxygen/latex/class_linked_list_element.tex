@@ -1,0 +1,179 @@
+\hypertarget{class_linked_list_element}{\subsection{Dokumentacja szablonu klasy Linked\-List\-Element$<$ Content\-Type $>$}
+\label{class_linked_list_element}\index{Linked\-List\-Element$<$ Content\-Type $>$@{Linked\-List\-Element$<$ Content\-Type $>$}}
+}
+
+
+Klasa 'malych struktur' gdzie jest numer i wskaznik do nas elementu.  
+
+
+
+
+{\ttfamily \#include $<$linkedlistelement.\-h$>$}
+
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_linked_list_element_af4a4f7bb0adbf66e8147058911e802fc}{Linked\-List\-Element} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor wewnetrznej klasy 'malych struktur'. \end{DoxyCompactList}\item 
+\hyperlink{class_linked_list_element_acadbc2a5c35fb0fcdae522019c7bd06d}{Linked\-List\-Element} (Content\-Type \&arg)
+\begin{DoxyCompactList}\small\item\em Konstruktor wewnetrznej klasy 'malych struktur'. \end{DoxyCompactList}\item 
+\hyperlink{class_linked_list_element_a0bcba8520cd0e8b80cdf365ef5b7907b}{Linked\-List\-Element} (const \hyperlink{class_linked_list_element}{Linked\-List\-Element} \&linked\-List\-Element)
+\begin{DoxyCompactList}\small\item\em Konstruktor kopiujacy wewnetrznej klasy 'malych struktur'. \end{DoxyCompactList}\item 
+void \hyperlink{class_linked_list_element_a715e61c00463afad2486a0b8cb5c7325}{set} (Content\-Type arg)
+\begin{DoxyCompactList}\small\item\em Ustawia liczbe oraz klucz slowanika dla elementu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_linked_list_element}{Linked\-List\-Element} $\ast$ \hyperlink{class_linked_list_element_a9bc684b1abc227f3a64a2836193e67c6}{next\-Element}
+\begin{DoxyCompactList}\small\item\em Liczba przechowywana. \end{DoxyCompactList}\item 
+\hyperlink{class_linked_list_element}{Linked\-List\-Element} $\ast$ \hyperlink{class_linked_list_element_a7961cbdbfbb9fadf636d1a47ad049b0c}{previous\-Element}
+\begin{DoxyCompactList}\small\item\em wskaznik do poprzedniej 'malej struktury' w liscie \end{DoxyCompactList}\item 
+Content\-Type \hyperlink{class_linked_list_element_a5df2cf5e9bdc5e2849a93114915f9702}{content}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Opis szczegółowy}
+\subsubsection*{template$<$class Content\-Type$>$class Linked\-List\-Element$<$ Content\-Type $>$}
+
+
+
+Definicja w linii \hyperlink{linkedlistelement_8h_source_l00015}{15} pliku \hyperlink{linkedlistelement_8h_source}{linkedlistelement.\-h}.
+
+
+
+\subsubsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_linked_list_element_af4a4f7bb0adbf66e8147058911e802fc}{\index{Linked\-List\-Element@{Linked\-List\-Element}!Linked\-List\-Element@{Linked\-List\-Element}}
+\index{Linked\-List\-Element@{Linked\-List\-Element}!LinkedListElement@{Linked\-List\-Element}}
+\paragraph[{Linked\-List\-Element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Content\-Type$>$ {\bf Linked\-List\-Element}$<$ Content\-Type $>$\-::{\bf Linked\-List\-Element} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_linked_list_element_af4a4f7bb0adbf66e8147058911e802fc}
+
+
+Definicja w linii \hyperlink{linkedlistelement_8h_source_l00027}{27} pliku \hyperlink{linkedlistelement_8h_source}{linkedlistelement.\-h}.
+
+
+\begin{DoxyCode}
+00028         \{
+00029                 \textcolor{keyword}{this} -> \hyperlink{class_linked_list_element_a9bc684b1abc227f3a64a2836193e67c6}{nextElement} =0;
+00030                 \textcolor{keyword}{this} -> \hyperlink{class_linked_list_element_a7961cbdbfbb9fadf636d1a47ad049b0c}{previousElement} =0;
+00031         \}
+\end{DoxyCode}
+\hypertarget{class_linked_list_element_acadbc2a5c35fb0fcdae522019c7bd06d}{\index{Linked\-List\-Element@{Linked\-List\-Element}!Linked\-List\-Element@{Linked\-List\-Element}}
+\index{Linked\-List\-Element@{Linked\-List\-Element}!LinkedListElement@{Linked\-List\-Element}}
+\paragraph[{Linked\-List\-Element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Content\-Type$>$ {\bf Linked\-List\-Element}$<$ Content\-Type $>$\-::{\bf Linked\-List\-Element} (
+\begin{DoxyParamCaption}
+\item[{Content\-Type \&}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_linked_list_element_acadbc2a5c35fb0fcdae522019c7bd06d}
+
+\begin{DoxyParams}{Parametry}
+{\em arg} & liczba do zapisania w kolejnym elemencie listy \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \hyperlink{linkedlistelement_8h_source_l00036}{36} pliku \hyperlink{linkedlistelement_8h_source}{linkedlistelement.\-h}.
+
+
+\begin{DoxyCode}
+00037         \{
+00038                 \textcolor{keyword}{this} -> \hyperlink{class_linked_list_element_a5df2cf5e9bdc5e2849a93114915f9702}{content} = arg;
+00039                 \textcolor{keyword}{this} -> \hyperlink{class_linked_list_element_a9bc684b1abc227f3a64a2836193e67c6}{nextElement} =0;
+00040                 \textcolor{keyword}{this} -> \hyperlink{class_linked_list_element_a7961cbdbfbb9fadf636d1a47ad049b0c}{previousElement} =0;
+00041                 \textcolor{comment}{//std::cerr<<"\(\backslash\)n(konstruktor LinkedListElement): content="<<arg;}
+00042         \}
+\end{DoxyCode}
+\hypertarget{class_linked_list_element_a0bcba8520cd0e8b80cdf365ef5b7907b}{\index{Linked\-List\-Element@{Linked\-List\-Element}!Linked\-List\-Element@{Linked\-List\-Element}}
+\index{Linked\-List\-Element@{Linked\-List\-Element}!LinkedListElement@{Linked\-List\-Element}}
+\paragraph[{Linked\-List\-Element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Content\-Type$>$ {\bf Linked\-List\-Element}$<$ Content\-Type $>$\-::{\bf Linked\-List\-Element} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Linked\-List\-Element}$<$ Content\-Type $>$ \&}]{linked\-List\-Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_linked_list_element_a0bcba8520cd0e8b80cdf365ef5b7907b}
+
+\begin{DoxyParams}{Parametry}
+{\em linked\-List\-Element} & Element o przekopiowania \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \hyperlink{linkedlistelement_8h_source_l00047}{47} pliku \hyperlink{linkedlistelement_8h_source}{linkedlistelement.\-h}.
+
+
+\begin{DoxyCode}
+00048         \{
+00049                 this->\hyperlink{class_linked_list_element_a5df2cf5e9bdc5e2849a93114915f9702}{content} = linkedListElement.\hyperlink{class_linked_list_element_a5df2cf5e9bdc5e2849a93114915f9702}{content};
+00050                 this->\hyperlink{class_linked_list_element_a9bc684b1abc227f3a64a2836193e67c6}{nextElement} = linkedListElement.\hyperlink{class_linked_list_element_a9bc684b1abc227f3a64a2836193e67c6}{nextElement};
+00051                 this->\hyperlink{class_linked_list_element_a7961cbdbfbb9fadf636d1a47ad049b0c}{previousElement} = linkedListElement.
+      \hyperlink{class_linked_list_element_a7961cbdbfbb9fadf636d1a47ad049b0c}{previousElement};
+00052                 \textcolor{comment}{//std::cerr<<"\(\backslash\)n(konstruktor kopiujacy LinkedListElement): content="<<content;}
+00053         \}
+\end{DoxyCode}
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_linked_list_element_a715e61c00463afad2486a0b8cb5c7325}{\index{Linked\-List\-Element@{Linked\-List\-Element}!set@{set}}
+\index{set@{set}!LinkedListElement@{Linked\-List\-Element}}
+\paragraph[{set}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Content\-Type$>$ void {\bf Linked\-List\-Element}$<$ Content\-Type $>$\-::set (
+\begin{DoxyParamCaption}
+\item[{Content\-Type}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_linked_list_element_a715e61c00463afad2486a0b8cb5c7325}
+
+\begin{DoxyParams}{Parametry}
+{\em arg} & Liczba do zapisania \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \hyperlink{linkedlistelement_8h_source_l00057}{57} pliku \hyperlink{linkedlistelement_8h_source}{linkedlistelement.\-h}.
+
+
+\begin{DoxyCode}
+00058         \{
+00059                 \textcolor{keyword}{this} -> \hyperlink{class_linked_list_element_a5df2cf5e9bdc5e2849a93114915f9702}{content} = arg;
+00060         \}
+\end{DoxyCode}
+
+
+\subsubsection{Dokumentacja atrybutów składowych}
+\hypertarget{class_linked_list_element_a5df2cf5e9bdc5e2849a93114915f9702}{\index{Linked\-List\-Element@{Linked\-List\-Element}!content@{content}}
+\index{content@{content}!LinkedListElement@{Linked\-List\-Element}}
+\paragraph[{content}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Content\-Type$>$ Content\-Type {\bf Linked\-List\-Element}$<$ Content\-Type $>$\-::content}}\label{class_linked_list_element_a5df2cf5e9bdc5e2849a93114915f9702}
+
+
+Definicja w linii \hyperlink{linkedlistelement_8h_source_l00023}{23} pliku \hyperlink{linkedlistelement_8h_source}{linkedlistelement.\-h}.
+
+
+
+Odwołania w \hyperlink{linkedlistelement_8h_source_l00036}{Linked\-List\-Element$<$ Observer $\ast$ $>$\-::\-Linked\-List\-Element()}, \hyperlink{linkedlist_8h_source_l00144}{Linked\-List$<$ Observer $\ast$ $>$\-::print()} i \hyperlink{linkedlistelement_8h_source_l00057}{Linked\-List\-Element$<$ Observer $\ast$ $>$\-::set()}.
+
+\hypertarget{class_linked_list_element_a9bc684b1abc227f3a64a2836193e67c6}{\index{Linked\-List\-Element@{Linked\-List\-Element}!next\-Element@{next\-Element}}
+\index{next\-Element@{next\-Element}!LinkedListElement@{Linked\-List\-Element}}
+\paragraph[{next\-Element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Content\-Type$>$ {\bf Linked\-List\-Element}$\ast$ {\bf Linked\-List\-Element}$<$ Content\-Type $>$\-::next\-Element}}\label{class_linked_list_element_a9bc684b1abc227f3a64a2836193e67c6}
+wskaznik do nastepnej 'malej struktury' w liscie 
+
+Definicja w linii \hyperlink{linkedlistelement_8h_source_l00020}{20} pliku \hyperlink{linkedlistelement_8h_source}{linkedlistelement.\-h}.
+
+
+
+Odwołania w \hyperlink{linkedlist_8h_source_l00238}{Linked\-List$<$ Observer $\ast$ $>$\-::insert\-After()}, \hyperlink{linkedlistelement_8h_source_l00027}{Linked\-List\-Element$<$ Observer $\ast$ $>$\-::\-Linked\-List\-Element()} i \hyperlink{linkedlist_8h_source_l00144}{Linked\-List$<$ Observer $\ast$ $>$\-::print()}.
+
+\hypertarget{class_linked_list_element_a7961cbdbfbb9fadf636d1a47ad049b0c}{\index{Linked\-List\-Element@{Linked\-List\-Element}!previous\-Element@{previous\-Element}}
+\index{previous\-Element@{previous\-Element}!LinkedListElement@{Linked\-List\-Element}}
+\paragraph[{previous\-Element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Content\-Type$>$ {\bf Linked\-List\-Element}$\ast$ {\bf Linked\-List\-Element}$<$ Content\-Type $>$\-::previous\-Element}}\label{class_linked_list_element_a7961cbdbfbb9fadf636d1a47ad049b0c}
+
+
+Definicja w linii \hyperlink{linkedlistelement_8h_source_l00022}{22} pliku \hyperlink{linkedlistelement_8h_source}{linkedlistelement.\-h}.
+
+
+
+Odwołania w \hyperlink{linkedlist_8h_source_l00238}{Linked\-List$<$ Observer $\ast$ $>$\-::insert\-After()} i \hyperlink{linkedlistelement_8h_source_l00027}{Linked\-List\-Element$<$ Observer $\ast$ $>$\-::\-Linked\-List\-Element()}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{linkedlistelement_8h}{linkedlistelement.\-h}\end{DoxyCompactItemize}

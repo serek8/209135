@@ -1,0 +1,52 @@
+\hypertarget{linkedlistelement_8h}{\subsection{linkedlistelement.\-h}
+\label{linkedlistelement_8h}\index{linkedlistelement.\-h@{linkedlistelement.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * mylistelement.h}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: May 11, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00008 \textcolor{preprocessor}{#ifndef LINKEDLISTELEMENT\_H\_}
+00009 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define LINKEDLISTELEMENT\_H\_}
+00010 \textcolor{preprocessor}{}
+00011 \textcolor{preprocessor}{#include "\hyperlink{linkedlist_8h}{linkedlist.h}"}
+00012 
+00014 \textcolor{keyword}{template} <\textcolor{keyword}{class} ContentType>
+\hypertarget{linkedlistelement_8h_source_l00015}{}\hyperlink{class_linked_list_element}{00015} \textcolor{keyword}{class }\hyperlink{class_linked_list_element}{LinkedListElement}\{
+00017 \textcolor{keyword}{public}:
+00018         \textcolor{comment}{//ContentType content;}
+\hypertarget{linkedlistelement_8h_source_l00020}{}\hyperlink{class_linked_list_element_a9bc684b1abc227f3a64a2836193e67c6}{00020} \textcolor{comment}{}        \hyperlink{class_linked_list_element}{LinkedListElement} *\hyperlink{class_linked_list_element_a9bc684b1abc227f3a64a2836193e67c6}{nextElement};
+\hypertarget{linkedlistelement_8h_source_l00022}{}\hyperlink{class_linked_list_element_a7961cbdbfbb9fadf636d1a47ad049b0c}{00022}         \hyperlink{class_linked_list_element}{LinkedListElement} *\hyperlink{class_linked_list_element_a7961cbdbfbb9fadf636d1a47ad049b0c}{previousElement};
+\hypertarget{linkedlistelement_8h_source_l00023}{}\hyperlink{class_linked_list_element_a5df2cf5e9bdc5e2849a93114915f9702}{00023}         ContentType \hyperlink{class_linked_list_element_a5df2cf5e9bdc5e2849a93114915f9702}{content};
+\hypertarget{linkedlistelement_8h_source_l00027}{}\hyperlink{class_linked_list_element_af4a4f7bb0adbf66e8147058911e802fc}{00027}         \hyperlink{class_linked_list_element_af4a4f7bb0adbf66e8147058911e802fc}{LinkedListElement}()
+00028         \{
+00029                 \textcolor{keyword}{this} -> \hyperlink{class_linked_list_element_a9bc684b1abc227f3a64a2836193e67c6}{nextElement} =0;
+00030                 \textcolor{keyword}{this} -> \hyperlink{class_linked_list_element_a7961cbdbfbb9fadf636d1a47ad049b0c}{previousElement} =0;
+00031         \}
+\hypertarget{linkedlistelement_8h_source_l00036}{}\hyperlink{class_linked_list_element_acadbc2a5c35fb0fcdae522019c7bd06d}{00036}         \hyperlink{class_linked_list_element_acadbc2a5c35fb0fcdae522019c7bd06d}{LinkedListElement}(ContentType &arg)
+00037         \{
+00038                 \textcolor{keyword}{this} -> \hyperlink{class_linked_list_element_a5df2cf5e9bdc5e2849a93114915f9702}{content} = arg;
+00039                 \textcolor{keyword}{this} -> \hyperlink{class_linked_list_element_a9bc684b1abc227f3a64a2836193e67c6}{nextElement} =0;
+00040                 \textcolor{keyword}{this} -> \hyperlink{class_linked_list_element_a7961cbdbfbb9fadf636d1a47ad049b0c}{previousElement} =0;
+00041                 \textcolor{comment}{//std::cerr<<"\(\backslash\)n(konstruktor LinkedListElement): content="<<arg;}
+00042         \}
+\hypertarget{linkedlistelement_8h_source_l00047}{}\hyperlink{class_linked_list_element_a0bcba8520cd0e8b80cdf365ef5b7907b}{00047}         \hyperlink{class_linked_list_element_a0bcba8520cd0e8b80cdf365ef5b7907b}{LinkedListElement}(\textcolor{keyword}{const} \hyperlink{class_linked_list_element}{LinkedListElement} &linkedListElement)
+00048         \{
+00049                 this->\hyperlink{class_linked_list_element_a5df2cf5e9bdc5e2849a93114915f9702}{content} = linkedListElement.\hyperlink{class_linked_list_element_a5df2cf5e9bdc5e2849a93114915f9702}{content};
+00050                 this->\hyperlink{class_linked_list_element_a9bc684b1abc227f3a64a2836193e67c6}{nextElement} = linkedListElement.\hyperlink{class_linked_list_element_a9bc684b1abc227f3a64a2836193e67c6}{nextElement};
+00051                 this->\hyperlink{class_linked_list_element_a7961cbdbfbb9fadf636d1a47ad049b0c}{previousElement} = linkedListElement.
+      \hyperlink{class_linked_list_element_a7961cbdbfbb9fadf636d1a47ad049b0c}{previousElement};
+00052                 \textcolor{comment}{//std::cerr<<"\(\backslash\)n(konstruktor kopiujacy LinkedListElement): content="<<content;}
+00053         \}
+\hypertarget{linkedlistelement_8h_source_l00057}{}\hyperlink{class_linked_list_element_a715e61c00463afad2486a0b8cb5c7325}{00057}         \textcolor{keywordtype}{void} \hyperlink{class_linked_list_element_a715e61c00463afad2486a0b8cb5c7325}{set}(ContentType arg)
+00058         \{
+00059                 \textcolor{keyword}{this} -> \hyperlink{class_linked_list_element_a5df2cf5e9bdc5e2849a93114915f9702}{content} = arg;
+00060         \}
+00061         \textcolor{comment}{//friend class LinkedList;}
+00062 \};
+00063 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* LINKEDLISTELEMENT\_H\_ */}\textcolor{preprocessor}{}
+\end{DoxyCode}

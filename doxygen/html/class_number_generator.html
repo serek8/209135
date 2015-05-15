@@ -79,10 +79,10 @@ $(document).ready(function(){initNavTree('class_number_generator.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Statyczne metody publiczne</h2></td></tr>
-<tr class="memitem:ab3c0d704683453456684ec24fb771334"><td class="memTemplParams" colspan="2">template&lt;typename MyListElementType &gt; </td></tr>
-<tr class="memitem:ab3c0d704683453456684ec24fb771334"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="class_my_list.html">MyList</a>&lt; MyListElementType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_number_generator.html#ab3c0d704683453456684ec24fb771334">generateNumbers</a> (int range, int quantity)</td></tr>
-<tr class="memdesc:ab3c0d704683453456684ec24fb771334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generuje losowe liczby.  <a href="#ab3c0d704683453456684ec24fb771334">Więcej...</a><br/></td></tr>
-<tr class="separator:ab3c0d704683453456684ec24fb771334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a31ee39c34c77b01f19516fd5253389"><td class="memTemplParams" colspan="2">template&lt;typename ContentType &gt; </td></tr>
+<tr class="memitem:a4a31ee39c34c77b01f19516fd5253389"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="class_linked_list.html">LinkedList</a>&lt; ContentType &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_number_generator.html#a4a31ee39c34c77b01f19516fd5253389">generateNumbers</a> (int range, int quantity)</td></tr>
+<tr class="memdesc:a4a31ee39c34c77b01f19516fd5253389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generuje losowe liczby.  <a href="#a4a31ee39c34c77b01f19516fd5253389">Więcej...</a><br/></td></tr>
+<tr class="separator:a4a31ee39c34c77b01f19516fd5253389"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afed5ae8efb72655770753790714b7643"><td class="memItemLeft" align="right" valign="top">static std::string *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_number_generator.html#afed5ae8efb72655770753790714b7643">generateStrings</a> (int ileStringow)</td></tr>
 <tr class="memdesc:afed5ae8efb72655770753790714b7643"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generuje losowe stringi.  <a href="#afed5ae8efb72655770753790714b7643">Więcej...</a><br/></td></tr>
 <tr class="separator:afed5ae8efb72655770753790714b7643"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -90,19 +90,19 @@ Statyczne metody publiczne</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
 <div class="textblock"><p>Klasa generujaca losowe liczby na podstawie czasu maszyny na ktorym jest uruchomiona Wszystkie funkcje zapisu pliku dziedziczy z klasy DataFrame </p>
 
-<p>Definicja w linii <a class="el" href="numbergenerator_8h_source.html#l00027">27</a> pliku <a class="el" href="numbergenerator_8h_source.html">numbergenerator.h</a>.</p>
+<p>Definicja w linii <a class="el" href="numbergenerator_8h_source.html#l00028">28</a> pliku <a class="el" href="numbergenerator_8h_source.html">numbergenerator.h</a>.</p>
 </div><h2 class="groupheader">Dokumentacja funkcji składowych</h2>
-<a class="anchor" id="ab3c0d704683453456684ec24fb771334"></a>
+<a class="anchor" id="a4a31ee39c34c77b01f19516fd5253389"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename MyListElementType &gt; </div>
+template&lt;typename ContentType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="class_my_list.html">MyList</a>&lt;MyListElementType&gt; NumberGenerator::generateNumbers </td>
+          <td class="memname">static <a class="el" href="class_linked_list.html">LinkedList</a>&lt;ContentType&gt;&amp; NumberGenerator::generateNumbers </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>range</em>, </td>
@@ -126,23 +126,24 @@ template&lt;typename MyListElementType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definicja w linii <a class="el" href="numbergenerator_8h_source.html#l00033">33</a> pliku <a class="el" href="numbergenerator_8h_source.html">numbergenerator.h</a>.</p>
+<p>Definicja w linii <a class="el" href="numbergenerator_8h_source.html#l00034">34</a> pliku <a class="el" href="numbergenerator_8h_source.html">numbergenerator.h</a>.</p>
 
-<p>Odwołuje się do <a class="el" href="mylist_8h_source.html#l00112">MyList&lt; MyListElementType &gt;::push_back()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="class_my_list.html">MyList&lt;MyListElementType&gt;</a> &amp;myList = *<span class="keyword">new</span> <a class="code" href="class_my_list.html">MyList&lt;MyListElementType&gt;</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        time_t randomTime = clock();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;quantity ; i++)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                srand (randomTime = clock());</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                myList.<a class="code" href="class_my_list.html#a52dad29ecf7522b86df8daa3aa74702d">push_back</a>(rand()%range);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                randomTime = clock();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> myList;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="ttc" id="class_my_list_html_a52dad29ecf7522b86df8daa3aa74702d"><div class="ttname"><a href="class_my_list.html#a52dad29ecf7522b86df8daa3aa74702d">MyList::push_back</a></div><div class="ttdeci">void push_back(MyListElementType arg)</div><div class="ttdoc">Wklada element na ostatnie miejsce na liscie. </div><div class="ttdef"><b>Definition:</b> <a href="mylist_8h_source.html#l00112">mylist.h:112</a></div></div>
-<div class="ttc" id="class_my_list_html"><div class="ttname"><a href="class_my_list.html">MyList</a></div><div class="ttdoc">Lista dwukierunkowa. </div><div class="ttdef"><b>Definition:</b> <a href="mylist_8h_source.html#l00023">mylist.h:23</a></div></div>
+<p>Odwołuje się do <a class="el" href="linkedlist_8h_source.html#l00100">LinkedList&lt; ContentType &gt;::push_back()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="class_linked_list.html">LinkedList&lt;ContentType&gt;</a> &amp;myList = *<span class="keyword">new</span> <a class="code" href="class_linked_list.html">LinkedList&lt;ContentType&gt;</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        time_t randomTime = clock();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">int</span> randomNumber;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;quantity ; i++)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                srand (randomTime = clock());</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                randomNumber = rand()%range;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                myList.<a class="code" href="class_linked_list.html#a719c7b47925171fd7a72a35d0a581619">push_back</a>(randomNumber);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                randomTime = clock();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> myList;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="ttc" id="class_linked_list_html"><div class="ttname"><a href="class_linked_list.html">LinkedList</a></div><div class="ttdoc">Lista dwukierunkowa. </div><div class="ttdef"><b>Definition:</b> <a href="linkedlist_8h_source.html#l00022">linkedlist.h:22</a></div></div>
+<div class="ttc" id="class_linked_list_html_a719c7b47925171fd7a72a35d0a581619"><div class="ttname"><a href="class_linked_list.html#a719c7b47925171fd7a72a35d0a581619">LinkedList::push_back</a></div><div class="ttdeci">void push_back(ContentType &amp;arg)</div><div class="ttdoc">Wklada element na ostatnie miejsce na liscie. </div><div class="ttdef"><b>Definition:</b> <a href="linkedlist_8h_source.html#l00100">linkedlist.h:100</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -185,7 +186,7 @@ template&lt;typename MyListElementType &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_number_generator.html">NumberGenerator</a></li>
-    <li class="footer">Wygenerowano Cz, 14 maj 2015 23:21:56 dla Laboratorium 7 programem
+    <li class="footer">Wygenerowano Pt, 15 maj 2015 20:17:26 dla Laboratorium 7 programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

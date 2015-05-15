@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Laboratorium 7: Plik źródłowy linkedlistelement.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Laboratorium 7
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('linkedlistelement_8h_source.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">linkedlistelement.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="linkedlistelement_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * mylistelement.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: May 11, 2015</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: serek8</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef LINKEDLISTELEMENT_H_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LINKEDLISTELEMENT_H_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="linkedlist_8h.html">linkedlist.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> ContentType&gt;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_linked_list_element.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_linked_list_element.html">LinkedListElement</a>{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="comment">//ContentType content;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_linked_list_element.html#a9bc684b1abc227f3a64a2836193e67c6">   20</a></span>&#160;<span class="comment"></span>        <a class="code" href="class_linked_list_element.html">LinkedListElement</a> *<a class="code" href="class_linked_list_element.html#a9bc684b1abc227f3a64a2836193e67c6">nextElement</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_linked_list_element.html#a7961cbdbfbb9fadf636d1a47ad049b0c">   22</a></span>&#160;        <a class="code" href="class_linked_list_element.html">LinkedListElement</a> *<a class="code" href="class_linked_list_element.html#a7961cbdbfbb9fadf636d1a47ad049b0c">previousElement</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_linked_list_element.html#a5df2cf5e9bdc5e2849a93114915f9702">   23</a></span>&#160;        ContentType <a class="code" href="class_linked_list_element.html#a5df2cf5e9bdc5e2849a93114915f9702">content</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_linked_list_element.html#af4a4f7bb0adbf66e8147058911e802fc">   27</a></span>&#160;        <a class="code" href="class_linked_list_element.html#af4a4f7bb0adbf66e8147058911e802fc">LinkedListElement</a>()</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keyword">this</span> -&gt; <a class="code" href="class_linked_list_element.html#a9bc684b1abc227f3a64a2836193e67c6">nextElement</a> =0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="keyword">this</span> -&gt; <a class="code" href="class_linked_list_element.html#a7961cbdbfbb9fadf636d1a47ad049b0c">previousElement</a> =0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_linked_list_element.html#acadbc2a5c35fb0fcdae522019c7bd06d">   36</a></span>&#160;        <a class="code" href="class_linked_list_element.html#acadbc2a5c35fb0fcdae522019c7bd06d">LinkedListElement</a>(ContentType &amp;arg)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keyword">this</span> -&gt; <a class="code" href="class_linked_list_element.html#a5df2cf5e9bdc5e2849a93114915f9702">content</a> = arg;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keyword">this</span> -&gt; <a class="code" href="class_linked_list_element.html#a9bc684b1abc227f3a64a2836193e67c6">nextElement</a> =0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keyword">this</span> -&gt; <a class="code" href="class_linked_list_element.html#a7961cbdbfbb9fadf636d1a47ad049b0c">previousElement</a> =0;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="comment">//std::cerr&lt;&lt;&quot;\n(konstruktor LinkedListElement): content=&quot;&lt;&lt;arg;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_linked_list_element.html#a0bcba8520cd0e8b80cdf365ef5b7907b">   47</a></span>&#160;        <a class="code" href="class_linked_list_element.html#a0bcba8520cd0e8b80cdf365ef5b7907b">LinkedListElement</a>(<span class="keyword">const</span> <a class="code" href="class_linked_list_element.html">LinkedListElement</a> &amp;linkedListElement)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                this-&gt;<a class="code" href="class_linked_list_element.html#a5df2cf5e9bdc5e2849a93114915f9702">content</a> = linkedListElement.<a class="code" href="class_linked_list_element.html#a5df2cf5e9bdc5e2849a93114915f9702">content</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                this-&gt;<a class="code" href="class_linked_list_element.html#a9bc684b1abc227f3a64a2836193e67c6">nextElement</a> = linkedListElement.<a class="code" href="class_linked_list_element.html#a9bc684b1abc227f3a64a2836193e67c6">nextElement</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                this-&gt;<a class="code" href="class_linked_list_element.html#a7961cbdbfbb9fadf636d1a47ad049b0c">previousElement</a> = linkedListElement.<a class="code" href="class_linked_list_element.html#a7961cbdbfbb9fadf636d1a47ad049b0c">previousElement</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="comment">//std::cerr&lt;&lt;&quot;\n(konstruktor kopiujacy LinkedListElement): content=&quot;&lt;&lt;content;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_linked_list_element.html#a715e61c00463afad2486a0b8cb5c7325">   57</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_linked_list_element.html#a715e61c00463afad2486a0b8cb5c7325">set</a>(ContentType arg)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keyword">this</span> -&gt; <a class="code" href="class_linked_list_element.html#a5df2cf5e9bdc5e2849a93114915f9702">content</a> = arg;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">//friend class LinkedList;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* LINKEDLISTELEMENT_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="class_linked_list_element_html"><div class="ttname"><a href="class_linked_list_element.html">LinkedListElement</a></div><div class="ttdoc">Klasa &#39;malych struktur&#39; gdzie jest numer i wskaznik do nas elementu. </div><div class="ttdef"><b>Definition:</b> <a href="linkedlistelement_8h_source.html#l00015">linkedlistelement.h:15</a></div></div>
+<div class="ttc" id="class_linked_list_element_html_a5df2cf5e9bdc5e2849a93114915f9702"><div class="ttname"><a href="class_linked_list_element.html#a5df2cf5e9bdc5e2849a93114915f9702">LinkedListElement::content</a></div><div class="ttdeci">ContentType content</div><div class="ttdef"><b>Definition:</b> <a href="linkedlistelement_8h_source.html#l00023">linkedlistelement.h:23</a></div></div>
+<div class="ttc" id="class_linked_list_element_html_af4a4f7bb0adbf66e8147058911e802fc"><div class="ttname"><a href="class_linked_list_element.html#af4a4f7bb0adbf66e8147058911e802fc">LinkedListElement::LinkedListElement</a></div><div class="ttdeci">LinkedListElement()</div><div class="ttdoc">Konstruktor wewnetrznej klasy &#39;malych struktur&#39;. </div><div class="ttdef"><b>Definition:</b> <a href="linkedlistelement_8h_source.html#l00027">linkedlistelement.h:27</a></div></div>
+<div class="ttc" id="linkedlist_8h_html"><div class="ttname"><a href="linkedlist_8h.html">linkedlist.h</a></div></div>
+<div class="ttc" id="class_linked_list_element_html_a0bcba8520cd0e8b80cdf365ef5b7907b"><div class="ttname"><a href="class_linked_list_element.html#a0bcba8520cd0e8b80cdf365ef5b7907b">LinkedListElement::LinkedListElement</a></div><div class="ttdeci">LinkedListElement(const LinkedListElement &amp;linkedListElement)</div><div class="ttdoc">Konstruktor kopiujacy wewnetrznej klasy &#39;malych struktur&#39;. </div><div class="ttdef"><b>Definition:</b> <a href="linkedlistelement_8h_source.html#l00047">linkedlistelement.h:47</a></div></div>
+<div class="ttc" id="class_linked_list_element_html_a9bc684b1abc227f3a64a2836193e67c6"><div class="ttname"><a href="class_linked_list_element.html#a9bc684b1abc227f3a64a2836193e67c6">LinkedListElement::nextElement</a></div><div class="ttdeci">LinkedListElement * nextElement</div><div class="ttdoc">Liczba przechowywana. </div><div class="ttdef"><b>Definition:</b> <a href="linkedlistelement_8h_source.html#l00020">linkedlistelement.h:20</a></div></div>
+<div class="ttc" id="class_linked_list_element_html_acadbc2a5c35fb0fcdae522019c7bd06d"><div class="ttname"><a href="class_linked_list_element.html#acadbc2a5c35fb0fcdae522019c7bd06d">LinkedListElement::LinkedListElement</a></div><div class="ttdeci">LinkedListElement(ContentType &amp;arg)</div><div class="ttdoc">Konstruktor wewnetrznej klasy &#39;malych struktur&#39;. </div><div class="ttdef"><b>Definition:</b> <a href="linkedlistelement_8h_source.html#l00036">linkedlistelement.h:36</a></div></div>
+<div class="ttc" id="class_linked_list_element_html_a715e61c00463afad2486a0b8cb5c7325"><div class="ttname"><a href="class_linked_list_element.html#a715e61c00463afad2486a0b8cb5c7325">LinkedListElement::set</a></div><div class="ttdeci">void set(ContentType arg)</div><div class="ttdoc">Ustawia liczbe oraz klucz slowanika dla elementu. </div><div class="ttdef"><b>Definition:</b> <a href="linkedlistelement_8h_source.html#l00057">linkedlistelement.h:57</a></div></div>
+<div class="ttc" id="class_linked_list_element_html_a7961cbdbfbb9fadf636d1a47ad049b0c"><div class="ttname"><a href="class_linked_list_element.html#a7961cbdbfbb9fadf636d1a47ad049b0c">LinkedListElement::previousElement</a></div><div class="ttdeci">LinkedListElement * previousElement</div><div class="ttdoc">wskaznik do poprzedniej &#39;malej struktury&#39; w liscie </div><div class="ttdef"><b>Definition:</b> <a href="linkedlistelement_8h_source.html#l00022">linkedlistelement.h:22</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_463302e58bc74c0c35f534f40d40b0a3.html">program</a></li><li class="navelem"><a class="el" href="dir_16e14641fdda69a1405193b0d4291cd4.html">inc</a></li><li class="navelem"><a class="el" href="linkedlistelement_8h.html">linkedlistelement.h</a></li>
+    <li class="footer">Wygenerowano Pt, 15 maj 2015 20:17:25 dla Laboratorium 7 programem
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

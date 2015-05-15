@@ -9,11 +9,10 @@
 #define LINKEDLISTELEMENT_H_
 
 #include "linkedlist.h"
-#include "listelement.h"
 
 /// @brief Klasa 'malych struktur' gdzie jest numer i wskaznik do nas elementu
 template <class ContentType>
-class LinkedListElement : public ListElement<ContentType>{
+class LinkedListElement{
 	///  Liczba przechowywana
 public:
 	//ContentType content;
@@ -21,7 +20,7 @@ public:
 	LinkedListElement *nextElement;
 	///  wskaznik do poprzedniej 'malej struktury' w liscie
 	LinkedListElement *previousElement;
-public:
+	ContentType content;
 		/**
 	 * @brief Konstruktor wewnetrznej klasy 'malych struktur'
 	 */
@@ -34,7 +33,7 @@ public:
 	 * @brief Konstruktor wewnetrznej klasy 'malych struktur'
 	 * @param arg liczba do zapisania w kolejnym elemencie listy
 	 */
-	LinkedListElement(ContentType arg)
+	LinkedListElement(ContentType &arg)
 	{
 		this -> content = arg;
 		this -> nextElement =0;
@@ -43,12 +42,10 @@ public:
 	}
 	/**
 	 * @brief Konstruktor kopiujacy wewnetrznej klasy 'malych struktur'
-	 * @param myListElement Element o przekopiowania
+	 * @param linkedListElement Element o przekopiowania
 	 */
 	LinkedListElement(const LinkedListElement &linkedListElement)
 	{
-		//this->number = myListElement.number;
-		//this->nazwa = myListElement.nazwa;
 		this->content = linkedListElement.content;
 		this->nextElement = linkedListElement.nextElement;
 		this->previousElement = linkedListElement.previousElement;
@@ -60,7 +57,6 @@ public:
 	void set(ContentType arg)
 	{
 		this -> content = arg;
-		//this -> nazwa = str;
 	}
 	//friend class LinkedList;
 };

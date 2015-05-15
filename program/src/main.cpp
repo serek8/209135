@@ -17,7 +17,7 @@
 #include "observablemergesorter.h"
 #include "filestreamer.h"
 
-#define ILOSC_LICZB_DO_SORTOWANIA 1000
+#define ILOSC_LICZB_DO_SORTOWANIA 1
 
 int main(int argc, char *argv[])
 {
@@ -71,17 +71,17 @@ int main(int argc, char *argv[])
 		writeStringToFile("log.txt", "\t");
 
 		heapSorter.sort();
-		writeStringToFile("log.txt", heapSorter.observaters[0].content->getTimerValue());
+		writeStringToFile("log.txt", heapSorter.observaters[0]->getTimerValue());
 		writeStringToFile("log.txt", "\t");
 		heapSorter.list.free();
 
 		quickSorter.sort();
-		writeStringToFile("log.txt", quickSorter.observaters[0].content->getTimerValue());
+		writeStringToFile("log.txt", quickSorter.observaters[0]->getTimerValue());
 		writeStringToFile("log.txt", "\t");
 		quickSorter.list.free();
 
 		mergeSorter.sort();
-		writeStringToFile("log.txt", mergeSorter.observaters[0].content->getTimerValue());
+		writeStringToFile("log.txt", mergeSorter.observaters[0]->getTimerValue());
 		writeStringToFile("log.txt", "\n");
 		mergeSorter.list.free();
 		}

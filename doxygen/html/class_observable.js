@@ -4,5 +4,5 @@ var class_observable =
     [ "add", "class_observable.html#a18e7700c59126dbeb97d24844c6ed131", null ],
     [ "sendStartUpdateToObservers", "class_observable.html#a78df64057f152342a43f27979186a6ba", null ],
     [ "sendStopUpdateToObservers", "class_observable.html#a16f75ed1514a0cb7526b5a5d2b7ca7c6", null ],
-    [ "observaters", "class_observable.html#a23f06cfbce27372d95fb556ca1f392ee", null ]
+    [ "observaters", "class_observable.html#af5af34ef633e707ca1525415ee963b91", null ]
 ];

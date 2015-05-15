@@ -1,0 +1,309 @@
+\hypertarget{linkedlist_8h}{\subsection{linkedlist.\-h}
+\label{linkedlist_8h}\index{linkedlist.\-h@{linkedlist.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * mylist.h}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: Mar 12, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00008 \textcolor{preprocessor}{#ifndef LINKEDLIST\_H\_}
+00009 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define LINKEDLIST\_H\_}
+00010 \textcolor{preprocessor}{}
+00011 \textcolor{preprocessor}{#include <iostream>}
+00012 \textcolor{preprocessor}{#include <string>}
+00013 \textcolor{preprocessor}{#include "\hyperlink{linkedlistelement_8h}{linkedlistelement.h}"}
+00014 \textcolor{preprocessor}{#include "\hyperlink{observer_8h}{observer.h}"}
+00015 \textcolor{preprocessor}{#include "\hyperlink{list_8h}{list.h}"}
+00021 \textcolor{keyword}{template} <\textcolor{keyword}{class} ContentType>
+\hypertarget{linkedlist_8h_source_l00022}{}\hyperlink{class_linked_list}{00022} \textcolor{keyword}{class }\hyperlink{class_linked_list}{LinkedList} : \textcolor{keyword}{public} \hyperlink{class_list}{List}<ContentType>\{
+00023 
+00024 \textcolor{keyword}{public}:
+\hypertarget{linkedlist_8h_source_l00026}{}\hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{00026}         \textcolor{keywordtype}{int} \hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList};
+00027 
+00028 
+\hypertarget{linkedlist_8h_source_l00030}{}\hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{00030}         \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>} *
+      \hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement};
+\hypertarget{linkedlist_8h_source_l00032}{}\hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{00032}         \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>} *
+      \hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement};
+\hypertarget{linkedlist_8h_source_l00033}{}\hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{00033}         \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>} *\hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator};
+\hypertarget{linkedlist_8h_source_l00034}{}\hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{00034}         \textcolor{keywordtype}{int} \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}; \textcolor{comment}{// nie ruszac !}
+\hypertarget{linkedlist_8h_source_l00035}{}\hyperlink{class_linked_list_a8d354ba516e8270027bf617b121b49fe}{00035}         \textcolor{keywordtype}{int} \hyperlink{class_linked_list_a8d354ba516e8270027bf617b121b49fe}{isIteratorAfterPop};
+00037 
+\hypertarget{linkedlist_8h_source_l00038}{}\hyperlink{class_linked_list_a7528caae708f987831abf7ae722b5f18}{00038}         \hyperlink{class_linked_list_a7528caae708f987831abf7ae722b5f18}{LinkedList}()
+00039         \{
+00040                 \hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement} = \hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement} = \textcolor{keyword}{new} 
+      \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>};
+00041                 \hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList} = 0;
+00042                 \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId} =0;
+00043                 \hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator}=NULL;
+00044                 \hyperlink{class_linked_list_a8d354ba516e8270027bf617b121b49fe}{isIteratorAfterPop} = 1; \textcolor{comment}{//to znaczy ze jeszcze raz trzeba bedzie
+       sprawdzic pozycje iteratora 1- znaczy ze trzeba sprawdzic}
+00045         \}
+00046 
+\hypertarget{linkedlist_8h_source_l00047}{}\hyperlink{class_linked_list_a9819b4a94bea2ee29f424ae3192a0078}{00047}         \hyperlink{class_linked_list_a9819b4a94bea2ee29f424ae3192a0078}{LinkedList}(\hyperlink{class_list}{List<ContentType>} &list)
+00048         \{
+00049                 \hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement} = \hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement} = \textcolor{keyword}{new} 
+      \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>};
+00050                 \hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList} = 0;
+00051                 \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId} =0;
+00052                 \hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator}=NULL;
+00053                 \hyperlink{class_linked_list_a8d354ba516e8270027bf617b121b49fe}{isIteratorAfterPop} = 1; \textcolor{comment}{//to znaczy ze jeszcze raz trzeba bedzie
+       sprawdzic pozycje iteratora 1- znaczy ze trzeba sprawdzic}
+00054                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<list.\hyperlink{class_list_a61bc4a0a8a2103d503f88b79d758f271}{size}(); i++)
+00055                 \{
+00056                         this->\hyperlink{class_linked_list_a719c7b47925171fd7a72a35d0a581619}{push\_back}(list[i]);
+00057                 \}
+00058         \}
+\hypertarget{linkedlist_8h_source_l00059}{}\hyperlink{class_linked_list_ae0e04b65a2b2327a53db60fe2957063b}{00059}         \textcolor{keyword}{virtual} \hyperlink{class_linked_list_ae0e04b65a2b2327a53db60fe2957063b}{~LinkedList}()\{\};
+00060 
+\hypertarget{linkedlist_8h_source_l00065}{}\hyperlink{class_linked_list_ab399f1dc929c705e9cba628ae1f29254}{00065}         \textcolor{keywordtype}{int} &\hyperlink{class_linked_list_ab399f1dc929c705e9cba628ae1f29254}{size}()
+00066         \{
+00067                 \textcolor{keywordflow}{return} \hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList};
+00068         \}
+\hypertarget{linkedlist_8h_source_l00073}{}\hyperlink{class_linked_list_ad7634e21b0ccd370906c4f28baaffa38}{00073}         ContentType \hyperlink{class_linked_list_ad7634e21b0ccd370906c4f28baaffa38}{pop\_back}()
+00074         \{
+00075                 \textcolor{keywordflow}{if}(!(\hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList}--)) \{ \hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList}=0; std::cerr<<\textcolor{stringliteral}{"Nie ma takiego elementu
+      \(\backslash\)n"}; \textcolor{keywordflow}{return} 0; \}
+00076                 ContentType tmpNumber = (*(\textcolor{keyword}{this} -> \hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement})).content;
+00077                 \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>} *originLinkedListElement = \textcolor{keyword}{
+      this} -> \hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement};
+00078                 \textcolor{keyword}{this} -> \hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement} = \textcolor{keyword}{this} -> \hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement} -> previousElement;
+00079                 \textcolor{keyword}{delete} originLinkedListElement;
+00080                 \hyperlink{class_linked_list_a8d354ba516e8270027bf617b121b49fe}{isIteratorAfterPop}=1;
+00081                 \textcolor{keywordflow}{return} tmpNumber;
+00082         \}
+\hypertarget{linkedlist_8h_source_l00087}{}\hyperlink{class_linked_list_a64abea886f0dadf69a3726d1880c514a}{00087}         ContentType \hyperlink{class_linked_list_a64abea886f0dadf69a3726d1880c514a}{pop\_front}()
+00088         \{
+00089                 \textcolor{keywordflow}{if}(!(\hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList}--)) \{ \hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList}=0; std::cerr<<\textcolor{stringliteral}{"Nie ma takiego elementu
+      \(\backslash\)n"}; \textcolor{keywordflow}{return} 0; \}
+00090                 ContentType tmpNumber = (*(\textcolor{keyword}{this} -> \hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement})).content;
+00091                 \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>} *originLinkedListElement = \textcolor{keyword}{
+      this} -> \hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement};
+00092                 \textcolor{keyword}{this} -> \hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement} = \textcolor{keyword}{this} -> \hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement} -> nextElement;
+00093                 \textcolor{keyword}{delete} originLinkedListElement;
+00094                 \hyperlink{class_linked_list_a8d354ba516e8270027bf617b121b49fe}{isIteratorAfterPop}=1;
+00095                 \textcolor{keywordflow}{return} tmpNumber;
+00096         \}
+\hypertarget{linkedlist_8h_source_l00100}{}\hyperlink{class_linked_list_a719c7b47925171fd7a72a35d0a581619}{00100}         \textcolor{keywordtype}{void} \hyperlink{class_linked_list_a719c7b47925171fd7a72a35d0a581619}{push\_back}(ContentType &arg)
+00101         \{
+00102                 \textcolor{comment}{//std::cerr<<"\(\backslash\)n(push\_back): arg.content="<<arg.content;}
+00103                 \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>} *newLinkedListElement = \textcolor{keyword}{new} 
+      \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>}(arg);
+00104                 \textcolor{keywordflow}{if}(!\hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList}++) \{\hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement} = 
+      \hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement} = newLinkedListElement;\}
+00105                 \textcolor{comment}{//newLinkedListElement -> nextElement = 0;}
+00106                 newLinkedListElement -> previousElement = \textcolor{keyword}{this} -> \hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement};
+00107                 \textcolor{keyword}{this} -> \hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement} -> nextElement = newLinkedListElement;
+00108                 this->\hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement} = newLinkedListElement;
+00109         \}
+\hypertarget{linkedlist_8h_source_l00113}{}\hyperlink{class_linked_list_a9effa3698ad28e2f3401cd199f852e08}{00113}         \textcolor{keywordtype}{void} \hyperlink{class_linked_list_a9effa3698ad28e2f3401cd199f852e08}{push\_front}(ContentType &arg)
+00114         \{
+00115                 \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>} *newLinkedListElement = \textcolor{keyword}{new} 
+      \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>}(arg);
+00116                 \textcolor{keywordflow}{if}(!\hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList}++) \{\hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement} = 
+      \hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement} = newLinkedListElement;\}
+00117                 \textcolor{comment}{//newLinkedListElement -> previousElement =  0;}
+00118                 newLinkedListElement -> nextElement = \textcolor{keyword}{this} -> \hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement};
+00119                 \textcolor{keyword}{this} -> \hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement} -> previousElement = newLinkedListElement;
+00120                 this->\hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement} = newLinkedListElement;
+00121                 ++\hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId};
+00122         \}
+\hypertarget{linkedlist_8h_source_l00127}{}\hyperlink{class_linked_list_a2dcb9f488e5d179e89283a3f499acb76}{00127}         ContentType &\hyperlink{class_linked_list_a2dcb9f488e5d179e89283a3f499acb76}{show\_front}()
+00128         \{
+00129                 \textcolor{keywordflow}{return} \hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement}->content;
+00130         \}
+\hypertarget{linkedlist_8h_source_l00135}{}\hyperlink{class_linked_list_a437b5a0b96ab11f75e0391c76770186a}{00135}         ContentType &\hyperlink{class_linked_list_a437b5a0b96ab11f75e0391c76770186a}{show\_back}()
+00136         \{
+00137                 \textcolor{keywordflow}{return} \hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement}->content;
+00138         \}
+00139 
+00140 
+\hypertarget{linkedlist_8h_source_l00144}{}\hyperlink{class_linked_list_a245ba50906c85c1765a5f611d3f3b6c0}{00144}         \textcolor{keywordtype}{void}  \hyperlink{class_linked_list_a245ba50906c85c1765a5f611d3f3b6c0}{print}()
+00145         \{
+00146                 \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>} *elem = (this->
+      \hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement});
+00147                 std::cout<<\textcolor{stringliteral}{"\(\backslash\)nWyswietlam liste (size:"}<<this->\hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList}<<\textcolor{stringliteral}{"): "};
+00148                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i< this->\hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList}; i++)
+00149                 \{
+00150                         std::cout<<\textcolor{stringliteral}{" "}<<elem->\hyperlink{class_linked_list_element_a5df2cf5e9bdc5e2849a93114915f9702}{content};
+00151                         elem = elem->\hyperlink{class_linked_list_element_a9bc684b1abc227f3a64a2836193e67c6}{nextElement};
+00152                 \}
+00153         \}
+00154 
+\hypertarget{linkedlist_8h_source_l00159}{}\hyperlink{class_linked_list_ad99e35cef5826d1cd456713ff8358a86}{00159}         ContentType &\hyperlink{class_linked_list_ad99e35cef5826d1cd456713ff8358a86}{operator[]}(\textcolor{keywordtype}{int} numberOfElement)
+00160         \{
+00161                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nJestem w ["<<numberOfElement<<"] iterator="<<iteratorElementId;}
+00162                 \textcolor{keywordflow}{if}(numberOfElement > (\hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList}-1)) \textcolor{comment}{// jezeli wyszedlem poza liste}
+00163                         \{
+00164                                 std::cerr<<\textcolor{stringliteral}{"\(\backslash\)n! Error indeks o numerze: "}<<numberOfElement<<\textcolor{stringliteral}{" nie istnieje
+       !"};
+00165                                 \textcolor{keywordflow}{return} (*iterator).content;
+00166                         \}
+00167                 \textcolor{keywordflow}{if}(\hyperlink{class_linked_list_a8d354ba516e8270027bf617b121b49fe}{isIteratorAfterPop})
+00168                         \{
+00169                                 \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}=0;  \textcolor{comment}{// czyli iterator byl zpopowany}
+00170                                 \hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator} = \hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement};
+00171                                 \hyperlink{class_linked_list_a8d354ba516e8270027bf617b121b49fe}{isIteratorAfterPop}=0;
+00172                         \}
+00173                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nsprawdzam w ["<<numberOfElement<<"] iterator="<<iteratorElementId;}
+00174                 \textcolor{keywordflow}{if}((numberOfElement <= \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}-numberOfElement) &&(
+      \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}-numberOfElement>=0))
+00175                 \{
+00176                         \textcolor{comment}{//std::cerr<<"\(\backslash\)nJestem w if\_1";}
+00177                         \hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator} = (this->\hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement});
+00178                         \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId} = 0;
+00179                         \textcolor{keywordflow}{for} (; \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}< numberOfElement ; 
+      \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}++)
+00180                                 \hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator} = (\hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator}->nextElement);
+00181                 \}
+00182                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(numberOfElement > \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId})
+00183                 \{
+00184                         \textcolor{comment}{//std::cerr<<"\(\backslash\)nJestem w if\_2";}
+00185                         \textcolor{keywordflow}{for} (; \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}< numberOfElement ; 
+      \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}++)
+00186                                                 \hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator} = (\hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator}->nextElement);
+00187                 \}
+00188                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( numberOfElement < \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId})
+00189                 \{
+00190                         \textcolor{comment}{//std::cerr<<"\(\backslash\)nJestem w if\_3";}
+00191                         \textcolor{keywordflow}{for} (; \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}> numberOfElement ; 
+      \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}--)
+00192                                                 \hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator} = (\hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator}->previousElement);
+00193                 \}
+00194                 \textcolor{keywordflow}{return} (*iterator).content;
+00195         \}
+00196 
+\hypertarget{linkedlist_8h_source_l00197}{}\hyperlink{class_linked_list_a32febc46a989c7af9bf8043da069e7df}{00197}         \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>} &
+      \hyperlink{class_linked_list_a32febc46a989c7af9bf8043da069e7df}{getLinkedListElementById}(\textcolor{keywordtype}{int} numberOfElement)
+00198         \{
+00199                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nJestem w ["<<numberOfElement<<"] iterator="<<iteratorElementId;}
+00200                 \textcolor{keywordflow}{if}(numberOfElement > (\hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList}-1)) \textcolor{comment}{// jezeli wyszedlem poza liste}
+00201                         \{
+00202                                 std::cerr<<\textcolor{stringliteral}{"\(\backslash\)n! Error indeks o numerze: "}<<numberOfElement<<\textcolor{stringliteral}{" nie istnieje
+       !"};
+00203                                 \textcolor{keywordflow}{return} *\hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator};
+00204                         \}
+00205                 \textcolor{keywordflow}{if}(\hyperlink{class_linked_list_a8d354ba516e8270027bf617b121b49fe}{isIteratorAfterPop})
+00206                         \{
+00207                                 \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}=0;  \textcolor{comment}{// czyli iterator byl zpopowany}
+00208                                 \hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator} = \hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement};
+00209                                 \hyperlink{class_linked_list_a8d354ba516e8270027bf617b121b49fe}{isIteratorAfterPop}=0;
+00210                         \}
+00211                 \textcolor{comment}{//std::cerr<<"\(\backslash\)nsprawdzam w ["<<numberOfElement<<"] iterator="<<iteratorElementId;}
+00212                 \textcolor{keywordflow}{if}((numberOfElement <= \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}-numberOfElement) &&(
+      \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}-numberOfElement>=0))
+00213                 \{
+00214                         \textcolor{comment}{//std::cerr<<"\(\backslash\)nJestem w if\_1";}
+00215                         \hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator} = (this->\hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement});
+00216                         \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId} = 0;
+00217                         \textcolor{keywordflow}{for} (; \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}< numberOfElement ; 
+      \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}++)
+00218                                 \hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator} = (\hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator}->nextElement);
+00219                 \}
+00220                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(numberOfElement > \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId})
+00221                 \{
+00222                         \textcolor{comment}{//std::cerr<<"\(\backslash\)nJestem w if\_2";}
+00223                         \textcolor{keywordflow}{for} (; \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}< numberOfElement ; 
+      \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}++)
+00224                                                 \hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator} = (\hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator}->nextElement);
+00225                 \}
+00226                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( numberOfElement < \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId})
+00227                 \{
+00228                         \textcolor{comment}{//std::cerr<<"\(\backslash\)nJestem w if\_3";}
+00229                         \textcolor{keywordflow}{for} (; \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}> numberOfElement ; 
+      \hyperlink{class_linked_list_a6398cec56a986426925e4e651bc4725c}{iteratorElementId}--)
+00230                                                 \hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator} = (\hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator}->previousElement);
+00231                 \}
+00232                 \textcolor{keywordflow}{return} *\hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator};
+00233         \}
+00234 
+\hypertarget{linkedlist_8h_source_l00238}{}\hyperlink{class_linked_list_aa882477023311c1400a724edd415e362}{00238}         \textcolor{keywordtype}{void} \hyperlink{class_linked_list_aa882477023311c1400a724edd415e362}{insertAfter}(ContentType &arg, \textcolor{keywordtype}{int} iteratorID)
+00239         \{
+00240                 \textcolor{keywordflow}{if}(iteratorID==0 && this->\hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList}==0)  \{\hyperlink{class_linked_list_a9effa3698ad28e2f3401cd199f852e08}{push\_front}(arg); \textcolor{keywordflow}{return};\}
+00241                 \textcolor{keywordflow}{if}(iteratorID==this->\hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList}-1)  \{\hyperlink{class_linked_list_a719c7b47925171fd7a72a35d0a581619}{push\_back}(arg); \textcolor{keywordflow}{return};\}
+00242                 \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>} *newLinkedListElement = \textcolor{keyword}{new} 
+      \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>}(arg);
+00243                 \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>}
+00244                         &tmpThis=(*this).getLinkedListElementById(iteratorID),
+00245                         &tmpNext=(*this).getLinkedListElementById(iteratorID+1);
+00246                 \textcolor{keywordflow}{if}(!\hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList}++) \{\hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement} = 
+      \hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement} = newLinkedListElement;\}
+00247                 newLinkedListElement -> nextElement = tmpThis.\hyperlink{class_linked_list_element_a9bc684b1abc227f3a64a2836193e67c6}{nextElement};
+00248                 newLinkedListElement -> previousElement = &tmpThis;
+00249                 tmpThis.\hyperlink{class_linked_list_element_a9bc684b1abc227f3a64a2836193e67c6}{nextElement} = newLinkedListElement;
+00250                 tmpNext.\hyperlink{class_linked_list_element_a7961cbdbfbb9fadf636d1a47ad049b0c}{previousElement} = newLinkedListElement;
+00251                 \hyperlink{class_linked_list_a8d354ba516e8270027bf617b121b49fe}{isIteratorAfterPop}=1;
+00252         \}
+00253 
+00254 
+00255         \textcolor{comment}{//LinkedListElement operator[](int numberOfElement);}
+00256         \textcolor{comment}{//virtual LinkedList<ContentType> sort()}
+00257         \textcolor{comment}{//\{}
+00258         \textcolor{comment}{//      std::cerr<<"\(\backslash\)nError: Sortowanie z klasy LinkedList !!!";}
+00259         \textcolor{comment}{//      //return m;}
+00260         \textcolor{comment}{//\}}
+00261 
+\hypertarget{linkedlist_8h_source_l00262}{}\hyperlink{class_linked_list_a0dc224aa9930d4cbd80ecbd15c12b6d3}{00262}         \hyperlink{class_linked_list}{LinkedList<ContentType>} &\hyperlink{class_linked_list_a0dc224aa9930d4cbd80ecbd15c12b6d3}{operator=}(\textcolor{keyword}{const} 
+      \hyperlink{class_linked_list}{LinkedList<ContentType>} &pattern)
+00263         \{
+00264                 \textcolor{comment}{//std::cerr<<" @@@";}
+00265                 this->\hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList} = pattern.\hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList};
+00266                 this->\hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement} = pattern.\hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement};
+00267                 this->\hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement} = pattern.\hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement};
+00268                 this->\hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator}=pattern.\hyperlink{class_linked_list_a6f117a991b3e2e020f43807500b45f5f}{iterator};
+00269                 this->\hyperlink{class_linked_list_a8d354ba516e8270027bf617b121b49fe}{isIteratorAfterPop} = pattern.
+      \hyperlink{class_linked_list_a8d354ba516e8270027bf617b121b49fe}{isIteratorAfterPop};
+00270                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+00271         \}
+00272 \textcolor{comment}{//      List<ContentType> &operator=(const List<ContentType> &pattern)}
+00273 \textcolor{comment}{//      \{}
+00274 \textcolor{comment}{//              std::cerr<<" ###";}
+00280 \textcolor{comment}{}\textcolor{comment}{//              //this->cloneFrom(pattern);}
+00281 \textcolor{comment}{//              return *this;}
+00282 \textcolor{comment}{//      \}}
+00283 
+00284 \textcolor{comment}{/*      void cloneFrom(LinkedList<ContentType> patternList)}
+00285 \textcolor{comment}{        \{}
+00286 \textcolor{comment}{                LinkedList<ContentType> &clonedList = *new LinkedList<ContentType>;}
+00287 \textcolor{comment}{                // release memory from main list}
+00288 \textcolor{comment}{                while(this->size()) pop\_back();}
+00289 \textcolor{comment}{                for(int i=0; i<patternList.size(); i++)}
+00290 \textcolor{comment}{                        clonedList.push\_back(patternList[i]);}
+00291 \textcolor{comment}{                *this = clonedList;}
+00292 \textcolor{comment}{        \}}
+00293 \textcolor{comment}{*/}
+00294 
+\hypertarget{linkedlist_8h_source_l00295}{}\hyperlink{class_linked_list_aea53fafbbe620165ec3173ad3566785d}{00295}         \hyperlink{class_list}{List<ContentType>} &\hyperlink{class_linked_list_aea53fafbbe620165ec3173ad3566785d}{createObjectFromAbstractReference}
+      (\textcolor{comment}{/*LinkedList<ContentType> abstractPattern*/})
+00296         \{
+00297                 \textcolor{keywordflow}{return} *\textcolor{keyword}{new} \hyperlink{class_linked_list}{LinkedList<ContentType>};
+00298         \}
+00299 
+00300 
+00301 
+00302 \};
+00304 
+00306 
+00307 
+00308 
+00309 \textcolor{comment}{/*class LinkedListObserved : public LinkedList, public Observed}
+00310 \textcolor{comment}{\{}
+00311 \textcolor{comment}{public:}
+00312 \textcolor{comment}{        void mergeSort(LinkedList m)}
+00313 \textcolor{comment}{        \{}
+00314 \textcolor{comment}{        LinkedList::mergeSort(m);}
+00315 \textcolor{comment}{        powiadom();}
+00316 \textcolor{comment}{}
+00317 \textcolor{comment}{        \}}
+00318 \textcolor{comment}{        LinkedListObserved()\{\};}
+00319 \textcolor{comment}{        ~LinkedListObserved()\{\};}
+00320 \textcolor{comment}{}
+00321 \textcolor{comment}{}
+00322 \textcolor{comment}{\};*/}
+00323 
+00324 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* MYLIST\_H\_ */}\textcolor{preprocessor}{}
+\end{DoxyCode}

@@ -41,20 +41,18 @@ public:
 	 */
 	void quicksort(int lewy, int prawy)
 	{
-	    int pivot=list[(int)(lewy+prawy)/2].content;
-	    int i,j,x;
-	    i=lewy;
-	    j=prawy;
-	    if(enablePivot) pivot=(list[(int)(lewy+prawy)/2].content + list[lewy].content + list[prawy].content)/3;
+	    int pivot=list[(int)(lewy+prawy)/2];
+	    int i=lewy,j=prawy, x;
+	    if(enablePivot) pivot=(list[(int)(lewy+prawy)/2] + list[lewy] + list[prawy])/3;
 	    do
 	    {
-	        while(list[i].content<pivot) {i++; }
-	        while(list[j].content>pivot) {j--; }
+	        while(list[i]<pivot) {i++; }
+	        while(list[j]>pivot) {j--; }
 	        if(i<=j)
 	        {
-	            x=list[i].content;
-	            list[i].content=list[j].content;
-	            list[j].content=x;
+	        	x =list[i];
+	            list[i]=list[j];
+	            list[j]=x;
 	            i++;
 	            j--;
 	        }

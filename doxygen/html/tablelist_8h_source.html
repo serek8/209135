@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Laboratorium 7: Plik źródłowy tablelist.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Laboratorium 7
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('tablelist_8h_source.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">tablelist.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="tablelist_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * tablelist.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: May 15, 2015</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: serek8</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *   KLASA TESTOWA, PROSZE NIE SPRAWDZAC</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#ifndef TABLELIST_H_</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TABLELIST_H_</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="tablelist_8h.html#aae677826437e03c263f61721d9c4b5b9">   38</a></span>&#160;<span class="preprocessor">#define POCZATKOWAY_ROZMIAR_LISTY 100</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="list_8h.html">list.h</a>&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> ContentType&gt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_table_list.html">   44</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_table_list.html">TableList</a> : <span class="keyword">public</span> <a class="code" href="class_list.html">List</a>&lt;ContentType&gt;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_table_list.html#af60a60e1c22ab2e6f3745d5c1b5c1c1e">   53</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_table_list.html#af60a60e1c22ab2e6f3745d5c1b5c1c1e">n</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_table_list.html#a91f5e1b1f71e168541fca858c41a205d">   60</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_table_list.html#a91f5e1b1f71e168541fca858c41a205d">front_ptr</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_table_list.html#a7b74b24a81ee8ea30844fbca7b52c131">   67</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_table_list.html#a7b74b24a81ee8ea30844fbca7b52c131">back_ptr</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="class_table_list.html#a7a1afb80d51b9a3dae8b29cbc3335648">   74</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_table_list.html#a7a1afb80d51b9a3dae8b29cbc3335648">qcnt</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">   81</a></span>&#160;    ContentType *<a class="code" href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">L</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_table_list.html#a47a1bbbae3c53c5d8b21d1a136cdea9c">   93</a></span>&#160;    <a class="code" href="class_table_list.html#a47a1bbbae3c53c5d8b21d1a136cdea9c">TableList</a>(<span class="keywordtype">int</span> x)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <a class="code" href="class_table_list.html#af60a60e1c22ab2e6f3745d5c1b5c1c1e">n</a> = x;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      <a class="code" href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">L</a> = <span class="keyword">new</span> ContentType[x];</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <a class="code" href="class_table_list.html#a91f5e1b1f71e168541fca858c41a205d">front_ptr</a> = <a class="code" href="class_table_list.html#a7b74b24a81ee8ea30844fbca7b52c131">back_ptr</a> = <a class="code" href="class_table_list.html#a7a1afb80d51b9a3dae8b29cbc3335648">qcnt</a> = 0;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_table_list.html#a64df8a3b807cc133ff4765e63e02e185">   99</a></span>&#160;    <a class="code" href="class_table_list.html#a64df8a3b807cc133ff4765e63e02e185">TableList</a>()</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      <a class="code" href="class_table_list.html#af60a60e1c22ab2e6f3745d5c1b5c1c1e">n</a> = <a class="code" href="tablelist_8h.html#aae677826437e03c263f61721d9c4b5b9">POCZATKOWAY_ROZMIAR_LISTY</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <a class="code" href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">L</a> = <span class="keyword">new</span> ContentType[<a class="code" href="tablelist_8h.html#aae677826437e03c263f61721d9c4b5b9">POCZATKOWAY_ROZMIAR_LISTY</a>];</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <a class="code" href="class_table_list.html#a91f5e1b1f71e168541fca858c41a205d">front_ptr</a> = <a class="code" href="class_table_list.html#a7b74b24a81ee8ea30844fbca7b52c131">back_ptr</a> = <a class="code" href="class_table_list.html#a7a1afb80d51b9a3dae8b29cbc3335648">qcnt</a> = 0;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="class_table_list.html#a6f6a98b327876819e37a772ebcb31397">  106</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_table_list.html#a6f6a98b327876819e37a772ebcb31397">size</a>()</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_table_list.html#a7a1afb80d51b9a3dae8b29cbc3335648">qcnt</a>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="class_table_list.html#a5a897720624f4642b053de10c3fe2c80">  117</a></span>&#160;    <a class="code" href="class_table_list.html#a5a897720624f4642b053de10c3fe2c80">~TableList</a>()</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      <span class="keyword">delete</span> [] <a class="code" href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">L</a>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="class_table_list.html#a34cc5c57e27b953da15a9a4c9231991c">  127</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_table_list.html#a34cc5c57e27b953da15a9a4c9231991c">empty</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      <span class="keywordflow">return</span> !<a class="code" href="class_table_list.html#a7a1afb80d51b9a3dae8b29cbc3335648">qcnt</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="class_table_list.html#af4be5503b1239d7e18d3e384feff9fe5">  138</a></span>&#160;    ContentType &amp;<a class="code" href="class_table_list.html#af4be5503b1239d7e18d3e384feff9fe5">show_front</a>()</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">L</a>[<a class="code" href="class_table_list.html#a91f5e1b1f71e168541fca858c41a205d">front_ptr</a>];</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="class_table_list.html#a86e10ad40adb232d823de621cad47906">  150</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_table_list.html#a86e10ad40adb232d823de621cad47906">push_front</a>(ContentType v)</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        std::cerr&lt;&lt;<span class="stringliteral">&quot;!! PUSH FRONT JEST PUSTE&quot;</span>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="class_table_list.html#a273ca0eca7f99a3c2808d4b188a0a950">  160</a></span>&#160;    ContentType <a class="code" href="class_table_list.html#a273ca0eca7f99a3c2808d4b188a0a950">pop_front</a>()</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;          <span class="keywordflow">if</span>(<a class="code" href="class_table_list.html#a7a1afb80d51b9a3dae8b29cbc3335648">qcnt</a>)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;          {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <a class="code" href="class_table_list.html#a7a1afb80d51b9a3dae8b29cbc3335648">qcnt</a>--;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <a class="code" href="class_table_list.html#a91f5e1b1f71e168541fca858c41a205d">front_ptr</a>++;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_table_list.html#a91f5e1b1f71e168541fca858c41a205d">front_ptr</a> == <a class="code" href="class_table_list.html#af60a60e1c22ab2e6f3745d5c1b5c1c1e">n</a>) <a class="code" href="class_table_list.html#a91f5e1b1f71e168541fca858c41a205d">front_ptr</a> = 0;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;          }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;          <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="class_table_list.html#a715d5eb057d9801470b9fcc09f973828">  177</a></span>&#160;    ContentType &amp;<a class="code" href="class_table_list.html#a715d5eb057d9801470b9fcc09f973828">show_back</a>()</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    {</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;       <span class="keywordflow">return</span> <a class="code" href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">L</a>[<a class="code" href="class_table_list.html#a7b74b24a81ee8ea30844fbca7b52c131">back_ptr</a>];</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="class_table_list.html#af314e74d4a62e1464d15602e513c9f2d">  188</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_table_list.html#af314e74d4a62e1464d15602e513c9f2d">push_back</a>(ContentType v)</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        ContentType i;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;          <span class="keywordflow">if</span>(<a class="code" href="class_table_list.html#a7a1afb80d51b9a3dae8b29cbc3335648">qcnt</a> &lt; <a class="code" href="class_table_list.html#af60a60e1c22ab2e6f3745d5c1b5c1c1e">n</a>)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;          {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            i = <a class="code" href="class_table_list.html#a7b74b24a81ee8ea30844fbca7b52c131">back_ptr</a> + <a class="code" href="class_table_list.html#a7a1afb80d51b9a3dae8b29cbc3335648">qcnt</a>++;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="keywordflow">if</span>(i &gt;= <a class="code" href="class_table_list.html#af60a60e1c22ab2e6f3745d5c1b5c1c1e">n</a>) i -= <a class="code" href="class_table_list.html#af60a60e1c22ab2e6f3745d5c1b5c1c1e">n</a>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <a class="code" href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">L</a>[i] = v;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;          }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;          <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;          {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                  <span class="comment">//(*this).zwieksz_tablice_o_jeden();</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                  (*this).zwieksz_tablice_dwarazy();</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                    i = <a class="code" href="class_table_list.html#a7b74b24a81ee8ea30844fbca7b52c131">back_ptr</a> + <a class="code" href="class_table_list.html#a7a1afb80d51b9a3dae8b29cbc3335648">qcnt</a>++;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                    <span class="keywordflow">if</span>(i &gt;= <a class="code" href="class_table_list.html#af60a60e1c22ab2e6f3745d5c1b5c1c1e">n</a>) i -= <a class="code" href="class_table_list.html#af60a60e1c22ab2e6f3745d5c1b5c1c1e">n</a>;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                    <a class="code" href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">L</a>[i] = v;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;          }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="class_table_list.html#a1988aea382b8860e16dbc6b242d87619">  212</a></span>&#160;    ContentType <a class="code" href="class_table_list.html#a1988aea382b8860e16dbc6b242d87619">pop_back</a>()</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    }</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="class_table_list.html#a640180ba85532879f1648bc6802bdee7">  222</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_table_list.html#a640180ba85532879f1648bc6802bdee7">zwieksz_tablice_o_jeden</a>()</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keywordtype">int</span> *tab2 = <span class="keyword">new</span> <span class="keywordtype">int</span> [++<a class="code" href="class_table_list.html#af60a60e1c22ab2e6f3745d5c1b5c1c1e">n</a>];                      <span class="comment">// nowa tablica o rozmiarze o jeden wiekszym</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;<a class="code" href="class_table_list.html#af60a60e1c22ab2e6f3745d5c1b5c1c1e">n</a>-1;i++)</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                tab2[i] = <a class="code" href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">L</a>[i];                         <span class="comment">// skopjuj wszystkie dane ze starej tablicy</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keyword">delete</span>[] <a class="code" href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">L</a>;                                             <span class="comment">// zniszcz stara tablice</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <a class="code" href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">L</a> = tab2;                                               <span class="comment">// umiesć nową tablice pod wskaznik S</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    }</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
+<div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="class_table_list.html#a71739acdca32cb7333d0075e36c89fad">  239</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_table_list.html#a71739acdca32cb7333d0075e36c89fad">zwieksz_tablice_dwarazy</a>()</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keywordtype">int</span> nowy_rozmiar = 2*<a class="code" href="class_table_list.html#af60a60e1c22ab2e6f3745d5c1b5c1c1e">n</a>;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="keywordtype">int</span> *tab2 = <span class="keyword">new</span> ContentType [nowy_rozmiar];             <span class="comment">// nowa tablica o rozmiarze dwukrotnie wiekszym</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;<a class="code" href="class_table_list.html#af60a60e1c22ab2e6f3745d5c1b5c1c1e">n</a>;i++)</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        {</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                tab2[i] = <a class="code" href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">L</a>[i];                         <span class="comment">// skopjuj wszystkie dane ze starej tablicy</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        n = nowy_rozmiar;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keyword">delete</span>[] <a class="code" href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">L</a>;                                     <span class="comment">// zniszcz stara tablice</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <a class="code" href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">L</a> = tab2;                                       <span class="comment">// umiesć nową tablice pod wskaznik S</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    }</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="class_table_list.html#a17643c9355b4e209baf8ed2fe7fff88b">  263</a></span>&#160;    ContentType &amp;<a class="code" href="class_table_list.html#a17643c9355b4e209baf8ed2fe7fff88b">operator[]</a>(<span class="keywordtype">int</span> numberOfElement)</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    {</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">L</a>[numberOfElement+<a class="code" href="class_table_list.html#a91f5e1b1f71e168541fca858c41a205d">front_ptr</a>];</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    }</div>
+<div class="line"><a name="l00268"></a><span class="lineno"><a class="line" href="class_table_list.html#ac86216a7fa45df30895310d507e84870">  268</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_table_list.html#ac86216a7fa45df30895310d507e84870">print</a>()</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        std::cout&lt;&lt;<span class="stringliteral">&quot;\nWyswietlam liste:&quot;</span>;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="class_table_list.html#af60a60e1c22ab2e6f3745d5c1b5c1c1e">n</a>; i++)</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                std::cout&lt;&lt;(*this)[i]&lt;&lt;<span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
+<div class="line"><a name="l00277"></a><span class="lineno"><a class="line" href="class_table_list.html#ad9e40fae405779ab4e64b6b0b3b7043d">  277</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_table_list.html#ad9e40fae405779ab4e64b6b0b3b7043d">free</a>()</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keyword">delete</span> [] <a class="code" href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">L</a>;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        }</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
+<div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="class_table_list.html#aa1b1cd5af5d33c0248fd9080da7fc4be">  282</a></span>&#160;    <a class="code" href="class_list.html">List&lt;ContentType&gt;</a> &amp;<a class="code" href="class_table_list.html#aa1b1cd5af5d33c0248fd9080da7fc4be">createObjectFromAbstractReference</a>()</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        {</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">new</span> <a class="code" href="class_table_list.html">TableList&lt;ContentType&gt;</a>;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        }</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
+<div class="line"><a name="l00287"></a><span class="lineno"><a class="line" href="class_table_list.html#a3eb9c154160816f561aa96501c4c9c31">  287</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_table_list.html#a3eb9c154160816f561aa96501c4c9c31">insertAfter</a>(ContentType arg, <span class="keywordtype">int</span> iteratorID)</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        std::cerr&lt;&lt;<span class="stringliteral">&quot;(brak insert after)&quot;</span>;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;};</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* TABLELIST_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="class_table_list_html_af4be5503b1239d7e18d3e384feff9fe5"><div class="ttname"><a href="class_table_list.html#af4be5503b1239d7e18d3e384feff9fe5">TableList::show_front</a></div><div class="ttdeci">ContentType &amp; show_front()</div><div class="ttdoc">Metoda zwraca wartość elementu na samym początku listy. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00138">tablelist.h:138</a></div></div>
+<div class="ttc" id="class_table_list_html_a3eb9c154160816f561aa96501c4c9c31"><div class="ttname"><a href="class_table_list.html#a3eb9c154160816f561aa96501c4c9c31">TableList::insertAfter</a></div><div class="ttdeci">void insertAfter(ContentType arg, int iteratorID)</div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00287">tablelist.h:287</a></div></div>
+<div class="ttc" id="class_table_list_html_a7b74b24a81ee8ea30844fbca7b52c131"><div class="ttname"><a href="class_table_list.html#a7b74b24a81ee8ea30844fbca7b52c131">TableList::back_ptr</a></div><div class="ttdeci">int back_ptr</div><div class="ttdoc">Zmienna typu integer, wskazuje na koniec listy. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00067">tablelist.h:67</a></div></div>
+<div class="ttc" id="class_table_list_html_a71739acdca32cb7333d0075e36c89fad"><div class="ttname"><a href="class_table_list.html#a71739acdca32cb7333d0075e36c89fad">TableList::zwieksz_tablice_dwarazy</a></div><div class="ttdeci">void zwieksz_tablice_dwarazy()</div><div class="ttdoc">Metoda zwiększa rozmiar tablicy dwa razy. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00239">tablelist.h:239</a></div></div>
+<div class="ttc" id="class_table_list_html"><div class="ttname"><a href="class_table_list.html">TableList</a></div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00044">tablelist.h:44</a></div></div>
+<div class="ttc" id="class_table_list_html_a64df8a3b807cc133ff4765e63e02e185"><div class="ttname"><a href="class_table_list.html#a64df8a3b807cc133ff4765e63e02e185">TableList::TableList</a></div><div class="ttdeci">TableList()</div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00099">tablelist.h:99</a></div></div>
+<div class="ttc" id="class_table_list_html_af314e74d4a62e1464d15602e513c9f2d"><div class="ttname"><a href="class_table_list.html#af314e74d4a62e1464d15602e513c9f2d">TableList::push_back</a></div><div class="ttdeci">void push_back(ContentType v)</div><div class="ttdoc">Metoda dodaje element na końcu Listy. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00188">tablelist.h:188</a></div></div>
+<div class="ttc" id="class_table_list_html_ad9e40fae405779ab4e64b6b0b3b7043d"><div class="ttname"><a href="class_table_list.html#ad9e40fae405779ab4e64b6b0b3b7043d">TableList::free</a></div><div class="ttdeci">void free()</div><div class="ttdoc">Zwalnia zasoby listy. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00277">tablelist.h:277</a></div></div>
+<div class="ttc" id="class_table_list_html_a17643c9355b4e209baf8ed2fe7fff88b"><div class="ttname"><a href="class_table_list.html#a17643c9355b4e209baf8ed2fe7fff88b">TableList::operator[]</a></div><div class="ttdeci">ContentType &amp; operator[](int numberOfElement)</div><div class="ttdoc">wsadza element na liste </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00263">tablelist.h:263</a></div></div>
+<div class="ttc" id="class_table_list_html_a86e10ad40adb232d823de621cad47906"><div class="ttname"><a href="class_table_list.html#a86e10ad40adb232d823de621cad47906">TableList::push_front</a></div><div class="ttdeci">void push_front(ContentType v)</div><div class="ttdoc">Metoda dodaje element na początek Listy. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00150">tablelist.h:150</a></div></div>
+<div class="ttc" id="class_list_html"><div class="ttname"><a href="class_list.html">List</a></div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00016">list.h:16</a></div></div>
+<div class="ttc" id="class_table_list_html_a34cc5c57e27b953da15a9a4c9231991c"><div class="ttname"><a href="class_table_list.html#a34cc5c57e27b953da15a9a4c9231991c">TableList::empty</a></div><div class="ttdeci">bool empty(void)</div><div class="ttdoc">Sprawdza czy aby Lista nie jest pusta, brak elementów. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00127">tablelist.h:127</a></div></div>
+<div class="ttc" id="tablelist_8h_html_aae677826437e03c263f61721d9c4b5b9"><div class="ttname"><a href="tablelist_8h.html#aae677826437e03c263f61721d9c4b5b9">POCZATKOWAY_ROZMIAR_LISTY</a></div><div class="ttdeci">#define POCZATKOWAY_ROZMIAR_LISTY</div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00038">tablelist.h:38</a></div></div>
+<div class="ttc" id="list_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
+<div class="ttc" id="class_table_list_html_a640180ba85532879f1648bc6802bdee7"><div class="ttname"><a href="class_table_list.html#a640180ba85532879f1648bc6802bdee7">TableList::zwieksz_tablice_o_jeden</a></div><div class="ttdeci">void zwieksz_tablice_o_jeden()</div><div class="ttdoc">Metoda zwiększa rozmiar tablicy o jeden element. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00222">tablelist.h:222</a></div></div>
+<div class="ttc" id="class_table_list_html_af60a60e1c22ab2e6f3745d5c1b5c1c1e"><div class="ttname"><a href="class_table_list.html#af60a60e1c22ab2e6f3745d5c1b5c1c1e">TableList::n</a></div><div class="ttdeci">int n</div><div class="ttdoc">Zmienna typu integer, przechowuje rozmiar tablicy danych. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00053">tablelist.h:53</a></div></div>
+<div class="ttc" id="class_table_list_html_a47a1bbbae3c53c5d8b21d1a136cdea9c"><div class="ttname"><a href="class_table_list.html#a47a1bbbae3c53c5d8b21d1a136cdea9c">TableList::TableList</a></div><div class="ttdeci">TableList(int x)</div><div class="ttdoc">Konstruktor klasy TableList. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00093">tablelist.h:93</a></div></div>
+<div class="ttc" id="class_table_list_html_ac86216a7fa45df30895310d507e84870"><div class="ttname"><a href="class_table_list.html#ac86216a7fa45df30895310d507e84870">TableList::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Wyswietla liste. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00268">tablelist.h:268</a></div></div>
+<div class="ttc" id="class_table_list_html_a7a1afb80d51b9a3dae8b29cbc3335648"><div class="ttname"><a href="class_table_list.html#a7a1afb80d51b9a3dae8b29cbc3335648">TableList::qcnt</a></div><div class="ttdeci">int qcnt</div><div class="ttdoc">Zmienna typu integer, zlicza ilosc elementow na liscie. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00074">tablelist.h:74</a></div></div>
+<div class="ttc" id="class_table_list_html_a5a897720624f4642b053de10c3fe2c80"><div class="ttname"><a href="class_table_list.html#a5a897720624f4642b053de10c3fe2c80">TableList::~TableList</a></div><div class="ttdeci">~TableList()</div><div class="ttdoc">Destruktor klasy TableList. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00117">tablelist.h:117</a></div></div>
+<div class="ttc" id="class_table_list_html_a6f6a98b327876819e37a772ebcb31397"><div class="ttname"><a href="class_table_list.html#a6f6a98b327876819e37a772ebcb31397">TableList::size</a></div><div class="ttdeci">int size()</div><div class="ttdoc">Pobiera rozmiar listy. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00106">tablelist.h:106</a></div></div>
+<div class="ttc" id="class_table_list_html_aa1b1cd5af5d33c0248fd9080da7fc4be"><div class="ttname"><a href="class_table_list.html#aa1b1cd5af5d33c0248fd9080da7fc4be">TableList::createObjectFromAbstractReference</a></div><div class="ttdeci">List&lt; ContentType &gt; &amp; createObjectFromAbstractReference()</div><div class="ttdoc">Wzorzec projektowy - fabryki abstrakcyjnej. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00282">tablelist.h:282</a></div></div>
+<div class="ttc" id="class_table_list_html_a715d5eb057d9801470b9fcc09f973828"><div class="ttname"><a href="class_table_list.html#a715d5eb057d9801470b9fcc09f973828">TableList::show_back</a></div><div class="ttdeci">ContentType &amp; show_back()</div><div class="ttdoc">Metoda zwraca wartość elementu na samym końcu listy. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00177">tablelist.h:177</a></div></div>
+<div class="ttc" id="class_table_list_html_a91f5e1b1f71e168541fca858c41a205d"><div class="ttname"><a href="class_table_list.html#a91f5e1b1f71e168541fca858c41a205d">TableList::front_ptr</a></div><div class="ttdeci">int front_ptr</div><div class="ttdoc">Zmienna typu integer, wskazuje na początek listy. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00060">tablelist.h:60</a></div></div>
+<div class="ttc" id="class_table_list_html_a1988aea382b8860e16dbc6b242d87619"><div class="ttname"><a href="class_table_list.html#a1988aea382b8860e16dbc6b242d87619">TableList::pop_back</a></div><div class="ttdeci">ContentType pop_back()</div><div class="ttdoc">Metoda zdejmuje element z końca Listy. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00212">tablelist.h:212</a></div></div>
+<div class="ttc" id="class_table_list_html_a18c24d5cce01d71624b04434ad4e5b91"><div class="ttname"><a href="class_table_list.html#a18c24d5cce01d71624b04434ad4e5b91">TableList::L</a></div><div class="ttdeci">ContentType * L</div><div class="ttdoc">Wskażnik na dane typu integer, wskazuje na tablice danych. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00081">tablelist.h:81</a></div></div>
+<div class="ttc" id="class_table_list_html_a273ca0eca7f99a3c2808d4b188a0a950"><div class="ttname"><a href="class_table_list.html#a273ca0eca7f99a3c2808d4b188a0a950">TableList::pop_front</a></div><div class="ttdeci">ContentType pop_front()</div><div class="ttdoc">Metoda zdejmuje element z początku Listy. </div><div class="ttdef"><b>Definition:</b> <a href="tablelist_8h_source.html#l00160">tablelist.h:160</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_463302e58bc74c0c35f534f40d40b0a3.html">program</a></li><li class="navelem"><a class="el" href="dir_16e14641fdda69a1405193b0d4291cd4.html">inc</a></li><li class="navelem"><a class="el" href="tablelist_8h.html">tablelist.h</a></li>
+    <li class="footer">Wygenerowano Pt, 15 maj 2015 20:14:39 dla Laboratorium 7 programem
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

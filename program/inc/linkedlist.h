@@ -13,7 +13,6 @@
 #include "linkedlistelement.h"
 #include "observer.h"
 #include "list.h"
-#include "listelement.h"
 /**
  * @brief Lista dwukierunkowa
  *
@@ -71,20 +70,10 @@ public:
 	 * @brief Zwraca element ostatni w liscie
 	 * @return Zwraca element ostatni w liscie
 	 */
-	/*LinkedListElement<ContentType> &pop_back()
+	ContentType pop_back()
 	{
-		if(!(sizeOfList--)) { sizeOfList=0; return (*(new LinkedListElement<ContentType>)); }
-		LinkedListElement<ContentType> tmpNumber = *(this -> lastElement);
-		LinkedListElement<ContentType> *originLinkedListElement = this -> lastElement;
-		this -> lastElement = this -> lastElement -> previousElement;
-		delete originLinkedListElement;
-		isIteratorAfterPop=1;
-		return tmpNumber;
-	}*/
-	ListElement<ContentType> pop_back()
-	{
-		if(!(sizeOfList--)) { sizeOfList=0; return (*(new LinkedListElement<ContentType>)); }
-		LinkedListElement<ContentType> tmpNumber = *(this -> lastElement);
+		if(!(sizeOfList--)) { sizeOfList=0; std::cerr<<"Nie ma takiego elementu\n"; return 0; }
+		ContentType tmpNumber = (*(this -> lastElement)).content;
 		LinkedListElement<ContentType> *originLinkedListElement = this -> lastElement;
 		this -> lastElement = this -> lastElement -> previousElement;
 		delete originLinkedListElement;
@@ -95,13 +84,12 @@ public:
 	 * @brief Zwraca element pierwszy w liscie
 	 * @return Zwraca element pierwszy w liscie
 	 */
-	ListElement<ContentType> pop_front()
+	ContentType pop_front()
 	{
-		if(!(sizeOfList--)) { sizeOfList=0; return (*(new LinkedListElement<ContentType>())); }
-		LinkedListElement<ContentType> tmpNumber = *(this -> firstElement);
+		if(!(sizeOfList--)) { sizeOfList=0; std::cerr<<"Nie ma takiego elementu\n"; return 0; }
+		ContentType tmpNumber = (*(this -> firstElement)).content;
 		LinkedListElement<ContentType> *originLinkedListElement = this -> firstElement;
 		this -> firstElement = this -> firstElement -> nextElement;
-
 		delete originLinkedListElement;
 		isIteratorAfterPop=1;
 		return tmpNumber;
@@ -109,7 +97,7 @@ public:
 	/**
 	 * @brief Wklada element na ostatnie miejsce na liscie
 	 */
-	void push_back(ContentType arg)
+	void push_back(ContentType &arg)
 	{
 		//std::cerr<<"\n(push_back): arg.content="<<arg.content;
 		LinkedListElement<ContentType> *newLinkedListElement = new LinkedListElement<ContentType>(arg);
@@ -122,7 +110,7 @@ public:
 	/**
 	 * @brief Wklada element na pierwsze miejsce na liscie
 	 */
-	void push_front(ContentType arg)
+	void push_front(ContentType &arg)
 	{
 		LinkedListElement<ContentType> *newLinkedListElement = new LinkedListElement<ContentType>(arg);
 		if(!sizeOfList++) {firstElement = lastElement = newLinkedListElement;}
@@ -153,7 +141,7 @@ public:
 	/**
 	 * @brief Wyswietla elementy listy
 	 */
-	void  printList()
+	void  print()
 	{
 		LinkedListElement<ContentType> *elem = (this->firstElement);
 		std::cout<<"\nWyswietlam liste (size:"<<this->sizeOfList<<"): ";
@@ -168,7 +156,45 @@ public:
 	 * @brief Pobiera element z listy
 	 * @return Zwraca 0 gdy zapisywanie powiodlo sie
 	 */
-	LinkedListElement<ContentType> &operator[](int numberOfElement)
+	ContentType &operator[](int numberOfElement)
+	{
+		//std::cerr<<"\nJestem w ["<<numberOfElement<<"] iterator="<<iteratorElementId;
+		if(numberOfElement > (sizeOfList-1)) // jezeli wyszedlem poza liste
+			{
+				std::cerr<<"\n! Error indeks o numerze: "<<numberOfElement<<" nie istnieje !";
+				return (*iterator).content;
+			}
+		if(isIteratorAfterPop)
+			{
+				iteratorElementId=0;  // czyli iterator byl zpopowany
+				iterator = firstElement;
+				isIteratorAfterPop=0;
+			}
+		//std::cerr<<"\nsprawdzam w ["<<numberOfElement<<"] iterator="<<iteratorElementId;
+		if((numberOfElement <= iteratorElementId-numberOfElement) &&(iteratorElementId-numberOfElement>=0))
+		{
+			//std::cerr<<"\nJestem w if_1";
+			iterator = (this->firstElement);
+			iteratorElementId = 0;
+			for (; iteratorElementId< numberOfElement ; iteratorElementId++)
+				iterator = (iterator->nextElement);
+		}
+		else if(numberOfElement > iteratorElementId)
+		{
+			//std::cerr<<"\nJestem w if_2";
+			for (; iteratorElementId< numberOfElement ; iteratorElementId++)
+						iterator = (iterator->nextElement);
+		}
+		else if( numberOfElement < iteratorElementId)
+		{
+			//std::cerr<<"\nJestem w if_3";
+			for (; iteratorElementId> numberOfElement ; iteratorElementId--)
+						iterator = (iterator->previousElement);
+		}
+		return (*iterator).content;
+	}
+
+	LinkedListElement<ContentType> &getLinkedListElementById(int numberOfElement)
 	{
 		//std::cerr<<"\nJestem w ["<<numberOfElement<<"] iterator="<<iteratorElementId;
 		if(numberOfElement > (sizeOfList-1)) // jezeli wyszedlem poza liste
@@ -209,12 +235,14 @@ public:
 	/**
 	 * @brief Wsadza element po obiekcie iteratora
 	 */
-	void insertAfter(LinkedListElement<ContentType> arg, int iteratorID)
+	void insertAfter(ContentType &arg, int iteratorID)
 	{
-		if(iteratorID==0 && this->sizeOfList==0)  {push_front(arg.content); return;}
-		if(iteratorID==this->sizeOfList-1)  {push_back(arg.content); return;}
+		if(iteratorID==0 && this->sizeOfList==0)  {push_front(arg); return;}
+		if(iteratorID==this->sizeOfList-1)  {push_back(arg); return;}
 		LinkedListElement<ContentType> *newLinkedListElement = new LinkedListElement<ContentType>(arg);
-		LinkedListElement<ContentType> &tmpThis=(*this)[iteratorID], &tmpNext=(*this)[iteratorID+1];
+		LinkedListElement<ContentType>
+			&tmpThis=(*this).getLinkedListElementById(iteratorID),
+			&tmpNext=(*this).getLinkedListElementById(iteratorID+1);
 		if(!sizeOfList++) {firstElement = lastElement = newLinkedListElement;}
 		newLinkedListElement -> nextElement = tmpThis.nextElement;
 		newLinkedListElement -> previousElement = &tmpThis;

@@ -1,5 +1,5 @@
 var class_sorter =
 [
-    [ "~Sorter", "class_sorter.html#ac71eebbce06b3fa6a3280c5733d999a5", null ],
-    [ "sort", "class_sorter.html#a4a82d8151d6172802d1e60cb30c7d7d3", null ]
+    [ "~Sorter", "class_sorter.html#a342ce2c818a08a76362f898446f023ee", null ],
+    [ "sort", "class_sorter.html#a880cfd8969b78557ed207ad6f2bd4819", null ]
 ];

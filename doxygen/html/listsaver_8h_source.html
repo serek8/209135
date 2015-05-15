@@ -79,21 +79,21 @@ $(document).ready(function(){initNavTree('listsaver_8h_source.html','');});
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> MyListElementType&gt;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> ContentType&gt;</div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_list_saver.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_list_saver.html">ListSaver</a></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_list_saver.html#ac803162ee7ee2580226d530f89683ecb">   19</a></span>&#160;        <a class="code" href="class_list.html">List&lt;MyListElementType&gt;</a> &amp;<a class="code" href="class_list_saver.html#ac803162ee7ee2580226d530f89683ecb">list</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_list_saver.html#a6af039caf1e8895cf77097a942bd870d">   19</a></span>&#160;        <a class="code" href="class_list.html">List&lt;ContentType&gt;</a> &amp;<a class="code" href="class_list_saver.html#a6af039caf1e8895cf77097a942bd870d">list</a>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_list_saver.html#a21653fc0fc232e603b8fc47e165e771e">   24</a></span>&#160;        <a class="code" href="class_list_saver.html#a21653fc0fc232e603b8fc47e165e771e">ListSaver</a>(<a class="code" href="class_my_list.html">MyList&lt;MyListElementType&gt;</a> &amp;listArgument):</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <a class="code" href="class_list_saver.html#ac803162ee7ee2580226d530f89683ecb">list</a>(listArgument)</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_list_saver.html#ac4ad5223df78883a0301c3835a0eae55">   24</a></span>&#160;        <a class="code" href="class_list_saver.html#ac4ad5223df78883a0301c3835a0eae55">ListSaver</a>(MyList&lt;ContentType&gt; &amp;listArgument):</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <a class="code" href="class_list_saver.html#a6af039caf1e8895cf77097a942bd870d">list</a>(listArgument)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_list_saver.html#aca01f3dc903c68db05b23edcb7b11918">   32</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_list_saver.html#aca01f3dc903c68db05b23edcb7b11918">saveToFile</a>(std::string nazwaPliku)</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_list_saver.html#afd2e2fed3c727a4f025e3ec3ab3d3831">   32</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_list_saver.html#afd2e2fed3c727a4f025e3ec3ab3d3831">saveToFile</a>(std::string nazwaPliku)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                std::ofstream streamToFile;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                streamToFile.open (nazwaPliku.c_str(), std::ofstream::out);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="class_list_saver.html#ac803162ee7ee2580226d530f89683ecb">list</a>.size() ; i++)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        streamToFile &lt;&lt; <span class="charliteral">&#39;{&#39;</span>&lt;&lt;<a class="code" href="class_list_saver.html#ac803162ee7ee2580226d530f89683ecb">list</a>[i].content&lt;&lt;<span class="stringliteral">&quot;} &quot;</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="class_list_saver.html#a6af039caf1e8895cf77097a942bd870d">list</a>.size() ; i++)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        streamToFile &lt;&lt; <span class="charliteral">&#39;{&#39;</span>&lt;&lt;<a class="code" href="class_list_saver.html#a6af039caf1e8895cf77097a942bd870d">list</a>[i].content&lt;&lt;<span class="stringliteral">&quot;} &quot;</span>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                streamToFile.close();</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
@@ -104,19 +104,18 @@ $(document).ready(function(){initNavTree('listsaver_8h_source.html','');});
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* LISTSAVER_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="class_list_saver_html_aca01f3dc903c68db05b23edcb7b11918"><div class="ttname"><a href="class_list_saver.html#aca01f3dc903c68db05b23edcb7b11918">ListSaver::saveToFile</a></div><div class="ttdeci">void saveToFile(std::string nazwaPliku)</div><div class="ttdoc">Zapisuje liste do pliku. </div><div class="ttdef"><b>Definition:</b> <a href="listsaver_8h_source.html#l00032">listsaver.h:32</a></div></div>
-<div class="ttc" id="class_list_saver_html_a21653fc0fc232e603b8fc47e165e771e"><div class="ttname"><a href="class_list_saver.html#a21653fc0fc232e603b8fc47e165e771e">ListSaver::ListSaver</a></div><div class="ttdeci">ListSaver(MyList&lt; MyListElementType &gt; &amp;listArgument)</div><div class="ttdoc">Konstruktor pobierajacy referencje do listy do zapisu. </div><div class="ttdef"><b>Definition:</b> <a href="listsaver_8h_source.html#l00024">listsaver.h:24</a></div></div>
-<div class="ttc" id="class_list_html"><div class="ttname"><a href="class_list.html">List</a></div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00017">list.h:17</a></div></div>
+<div class="ttc" id="class_list_html"><div class="ttname"><a href="class_list.html">List</a></div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00016">list.h:16</a></div></div>
 <div class="ttc" id="class_list_saver_html"><div class="ttname"><a href="class_list_saver.html">ListSaver</a></div><div class="ttdef"><b>Definition:</b> <a href="listsaver_8h_source.html#l00015">listsaver.h:15</a></div></div>
-<div class="ttc" id="class_my_list_html"><div class="ttname"><a href="class_my_list.html">MyList</a></div><div class="ttdoc">Lista dwukierunkowa. </div><div class="ttdef"><b>Definition:</b> <a href="mylist_8h_source.html#l00023">mylist.h:23</a></div></div>
-<div class="ttc" id="class_list_saver_html_ac803162ee7ee2580226d530f89683ecb"><div class="ttname"><a href="class_list_saver.html#ac803162ee7ee2580226d530f89683ecb">ListSaver::list</a></div><div class="ttdeci">List&lt; MyListElementType &gt; &amp; list</div><div class="ttdoc">Klasa pozwalająca na zapis Listy do pliku. </div><div class="ttdef"><b>Definition:</b> <a href="listsaver_8h_source.html#l00019">listsaver.h:19</a></div></div>
+<div class="ttc" id="class_list_saver_html_ac4ad5223df78883a0301c3835a0eae55"><div class="ttname"><a href="class_list_saver.html#ac4ad5223df78883a0301c3835a0eae55">ListSaver::ListSaver</a></div><div class="ttdeci">ListSaver(MyList&lt; ContentType &gt; &amp;listArgument)</div><div class="ttdoc">Konstruktor pobierajacy referencje do listy do zapisu. </div><div class="ttdef"><b>Definition:</b> <a href="listsaver_8h_source.html#l00024">listsaver.h:24</a></div></div>
+<div class="ttc" id="class_list_saver_html_a6af039caf1e8895cf77097a942bd870d"><div class="ttname"><a href="class_list_saver.html#a6af039caf1e8895cf77097a942bd870d">ListSaver::list</a></div><div class="ttdeci">List&lt; ContentType &gt; &amp; list</div><div class="ttdoc">Klasa pozwalająca na zapis Listy do pliku. </div><div class="ttdef"><b>Definition:</b> <a href="listsaver_8h_source.html#l00019">listsaver.h:19</a></div></div>
+<div class="ttc" id="class_list_saver_html_afd2e2fed3c727a4f025e3ec3ab3d3831"><div class="ttname"><a href="class_list_saver.html#afd2e2fed3c727a4f025e3ec3ab3d3831">ListSaver::saveToFile</a></div><div class="ttdeci">void saveToFile(std::string nazwaPliku)</div><div class="ttdoc">Zapisuje liste do pliku. </div><div class="ttdef"><b>Definition:</b> <a href="listsaver_8h_source.html#l00032">listsaver.h:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_463302e58bc74c0c35f534f40d40b0a3.html">program</a></li><li class="navelem"><a class="el" href="dir_16e14641fdda69a1405193b0d4291cd4.html">inc</a></li><li class="navelem"><a class="el" href="listsaver_8h.html">listsaver.h</a></li>
-    <li class="footer">Wygenerowano Cz, 14 maj 2015 23:21:54 dla Laboratorium 7 programem
+    <li class="footer">Wygenerowano Pt, 15 maj 2015 20:17:25 dla Laboratorium 7 programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

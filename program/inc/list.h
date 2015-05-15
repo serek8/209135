@@ -8,7 +8,6 @@
 #ifndef LIST_H_
 #define LIST_H_
 
-#include "listelement.h"
 #include "list.h"
 
 /** Interface dla klasy przedstawiających listy
@@ -27,31 +26,31 @@ public:
 	/**	@brief Zwraca ostatni element z listy
 	 *	@return ostatni element z listy
 	 */
-	ListElement<ContentType> virtual pop_back()	=	0;
+	ContentType virtual pop_back()	=	0;
 
 	/**	@brief Zwraca pierwszy element z listy
 	 *	@return pierwszy element z listy
 	 */
-	ListElement<ContentType> virtual pop_front() 		= 	0;
+	ContentType virtual pop_front() 		= 	0;
 
 	/**	@brief Wyswietla liste
 	 */
-	void virtual printList()	=	0;
-	void virtual push_back(ContentType arg)	=	0;
+	void virtual print()	=	0;
+	void virtual push_back(ContentType &arg)	=	0;
 
 	/**	@brief Wsadza ContentType do listy na poczatek
 	 */
-	void virtual push_front(ContentType arg)	=	0;
+	void virtual push_front(ContentType &arg)	=	0;
 
 	/**	@brief Wsadza ContentType do listy na koniec
 	 */
-	LinkedListElement<ContentType> virtual &operator[](int numberOfElement)		=	0;
+	ContentType virtual &operator[](int numberOfElement)		=	0;
 
 	/**	@brief Wsadza ContentType po elemencie
 	 * 	@param arg Element do wsadzenia
 	 * 	@param iteratorID id elementu do wsadzenia
 	 */
-	void virtual insertAfter(LinkedListElement<ContentType> arg, int iteratorID)	=	0;
+	void virtual insertAfter(ContentType &arg, int iteratorID)	=	0;
 
 	/**	@brief Pokazue pierwszy element na liscie
 	 */
@@ -71,7 +70,7 @@ public:
 		// release memory from main list
 		while(this->size()) pop_back();
 		for(int i=0; i<patternList.size(); i++)
-			this->push_back(patternList[i].content);
+			this->push_back(patternList[i]);
 	}
 
 	/**	@brief Wzorzec projektowy - fabryki abstrakcyjnej

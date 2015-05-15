@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 68.728522
+%%BoundingBox: 0 0 500 79.051383
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,7 +19,7 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 7.275000 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 6.325000 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
@@ -173,13 +173,13 @@
 
 boxfont setfont
 1 boundaspect scale
-(Sorter< MyListElementType >) cw
-(HeapSorter< MyListElementType >) cw
-(MergeSorter< MyListElementType >) cw
-(QuickSorter< MyListElementType >) cw
-(ObservableHeapSorter< MyListElementType >) cw
-(ObservableMergeSorter< MyListElementType >) cw
-(ObservableQuickSorter< MyListElementType >) cw
+(Sorter< ContentType >) cw
+(HeapSorter< ContentType >) cw
+(MergeSorter< ContentType >) cw
+(QuickSorter< ContentType >) cw
+(ObservableHeapSorter< ContentType >) cw
+(ObservableMergeSorter< ContentType >) cw
+(ObservableQuickSorter< ContentType >) cw
 /boxwidth boxwidth marginwidth 2 mul add def
 /xspacing boxwidth distx add def
 /yspacing boxheight disty add def
@@ -191,13 +191,13 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (Sorter< MyListElementType >) 1.000000 2.000000 box
- (HeapSorter< MyListElementType >) 0.000000 1.000000 box
- (MergeSorter< MyListElementType >) 1.000000 1.000000 box
- (QuickSorter< MyListElementType >) 2.000000 1.000000 box
- (ObservableHeapSorter< MyListElementType >) 0.000000 0.000000 box
- (ObservableMergeSorter< MyListElementType >) 1.000000 0.000000 box
- (ObservableQuickSorter< MyListElementType >) 2.000000 0.000000 box
+ (Sorter< ContentType >) 1.000000 2.000000 box
+ (HeapSorter< ContentType >) 0.000000 1.000000 box
+ (MergeSorter< ContentType >) 1.000000 1.000000 box
+ (QuickSorter< ContentType >) 2.000000 1.000000 box
+ (ObservableHeapSorter< ContentType >) 0.000000 0.000000 box
+ (ObservableMergeSorter< ContentType >) 1.000000 0.000000 box
+ (ObservableQuickSorter< ContentType >) 2.000000 0.000000 box
 
 % ----- relations -----
 
