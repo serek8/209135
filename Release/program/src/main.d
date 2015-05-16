@@ -4,7 +4,6 @@ program/src/main.d: ../program/src/main.cpp \
  /home/serek8/workspace/Labki/program/inc/linkedlistelement.h \
  /home/serek8/workspace/Labki/program/inc/observer.h \
  /home/serek8/workspace/Labki/program/inc/list.h \
- /home/serek8/workspace/Labki/program/inc/tablelist.h \
  /home/serek8/workspace/Labki/program/inc/linkedlist.h \
  /home/serek8/workspace/Labki/program/inc/mybenchmark.h \
  /home/serek8/workspace/Labki/program/inc/observable.h \
@@ -28,8 +27,6 @@ program/src/main.d: ../program/src/main.cpp \
 /home/serek8/workspace/Labki/program/inc/observer.h:
 
 /home/serek8/workspace/Labki/program/inc/list.h:
-
-/home/serek8/workspace/Labki/program/inc/tablelist.h:
 
 /home/serek8/workspace/Labki/program/inc/linkedlist.h:
 

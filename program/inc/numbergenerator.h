@@ -13,7 +13,6 @@
 #include <iostream>
 #include "linkedlist.h"
 #include <string>
-#include "tablelist.h"
 
 #define MAX_HEX_ASCII_KOD 127
 #define ROZMIAR_STRINGU 20

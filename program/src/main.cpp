@@ -17,7 +17,7 @@
 #include "observablemergesorter.h"
 #include "filestreamer.h"
 
-#define ILOSC_LICZB_DO_SORTOWANIA 1
+#define ILOSC_LICZB_DO_SORTOWANIA 1000
 
 int main(int argc, char *argv[])
 {
