@@ -8,7 +8,7 @@
 #include <iostream>
 #include <unistd.h>
 //#include "numbergenerator.h"
-#include "tree.h"
+#include "avltree.h"
 
 int main(int argc, char *argv[])
 {
@@ -36,11 +36,22 @@ int main(int argc, char *argv[])
 	//if(!isSetN) {std::cerr<<"\nNie podano argumentu: -n X\n"; return -1;}
 
 
-	Tree<int> tree(5);
-	tree.add(3);
-	tree.add(6);
-	tree.print();
+	AVL tree;
+	AVLNode *node;
 
+	node= new AVLNode();	node->key = 3;
+	tree.insert(node);
+	tree.walk(tree.root);
+
+	node= new AVLNode();	node->key = 5;
+	tree.insert(node);
+	tree.walk(tree.root);
+
+	node= new AVLNode();	node->key = 5;
+	tree.insert(node);
+	tree.walk(tree.root);
+
+	tree.search(5);
 
 	std::cout<<std::endl;
 	return 0;
