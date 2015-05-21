@@ -31,6 +31,11 @@ public:
     	for(int i=0; i<observaters.size(); i++)
     		observaters[i].content->receivedStopUpdate();
     }
+    void sendStopUpdateToObserversAndSaveToFile () {
+    	for(int i=0; i<observaters.size(); i++)
+    		observaters[i].content->receivedStopUpdateAndSaveToFile();
+    }
+
 
 	virtual ~Observable(){}
 

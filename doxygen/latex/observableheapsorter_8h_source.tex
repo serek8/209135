@@ -1,0 +1,43 @@
+\hypertarget{observableheapsorter_8h}{\subsection{observableheapsorter.\-h}
+\label{observableheapsorter_8h}\index{observableheapsorter.\-h@{observableheapsorter.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * observableheapsorter.h}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: May 14, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00008 \textcolor{preprocessor}{#ifndef OBSERVABLEHEAPSORTER\_H\_}
+00009 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define OBSERVABLEHEAPSORTER\_H\_}
+00010 \textcolor{preprocessor}{}
+00011 
+00012 \textcolor{preprocessor}{#include "\hyperlink{observable_8h}{observable.h}"}
+00013 \textcolor{preprocessor}{#include "\hyperlink{heapsorter_8h}{heapsorter.h}"}
+00014 
+00015 \textcolor{keyword}{template} <\textcolor{keyword}{class} MyListElementType>
+\hypertarget{observableheapsorter_8h_source_l00016}{}\hyperlink{class_observable_heap_sorter}{00016} \textcolor{keyword}{class }\hyperlink{class_observable_heap_sorter}{ObservableHeapSorter} : \textcolor{keyword}{public} \hyperlink{class_observable}{Observable}, \textcolor{keyword}{public} 
+      \hyperlink{class_heap_sorter}{HeapSorter}<MyListElementType>
+00017 \{
+00018 \textcolor{keyword}{public}:
+\hypertarget{observableheapsorter_8h_source_l00019}{}\hyperlink{class_observable_heap_sorter_a3102c57c74f30fb5b5be17f2d2c5bd68}{00019}         \hyperlink{class_observable_heap_sorter_a3102c57c74f30fb5b5be17f2d2c5bd68}{ObservableHeapSorter}(\hyperlink{class_list}{List<MyListElementType>} &myList):
+00020                 \hyperlink{class_heap_sorter}{HeapSorter}<MyListElementType>::\hyperlink{class_heap_sorter}{HeapSorter}(myList)\{\}
+00021 
+00022 
+\hypertarget{observableheapsorter_8h_source_l00023}{}\hyperlink{class_observable_heap_sorter_a5e92d70e5a769ba7249f974a48b94bd0}{00023}         \hyperlink{class_list}{List<MyListElementType>} &\hyperlink{class_observable_heap_sorter_a5e92d70e5a769ba7249f974a48b94bd0}{sort}()
+00024         \{
+00025                 \hyperlink{class_observable_a78df64057f152342a43f27979186a6ba}{sendStartUpdateToObservers}();
+00026                 \hyperlink{class_heap_sorter_a31220ba55d4478c50578c3a94dcbf26c}{HeapSorter<MyListElementType>::sort}();
+00027                 \hyperlink{class_observable_a16f75ed1514a0cb7526b5a5d2b7ca7c6}{sendStopUpdateToObservers}();
+00028                 \textcolor{keywordflow}{return} this->\hyperlink{class_heap_sorter_a6b8ac615ff2de0c2e510ad215d0508d9}{list};
+00029         \}
+\hypertarget{observableheapsorter_8h_source_l00030}{}\hyperlink{class_observable_heap_sorter_a46e45f721463f961065eb0e78ab17e12}{00030}         \textcolor{keyword}{virtual} \hyperlink{class_observable_heap_sorter_a46e45f721463f961065eb0e78ab17e12}{~ObservableHeapSorter}()\{\};
+00031 
+00032 
+00033 \};
+00034 
+00035 
+00036 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* OBSERVABLEHEAPSORTER\_H\_ */}\textcolor{preprocessor}{}
+\end{DoxyCode}

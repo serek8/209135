@@ -1,0 +1,255 @@
+\hypertarget{class_list}{\subsection{Dokumentacja szablonu klasy List$<$ My\-List\-Element\-Type $>$}
+\label{class_list}\index{List$<$ My\-List\-Element\-Type $>$@{List$<$ My\-List\-Element\-Type $>$}}
+}
+
+
+{\ttfamily \#include $<$list.\-h$>$}
+
+Diagram dziedziczenia dla List$<$ My\-List\-Element\-Type $>$\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_list}
+\end{center}
+\end{figure}
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \& \hyperlink{class_list_ac769a9bcdfa13a032783bac75d8957bd}{size} ()=0
+\item 
+virtual \hyperlink{class_list_element}{List\-Element}\\*
+$<$ My\-List\-Element\-Type $>$ \hyperlink{class_list_a2e7dc3322b64d7fd29850efdd7c2697e}{pop\-\_\-back} ()=0
+\item 
+virtual \hyperlink{class_list_element}{List\-Element}\\*
+$<$ My\-List\-Element\-Type $>$ \hyperlink{class_list_ae8ae20b4a199d5d44a8119e49d6f50a4}{pop\-\_\-front} ()=0
+\item 
+virtual void \hyperlink{class_list_acfa94dc35be53ea0d7e5d4671e40dabc}{print\-List} ()=0
+\item 
+virtual void \hyperlink{class_list_a54af4864ee34e03aefac902744d5831f}{push\-\_\-back} (My\-List\-Element\-Type arg)=0
+\item 
+virtual void \hyperlink{class_list_ab87c08aded4d34550abc5df48afef599}{push\-\_\-front} (My\-List\-Element\-Type arg)=0
+\item 
+virtual \hyperlink{class_my_list_element}{My\-List\-Element}\\*
+$<$ My\-List\-Element\-Type $>$ \& \hyperlink{class_list_aa1c32f16b6e5a7936364f5640dccfd44}{operator\mbox{[}$\,$\mbox{]}} (int number\-Of\-Element)=0
+\item 
+virtual void \hyperlink{class_list_a255ccc6785bf098a06f7a7f17aee134b}{insert\-After} (\hyperlink{class_my_list_element}{My\-List\-Element}$<$ My\-List\-Element\-Type $>$ arg, int iterator\-I\-D)=0
+\item 
+virtual My\-List\-Element\-Type \& \hyperlink{class_list_acbb16d4f43592aa83d8c02c1ffcf9c31}{show\-\_\-front} ()=0
+\item 
+virtual My\-List\-Element\-Type \& \hyperlink{class_list_a5dc677b4022477232d48887dde6fb28f}{show\-\_\-back} ()=0
+\item 
+virtual void \hyperlink{class_list_a40a3d94c7f3aa49470625d47e6485570}{clone\-From} (\hyperlink{class_list}{List}$<$ My\-List\-Element\-Type $>$ \&pattern\-List)
+\item 
+virtual \hyperlink{class_list}{List}$<$ My\-List\-Element\-Type $>$ \& \hyperlink{class_list_a37f6551e13258a321c806fffb7e2f068}{create\-Object\-From\-Abstract\-Reference} ()=0
+\item 
+virtual void \hyperlink{class_list_a5406b275bb8650707a1d2bd38f661095}{free} ()
+\item 
+virtual \hyperlink{class_list_a94653beeb9216aab0f06665bfa5694ab}{$\sim$\-List} ()
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Opis szczegółowy}
+\subsubsection*{template$<$class My\-List\-Element\-Type$>$class List$<$ My\-List\-Element\-Type $>$}
+
+
+
+Definicja w linii \hyperlink{list_8h_source_l00015}{15} pliku \hyperlink{list_8h_source}{list.\-h}.
+
+
+
+\subsubsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_list_a94653beeb9216aab0f06665bfa5694ab}{\index{List@{List}!$\sim$\-List@{$\sim$\-List}}
+\index{$\sim$\-List@{$\sim$\-List}!List@{List}}
+\paragraph[{$\sim$\-List}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type$>$ virtual {\bf List}$<$ My\-List\-Element\-Type $>$\-::$\sim${\bf List} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_list_a94653beeb9216aab0f06665bfa5694ab}
+
+
+Definicja w linii \hyperlink{list_8h_source_l00041}{41} pliku \hyperlink{list_8h_source}{list.\-h}.
+
+
+\begin{DoxyCode}
+00041 \{\};
+\end{DoxyCode}
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_list_a40a3d94c7f3aa49470625d47e6485570}{\index{List@{List}!clone\-From@{clone\-From}}
+\index{clone\-From@{clone\-From}!List@{List}}
+\paragraph[{clone\-From}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type$>$ virtual void {\bf List}$<$ My\-List\-Element\-Type $>$\-::clone\-From (
+\begin{DoxyParamCaption}
+\item[{{\bf List}$<$ My\-List\-Element\-Type $>$ \&}]{pattern\-List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_list_a40a3d94c7f3aa49470625d47e6485570}
+
+
+Definicja w linii \hyperlink{list_8h_source_l00031}{31} pliku \hyperlink{list_8h_source}{list.\-h}.
+
+
+
+Odwołania w \hyperlink{quicksorter_8h_source_l00027}{Quick\-Sorter$<$ My\-List\-Element\-Type $>$\-::\-Quick\-Sorter()}.
+
+
+\begin{DoxyCode}
+00032         \{
+00033                 \textcolor{comment}{// release memory from main list}
+00034                 \textcolor{keywordflow}{while}(this->\hyperlink{class_list_ac769a9bcdfa13a032783bac75d8957bd}{size}()) \hyperlink{class_list_a2e7dc3322b64d7fd29850efdd7c2697e}{pop\_back}();
+00035                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<patternList.\hyperlink{class_list_ac769a9bcdfa13a032783bac75d8957bd}{size}(); i++)
+00036                         this->\hyperlink{class_list_a54af4864ee34e03aefac902744d5831f}{push\_back}(patternList[i].content);
+00037         \}
+\end{DoxyCode}
+\hypertarget{class_list_a37f6551e13258a321c806fffb7e2f068}{\index{List@{List}!create\-Object\-From\-Abstract\-Reference@{create\-Object\-From\-Abstract\-Reference}}
+\index{create\-Object\-From\-Abstract\-Reference@{create\-Object\-From\-Abstract\-Reference}!List@{List}}
+\paragraph[{create\-Object\-From\-Abstract\-Reference}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type$>$ virtual {\bf List}$<$My\-List\-Element\-Type$>$\& {\bf List}$<$ My\-List\-Element\-Type $>$\-::create\-Object\-From\-Abstract\-Reference (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_list_a37f6551e13258a321c806fffb7e2f068}
+
+
+Implementowany w \hyperlink{class_my_list_a819195298125d5b7ee02f18bd4d1152a}{My\-List$<$ My\-List\-Element\-Type $>$} i \hyperlink{class_my_list_a819195298125d5b7ee02f18bd4d1152a}{My\-List$<$ Observer $\ast$ $>$}.
+
+\hypertarget{class_list_a5406b275bb8650707a1d2bd38f661095}{\index{List@{List}!free@{free}}
+\index{free@{free}!List@{List}}
+\paragraph[{free}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type$>$ virtual void {\bf List}$<$ My\-List\-Element\-Type $>$\-::free (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_list_a5406b275bb8650707a1d2bd38f661095}
+
+
+Definicja w linii \hyperlink{list_8h_source_l00040}{40} pliku \hyperlink{list_8h_source}{list.\-h}.
+
+
+\begin{DoxyCode}
+00040 \{ \textcolor{keywordflow}{while}(\hyperlink{class_list_ac769a9bcdfa13a032783bac75d8957bd}{size}()) \hyperlink{class_list_a2e7dc3322b64d7fd29850efdd7c2697e}{pop\_back}(); \}
+\end{DoxyCode}
+\hypertarget{class_list_a255ccc6785bf098a06f7a7f17aee134b}{\index{List@{List}!insert\-After@{insert\-After}}
+\index{insert\-After@{insert\-After}!List@{List}}
+\paragraph[{insert\-After}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type$>$ virtual void {\bf List}$<$ My\-List\-Element\-Type $>$\-::insert\-After (
+\begin{DoxyParamCaption}
+\item[{{\bf My\-List\-Element}$<$ My\-List\-Element\-Type $>$}]{arg, }
+\item[{int}]{iterator\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_list_a255ccc6785bf098a06f7a7f17aee134b}
+
+
+Implementowany w \hyperlink{class_my_list_a4a37731b07380f33203de13f926f1ebf}{My\-List$<$ My\-List\-Element\-Type $>$} i \hyperlink{class_my_list_a4a37731b07380f33203de13f926f1ebf}{My\-List$<$ Observer $\ast$ $>$}.
+
+\hypertarget{class_list_aa1c32f16b6e5a7936364f5640dccfd44}{\index{List@{List}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!List@{List}}
+\paragraph[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type$>$ virtual {\bf My\-List\-Element}$<$My\-List\-Element\-Type$>$\& {\bf List}$<$ My\-List\-Element\-Type $>$\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{int}]{number\-Of\-Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_list_aa1c32f16b6e5a7936364f5640dccfd44}
+
+
+Implementowany w \hyperlink{class_my_list_a21f48f2665a0c7e6916e40be613b16aa}{My\-List$<$ My\-List\-Element\-Type $>$} i \hyperlink{class_my_list_a21f48f2665a0c7e6916e40be613b16aa}{My\-List$<$ Observer $\ast$ $>$}.
+
+\hypertarget{class_list_a2e7dc3322b64d7fd29850efdd7c2697e}{\index{List@{List}!pop\-\_\-back@{pop\-\_\-back}}
+\index{pop\-\_\-back@{pop\-\_\-back}!List@{List}}
+\paragraph[{pop\-\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type$>$ virtual {\bf List\-Element}$<$My\-List\-Element\-Type$>$ {\bf List}$<$ My\-List\-Element\-Type $>$\-::pop\-\_\-back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_list_a2e7dc3322b64d7fd29850efdd7c2697e}
+
+
+Implementowany w \hyperlink{class_my_list_a8ebb806121d42e08834c7d244521c008}{My\-List$<$ My\-List\-Element\-Type $>$} i \hyperlink{class_my_list_a8ebb806121d42e08834c7d244521c008}{My\-List$<$ Observer $\ast$ $>$}.
+
+
+
+Odwołania w \hyperlink{list_8h_source_l00031}{List$<$ Observer $\ast$ $>$\-::clone\-From()} i \hyperlink{list_8h_source_l00040}{List$<$ Observer $\ast$ $>$\-::free()}.
+
+\hypertarget{class_list_ae8ae20b4a199d5d44a8119e49d6f50a4}{\index{List@{List}!pop\-\_\-front@{pop\-\_\-front}}
+\index{pop\-\_\-front@{pop\-\_\-front}!List@{List}}
+\paragraph[{pop\-\_\-front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type$>$ virtual {\bf List\-Element}$<$My\-List\-Element\-Type$>$ {\bf List}$<$ My\-List\-Element\-Type $>$\-::pop\-\_\-front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_list_ae8ae20b4a199d5d44a8119e49d6f50a4}
+
+
+Implementowany w \hyperlink{class_my_list_a675af07472a5b7dde7ca602abb420efa}{My\-List$<$ My\-List\-Element\-Type $>$} i \hyperlink{class_my_list_a675af07472a5b7dde7ca602abb420efa}{My\-List$<$ Observer $\ast$ $>$}.
+
+\hypertarget{class_list_acfa94dc35be53ea0d7e5d4671e40dabc}{\index{List@{List}!print\-List@{print\-List}}
+\index{print\-List@{print\-List}!List@{List}}
+\paragraph[{print\-List}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type$>$ virtual void {\bf List}$<$ My\-List\-Element\-Type $>$\-::print\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_list_acfa94dc35be53ea0d7e5d4671e40dabc}
+
+
+Implementowany w \hyperlink{class_my_list_adc482b791b4ba4ce44a4561c2739a334}{My\-List$<$ My\-List\-Element\-Type $>$} i \hyperlink{class_my_list_adc482b791b4ba4ce44a4561c2739a334}{My\-List$<$ Observer $\ast$ $>$}.
+
+\hypertarget{class_list_a54af4864ee34e03aefac902744d5831f}{\index{List@{List}!push\-\_\-back@{push\-\_\-back}}
+\index{push\-\_\-back@{push\-\_\-back}!List@{List}}
+\paragraph[{push\-\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type$>$ virtual void {\bf List}$<$ My\-List\-Element\-Type $>$\-::push\-\_\-back (
+\begin{DoxyParamCaption}
+\item[{My\-List\-Element\-Type}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_list_a54af4864ee34e03aefac902744d5831f}
+
+
+Implementowany w \hyperlink{class_my_list_a52dad29ecf7522b86df8daa3aa74702d}{My\-List$<$ My\-List\-Element\-Type $>$} i \hyperlink{class_my_list_a52dad29ecf7522b86df8daa3aa74702d}{My\-List$<$ Observer $\ast$ $>$}.
+
+
+
+Odwołania w \hyperlink{list_8h_source_l00031}{List$<$ Observer $\ast$ $>$\-::clone\-From()}.
+
+\hypertarget{class_list_ab87c08aded4d34550abc5df48afef599}{\index{List@{List}!push\-\_\-front@{push\-\_\-front}}
+\index{push\-\_\-front@{push\-\_\-front}!List@{List}}
+\paragraph[{push\-\_\-front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type$>$ virtual void {\bf List}$<$ My\-List\-Element\-Type $>$\-::push\-\_\-front (
+\begin{DoxyParamCaption}
+\item[{My\-List\-Element\-Type}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_list_ab87c08aded4d34550abc5df48afef599}
+
+
+Implementowany w \hyperlink{class_my_list_aafeb562fa9d79f171a21988afd08a833}{My\-List$<$ My\-List\-Element\-Type $>$} i \hyperlink{class_my_list_aafeb562fa9d79f171a21988afd08a833}{My\-List$<$ Observer $\ast$ $>$}.
+
+\hypertarget{class_list_a5dc677b4022477232d48887dde6fb28f}{\index{List@{List}!show\-\_\-back@{show\-\_\-back}}
+\index{show\-\_\-back@{show\-\_\-back}!List@{List}}
+\paragraph[{show\-\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type$>$ virtual My\-List\-Element\-Type\& {\bf List}$<$ My\-List\-Element\-Type $>$\-::show\-\_\-back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_list_a5dc677b4022477232d48887dde6fb28f}
+
+
+Implementowany w \hyperlink{class_my_list_a0ea03d38dcf8c5cdf1ff27ea56fe490b}{My\-List$<$ My\-List\-Element\-Type $>$} i \hyperlink{class_my_list_a0ea03d38dcf8c5cdf1ff27ea56fe490b}{My\-List$<$ Observer $\ast$ $>$}.
+
+\hypertarget{class_list_acbb16d4f43592aa83d8c02c1ffcf9c31}{\index{List@{List}!show\-\_\-front@{show\-\_\-front}}
+\index{show\-\_\-front@{show\-\_\-front}!List@{List}}
+\paragraph[{show\-\_\-front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type$>$ virtual My\-List\-Element\-Type\& {\bf List}$<$ My\-List\-Element\-Type $>$\-::show\-\_\-front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_list_acbb16d4f43592aa83d8c02c1ffcf9c31}
+
+
+Implementowany w \hyperlink{class_my_list_a2fe6cb1e5caf9f1d7d9df4b44faf8506}{My\-List$<$ My\-List\-Element\-Type $>$} i \hyperlink{class_my_list_a2fe6cb1e5caf9f1d7d9df4b44faf8506}{My\-List$<$ Observer $\ast$ $>$}.
+
+\hypertarget{class_list_ac769a9bcdfa13a032783bac75d8957bd}{\index{List@{List}!size@{size}}
+\index{size@{size}!List@{List}}
+\paragraph[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class My\-List\-Element\-Type$>$ virtual int\& {\bf List}$<$ My\-List\-Element\-Type $>$\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_list_ac769a9bcdfa13a032783bac75d8957bd}
+
+
+Implementowany w \hyperlink{class_my_list_a267f669859ef3541333082cad6b28ab7}{My\-List$<$ My\-List\-Element\-Type $>$} i \hyperlink{class_my_list_a267f669859ef3541333082cad6b28ab7}{My\-List$<$ Observer $\ast$ $>$}.
+
+
+
+Odwołania w \hyperlink{list_8h_source_l00031}{List$<$ Observer $\ast$ $>$\-::clone\-From()}, \hyperlink{list_8h_source_l00040}{List$<$ Observer $\ast$ $>$\-::free()} i \hyperlink{mylist_8h_source_l00048}{My\-List$<$ Observer $\ast$ $>$\-::\-My\-List()}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{list_8h}{list.\-h}\end{DoxyCompactItemize}

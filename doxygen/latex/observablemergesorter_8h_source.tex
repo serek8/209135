@@ -1,0 +1,44 @@
+\hypertarget{observablemergesorter_8h}{\subsection{observablemergesorter.\-h}
+\label{observablemergesorter_8h}\index{observablemergesorter.\-h@{observablemergesorter.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * observablemergesorter.h}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: May 14, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00008 \textcolor{preprocessor}{#ifndef OBSERVABLEMERGESORTER\_H\_}
+00009 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define OBSERVABLEMERGESORTER\_H\_}
+00010 \textcolor{preprocessor}{}
+00011 
+00012 \textcolor{preprocessor}{#include "\hyperlink{observable_8h}{observable.h}"}
+00013 \textcolor{preprocessor}{#include "\hyperlink{mergesorter_8h}{mergesorter.h}"}
+00014 
+00015 \textcolor{keyword}{template} <\textcolor{keyword}{class} MyListElementType>
+\hypertarget{observablemergesorter_8h_source_l00016}{}\hyperlink{class_observable_merge_sorter}{00016} \textcolor{keyword}{class }\hyperlink{class_observable_merge_sorter}{ObservableMergeSorter} : \textcolor{keyword}{public} \hyperlink{class_observable}{Observable}, \textcolor{keyword}{public} 
+      \hyperlink{class_merge_sorter}{MergeSorter}<MyListElementType>
+00017 \{
+00018 \textcolor{keyword}{public}:
+\hypertarget{observablemergesorter_8h_source_l00019}{}\hyperlink{class_observable_merge_sorter_af447c85bc1fcafd2d1e191968155023a}{00019}         \hyperlink{class_observable_merge_sorter_af447c85bc1fcafd2d1e191968155023a}{ObservableMergeSorter}(\hyperlink{class_my_list}{MyList<MyListElementType>} &
+      myList):
+00020                 \hyperlink{class_merge_sorter}{MergeSorter}<MyListElementType>::\hyperlink{class_merge_sorter}{MergeSorter}(myList)\{\}
+00021 
+00022 
+\hypertarget{observablemergesorter_8h_source_l00023}{}\hyperlink{class_observable_merge_sorter_ac845eed6758733f3935ffb5aa0b5f64a}{00023}         \hyperlink{class_list}{List<MyListElementType>} &\hyperlink{class_observable_merge_sorter_ac845eed6758733f3935ffb5aa0b5f64a}{sort}()
+00024         \{
+00025                 \hyperlink{class_observable_a78df64057f152342a43f27979186a6ba}{sendStartUpdateToObservers}();
+00026                 \hyperlink{class_merge_sorter_aaee4333eb37af6401eca60da3398e507}{MergeSorter<MyListElementType>::sort}();
+00027                 \hyperlink{class_observable_a16f75ed1514a0cb7526b5a5d2b7ca7c6}{sendStopUpdateToObservers}();
+00028                 \textcolor{keywordflow}{return} this->\hyperlink{class_merge_sorter_a8ac3ee938414809d7da627cf918f1f87}{list};
+00029         \}
+\hypertarget{observablemergesorter_8h_source_l00030}{}\hyperlink{class_observable_merge_sorter_a7d3a5f7257974ace9094cff9d499df99}{00030}         \textcolor{keyword}{virtual} \hyperlink{class_observable_merge_sorter_a7d3a5f7257974ace9094cff9d499df99}{~ObservableMergeSorter}()\{\};
+00031 
+00032 
+00033 \};
+00034 
+00035 
+00036 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* OBSERVABLEMERGESORTER\_H\_ */}\textcolor{preprocessor}{}
+\end{DoxyCode}

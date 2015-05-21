@@ -1,0 +1,38 @@
+\hypertarget{observer_8h}{\subsection{observer.\-h}
+\label{observer_8h}\index{observer.\-h@{observer.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * observer.h}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: Apr 30, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00008 
+00009 
+00010 \textcolor{preprocessor}{#ifndef OBSERVER\_H\_}
+00011 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define OBSERVER\_H\_}
+00012 \textcolor{preprocessor}{}
+00013 
+00014 
+00015 
+\hypertarget{observer_8h_source_l00016}{}\hyperlink{class_observer}{00016} \textcolor{keyword}{class }\hyperlink{class_observer}{Observer} \{
+00017 \textcolor{keyword}{public}:
+00018         \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \hyperlink{class_observer_a5ea7b52632401a92b7ba0aca5bceceaa}{getTimerValue}() = 0;
+00019     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \hyperlink{class_observer_a69ca89633f4624b79ec696a049793ba4}{receivedStartUpdate}() = 0;
+00020     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \hyperlink{class_observer_a8eb646ac3407c4d24d01178a6ba74f7f}{receivedStopUpdate}() = 0;
+00021     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \hyperlink{class_observer_a764dd4568782b41271aa832edbe4455e}{receivedStopUpdateAndSaveToFile}() = 0;
+\hypertarget{observer_8h_source_l00022}{}\hyperlink{class_observer_afcc6b67be6c386f2f3d2c363aa59cb47}{00022}         \textcolor{keyword}{virtual} \hyperlink{class_observer_afcc6b67be6c386f2f3d2c363aa59cb47}{~Observer}()\{\};
+00023 \};
+00024 
+00025 
+00026 
+00027 
+00028 
+00029 
+00030 
+00031 
+00032 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* OBSERVER\_H\_ */}\textcolor{preprocessor}{}
+\end{DoxyCode}

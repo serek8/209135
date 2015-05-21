@@ -1,0 +1,45 @@
+\hypertarget{listsaver_8h}{\subsection{listsaver.\-h}
+\label{listsaver_8h}\index{listsaver.\-h@{listsaver.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * ListIO.h}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: May 14, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00008 \textcolor{preprocessor}{#ifndef LISTSAVER\_H\_}
+00009 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define LISTSAVER\_H\_}
+00010 \textcolor{preprocessor}{}
+00011 \textcolor{preprocessor}{#include <string>}
+00012 \textcolor{preprocessor}{#include <fstream>}
+00013 
+00014 \textcolor{keyword}{template} <\textcolor{keyword}{class} MyListElementType>
+\hypertarget{listsaver_8h_source_l00015}{}\hyperlink{class_list_saver}{00015} \textcolor{keyword}{class }\hyperlink{class_list_saver}{ListSaver}
+00016 \{
+\hypertarget{listsaver_8h_source_l00017}{}\hyperlink{class_list_saver_ac803162ee7ee2580226d530f89683ecb}{00017}         \hyperlink{class_list}{List<MyListElementType>} &\hyperlink{class_list_saver_ac803162ee7ee2580226d530f89683ecb}{list};
+00018 
+\hypertarget{listsaver_8h_source_l00019}{}\hyperlink{class_list_saver_a21653fc0fc232e603b8fc47e165e771e}{00019}         \hyperlink{class_list_saver_a21653fc0fc232e603b8fc47e165e771e}{ListSaver}(\hyperlink{class_my_list}{MyList<MyListElementType>} &listArgument):
+00020                 \hyperlink{class_list_saver_ac803162ee7ee2580226d530f89683ecb}{list}(listArgument)
+00021         \{\}
+00022 
+\hypertarget{listsaver_8h_source_l00027}{}\hyperlink{class_list_saver_ac00160bf49e4981df4aec73ad479fc53}{00027}         \textcolor{keywordtype}{int} \hyperlink{class_list_saver_ac00160bf49e4981df4aec73ad479fc53}{saveToFile}(std::string nazwaPliku)
+00028         \{
+00029                 std::ofstream streamToFile;
+00030                 streamToFile.open (nazwaPliku.c\_str(), std::ofstream::out);
+00031                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{class_list_saver_ac803162ee7ee2580226d530f89683ecb}{list}.size() ; i++)
+00032                         streamToFile << \textcolor{charliteral}{'\{'}<<\hyperlink{class_list_saver_ac803162ee7ee2580226d530f89683ecb}{list}[i].content<<\textcolor{stringliteral}{"\} "};
+00033 
+00034                 \textcolor{keywordflow}{return} 0;
+00035         \}
+00036 
+00037 \};
+00038 
+00039 
+00040 
+00041 
+00042 
+00043 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* LISTSAVER\_H\_ */}\textcolor{preprocessor}{}
+\end{DoxyCode}

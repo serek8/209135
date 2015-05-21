@@ -1,0 +1,56 @@
+\hypertarget{mylistelement_8h}{\subsection{mylistelement.\-h}
+\label{mylistelement_8h}\index{mylistelement.\-h@{mylistelement.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * mylistelement.h}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: May 11, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00008 \textcolor{preprocessor}{#ifndef MYLISTELEMENT\_H\_}
+00009 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define MYLISTELEMENT\_H\_}
+00010 \textcolor{preprocessor}{}
+00011 \textcolor{preprocessor}{#include "\hyperlink{mylist_8h}{mylist.h}"}
+00012 \textcolor{preprocessor}{#include "\hyperlink{listelement_8h}{listelement.h}"}
+00013 
+00015 \textcolor{keyword}{template} <\textcolor{keyword}{class} MyListElementType>
+\hypertarget{mylistelement_8h_source_l00016}{}\hyperlink{class_my_list_element}{00016} \textcolor{keyword}{class }\hyperlink{class_my_list_element}{MyListElement} : \textcolor{keyword}{public} \hyperlink{class_list_element}{ListElement}<MyListElementType>\{
+00018 \textcolor{keyword}{public}:
+00019         \textcolor{comment}{//MyListElementType content;}
+\hypertarget{mylistelement_8h_source_l00021}{}\hyperlink{class_my_list_element_a1d05f3ef872707c0f2dba4c8ba231230}{00021} \textcolor{comment}{}        \hyperlink{class_my_list_element}{MyListElement} *\hyperlink{class_my_list_element_a1d05f3ef872707c0f2dba4c8ba231230}{nextElement};
+\hypertarget{mylistelement_8h_source_l00023}{}\hyperlink{class_my_list_element_ae52a44c22eb3916df4bd87672e9423c7}{00023}         \hyperlink{class_my_list_element}{MyListElement} *\hyperlink{class_my_list_element_ae52a44c22eb3916df4bd87672e9423c7}{previousElement};
+00024 \textcolor{keyword}{public}:
+\hypertarget{mylistelement_8h_source_l00028}{}\hyperlink{class_my_list_element_aa29e333d56f5d89abb204c7b68b036ba}{00028}         \hyperlink{class_my_list_element_aa29e333d56f5d89abb204c7b68b036ba}{MyListElement}()
+00029         \{
+00030                 \textcolor{keyword}{this} -> \hyperlink{class_my_list_element_a1d05f3ef872707c0f2dba4c8ba231230}{nextElement} =0;
+00031                 \textcolor{keyword}{this} -> \hyperlink{class_my_list_element_ae52a44c22eb3916df4bd87672e9423c7}{previousElement} =0;
+00032         \}
+\hypertarget{mylistelement_8h_source_l00038}{}\hyperlink{class_my_list_element_ab5020e69556fc9cb03741e8208d11658}{00038}         \hyperlink{class_my_list_element_ab5020e69556fc9cb03741e8208d11658}{MyListElement}(MyListElementType arg)
+00039         \{
+00040                 \textcolor{keyword}{this} -> \hyperlink{class_list_element_ad4ccf390c996e7a19b6dc270875276a1}{content} = arg;
+00041                 \textcolor{keyword}{this} -> \hyperlink{class_my_list_element_a1d05f3ef872707c0f2dba4c8ba231230}{nextElement} =0;
+00042                 \textcolor{keyword}{this} -> \hyperlink{class_my_list_element_ae52a44c22eb3916df4bd87672e9423c7}{previousElement} =0;
+00043                 \textcolor{comment}{//std::cerr<<"\(\backslash\)n(konstruktor MyListElement): content="<<arg;}
+00044         \}
+\hypertarget{mylistelement_8h_source_l00049}{}\hyperlink{class_my_list_element_a250d7ebabc90be7274c1337abf83a70f}{00049}         \hyperlink{class_my_list_element_a250d7ebabc90be7274c1337abf83a70f}{MyListElement}(\textcolor{keyword}{const} \hyperlink{class_my_list_element}{MyListElement} &myListElement)
+00050         \{
+00051                 \textcolor{comment}{//this->number = myListElement.number;}
+00052                 \textcolor{comment}{//this->nazwa = myListElement.nazwa;}
+00053                 this->\hyperlink{class_list_element_ad4ccf390c996e7a19b6dc270875276a1}{content} = myListElement.\hyperlink{class_list_element_ad4ccf390c996e7a19b6dc270875276a1}{content};
+00054                 this->\hyperlink{class_my_list_element_a1d05f3ef872707c0f2dba4c8ba231230}{nextElement} = myListElement.\hyperlink{class_my_list_element_a1d05f3ef872707c0f2dba4c8ba231230}{nextElement};
+00055                 this->\hyperlink{class_my_list_element_ae52a44c22eb3916df4bd87672e9423c7}{previousElement} = myListElement.
+      \hyperlink{class_my_list_element_ae52a44c22eb3916df4bd87672e9423c7}{previousElement};
+00056                 \textcolor{comment}{//std::cerr<<"\(\backslash\)n(konstruktor kopiujacy MyListElement): content="<<content;}
+00057         \}
+\hypertarget{mylistelement_8h_source_l00063}{}\hyperlink{class_my_list_element_a40450b8318abf532f299f267a3abd504}{00063}         \textcolor{keywordtype}{void} \hyperlink{class_my_list_element_a40450b8318abf532f299f267a3abd504}{set}(MyListElementType arg)
+00064         \{
+00065                 \textcolor{keyword}{this} -> \hyperlink{class_list_element_ad4ccf390c996e7a19b6dc270875276a1}{content} = arg;
+00066                 \textcolor{comment}{//this -> nazwa = str;}
+00067         \}
+00068         \textcolor{comment}{//friend class MyList;}
+00069 \};
+00070 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* MYLISTELEMENT\_H\_ */}\textcolor{preprocessor}{}
+\end{DoxyCode}

@@ -10,427 +10,379 @@
 
 #include <iostream>
 #include <iomanip>
+#include "avltreeelement.h"
 
 using namespace std;
 
-// definicja typu danych reprezentującego węzeł drzewa AVL
-//--------------------------------------------------------
-
-struct AVLNode
-{
-	// Gałąź rodzica, lewa podgaląć, prawa podgałąź
-  AVLNode * p, * left, * right;
-
-  //klucz
-  int key, bf;
-};
 
 // Definicja klasy obsługującej drzewo AVL
 //----------------------------------------
-
-class AVL
+template <class ContentType>
+class AVLTree
 {
   public:
 
-    AVLNode * root;  // korzeń drzewa
-    int count;       // liczba węzłów
+    AVLTreeNode<ContentType> * rootNode;  // korzeń drzewa
 
-    AVL();
-    ~AVL();
-    AVLNode * rotationRR(AVLNode * A);
-    AVLNode * rotationLL(AVLNode * A);
-    AVLNode * rotationRL(AVLNode * A);
-    AVLNode * rotationLR(AVLNode * A);
-    bool      insert(AVLNode * n);
-    AVLNode * search(int key);
-    AVLNode * maxNode(AVLNode * x);
-    AVLNode * minNode(AVLNode * x);
-    AVLNode * pred(AVLNode * x);
-    AVLNode * remove(AVLNode * x);
-    void      walk(AVLNode * x);
-    void      coutAVLcount();
-};
 
-// **********************************************
-// *** Definicje funkcji składowych klasy AVL ***
-// **********************************************
 
-// Konstruktor klasy AVL
-//----------------------
-
-AVL::AVL()
-{
-  root = NULL;
-  count = 0;
-}
-
-// Destruktor klasy AVL
-//---------------------
-
-AVL::~AVL()
-{
-  while(root) delete(remove(root));
-}
-
-// Rotacja RR
-//-----------
-
-AVLNode * AVL::rotationRR(AVLNode * A)
-{
-  AVLNode * B = A->right, * P = A->p;
-
-  A->right = B->left;
-  if(A->right) A->right->p = A;
-  B->left = A;
-  B->p = P;
-  A->p = B;
-  if(P)
-  {
-    if(P->left == A) P->left = B; else P->right = B;
-  }
-  else root = B;
-
-  if(B->bf == -1)
-  {
-    A->bf = B->bf = 0;
-  }
-  else
-  {
-    A->bf = -1; B->bf = 1;
-  }
-  return B;
-}
-
-// Rotacja LL
-//-----------
-
-AVLNode * AVL::rotationLL(AVLNode * A)
-{
-  AVLNode * B = A->left, * P = A->p;
-
-  A->left = B->right;
-  if(A->left) A->left->p = A;
-  B->right = A;
-  B->p = P;
-  A->p = B;
-  if(P)
-  {
-    if(P->left == A) P->left = B; else P->right = B;
-  }
-  else root = B;
-
-  if(B->bf == 1)
-  {
-    A->bf = B->bf = 0;
-  }
-  else
-  {
-    A->bf = 1; B->bf = -1;
-  }
-
-  return B;
-}
-
-// Rotacja RL
-//-----------
-
-AVLNode * AVL::rotationRL(AVLNode * A)
-{
-  AVLNode * B = A->right, * C = B->left, * P = A->p;
-
-  B->left = C->right;
-  if(B->left) B->left->p = B;
-  A->right = C->left;
-  if(A->right) A->right->p = A;
-  C->left = A;
-  C->right = B;
-  A->p = B->p = C;
-  C->p = P;
-  if(P)
-  {
-    if(P->left == A) P->left = C; else P->right = C;
-  }
-  else root = C;
-
-  A->bf = (C->bf == -1) ?  1 : 0;
-  B->bf = (C->bf ==  1) ? -1 : 0;
-  C->bf = 0;
-
-  return C;
-}
-
-// Rotacja LR
-//-----------
-
-AVLNode * AVL::rotationLR(AVLNode * A)
-{
-  AVLNode * B = A->left, * C = B->right, * P = A->p;
-
-  B->right = C->left;
-  if(B->right) B->right->p = B;
-  A->left = C->right;
-  if(A->left) A->left->p = A;
-  C->right = A;
-  C->left = B;
-  A->p = B->p = C;
-  C->p = P;
-  if(P)
-  {
-    if(P->left == A) P->left = C; else P->right = C;
-  }
-  else root = C;
-
-  A->bf = (C->bf ==  1) ? -1 : 0;
-  B->bf = (C->bf == -1) ?  1 : 0;
-  C->bf = 0;
-
-  return C;
-}
-
-// Wstawia element do struktury AVL
-//---------------------------------
-
-bool AVL::insert(AVLNode * n)
-{
-  AVLNode * x = root, * y, * z;
-
-  y = n->left = n->right = NULL;
-  n->bf = 0;
-
-  while(x)
-  {
-    if(x->key == n->key)
+    AVLTree()
     {
-      delete n;
-      return false;
+      rootNode = NULL;
     }
-    y = x;
-    x = (n->key < x->key) ? x->left : x->right;
-  }
-
-  count++;
-
-  if(!(n->p = y))
-  {
-    root = n;
-    return true;
-  }
-  if(n->key < y->key) y->left = n; else y->right = n;
-  if(y->bf)
-  {
-    y->bf = 0;
-    return true;
-  }
-  y->bf = (y->left == n) ? 1 : -1;
-  z = y->p;
-  while(z)
-  {
-    if(z->bf) break;
-    z->bf = (z->left == y) ? 1 : -1;
-    y = z; z = z->p;
-  }
-
-  if(!z) return true;
-
-  if(z->bf == 1)
-  {
-    if(z->right == y)
+    ~AVLTree()
     {
-      z->bf = 0;
-      return true;
-    }
-    if(y->bf == -1) rotationLR(z); else rotationLL(z);
-    return true;
-  }
-  else
-  {
-    if(z->left == y)
-    {
-      z->bf = 0;
-      return true;
-    }
-    if(y->bf == 1) rotationRL(z); else rotationRR(z);
-    return true;
-  }
-}
-
-// Wyszukuje element wg wartości klucza
-//-------------------------------------
-
-AVLNode * AVL::search(int key)
-{
-  AVLNode * x = root;
-
-  while((x) && (x->key != key))
-    x = (key < x->key) ? x->left : x->right;
-
-  return x;
-}
-
-// Zwraca węzeł z maksymalnym kluczem
-//-----------------------------------
-
-AVLNode * AVL::minNode(AVLNode * x)
-{
-  while(x->left) x = x->left;
-  return x;
-}
-
-// Zwraca węzeł z minimalnym kluczem
-//----------------------------------
-
-AVLNode * AVL::maxNode(AVLNode * x)
-{
-  while(x->right) x = x->right;
-  return x;
-}
-
-// Zwraca węzeł poprzednika
-//-------------------------
-
-AVLNode * AVL::pred(AVLNode * x)
-{
-  if(x->left) return maxNode(x->left);
-
-  AVLNode * y;
-
-  do
-  {
-    y = x;
-    x = x->p;
-  } while(x && (x->right != y));
-
-  return x;
-}
-
-// Usuwa element x ze struktury AVL. Zwraca usunięty węzeł
-//--------------------------------------------------------
-
-AVLNode * AVL::remove(AVLNode * x)
-{
-  AVLNode * t, * y, * z;
-  bool nest;
-
-  if((x->left) && (x->right))
-  {
-    y = remove(pred(x));
-    count++;
-    nest = false;
-  }
-  else
-  {
-    if(x->left)
-    {
-      y = x->left; x->left = NULL;
-    }
-    else
-    {
-      y = x->right; x->right = NULL;
-    }
-    x->bf = 0;
-    nest = true;
-  }
-
-  if(y)
-  {
-    y->p = x->p;
-    if(y->left  = x->left)  y->left->p  = y;
-    if(y->right = x->right) y->right->p = y;
-    y->bf = x->bf;
-  }
-
-  if(x->p)
-  {
-    if(x->p->left == x) x->p->left = y; else x->p->right = y;
-  }
-  else root = y;
-
-  if(nest)
-  {
-    z = y;
-    y = x->p;
-    while(y)
-    {
-      if(!(y->bf))
+      while(rootNode)
       {
-
-// Przypadek nr 1
-
-        y->bf = (y->left == z) ? -1 : 1;
-        break;
+    	  delete(remove(rootNode));
       }
-      else
-      {
-        if(((y->bf ==  1) && (y->left  == z)) || ((y->bf == -1) && (y->right == z)))
+    }
+    void insert(int &newKey)
         {
+    	AVLTreeNode<ContentType>* newNode = new AVLTreeNode<ContentType>(newKey);
+        	//AVLTreeNode<ContentType>  *newNode2 = new AVLTreeNode<ContentType>();
+          AVLTreeNode<ContentType> * searchingNode = rootNode,	// Wskaznik do przeszukania drzewa i znalezienia tego samego klucza
+        		  * parentForNewNode = NULL,// parentForNewNode
+        		  * grandpaNode;
 
-// Przypadek nr 2
-
-          y->bf = 0;
-          z = y; y = y->p;
-        }
-        else
-        {
-          t = (y->left == z) ? y->right : y->left;
-          if(!(t->bf))
+          while(searchingNode)
           {
+            if(searchingNode->key == newNode->key) // sprawdzam czy taki klucz juz istnieje
+            {
+              //delete n; // skoro istnieje to po co taki TODO: do zmiany
 
-// Przypadek 3A
-
-            if(y->bf == 1) rotationLL(y); else rotationRR(y);
-            break;
+              //cout	<<"Taki klucz juz istnieje !\n";
+              return ;
+            }
+            parentForNewNode = searchingNode;
+            if(newNode->key < searchingNode->key) searchingNode= searchingNode->leftNode; // przechodze w lewo czesc drzewa
+            else searchingNode = searchingNode->rightNode;				// przechodze w prawa czesc drzewa
           }
-          else if(y->bf == t->bf)
+
+
+          // jezeli to jest pierwszy element to wpisuje go to root'a drzewa
+          if(!(newNode->parentNode = parentForNewNode))
           {
+            rootNode = newNode;
+            return ;
+          }
+          // wybieram strone gałęzi na której ma byc element
+          if(newNode->key < parentForNewNode->key) parentForNewNode->leftNode = newNode;
+          else parentForNewNode->rightNode = newNode;
 
-// Przypadek 3B
+          //sprawdzam czy potrzebne są rotacje, jak nie to koniec ;-)
+          if(parentForNewNode->balanceFactor)
+          {
+            parentForNewNode->balanceFactor = 0;
+            return ;
+          }
 
-            if(y->bf == 1) rotationLL(y); else rotationRR(y);
-            z = t; y = t->p;
+
+          //parentForNewNode->balanceFactor = (parentForNewNode->leftNode == newNode) ? 1 : -1;
+          if(parentForNewNode->leftNode == newNode) parentForNewNode->balanceFactor= 1;
+          else  parentForNewNode->balanceFactor = -1;
+          grandpaNode = parentForNewNode->parentNode;
+
+          // usatawiam balanceFactors na 1 przed dodaniem
+          // nowej gałęci oraz wyznaczam grandpaForNewNode od ktorego zaczynam rotacje
+          while(grandpaNode)
+          {
+            if(grandpaNode->balanceFactor) break; // gdy byly juz wczesniej ustawione to przerwij
+
+            if(grandpaNode->leftNode == parentForNewNode) grandpaNode->balanceFactor = 1;
+            else grandpaNode->balanceFactor = -1;
+            parentForNewNode = grandpaNode; grandpaNode = grandpaNode->parentNode;
+          }
+
+          // jesli do konca byly zbalansowane to przerwij
+          if(!grandpaNode) return ;
+
+          //rotacje na podstawie balanceFactors
+          if(grandpaNode->balanceFactor == 1)
+          {
+            if(grandpaNode->rightNode == parentForNewNode)
+            {
+              grandpaNode->balanceFactor = 0;
+              return ;
+            }
+            if(parentForNewNode->balanceFactor == -1) rotationLR(grandpaNode); //Rotacja podwójna w lewo-prawo
+            else rotationLL(grandpaNode); // Rotacja pojedyncza w prawo
+            return ;
           }
           else
           {
+            if(grandpaNode->leftNode == parentForNewNode)
+            {
+              grandpaNode->balanceFactor = 0;
+              return ;
+            }
+            if(parentForNewNode->balanceFactor == 1) rotationRL(grandpaNode); //Rotacja podwójna w lewo-prawo
+            else rotationRR(grandpaNode); //Rotacja pojedyncza w lewo
+            return ;
+          }
+        }
 
-// Przypadek 3C
+    AVLTreeNode<ContentType> * rotationRR(AVLTreeNode<ContentType> * A)
+    {
+      AVLTreeNode<ContentType> * B = A->rightNode, * P = A->parentNode;
 
-            if(y->bf == 1) rotationLR(y); else rotationRL(y);
-            z = y->p; y = z->p;
+      A->rightNode = B->leftNode;
+      if(A->rightNode) A->rightNode->parentNode = A;
+      B->leftNode = A;
+      B->parentNode = P;
+      A->parentNode = B;
+      if(P)
+      {
+        if(P->leftNode == A) P->leftNode = B; else P->rightNode = B;
+      }
+      else rootNode = B;
+
+      if(B->balanceFactor == -1)
+      {
+        A->balanceFactor = B->balanceFactor = 0;
+      }
+      else
+      {
+        A->balanceFactor = -1; B->balanceFactor = 1;
+      }
+      return B;
+    }
+
+    AVLTreeNode<ContentType> * rotationLL(AVLTreeNode<ContentType> * A)
+    {
+      AVLTreeNode<ContentType> * B = A->leftNode, * P = A->parentNode;
+
+      A->leftNode = B->rightNode;
+      if(A->leftNode) A->leftNode->parentNode = A;
+      B->rightNode = A;
+      B->parentNode = P;
+      A->parentNode = B;
+      if(P)
+      {
+        if(P->leftNode == A) P->leftNode = B; else P->rightNode = B;
+      }
+      else rootNode = B;
+
+      if(B->balanceFactor == 1)
+      {
+        A->balanceFactor = B->balanceFactor = 0;
+      }
+      else
+      {
+        A->balanceFactor = 1; B->balanceFactor = -1;
+      }
+
+      return B;
+    }
+    AVLTreeNode<ContentType> * rotationRL(AVLTreeNode<ContentType> * A)
+    {
+      AVLTreeNode<ContentType> * B = A->rightNode, * C = B->leftNode, * P = A->parentNode;
+
+      B->leftNode = C->rightNode;
+      if(B->leftNode) B->leftNode->parentNode = B;
+      A->rightNode = C->leftNode;
+      if(A->rightNode) A->rightNode->parentNode = A;
+      C->leftNode = A;
+      C->rightNode = B;
+      A->parentNode = B->parentNode = C;
+      C->parentNode = P;
+      if(P)
+      {
+        if(P->leftNode == A) P->leftNode = C; else P->rightNode = C;
+      }
+      else rootNode = C;
+
+      A->balanceFactor = (C->balanceFactor == -1) ?  1 : 0;
+      B->balanceFactor = (C->balanceFactor ==  1) ? -1 : 0;
+      C->balanceFactor = 0;
+
+      return C;
+    }
+    AVLTreeNode<ContentType> * rotationLR(AVLTreeNode<ContentType> * A)
+    {
+      AVLTreeNode<ContentType> * B = A->leftNode, * C = B->rightNode, * P = A->parentNode;
+
+      B->rightNode = C->leftNode;
+      if(B->rightNode) B->rightNode->parentNode = B;
+      A->leftNode = C->rightNode;
+      if(A->leftNode) A->leftNode->parentNode = A;
+      C->rightNode = A;
+      C->leftNode = B;
+      A->parentNode = B->parentNode = C;
+      C->parentNode = P;
+      if(P)
+      {
+        if(P->leftNode == A) P->leftNode = C; else P->rightNode = C;
+      }
+      else rootNode = C;
+
+      A->balanceFactor = (C->balanceFactor ==  1) ? -1 : 0;
+      B->balanceFactor = (C->balanceFactor == -1) ?  1 : 0;
+      C->balanceFactor = 0;
+
+      return C;
+    }
+
+    // Wyszukuje element wg wartości klucza
+    //-------------------------------------
+
+    AVLTreeNode<ContentType> * find(int key)
+    {
+      AVLTreeNode<ContentType> * tmpNode = rootNode;
+
+      while((tmpNode) && (tmpNode->key != key))
+      {
+    	  if(key < tmpNode->key) 	 tmpNode = tmpNode->leftNode;
+    	  else				 tmpNode = tmpNode->rightNode;
+      }
+
+      return tmpNode;
+    }
+    // Zwraca węzeł z minimalnym kluczem
+    //----------------------------------
+
+    AVLTreeNode<ContentType> * findMaxKeyNode(AVLTreeNode<ContentType> * tmpNode)
+    {
+      while(tmpNode->rightNode) tmpNode = tmpNode->rightNode;
+      return tmpNode;
+    }
+
+    // Zwraca węzeł poprzednika
+    //-------------------------
+    //
+    AVLTreeNode<ContentType> * findAtherNodeMatch(AVLTreeNode<ContentType> * nodeComperator) // lowerValueFrom nodeComperator
+    {
+      if(nodeComperator->leftNode) return findMaxKeyNode(nodeComperator->leftNode);
+
+      AVLTreeNode<ContentType> * y;
+
+      do
+      {
+        y = nodeComperator;
+        nodeComperator = nodeComperator->parentNode;
+      } while(nodeComperator && (nodeComperator->rightNode != y));
+
+      return nodeComperator;
+    }
+
+    /** @brief Usuwa element x ze struktury AVL. Zwraca usunięty węzeł
+     */
+
+    AVLTreeNode<ContentType> * remove(AVLTreeNode<ContentType> * x)
+    {
+      AVLTreeNode<ContentType> * t, * y, * z;
+      bool nest;
+
+      // Jeśli węzeł x posiada dwójkę dzieci, lewego i prawego potomka:
+      if((x->leftNode) && (x->rightNode))
+      {
+        y = remove(findAtherNodeMatch(x));
+        //rekurencyjnie usuwamy y za pomocą tego samego algorytmu
+        nest = false;
+      }
+      //Jeśli węzeł x posiada tylko jedno dziecko lub nie posiada wcale dzieci:
+      else  {
+        if(x->leftNode) {
+          y = x->leftNode;
+          x->leftNode = NULL;
+        }
+        else {
+          y = x->rightNode; x->rightNode = NULL;
+        }
+        x->balanceFactor = 0;
+        nest = true;
+      }
+
+      if(y)  {
+        y->parentNode = x->parentNode;
+        if(x->leftNode)
+        	{
+        		y->leftNode  = x->leftNode;
+        		y->leftNode->parentNode  = y;
+        	}
+        if(x->rightNode)
+        	{
+        		y->rightNode = x->rightNode;
+        		y->rightNode->parentNode = y;
+        	}
+        y->balanceFactor = x->balanceFactor;
+      }
+
+      if(x->parentNode)   {
+        if(x->parentNode->leftNode == x) x->parentNode->leftNode = y; else x->parentNode->rightNode = y;
+      }
+      else rootNode = y;
+
+      if(nest)  {
+        z = y;
+        y = x->parentNode;
+        while(y)
+        {
+        	// węzeł y był w stanie równowagi przed usunięciem węzła x w jednym z jego poddrzew.
+          if(!(y->balanceFactor)) {
+            y->balanceFactor = (y->leftNode == z) ? -1 : 1;
+            break;
+          }
+          else {
+        	//skrócone zostało cięższe poddrzewo
+            if		(((y->balanceFactor ==  1) &&
+            		(y->leftNode  == z)) || ((y->balanceFactor == -1) &&
+            		(y->rightNode == z))) {
+              y->balanceFactor = 0;
+              z = y; y = y->parentNode;
+            }
+            else {
+              t = (y->leftNode == z) ? y->rightNode : y->leftNode;
+
+              //Wykonujemy odpowiednią rotację pojedynczą
+              if(!(t->balanceFactor)) {
+                if(y->balanceFactor == 1) rotationLL(y); else rotationRR(y);
+                break;
+              }
+              //Wykonujemy odpowiednią rotację pojedynczą
+              else if(y->balanceFactor == t->balanceFactor)
+              {
+                if(y->balanceFactor == 1) rotationLL(y); else rotationRR(y);
+                z = t; y = t->parentNode;
+              }
+              //Wykonujemy rotację podwójną
+              else
+              {
+                if(y->balanceFactor == 1) rotationLR(y); else rotationRL(y);
+                z = y->parentNode; y = z->parentNode;
+              }
+            }
           }
         }
       }
+      return x;
     }
-  }
-  count--;
-  return x;
-}
-
-// Przechodzi przez drzewo wypisując zawartość węzłów
-//---------------------------------------------------
-
-void AVL::walk(AVLNode * x)
-{
-  cout << x->key << " : bf = " << setw(2) << x->bf << " : Left-> ";
-  if(x->left) cout << setw(3) << x->left->key;
-  else        cout << "NIL";
-  cout << ", Right-> ";
-  if(x->right) cout << setw(3) << x->right->key;
-  else         cout << "NIL";
-  cout << " : p -> ";
-  if(x->p) cout << setw(3) << x->p->key;
-  else     cout << "NIL";
-  cout << endl;
-  if(x->left)  walk(x->left);
-  if(x->right) walk(x->right);
-}
-
-
-// Wypisuje do cout liczbę węzłów drzewa AVL
-//------------------------------------------
-
-void AVL::coutAVLcount()
-{
-  cout << "\nLiczba wezlow drzewa AVL : " << count << endl << endl;
-}
+    void      print()
+    {
+    	this->recurringPrint(this->rootNode);
+    }
+    void recurringPrint(AVLTreeNode<ContentType> * x)
+    {
+      cout<< "klucz:"<< x->key <<"\n";
+      if(x->leftNode)  recurringPrint(x->leftNode);
+      if(x->rightNode) recurringPrint(x->rightNode);
+    }
+    void walk(AVLTreeNode<ContentType> * x)
+    {
+      cout << x->key << " : bf = " << setw(2) << x->balanceFactor << " : Left-> ";
+      if(x->leftNode) cout << setw(3) << x->leftNode->key;
+      else        cout << "NIL";
+      cout << ", Right-> ";
+      if(x->rightNode) cout << setw(3) << x->rightNode->key;
+      else         cout << "NIL";
+      cout << " : p -> ";
+      if(x->parentNode) cout << setw(3) << x->parentNode->key;
+      else     cout << "NIL";
+      cout << endl;
+      if(x->leftNode)  walk(x->leftNode);
+      if(x->rightNode) walk(x->rightNode);
+    }
+};
 
 
 

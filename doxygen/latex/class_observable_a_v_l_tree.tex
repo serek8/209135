@@ -1,0 +1,79 @@
+\hypertarget{class_observable_a_v_l_tree}{\subsection{Dokumentacja szablonu klasy Observable\-A\-V\-L\-Tree$<$ Content\-Type $>$}
+\label{class_observable_a_v_l_tree}\index{Observable\-A\-V\-L\-Tree$<$ Content\-Type $>$@{Observable\-A\-V\-L\-Tree$<$ Content\-Type $>$}}
+}
+
+
+{\ttfamily \#include $<$observableavltree.\-h$>$}
+
+Diagram dziedziczenia dla Observable\-A\-V\-L\-Tree$<$ Content\-Type $>$\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_observable_a_v_l_tree}
+\end{center}
+\end{figure}
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_observable_a_v_l_tree_a0db0ebff3adb2ffb7d98bb2efbc9c3a9}{insert} (int new\-Key)
+\item 
+\hyperlink{class_observable_a_v_l_tree_aabd578193ef4e285e113abe9547b3600}{$\sim$\-Observable\-A\-V\-L\-Tree} ()
+\end{DoxyCompactItemize}
+\subsubsection*{Dodatkowe Dziedziczone Składowe}
+
+
+\subsubsection{Opis szczegółowy}
+\subsubsection*{template$<$class Content\-Type$>$class Observable\-A\-V\-L\-Tree$<$ Content\-Type $>$}
+
+
+
+Definicja w linii \hyperlink{observableavltree_8h_source_l00016}{16} pliku \hyperlink{observableavltree_8h_source}{observableavltree.\-h}.
+
+
+
+\subsubsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_observable_a_v_l_tree_aabd578193ef4e285e113abe9547b3600}{\index{Observable\-A\-V\-L\-Tree@{Observable\-A\-V\-L\-Tree}!$\sim$\-Observable\-A\-V\-L\-Tree@{$\sim$\-Observable\-A\-V\-L\-Tree}}
+\index{$\sim$\-Observable\-A\-V\-L\-Tree@{$\sim$\-Observable\-A\-V\-L\-Tree}!ObservableAVLTree@{Observable\-A\-V\-L\-Tree}}
+\paragraph[{$\sim$\-Observable\-A\-V\-L\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Content\-Type $>$ {\bf Observable\-A\-V\-L\-Tree}$<$ Content\-Type $>$\-::$\sim${\bf Observable\-A\-V\-L\-Tree} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_observable_a_v_l_tree_aabd578193ef4e285e113abe9547b3600}
+
+
+Definicja w linii \hyperlink{observableavltree_8h_source_l00026}{26} pliku \hyperlink{observableavltree_8h_source}{observableavltree.\-h}.
+
+
+\begin{DoxyCode}
+00026 \{\}
+\end{DoxyCode}
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_observable_a_v_l_tree_a0db0ebff3adb2ffb7d98bb2efbc9c3a9}{\index{Observable\-A\-V\-L\-Tree@{Observable\-A\-V\-L\-Tree}!insert@{insert}}
+\index{insert@{insert}!ObservableAVLTree@{Observable\-A\-V\-L\-Tree}}
+\paragraph[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Content\-Type $>$ void {\bf Observable\-A\-V\-L\-Tree}$<$ Content\-Type $>$\-::insert (
+\begin{DoxyParamCaption}
+\item[{int}]{new\-Key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_observable_a_v_l_tree_a0db0ebff3adb2ffb7d98bb2efbc9c3a9}
+
+
+Definicja w linii \hyperlink{observableavltree_8h_source_l00019}{19} pliku \hyperlink{observableavltree_8h_source}{observableavltree.\-h}.
+
+
+
+Odwołuje się do \hyperlink{avltree_8h_source_l00040}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::insert()}, \hyperlink{observable_8h_source_l00023}{Observable\-::send\-Start\-Update\-To\-Observers()} i \hyperlink{observable_8h_source_l00034}{Observable\-::send\-Stop\-Update\-To\-Observers\-And\-Save\-To\-File()}.
+
+
+\begin{DoxyCode}
+00020         \{
+00021                 \hyperlink{class_observable_a78df64057f152342a43f27979186a6ba}{sendStartUpdateToObservers}();
+00022                         \hyperlink{class_a_v_l_tree_a3a85ff5f0b56af6c8b358611f8de95af}{AVLTree<ContentType>::insert}(newKey);
+00023                 \hyperlink{class_observable_a2deff078096cccc4f2fb3293d1a3e8ff}{sendStopUpdateToObserversAndSaveToFile}();
+00024         \}
+\end{DoxyCode}
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{observableavltree_8h}{observableavltree.\-h}\end{DoxyCompactItemize}

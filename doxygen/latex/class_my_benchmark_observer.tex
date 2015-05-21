@@ -1,0 +1,182 @@
+\hypertarget{class_my_benchmark_observer}{\subsection{Dokumentacja klasy My\-Benchmark\-Observer}
+\label{class_my_benchmark_observer}\index{My\-Benchmark\-Observer@{My\-Benchmark\-Observer}}
+}
+
+
+{\ttfamily \#include $<$mybenchmark.\-h$>$}
+
+Diagram dziedziczenia dla My\-Benchmark\-Observer\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_my_benchmark_observer}
+\end{center}
+\end{figure}
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_my_benchmark_observer_ad65d0afb1ea49dbdebd1aef5f374aa9a}{My\-Benchmark\-Observer} ()
+\item 
+double \hyperlink{class_my_benchmark_observer_a33ea57a2d321f835f3af0d3bab76a931}{get\-Timer\-Value} ()
+\item 
+void \hyperlink{class_my_benchmark_observer_a50a758f459b683b82bbb32fa4c2f13df}{received\-Start\-Update} ()
+\item 
+void \hyperlink{class_my_benchmark_observer_aaf6a636ef6e8d8f8f8bc6d540e432246}{received\-Stop\-Update} ()
+\item 
+void \hyperlink{class_my_benchmark_observer_a2c12408a0f213a39d3419fd807f30968}{received\-Stop\-Update\-And\-Save\-To\-File} ()
+\item 
+virtual \hyperlink{class_my_benchmark_observer_addcc70a6c10af608874dc8613c84299f}{$\sim$\-My\-Benchmark\-Observer} ()
+\end{DoxyCompactItemize}
+\subsubsection*{Dodatkowe Dziedziczone Składowe}
+
+
+\subsubsection{Opis szczegółowy}
+
+
+Definicja w linii \hyperlink{mybenchmark_8h_source_l00072}{72} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
+
+
+
+\subsubsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_my_benchmark_observer_ad65d0afb1ea49dbdebd1aef5f374aa9a}{\index{My\-Benchmark\-Observer@{My\-Benchmark\-Observer}!My\-Benchmark\-Observer@{My\-Benchmark\-Observer}}
+\index{My\-Benchmark\-Observer@{My\-Benchmark\-Observer}!MyBenchmarkObserver@{My\-Benchmark\-Observer}}
+\paragraph[{My\-Benchmark\-Observer}]{\setlength{\rightskip}{0pt plus 5cm}My\-Benchmark\-Observer\-::\-My\-Benchmark\-Observer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_my_benchmark_observer_ad65d0afb1ea49dbdebd1aef5f374aa9a}
+
+
+Definicja w linii \hyperlink{mybenchmark_8h_source_l00075}{75} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
+
+
+\begin{DoxyCode}
+00075 \{\};
+\end{DoxyCode}
+\hypertarget{class_my_benchmark_observer_addcc70a6c10af608874dc8613c84299f}{\index{My\-Benchmark\-Observer@{My\-Benchmark\-Observer}!$\sim$\-My\-Benchmark\-Observer@{$\sim$\-My\-Benchmark\-Observer}}
+\index{$\sim$\-My\-Benchmark\-Observer@{$\sim$\-My\-Benchmark\-Observer}!MyBenchmarkObserver@{My\-Benchmark\-Observer}}
+\paragraph[{$\sim$\-My\-Benchmark\-Observer}]{\setlength{\rightskip}{0pt plus 5cm}virtual My\-Benchmark\-Observer\-::$\sim$\-My\-Benchmark\-Observer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_my_benchmark_observer_addcc70a6c10af608874dc8613c84299f}
+
+
+Definicja w linii \hyperlink{mybenchmark_8h_source_l00092}{92} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
+
+
+
+Odwołuje się do \hyperlink{mybenchmark_8h_source_l00041}{My\-Benchmark\-::stream\-To\-File}.
+
+
+\begin{DoxyCode}
+00092 \{\hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile}.close();\};
+\end{DoxyCode}
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_my_benchmark_observer_a33ea57a2d321f835f3af0d3bab76a931}{\index{My\-Benchmark\-Observer@{My\-Benchmark\-Observer}!get\-Timer\-Value@{get\-Timer\-Value}}
+\index{get\-Timer\-Value@{get\-Timer\-Value}!MyBenchmarkObserver@{My\-Benchmark\-Observer}}
+\paragraph[{get\-Timer\-Value}]{\setlength{\rightskip}{0pt plus 5cm}double My\-Benchmark\-Observer\-::get\-Timer\-Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_my_benchmark_observer_a33ea57a2d321f835f3af0d3bab76a931}
+
+
+Implementuje \hyperlink{class_observer_a5ea7b52632401a92b7ba0aca5bceceaa}{Observer}.
+
+
+
+Definicja w linii \hyperlink{mybenchmark_8h_source_l00076}{76} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
+
+
+
+Odwołuje się do \hyperlink{mybenchmark_8h_source_l00040}{My\-Benchmark\-::timer\-Value}.
+
+
+\begin{DoxyCode}
+00076 \{\textcolor{keywordflow}{return} this->\hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{timerValue};\}
+\end{DoxyCode}
+\hypertarget{class_my_benchmark_observer_a50a758f459b683b82bbb32fa4c2f13df}{\index{My\-Benchmark\-Observer@{My\-Benchmark\-Observer}!received\-Start\-Update@{received\-Start\-Update}}
+\index{received\-Start\-Update@{received\-Start\-Update}!MyBenchmarkObserver@{My\-Benchmark\-Observer}}
+\paragraph[{received\-Start\-Update}]{\setlength{\rightskip}{0pt plus 5cm}void My\-Benchmark\-Observer\-::received\-Start\-Update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_my_benchmark_observer_a50a758f459b683b82bbb32fa4c2f13df}
+
+
+Implementuje \hyperlink{class_observer_a69ca89633f4624b79ec696a049793ba4}{Observer}.
+
+
+
+Definicja w linii \hyperlink{mybenchmark_8h_source_l00077}{77} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
+
+
+
+Odwołuje się do \hyperlink{mybenchmark_8cpp_source_l00012}{My\-Benchmark\-::timer\-Start()}.
+
+
+\begin{DoxyCode}
+00077                                     \{
+00078                 \textcolor{comment}{//std::cout<<"\(\backslash\)nWlaczam stoper...";}
+00079                 \hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{timerStart}();
+00080         \}
+\end{DoxyCode}
+\hypertarget{class_my_benchmark_observer_aaf6a636ef6e8d8f8f8bc6d540e432246}{\index{My\-Benchmark\-Observer@{My\-Benchmark\-Observer}!received\-Stop\-Update@{received\-Stop\-Update}}
+\index{received\-Stop\-Update@{received\-Stop\-Update}!MyBenchmarkObserver@{My\-Benchmark\-Observer}}
+\paragraph[{received\-Stop\-Update}]{\setlength{\rightskip}{0pt plus 5cm}void My\-Benchmark\-Observer\-::received\-Stop\-Update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_my_benchmark_observer_aaf6a636ef6e8d8f8f8bc6d540e432246}
+
+
+Implementuje \hyperlink{class_observer_a8eb646ac3407c4d24d01178a6ba74f7f}{Observer}.
+
+
+
+Definicja w linii \hyperlink{mybenchmark_8h_source_l00082}{82} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
+
+
+
+Odwołuje się do \hyperlink{mybenchmark_8cpp_source_l00017}{My\-Benchmark\-::timer\-Stop()}.
+
+
+\begin{DoxyCode}
+00082                                    \{
+00083                 std::cout<<\textcolor{stringliteral}{"\(\backslash\)nCzas wykonywania operacji: "}<<\hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{timerStop}();
+00084         \}
+\end{DoxyCode}
+\hypertarget{class_my_benchmark_observer_a2c12408a0f213a39d3419fd807f30968}{\index{My\-Benchmark\-Observer@{My\-Benchmark\-Observer}!received\-Stop\-Update\-And\-Save\-To\-File@{received\-Stop\-Update\-And\-Save\-To\-File}}
+\index{received\-Stop\-Update\-And\-Save\-To\-File@{received\-Stop\-Update\-And\-Save\-To\-File}!MyBenchmarkObserver@{My\-Benchmark\-Observer}}
+\paragraph[{received\-Stop\-Update\-And\-Save\-To\-File}]{\setlength{\rightskip}{0pt plus 5cm}void My\-Benchmark\-Observer\-::received\-Stop\-Update\-And\-Save\-To\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_my_benchmark_observer_a2c12408a0f213a39d3419fd807f30968}
+
+
+Implementuje \hyperlink{class_observer_a764dd4568782b41271aa832edbe4455e}{Observer}.
+
+
+
+Definicja w linii \hyperlink{mybenchmark_8h_source_l00086}{86} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
+
+
+
+Odwołuje się do \hyperlink{mybenchmark_8h_source_l00041}{My\-Benchmark\-::stream\-To\-File}, \hyperlink{mybenchmark_8cpp_source_l00017}{My\-Benchmark\-::timer\-Stop()} i \hyperlink{mybenchmark_8h_source_l00040}{My\-Benchmark\-::timer\-Value}.
+
+
+\begin{DoxyCode}
+00086                                                 \{
+00087                 \hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{timerStop}();
+00088                 \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile}<<\hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{timerValue}<<std::endl;
+00089 
+00090         \}
+\end{DoxyCode}
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{mybenchmark_8h}{mybenchmark.\-h}\end{DoxyCompactItemize}

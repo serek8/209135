@@ -3,11 +3,12 @@
 }
 {\ttfamily \#include $<$iostream$>$}\\*
 {\ttfamily \#include $<$string$>$}\\*
-{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include \char`\"{}mylistelement.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}observer.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}list.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}listelement.\-h\char`\"{}}\\*
 \subsubsection*{Komponenty}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{class_my_list}{My\-List}
-\begin{DoxyCompactList}\small\item\em Lista dwukierunkowa. \end{DoxyCompactList}\item 
-class \hyperlink{class_my_list_1_1_my_list_element}{My\-List\-::\-My\-List\-Element}
-\begin{DoxyCompactList}\small\item\em Klasa 'malych struktur' gdzie jest numer i wskaznik do nas elementu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \hyperlink{class_my_list}{My\-List$<$ My\-List\-Element\-Type $>$}
+\begin{DoxyCompactList}\small\item\em Lista dwukierunkowa. \end{DoxyCompactList}\end{DoxyCompactItemize}

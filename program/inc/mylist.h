@@ -26,7 +26,7 @@ public:
 	/// liczba elementow listy
 	int sizeOfList;
 
-
+	MyList insertAfter(){return *new MyList<MyListElementType>();}
 	///  wskaznik do 'malej struktury' ktora jest pierwsza na liscie
 	MyListElement<MyListElementType> *firstElement;
 	///  wskaznik do 'malej struktury' ktora jest ostatnia na liscie

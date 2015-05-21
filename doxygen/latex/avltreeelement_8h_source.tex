@@ -1,0 +1,49 @@
+\hypertarget{avltreeelement_8h}{\subsection{avltreeelement.\-h}
+\label{avltreeelement_8h}\index{avltreeelement.\-h@{avltreeelement.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * avltreeelement.h}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: May 21, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00008 \textcolor{preprocessor}{#ifndef AVLTREEELEMENT\_H\_}
+00009 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define AVLTREEELEMENT\_H\_}
+00010 \textcolor{preprocessor}{}
+00011 \textcolor{comment}{// definicja typu danych reprezentującego węzeł drzewa AVL}
+00012 \textcolor{comment}{//--------------------------------------------------------}
+00013 \textcolor{keyword}{template} <\textcolor{keyword}{class} ContentType>
+\hypertarget{avltreeelement_8h_source_l00014}{}\hyperlink{class_a_v_l_tree_node}{00014} \textcolor{keyword}{class }\hyperlink{class_a_v_l_tree_node}{AVLTreeNode}
+00015 \{
+00016 \textcolor{keyword}{public}:
+00017 
+00018         \textcolor{comment}{// Gałąź rodzica, lewa podgaląć, prawa podgałąź}
+\hypertarget{avltreeelement_8h_source_l00019}{}\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{00019}         \hyperlink{class_a_v_l_tree_node}{AVLTreeNode} * \hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode},
+00020                                 * \hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode},
+00021                                 * \hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode};
+00022 
+00023   \textcolor{comment}{//klucz}
+\hypertarget{avltreeelement_8h_source_l00024}{}\hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{00024}   \textcolor{keywordtype}{int} \hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{key}, \hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor};
+\hypertarget{avltreeelement_8h_source_l00025}{}\hyperlink{class_a_v_l_tree_node_ac94089c8fd88ff9fbd092cd2306719bd}{00025}   ContentType \hyperlink{class_a_v_l_tree_node_ac94089c8fd88ff9fbd092cd2306719bd}{content};
+00026 
+\hypertarget{avltreeelement_8h_source_l00027}{}\hyperlink{class_a_v_l_tree_node_ae79b3a933b8290bf12d87242dec5deea}{00027}    \hyperlink{class_a_v_l_tree_node_ae79b3a933b8290bf12d87242dec5deea}{AVLTreeNode}()
+00028   \{
+00029            \hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = \hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} = \hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = NULL;
+00030            \hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{key} = \hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = 0;
+00031   \}
+\hypertarget{avltreeelement_8h_source_l00032}{}\hyperlink{class_a_v_l_tree_node_a3145d578d5da384c424484ddfa9095ba}{00032}    \hyperlink{class_a_v_l_tree_node_a3145d578d5da384c424484ddfa9095ba}{AVLTreeNode}(\textcolor{keywordtype}{int} newKey)
+00033    \{
+00034            \hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = \hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} = \hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = NULL;
+00035            \hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = 0;
+00036                 \hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{key} = newKey;
+00037    \}
+00038 \};
+00039 
+00040 
+00041 
+00042 
+00043 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* AVLTREEELEMENT\_H\_ */}\textcolor{preprocessor}{}
+\end{DoxyCode}

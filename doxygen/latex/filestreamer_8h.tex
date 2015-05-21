@@ -1,0 +1,105 @@
+\hypertarget{filestreamer_8h}{\subsection{Dokumentacja pliku filestreamer.\-h}
+\label{filestreamer_8h}\index{filestreamer.\-h@{filestreamer.\-h}}
+}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+\subsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{filestreamer_8h_a9248cc95aad144b02df432a53efa18a6}{write\-String1\-To\-File} (std\-::string file\-Name, std\-::string text\-To\-Save)
+\item 
+void \hyperlink{filestreamer_8h_aabcaaf6520418b2d25a36165feab30b2}{write\-String2\-To\-File} (std\-::string file\-Name, double text\-To\-Save)
+\item 
+void \hyperlink{filestreamer_8h_a95ecd1a8157e824fcd5ff7a079794c46}{write\-String3\-To\-File} (std\-::string file\-Name, int text\-To\-Save)
+\item 
+void \hyperlink{filestreamer_8h_ac9fbd480fa2b14ca0bab9d162bb2b0a0}{clear\-File} (std\-::string file\-Name)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Dokumentacja funkcji}
+\hypertarget{filestreamer_8h_ac9fbd480fa2b14ca0bab9d162bb2b0a0}{\index{filestreamer.\-h@{filestreamer.\-h}!clear\-File@{clear\-File}}
+\index{clear\-File@{clear\-File}!filestreamer.h@{filestreamer.\-h}}
+\paragraph[{clear\-File}]{\setlength{\rightskip}{0pt plus 5cm}void clear\-File (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{filestreamer_8h_ac9fbd480fa2b14ca0bab9d162bb2b0a0}
+
+
+Definicja w linii \hyperlink{filestreamer_8h_source_l00041}{41} pliku \hyperlink{filestreamer_8h_source}{filestreamer.\-h}.
+
+
+\begin{DoxyCode}
+00042 \{
+00043         std::ofstream streamToFile;
+00044         streamToFile.open (fileName.c\_str(), std::ofstream::out  | std::ofstream::trunc);
+00045         streamToFile.close();
+00046 \}
+\end{DoxyCode}
+\hypertarget{filestreamer_8h_a9248cc95aad144b02df432a53efa18a6}{\index{filestreamer.\-h@{filestreamer.\-h}!write\-String1\-To\-File@{write\-String1\-To\-File}}
+\index{write\-String1\-To\-File@{write\-String1\-To\-File}!filestreamer.h@{filestreamer.\-h}}
+\paragraph[{write\-String1\-To\-File}]{\setlength{\rightskip}{0pt plus 5cm}void write\-String1\-To\-File (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{file\-Name, }
+\item[{std\-::string}]{text\-To\-Save}
+\end{DoxyParamCaption}
+)}}\label{filestreamer_8h_a9248cc95aad144b02df432a53efa18a6}
+
+
+Definicja w linii \hyperlink{filestreamer_8h_source_l00015}{15} pliku \hyperlink{filestreamer_8h_source}{filestreamer.\-h}.
+
+
+\begin{DoxyCode}
+00016 \{
+00017         std::ofstream streamToFile;
+00018         streamToFile.open (fileName.c\_str(), std::ofstream::app);
+00019         streamToFile << std::fixed;
+00020         streamToFile << std::setprecision(5) <<textToSave;
+00021         streamToFile.close();
+00022 \}
+\end{DoxyCode}
+\hypertarget{filestreamer_8h_aabcaaf6520418b2d25a36165feab30b2}{\index{filestreamer.\-h@{filestreamer.\-h}!write\-String2\-To\-File@{write\-String2\-To\-File}}
+\index{write\-String2\-To\-File@{write\-String2\-To\-File}!filestreamer.h@{filestreamer.\-h}}
+\paragraph[{write\-String2\-To\-File}]{\setlength{\rightskip}{0pt plus 5cm}void write\-String2\-To\-File (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{file\-Name, }
+\item[{double}]{text\-To\-Save}
+\end{DoxyParamCaption}
+)}}\label{filestreamer_8h_aabcaaf6520418b2d25a36165feab30b2}
+
+
+Definicja w linii \hyperlink{filestreamer_8h_source_l00023}{23} pliku \hyperlink{filestreamer_8h_source}{filestreamer.\-h}.
+
+
+\begin{DoxyCode}
+00024 \{
+00025         std::ofstream streamToFile;
+00026         streamToFile.open (fileName.c\_str(), std::ofstream::app);
+00027         streamToFile << std::fixed;
+00028         streamToFile<<std::setprecision(5)  << textToSave;
+00029         streamToFile.close();
+00030 \}
+\end{DoxyCode}
+\hypertarget{filestreamer_8h_a95ecd1a8157e824fcd5ff7a079794c46}{\index{filestreamer.\-h@{filestreamer.\-h}!write\-String3\-To\-File@{write\-String3\-To\-File}}
+\index{write\-String3\-To\-File@{write\-String3\-To\-File}!filestreamer.h@{filestreamer.\-h}}
+\paragraph[{write\-String3\-To\-File}]{\setlength{\rightskip}{0pt plus 5cm}void write\-String3\-To\-File (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{file\-Name, }
+\item[{int}]{text\-To\-Save}
+\end{DoxyParamCaption}
+)}}\label{filestreamer_8h_a95ecd1a8157e824fcd5ff7a079794c46}
+
+
+Definicja w linii \hyperlink{filestreamer_8h_source_l00032}{32} pliku \hyperlink{filestreamer_8h_source}{filestreamer.\-h}.
+
+
+\begin{DoxyCode}
+00033 \{
+00034         std::ofstream streamToFile;
+00035         streamToFile.open (fileName.c\_str(), std::ofstream::app);
+00036         streamToFile << std::fixed;
+00037         streamToFile <<std::setprecision(5) << textToSave;
+00038         streamToFile.close();
+00039 \}
+\end{DoxyCode}

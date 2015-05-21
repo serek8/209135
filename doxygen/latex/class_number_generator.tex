@@ -10,60 +10,31 @@ Klasa generujaca losowe liczby.
 
 {\ttfamily \#include $<$numbergenerator.\-h$>$}
 
-Diagram dziedziczenia dla Number\-Generator\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=2.000000cm]{class_number_generator}
-\end{center}
-\end{figure}
-\subsubsection*{Metody publiczne}
-\begin{DoxyCompactItemize}
-\item 
-void \hyperlink{class_number_generator_a511673bb245d14a048702558d12deb63}{generate\-Numbers} (int zakres=10000000)
-\begin{DoxyCompactList}\small\item\em Generuje losowe liczby Generuje losowe liczby na podstawie czasu maszyny. \end{DoxyCompactList}\item 
-\hyperlink{class_number_generator_a828757cc2c9712e0b111584d1f1d5164}{$\sim$\-Number\-Generator} ()
-\end{DoxyCompactItemize}
 \subsubsection*{Statyczne metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
-static std\-::string $\ast$ \hyperlink{class_number_generator_af434d1cd0b338d22b11b24fbd2e14dce}{generate\-Strings} (int ile\-Stringow)
+{\footnotesize template$<$typename My\-List\-Element\-Type $>$ }\\static \hyperlink{class_my_list}{My\-List}$<$ My\-List\-Element\-Type $>$ \hyperlink{class_number_generator_ab3c0d704683453456684ec24fb771334}{generate\-Numbers} (int range, int quantity)
+\begin{DoxyCompactList}\small\item\em Generuje losowe liczby Generuje losowe liczby na podstawie czasu maszyny. \end{DoxyCompactList}\item 
+static std\-::string $\ast$ \hyperlink{class_number_generator_afed5ae8efb72655770753790714b7643}{generate\-Strings} (int ile\-Stringow)
 \begin{DoxyCompactList}\small\item\em Generuje losowe stringi. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsubsection*{Dodatkowe Dziedziczone Składowe}
 
 
 \subsubsection{Opis szczegółowy}
-Klasa generujaca losowe liczby na podstawie czasu maszyny na ktorym jest uruchomiona Wszystkie funkcje zapisu pliku dziedziczy z klasy \hyperlink{class_data_frame}{Data\-Frame} 
+Klasa generujaca losowe liczby na podstawie czasu maszyny na ktorym jest uruchomiona Wszystkie funkcje zapisu pliku dziedziczy z klasy Data\-Frame 
 
-Definicja w linii \hyperlink{numbergenerator_8h_source_l00026}{26} pliku \hyperlink{numbergenerator_8h_source}{numbergenerator.\-h}.
+Definicja w linii \hyperlink{numbergenerator_8h_source_l00027}{27} pliku \hyperlink{numbergenerator_8h_source}{numbergenerator.\-h}.
 
-
-
-\subsubsection{Dokumentacja konstruktora i destruktora}
-\hypertarget{class_number_generator_a828757cc2c9712e0b111584d1f1d5164}{\index{Number\-Generator@{Number\-Generator}!$\sim$\-Number\-Generator@{$\sim$\-Number\-Generator}}
-\index{$\sim$\-Number\-Generator@{$\sim$\-Number\-Generator}!NumberGenerator@{Number\-Generator}}
-\paragraph[{$\sim$\-Number\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}Number\-Generator\-::$\sim$\-Number\-Generator (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_number_generator_a828757cc2c9712e0b111584d1f1d5164}
-
-
-Definicja w linii \hyperlink{numbergenerator_8h_source_l00058}{58} pliku \hyperlink{numbergenerator_8h_source}{numbergenerator.\-h}.
-
-
-\begin{DoxyCode}
-00058 \{\}
-\end{DoxyCode}
 
 
 \subsubsection{Dokumentacja funkcji składowych}
-\hypertarget{class_number_generator_a511673bb245d14a048702558d12deb63}{\index{Number\-Generator@{Number\-Generator}!generate\-Numbers@{generate\-Numbers}}
+\hypertarget{class_number_generator_ab3c0d704683453456684ec24fb771334}{\index{Number\-Generator@{Number\-Generator}!generate\-Numbers@{generate\-Numbers}}
 \index{generate\-Numbers@{generate\-Numbers}!NumberGenerator@{Number\-Generator}}
-\paragraph[{generate\-Numbers}]{\setlength{\rightskip}{0pt plus 5cm}void Number\-Generator\-::generate\-Numbers (
+\paragraph[{generate\-Numbers}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename My\-List\-Element\-Type $>$ static {\bf My\-List}$<$My\-List\-Element\-Type$>$ Number\-Generator\-::generate\-Numbers (
 \begin{DoxyParamCaption}
-\item[{int}]{zakres = {\ttfamily 10000000}}
+\item[{int}]{range, }
+\item[{int}]{quantity}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_number_generator_a511673bb245d14a048702558d12deb63}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_number_generator_ab3c0d704683453456684ec24fb771334}
 
 \begin{DoxyParams}{Parametry}
 {\em zakres} & Zakres liczb do wygenerowania \\
@@ -71,36 +42,35 @@ Definicja w linii \hyperlink{numbergenerator_8h_source_l00058}{58} pliku \hyperl
 \end{DoxyParams}
 
 
-Definicja w linii \hyperlink{numbergenerator_8h_source_l00035}{35} pliku \hyperlink{numbergenerator_8h_source}{numbergenerator.\-h}.
+Definicja w linii \hyperlink{numbergenerator_8h_source_l00037}{37} pliku \hyperlink{numbergenerator_8h_source}{numbergenerator.\-h}.
 
 
 
-Odwołuje się do \hyperlink{dataframe_8h_source_l00034}{Data\-Frame\-::size\-Of\-Table} i \hyperlink{dataframe_8h_source_l00021}{Data\-Frame\-::table\-Of\-Data}.
-
-
-
-Odwołania w \hyperlink{numbergenerator_8cpp_source_l00010}{generate\-Strings()} i \hyperlink{main_8cpp_source_l00018}{main()}.
+Odwołuje się do \hyperlink{mylist_8h_source_l00112}{My\-List$<$ My\-List\-Element\-Type $>$\-::push\-\_\-back()}.
 
 
 \begin{DoxyCode}
-00036 \{
-00037         time\_t randomTime = clock();
-00038         this->\hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData} = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable}];
-00039         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable} ; i++)
-00040         \{
-00041                 srand (randomTime = clock());
-00042                 this->\hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData}[i] = rand()%zakres;
-00043                 randomTime = clock();
-00044         \}
-00045 \}
+00038 \{
+00039         \hyperlink{class_my_list}{MyList<MyListElementType>} &myList = *\textcolor{keyword}{new} 
+      \hyperlink{class_my_list}{MyList<MyListElementType>}();
+00040         time\_t randomTime = clock();
+00041 
+00042         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<quantity ; i++)
+00043         \{
+00044                 srand (randomTime = clock());
+00045                 myList.\hyperlink{class_my_list_a52dad29ecf7522b86df8daa3aa74702d}{push\_back}(rand()%range);
+00046                 randomTime = clock();
+00047         \}
+00048         \textcolor{keywordflow}{return} myList;
+00049 \}
 \end{DoxyCode}
-\hypertarget{class_number_generator_af434d1cd0b338d22b11b24fbd2e14dce}{\index{Number\-Generator@{Number\-Generator}!generate\-Strings@{generate\-Strings}}
+\hypertarget{class_number_generator_afed5ae8efb72655770753790714b7643}{\index{Number\-Generator@{Number\-Generator}!generate\-Strings@{generate\-Strings}}
 \index{generate\-Strings@{generate\-Strings}!NumberGenerator@{Number\-Generator}}
-\paragraph[{generate\-Strings}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string $\ast$ Number\-Generator\-::generate\-Strings (
+\paragraph[{generate\-Strings}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::string$\ast$ Number\-Generator\-::generate\-Strings (
 \begin{DoxyParamCaption}
 \item[{int}]{ile\-Stringow}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_number_generator_af434d1cd0b338d22b11b24fbd2e14dce}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_number_generator_afed5ae8efb72655770753790714b7643}
 
 \begin{DoxyParams}{Parametry}
 {\em ile\-Stringow} & Ilosc stringow do stworzenia Generuje losowe stringi na podstawie czasu maszyny \\
@@ -108,49 +78,6 @@ Odwołania w \hyperlink{numbergenerator_8cpp_source_l00010}{generate\-Strings()}
 \end{DoxyParams}
 
 
-Definicja w linii \hyperlink{numbergenerator_8cpp_source_l00010}{10} pliku \hyperlink{numbergenerator_8cpp_source}{numbergenerator.\-cpp}.
-
-
-
-Odwołuje się do \hyperlink{numbergenerator_8h_source_l00035}{generate\-Numbers()}, \hyperlink{numbergenerator_8h_source_l00017}{M\-A\-X\-\_\-\-H\-E\-X\-\_\-\-A\-S\-C\-I\-I\-\_\-\-K\-O\-D}, \hyperlink{numbergenerator_8h_source_l00018}{R\-O\-Z\-M\-I\-A\-R\-\_\-\-S\-T\-R\-I\-N\-G\-U}, \hyperlink{dataframe_8h_source_l00034}{Data\-Frame\-::size\-Of\-Table} i \hyperlink{dataframe_8h_source_l00021}{Data\-Frame\-::table\-Of\-Data}.
-
-
-
-Odwołania w \hyperlink{main_8cpp_source_l00018}{main()}.
-
-
-\begin{DoxyCode}
-00010                                                           \{
-00011         std::string *tablicaStringow = \textcolor{keyword}{new} std::string[ileStringow];
-00012         \hyperlink{class_number_generator}{NumberGenerator} liczby;
-00013 
-00014         liczby.\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable} = 1; \textcolor{comment}{// bede generowac tylko jedna liczbe}
-00015 
-00016         \textcolor{keywordtype}{int} i, j, k;
-00017         \textcolor{keywordflow}{for}(i=0 ; i<ileStringow ; i++)
-00018         \{
-00019                 \textcolor{comment}{// generuje jedna liczbe z zakresu od 0 do 12, która mowi nam ile ma byc w tekscie znakow}
-00020                 liczby.\hyperlink{class_number_generator_a511673bb245d14a048702558d12deb63}{generateNumbers}(\hyperlink{numbergenerator_8h_aa387743f75779d7abf5cd4224af4cffa}{ROZMIAR\_STRINGU});
-00021                 \textcolor{keywordflow}{while}(liczby.\hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData}[0]<2) liczby.\hyperlink{class_number_generator_a511673bb245d14a048702558d12deb63}{generateNumbers}(
-      \hyperlink{numbergenerator_8h_aa387743f75779d7abf5cd4224af4cffa}{ROZMIAR\_STRINGU});
-00022                 k = liczby.\hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData}[0];
-00023                 \textcolor{keywordflow}{for}(j=0; j<k ; j++)
-00024                 \{
-00025                         liczby.\hyperlink{class_number_generator_a511673bb245d14a048702558d12deb63}{generateNumbers}(\hyperlink{numbergenerator_8h_ad234b171c744b5f476c1685da37bb7ca}{MAX\_HEX\_ASCII\_KOD});
-00026                         \textcolor{keywordflow}{while}(liczby.\hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData}[0]<48) liczby.
-      \hyperlink{class_number_generator_a511673bb245d14a048702558d12deb63}{generateNumbers}(\hyperlink{numbergenerator_8h_ad234b171c744b5f476c1685da37bb7ca}{MAX\_HEX\_ASCII\_KOD});
-00027                         tablicaStringow[i] += (char)liczby.\hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData}[0];
-00028 
-00029                 \}
-00030 
-00031         \}
-00032 
-00033         \textcolor{keywordflow}{return} tablicaStringow;
-00034 \}
-\end{DoxyCode}
-
-
-Dokumentacja dla tej klasy została wygenerowana z plików\-:\begin{DoxyCompactItemize}
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{numbergenerator_8h}{numbergenerator.\-h}\item 
-\hyperlink{numbergenerator_8cpp}{numbergenerator.\-cpp}\end{DoxyCompactItemize}
+\hyperlink{numbergenerator_8h}{numbergenerator.\-h}\end{DoxyCompactItemize}

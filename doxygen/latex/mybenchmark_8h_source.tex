@@ -13,30 +13,65 @@
 00009 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define MYBENCHMARK\_H\_}
 00010 \textcolor{preprocessor}{}
 00011 \textcolor{preprocessor}{#include <ctime>}
-00012 \textcolor{preprocessor}{#include "\hyperlink{dataframe_8h}{dataframe.h}"}
-\hypertarget{mybenchmark_8h_source_l00020}{}\hyperlink{class_my_benchmark}{00020} \textcolor{keyword}{class }\hyperlink{class_my_benchmark}{MyBenchmark} : \textcolor{keyword}{public} \hyperlink{class_data_frame}{DataFrame}
-00021 \{
-00022 \textcolor{keyword}{protected}:
-00031         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \hyperlink{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{executeAlgorithm}() = 0;
-00032 
-00033 
-00034 \textcolor{keyword}{public}:
-00035 
-\hypertarget{mybenchmark_8h_source_l00037}{}\hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{00037}         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{timerValue};
+00012 \textcolor{preprocessor}{#include "\hyperlink{observer_8h}{observer.h}"}
+00013 \textcolor{preprocessor}{#include <iostream>}
+00014 \textcolor{preprocessor}{#include <fstream>}
+00015 \textcolor{comment}{//#include "filestreamer.h"}
+\hypertarget{mybenchmark_8h_source_l00023}{}\hyperlink{class_my_benchmark}{00023} \textcolor{comment}{}\textcolor{keyword}{class }\hyperlink{class_my_benchmark}{MyBenchmark}
+00024 \{
+00025 
+00037 \textcolor{keyword}{public}:
 00038 
-00047         \textcolor{keywordtype}{double} \hyperlink{class_my_benchmark_a66576625ca37f8bc539c18ffceb69c9c}{testAlgorithm}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} repetition);
-00048 
-00052         \textcolor{keyword}{static} \textcolor{keywordtype}{void} \hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{timerStart}();
+\hypertarget{mybenchmark_8h_source_l00040}{}\hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{00040}         \textcolor{keywordtype}{double} \hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{timerValue};
+\hypertarget{mybenchmark_8h_source_l00041}{}\hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{00041}         std::ofstream \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile};
+\hypertarget{mybenchmark_8h_source_l00042}{}\hyperlink{class_my_benchmark_aeca64d5b265e357ef879bf982dd4bb00}{00042}         \textcolor{keyword}{static} \textcolor{keywordtype}{double}  \hyperlink{class_my_benchmark_aeca64d5b265e357ef879bf982dd4bb00}{timerValueStatic};
+\hypertarget{mybenchmark_8h_source_l00043}{}\hyperlink{class_my_benchmark_a7f3739e8b61939627c0f63948a9975ca}{00043}         \hyperlink{class_my_benchmark_a7f3739e8b61939627c0f63948a9975ca}{MyBenchmark}()
+00044         \{
+00045                 \hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{timerValue} = 0;
+00046                 \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile}.open (\textcolor{stringliteral}{"log.txt"}, std::ofstream::out  | std::ofstream::trunc);
+00047                         \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile}.close();
+00048                 \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile}.open (\textcolor{stringliteral}{"log.txt"}, std::ofstream::app);
+00049                 \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile} << std::fixed;
+00050         \}
+00051 
+00052 
 00053 
-00058         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{timerStop}();
-00059 
-\hypertarget{mybenchmark_8h_source_l00064}{}\hyperlink{class_my_benchmark_a00de82c40680b41065eb402ac90f1736}{00064}         \textcolor{keyword}{virtual} \hyperlink{class_my_benchmark_a00de82c40680b41065eb402ac90f1736}{~MyBenchmark}() \{\};
-00065         \textcolor{comment}{//using DataFrame::operator=;}
-00066 
-00067 
-00068 \};
-00069 
+00055         \textcolor{keyword}{static} \textcolor{keywordtype}{void}  \hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{timerStart}();
+00056 
+00061         \textcolor{keyword}{static} \textcolor{keywordtype}{double}  \hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{timerStop}();
+00062 
+\hypertarget{mybenchmark_8h_source_l00066}{}\hyperlink{class_my_benchmark_a00de82c40680b41065eb402ac90f1736}{00066}         \textcolor{keyword}{virtual} \hyperlink{class_my_benchmark_a00de82c40680b41065eb402ac90f1736}{~MyBenchmark}() \{\};
+00067         \textcolor{comment}{//using DataFrame::operator=;}
+00068 
+00069 \};
 00070 
 00071 
-00072 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* MYBENCHMARK\_H\_ */}\textcolor{preprocessor}{}
+\hypertarget{mybenchmark_8h_source_l00072}{}\hyperlink{class_my_benchmark_observer}{00072} \textcolor{keyword}{class }\hyperlink{class_my_benchmark_observer}{MyBenchmarkObserver} : \textcolor{keyword}{public} \hyperlink{class_my_benchmark}{MyBenchmark}, \textcolor{keyword}{public} 
+      \hyperlink{class_observer}{Observer}
+00073 \{
+00074 \textcolor{keyword}{public}:
+\hypertarget{mybenchmark_8h_source_l00075}{}\hyperlink{class_my_benchmark_observer_ad65d0afb1ea49dbdebd1aef5f374aa9a}{00075}         \hyperlink{class_my_benchmark_observer_ad65d0afb1ea49dbdebd1aef5f374aa9a}{MyBenchmarkObserver}()\{\};
+\hypertarget{mybenchmark_8h_source_l00076}{}\hyperlink{class_my_benchmark_observer_a33ea57a2d321f835f3af0d3bab76a931}{00076}         \textcolor{keywordtype}{double} \hyperlink{class_my_benchmark_observer_a33ea57a2d321f835f3af0d3bab76a931}{getTimerValue}() \{\textcolor{keywordflow}{return} this->\hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{timerValue};\}
+\hypertarget{mybenchmark_8h_source_l00077}{}\hyperlink{class_my_benchmark_observer_a50a758f459b683b82bbb32fa4c2f13df}{00077}         \textcolor{keywordtype}{void} \hyperlink{class_my_benchmark_observer_a50a758f459b683b82bbb32fa4c2f13df}{receivedStartUpdate} () \{
+00078                 \textcolor{comment}{//std::cout<<"\(\backslash\)nWlaczam stoper...";}
+00079                 \hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{timerStart}();
+00080         \}
+00081 
+\hypertarget{mybenchmark_8h_source_l00082}{}\hyperlink{class_my_benchmark_observer_aaf6a636ef6e8d8f8f8bc6d540e432246}{00082}         \textcolor{keywordtype}{void} \hyperlink{class_my_benchmark_observer_aaf6a636ef6e8d8f8f8bc6d540e432246}{receivedStopUpdate} () \{
+00083                 std::cout<<\textcolor{stringliteral}{"\(\backslash\)nCzas wykonywania operacji: "}<<\hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{timerStop}();
+00084         \}
+00085 
+\hypertarget{mybenchmark_8h_source_l00086}{}\hyperlink{class_my_benchmark_observer_a2c12408a0f213a39d3419fd807f30968}{00086}         \textcolor{keywordtype}{void} \hyperlink{class_my_benchmark_observer_a2c12408a0f213a39d3419fd807f30968}{receivedStopUpdateAndSaveToFile} () \{
+00087                 \hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{timerStop}();
+00088                 \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile}<<\hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{timerValue}<<std::endl;
+00089 
+00090         \}
+00091 
+\hypertarget{mybenchmark_8h_source_l00092}{}\hyperlink{class_my_benchmark_observer_addcc70a6c10af608874dc8613c84299f}{00092}         \textcolor{keyword}{virtual} \hyperlink{class_my_benchmark_observer_addcc70a6c10af608874dc8613c84299f}{~MyBenchmarkObserver}()\{\hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile}.close();\};
+00093 
+00094 \};
+00095 
+00096 
+00097 
+00098 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* MYBENCHMARK\_H\_ */}\textcolor{preprocessor}{}
 \end{DoxyCode}

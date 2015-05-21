@@ -13,14 +13,14 @@ Klasa bazowa/interface do testowania algorytmu.
 Diagram dziedziczenia dla My\-Benchmark\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.000000cm]{class_my_benchmark}
+\includegraphics[height=2.000000cm]{class_my_benchmark}
 \end{center}
 \end{figure}
 \subsubsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
-double \hyperlink{class_my_benchmark_a66576625ca37f8bc539c18ffceb69c9c}{test\-Algorithm} (unsigned int repetition)
-\begin{DoxyCompactList}\small\item\em Benchmarkuje algorytm główny. \end{DoxyCompactList}\item 
+\hyperlink{class_my_benchmark_a7f3739e8b61939627c0f63948a9975ca}{My\-Benchmark} ()
+\item 
 virtual \hyperlink{class_my_benchmark_a00de82c40680b41065eb402ac90f1736}{$\sim$\-My\-Benchmark} ()
 \begin{DoxyCompactList}\small\item\em Usuwam obiekt test biorąc pod uwage jego prawdziwy typ. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsubsection*{Statyczne metody publiczne}
@@ -30,27 +30,53 @@ static void \hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{tim
 \begin{DoxyCompactList}\small\item\em włączam stoper \end{DoxyCompactList}\item 
 static double \hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{timer\-Stop} ()
 \begin{DoxyCompactList}\small\item\em wyłączam stoper \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{timer\-Value}
+\begin{DoxyCompactList}\small\item\em Interface metody algorytmu glownego. \end{DoxyCompactList}\item 
+std\-::ofstream \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{stream\-To\-File}
+\end{DoxyCompactItemize}
 \subsubsection*{Statyczne atrybuty publiczne}
 \begin{DoxyCompactItemize}
 \item 
-static double \hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{timer\-Value} =0
-\begin{DoxyCompactList}\small\item\em Czas stopera. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsubsection*{Metody chronione}
-\begin{DoxyCompactItemize}
-\item 
-virtual void \hyperlink{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{execute\-Algorithm} ()=0
-\begin{DoxyCompactList}\small\item\em Interface metody algorytmu glownego. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsubsection*{Dodatkowe Dziedziczone Składowe}
+static double \hyperlink{class_my_benchmark_aeca64d5b265e357ef879bf982dd4bb00}{timer\-Value\-Static} =0
+\end{DoxyCompactItemize}
 
 
 \subsubsection{Opis szczegółowy}
 Używana jako interface dla wszystkich algorytmow aby testowac czas wykonywanego algorymtu. 
 
-Definicja w linii \hyperlink{mybenchmark_8h_source_l00020}{20} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
+Definicja w linii \hyperlink{mybenchmark_8h_source_l00023}{23} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
 
 
 
 \subsubsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_my_benchmark_a7f3739e8b61939627c0f63948a9975ca}{\index{My\-Benchmark@{My\-Benchmark}!My\-Benchmark@{My\-Benchmark}}
+\index{My\-Benchmark@{My\-Benchmark}!MyBenchmark@{My\-Benchmark}}
+\paragraph[{My\-Benchmark}]{\setlength{\rightskip}{0pt plus 5cm}My\-Benchmark\-::\-My\-Benchmark (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_my_benchmark_a7f3739e8b61939627c0f63948a9975ca}
+
+
+Definicja w linii \hyperlink{mybenchmark_8h_source_l00043}{43} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
+
+
+
+Odwołuje się do \hyperlink{mybenchmark_8h_source_l00041}{stream\-To\-File} i \hyperlink{mybenchmark_8h_source_l00040}{timer\-Value}.
+
+
+\begin{DoxyCode}
+00044         \{
+00045                 \hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{timerValue} = 0;
+00046                 \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile}.open (\textcolor{stringliteral}{"log.txt"}, std::ofstream::out  | std::ofstream::trunc);
+00047                         \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile}.close();
+00048                 \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile}.open (\textcolor{stringliteral}{"log.txt"}, std::ofstream::app);
+00049                 \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile} << std::fixed;
+00050         \}
+\end{DoxyCode}
 \hypertarget{class_my_benchmark_a00de82c40680b41065eb402ac90f1736}{\index{My\-Benchmark@{My\-Benchmark}!$\sim$\-My\-Benchmark@{$\sim$\-My\-Benchmark}}
 \index{$\sim$\-My\-Benchmark@{$\sim$\-My\-Benchmark}!MyBenchmark@{My\-Benchmark}}
 \paragraph[{$\sim$\-My\-Benchmark}]{\setlength{\rightskip}{0pt plus 5cm}virtual My\-Benchmark\-::$\sim$\-My\-Benchmark (
@@ -60,68 +86,15 @@ Definicja w linii \hyperlink{mybenchmark_8h_source_l00020}{20} pliku \hyperlink{
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_my_benchmark_a00de82c40680b41065eb402ac90f1736}
 
 
-Definicja w linii \hyperlink{mybenchmark_8h_source_l00064}{64} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
+Definicja w linii \hyperlink{mybenchmark_8h_source_l00066}{66} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
 
 
 \begin{DoxyCode}
-00064 \{\};
+00066 \{\};
 \end{DoxyCode}
 
 
 \subsubsection{Dokumentacja funkcji składowych}
-\hypertarget{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{\index{My\-Benchmark@{My\-Benchmark}!execute\-Algorithm@{execute\-Algorithm}}
-\index{execute\-Algorithm@{execute\-Algorithm}!MyBenchmark@{My\-Benchmark}}
-\paragraph[{execute\-Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}virtual void My\-Benchmark\-::execute\-Algorithm (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}
-Metoda abstrakcyjna, ktora jest interfacem do implementacji przez glowny algorytm. To znaczy, ze kazdy algorytm ma byc uruchamiany tą funkcja 
-
-Implementowany w \hyperlink{class_multiply_by_two_aad2080a1fdab088814170e529a14db1e}{Multiply\-By\-Two}.
-
-
-
-Odwołania w \hyperlink{mybenchmark_8cpp_source_l00012}{test\-Algorithm()}.
-
-\hypertarget{class_my_benchmark_a66576625ca37f8bc539c18ffceb69c9c}{\index{My\-Benchmark@{My\-Benchmark}!test\-Algorithm@{test\-Algorithm}}
-\index{test\-Algorithm@{test\-Algorithm}!MyBenchmark@{My\-Benchmark}}
-\paragraph[{test\-Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}double My\-Benchmark\-::test\-Algorithm (
-\begin{DoxyParamCaption}
-\item[{unsigned int}]{repetition}
-\end{DoxyParamCaption}
-)}}\label{class_my_benchmark_a66576625ca37f8bc539c18ffceb69c9c}
-Obliczam czas wykonywanego algorytmu dzięki zastosowaniu metody abstrakcyjnej \hyperlink{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{execute\-Algorithm()} i zaimplementowaniu tego interfacu w algorytmie głównym 
-
-Definicja w linii \hyperlink{mybenchmark_8cpp_source_l00012}{12} pliku \hyperlink{mybenchmark_8cpp_source}{mybenchmark.\-cpp}.
-
-
-
-Odwołuje się do \hyperlink{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{execute\-Algorithm()}, \hyperlink{dataframe_8h_source_l00034}{Data\-Frame\-::size\-Of\-Table} i \hyperlink{dataframe_8h_source_l00021}{Data\-Frame\-::table\-Of\-Data}.
-
-
-\begin{DoxyCode}
-00013 \{
-00014         time\_t benchmarkTimeInTotal = 0;
-00015         time\_t benchmarkTimeForOneLoop = 0;
-00016 
-00017         \textcolor{keywordtype}{int} *originalTableOfData = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable}];
-00018         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable}; i++)
-00019                 originalTableOfData[i]=\hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData}[i];
-00020 
-00021         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<repetition ; i++)      \{
-00022                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable}; i++)
-00023                         \hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData}[i]=originalTableOfData[i];
-00024 
-00025                 benchmarkTimeForOneLoop = clock();
-00026                         this->\hyperlink{class_my_benchmark_aaebbb9785ed7c460e33459464655a611}{executeAlgorithm}();
-00027                 benchmarkTimeInTotal += clock() - benchmarkTimeForOneLoop;
-00028         \}
-00029 
-00030 
-00031         \textcolor{keywordflow}{return} (( (\textcolor{keywordtype}{double})benchmarkTimeInTotal ) /CLOCKS\_PER\_SEC);
-00032 \}
-\end{DoxyCode}
 \hypertarget{class_my_benchmark_a802577db97fd440a3920add30c35a676}{\index{My\-Benchmark@{My\-Benchmark}!timer\-Start@{timer\-Start}}
 \index{timer\-Start@{timer\-Start}!MyBenchmark@{My\-Benchmark}}
 \paragraph[{timer\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void My\-Benchmark\-::timer\-Start (
@@ -131,21 +104,21 @@ Odwołuje się do \hyperlink{class_my_benchmark_aaebbb9785ed7c460e33459464655a61
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{class_my_benchmark_a802577db97fd440a3920add30c35a676}
 
 
-Definicja w linii \hyperlink{mybenchmark_8cpp_source_l00035}{35} pliku \hyperlink{mybenchmark_8cpp_source}{mybenchmark.\-cpp}.
+Definicja w linii \hyperlink{mybenchmark_8cpp_source_l00012}{12} pliku \hyperlink{mybenchmark_8cpp_source}{mybenchmark.\-cpp}.
 
 
 
-Odwołuje się do \hyperlink{mybenchmark_8h_source_l00037}{timer\-Value}.
+Odwołuje się do \hyperlink{mybenchmark_8h_source_l00042}{timer\-Value\-Static}.
 
 
 
-Odwołania w \hyperlink{main_8cpp_source_l00018}{main()}.
+Odwołania w \hyperlink{mybenchmark_8h_source_l00077}{My\-Benchmark\-Observer\-::received\-Start\-Update()}.
 
 
 \begin{DoxyCode}
-00036 \{
-00037         \hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{MyBenchmark::timerValue} = (( (double)clock() ) /CLOCKS\_PER\_SEC);
-00038 \}
+00013 \{
+00014         \hyperlink{class_my_benchmark_aeca64d5b265e357ef879bf982dd4bb00}{MyBenchmark::timerValueStatic} = (( (double)clock() ) /CLOCKS\_PER\_SEC);
+00015 \}
 \end{DoxyCode}
 \hypertarget{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{\index{My\-Benchmark@{My\-Benchmark}!timer\-Stop@{timer\-Stop}}
 \index{timer\-Stop@{timer\-Stop}!MyBenchmark@{My\-Benchmark}}
@@ -159,35 +132,58 @@ Dlugosc dzialania stopera
 \end{DoxyReturn}
 
 
-Definicja w linii \hyperlink{mybenchmark_8cpp_source_l00040}{40} pliku \hyperlink{mybenchmark_8cpp_source}{mybenchmark.\-cpp}.
+Definicja w linii \hyperlink{mybenchmark_8cpp_source_l00017}{17} pliku \hyperlink{mybenchmark_8cpp_source}{mybenchmark.\-cpp}.
 
 
 
-Odwołuje się do \hyperlink{mybenchmark_8h_source_l00037}{timer\-Value}.
+Odwołuje się do \hyperlink{mybenchmark_8h_source_l00042}{timer\-Value\-Static}.
 
 
 
-Odwołania w \hyperlink{main_8cpp_source_l00018}{main()}.
+Odwołania w \hyperlink{mybenchmark_8h_source_l00082}{My\-Benchmark\-Observer\-::received\-Stop\-Update()} i \hyperlink{mybenchmark_8h_source_l00086}{My\-Benchmark\-Observer\-::received\-Stop\-Update\-And\-Save\-To\-File()}.
 
 
 \begin{DoxyCode}
-00041 \{
-00042         \textcolor{keywordflow}{return} (( (\textcolor{keywordtype}{double})clock() ) /CLOCKS\_PER\_SEC) - \hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{MyBenchmark::timerValue};
-00043 \}
+00018 \{
+00019         \textcolor{keywordflow}{return} (( (\textcolor{keywordtype}{double})clock() ) /CLOCKS\_PER\_SEC) - 
+      \hyperlink{class_my_benchmark_aeca64d5b265e357ef879bf982dd4bb00}{MyBenchmark::timerValueStatic};
+00020 \}
 \end{DoxyCode}
 
 
 \subsubsection{Dokumentacja atrybutów składowych}
+\hypertarget{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{\index{My\-Benchmark@{My\-Benchmark}!stream\-To\-File@{stream\-To\-File}}
+\index{stream\-To\-File@{stream\-To\-File}!MyBenchmark@{My\-Benchmark}}
+\paragraph[{stream\-To\-File}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ofstream My\-Benchmark\-::stream\-To\-File}}\label{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}
+
+
+Definicja w linii \hyperlink{mybenchmark_8h_source_l00041}{41} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
+
+
+
+Odwołania w \hyperlink{mybenchmark_8h_source_l00043}{My\-Benchmark()}, \hyperlink{mybenchmark_8h_source_l00086}{My\-Benchmark\-Observer\-::received\-Stop\-Update\-And\-Save\-To\-File()} i \hyperlink{mybenchmark_8h_source_l00092}{My\-Benchmark\-Observer\-::$\sim$\-My\-Benchmark\-Observer()}.
+
 \hypertarget{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{\index{My\-Benchmark@{My\-Benchmark}!timer\-Value@{timer\-Value}}
 \index{timer\-Value@{timer\-Value}!MyBenchmark@{My\-Benchmark}}
-\paragraph[{timer\-Value}]{\setlength{\rightskip}{0pt plus 5cm}double My\-Benchmark\-::timer\-Value =0\hspace{0.3cm}{\ttfamily [static]}}}\label{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}
+\paragraph[{timer\-Value}]{\setlength{\rightskip}{0pt plus 5cm}double My\-Benchmark\-::timer\-Value}}\label{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}
+Metoda abstrakcyjna, ktora jest interfacem do implementacji przez glowny algorytm. To znaczy, ze kazdy algorytm ma byc uruchamiany tą funkcja\-Czas stopera 
+
+Definicja w linii \hyperlink{mybenchmark_8h_source_l00040}{40} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
 
 
-Definicja w linii \hyperlink{mybenchmark_8h_source_l00037}{37} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
+
+Odwołania w \hyperlink{mybenchmark_8h_source_l00076}{My\-Benchmark\-Observer\-::get\-Timer\-Value()}, \hyperlink{mybenchmark_8h_source_l00043}{My\-Benchmark()} i \hyperlink{mybenchmark_8h_source_l00086}{My\-Benchmark\-Observer\-::received\-Stop\-Update\-And\-Save\-To\-File()}.
+
+\hypertarget{class_my_benchmark_aeca64d5b265e357ef879bf982dd4bb00}{\index{My\-Benchmark@{My\-Benchmark}!timer\-Value\-Static@{timer\-Value\-Static}}
+\index{timer\-Value\-Static@{timer\-Value\-Static}!MyBenchmark@{My\-Benchmark}}
+\paragraph[{timer\-Value\-Static}]{\setlength{\rightskip}{0pt plus 5cm}double My\-Benchmark\-::timer\-Value\-Static =0\hspace{0.3cm}{\ttfamily [static]}}}\label{class_my_benchmark_aeca64d5b265e357ef879bf982dd4bb00}
+
+
+Definicja w linii \hyperlink{mybenchmark_8h_source_l00042}{42} pliku \hyperlink{mybenchmark_8h_source}{mybenchmark.\-h}.
 
 
 
-Odwołania w \hyperlink{mybenchmark_8cpp_source_l00035}{timer\-Start()} i \hyperlink{mybenchmark_8cpp_source_l00040}{timer\-Stop()}.
+Odwołania w \hyperlink{mybenchmark_8cpp_source_l00012}{timer\-Start()} i \hyperlink{mybenchmark_8cpp_source_l00017}{timer\-Stop()}.
 
 
 

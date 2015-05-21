@@ -1,0 +1,414 @@
+\hypertarget{avltree_8h}{\subsection{avltree.\-h}
+\label{avltree_8h}\index{avltree.\-h@{avltree.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * avltree.h}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: May 20, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00008 \textcolor{preprocessor}{#ifndef AVLTREE\_H\_}
+00009 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define AVLTREE\_H\_}
+00010 \textcolor{preprocessor}{}
+00011 \textcolor{preprocessor}{#include <iostream>}
+00012 \textcolor{preprocessor}{#include <iomanip>}
+00013 \textcolor{preprocessor}{#include "\hyperlink{avltreeelement_8h}{avltreeelement.h}"}
+00014 
+00015 \textcolor{keyword}{using namespace }std;
+00016 
+00017 
+00018 \textcolor{comment}{// Definicja klasy obsługującej drzewo AVL}
+00019 \textcolor{comment}{//----------------------------------------}
+00020 \textcolor{keyword}{template} <\textcolor{keyword}{class} ContentType>
+\hypertarget{avltree_8h_source_l00021}{}\hyperlink{class_a_v_l_tree}{00021} \textcolor{keyword}{class }\hyperlink{class_a_v_l_tree}{AVLTree}
+00022 \{
+00023   \textcolor{keyword}{public}:
+00024 
+\hypertarget{avltree_8h_source_l00025}{}\hyperlink{class_a_v_l_tree_aee3daa1b05e59d770a95e1274f09eb22}{00025}     \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * \hyperlink{class_a_v_l_tree_aee3daa1b05e59d770a95e1274f09eb22}{rootNode};  \textcolor{comment}{// korzeń drzewa}
+00026 
+00027 
+00028 
+\hypertarget{avltree_8h_source_l00029}{}\hyperlink{class_a_v_l_tree_ab2eeaf55f5521c4d9d0090b0ea74c92c}{00029}     \hyperlink{class_a_v_l_tree_ab2eeaf55f5521c4d9d0090b0ea74c92c}{AVLTree}()
+00030     \{
+00031       rootNode = NULL;
+00032     \}
+\hypertarget{avltree_8h_source_l00033}{}\hyperlink{class_a_v_l_tree_a51346b432823dce79badfd69e0a4236c}{00033}     \hyperlink{class_a_v_l_tree_a51346b432823dce79badfd69e0a4236c}{~AVLTree}()
+00034     \{
+00035       \textcolor{keywordflow}{while}(rootNode)
+00036       \{
+00037           \textcolor{keyword}{delete}(\textcolor{keyword}{remove}(rootNode));
+00038       \}
+00039     \}
+\hypertarget{avltree_8h_source_l00040}{}\hyperlink{class_a_v_l_tree_a3a85ff5f0b56af6c8b358611f8de95af}{00040}     \textcolor{keywordtype}{void} \hyperlink{class_a_v_l_tree_a3a85ff5f0b56af6c8b358611f8de95af}{insert}(\textcolor{keywordtype}{int} &newKey)
+00041         \{
+00042         \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>}* newNode = \textcolor{keyword}{new} 
+      \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>}(newKey);
+00043                 \textcolor{comment}{//AVLTreeNode<ContentType>  *newNode2 = new AVLTreeNode<ContentType>();}
+00044           \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * searchingNode = rootNode,  \textcolor{comment}{// Wskaznik do
+       przeszukania drzewa i znalezienia tego samego klucza}
+00045                           * parentForNewNode = NULL,\textcolor{comment}{// parentForNewNode}
+00046                           * grandpaNode;
+00047 
+00048           \textcolor{keywordflow}{while}(searchingNode)
+00049           \{
+00050             \textcolor{keywordflow}{if}(searchingNode->\hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{key} == newNode->\hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{key}) \textcolor{comment}{// sprawdzam czy taki klucz juz istnieje}
+00051             \{
+00052               \textcolor{comment}{//delete n; // skoro istnieje to po co taki TODO: do zmiany}
+00053 
+00054               \textcolor{comment}{//cout    <<"Taki klucz juz istnieje !\(\backslash\)n";}
+00055               return ;
+00056             \}
+00057             parentForNewNode = searchingNode;
+00058             \textcolor{keywordflow}{if}(newNode->\hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{key} < searchingNode->\hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{key}) searchingNode= searchingNode->
+      \hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode}; \textcolor{comment}{// przechodze w lewo czesc drzewa}
+00059             \textcolor{keywordflow}{else} searchingNode = searchingNode->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode};                             \textcolor{comment}{//
+       przechodze w prawa czesc drzewa}
+00060           \}
+00061 
+00062 
+00063           \textcolor{comment}{// jezeli to jest pierwszy element to wpisuje go to root'a drzewa}
+00064           \textcolor{keywordflow}{if}(!(newNode->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = parentForNewNode))
+00065           \{
+00066             rootNode = newNode;
+00067             return ;
+00068           \}
+00069           \textcolor{comment}{// wybieram strone gałęzi na której ma byc element}
+00070           \textcolor{keywordflow}{if}(newNode->\hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{key} < parentForNewNode->key) parentForNewNode->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} = newNode;
+00071           \textcolor{keywordflow}{else} parentForNewNode->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = newNode;
+00072 
+00073           \textcolor{comment}{//sprawdzam czy potrzebne są rotacje, jak nie to koniec ;-)}
+00074           \textcolor{keywordflow}{if}(parentForNewNode->balanceFactor)
+00075           \{
+00076             parentForNewNode->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = 0;
+00077             return ;
+00078           \}
+00079 
+00080 
+00081           \textcolor{comment}{//parentForNewNode->balanceFactor = (parentForNewNode->leftNode == newNode) ? 1 : -1;}
+00082           \textcolor{keywordflow}{if}(parentForNewNode->leftNode == newNode) parentForNewNode->balanceFactor= 1;
+00083           \textcolor{keywordflow}{else}  parentForNewNode->balanceFactor = -1;
+00084           grandpaNode = parentForNewNode->parentNode;
+00085 
+00086           \textcolor{comment}{// usatawiam balanceFactors na 1 przed dodaniem}
+00087           \textcolor{comment}{// nowej gałęci oraz wyznaczam grandpaForNewNode od ktorego zaczynam rotacje}
+00088           \textcolor{keywordflow}{while}(grandpaNode)
+00089           \{
+00090             \textcolor{keywordflow}{if}(grandpaNode->balanceFactor) \textcolor{keywordflow}{break}; \textcolor{comment}{// gdy byly juz wczesniej ustawione to przerwij}
+00091 
+00092             \textcolor{keywordflow}{if}(grandpaNode->leftNode == parentForNewNode) grandpaNode->balanceFactor = 1;
+00093             \textcolor{keywordflow}{else} grandpaNode->balanceFactor = -1;
+00094             parentForNewNode = grandpaNode; grandpaNode = grandpaNode->parentNode;
+00095           \}
+00096 
+00097           \textcolor{comment}{// jesli do konca byly zbalansowane to przerwij}
+00098           \textcolor{keywordflow}{if}(!grandpaNode) return ;
+00099 
+00100           \textcolor{comment}{//rotacje na podstawie balanceFactors}
+00101           \textcolor{keywordflow}{if}(grandpaNode->balanceFactor == 1)
+00102           \{
+00103             \textcolor{keywordflow}{if}(grandpaNode->rightNode == parentForNewNode)
+00104             \{
+00105               grandpaNode->balanceFactor = 0;
+00106               return ;
+00107             \}
+00108             \textcolor{keywordflow}{if}(parentForNewNode->balanceFactor == -1) rotationLR(grandpaNode); \textcolor{comment}{//Rotacja podwójna w
+       lewo-prawo}
+00109             \textcolor{keywordflow}{else} rotationLL(grandpaNode); \textcolor{comment}{// Rotacja pojedyncza w prawo}
+00110             return ;
+00111           \}
+00112           \textcolor{keywordflow}{else}
+00113           \{
+00114             \textcolor{keywordflow}{if}(grandpaNode->leftNode == parentForNewNode)
+00115             \{
+00116               grandpaNode->balanceFactor = 0;
+00117               return ;
+00118             \}
+00119             \textcolor{keywordflow}{if}(parentForNewNode->balanceFactor == 1) rotationRL(grandpaNode); \textcolor{comment}{//Rotacja podwójna w
+       lewo-prawo}
+00120             \textcolor{keywordflow}{else} rotationRR(grandpaNode); \textcolor{comment}{//Rotacja pojedyncza w lewo}
+00121             return ;
+00122           \}
+00123         \}
+00124 
+\hypertarget{avltree_8h_source_l00125}{}\hyperlink{class_a_v_l_tree_a81a6d1f73184e06ad92861b6ec2f96d7}{00125}     \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * \hyperlink{class_a_v_l_tree_a81a6d1f73184e06ad92861b6ec2f96d7}{rotationRR}(
+      \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * A)
+00126     \{
+00127       \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * B = A->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode}, * P = A->
+      \hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode};
+00128 
+00129       A->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = B->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode};
+00130       \textcolor{keywordflow}{if}(A->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode}) A->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode}->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = A;
+00131       B->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} = A;
+00132       B->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = P;
+00133       A->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = B;
+00134       \textcolor{keywordflow}{if}(P)
+00135       \{
+00136         \textcolor{keywordflow}{if}(P->leftNode == A) P->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} = B; \textcolor{keywordflow}{else} P->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = B;
+00137       \}
+00138       \textcolor{keywordflow}{else} rootNode = B;
+00139 
+00140       \textcolor{keywordflow}{if}(B->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} == -1)
+00141       \{
+00142         A->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = B->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = 0;
+00143       \}
+00144       \textcolor{keywordflow}{else}
+00145       \{
+00146         A->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = -1; B->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = 1;
+00147       \}
+00148       \textcolor{keywordflow}{return} B;
+00149     \}
+00150 
+\hypertarget{avltree_8h_source_l00151}{}\hyperlink{class_a_v_l_tree_a1e0560fa0ca27be07971223df9639b03}{00151}     \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * \hyperlink{class_a_v_l_tree_a1e0560fa0ca27be07971223df9639b03}{rotationLL}(
+      \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * A)
+00152     \{
+00153       \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * B = A->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode}, * P = A->
+      \hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode};
+00154 
+00155       A->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} = B->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode};
+00156       \textcolor{keywordflow}{if}(A->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode}) A->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode}->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = A;
+00157       B->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = A;
+00158       B->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = P;
+00159       A->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = B;
+00160       \textcolor{keywordflow}{if}(P)
+00161       \{
+00162         \textcolor{keywordflow}{if}(P->leftNode == A) P->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} = B; \textcolor{keywordflow}{else} P->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = B;
+00163       \}
+00164       \textcolor{keywordflow}{else} rootNode = B;
+00165 
+00166       \textcolor{keywordflow}{if}(B->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} == 1)
+00167       \{
+00168         A->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = B->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = 0;
+00169       \}
+00170       \textcolor{keywordflow}{else}
+00171       \{
+00172         A->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = 1; B->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = -1;
+00173       \}
+00174 
+00175       \textcolor{keywordflow}{return} B;
+00176     \}
+\hypertarget{avltree_8h_source_l00177}{}\hyperlink{class_a_v_l_tree_aae2d0b03656204df27bebda84229b226}{00177}     \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * \hyperlink{class_a_v_l_tree_aae2d0b03656204df27bebda84229b226}{rotationRL}(
+      \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * A)
+00178     \{
+00179       \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * B = A->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode}, * C = B->
+      \hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode}, * P = A->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode};
+00180 
+00181       B->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} = C->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode};
+00182       \textcolor{keywordflow}{if}(B->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode}) B->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode}->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = B;
+00183       A->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = C->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode};
+00184       \textcolor{keywordflow}{if}(A->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode}) A->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode}->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = A;
+00185       C->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} = A;
+00186       C->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = B;
+00187       A->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = B->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = C;
+00188       C->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = P;
+00189       \textcolor{keywordflow}{if}(P)
+00190       \{
+00191         \textcolor{keywordflow}{if}(P->leftNode == A) P->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} = C; \textcolor{keywordflow}{else} P->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = C;
+00192       \}
+00193       \textcolor{keywordflow}{else} rootNode = C;
+00194 
+00195       A->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = (C->balanceFactor == -1) ?  1 : 0;
+00196       B->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = (C->balanceFactor ==  1) ? -1 : 0;
+00197       C->balanceFactor = 0;
+00198 
+00199       \textcolor{keywordflow}{return} C;
+00200     \}
+\hypertarget{avltree_8h_source_l00201}{}\hyperlink{class_a_v_l_tree_a5751bfd512b5dfe32060a649f697d5f0}{00201}     \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * \hyperlink{class_a_v_l_tree_a5751bfd512b5dfe32060a649f697d5f0}{rotationLR}(
+      \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * A)
+00202     \{
+00203       \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * B = A->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode}, * C = B->
+      \hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode}, * P = A->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode};
+00204 
+00205       B->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = C->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode};
+00206       \textcolor{keywordflow}{if}(B->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode}) B->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode}->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = B;
+00207       A->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} = C->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode};
+00208       \textcolor{keywordflow}{if}(A->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode}) A->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode}->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = A;
+00209       C->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = A;
+00210       C->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} = B;
+00211       A->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = B->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = C;
+00212       C->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = P;
+00213       \textcolor{keywordflow}{if}(P)
+00214       \{
+00215         \textcolor{keywordflow}{if}(P->leftNode == A) P->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} = C; \textcolor{keywordflow}{else} P->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = C;
+00216       \}
+00217       \textcolor{keywordflow}{else} rootNode = C;
+00218 
+00219       A->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = (C->balanceFactor ==  1) ? -1 : 0;
+00220       B->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = (C->balanceFactor == -1) ?  1 : 0;
+00221       C->balanceFactor = 0;
+00222 
+00223       \textcolor{keywordflow}{return} C;
+00224     \}
+00225 
+00226     \textcolor{comment}{// Wyszukuje element wg wartości klucza}
+00227     \textcolor{comment}{//-------------------------------------}
+00228 
+\hypertarget{avltree_8h_source_l00229}{}\hyperlink{class_a_v_l_tree_aee790e9dba096b0b8077602bccb0f2ca}{00229}     \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * \hyperlink{class_a_v_l_tree_aee790e9dba096b0b8077602bccb0f2ca}{find}(\textcolor{keywordtype}{int} key)
+00230     \{
+00231       \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * tmpNode = rootNode;
+00232 
+00233       \textcolor{keywordflow}{while}((tmpNode) && (tmpNode->\hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{key} != key))
+00234       \{
+00235           \textcolor{keywordflow}{if}(key < tmpNode->key)         tmpNode = tmpNode->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode};
+00236           \textcolor{keywordflow}{else}                           tmpNode = tmpNode->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode};
+00237       \}
+00238 
+00239       \textcolor{keywordflow}{return} tmpNode;
+00240     \}
+00241     \textcolor{comment}{// Zwraca węzeł z minimalnym kluczem}
+00242     \textcolor{comment}{//----------------------------------}
+00243 
+\hypertarget{avltree_8h_source_l00244}{}\hyperlink{class_a_v_l_tree_a2e7405f8939b072489bb4ffd4521b374}{00244}     \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * \hyperlink{class_a_v_l_tree_a2e7405f8939b072489bb4ffd4521b374}{findMaxKeyNode}(
+      \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * tmpNode)
+00245     \{
+00246       \textcolor{keywordflow}{while}(tmpNode->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode}) tmpNode = tmpNode->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode};
+00247       \textcolor{keywordflow}{return} tmpNode;
+00248     \}
+00249 
+00250     \textcolor{comment}{// Zwraca węzeł poprzednika}
+00251     \textcolor{comment}{//-------------------------}
+00252     \textcolor{comment}{//}
+\hypertarget{avltree_8h_source_l00253}{}\hyperlink{class_a_v_l_tree_aa776fe15518d516032ca6d4522d77b02}{00253}     \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * \hyperlink{class_a_v_l_tree_aa776fe15518d516032ca6d4522d77b02}{findAtherNodeMatch}(
+      \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * nodeComperator) \textcolor{comment}{// lowerValueFrom nodeComperator}
+00254     \{
+00255       \textcolor{keywordflow}{if}(nodeComperator->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode}) \textcolor{keywordflow}{return} findMaxKeyNode(nodeComperator->
+      \hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode});
+00256 
+00257       \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * y;
+00258 
+00259       \textcolor{keywordflow}{do}
+00260       \{
+00261         y = nodeComperator;
+00262         nodeComperator = nodeComperator->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode};
+00263       \} \textcolor{keywordflow}{while}(nodeComperator && (nodeComperator->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} != y));
+00264 
+00265       \textcolor{keywordflow}{return} nodeComperator;
+00266     \}
+00267 
+\hypertarget{avltree_8h_source_l00271}{}\hyperlink{class_a_v_l_tree_ac7e22bd9f8cba3cd9eb8aea97ba7b654}{00271}     \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * \textcolor{keyword}{remove}(
+      \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * x)
+00272     \{
+00273       \hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * t, * y, * z;
+00274       \textcolor{keywordtype}{bool} nest;
+00275 
+00276       \textcolor{comment}{// Jeśli węzeł x posiada dwójkę dzieci, lewego i prawego potomka:}
+00277       \textcolor{keywordflow}{if}((x->leftNode) && (x->rightNode))
+00278       \{
+00279         y = \textcolor{keyword}{remove}(findAtherNodeMatch(x));
+00280         \textcolor{comment}{//rekurencyjnie usuwamy y za pomocą tego samego algorytmu}
+00281         nest = \textcolor{keyword}{false};
+00282       \}
+00283       \textcolor{comment}{//Jeśli węzeł x posiada tylko jedno dziecko lub nie posiada wcale dzieci:}
+00284       \textcolor{keywordflow}{else}  \{
+00285         \textcolor{keywordflow}{if}(x->leftNode) \{
+00286           y = x->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode};
+00287           x->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} = NULL;
+00288         \}
+00289         \textcolor{keywordflow}{else} \{
+00290           y = x->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode}; x->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = NULL;
+00291         \}
+00292         x->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = 0;
+00293         nest = \textcolor{keyword}{true};
+00294       \}
+00295 
+00296       \textcolor{keywordflow}{if}(y)  \{
+00297         y->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = x->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode};
+00298         \textcolor{keywordflow}{if}(x->leftNode)
+00299                 \{
+00300                         y->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode}  = x->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode};
+00301                         y->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode}->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode}  = y;
+00302                 \}
+00303         \textcolor{keywordflow}{if}(x->rightNode)
+00304                 \{
+00305                         y->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = x->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode};
+00306                         y->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode}->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = y;
+00307                 \}
+00308         y->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = x->balanceFactor;
+00309       \}
+00310 
+00311       \textcolor{keywordflow}{if}(x->parentNode)   \{
+00312         \textcolor{keywordflow}{if}(x->parentNode->leftNode == x) x->parentNode->leftNode = y; \textcolor{keywordflow}{else} x->
+      \hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode}->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = y;
+00313       \}
+00314       \textcolor{keywordflow}{else} rootNode = y;
+00315 
+00316       \textcolor{keywordflow}{if}(nest)  \{
+00317         z = y;
+00318         y = x->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode};
+00319         \textcolor{keywordflow}{while}(y)
+00320         \{
+00321                 \textcolor{comment}{// węzeł y był w stanie równowagi przed usunięciem węzła x w jednym z jego poddrzew.}
+00322           \textcolor{keywordflow}{if}(!(y->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor})) \{
+00323             y->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = (y->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} == z) ? -1 : 1;
+00324             \textcolor{keywordflow}{break};
+00325           \}
+00326           \textcolor{keywordflow}{else} \{
+00327                 \textcolor{comment}{//skrócone zostało cięższe poddrzewo}
+00328             \textcolor{keywordflow}{if}          (((y->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} ==  1) &&
+00329                         (y->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode}  == z)) || ((y->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} == -1) &&
+00330                         (y->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} == z))) \{
+00331               y->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = 0;
+00332               z = y; y = y->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode};
+00333             \}
+00334             \textcolor{keywordflow}{else} \{
+00335               t = (y->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} == z) ? y->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} : y->
+      \hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode};
+00336 
+00337               \textcolor{comment}{//Wykonujemy odpowiednią rotację pojedynczą}
+00338               \textcolor{keywordflow}{if}(!(t->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor})) \{
+00339                 \textcolor{keywordflow}{if}(y->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} == 1) rotationLL(y); \textcolor{keywordflow}{else} rotationRR(y);
+00340                 \textcolor{keywordflow}{break};
+00341               \}
+00342               \textcolor{comment}{//Wykonujemy odpowiednią rotację pojedynczą}
+00343               \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(y->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} == t->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor})
+00344               \{
+00345                 \textcolor{keywordflow}{if}(y->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} == 1) rotationLL(y); \textcolor{keywordflow}{else} rotationRR(y);
+00346                 z = t; y = t->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode};
+00347               \}
+00348               \textcolor{comment}{//Wykonujemy rotację podwójną}
+00349               \textcolor{keywordflow}{else}
+00350               \{
+00351                 \textcolor{keywordflow}{if}(y->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} == 1) rotationLR(y); \textcolor{keywordflow}{else} rotationRL(y);
+00352                 z = y->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode}; y = z->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode};
+00353               \}
+00354             \}
+00355           \}
+00356         \}
+00357       \}
+00358       \textcolor{keywordflow}{return} x;
+00359     \}
+\hypertarget{avltree_8h_source_l00360}{}\hyperlink{class_a_v_l_tree_ad440cb06acf157b57e161a797043aa8b}{00360}     \textcolor{keywordtype}{void}      \hyperlink{class_a_v_l_tree_ad440cb06acf157b57e161a797043aa8b}{print}()
+00361     \{
+00362         this->recurringPrint(this->rootNode);
+00363     \}
+\hypertarget{avltree_8h_source_l00364}{}\hyperlink{class_a_v_l_tree_a0440a3a88ac51df5191354562b58e375}{00364}     \textcolor{keywordtype}{void} \hyperlink{class_a_v_l_tree_a0440a3a88ac51df5191354562b58e375}{recurringPrint}(\hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * x)
+00365     \{
+00366       cout<< \textcolor{stringliteral}{"klucz:"}<< x->\hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{key} <<\textcolor{stringliteral}{"\(\backslash\)n"};
+00367       \textcolor{keywordflow}{if}(x->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode})  recurringPrint(x->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode});
+00368       \textcolor{keywordflow}{if}(x->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode}) recurringPrint(x->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode});
+00369     \}
+\hypertarget{avltree_8h_source_l00370}{}\hyperlink{class_a_v_l_tree_a3b7cf893799114e3ebca387a1910fdc8}{00370}     \textcolor{keywordtype}{void} \hyperlink{class_a_v_l_tree_a3b7cf893799114e3ebca387a1910fdc8}{walk}(\hyperlink{class_a_v_l_tree_node}{AVLTreeNode<ContentType>} * x)
+00371     \{
+00372       cout << x->\hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{key} << \textcolor{stringliteral}{" : bf = "} << setw(2) << x->\hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} << \textcolor{stringliteral}{" : Left-> "};
+00373       \textcolor{keywordflow}{if}(x->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode}) cout << setw(3) << x->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode}->\hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{key};
+00374       \textcolor{keywordflow}{else}        cout << \textcolor{stringliteral}{"NIL"};
+00375       cout << \textcolor{stringliteral}{", Right-> "};
+00376       \textcolor{keywordflow}{if}(x->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode}) cout << setw(3) << x->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode}->\hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{key};
+00377       \textcolor{keywordflow}{else}         cout << \textcolor{stringliteral}{"NIL"};
+00378       cout << \textcolor{stringliteral}{" : p -> "};
+00379       \textcolor{keywordflow}{if}(x->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode}) cout << setw(3) << x->\hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode}->
+      \hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{key};
+00380       \textcolor{keywordflow}{else}     cout << \textcolor{stringliteral}{"NIL"};
+00381       cout << endl;
+00382       \textcolor{keywordflow}{if}(x->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode})  walk(x->\hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode});
+00383       \textcolor{keywordflow}{if}(x->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode}) walk(x->\hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode});
+00384     \}
+00385 \};
+00386 
+00387 
+00388 
+00389 
+00390 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* AVLTREE\_H\_ */}\textcolor{preprocessor}{}
+\end{DoxyCode}

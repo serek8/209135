@@ -11,6 +11,8 @@
 #include <ctime>
 #include "observer.h"
 #include <iostream>
+#include <fstream>
+//#include "filestreamer.h"
 /**
  * @brief Klasa bazowa/interface do testowania algorytmu
  *
@@ -36,22 +38,27 @@ public:
 
 	/// Czas stopera
 	double timerValue;
-
+	std::ofstream streamToFile;
+	static double  timerValueStatic;
 	MyBenchmark()
 	{
 		timerValue = 0;
+		streamToFile.open ("log.txt", std::ofstream::out  | std::ofstream::trunc);
+			streamToFile.close();
+		streamToFile.open ("log.txt", std::ofstream::app);
+		streamToFile << std::fixed;
 	}
 
 
 
 	///  @brief włączam stoper
-	void timerStart();
+	static void  timerStart();
 
 	/**
 	 *  @brief wyłączam stoper
 	 *  @return Dlugosc dzialania stopera
 	 */
-	double timerStop();
+	static double  timerStop();
 
 	/**
 	 * @brief Usuwam obiekt test biorąc pod uwage jego prawdziwy typ
@@ -75,7 +82,14 @@ public:
 	void receivedStopUpdate () {
 		std::cout<<"\nCzas wykonywania operacji: "<<timerStop();
 	}
-	virtual ~MyBenchmarkObserver(){};
+
+	void receivedStopUpdateAndSaveToFile () {
+		timerStop();
+		streamToFile<<timerValue<<std::endl;
+
+	}
+
+	virtual ~MyBenchmarkObserver(){streamToFile.close();};
 
 };
 

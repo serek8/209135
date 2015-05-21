@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Laboratorium 8: Plik źródłowy quicksorter.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Laboratorium 8
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('quicksorter_8h_source.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">quicksorter.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="quicksorter_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * quicksort.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: May 12, 2015</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: serek8</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef QUICKSORT_H_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define QUICKSORT_H_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sorter_8h.html">sorter.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="list_8h.html">list.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> MyListElementType&gt;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_quick_sorter.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_quick_sorter.html">QuickSorter</a> : <span class="keyword">public</span> <a class="code" href="class_sorter.html">Sorter</a>&lt;MyListElementType&gt;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_quick_sorter.html#aba28a6d8a0209191c937fc2bf8c83861">   22</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_quick_sorter.html#aba28a6d8a0209191c937fc2bf8c83861">enablePivot</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_quick_sorter.html#a60a7a4772c958f256962294418e83fe4">   23</a></span>&#160;        <a class="code" href="class_list.html">List&lt;MyListElementType&gt;</a> &amp;<a class="code" href="class_quick_sorter.html#a60a7a4772c958f256962294418e83fe4">list</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_quick_sorter.html#a48497adf59b538717b4820721fd5d195">   27</a></span>&#160;        <a class="code" href="class_quick_sorter.html#a48497adf59b538717b4820721fd5d195">QuickSorter</a>(<a class="code" href="class_list.html">List&lt;MyListElementType&gt;</a> &amp;<a class="code" href="class_quick_sorter.html#a60a7a4772c958f256962294418e83fe4">list</a>)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        :list(list.createObjectFromAbstractReference())</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                this-&gt;list.<a class="code" href="class_list.html#a40a3d94c7f3aa49470625d47e6485570">cloneFrom</a>(list);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                this-&gt;<a class="code" href="class_quick_sorter.html#aba28a6d8a0209191c937fc2bf8c83861">enablePivot</a>=1;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_quick_sorter.html#a43fa61b5b452ba73a7a2da7690e478ab">   34</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_quick_sorter.html#a43fa61b5b452ba73a7a2da7690e478ab">~QuickSorter</a>(){};</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">//void quicksort(int lewy, int prawy, int enablePivot)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_quick_sorter.html#aefa16c2996c131443c10183219797632">   36</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_quick_sorter.html#aefa16c2996c131443c10183219797632">quicksort</a>(<span class="keywordtype">int</span> lewy, <span class="keywordtype">int</span> prawy)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordtype">int</span> pivot=<a class="code" href="class_quick_sorter.html#a60a7a4772c958f256962294418e83fe4">list</a>[(int)(lewy+prawy)/2].content;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordtype">int</span> i,j,x;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            i=lewy;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            j=prawy;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_quick_sorter.html#aba28a6d8a0209191c937fc2bf8c83861">enablePivot</a>) pivot=(<a class="code" href="class_quick_sorter.html#a60a7a4772c958f256962294418e83fe4">list</a>[(int)(lewy+prawy)/2].content + <a class="code" href="class_quick_sorter.html#a60a7a4772c958f256962294418e83fe4">list</a>[lewy].content + <a class="code" href="class_quick_sorter.html#a60a7a4772c958f256962294418e83fe4">list</a>[prawy].content)/3;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">do</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">while</span>(<a class="code" href="class_quick_sorter.html#a60a7a4772c958f256962294418e83fe4">list</a>[i].content&lt;pivot) {i++; }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">while</span>(<a class="code" href="class_quick_sorter.html#a60a7a4772c958f256962294418e83fe4">list</a>[j].content&gt;pivot) {j--; }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">if</span>(i&lt;=j)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    x=<a class="code" href="class_quick_sorter.html#a60a7a4772c958f256962294418e83fe4">list</a>[i].content;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    <a class="code" href="class_quick_sorter.html#a60a7a4772c958f256962294418e83fe4">list</a>[i].content=<a class="code" href="class_quick_sorter.html#a60a7a4772c958f256962294418e83fe4">list</a>[j].content;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    <a class="code" href="class_quick_sorter.html#a60a7a4772c958f256962294418e83fe4">list</a>[j].content=x;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    i++;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    j--;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">while</span>(i&lt;=j);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">if</span>(j&gt;lewy) <a class="code" href="class_quick_sorter.html#aefa16c2996c131443c10183219797632">quicksort</a>(lewy, j);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span>(i&lt;prawy) <a class="code" href="class_quick_sorter.html#aefa16c2996c131443c10183219797632">quicksort</a>(i, prawy);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_quick_sorter.html#ae2b74900a972d05c06df3c9a06123c00">   61</a></span>&#160;        <a class="code" href="class_list.html">List&lt;MyListElementType&gt;</a> &amp;<a class="code" href="class_quick_sorter.html#ae2b74900a972d05c06df3c9a06123c00">sort</a>()</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="comment">//std::cout&lt;&lt;&quot;(QuickSort)&quot;;</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <a class="code" href="class_quick_sorter.html#aefa16c2996c131443c10183219797632">quicksort</a>(0, <a class="code" href="class_quick_sorter.html#a60a7a4772c958f256962294418e83fe4">list</a>.size()-1);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_quick_sorter.html#a60a7a4772c958f256962294418e83fe4">list</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* QUICKSORT_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="sorter_8h_html"><div class="ttname"><a href="sorter_8h.html">sorter.h</a></div></div>
+<div class="ttc" id="class_quick_sorter_html_a48497adf59b538717b4820721fd5d195"><div class="ttname"><a href="class_quick_sorter.html#a48497adf59b538717b4820721fd5d195">QuickSorter::QuickSorter</a></div><div class="ttdeci">QuickSorter(List&lt; MyListElementType &gt; &amp;list)</div><div class="ttdef"><b>Definition:</b> <a href="quicksorter_8h_source.html#l00027">quicksorter.h:27</a></div></div>
+<div class="ttc" id="class_list_html_a40a3d94c7f3aa49470625d47e6485570"><div class="ttname"><a href="class_list.html#a40a3d94c7f3aa49470625d47e6485570">List::cloneFrom</a></div><div class="ttdeci">virtual void cloneFrom(List&lt; MyListElementType &gt; &amp;patternList)</div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00031">list.h:31</a></div></div>
+<div class="ttc" id="class_sorter_html"><div class="ttname"><a href="class_sorter.html">Sorter</a></div><div class="ttdef"><b>Definition:</b> <a href="sorter_8h_source.html#l00015">sorter.h:15</a></div></div>
+<div class="ttc" id="class_list_html"><div class="ttname"><a href="class_list.html">List</a></div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00015">list.h:15</a></div></div>
+<div class="ttc" id="class_quick_sorter_html_a43fa61b5b452ba73a7a2da7690e478ab"><div class="ttname"><a href="class_quick_sorter.html#a43fa61b5b452ba73a7a2da7690e478ab">QuickSorter::~QuickSorter</a></div><div class="ttdeci">virtual ~QuickSorter()</div><div class="ttdef"><b>Definition:</b> <a href="quicksorter_8h_source.html#l00034">quicksorter.h:34</a></div></div>
+<div class="ttc" id="list_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
+<div class="ttc" id="class_quick_sorter_html_ae2b74900a972d05c06df3c9a06123c00"><div class="ttname"><a href="class_quick_sorter.html#ae2b74900a972d05c06df3c9a06123c00">QuickSorter::sort</a></div><div class="ttdeci">List&lt; MyListElementType &gt; &amp; sort()</div><div class="ttdef"><b>Definition:</b> <a href="quicksorter_8h_source.html#l00061">quicksorter.h:61</a></div></div>
+<div class="ttc" id="class_quick_sorter_html_aba28a6d8a0209191c937fc2bf8c83861"><div class="ttname"><a href="class_quick_sorter.html#aba28a6d8a0209191c937fc2bf8c83861">QuickSorter::enablePivot</a></div><div class="ttdeci">int enablePivot</div><div class="ttdef"><b>Definition:</b> <a href="quicksorter_8h_source.html#l00022">quicksorter.h:22</a></div></div>
+<div class="ttc" id="class_quick_sorter_html_a60a7a4772c958f256962294418e83fe4"><div class="ttname"><a href="class_quick_sorter.html#a60a7a4772c958f256962294418e83fe4">QuickSorter::list</a></div><div class="ttdeci">List&lt; MyListElementType &gt; &amp; list</div><div class="ttdef"><b>Definition:</b> <a href="quicksorter_8h_source.html#l00023">quicksorter.h:23</a></div></div>
+<div class="ttc" id="class_quick_sorter_html_aefa16c2996c131443c10183219797632"><div class="ttname"><a href="class_quick_sorter.html#aefa16c2996c131443c10183219797632">QuickSorter::quicksort</a></div><div class="ttdeci">void quicksort(int lewy, int prawy)</div><div class="ttdef"><b>Definition:</b> <a href="quicksorter_8h_source.html#l00036">quicksorter.h:36</a></div></div>
+<div class="ttc" id="class_quick_sorter_html"><div class="ttname"><a href="class_quick_sorter.html">QuickSorter</a></div><div class="ttdef"><b>Definition:</b> <a href="quicksorter_8h_source.html#l00019">quicksorter.h:19</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_463302e58bc74c0c35f534f40d40b0a3.html">program</a></li><li class="navelem"><a class="el" href="dir_16e14641fdda69a1405193b0d4291cd4.html">inc</a></li><li class="navelem"><a class="el" href="quicksorter_8h.html">quicksorter.h</a></li>
+    <li class="footer">Wygenerowano Cz, 21 maj 2015 04:40:20 dla Laboratorium 8 programem
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

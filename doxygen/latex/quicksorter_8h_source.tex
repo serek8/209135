@@ -1,0 +1,75 @@
+\hypertarget{quicksorter_8h}{\subsection{quicksorter.\-h}
+\label{quicksorter_8h}\index{quicksorter.\-h@{quicksorter.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * quicksort.h}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: May 12, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00008 \textcolor{preprocessor}{#ifndef QUICKSORT\_H\_}
+00009 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define QUICKSORT\_H\_}
+00010 \textcolor{preprocessor}{}
+00011 \textcolor{preprocessor}{#include "\hyperlink{sorter_8h}{sorter.h}"}
+00012 \textcolor{preprocessor}{#include "\hyperlink{list_8h}{list.h}"}
+00013 \textcolor{preprocessor}{#include <iostream>}
+00018 \textcolor{keyword}{template} <\textcolor{keyword}{class} MyListElementType>
+\hypertarget{quicksorter_8h_source_l00019}{}\hyperlink{class_quick_sorter}{00019} \textcolor{keyword}{class }\hyperlink{class_quick_sorter}{QuickSorter} : \textcolor{keyword}{public} \hyperlink{class_sorter}{Sorter}<MyListElementType>
+00020 \{
+00021 \textcolor{keyword}{public}:
+\hypertarget{quicksorter_8h_source_l00022}{}\hyperlink{class_quick_sorter_aba28a6d8a0209191c937fc2bf8c83861}{00022}         \textcolor{keywordtype}{int} \hyperlink{class_quick_sorter_aba28a6d8a0209191c937fc2bf8c83861}{enablePivot};
+\hypertarget{quicksorter_8h_source_l00023}{}\hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{00023}         \hyperlink{class_list}{List<MyListElementType>} &\hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list};
+00024 
+00025 
+00026 
+\hypertarget{quicksorter_8h_source_l00027}{}\hyperlink{class_quick_sorter_a48497adf59b538717b4820721fd5d195}{00027}         \hyperlink{class_quick_sorter_a48497adf59b538717b4820721fd5d195}{QuickSorter}(\hyperlink{class_list}{List<MyListElementType>} &
+      \hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list})
+00028         :list(list.createObjectFromAbstractReference())
+00029         \{
+00030                 this->list.\hyperlink{class_list_a40a3d94c7f3aa49470625d47e6485570}{cloneFrom}(list);
+00031                 this->\hyperlink{class_quick_sorter_aba28a6d8a0209191c937fc2bf8c83861}{enablePivot}=1;
+00032         \}
+00033 
+\hypertarget{quicksorter_8h_source_l00034}{}\hyperlink{class_quick_sorter_a43fa61b5b452ba73a7a2da7690e478ab}{00034}         \textcolor{keyword}{virtual} \hyperlink{class_quick_sorter_a43fa61b5b452ba73a7a2da7690e478ab}{~QuickSorter}()\{\};
+00035         \textcolor{comment}{//void quicksort(int lewy, int prawy, int enablePivot)}
+\hypertarget{quicksorter_8h_source_l00036}{}\hyperlink{class_quick_sorter_aefa16c2996c131443c10183219797632}{00036}         \textcolor{keywordtype}{void} \hyperlink{class_quick_sorter_aefa16c2996c131443c10183219797632}{quicksort}(\textcolor{keywordtype}{int} lewy, \textcolor{keywordtype}{int} prawy)
+00037         \{
+00038             \textcolor{keywordtype}{int} pivot=\hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[(int)(lewy+prawy)/2].content;
+00039             \textcolor{keywordtype}{int} i,j,x;
+00040             i=lewy;
+00041             j=prawy;
+00042             \textcolor{keywordflow}{if}(\hyperlink{class_quick_sorter_aba28a6d8a0209191c937fc2bf8c83861}{enablePivot}) pivot=(\hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[(int)(lewy+prawy)/2].content + 
+      \hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[lewy].content + \hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[prawy].content)/3;
+00043             \textcolor{keywordflow}{do}
+00044             \{
+00045                 \textcolor{keywordflow}{while}(\hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[i].content<pivot) \{i++; \}
+00046                 \textcolor{keywordflow}{while}(\hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[j].content>pivot) \{j--; \}
+00047                 \textcolor{keywordflow}{if}(i<=j)
+00048                 \{
+00049                     x=\hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[i].content;
+00050                     \hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[i].content=\hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[j].content;
+00051                     \hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}[j].content=x;
+00052                     i++;
+00053                     j--;
+00054                 \}
+00055             \}
+00056             \textcolor{keywordflow}{while}(i<=j);
+00057             \textcolor{keywordflow}{if}(j>lewy) \hyperlink{class_quick_sorter_aefa16c2996c131443c10183219797632}{quicksort}(lewy, j);
+00058             \textcolor{keywordflow}{if}(i<prawy) \hyperlink{class_quick_sorter_aefa16c2996c131443c10183219797632}{quicksort}(i, prawy);
+00059         \}
+00060 
+\hypertarget{quicksorter_8h_source_l00061}{}\hyperlink{class_quick_sorter_ae2b74900a972d05c06df3c9a06123c00}{00061}         \hyperlink{class_list}{List<MyListElementType>} &\hyperlink{class_quick_sorter_ae2b74900a972d05c06df3c9a06123c00}{sort}()
+00062         \{
+00063                 \textcolor{comment}{//std::cout<<"(QuickSort)";}
+00064                 \hyperlink{class_quick_sorter_aefa16c2996c131443c10183219797632}{quicksort}(0, \hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list}.size()-1);
+00065                 \textcolor{keywordflow}{return} \hyperlink{class_quick_sorter_a60a7a4772c958f256962294418e83fe4}{list};
+00066         \}
+00067 \};
+00068 
+00069 
+00070 
+00071 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* QUICKSORT\_H\_ */}\textcolor{preprocessor}{}
+\end{DoxyCode}

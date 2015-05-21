@@ -12,74 +12,28 @@
 00008 \textcolor{preprocessor}{#include <iostream>}
 00009 \textcolor{preprocessor}{#include <unistd.h>}
 00010 \textcolor{preprocessor}{#include "\hyperlink{numbergenerator_8h}{numbergenerator.h}"}
-00011 \textcolor{preprocessor}{#include "\hyperlink{dataframe_8h}{dataframe.h}"}
-00012 \textcolor{preprocessor}{#include "\hyperlink{hashowanie_8h}{hashowanie.h}"}
+00011 \textcolor{preprocessor}{#include "\hyperlink{observableavltree_8h}{observableavltree.h}"}
+00012 \textcolor{preprocessor}{#include "\hyperlink{mybenchmark_8h}{mybenchmark.h}"}
 00013 \textcolor{preprocessor}{#include "\hyperlink{mylist_8h}{mylist.h}"}
-00014 \textcolor{preprocessor}{#include "\hyperlink{mybenchmark_8h}{mybenchmark.h}"}
-00015 \textcolor{preprocessor}{#include "\hyperlink{dictionary_8h}{dictionary.h}"}
-00016 \textcolor{preprocessor}{#include <string>}
-00017 
-\hypertarget{main_8cpp_source_l00018}{}\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00018} \textcolor{keywordtype}{int} \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])
-00019 \{
-00020         \hyperlink{class_data_frame}{DataFrame} podstawoweInfoIO;
+00014 
+\hypertarget{main_8cpp_source_l00015}{}\hyperlink{main_8cpp_adfa2ae8b78bba187e8a03a23e9b2617d}{00015} \textcolor{preprocessor}{#define ILE\_WYRAZOW\_DO\_WSTAWIENIA 100}
+00016 \textcolor{preprocessor}{}
+\hypertarget{main_8cpp_source_l00017}{}\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00017} \textcolor{keywordtype}{int} \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])
+00018 \{
+00019         \hyperlink{class_my_list}{MyList<int>} lista;
+00020 
 00021 
-00022         \textcolor{keywordtype}{int} opt;        
-00023         \textcolor{keywordtype}{bool} isSetNumberGenerator=\textcolor{keyword}{false}; 
-00024         \textcolor{comment}{//bool isTest=false;}
-00025 
-00026         \textcolor{keywordflow}{while} ((opt = getopt(argc, argv, \textcolor{stringliteral}{"n:o:i:gx"})) != -1) \{
-00027                 \textcolor{keywordflow}{switch}(opt)\{
-00028                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'n'}:       \textcolor{comment}{// ilosc liczb do przetworzenia}
-00029                         podstawoweInfoIO.\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable} = atoi(optarg);
-00030                         \textcolor{keywordflow}{break};
-00031 
-00032 
-00033                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'o'}:
-00034                         podstawoweInfoIO.\hyperlink{class_data_frame_a824a73f019aec71281837abafd95a510}{outputFileName} = optarg;
-00035                         \textcolor{keywordflow}{break};
-00036 
-00037                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'i'}:
-00038                         podstawoweInfoIO.\hyperlink{class_data_frame_a90041bfdf474b0d7ce39bc3dbbb55aa9}{inputFileName}=optarg;
-00039                         \textcolor{keywordflow}{break};
-00040 
-00041                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'g'}:       \textcolor{comment}{// wlacza generator liczb, po zakonczeniu generowania konczy program}
-00042                         isSetNumberGenerator=\textcolor{keyword}{true};
-00043                         \textcolor{keywordflow}{break};
-00044 
-00045 
-00046                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'?'}:
-00047                 \textcolor{keywordflow}{default}:
-00048                         std::cout<<\textcolor{stringliteral}{"\(\backslash\)nPodano zly argument"};
-00049                         \textcolor{keywordflow}{return} -1;
-00050                 \}
-00051         \}
-00052 
-00053 
-00054         \textcolor{comment}{// na potrzeby slownika wlaczam generowanie automatyczne}
-00055         isSetNumberGenerator = \textcolor{keyword}{true};
-00056         \textcolor{keywordflow}{if}(isSetNumberGenerator) \{
-00057                 \hyperlink{class_number_generator}{NumberGenerator} generator;
-00058                 std::cout<<\textcolor{stringliteral}{"\(\backslash\)n+ - - - - Tworzenie tablicy i generacja losowych liczb - - - +\(\backslash\)n"};
-00059                 generator= podstawoweInfoIO;
-00060                 \hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{MyBenchmark::timerStart}();
-00061                         generator.\hyperlink{class_number_generator_a511673bb245d14a048702558d12deb63}{generateNumbers}();
-00062                 std::cout<<\textcolor{stringliteral}{"Generuje losowe liczby:"}<<\hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{MyBenchmark::timerStop}()<<\textcolor{charliteral}{'\(\backslash\)n'};
-00063                 podstawoweInfoIO = generator;
-00064                 podstawoweInfoIO.\hyperlink{class_data_frame_a03cc3ac606fdb8a2dbcaea5d429cf208}{saveDataToFile}();
-00065         \}
-00066 
-00067         \hyperlink{class_dictionary}{Dictionary} dict;
-00068         std::cout<<\textcolor{stringliteral}{"\(\backslash\)nHashuje pierwsze "}<<\hyperlink{dictionary_8h_a562499e66e3ed9cc37111ac1ddafa1eb}{LICZBA\_ZNAKOW\_DO\_HASHU}<< \textcolor{stringliteral}{" znaki."};
-00069         std::string *str = \hyperlink{class_number_generator_af434d1cd0b338d22b11b24fbd2e14dce}{NumberGenerator::generateStrings}(
-      podstawoweInfoIO.\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable});
-00070         \hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{MyBenchmark::timerStart}();
-00071                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<podstawoweInfoIO.\hyperlink{class_data_frame_aa5d1905c6910cad07ab5189bd34b13ab}{sizeOfTable}; i++)
-00072                 \{
-00073                         dict[str[i]] = podstawoweInfoIO.\hyperlink{class_data_frame_a8edc4ce524483e2e5069067267ccdcbf}{tableOfData}[i];
-00074                 \}
-00075         std::cout<<\textcolor{stringliteral}{"\(\backslash\)nCzas alokowania slownika:"}<<\hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{MyBenchmark::timerStop}()<<\textcolor{charliteral}{'\(\backslash\)n'};
-00076 
-00077         std::cout<<std::endl;
-00078         \textcolor{keywordflow}{return} 0;
-00079 \}
+00022         lista = NumberGenerator::generateNumbers<int>(100, 
+      \hyperlink{main_8cpp_adfa2ae8b78bba187e8a03a23e9b2617d}{ILE\_WYRAZOW\_DO\_WSTAWIENIA});
+00023         \hyperlink{class_observable_a_v_l_tree}{ObservableAVLTree<int>} tree;
+00024         \hyperlink{class_my_benchmark_observer}{MyBenchmarkObserver} *o1 = \textcolor{keyword}{new} \hyperlink{class_my_benchmark_observer}{MyBenchmarkObserver}();
+00025         tree.add(o1);
+00026 
+00027         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<lista.\hyperlink{class_my_list_a267f669859ef3541333082cad6b28ab7}{size}(); i++)
+00028         \{
+00029                 tree.insert(lista[i].content);
+00030         \}
+00031         std::cout<<std::endl;
+00032         \textcolor{keywordflow}{return} 0;
+00033 \}
 \end{DoxyCode}

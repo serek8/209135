@@ -1,0 +1,30 @@
+\hypertarget{sorter_8h}{\subsection{sorter.\-h}
+\label{sorter_8h}\index{sorter.\-h@{sorter.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * Sorter.h}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: May 13, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00008 \textcolor{preprocessor}{#ifndef SORTER\_H\_}
+00009 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define SORTER\_H\_}
+00010 \textcolor{preprocessor}{}
+00011 \textcolor{preprocessor}{#include "\hyperlink{list_8h}{list.h}"}
+00012 
+00013 
+00014 \textcolor{keyword}{template} <\textcolor{keyword}{class} MyListElementType>
+\hypertarget{sorter_8h_source_l00015}{}\hyperlink{class_sorter}{00015} \textcolor{keyword}{class }\hyperlink{class_sorter}{Sorter}
+00016 \{
+00017 \textcolor{keyword}{public}:
+00018 
+00019         \textcolor{keyword}{virtual} \hyperlink{class_list}{List<MyListElementType>} &\hyperlink{class_sorter_a4a82d8151d6172802d1e60cb30c7d7d3}{sort}() = 0;
+\hypertarget{sorter_8h_source_l00020}{}\hyperlink{class_sorter_ac71eebbce06b3fa6a3280c5733d999a5}{00020}         \textcolor{keyword}{virtual} \hyperlink{class_sorter_ac71eebbce06b3fa6a3280c5733d999a5}{~Sorter}()\{\};
+00021 \};
+00022 
+00023 
+00024 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* SORTER\_H\_ */}\textcolor{preprocessor}{}
+\end{DoxyCode}

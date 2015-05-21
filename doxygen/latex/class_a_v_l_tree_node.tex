@@ -1,0 +1,156 @@
+\hypertarget{class_a_v_l_tree_node}{\subsection{Dokumentacja szablonu klasy A\-V\-L\-Tree\-Node$<$ Content\-Type $>$}
+\label{class_a_v_l_tree_node}\index{A\-V\-L\-Tree\-Node$<$ Content\-Type $>$@{A\-V\-L\-Tree\-Node$<$ Content\-Type $>$}}
+}
+
+
+{\ttfamily \#include $<$avltreeelement.\-h$>$}
+
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_v_l_tree_node_ae79b3a933b8290bf12d87242dec5deea}{A\-V\-L\-Tree\-Node} ()
+\item 
+\hyperlink{class_a_v_l_tree_node_a3145d578d5da384c424484ddfa9095ba}{A\-V\-L\-Tree\-Node} (int new\-Key)
+\end{DoxyCompactItemize}
+\subsubsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_v_l_tree_node}{A\-V\-L\-Tree\-Node} $\ast$ \hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parent\-Node}
+\item 
+\hyperlink{class_a_v_l_tree_node}{A\-V\-L\-Tree\-Node} $\ast$ \hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{left\-Node}
+\item 
+\hyperlink{class_a_v_l_tree_node}{A\-V\-L\-Tree\-Node} $\ast$ \hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{right\-Node}
+\item 
+int \hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{key}
+\item 
+int \hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balance\-Factor}
+\item 
+Content\-Type \hyperlink{class_a_v_l_tree_node_ac94089c8fd88ff9fbd092cd2306719bd}{content}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Opis szczegółowy}
+\subsubsection*{template$<$class Content\-Type$>$class A\-V\-L\-Tree\-Node$<$ Content\-Type $>$}
+
+
+
+Definicja w linii \hyperlink{avltreeelement_8h_source_l00014}{14} pliku \hyperlink{avltreeelement_8h_source}{avltreeelement.\-h}.
+
+
+
+\subsubsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_a_v_l_tree_node_ae79b3a933b8290bf12d87242dec5deea}{\index{A\-V\-L\-Tree\-Node@{A\-V\-L\-Tree\-Node}!A\-V\-L\-Tree\-Node@{A\-V\-L\-Tree\-Node}}
+\index{A\-V\-L\-Tree\-Node@{A\-V\-L\-Tree\-Node}!AVLTreeNode@{A\-V\-L\-Tree\-Node}}
+\paragraph[{A\-V\-L\-Tree\-Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Content\-Type$>$ {\bf A\-V\-L\-Tree\-Node}$<$ Content\-Type $>$\-::{\bf A\-V\-L\-Tree\-Node} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_a_v_l_tree_node_ae79b3a933b8290bf12d87242dec5deea}
+
+
+Definicja w linii \hyperlink{avltreeelement_8h_source_l00027}{27} pliku \hyperlink{avltreeelement_8h_source}{avltreeelement.\-h}.
+
+
+
+Odwołuje się do \hyperlink{avltreeelement_8h_source_l00024}{A\-V\-L\-Tree\-Node$<$ Content\-Type $>$\-::balance\-Factor}, \hyperlink{avltreeelement_8h_source_l00024}{A\-V\-L\-Tree\-Node$<$ Content\-Type $>$\-::key}, \hyperlink{avltreeelement_8h_source_l00019}{A\-V\-L\-Tree\-Node$<$ Content\-Type $>$\-::left\-Node}, \hyperlink{avltreeelement_8h_source_l00019}{A\-V\-L\-Tree\-Node$<$ Content\-Type $>$\-::parent\-Node} i \hyperlink{avltreeelement_8h_source_l00019}{A\-V\-L\-Tree\-Node$<$ Content\-Type $>$\-::right\-Node}.
+
+
+\begin{DoxyCode}
+00028   \{
+00029            \hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = \hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} = \hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = NULL;
+00030            \hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{key} = \hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = 0;
+00031   \}
+\end{DoxyCode}
+\hypertarget{class_a_v_l_tree_node_a3145d578d5da384c424484ddfa9095ba}{\index{A\-V\-L\-Tree\-Node@{A\-V\-L\-Tree\-Node}!A\-V\-L\-Tree\-Node@{A\-V\-L\-Tree\-Node}}
+\index{A\-V\-L\-Tree\-Node@{A\-V\-L\-Tree\-Node}!AVLTreeNode@{A\-V\-L\-Tree\-Node}}
+\paragraph[{A\-V\-L\-Tree\-Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Content\-Type$>$ {\bf A\-V\-L\-Tree\-Node}$<$ Content\-Type $>$\-::{\bf A\-V\-L\-Tree\-Node} (
+\begin{DoxyParamCaption}
+\item[{int}]{new\-Key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_a_v_l_tree_node_a3145d578d5da384c424484ddfa9095ba}
+
+
+Definicja w linii \hyperlink{avltreeelement_8h_source_l00032}{32} pliku \hyperlink{avltreeelement_8h_source}{avltreeelement.\-h}.
+
+
+
+Odwołuje się do \hyperlink{avltreeelement_8h_source_l00024}{A\-V\-L\-Tree\-Node$<$ Content\-Type $>$\-::balance\-Factor}, \hyperlink{avltreeelement_8h_source_l00024}{A\-V\-L\-Tree\-Node$<$ Content\-Type $>$\-::key}, \hyperlink{avltreeelement_8h_source_l00019}{A\-V\-L\-Tree\-Node$<$ Content\-Type $>$\-::left\-Node}, \hyperlink{avltreeelement_8h_source_l00019}{A\-V\-L\-Tree\-Node$<$ Content\-Type $>$\-::parent\-Node} i \hyperlink{avltreeelement_8h_source_l00019}{A\-V\-L\-Tree\-Node$<$ Content\-Type $>$\-::right\-Node}.
+
+
+\begin{DoxyCode}
+00033    \{
+00034            \hyperlink{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{parentNode} = \hyperlink{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{leftNode} = \hyperlink{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{rightNode} = NULL;
+00035            \hyperlink{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{balanceFactor} = 0;
+00036                 \hyperlink{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{key} = newKey;
+00037    \}
+\end{DoxyCode}
+
+
+\subsubsection{Dokumentacja atrybutów składowych}
+\hypertarget{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}{\index{A\-V\-L\-Tree\-Node@{A\-V\-L\-Tree\-Node}!balance\-Factor@{balance\-Factor}}
+\index{balance\-Factor@{balance\-Factor}!AVLTreeNode@{A\-V\-L\-Tree\-Node}}
+\paragraph[{balance\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Content\-Type$>$ int {\bf A\-V\-L\-Tree\-Node}$<$ Content\-Type $>$\-::balance\-Factor}}\label{class_a_v_l_tree_node_a212c57dab467b42c3ddc50b2aecc05ad}
+
+
+Definicja w linii \hyperlink{avltreeelement_8h_source_l00024}{24} pliku \hyperlink{avltreeelement_8h_source}{avltreeelement.\-h}.
+
+
+
+Odwołania w \hyperlink{avltreeelement_8h_source_l00027}{A\-V\-L\-Tree\-Node$<$ Content\-Type $>$\-::\-A\-V\-L\-Tree\-Node()}, \hyperlink{avltree_8h_source_l00040}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::insert()}, \hyperlink{avltree_8h_source_l00271}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::remove()}, \hyperlink{avltree_8h_source_l00151}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::rotation\-L\-L()}, \hyperlink{avltree_8h_source_l00201}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::rotation\-L\-R()}, \hyperlink{avltree_8h_source_l00177}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::rotation\-R\-L()}, \hyperlink{avltree_8h_source_l00125}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::rotation\-R\-R()} i \hyperlink{avltree_8h_source_l00370}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::walk()}.
+
+\hypertarget{class_a_v_l_tree_node_ac94089c8fd88ff9fbd092cd2306719bd}{\index{A\-V\-L\-Tree\-Node@{A\-V\-L\-Tree\-Node}!content@{content}}
+\index{content@{content}!AVLTreeNode@{A\-V\-L\-Tree\-Node}}
+\paragraph[{content}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Content\-Type$>$ Content\-Type {\bf A\-V\-L\-Tree\-Node}$<$ Content\-Type $>$\-::content}}\label{class_a_v_l_tree_node_ac94089c8fd88ff9fbd092cd2306719bd}
+
+
+Definicja w linii \hyperlink{avltreeelement_8h_source_l00025}{25} pliku \hyperlink{avltreeelement_8h_source}{avltreeelement.\-h}.
+
+\hypertarget{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}{\index{A\-V\-L\-Tree\-Node@{A\-V\-L\-Tree\-Node}!key@{key}}
+\index{key@{key}!AVLTreeNode@{A\-V\-L\-Tree\-Node}}
+\paragraph[{key}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Content\-Type$>$ int {\bf A\-V\-L\-Tree\-Node}$<$ Content\-Type $>$\-::key}}\label{class_a_v_l_tree_node_a717c2f6c33504a065570802e95189a57}
+
+
+Definicja w linii \hyperlink{avltreeelement_8h_source_l00024}{24} pliku \hyperlink{avltreeelement_8h_source}{avltreeelement.\-h}.
+
+
+
+Odwołania w \hyperlink{avltreeelement_8h_source_l00027}{A\-V\-L\-Tree\-Node$<$ Content\-Type $>$\-::\-A\-V\-L\-Tree\-Node()}, \hyperlink{avltree_8h_source_l00229}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::find()}, \hyperlink{avltree_8h_source_l00040}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::insert()}, \hyperlink{avltree_8h_source_l00364}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::recurring\-Print()} i \hyperlink{avltree_8h_source_l00370}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::walk()}.
+
+\hypertarget{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}{\index{A\-V\-L\-Tree\-Node@{A\-V\-L\-Tree\-Node}!left\-Node@{left\-Node}}
+\index{left\-Node@{left\-Node}!AVLTreeNode@{A\-V\-L\-Tree\-Node}}
+\paragraph[{left\-Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Content\-Type$>$ {\bf A\-V\-L\-Tree\-Node} $\ast$ {\bf A\-V\-L\-Tree\-Node}$<$ Content\-Type $>$\-::left\-Node}}\label{class_a_v_l_tree_node_afc53d4774f375c23795c9eb598f4d7cd}
+
+
+Definicja w linii \hyperlink{avltreeelement_8h_source_l00019}{19} pliku \hyperlink{avltreeelement_8h_source}{avltreeelement.\-h}.
+
+
+
+Odwołania w \hyperlink{avltreeelement_8h_source_l00027}{A\-V\-L\-Tree\-Node$<$ Content\-Type $>$\-::\-A\-V\-L\-Tree\-Node()}, \hyperlink{avltree_8h_source_l00229}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::find()}, \hyperlink{avltree_8h_source_l00253}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::find\-Ather\-Node\-Match()}, \hyperlink{avltree_8h_source_l00040}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::insert()}, \hyperlink{avltree_8h_source_l00364}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::recurring\-Print()}, \hyperlink{avltree_8h_source_l00271}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::remove()}, \hyperlink{avltree_8h_source_l00151}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::rotation\-L\-L()}, \hyperlink{avltree_8h_source_l00201}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::rotation\-L\-R()}, \hyperlink{avltree_8h_source_l00177}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::rotation\-R\-L()}, \hyperlink{avltree_8h_source_l00125}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::rotation\-R\-R()} i \hyperlink{avltree_8h_source_l00370}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::walk()}.
+
+\hypertarget{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}{\index{A\-V\-L\-Tree\-Node@{A\-V\-L\-Tree\-Node}!parent\-Node@{parent\-Node}}
+\index{parent\-Node@{parent\-Node}!AVLTreeNode@{A\-V\-L\-Tree\-Node}}
+\paragraph[{parent\-Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Content\-Type$>$ {\bf A\-V\-L\-Tree\-Node}$\ast$ {\bf A\-V\-L\-Tree\-Node}$<$ Content\-Type $>$\-::parent\-Node}}\label{class_a_v_l_tree_node_ae64d1261fea217d3e85928e7cf2a9151}
+
+
+Definicja w linii \hyperlink{avltreeelement_8h_source_l00019}{19} pliku \hyperlink{avltreeelement_8h_source}{avltreeelement.\-h}.
+
+
+
+Odwołania w \hyperlink{avltreeelement_8h_source_l00027}{A\-V\-L\-Tree\-Node$<$ Content\-Type $>$\-::\-A\-V\-L\-Tree\-Node()}, \hyperlink{avltree_8h_source_l00253}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::find\-Ather\-Node\-Match()}, \hyperlink{avltree_8h_source_l00040}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::insert()}, \hyperlink{avltree_8h_source_l00271}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::remove()}, \hyperlink{avltree_8h_source_l00151}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::rotation\-L\-L()}, \hyperlink{avltree_8h_source_l00201}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::rotation\-L\-R()}, \hyperlink{avltree_8h_source_l00177}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::rotation\-R\-L()}, \hyperlink{avltree_8h_source_l00125}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::rotation\-R\-R()} i \hyperlink{avltree_8h_source_l00370}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::walk()}.
+
+\hypertarget{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}{\index{A\-V\-L\-Tree\-Node@{A\-V\-L\-Tree\-Node}!right\-Node@{right\-Node}}
+\index{right\-Node@{right\-Node}!AVLTreeNode@{A\-V\-L\-Tree\-Node}}
+\paragraph[{right\-Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Content\-Type$>$ {\bf A\-V\-L\-Tree\-Node} $\ast$ {\bf A\-V\-L\-Tree\-Node}$<$ Content\-Type $>$\-::right\-Node}}\label{class_a_v_l_tree_node_a51dfb148f27625c89a3a153760517c38}
+
+
+Definicja w linii \hyperlink{avltreeelement_8h_source_l00019}{19} pliku \hyperlink{avltreeelement_8h_source}{avltreeelement.\-h}.
+
+
+
+Odwołania w \hyperlink{avltreeelement_8h_source_l00027}{A\-V\-L\-Tree\-Node$<$ Content\-Type $>$\-::\-A\-V\-L\-Tree\-Node()}, \hyperlink{avltree_8h_source_l00229}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::find()}, \hyperlink{avltree_8h_source_l00253}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::find\-Ather\-Node\-Match()}, \hyperlink{avltree_8h_source_l00244}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::find\-Max\-Key\-Node()}, \hyperlink{avltree_8h_source_l00040}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::insert()}, \hyperlink{avltree_8h_source_l00364}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::recurring\-Print()}, \hyperlink{avltree_8h_source_l00271}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::remove()}, \hyperlink{avltree_8h_source_l00151}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::rotation\-L\-L()}, \hyperlink{avltree_8h_source_l00201}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::rotation\-L\-R()}, \hyperlink{avltree_8h_source_l00177}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::rotation\-R\-L()}, \hyperlink{avltree_8h_source_l00125}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::rotation\-R\-R()} i \hyperlink{avltree_8h_source_l00370}{A\-V\-L\-Tree$<$ Content\-Type $>$\-::walk()}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{avltreeelement_8h}{avltreeelement.\-h}\end{DoxyCompactItemize}

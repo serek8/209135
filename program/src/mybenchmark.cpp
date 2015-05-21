@@ -8,13 +8,13 @@
 
 #include "mybenchmark.h"
 
-
+double MyBenchmark::timerValueStatic=0;
 void MyBenchmark :: timerStart()
 {
-	timerValue = (( (double)clock() ) /CLOCKS_PER_SEC);
+	MyBenchmark::timerValueStatic = (( (double)clock() ) /CLOCKS_PER_SEC);
 }
 
 double MyBenchmark :: timerStop()
 {
-	return (( (double)clock() ) /CLOCKS_PER_SEC) - timerValue;
+	return (( (double)clock() ) /CLOCKS_PER_SEC) - MyBenchmark::timerValueStatic;
 }
