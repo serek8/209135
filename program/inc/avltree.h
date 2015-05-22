@@ -250,7 +250,7 @@ class AVLTree
     // Zwraca węzeł poprzednika
     //-------------------------
     //
-    AVLTreeNode<ContentType> * findAtherNodeMatch(AVLTreeNode<ContentType> * nodeComperator) // lowerValueFrom nodeComperator
+    AVLTreeNode<ContentType> * findAtherNodeMatch(AVLTreeNode<ContentType> * nodeComperator)
     {
       if(nodeComperator->leftNode) return findMaxKeyNode(nodeComperator->leftNode);
 
@@ -367,7 +367,7 @@ class AVLTree
       if(x->leftNode)  recurringPrint(x->leftNode);
       if(x->rightNode) recurringPrint(x->rightNode);
     }
-    void walk(AVLTreeNode<ContentType> * x)
+    void print(AVLTreeNode<ContentType> * x)
     {
       cout << x->key << " : bf = " << setw(2) << x->balanceFactor << " : Left-> ";
       if(x->leftNode) cout << setw(3) << x->leftNode->key;

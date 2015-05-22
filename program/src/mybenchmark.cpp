@@ -8,7 +8,7 @@
 
 #include "mybenchmark.h"
 
-double MyBenchmark::timerValueStatic=0;
+
 void MyBenchmark :: timerStart()
 {
 	MyBenchmark::timerValueStatic = (( (double)clock() ) /CLOCKS_PER_SEC);
@@ -17,4 +17,21 @@ void MyBenchmark :: timerStart()
 double MyBenchmark :: timerStop()
 {
 	return (( (double)clock() ) /CLOCKS_PER_SEC) - MyBenchmark::timerValueStatic;
+}
+
+double MyBenchmark :: timerStopAndSaveToFile()
+{
+	double x= timerStop();
+			streamToFile<<x;
+			return x;
+}
+void MyBenchmark :: tab()
+{
+	streamToFile<<" ";
+
+}
+void MyBenchmark :: newL()
+{
+	streamToFile<<"\n";
+
 }

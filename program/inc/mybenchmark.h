@@ -39,7 +39,7 @@ public:
 	/// Czas stopera
 	double timerValue;
 	std::ofstream streamToFile;
-	static double  timerValueStatic;
+	double  timerValueStatic;
 	MyBenchmark()
 	{
 		timerValue = 0;
@@ -48,18 +48,18 @@ public:
 		streamToFile.open ("log.txt", std::ofstream::app);
 		streamToFile << std::fixed;
 	}
-
-
+	void newL();
+	void tab();
 
 	///  @brief włączam stoper
-	static void  timerStart();
+	void  timerStart();
 
 	/**
 	 *  @brief wyłączam stoper
 	 *  @return Dlugosc dzialania stopera
 	 */
-	static double  timerStop();
-
+	double  timerStop();
+	double  timerStopAndSaveToFile();
 	/**
 	 * @brief Usuwam obiekt test biorąc pod uwage jego prawdziwy typ
 	 */
