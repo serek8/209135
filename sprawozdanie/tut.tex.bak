@@ -20,7 +20,7 @@ gdzie wsp wyważenia = wysokoscLewego(w) - wysokoscPrawego(w)
 
 \section{Wyszukiwanie elementu}
 Wyszukiwanie elementu w drzewie AVL nie różni się od BST. Jego złożoność w teori wynosi w log(n). Na moim wykresie logarytmicznym można zaobserowawać, że w algorytm w rzeczywistości pracował z gorszą wydajością - liniowa O(n), co mogło być spowodowane
-złymi strukturami w programie lub równoległymi procesami.
+złymi strukturami w programie lub równoległymi procesami.Pomimo tych niedogodności można zauważyć jak bardzo uporządkowane drzewo AVL ma mniejszą złożoność obliczeniową od BST, co przedstawia poniżysz wykres.
 \par\vspace{\baselineskip}
 \includegraphics[width=5in]{wysz.png}\\\
 \newpage
@@ -29,7 +29,7 @@ złymi strukturami w programie lub równoległymi procesami.
 
 \section{Dodawanie elementu}
 Dodawanie gałęzi w drzewie polega na implementacji rotacji, czyli takich przestawień elementów, aby odpowiednie gałęzie byly odpowiednio zbalansowane. Wyróżniamy dwa typy rotacji LL rotacja w prawo (elementy połączone lewymi odnogami) i RR rotacja w lewo (prawymi odnogami). Możemy wyróżnić jeszcze dwie RL,LR są to rotacje podwójne, które składają się właśnie z kombinacji rotacji LL i RR.  \\\
-Złożoność obliczeniowa dodawania gałęzi w drzewie AVL jest większa niż w BSD ponieważ trzeba dodatkowo balansować drzewo.\\\
+Złożoność obliczeniowa dodawania gałęzi w drzewie AVL jest większa niż w BSD ponieważ trzeba dodatkowo balansować drzewo. Jednak jak widać z wykresu jest to mała strata w porównaniu do złożoności którą możemy odzyskać podczas  wykukiwania elemntów.\\\
 Złożoność obliczeniowa dodawania elementów w teroi wynosi O(log n).
 
 \includegraphics[width=5in]{dod.png}\\\
@@ -38,5 +38,5 @@ Złożoność obliczeniowa dodawania elementów w teroi wynosi O(log n).
 
 
 \section{Podsumowanie}
-Drzewo AVL charakteryzuje się większą złożonością obliczeniową od BSD w przypadku wsadzania elementów, natomiast powinno być lepsze podczas wyszukiwania elementów.
+Drzewo AVL charakteryzuje się większą złożonością obliczeniową od BSD w przypadku wsadzania elementów, natomiast jest zdecydowanie wydajniejsze podczas wyszukiwania elementów.
 \end{document}
