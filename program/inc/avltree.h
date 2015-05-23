@@ -17,12 +17,16 @@ using namespace std;
 
 // Definicja klasy obsługującej drzewo AVL
 //----------------------------------------
+/*
+ * @brief Definiuje obiekt drzewa AVL
+ */
 template <class ContentType>
 class AVLTree
 {
   public:
 
-    AVLTreeNode<ContentType> * rootNode;  // korzeń drzewa
+	/// @brief korzeń drzewa
+    AVLTreeNode<ContentType> * rootNode;
 
 
 
@@ -37,6 +41,11 @@ class AVLTree
     	  delete(remove(rootNode));
       }
     }
+
+    /*
+     * @brief Wsadza klucz do drzewa
+     * @param newkey klucz do wsadzenia
+     */
     void insert(int &newKey)
         {
     	AVLTreeNode<ContentType>* newNode = new AVLTreeNode<ContentType>(newKey);
@@ -122,6 +131,9 @@ class AVLTree
           }
         }
 
+    /*
+     * @brief rotacja pojedyncza w lewo
+     */
     AVLTreeNode<ContentType> * rotationRR(AVLTreeNode<ContentType> * A)
     {
       AVLTreeNode<ContentType> * B = A->rightNode, * P = A->parentNode;
@@ -148,6 +160,9 @@ class AVLTree
       return B;
     }
 
+    /*
+     * @brief rotacja pojedyncza w prawo
+     */
     AVLTreeNode<ContentType> * rotationLL(AVLTreeNode<ContentType> * A)
     {
       AVLTreeNode<ContentType> * B = A->leftNode, * P = A->parentNode;
@@ -174,6 +189,9 @@ class AVLTree
 
       return B;
     }
+    /*
+     * @brief rotacja podwojna lewo prawo
+     */
     AVLTreeNode<ContentType> * rotationRL(AVLTreeNode<ContentType> * A)
     {
       AVLTreeNode<ContentType> * B = A->rightNode, * C = B->leftNode, * P = A->parentNode;
@@ -198,6 +216,9 @@ class AVLTree
 
       return C;
     }
+    /*
+     * @brief rotacja podwojna lewo prawo
+     */
     AVLTreeNode<ContentType> * rotationLR(AVLTreeNode<ContentType> * A)
     {
       AVLTreeNode<ContentType> * B = A->leftNode, * C = B->rightNode, * P = A->parentNode;
@@ -223,8 +244,8 @@ class AVLTree
       return C;
     }
 
-    // Wyszukuje element wg wartości klucza
-    //-------------------------------------
+    /// @brief Wyszukuje element wg wartości klucza
+    /// @param key klucz do wyszukania
 
     AVLTreeNode<ContentType> * find(int key)
     {
@@ -238,8 +259,7 @@ class AVLTree
 
       return tmpNode;
     }
-    // Zwraca węzeł z minimalnym kluczem
-    //----------------------------------
+    /// @brief Zwraca węzeł z minimalnym kluczem
 
     AVLTreeNode<ContentType> * findMaxKeyNode(AVLTreeNode<ContentType> * tmpNode)
     {
@@ -247,9 +267,7 @@ class AVLTree
       return tmpNode;
     }
 
-    // Zwraca węzeł poprzednika
-    //-------------------------
-    //
+    /// @brief Zwraca węzeł poprzednika
     AVLTreeNode<ContentType> * findAtherNodeMatch(AVLTreeNode<ContentType> * nodeComperator)
     {
       if(nodeComperator->leftNode) return findMaxKeyNode(nodeComperator->leftNode);
@@ -367,21 +385,45 @@ class AVLTree
       if(x->leftNode)  recurringPrint(x->leftNode);
       if(x->rightNode) recurringPrint(x->rightNode);
     }
+
     void print(AVLTreeNode<ContentType> * x)
     {
-      cout << x->key << " : bf = " << setw(2) << x->balanceFactor << " : Left-> ";
-      if(x->leftNode) cout << setw(3) << x->leftNode->key;
-      else        cout << "NIL";
-      cout << ", Right-> ";
-      if(x->rightNode) cout << setw(3) << x->rightNode->key;
-      else         cout << "NIL";
-      cout << " : p -> ";
-      if(x->parentNode) cout << setw(3) << x->parentNode->key;
-      else     cout << "NIL";
+      cout << x->key << " : bf = " << setw(2) << x->balanceFactor;
       cout << endl;
-      if(x->leftNode)  walk(x->leftNode);
-      if(x->rightNode) walk(x->rightNode);
+      if(x->leftNode)  print(x->leftNode);
+      if(x->rightNode) print(x->rightNode);
     }
+
+    void insertBST(int key)
+    {
+
+      AVLTreeNode<ContentType> *n =new AVLTreeNode<ContentType>(key);
+      AVLTreeNode<ContentType> * y, * x = rootNode;
+
+      y = n->leftNode = n->rightNode = NULL;
+
+      while(x)
+      {
+        if(n->key == x->key)
+        {
+          delete n;
+          return;
+        }
+        y = x;
+        x = (n->key < x->key) ? x->leftNode : x->rightNode;
+      }
+
+      n->parentNode = y;
+
+      if(!y) rootNode = n;
+      else if(n->key < y->key) y->leftNode  = n;
+      else                     y->rightNode = n;
+
+      return;
+
+    }
+
+
 };
 
 

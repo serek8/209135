@@ -11,7 +11,7 @@
 00006 \textcolor{comment}{ */}
 00009 \textcolor{preprocessor}{#include "\hyperlink{mybenchmark_8h}{mybenchmark.h}"}
 00010 
-00011 \textcolor{keywordtype}{double} \hyperlink{class_my_benchmark_aeca64d5b265e357ef879bf982dd4bb00}{MyBenchmark::timerValueStatic}=0;
+00011 
 \hypertarget{mybenchmark_8cpp_source_l00012}{}\hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{00012} \textcolor{keywordtype}{void} \hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{MyBenchmark :: timerStart}()
 00013 \{
 00014         \hyperlink{class_my_benchmark_aeca64d5b265e357ef879bf982dd4bb00}{MyBenchmark::timerValueStatic} = (( (double)clock() ) /CLOCKS\_PER\_SEC);
@@ -22,4 +22,21 @@
 00019         \textcolor{keywordflow}{return} (( (\textcolor{keywordtype}{double})clock() ) /CLOCKS\_PER\_SEC) - 
       \hyperlink{class_my_benchmark_aeca64d5b265e357ef879bf982dd4bb00}{MyBenchmark::timerValueStatic};
 00020 \}
+00021 
+\hypertarget{mybenchmark_8cpp_source_l00022}{}\hyperlink{class_my_benchmark_a94dd5cae9837db8f84eae09498b1039a}{00022} \textcolor{keywordtype}{double} \hyperlink{class_my_benchmark_a94dd5cae9837db8f84eae09498b1039a}{MyBenchmark :: timerStopAndSaveToFile}()
+00023 \{
+00024         \textcolor{keywordtype}{double} x= \hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{timerStop}();
+00025                         \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile}<<x;
+00026                         \textcolor{keywordflow}{return} x;
+00027 \}
+\hypertarget{mybenchmark_8cpp_source_l00028}{}\hyperlink{class_my_benchmark_ad2892ee2549d320f9e19060f444cb0d6}{00028} \textcolor{keywordtype}{void} \hyperlink{class_my_benchmark_ad2892ee2549d320f9e19060f444cb0d6}{MyBenchmark :: tab}()
+00029 \{
+00030         \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile}<<\textcolor{stringliteral}{" "};
+00031 
+00032 \}
+\hypertarget{mybenchmark_8cpp_source_l00033}{}\hyperlink{class_my_benchmark_a29b612fc55d1da88d44a6899bc89d312}{00033} \textcolor{keywordtype}{void} \hyperlink{class_my_benchmark_a29b612fc55d1da88d44a6899bc89d312}{MyBenchmark :: newL}()
+00034 \{
+00035         \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile}<<\textcolor{stringliteral}{"\(\backslash\)n"};
+00036 
+00037 \}
 \end{DoxyCode}

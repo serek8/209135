@@ -24,7 +24,7 @@
 00038 
 \hypertarget{mybenchmark_8h_source_l00040}{}\hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{00040}         \textcolor{keywordtype}{double} \hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{timerValue};
 \hypertarget{mybenchmark_8h_source_l00041}{}\hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{00041}         std::ofstream \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile};
-\hypertarget{mybenchmark_8h_source_l00042}{}\hyperlink{class_my_benchmark_aeca64d5b265e357ef879bf982dd4bb00}{00042}         \textcolor{keyword}{static} \textcolor{keywordtype}{double}  \hyperlink{class_my_benchmark_aeca64d5b265e357ef879bf982dd4bb00}{timerValueStatic};
+\hypertarget{mybenchmark_8h_source_l00042}{}\hyperlink{class_my_benchmark_aeca64d5b265e357ef879bf982dd4bb00}{00042}         \textcolor{keywordtype}{double}  \hyperlink{class_my_benchmark_aeca64d5b265e357ef879bf982dd4bb00}{timerValueStatic};
 \hypertarget{mybenchmark_8h_source_l00043}{}\hyperlink{class_my_benchmark_a7f3739e8b61939627c0f63948a9975ca}{00043}         \hyperlink{class_my_benchmark_a7f3739e8b61939627c0f63948a9975ca}{MyBenchmark}()
 00044         \{
 00045                 \hyperlink{class_my_benchmark_a1cdab837ead670bd438f249ee82c8eff}{timerValue} = 0;
@@ -33,13 +33,13 @@
 00048                 \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile}.open (\textcolor{stringliteral}{"log.txt"}, std::ofstream::app);
 00049                 \hyperlink{class_my_benchmark_a45b39f704800f8403789ff5c9bbb486b}{streamToFile} << std::fixed;
 00050         \}
-00051 
-00052 
+00051         \textcolor{keywordtype}{void} \hyperlink{class_my_benchmark_a29b612fc55d1da88d44a6899bc89d312}{newL}();
+00052         \textcolor{keywordtype}{void} \hyperlink{class_my_benchmark_ad2892ee2549d320f9e19060f444cb0d6}{tab}();
 00053 
-00055         \textcolor{keyword}{static} \textcolor{keywordtype}{void}  \hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{timerStart}();
+00055         \textcolor{keywordtype}{void}  \hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{timerStart}();
 00056 
-00061         \textcolor{keyword}{static} \textcolor{keywordtype}{double}  \hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{timerStop}();
-00062 
+00061         \textcolor{keywordtype}{double}  \hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{timerStop}();
+00062         \textcolor{keywordtype}{double}  \hyperlink{class_my_benchmark_a94dd5cae9837db8f84eae09498b1039a}{timerStopAndSaveToFile}();
 \hypertarget{mybenchmark_8h_source_l00066}{}\hyperlink{class_my_benchmark_a00de82c40680b41065eb402ac90f1736}{00066}         \textcolor{keyword}{virtual} \hyperlink{class_my_benchmark_a00de82c40680b41065eb402ac90f1736}{~MyBenchmark}() \{\};
 00067         \textcolor{comment}{//using DataFrame::operator=;}
 00068 

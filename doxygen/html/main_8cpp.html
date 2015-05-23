@@ -80,7 +80,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Definicje</h2></td></tr>
-<tr class="memitem:adfa2ae8b78bba187e8a03a23e9b2617d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#adfa2ae8b78bba187e8a03a23e9b2617d">ILE_WYRAZOW_DO_WSTAWIENIA</a>&#160;&#160;&#160;100</td></tr>
+<tr class="memitem:adfa2ae8b78bba187e8a03a23e9b2617d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#adfa2ae8b78bba187e8a03a23e9b2617d">ILE_WYRAZOW_DO_WSTAWIENIA</a>&#160;&#160;&#160;1000000000</td></tr>
 <tr class="separator:adfa2ae8b78bba187e8a03a23e9b2617d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -94,14 +94,14 @@ Funkcje</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ILE_WYRAZOW_DO_WSTAWIENIA&#160;&#160;&#160;100</td>
+          <td class="memname">#define ILE_WYRAZOW_DO_WSTAWIENIA&#160;&#160;&#160;1000000000</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Definicja w linii <a class="el" href="main_8cpp_source.html#l00015">15</a> pliku <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p>Odwołania w <a class="el" href="main_8cpp_source.html#l00017">main()</a>.</p>
+<p>Odwołania w <a class="el" href="main_8cpp_source.html#l00018">main()</a>.</p>
 
 </div>
 </div>
@@ -130,30 +130,53 @@ Funkcje</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definicja w linii <a class="el" href="main_8cpp_source.html#l00017">17</a> pliku <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="main_8cpp_source.html#l00018">18</a> pliku <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p>Odwołuje się do <a class="el" href="main_8cpp_source.html#l00015">ILE_WYRAZOW_DO_WSTAWIENIA</a> i <a class="el" href="mylist_8h_source.html#l00066">MyList&lt; MyListElementType &gt;::size()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="class_my_list.html">MyList&lt;int&gt;</a> lista;</div>
+<p>Odwołuje się do <a class="el" href="avltree_8h_source.html#l00250">AVLTree&lt; ContentType &gt;::find()</a>, <a class="el" href="main_8cpp_source.html#l00015">ILE_WYRAZOW_DO_WSTAWIENIA</a>, <a class="el" href="avltree_8h_source.html#l00049">AVLTree&lt; ContentType &gt;::insert()</a>, <a class="el" href="mybenchmark_8cpp_source.html#l00033">MyBenchmark::newL()</a>, <a class="el" href="mybenchmark_8cpp_source.html#l00028">MyBenchmark::tab()</a>, <a class="el" href="mybenchmark_8cpp_source.html#l00012">MyBenchmark::timerStart()</a>, <a class="el" href="mybenchmark_8cpp_source.html#l00017">MyBenchmark::timerStop()</a> i <a class="el" href="mybenchmark_8cpp_source.html#l00022">MyBenchmark::timerStopAndSaveToFile()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        lista = NumberGenerator::generateNumbers&lt;int&gt;(100, <a class="code" href="main_8cpp.html#adfa2ae8b78bba187e8a03a23e9b2617d">ILE_WYRAZOW_DO_WSTAWIENIA</a>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="class_observable_a_v_l_tree.html">ObservableAVLTree&lt;int&gt;</a> tree;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_my_benchmark_observer.html">MyBenchmarkObserver</a> *o1 = <span class="keyword">new</span> <a class="code" href="class_my_benchmark_observer.html">MyBenchmarkObserver</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        tree.add(o1);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;lista.<a class="code" href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">size</a>(); i++)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                tree.insert(lista[i].content);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        std::cout&lt;&lt;std::endl;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
-<div class="ttc" id="class_my_benchmark_observer_html"><div class="ttname"><a href="class_my_benchmark_observer.html">MyBenchmarkObserver</a></div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8h_source.html#l00072">mybenchmark.h:72</a></div></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="class_my_list.html">MyList&lt;int&gt;</a> lista;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="class_my_benchmark.html">MyBenchmark</a> benchmark;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        benchmark.<a class="code" href="class_my_benchmark.html#a802577db97fd440a3920add30c35a676">timerStart</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Generuje &quot;</span>&lt;&lt;<a class="code" href="main_8cpp.html#adfa2ae8b78bba187e8a03a23e9b2617d">ILE_WYRAZOW_DO_WSTAWIENIA</a>&lt;&lt;<span class="stringliteral">&quot; losowych liczb. Prosze o cierpliwosc... \n&quot;</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        lista = NumberGenerator::generateNumbers&lt;int&gt;(100000, ILE_WYRAZOW_DO_WSTAWIENIA/10);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Wygenerowalem losowe liczby w &quot;</span>&lt;&lt;benchmark.<a class="code" href="class_my_benchmark.html#a7e3fa28fab999435bd4c51d915e42809">timerStop</a>()&lt;&lt;<span class="stringliteral">&quot; sekund\n&quot;</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="class_a_v_l_tree.html">AVLTree&lt;int&gt;</a> tree;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">int</span> x=0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=10; j&lt;<a class="code" href="main_8cpp.html#adfa2ae8b78bba187e8a03a23e9b2617d">ILE_WYRAZOW_DO_WSTAWIENIA</a>; j=j*10)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                benchmark.<a class="code" href="class_my_benchmark.html#a802577db97fd440a3920add30c35a676">timerStart</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;j-x; i++)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                tree.<a class="code" href="class_a_v_l_tree.html#a3a85ff5f0b56af6c8b358611f8de95af">insert</a>(lista[i].content);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        cout&lt;&lt;j&lt;&lt;<span class="stringliteral">&quot; &quot;</span>&lt;&lt;benchmark.<a class="code" href="class_my_benchmark.html#a94dd5cae9837db8f84eae09498b1039a">timerStopAndSaveToFile</a>()&lt;&lt;<span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        benchmark.<a class="code" href="class_my_benchmark.html#ad2892ee2549d320f9e19060f444cb0d6">tab</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                        <span class="comment">//szukanie</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                benchmark.<a class="code" href="class_my_benchmark.html#a802577db97fd440a3920add30c35a676">timerStart</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;j-x; i++)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                tree.<a class="code" href="class_a_v_l_tree.html#aee790e9dba096b0b8077602bccb0f2ca">find</a>(lista[i].content);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                        }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                        cout&lt;&lt;benchmark.<a class="code" href="class_my_benchmark.html#a94dd5cae9837db8f84eae09498b1039a">timerStopAndSaveToFile</a>()&lt;&lt;endl;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        benchmark.<a class="code" href="class_my_benchmark.html#a29b612fc55d1da88d44a6899bc89d312">newL</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        <span class="comment">//szukanie end</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        x+=j;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="ttc" id="class_my_benchmark_html_a7e3fa28fab999435bd4c51d915e42809"><div class="ttname"><a href="class_my_benchmark.html#a7e3fa28fab999435bd4c51d915e42809">MyBenchmark::timerStop</a></div><div class="ttdeci">double timerStop()</div><div class="ttdoc">wyłączam stoper </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00017">mybenchmark.cpp:17</a></div></div>
+<div class="ttc" id="class_my_benchmark_html"><div class="ttname"><a href="class_my_benchmark.html">MyBenchmark</a></div><div class="ttdoc">Klasa bazowa/interface do testowania algorytmu. </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8h_source.html#l00023">mybenchmark.h:23</a></div></div>
+<div class="ttc" id="class_my_benchmark_html_a802577db97fd440a3920add30c35a676"><div class="ttname"><a href="class_my_benchmark.html#a802577db97fd440a3920add30c35a676">MyBenchmark::timerStart</a></div><div class="ttdeci">void timerStart()</div><div class="ttdoc">włączam stoper </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00012">mybenchmark.cpp:12</a></div></div>
+<div class="ttc" id="class_a_v_l_tree_html_a3a85ff5f0b56af6c8b358611f8de95af"><div class="ttname"><a href="class_a_v_l_tree.html#a3a85ff5f0b56af6c8b358611f8de95af">AVLTree::insert</a></div><div class="ttdeci">void insert(int &amp;newKey)</div><div class="ttdef"><b>Definition:</b> <a href="avltree_8h_source.html#l00049">avltree.h:49</a></div></div>
+<div class="ttc" id="class_a_v_l_tree_html"><div class="ttname"><a href="class_a_v_l_tree.html">AVLTree</a></div><div class="ttdef"><b>Definition:</b> <a href="avltree_8h_source.html#l00024">avltree.h:24</a></div></div>
+<div class="ttc" id="class_my_benchmark_html_a29b612fc55d1da88d44a6899bc89d312"><div class="ttname"><a href="class_my_benchmark.html#a29b612fc55d1da88d44a6899bc89d312">MyBenchmark::newL</a></div><div class="ttdeci">void newL()</div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00033">mybenchmark.cpp:33</a></div></div>
 <div class="ttc" id="main_8cpp_html_adfa2ae8b78bba187e8a03a23e9b2617d"><div class="ttname"><a href="main_8cpp.html#adfa2ae8b78bba187e8a03a23e9b2617d">ILE_WYRAZOW_DO_WSTAWIENIA</a></div><div class="ttdeci">#define ILE_WYRAZOW_DO_WSTAWIENIA</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00015">main.cpp:15</a></div></div>
-<div class="ttc" id="class_observable_a_v_l_tree_html"><div class="ttname"><a href="class_observable_a_v_l_tree.html">ObservableAVLTree</a></div><div class="ttdef"><b>Definition:</b> <a href="observableavltree_8h_source.html#l00016">observableavltree.h:16</a></div></div>
-<div class="ttc" id="class_my_list_html_a267f669859ef3541333082cad6b28ab7"><div class="ttname"><a href="class_my_list.html#a267f669859ef3541333082cad6b28ab7">MyList::size</a></div><div class="ttdeci">int &amp; size()</div><div class="ttdoc">Zwraca ilosc elementow listy. </div><div class="ttdef"><b>Definition:</b> <a href="mylist_8h_source.html#l00066">mylist.h:66</a></div></div>
+<div class="ttc" id="class_a_v_l_tree_html_aee790e9dba096b0b8077602bccb0f2ca"><div class="ttname"><a href="class_a_v_l_tree.html#aee790e9dba096b0b8077602bccb0f2ca">AVLTree::find</a></div><div class="ttdeci">AVLTreeNode&lt; ContentType &gt; * find(int key)</div><div class="ttdoc">Wyszukuje element wg wartości klucza. </div><div class="ttdef"><b>Definition:</b> <a href="avltree_8h_source.html#l00250">avltree.h:250</a></div></div>
+<div class="ttc" id="class_my_benchmark_html_ad2892ee2549d320f9e19060f444cb0d6"><div class="ttname"><a href="class_my_benchmark.html#ad2892ee2549d320f9e19060f444cb0d6">MyBenchmark::tab</a></div><div class="ttdeci">void tab()</div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00028">mybenchmark.cpp:28</a></div></div>
 <div class="ttc" id="class_my_list_html"><div class="ttname"><a href="class_my_list.html">MyList</a></div><div class="ttdoc">Lista dwukierunkowa. </div><div class="ttdef"><b>Definition:</b> <a href="mylist_8h_source.html#l00023">mylist.h:23</a></div></div>
+<div class="ttc" id="class_my_benchmark_html_a94dd5cae9837db8f84eae09498b1039a"><div class="ttname"><a href="class_my_benchmark.html#a94dd5cae9837db8f84eae09498b1039a">MyBenchmark::timerStopAndSaveToFile</a></div><div class="ttdeci">double timerStopAndSaveToFile()</div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00022">mybenchmark.cpp:22</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -163,7 +186,7 @@ Funkcje</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_463302e58bc74c0c35f534f40d40b0a3.html">program</a></li><li class="navelem"><a class="el" href="dir_630dc271d2c6bab74c75873b96c2431c.html">src</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Wygenerowano Cz, 21 maj 2015 04:40:20 dla Laboratorium 8 programem
+    <li class="footer">Wygenerowano Pt, 22 maj 2015 23:59:03 dla Laboratorium 8 programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

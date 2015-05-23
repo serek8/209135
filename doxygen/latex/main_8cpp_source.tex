@@ -16,24 +16,43 @@
 00012 \textcolor{preprocessor}{#include "\hyperlink{mybenchmark_8h}{mybenchmark.h}"}
 00013 \textcolor{preprocessor}{#include "\hyperlink{mylist_8h}{mylist.h}"}
 00014 
-\hypertarget{main_8cpp_source_l00015}{}\hyperlink{main_8cpp_adfa2ae8b78bba187e8a03a23e9b2617d}{00015} \textcolor{preprocessor}{#define ILE\_WYRAZOW\_DO\_WSTAWIENIA 100}
-00016 \textcolor{preprocessor}{}
-\hypertarget{main_8cpp_source_l00017}{}\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00017} \textcolor{keywordtype}{int} \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])
-00018 \{
-00019         \hyperlink{class_my_list}{MyList<int>} lista;
+\hypertarget{main_8cpp_source_l00015}{}\hyperlink{main_8cpp_adfa2ae8b78bba187e8a03a23e9b2617d}{00015} \textcolor{preprocessor}{#define ILE\_WYRAZOW\_DO\_WSTAWIENIA 1000000000    // w razie potrzeby prosze zmniejszyc o jedno zero}
+00016 \textcolor{preprocessor}{}                                                                                                \textcolor{comment}{// wtedy
+       nalezy czekac ok 22sek}
+00017 
+\hypertarget{main_8cpp_source_l00018}{}\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00018} \textcolor{keywordtype}{int} \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])
+00019 \{
 00020 
-00021 
-00022         lista = NumberGenerator::generateNumbers<int>(100, 
-      \hyperlink{main_8cpp_adfa2ae8b78bba187e8a03a23e9b2617d}{ILE\_WYRAZOW\_DO\_WSTAWIENIA});
-00023         \hyperlink{class_observable_a_v_l_tree}{ObservableAVLTree<int>} tree;
-00024         \hyperlink{class_my_benchmark_observer}{MyBenchmarkObserver} *o1 = \textcolor{keyword}{new} \hyperlink{class_my_benchmark_observer}{MyBenchmarkObserver}();
-00025         tree.add(o1);
-00026 
-00027         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<lista.\hyperlink{class_my_list_a267f669859ef3541333082cad6b28ab7}{size}(); i++)
-00028         \{
-00029                 tree.insert(lista[i].content);
-00030         \}
-00031         std::cout<<std::endl;
-00032         \textcolor{keywordflow}{return} 0;
-00033 \}
+00021         \hyperlink{class_my_list}{MyList<int>} lista;
+00022         \hyperlink{class_my_benchmark}{MyBenchmark} benchmark;
+00023         benchmark.\hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{timerStart}();
+00024         cout<<\textcolor{stringliteral}{"Generuje "}<<\hyperlink{main_8cpp_adfa2ae8b78bba187e8a03a23e9b2617d}{ILE\_WYRAZOW\_DO\_WSTAWIENIA}<<\textcolor{stringliteral}{" losowych liczb. Prosze o
+       cierpliwosc... \(\backslash\)n"};
+00025         lista = NumberGenerator::generateNumbers<int>(100000, ILE\_WYRAZOW\_DO\_WSTAWIENIA/10);
+00026         cout<<\textcolor{stringliteral}{"Wygenerowalem losowe liczby w "}<<benchmark.\hyperlink{class_my_benchmark_a7e3fa28fab999435bd4c51d915e42809}{timerStop}()<<\textcolor{stringliteral}{" sekund\(\backslash\)n"};
+00027         \hyperlink{class_a_v_l_tree}{AVLTree<int>} tree;
+00028         \textcolor{keywordtype}{int} x=0;
+00029 
+00031         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=10; j<\hyperlink{main_8cpp_adfa2ae8b78bba187e8a03a23e9b2617d}{ILE\_WYRAZOW\_DO\_WSTAWIENIA}; j=j*10)
+00032                 \{
+00033 
+00034                 benchmark.\hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{timerStart}();
+00035                         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<j-x; i++)
+00036                         \{
+00037                                 tree.\hyperlink{class_a_v_l_tree_a3a85ff5f0b56af6c8b358611f8de95af}{insert}(lista[i].content);
+00038                         \}
+00039                         cout<<j<<\textcolor{stringliteral}{" "}<<benchmark.\hyperlink{class_my_benchmark_a94dd5cae9837db8f84eae09498b1039a}{timerStopAndSaveToFile}()<<\textcolor{stringliteral}{" "};
+00040                         benchmark.\hyperlink{class_my_benchmark_ad2892ee2549d320f9e19060f444cb0d6}{tab}();
+00041                         \textcolor{comment}{//szukanie}
+00042                 benchmark.\hyperlink{class_my_benchmark_a802577db97fd440a3920add30c35a676}{timerStart}();
+00043                         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<j-x; i++)
+00044                         \{
+00045                                 tree.\hyperlink{class_a_v_l_tree_aee790e9dba096b0b8077602bccb0f2ca}{find}(lista[i].content);
+00046                         \}
+00047                         cout<<benchmark.\hyperlink{class_my_benchmark_a94dd5cae9837db8f84eae09498b1039a}{timerStopAndSaveToFile}()<<endl;
+00048                         benchmark.\hyperlink{class_my_benchmark_a29b612fc55d1da88d44a6899bc89d312}{newL}();
+00049                         \textcolor{comment}{//szukanie end}
+00050                         x+=j;
+00051                 \}
+00052 \}
 \end{DoxyCode}

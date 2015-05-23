@@ -11,6 +11,10 @@
 // definicja typu danych reprezentującego węzeł drzewa AVL
 //--------------------------------------------------------
 template <class ContentType>
+/*
+ * @brief element drzewa BST
+ *
+ */
 class AVLTreeNode
 {
 public:

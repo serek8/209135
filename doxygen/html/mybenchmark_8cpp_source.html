@@ -74,7 +74,7 @@ $(document).ready(function(){initNavTree('mybenchmark_8cpp_source.html','');});
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mybenchmark_8h.html">mybenchmark.h</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_my_benchmark.html#aeca64d5b265e357ef879bf982dd4bb00">MyBenchmark::timerValueStatic</a>=0;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_my_benchmark.html#a802577db97fd440a3920add30c35a676">   12</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_my_benchmark.html#a802577db97fd440a3920add30c35a676">MyBenchmark :: timerStart</a>()</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="class_my_benchmark.html#aeca64d5b265e357ef879bf982dd4bb00">MyBenchmark::timerValueStatic</a> = (( (double)clock() ) /CLOCKS_PER_SEC);</div>
@@ -84,17 +84,38 @@ $(document).ready(function(){initNavTree('mybenchmark_8cpp_source.html','');});
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">return</span> (( (<span class="keywordtype">double</span>)clock() ) /CLOCKS_PER_SEC) - <a class="code" href="class_my_benchmark.html#aeca64d5b265e357ef879bf982dd4bb00">MyBenchmark::timerValueStatic</a>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="ttc" id="class_my_benchmark_html_a7e3fa28fab999435bd4c51d915e42809"><div class="ttname"><a href="class_my_benchmark.html#a7e3fa28fab999435bd4c51d915e42809">MyBenchmark::timerStop</a></div><div class="ttdeci">static double timerStop()</div><div class="ttdoc">wyłączam stoper </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00017">mybenchmark.cpp:17</a></div></div>
-<div class="ttc" id="class_my_benchmark_html_aeca64d5b265e357ef879bf982dd4bb00"><div class="ttname"><a href="class_my_benchmark.html#aeca64d5b265e357ef879bf982dd4bb00">MyBenchmark::timerValueStatic</a></div><div class="ttdeci">static double timerValueStatic</div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8h_source.html#l00042">mybenchmark.h:42</a></div></div>
-<div class="ttc" id="class_my_benchmark_html_a802577db97fd440a3920add30c35a676"><div class="ttname"><a href="class_my_benchmark.html#a802577db97fd440a3920add30c35a676">MyBenchmark::timerStart</a></div><div class="ttdeci">static void timerStart()</div><div class="ttdoc">włączam stoper </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00012">mybenchmark.cpp:12</a></div></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_my_benchmark.html#a94dd5cae9837db8f84eae09498b1039a">   22</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_my_benchmark.html#a94dd5cae9837db8f84eae09498b1039a">MyBenchmark :: timerStopAndSaveToFile</a>()</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">double</span> x= <a class="code" href="class_my_benchmark.html#a7e3fa28fab999435bd4c51d915e42809">timerStop</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                        <a class="code" href="class_my_benchmark.html#a45b39f704800f8403789ff5c9bbb486b">streamToFile</a>&lt;&lt;x;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                        <span class="keywordflow">return</span> x;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_my_benchmark.html#ad2892ee2549d320f9e19060f444cb0d6">   28</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_my_benchmark.html#ad2892ee2549d320f9e19060f444cb0d6">MyBenchmark :: tab</a>()</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_my_benchmark.html#a45b39f704800f8403789ff5c9bbb486b">streamToFile</a>&lt;&lt;<span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_my_benchmark.html#a29b612fc55d1da88d44a6899bc89d312">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_my_benchmark.html#a29b612fc55d1da88d44a6899bc89d312">MyBenchmark :: newL</a>()</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="class_my_benchmark.html#a45b39f704800f8403789ff5c9bbb486b">streamToFile</a>&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="ttc" id="class_my_benchmark_html_a7e3fa28fab999435bd4c51d915e42809"><div class="ttname"><a href="class_my_benchmark.html#a7e3fa28fab999435bd4c51d915e42809">MyBenchmark::timerStop</a></div><div class="ttdeci">double timerStop()</div><div class="ttdoc">wyłączam stoper </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00017">mybenchmark.cpp:17</a></div></div>
+<div class="ttc" id="class_my_benchmark_html_aeca64d5b265e357ef879bf982dd4bb00"><div class="ttname"><a href="class_my_benchmark.html#aeca64d5b265e357ef879bf982dd4bb00">MyBenchmark::timerValueStatic</a></div><div class="ttdeci">double timerValueStatic</div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8h_source.html#l00042">mybenchmark.h:42</a></div></div>
+<div class="ttc" id="class_my_benchmark_html_a802577db97fd440a3920add30c35a676"><div class="ttname"><a href="class_my_benchmark.html#a802577db97fd440a3920add30c35a676">MyBenchmark::timerStart</a></div><div class="ttdeci">void timerStart()</div><div class="ttdoc">włączam stoper </div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00012">mybenchmark.cpp:12</a></div></div>
+<div class="ttc" id="class_my_benchmark_html_a29b612fc55d1da88d44a6899bc89d312"><div class="ttname"><a href="class_my_benchmark.html#a29b612fc55d1da88d44a6899bc89d312">MyBenchmark::newL</a></div><div class="ttdeci">void newL()</div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00033">mybenchmark.cpp:33</a></div></div>
 <div class="ttc" id="mybenchmark_8h_html"><div class="ttname"><a href="mybenchmark_8h.html">mybenchmark.h</a></div></div>
+<div class="ttc" id="class_my_benchmark_html_ad2892ee2549d320f9e19060f444cb0d6"><div class="ttname"><a href="class_my_benchmark.html#ad2892ee2549d320f9e19060f444cb0d6">MyBenchmark::tab</a></div><div class="ttdeci">void tab()</div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00028">mybenchmark.cpp:28</a></div></div>
+<div class="ttc" id="class_my_benchmark_html_a94dd5cae9837db8f84eae09498b1039a"><div class="ttname"><a href="class_my_benchmark.html#a94dd5cae9837db8f84eae09498b1039a">MyBenchmark::timerStopAndSaveToFile</a></div><div class="ttdeci">double timerStopAndSaveToFile()</div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8cpp_source.html#l00022">mybenchmark.cpp:22</a></div></div>
+<div class="ttc" id="class_my_benchmark_html_a45b39f704800f8403789ff5c9bbb486b"><div class="ttname"><a href="class_my_benchmark.html#a45b39f704800f8403789ff5c9bbb486b">MyBenchmark::streamToFile</a></div><div class="ttdeci">std::ofstream streamToFile</div><div class="ttdef"><b>Definition:</b> <a href="mybenchmark_8h_source.html#l00041">mybenchmark.h:41</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_463302e58bc74c0c35f534f40d40b0a3.html">program</a></li><li class="navelem"><a class="el" href="dir_630dc271d2c6bab74c75873b96c2431c.html">src</a></li><li class="navelem"><a class="el" href="mybenchmark_8cpp.html">mybenchmark.cpp</a></li>
-    <li class="footer">Wygenerowano Cz, 21 maj 2015 04:40:20 dla Laboratorium 8 programem
+    <li class="footer">Wygenerowano Pt, 22 maj 2015 23:59:03 dla Laboratorium 8 programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
