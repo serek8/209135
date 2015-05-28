@@ -72,7 +72,7 @@ public:
 	 */
 	ContentType pop_back()
 	{
-		if(!(sizeOfList--)) { sizeOfList=0; std::cerr<<"Nie ma takiego elementu\n"; return 0; }
+		if(!(sizeOfList--)) { sizeOfList=0; std::cerr<<"Nie ma takiego elementu\n";}
 		ContentType tmpNumber = (*(this -> lastElement)).content;
 		LinkedListElement<ContentType> *originLinkedListElement = this -> lastElement;
 		this -> lastElement = this -> lastElement -> previousElement;
@@ -86,7 +86,7 @@ public:
 	 */
 	ContentType pop_front()
 	{
-		if(!(sizeOfList--)) { sizeOfList=0; std::cerr<<"Nie ma takiego elementu\n"; return 0; }
+		if(!(sizeOfList--)) { sizeOfList=0; std::cerr<<"Nie ma takiego elementu\n";}
 		ContentType tmpNumber = (*(this -> firstElement)).content;
 		LinkedListElement<ContentType> *originLinkedListElement = this -> firstElement;
 		this -> firstElement = this -> firstElement -> nextElement;
