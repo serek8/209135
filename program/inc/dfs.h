@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include "linkedlist.h"
+#include "graph.h"
 #define MAX 128
 
 using namespace std;
@@ -18,34 +19,18 @@ using namespace std;
  *  Umożliwia wyszukanie najkrótszej trasy do numeru.
  *
  */
-class DFS
+class DFS:public Graph
 {
 public:
-  bool M[MAX][MAX];   /// @macierz liczb
-  bool colour[MAX];   /// @kolory do oznaczania wizyt 1-bialy, 2-szary, 3-czarny
-  int biggestValue;	  //  @najwieksza liczba jaka zostala uzyta - optymalizacja
-  int num; // po tylku krokach znajdujemy wszystkie sciezki
-
   LinkedList<int> currentPath;	/// @obecna znaleziona sciezka
-
   LinkedList<int> allPaths[MAX]; /// @lista wszystkich ścieżek do liczby
   int allPathsAmount;	///@liczba wszystkich sciezek
 
   DFS()
   {
-	  //n =0;
-	  biggestValue = 0;
-	  for(int i=0; i<MAX; i++)
-		  for(int j=0; j<MAX; j++)
-			  M[i][j] = 0;
-	  for(int i=0; i<MAX; i++)
-		  {
-		  colour[i] = 0;
-		  }
-	  num=0;
-
-	  allPathsAmount=0;
+		clean();
   }
+  ~DFS()   {        }
 
   /**	@brief Znajduje wszystkie mozliwe sciezki do liczby
    * 	@param u Od tej liczby zaczynam przeszukiwanie
@@ -108,38 +93,18 @@ void findShortestPath(int fromNumber, int toNumber)
 }
 
 
-
-
-/** @Dodaje połączenia miedzy elementami
- *  Dodaje je obustronne powiązenie między nimi aby łatwiej bylo potem generować dane do testowania
- *	@param a jedna krawędz
- *	@param b druga krawędz
- */
-  void addEdge(int a, int b)
-  {
-	  M[a][b] = 1;
-	  M[b][a] = 1;
-	  //n++;
-	  if(a>=biggestValue) biggestValue=a+1;
-	  if(b>=biggestValue) biggestValue=b+1;
-  }
-
-  void print()
-  {
-	  cout<<"\t";
-	  for(int i=0; i<biggestValue; i++)	cout<<i<<"\t";
-	  cout<<"\n";
-	  for(int i=0; i<biggestValue; i++)
-	  {
-		  cout<<i<<"\t";
-		  for(int j=0; j<biggestValue; j++)
-		  {
-			  cout<<M[i][j]<<"\t";
-		  }
-		  cout<<"\n";
-	  }
-
-  }
+	void clean() {
+		//n =0;
+		biggestValue = 0;
+		for (int i = 0; i < MAX; i++)
+			for (int j = 0; j < MAX; j++)
+				M[i][j] = 0;
+		for (int i = 0; i < MAX; i++) {
+			colour[i] = 0;
+		}
+		num = 0;
+		allPathsAmount = 0;
+	}
 };
 
 #endif /* DFS_H_ */
