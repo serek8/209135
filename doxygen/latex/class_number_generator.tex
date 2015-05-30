@@ -22,7 +22,7 @@ static std\-::string $\ast$ \hyperlink{class_number_generator_afed5ae8efb7265577
 \subsubsection{Opis szczegółowy}
 Klasa generujaca losowe liczby na podstawie czasu maszyny na ktorym jest uruchomiona Wszystkie funkcje zapisu pliku dziedziczy z klasy Data\-Frame 
 
-Definicja w linii \hyperlink{numbergenerator_8h_source_l00028}{28} pliku \hyperlink{numbergenerator_8h_source}{numbergenerator.\-h}.
+Definicja w linii \hyperlink{numbergenerator_8h_source_l00027}{27} pliku \hyperlink{numbergenerator_8h_source}{numbergenerator.\-h}.
 
 
 
@@ -37,7 +37,7 @@ Definicja w linii \hyperlink{numbergenerator_8h_source_l00028}{28} pliku \hyperl
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_number_generator_a4a31ee39c34c77b01f19516fd5253389}
 
 
-Definicja w linii \hyperlink{numbergenerator_8h_source_l00034}{34} pliku \hyperlink{numbergenerator_8h_source}{numbergenerator.\-h}.
+Definicja w linii \hyperlink{numbergenerator_8h_source_l00033}{33} pliku \hyperlink{numbergenerator_8h_source}{numbergenerator.\-h}.
 
 
 
@@ -45,20 +45,20 @@ Odwołuje się do \hyperlink{linkedlist_8h_source_l00100}{Linked\-List$<$ Conten
 
 
 \begin{DoxyCode}
-00035 \{
-00036         \hyperlink{class_linked_list}{LinkedList<ContentType>} &myList = *\textcolor{keyword}{new} 
+00034 \{
+00035         \hyperlink{class_linked_list}{LinkedList<ContentType>} &myList = *\textcolor{keyword}{new} 
       \hyperlink{class_linked_list}{LinkedList<ContentType>}();
-00037         time\_t randomTime = clock();
-00038         \textcolor{keywordtype}{int} randomNumber;
-00039         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<quantity ; i++)
-00040         \{
-00041                 srand (randomTime = clock());
-00042                 randomNumber = rand()%range;
-00043                 myList.\hyperlink{class_linked_list_a719c7b47925171fd7a72a35d0a581619}{push\_back}(randomNumber);
-00044                 randomTime = clock();
-00045         \}
-00046         \textcolor{keywordflow}{return} myList;
-00047 \}
+00036         time\_t randomTime = clock();
+00037         \textcolor{keywordtype}{int} randomNumber;
+00038         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<quantity ; i++)
+00039         \{
+00040                 srand (randomTime = clock());
+00041                 randomNumber = rand()%range;
+00042                 myList.\hyperlink{class_linked_list_a719c7b47925171fd7a72a35d0a581619}{push\_back}(randomNumber);
+00043                 randomTime = clock();
+00044         \}
+00045         \textcolor{keywordflow}{return} myList;
+00046 \}
 \end{DoxyCode}
 \hypertarget{class_number_generator_afed5ae8efb72655770753790714b7643}{\index{Number\-Generator@{Number\-Generator}!generate\-Strings@{generate\-Strings}}
 \index{generate\-Strings@{generate\-Strings}!NumberGenerator@{Number\-Generator}}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.12)  15 MAY 2015 20:13
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.12)  30 MAY 2015 10:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -496,13 +496,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 12.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 12.
-
-Overfull \hbox (0.79164pt too wide) in paragraph at lines 26--27
-\T1/lmr/m/n/10.95 Stworzyªem klase abs-trak-cyjn¡ Ob-se-rver oraz Ob-se-rva-ble
- które s¡ od-zwier-cie-dle-niem da-nego wzorca.
- []
-
-[1
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./sprawozdanie.aux) ) 
 Here is how much of TeX's memory you used:
@@ -512,13 +506,13 @@ Here is how much of TeX's memory you used:
  6115 multiletter control sequences out of 15000+600000
  30735 words of font info for 31 fonts, out of 8000000 for 9000
  56 hyphenation exceptions out of 8191
- 37i,6n,23p,446b,210s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,6n,23p,567b,210s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/us
 r/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public
 /lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr
 17.pfb>
-Output written on sprawozdanie.pdf (1 page, 104918 bytes).
+Output written on sprawozdanie.pdf (1 page, 105131 bytes).
 PDF statistics:
  25 PDF objects out of 1000 (max. 8388607)
  17 compressed objects within 1 object stream

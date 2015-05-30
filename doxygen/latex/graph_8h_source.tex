@@ -1,0 +1,60 @@
+\hypertarget{graph_8h}{\subsection{graph.\-h}
+\label{graph_8h}\index{graph.\-h@{graph.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * graph.h}
+00003 \textcolor{comment}{ *}
+00004 \textcolor{comment}{ *  Created on: May 30, 2015}
+00005 \textcolor{comment}{ *      Author: serek8}
+00006 \textcolor{comment}{ */}
+00007 
+00008 \textcolor{preprocessor}{#ifndef GRAPH\_H\_}
+00009 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define GRAPH\_H\_}
+00010 \textcolor{preprocessor}{}\textcolor{preprocessor}{#include <iostream>}
+\hypertarget{graph_8h_source_l00011}{}\hyperlink{graph_8h_a392fb874e547e582e9c66a08a1f23326}{00011} \textcolor{preprocessor}{#define MAX 128}
+00012 \textcolor{preprocessor}{}\textcolor{keyword}{using namespace }std;
+00013 
+\hypertarget{graph_8h_source_l00014}{}\hyperlink{class_graph}{00014} \textcolor{keyword}{class }\hyperlink{class_graph}{Graph}
+00015 \{
+00016 \textcolor{keyword}{public}:
+\hypertarget{graph_8h_source_l00017}{}\hyperlink{class_graph_ae948381c05ffc60825e5810328c0451c}{00017}          \textcolor{keywordtype}{bool} M[\hyperlink{graph_8h_a392fb874e547e582e9c66a08a1f23326}{MAX}][\hyperlink{graph_8h_a392fb874e547e582e9c66a08a1f23326}{MAX}];  
+\hypertarget{graph_8h_source_l00018}{}\hyperlink{class_graph_aa13a7c7c066a77cc6dd21e4380deb649}{00018}          \textcolor{keywordtype}{int} colour[\hyperlink{graph_8h_a392fb874e547e582e9c66a08a1f23326}{MAX}];    
+\hypertarget{graph_8h_source_l00019}{}\hyperlink{class_graph_a73d1b5ba16c84f8eb1f6cf009b8ea532}{00019}          \textcolor{keywordtype}{int} \hyperlink{class_graph_a73d1b5ba16c84f8eb1f6cf009b8ea532}{biggestValue};    \textcolor{comment}{//  @najwieksza liczba jaka zostala uzyta - optymalizacja}
+\hypertarget{graph_8h_source_l00020}{}\hyperlink{class_graph_a895fee5bcf86093c8f57de9ed2304d8e}{00020}          \textcolor{keywordtype}{int} \hyperlink{class_graph_a895fee5bcf86093c8f57de9ed2304d8e}{num}; \textcolor{comment}{// po tylku krokach znajdujemy wszystkie sciezki}
+00021 
+00026          \textcolor{keywordtype}{void} \textcolor{keyword}{virtual} findShortestPath(\textcolor{keywordtype}{int} fromNumber, \textcolor{keywordtype}{int} toNumber) = 0;
+00027 
+\hypertarget{graph_8h_source_l00028}{}\hyperlink{class_graph_a1621cd1ffcf6a135cbc7e039c305627b}{00028}          \textcolor{keyword}{virtual} \hyperlink{class_graph_a1621cd1ffcf6a135cbc7e039c305627b}{~Graph}() \{\}
+00029 
+\hypertarget{graph_8h_source_l00036}{}\hyperlink{class_graph_aca8b8f4b419f1495b6fe881e53811098}{00036}          \textcolor{keywordtype}{void} \hyperlink{class_graph_aca8b8f4b419f1495b6fe881e53811098}{addEdge}(\textcolor{keywordtype}{int} a, \textcolor{keywordtype}{int} b)
+00037          \{
+00038                   M[a][b] = 1;
+00039                   M[b][a] = 1;
+00040                   \textcolor{comment}{//n++;}
+00041                   \textcolor{keywordflow}{if}(a>=biggestValue) biggestValue=a+1;
+00042                   \textcolor{keywordflow}{if}(b>=biggestValue) biggestValue=b+1;
+00043          \}
+00044 
+\hypertarget{graph_8h_source_l00048}{}\hyperlink{class_graph_a2ecf3dd3c4897aa924da8e5c221a8509}{00048}           \textcolor{keywordtype}{void} \hyperlink{class_graph_a2ecf3dd3c4897aa924da8e5c221a8509}{print}()
+00049           \{
+00050                   cout<<\textcolor{stringliteral}{"\(\backslash\)t"};
+00051                   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<biggestValue; i++)     cout<<i<<\textcolor{stringliteral}{"\(\backslash\)t"};
+00052                   cout<<\textcolor{stringliteral}{"\(\backslash\)n"};
+00053                   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<biggestValue; i++)
+00054                   \{
+00055                           cout<<i<<\textcolor{stringliteral}{"\(\backslash\)t"};
+00056                           \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<biggestValue; j++)
+00057                           \{
+00058                                   cout<<M[i][j]<<\textcolor{stringliteral}{"\(\backslash\)t"};
+00059                           \}
+00060                           cout<<\textcolor{stringliteral}{"\(\backslash\)n"};
+00061                   \}
+00062           \}
+00066           \textcolor{keywordtype}{void} \textcolor{keyword}{virtual} clean() = 0 ;
+00067 \};
+00068 
+00069 
+00070 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* GRAPH\_H\_ */}\textcolor{preprocessor}{}
+\end{DoxyCode}

@@ -7,31 +7,25 @@
 \selectlanguage{polish}
 \usepackage{graphicx}
 \begin{document}
-\title{Laboratorium 7}
+\title{Laboratorium 9}
 \author{Jan Seredyński}
 \maketitle
 
 \section{Wstęp}
-Zadaniem laboratorium byl refaktoring dotychczas stworzonych klas do sortowania tak aby spelniały zasada otwarte-zamknięte. Należało również zastosować wzorzec projektowy Obserwator. 
+Zadaniem laboratorium było przygotowanie algorytmu do znajdowania najkrótszej drogi z jednego elementu do drugiego uzywając procerudy DFS i BFS
+
+\section{Przeszukiwanie w głąb - DFS}
+Procedura DFS (ang. Depth First Search - przeszukiwanie najpierw w głąb) rozpoczyna działanie w wybranym wierzchołku grafu, który oznacza jako odwiedzony. Następnie przechodzi wzdłuż dostępnej krawędzi do sąsiada tego wierzchołka, który nie został jeszcze odwiedzony. Przechodzenie jest kontynuowane dalej (w głąb grafu), aż zostanie osiągnięty wierzchołek, który nie posiada nie odwiedzonych sąsiadów. Wtedy procedura wraca do poprzednio odwiedzonego wierzchołka i kontynuuje wzdłuż kolejnej dostępnej krawędzi.
 
 
-\section{Moja implementacja zasady otwarte-zamknięte}
-Stworzyłem interfejsy/klasy abstrakcyjne bazowe dla obiektów typu lista, element listy, soter, benchmark oraz obserwator. Na podstawie nich można tworzyć dalej odpowiednie klasy. 
-Przykład
-Klasa LinkedList implementuje interfejs List, ktory narzuca jej stworzenie
- metod np push\_back, pop\_ack itp.
+\section{Przeszukiwanie szerz - BFS}
+Przeszukiwanie w szerz wykorzystuje implmementację kolejki aby przechodzić równorzędnie po każdym elemencie. Tzn. sprawdzany jest pojedyńczo każdy kolejny element z każdej gałęzi, co można wizualizacyjnie określić jako przeszukiwanie w szerz.
 
-
-\section{Wzorzez projektowy - Obserwator}
-Stworzyłem klase abstrakcyjną Observer oraz Observable które są odzwierciedleniem danego wzorca. Odpowiednio po tych klasach dziedziczą klasy MyBenchmark jako obserwator oraz jeden z trzech rodzai sortera jako obiekt obserwowany.
-
-\section{Wzorzez projektowy - Budowniczy}
-Dzięki zastosowaniu zastosowania Budowniczego do wszystkich* sortowań można użyć różnego rodzaju list. W moim programie mam stworzoną LinkedListe ale gdyby stworzyć inny rodzaj listy, który spełniałby mój interfejs List to równie dobrze można go wykorzystać w każdej implementacji.\\\
-*Wyjątkiem jest sortowanie przez scalanie które w mojej implementacji działa tylko na LinkedList
-
-\section{Wzorzez projektowy - Fabryka abstrakcyjna}
-Przy stosowaniu wzorca - budowniczy napotkałem się na problem z kompatybilnością obiektów. Jako obiekty które zwracałem po każdej wywołanej metodzie z różnych sortowań były wskażniki/referencje na klase abstrakcyjną List. Co powodowało problem, gdy chciałem te otrzymane wartości wykorzystać do dalszych działań w klasach niżej. Jako rozwiązanie tego problemu zastosowałem fabryke abstrakcyjną.
 
 \section{Podsumowanie}
-Zastosowanie zasady otwarte-zamknięte jest bardzo wydajnym sposobem na utrzymaniu kodu w porządku. Każda nowa funkcjonalność jest w oddzielnej klasie, która swoje podstawowe własności dziedziczy po klasie abstrakcyjnej albo interfejsie. Dzięki temu kolejne cechy programu można łatwo dodawać nie tracąc wcześniejszych własnoći klas.
+Obydwie procedury mają swoje zalety oraz wady. Przeszukiwanie w szerz BFS pozwala na sprawniejsze znalezienie najkrótszej ścieżki do danego elementu, ponieważ nie zacznie przeszukiwania w głąb niepotrzebnych gałęzi, w których na pewno nie ma rozwiązania. Również radzi sobie lepiej gdy istnieje więcej niż jedno rozwiązanie - znajdzie je w minimalnej liczbie kroków.
+Jednak ten algorytm wymaga zużycia bardzo dużej ilości pamięci, aby przejsć na następny poziom w grafie. Jednak gdy rozwiązanie jest bardzo oddalone to wtedy ten algorytm jest bardzo czasochłonny.///
+///
+W przeszukiwaniu w szerz zużycie pamięci jest liniowe oraz mniej złożone niż BFS. Również rozwiązanie może być znalezione szybciej bez niepotrzebnego zagłębiania się równolegle we wszystkie gałęzie.///
+Ta procedura ma też wady, np gdy szukamy rozwiązania i zaczeliśmy przeszukiwanie jednej gałęzi w głąb, a rowziązanie jest w równoległej gałęzi. Co powoduję znacznie powiększoną liczbę porównań, przez co czas wykonania algorytmu przedłuża się.
 \end{document}

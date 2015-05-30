@@ -1,0 +1,247 @@
+\hypertarget{class_d_f_s}{\subsection{Dokumentacja klasy D\-F\-S}
+\label{class_d_f_s}\index{D\-F\-S@{D\-F\-S}}
+}
+
+
+Klasa przedstawia przeszukiwanie grafu za pomocą \hyperlink{class_d_f_s}{D\-F\-S} Umożliwia wyszukanie najkrótszej trasy do numeru.  
+
+
+
+
+{\ttfamily \#include $<$dfs.\-h$>$}
+
+Diagram dziedziczenia dla D\-F\-S\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_f_s}
+\end{center}
+\end{figure}
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_d_f_s_a75b2f0e0042913c0a0a800e3d6c34f37}{D\-F\-S} ()
+\begin{DoxyCompactList}\small\item\em wszystkich sciezek \end{DoxyCompactList}\item 
+\hyperlink{class_d_f_s_aa013205788e77bad8ea56e138420c1ea}{$\sim$\-D\-F\-S} ()
+\item 
+void \hyperlink{class_d_f_s_a1d8f16ae45bf27ea6681236f5a4ba7f9}{find\-Path} (int u, int p, int searching\-Value)
+\begin{DoxyCompactList}\small\item\em Znajduje wszystkie mozliwe sciezki do liczby. \end{DoxyCompactList}\item 
+void \hyperlink{class_d_f_s_a7243745e5d6162b7106803ac1cd70d91}{find\-Shortest\-Path} (int from\-Number, int to\-Number)
+\item 
+void \hyperlink{class_d_f_s_ac335b86dce7cfab6655ca7eeaf2f9e10}{clean} ()
+\begin{DoxyCompactList}\small\item\em Zwalniam zasoby i przygotowuje do nowego rozruchu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_linked_list}{Linked\-List}$<$ int $>$ \hyperlink{class_d_f_s_aa3bf5c11cd2d66fc893e232eb1e42c76}{current\-Path}
+\item 
+\hyperlink{class_linked_list}{Linked\-List}$<$ int $>$ \hyperlink{class_d_f_s_a48dd546aaa57234bcd6e54a0f01b3f48}{all\-Paths} \mbox{[}\hyperlink{graph_8h_a392fb874e547e582e9c66a08a1f23326}{M\-A\-X}\mbox{]}
+\begin{DoxyCompactList}\small\item\em znaleziona sciezka \end{DoxyCompactList}\item 
+int \hyperlink{class_d_f_s_a53269340075995e432c355638ce30554}{all\-Paths\-Amount}
+\begin{DoxyCompactList}\small\item\em wszystkich ścieżek do liczby \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Opis szczegółowy}
+
+
+Definicja w linii \hyperlink{dfs_8h_source_l00022}{22} pliku \hyperlink{dfs_8h_source}{dfs.\-h}.
+
+
+
+\subsubsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_d_f_s_a75b2f0e0042913c0a0a800e3d6c34f37}{\index{D\-F\-S@{D\-F\-S}!D\-F\-S@{D\-F\-S}}
+\index{D\-F\-S@{D\-F\-S}!DFS@{D\-F\-S}}
+\paragraph[{D\-F\-S}]{\setlength{\rightskip}{0pt plus 5cm}D\-F\-S\-::\-D\-F\-S (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_d_f_s_a75b2f0e0042913c0a0a800e3d6c34f37}
+
+
+Definicja w linii \hyperlink{dfs_8h_source_l00029}{29} pliku \hyperlink{dfs_8h_source}{dfs.\-h}.
+
+
+\begin{DoxyCode}
+00030   \{
+00031                 \hyperlink{class_d_f_s_ac335b86dce7cfab6655ca7eeaf2f9e10}{clean}();
+00032   \}
+\end{DoxyCode}
+\hypertarget{class_d_f_s_aa013205788e77bad8ea56e138420c1ea}{\index{D\-F\-S@{D\-F\-S}!$\sim$\-D\-F\-S@{$\sim$\-D\-F\-S}}
+\index{$\sim$\-D\-F\-S@{$\sim$\-D\-F\-S}!DFS@{D\-F\-S}}
+\paragraph[{$\sim$\-D\-F\-S}]{\setlength{\rightskip}{0pt plus 5cm}D\-F\-S\-::$\sim$\-D\-F\-S (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_d_f_s_aa013205788e77bad8ea56e138420c1ea}
+
+
+Definicja w linii \hyperlink{dfs_8h_source_l00033}{33} pliku \hyperlink{dfs_8h_source}{dfs.\-h}.
+
+
+\begin{DoxyCode}
+00033 \{        \}
+\end{DoxyCode}
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_d_f_s_ac335b86dce7cfab6655ca7eeaf2f9e10}{\index{D\-F\-S@{D\-F\-S}!clean@{clean}}
+\index{clean@{clean}!DFS@{D\-F\-S}}
+\paragraph[{clean}]{\setlength{\rightskip}{0pt plus 5cm}void D\-F\-S\-::clean (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_d_f_s_ac335b86dce7cfab6655ca7eeaf2f9e10}
+
+
+Implementuje \hyperlink{class_graph_a957781c55ace92dc6703b8d890b73ca7}{Graph}.
+
+
+
+Definicja w linii \hyperlink{dfs_8h_source_l00096}{96} pliku \hyperlink{dfs_8h_source}{dfs.\-h}.
+
+
+
+Odwołuje się do \hyperlink{dfs_8h_source_l00014}{M\-A\-X}.
+
+
+\begin{DoxyCode}
+00096                      \{
+00097                 \textcolor{comment}{//n =0;}
+00098                 \hyperlink{class_graph_a73d1b5ba16c84f8eb1f6cf009b8ea532}{biggestValue} = 0;
+00099                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{dfs_8h_a392fb874e547e582e9c66a08a1f23326}{MAX}; i++)
+00100                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \hyperlink{dfs_8h_a392fb874e547e582e9c66a08a1f23326}{MAX}; j++)
+00101                                 \hyperlink{class_graph_ae948381c05ffc60825e5810328c0451c}{M}[i][j] = 0;
+00102                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{dfs_8h_a392fb874e547e582e9c66a08a1f23326}{MAX}; i++) \{
+00103                         \hyperlink{class_graph_aa13a7c7c066a77cc6dd21e4380deb649}{colour}[i] = 0;
+00104                 \}
+00105                 \hyperlink{class_graph_a895fee5bcf86093c8f57de9ed2304d8e}{num} = 0;
+00106                 \hyperlink{class_d_f_s_a53269340075995e432c355638ce30554}{allPathsAmount} = 0;
+00107         \}
+\end{DoxyCode}
+\hypertarget{class_d_f_s_a1d8f16ae45bf27ea6681236f5a4ba7f9}{\index{D\-F\-S@{D\-F\-S}!find\-Path@{find\-Path}}
+\index{find\-Path@{find\-Path}!DFS@{D\-F\-S}}
+\paragraph[{find\-Path}]{\setlength{\rightskip}{0pt plus 5cm}void D\-F\-S\-::find\-Path (
+\begin{DoxyParamCaption}
+\item[{int}]{u, }
+\item[{int}]{p, }
+\item[{int}]{searching\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_d_f_s_a1d8f16ae45bf27ea6681236f5a4ba7f9}
+
+\begin{DoxyParams}{Parametry}
+{\em u} & Od tej liczby zaczynam przeszukiwanie \\
+\hline
+{\em p} & Liczba rodzica \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \hyperlink{dfs_8h_source_l00039}{39} pliku \hyperlink{dfs_8h_source}{dfs.\-h}.
+
+
+\begin{DoxyCode}
+00039                                                     \{
+00040          \hyperlink{class_graph_aa13a7c7c066a77cc6dd21e4380deb649}{colour}[u] = 1;
+00041          \textcolor{comment}{//cout<<u<<" zmieniam flage na szara\(\backslash\)n";}
+00042          \hyperlink{class_d_f_s_aa3bf5c11cd2d66fc893e232eb1e42c76}{currentPath}.\hyperlink{class_linked_list_a719c7b47925171fd7a72a35d0a581619}{push\_back}(u);
+00043          \textcolor{keywordflow}{if}(u == searchingValue)
+00044                  \{
+00045                          \textcolor{comment}{// Znalazlem TĄ LICZBE !!!}
+00046                          \textcolor{comment}{// Dodaje teraz te liste do tablicy list wygranych allPaths}
+00047                          \hyperlink{class_d_f_s_a48dd546aaa57234bcd6e54a0f01b3f48}{allPaths}[\hyperlink{class_d_f_s_a53269340075995e432c355638ce30554}{allPathsAmount}++].
+      \hyperlink{class_list_a8a1ebc7ce83d77b83f58bd8c2ce2d683}{cloneFrom}(\hyperlink{class_d_f_s_aa3bf5c11cd2d66fc893e232eb1e42c76}{currentPath});
+00048                         \hyperlink{class_graph_aa13a7c7c066a77cc6dd21e4380deb649}{colour}[u] = 0;
+00049                          \textcolor{keywordflow}{return};
+00050                  \}
+00051 
+00052          \hyperlink{class_graph_a895fee5bcf86093c8f57de9ed2304d8e}{num}++;
+00053          \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} v = 0; v < \hyperlink{class_graph_a73d1b5ba16c84f8eb1f6cf009b8ea532}{biggestValue}; v++ ) \textcolor{keywordflow}{if}( \hyperlink{class_graph_ae948381c05ffc60825e5810328c0451c}{M}[u][v] && v != p )
+00054          \{
+00055              \textcolor{keywordflow}{if}( \hyperlink{class_graph_aa13a7c7c066a77cc6dd21e4380deb649}{colour}[v] == 0 ) \{
+00056                  \textcolor{comment}{//cout<<u<<" -> "<<v<<"\(\backslash\)n";}
+00057                  \hyperlink{class_d_f_s_a1d8f16ae45bf27ea6681236f5a4ba7f9}{findPath}( v, u , searchingValue);
+00058              \}
+00059              \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( \hyperlink{class_graph_aa13a7c7c066a77cc6dd21e4380deb649}{colour}[v] == 1 )
+00060              \{
+00061                  cout<<u<<\textcolor{stringliteral}{" znalazlem szare wiec sie cofam\(\backslash\)n"};
+00062 
+00063              \}
+00064              \textcolor{keywordflow}{else}
+00065              \{
+00066                  cout<<u<<\textcolor{stringliteral}{" znalazlem czarne wiec sie cofam\(\backslash\)n"};
+00067 
+00068              \}
+00069              \hyperlink{class_d_f_s_aa3bf5c11cd2d66fc893e232eb1e42c76}{currentPath}.\hyperlink{class_linked_list_ad7634e21b0ccd370906c4f28baaffa38}{pop\_back}();
+00070          \}
+00071          \textcolor{comment}{//zmieniam flage na czarna;}
+00072          \hyperlink{class_graph_aa13a7c7c066a77cc6dd21e4380deb649}{colour}[u] = 0;
+00073 
+00074      \}
+\end{DoxyCode}
+\hypertarget{class_d_f_s_a7243745e5d6162b7106803ac1cd70d91}{\index{D\-F\-S@{D\-F\-S}!find\-Shortest\-Path@{find\-Shortest\-Path}}
+\index{find\-Shortest\-Path@{find\-Shortest\-Path}!DFS@{D\-F\-S}}
+\paragraph[{find\-Shortest\-Path}]{\setlength{\rightskip}{0pt plus 5cm}void D\-F\-S\-::find\-Shortest\-Path (
+\begin{DoxyParamCaption}
+\item[{int}]{from\-Number, }
+\item[{int}]{to\-Number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_d_f_s_a7243745e5d6162b7106803ac1cd70d91}
+najkrótszą drogę i wypusuje ją na ekran 
+\begin{DoxyParams}{Parametry}
+{\em from\-Number} & star poszukiwan \\
+\hline
+{\em end\-Number} & Koniec poszukiwan \\
+\hline
+\end{DoxyParams}
+
+
+Implementuje \hyperlink{class_graph_adf2b7f7e78c0ac66f7f604021133561e}{Graph}.
+
+
+
+Definicja w linii \hyperlink{dfs_8h_source_l00080}{80} pliku \hyperlink{dfs_8h_source}{dfs.\-h}.
+
+
+\begin{DoxyCode}
+00081 \{
+00082         \hyperlink{class_d_f_s_a1d8f16ae45bf27ea6681236f5a4ba7f9}{findPath}( fromNumber, -1 , toNumber);
+00083         \textcolor{keywordtype}{int} indexOfSmallestList = 0;
+00084 
+00085         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{class_d_f_s_a53269340075995e432c355638ce30554}{allPathsAmount}; i++)
+00086         \{
+00087                 \textcolor{keywordflow}{if}( \hyperlink{class_d_f_s_a48dd546aaa57234bcd6e54a0f01b3f48}{allPaths}[indexOfSmallestList].size() >= \hyperlink{class_d_f_s_a48dd546aaa57234bcd6e54a0f01b3f48}{allPaths}[i].size() )
+00088                 \{
+00089                         indexOfSmallestList = i;
+00090                 \}
+00091         \}
+00092         \hyperlink{class_d_f_s_a48dd546aaa57234bcd6e54a0f01b3f48}{allPaths}[indexOfSmallestList].\hyperlink{class_linked_list_a245ba50906c85c1765a5f611d3f3b6c0}{print}();
+00093 \}
+\end{DoxyCode}
+
+
+\subsubsection{Dokumentacja atrybutów składowych}
+\hypertarget{class_d_f_s_a48dd546aaa57234bcd6e54a0f01b3f48}{\index{D\-F\-S@{D\-F\-S}!all\-Paths@{all\-Paths}}
+\index{all\-Paths@{all\-Paths}!DFS@{D\-F\-S}}
+\paragraph[{all\-Paths}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Linked\-List}$<$int$>$ D\-F\-S\-::all\-Paths\mbox{[}{\bf M\-A\-X}\mbox{]}}}\label{class_d_f_s_a48dd546aaa57234bcd6e54a0f01b3f48}
+
+
+Definicja w linii \hyperlink{dfs_8h_source_l00026}{26} pliku \hyperlink{dfs_8h_source}{dfs.\-h}.
+
+\hypertarget{class_d_f_s_a53269340075995e432c355638ce30554}{\index{D\-F\-S@{D\-F\-S}!all\-Paths\-Amount@{all\-Paths\-Amount}}
+\index{all\-Paths\-Amount@{all\-Paths\-Amount}!DFS@{D\-F\-S}}
+\paragraph[{all\-Paths\-Amount}]{\setlength{\rightskip}{0pt plus 5cm}int D\-F\-S\-::all\-Paths\-Amount}}\label{class_d_f_s_a53269340075995e432c355638ce30554}
+
+
+Definicja w linii \hyperlink{dfs_8h_source_l00027}{27} pliku \hyperlink{dfs_8h_source}{dfs.\-h}.
+
+\hypertarget{class_d_f_s_aa3bf5c11cd2d66fc893e232eb1e42c76}{\index{D\-F\-S@{D\-F\-S}!current\-Path@{current\-Path}}
+\index{current\-Path@{current\-Path}!DFS@{D\-F\-S}}
+\paragraph[{current\-Path}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Linked\-List}$<$int$>$ D\-F\-S\-::current\-Path}}\label{class_d_f_s_aa3bf5c11cd2d66fc893e232eb1e42c76}
+
+
+Definicja w linii \hyperlink{dfs_8h_source_l00025}{25} pliku \hyperlink{dfs_8h_source}{dfs.\-h}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dfs_8h}{dfs.\-h}\end{DoxyCompactItemize}

@@ -28,6 +28,7 @@ public:
 	 virtual ~Graph() {}
 
 	 /** @Dodaje połączenia miedzy elementami
+	  *
 	  *  Dodaje je obustronne powiązenie między nimi aby łatwiej bylo potem generować dane do testowania
 	  *	@param a jedna krawędz
 	  *	@param b druga krawędz

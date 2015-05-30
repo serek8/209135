@@ -1,5 +1,8 @@
 var annotated =
 [
+    [ "BFS", "class_b_f_s.html", "class_b_f_s" ],
+    [ "DFS", "class_d_f_s.html", "class_d_f_s" ],
+    [ "Graph", "class_graph.html", "class_graph" ],
     [ "HeapSorter", "class_heap_sorter.html", "class_heap_sorter" ],
     [ "LinkedList", "class_linked_list.html", "class_linked_list" ],
     [ "LinkedListElement", "class_linked_list_element.html", "class_linked_list_element" ],

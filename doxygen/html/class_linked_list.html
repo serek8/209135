@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Laboratorium 7: Dokumentacja szablonu klasy LinkedList&lt; ContentType &gt;</title>
+<title>Laboratorium 9: Dokumentacja szablonu klasy LinkedList&lt; ContentType &gt;</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Laboratorium 7
+   <div id="projectname">Laboratorium 9
    </div>
   </td>
  </tr>
@@ -594,7 +594,7 @@ template&lt;class ContentType&gt; </div>
 
 <p>Definicja w linii <a class="el" href="linkedlist_8h_source.html#l00073">73</a> pliku <a class="el" href="linkedlist_8h_source.html">linkedlist.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordflow">if</span>(!(<a class="code" href="class_linked_list.html#acfd83fe531d962d6260a633dfca98a9f">sizeOfList</a>--)) { <a class="code" href="class_linked_list.html#acfd83fe531d962d6260a633dfca98a9f">sizeOfList</a>=0; std::cerr&lt;&lt;<span class="stringliteral">&quot;Nie ma takiego elementu\n&quot;</span>; <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordflow">if</span>(!(<a class="code" href="class_linked_list.html#acfd83fe531d962d6260a633dfca98a9f">sizeOfList</a>--)) { <a class="code" href="class_linked_list.html#acfd83fe531d962d6260a633dfca98a9f">sizeOfList</a>=0; std::cerr&lt;&lt;<span class="stringliteral">&quot;Nie ma takiego elementu\n&quot;</span>;}</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                ContentType tmpNumber = (*(<span class="keyword">this</span> -&gt; <a class="code" href="class_linked_list.html#a8ca0cc6c38131c17f1626bb04a472fc9">lastElement</a>)).content;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <a class="code" href="class_linked_list_element.html">LinkedListElement&lt;ContentType&gt;</a> *originLinkedListElement = <span class="keyword">this</span> -&gt; <a class="code" href="class_linked_list.html#a8ca0cc6c38131c17f1626bb04a472fc9">lastElement</a>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keyword">this</span> -&gt; <a class="code" href="class_linked_list.html#a8ca0cc6c38131c17f1626bb04a472fc9">lastElement</a> = <span class="keyword">this</span> -&gt; <a class="code" href="class_linked_list.html#a8ca0cc6c38131c17f1626bb04a472fc9">lastElement</a> -&gt; previousElement;</div>
@@ -639,7 +639,7 @@ template&lt;class ContentType&gt; </div>
 
 <p>Odwołania w <a class="el" href="mergesorter_8h_source.html#l00037">MergeSorter&lt; ContentType &gt;::merge()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">if</span>(!(<a class="code" href="class_linked_list.html#acfd83fe531d962d6260a633dfca98a9f">sizeOfList</a>--)) { <a class="code" href="class_linked_list.html#acfd83fe531d962d6260a633dfca98a9f">sizeOfList</a>=0; std::cerr&lt;&lt;<span class="stringliteral">&quot;Nie ma takiego elementu\n&quot;</span>; <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">if</span>(!(<a class="code" href="class_linked_list.html#acfd83fe531d962d6260a633dfca98a9f">sizeOfList</a>--)) { <a class="code" href="class_linked_list.html#acfd83fe531d962d6260a633dfca98a9f">sizeOfList</a>=0; std::cerr&lt;&lt;<span class="stringliteral">&quot;Nie ma takiego elementu\n&quot;</span>;}</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                ContentType tmpNumber = (*(<span class="keyword">this</span> -&gt; <a class="code" href="class_linked_list.html#a51c0816c49528a63eea2adae2d503ada">firstElement</a>)).content;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <a class="code" href="class_linked_list_element.html">LinkedListElement&lt;ContentType&gt;</a> *originLinkedListElement = <span class="keyword">this</span> -&gt; <a class="code" href="class_linked_list.html#a51c0816c49528a63eea2adae2d503ada">firstElement</a>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keyword">this</span> -&gt; <a class="code" href="class_linked_list.html#a51c0816c49528a63eea2adae2d503ada">firstElement</a> = <span class="keyword">this</span> -&gt; <a class="code" href="class_linked_list.html#a51c0816c49528a63eea2adae2d503ada">firstElement</a> -&gt; nextElement;</div>
@@ -680,6 +680,8 @@ template&lt;class ContentType&gt; </div>
 <p>Implementuje <a class="el" href="class_list.html#ae9cd658323024b4fa3ce3be616d17f33">List&lt; ContentType &gt;</a>.</p>
 
 <p>Definicja w linii <a class="el" href="linkedlist_8h_source.html#l00144">144</a> pliku <a class="el" href="linkedlist_8h_source.html">linkedlist.h</a>.</p>
+
+<p>Odwołania w <a class="el" href="bfs_8h_source.html#l00051">BFS::findShortestPath()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        {</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                <a class="code" href="class_linked_list_element.html">LinkedListElement&lt;ContentType&gt;</a> *elem = (this-&gt;<a class="code" href="class_linked_list.html#a51c0816c49528a63eea2adae2d503ada">firstElement</a>);</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                std::cout&lt;&lt;<span class="stringliteral">&quot;\nWyswietlam liste (size:&quot;</span>&lt;&lt;this-&gt;<a class="code" href="class_linked_list.html#acfd83fe531d962d6260a633dfca98a9f">sizeOfList</a>&lt;&lt;<span class="stringliteral">&quot;): &quot;</span>;</div>
@@ -725,7 +727,7 @@ template&lt;class ContentType&gt; </div>
 
 <p>Definicja w linii <a class="el" href="linkedlist_8h_source.html#l00100">100</a> pliku <a class="el" href="linkedlist_8h_source.html">linkedlist.h</a>.</p>
 
-<p>Odwołania w <a class="el" href="observable_8h_source.html#l00023">Observable::add()</a>, <a class="el" href="numbergenerator_8h_source.html#l00034">NumberGenerator::generateNumbers()</a>, <a class="el" href="linkedlist_8h_source.html#l00238">LinkedList&lt; Observer * &gt;::insertAfter()</a>, <a class="el" href="linkedlist_8h_source.html#l00047">LinkedList&lt; Observer * &gt;::LinkedList()</a>, <a class="el" href="mergesorter_8h_source.html#l00037">MergeSorter&lt; ContentType &gt;::merge()</a> i <a class="el" href="mergesorter_8h_source.html#l00074">MergeSorter&lt; ContentType &gt;::mergeSort()</a>.</p>
+<p>Odwołania w <a class="el" href="observable_8h_source.html#l00023">Observable::add()</a>, <a class="el" href="numbergenerator_8h_source.html#l00033">NumberGenerator::generateNumbers()</a>, <a class="el" href="linkedlist_8h_source.html#l00238">LinkedList&lt; Observer * &gt;::insertAfter()</a>, <a class="el" href="linkedlist_8h_source.html#l00047">LinkedList&lt; Observer * &gt;::LinkedList()</a>, <a class="el" href="mergesorter_8h_source.html#l00037">MergeSorter&lt; ContentType &gt;::merge()</a> i <a class="el" href="mergesorter_8h_source.html#l00074">MergeSorter&lt; ContentType &gt;::mergeSort()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="comment">//std::cerr&lt;&lt;&quot;\n(push_back): arg.content=&quot;&lt;&lt;arg.content;</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <a class="code" href="class_linked_list_element.html">LinkedListElement&lt;ContentType&gt;</a> *newLinkedListElement = <span class="keyword">new</span> <a class="code" href="class_linked_list_element.html">LinkedListElement&lt;ContentType&gt;</a>(arg);</div>
@@ -770,7 +772,7 @@ template&lt;class ContentType&gt; </div>
 
 <p>Definicja w linii <a class="el" href="linkedlist_8h_source.html#l00113">113</a> pliku <a class="el" href="linkedlist_8h_source.html">linkedlist.h</a>.</p>
 
-<p>Odwołania w <a class="el" href="linkedlist_8h_source.html#l00238">LinkedList&lt; Observer * &gt;::insertAfter()</a>.</p>
+<p>Odwołania w <a class="el" href="bfs_8h_source.html#l00051">BFS::findShortestPath()</a> i <a class="el" href="linkedlist_8h_source.html#l00238">LinkedList&lt; Observer * &gt;::insertAfter()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        {</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <a class="code" href="class_linked_list_element.html">LinkedListElement&lt;ContentType&gt;</a> *newLinkedListElement = <span class="keyword">new</span> <a class="code" href="class_linked_list_element.html">LinkedListElement&lt;ContentType&gt;</a>(arg);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <span class="keywordflow">if</span>(!<a class="code" href="class_linked_list.html#acfd83fe531d962d6260a633dfca98a9f">sizeOfList</a>++) {<a class="code" href="class_linked_list.html#a51c0816c49528a63eea2adae2d503ada">firstElement</a> = <a class="code" href="class_linked_list.html#a8ca0cc6c38131c17f1626bb04a472fc9">lastElement</a> = newLinkedListElement;}</div>
@@ -1012,7 +1014,7 @@ template&lt;class ContentType&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_linked_list.html">LinkedList</a></li>
-    <li class="footer">Wygenerowano Pt, 15 maj 2015 20:17:25 dla Laboratorium 7 programem
+    <li class="footer">Wygenerowano So, 30 maj 2015 11:01:26 dla Laboratorium 9 programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

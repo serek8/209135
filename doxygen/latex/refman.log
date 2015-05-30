@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.12)  15 MAY 2015 20:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.12)  30 MAY 2015 11:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -922,10 +922,13 @@ LaTeX Warning: Label `filestreamer_8h' multiply defined.
 LaTeX Warning: Label `heapsorter_8h' multiply defined.
 
 
+LaTeX Warning: Label `linkedlist_8h' multiply defined.
+
+
+LaTeX Warning: Label `linkedlistelement_8h' multiply defined.
+
+
 LaTeX Warning: Label `list_8h' multiply defined.
-
-
-LaTeX Warning: Label `listelement_8h' multiply defined.
 
 
 LaTeX Warning: Label `listsaver_8h' multiply defined.
@@ -941,12 +944,6 @@ LaTeX Warning: Label `mybenchmark_8cpp' multiply defined.
 
 
 LaTeX Warning: Label `mybenchmark_8h' multiply defined.
-
-
-LaTeX Warning: Label `mylist_8h' multiply defined.
-
-
-LaTeX Warning: Label `mylistelement_8h' multiply defined.
 
 
 LaTeX Warning: Label `numbergenerator_8h' multiply defined.
@@ -1153,9 +1150,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 72.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 94.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.29996pt on input line 72.
+(Font)              scaled to size 6.29996pt on input line 94.
 [2]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1184,115 +1181,128 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 10.79993pt on input line 1.
 
 
-LaTeX Warning: Reference `class_linked_list_element' on page 1 undefined on inp
-ut line 3.
+LaTeX Warning: Reference `class_graph' on page 1 undefined on input line 3.
 
 
-LaTeX Warning: Reference `class_linked_list_element' on page 1 undefined on inp
-ut line 4.
+LaTeX Warning: Reference `class_b_f_s' on page 1 undefined on input line 5.
 
 
-LaTeX Warning: Reference `class_linked_list' on page 1 undefined on input line 
-7.
-
-
-LaTeX Warning: Reference `class_linked_list' on page 1 undefined on input line 
-11.
+LaTeX Warning: Reference `class_d_f_s' on page 1 undefined on input line 6.
 
 [1]) (./annotated.tex
 
-LaTeX Warning: Reference `class_linked_list' on page 2 undefined on input line 
-4.
+LaTeX Warning: Reference `class_b_f_s' on page 2 undefined on input line 3.
 
 
-LaTeX Warning: Reference `class_linked_list_element' on page 2 undefined on inp
-ut line 5.
+LaTeX Warning: Reference `class_d_f_s' on page 2 undefined on input line 4.
 
-)
+
+LaTeX Warning: Reference `class_graph' on page 2 undefined on input line 5.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] (./files.tex
+[2]) (./files.tex
 
-LaTeX Warning: Reference `linkedlist_8h' on page 3 undefined on input line 5.
-
-
-LaTeX Warning: Reference `linkedlistelement_8h' on page 3 undefined on input li
-ne 6.
-
-) (./class_heap_sorter.tex
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Warning: Reference `bfs_8h' on page 3 undefined on input line 3.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3.
+LaTeX Warning: Reference `dfs_8h' on page 3 undefined on input line 4.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3.
+LaTeX Warning: Reference `graph_8h' on page 3 undefined on input line 6.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3.
-
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 11.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+) (./class_b_f_s.tex
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 6.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-<class_heap_sorter.pdf, id=759, 501.875pt x 244.81462pt>
-File: class_heap_sorter.pdf Graphic file (type pdf)
-
-<use class_heap_sorter.pdf>
-Package pdftex.def Info: class_heap_sorter.pdf used on input line 16.
-(pdftex.def)             Requested size: 174.98497pt x 85.35826pt.
+[3] <class_b_f_s.pdf, id=776, 501.875pt x 729.99728pt>
+File: class_b_f_s.pdf Graphic file (type pdf)
+ <use class_b_f_s.pdf>
+Package pdftex.def Info: class_b_f_s.pdf used on input line 11.
+(pdftex.def)             Requested size: 39.11699pt x 56.9055pt.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 19.
- [3 <./class_heap_sorter.pdf>]
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 22.
+(Font)              scaled to size 8.99994pt on input line 14.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 22.
+(Font)              scaled to size 8.99994pt on input line 17.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 23.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 18.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 23.
-LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <10> not available
-(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 51.
-LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
-(Font)              scaled to size 8.99994pt on input line 51.
+(Font)              scaled to size 8.09995pt on input line 18.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/bc/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 51.
+(Font)              using `T1/pcr/m/n' instead on input line 50.
 
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 54.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.99994pt on input line 54.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.29996pt on input line 66.
+(Font)              scaled to size 6.29996pt on input line 56.
+LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <10> not available
+(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 86.
+LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
+(Font)              scaled to size 8.99994pt on input line 86.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4]) (./class_linked_list.tex
+[4 <./class_b_f_s.pdf>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 101.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 101.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 157.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.99994pt on input line 157.
+ [5]) (./class_d_f_s.tex
+<class_d_f_s.pdf, id=897, 501.875pt x 729.99728pt>
+File: class_d_f_s.pdf Graphic file (type pdf)
+ <use class_d_f_s.pdf>
+Package pdftex.def Info: class_d_f_s.pdf used on input line 16.
+(pdftex.def)             Requested size: 39.11699pt x 56.9055pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.22644pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6 <./class_d_f_s.pdf>] [7]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.22644pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8]) (./class_graph.tex <class_graph.pdf, id=1008, 501.875pt x 365.00366pt>
+File: class_graph.pdf Graphic file (type pdf)
+
+<use class_graph.pdf>
+Package pdftex.def Info: class_graph.pdf used on input line 11.
+(pdftex.def)             Requested size: 78.24164pt x 56.9055pt.
+ [9 <./class_graph.pdf>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.22644pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10]) (./class_heap_sorter.tex
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
@@ -1309,30 +1319,57 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
 
-<class_linked_list.pdf, id=858, 501.875pt x 234.7972pt>
+<class_heap_sorter.pdf, id=1091, 501.875pt x 244.81462pt>
+File: class_heap_sorter.pdf Graphic file (type pdf)
+
+<use class_heap_sorter.pdf>
+Package pdftex.def Info: class_heap_sorter.pdf used on input line 16.
+(pdftex.def)             Requested size: 174.98497pt x 85.35826pt.
+ [11 <./class_heap_sorter.pdf>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.22644pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12]) (./class_linked_list.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3.
+
+<class_linked_list.pdf, id=1177, 501.875pt x 234.7972pt>
 File: class_linked_list.pdf Graphic file (type pdf)
 
 <use class_linked_list.pdf>
 Package pdftex.def Info: class_linked_list.pdf used on input line 16.
 (pdftex.def)             Requested size: 121.63177pt x 56.9055pt.
- [5 <./class_linked_list.pdf>]
+ [13 <./class_linked_list.pdf>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 184.
- [7]
+[14] [15]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8]
+[16]
 Underfull \hbox (badness 10000) detected at line 291
 [][][]
  []
@@ -1342,7 +1379,7 @@ Underfull \hbox (badness 10000) detected at line 353
 [][][]
  []
 
-[9]
+[17]
 Underfull \hbox (badness 10000) detected at line 385
 [][][]
  []
@@ -1353,22 +1390,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10]
-Underfull \hbox (badness 10000) detected at line 515
+[18]
+Underfull \hbox (badness 10000) detected at line 519
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 539
+Underfull \hbox (badness 10000) detected at line 543
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 567
+Underfull \hbox (badness 10000) detected at line 571
 [][][]
  []
 
-[11]) (./class_linked_list_element.tex
+[19]) (./class_linked_list_element.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
@@ -1391,7 +1428,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12] [13]) (./class_list.tex
+[20] [21]) (./class_list.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
@@ -1408,7 +1445,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
 
-<class_list.pdf, id=1350, 501.875pt x 234.7972pt>
+<class_list.pdf, id=1664, 501.875pt x 234.7972pt>
 File: class_list.pdf Graphic file (type pdf)
  <use class_list.pdf>
 Package pdftex.def Info: class_list.pdf used on input line 11.
@@ -1420,13 +1457,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[14 <./class_list.pdf>] [15]
-Underfull \hbox (badness 10000) detected at line 166
+[22 <./class_list.pdf>] [23]
+Underfull \hbox (badness 10000) detected at line 162
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 184
+Underfull \hbox (badness 10000) detected at line 180
 [][][]
  []
 
@@ -1436,8 +1473,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[16]
-Underfull \hbox (badness 10000) detected at line 257
+[24]
+Underfull \hbox (badness 10000) detected at line 253
 [][][]
  []
 
@@ -1458,7 +1495,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
 
-[17]
+[25]
 Underfull \hbox (badness 10000) detected at line 64
 [][][]
  []
@@ -1480,7 +1517,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
 
-<class_merge_sorter.pdf, id=1498, 501.875pt x 238.0393pt>
+<class_merge_sorter.pdf, id=1820, 501.875pt x 238.0393pt>
 File: class_merge_sorter.pdf Graphic file (type pdf)
 
 <use class_merge_sorter.pdf>
@@ -1493,12 +1530,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[18 <./class_merge_sorter.pdf>]
+[26 <./class_merge_sorter.pdf>]
 Underfull \hbox (badness 10000) detected at line 102
 [][][]
  []
 
-[19]
+[27]
 Underfull \hbox (badness 10000) detected at line 168
 [][][]
  []
@@ -1509,17 +1546,26 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[20]) (./class_my_benchmark.tex
-<class_my_benchmark.pdf, id=1621, 501.875pt x 259.02773pt>
+[28]) (./class_my_benchmark.tex
+<class_my_benchmark.pdf, id=1947, 501.875pt x 259.02773pt>
 File: class_my_benchmark.pdf Graphic file (type pdf)
 
 <use class_my_benchmark.pdf>
 Package pdftex.def Info: class_my_benchmark.pdf used on input line 16.
 (pdftex.def)             Requested size: 110.25201pt x 56.9055pt.
- [21 <./class_my_benchmark.pdf>]
+ [29 <./class_my_benchmark.pdf>]
 Underfull \hbox (badness 10000) detected at line 116
 [][][]
  []
+
+) (./class_my_benchmark_observer.tex
+<class_my_benchmark_observer.pdf, id=1999, 501.875pt x 129.51385pt>
+File: class_my_benchmark_observer.pdf Graphic file (type pdf)
+
+<use class_my_benchmark_observer.pdf>
+Package pdftex.def Info: class_my_benchmark_observer.pdf used on input line 16.
+
+(pdftex.def)             Requested size: 220.5117pt x 56.9055pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1527,20 +1573,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[22]) (./class_my_benchmark_observer.tex
-<class_my_benchmark_observer.pdf, id=1692, 501.875pt x 129.51385pt>
-File: class_my_benchmark_observer.pdf Graphic file (type pdf)
-
-<use class_my_benchmark_observer.pdf>
-Package pdftex.def Info: class_my_benchmark_observer.pdf used on input line 16.
-
-(pdftex.def)             Requested size: 220.5117pt x 56.9055pt.
- [23 <./class_my_benchmark_observer.pdf>]
+[30]
 Underfull \hbox (badness 10000) detected at line 83
 [][][]
  []
 
-) (./class_number_generator.tex
+[31 <./class_my_benchmark_observer.pdf>]) (./class_number_generator.tex
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 7.19995pt on input line 16.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
@@ -1552,21 +1590,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[24]) (./class_observable.tex
-<class_observable.pdf, id=1770, 501.875pt x 52.89763pt>
+[32]) (./class_observable.tex
+<class_observable.pdf, id=2092, 501.875pt x 52.89763pt>
 File: class_observable.pdf Graphic file (type pdf)
 
 <use class_observable.pdf>
 Package pdftex.def Info: class_observable.pdf used on input line 16.
 (pdftex.def)             Requested size: 398.36842pt x 41.98578pt.
- [25 <./class_observable.pdf>]
+ [33 <./class_observable.pdf>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26]) (./class_observable_heap_sorter.tex
+[34]) (./class_observable_heap_sorter.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
@@ -1583,14 +1621,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
 
-<class_observable_heap_sorter.pdf, id=1852, 501.875pt x 122.4073pt>
+<class_observable_heap_sorter.pdf, id=2172, 501.875pt x 122.4073pt>
 File: class_observable_heap_sorter.pdf Graphic file (type pdf)
 
 <use class_observable_heap_sorter.pdf>
 Package pdftex.def Info: class_observable_heap_sorter.pdf used on input line 16
 .
 (pdftex.def)             Requested size: 349.96996pt x 85.35826pt.
- [27 <./class_observable_heap_sorter.pdf>]) (./class_observable_merge_sorter.te
+ [35 <./class_observable_heap_sorter.pdf>]) (./class_observable_merge_sorter.te
 x
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1608,7 +1646,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
 
-<class_observable_merge_sorter.pdf, id=1899, 501.875pt x 119.02467pt>
+<class_observable_merge_sorter.pdf, id=2218, 501.875pt x 119.02467pt>
 File: class_observable_merge_sorter.pdf Graphic file (type pdf)
 
 <use class_observable_merge_sorter.pdf>
@@ -1622,7 +1660,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[28 <./class_observable_merge_sorter.pdf>])
+[36 <./class_observable_merge_sorter.pdf>])
 (./class_observable_quick_sorter.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1640,32 +1678,33 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
 
-<class_observable_quick_sorter.pdf, id=1944, 501.875pt x 120.93181pt>
+<class_observable_quick_sorter.pdf, id=2263, 501.875pt x 120.93181pt>
 File: class_observable_quick_sorter.pdf Graphic file (type pdf)
 
 <use class_observable_quick_sorter.pdf>
 Package pdftex.def Info: class_observable_quick_sorter.pdf used on input line 1
 6.
 (pdftex.def)             Requested size: 354.2431pt x 85.35826pt.
- [29 <./class_observable_quick_sorter.pdf>]) (./class_observer.tex
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 12.22644pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[30] <class_observer.pdf, id=2010, 501.875pt x 259.02773pt>
+ [37 <./class_observable_quick_sorter.pdf>]) (./class_observer.tex
+<class_observer.pdf, id=2307, 501.875pt x 259.02773pt>
 File: class_observer.pdf Graphic file (type pdf)
 
 <use class_observer.pdf>
 Package pdftex.def Info: class_observer.pdf used on input line 16.
 (pdftex.def)             Requested size: 110.25201pt x 56.9055pt.
 
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.22644pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[38 <./class_observer.pdf>]
 Underfull \hbox (badness 10000) detected at line 65
 [][][]
  []
 
-) (./class_quick_sorter.tex [31 <./class_observer.pdf>]
+) (./class_quick_sorter.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
@@ -1682,20 +1721,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
 
-<class_quick_sorter.pdf, id=2041, 501.875pt x 241.8636pt>
+<class_quick_sorter.pdf, id=2345, 501.875pt x 241.8636pt>
 File: class_quick_sorter.pdf Graphic file (type pdf)
 
 <use class_quick_sorter.pdf>
 Package pdftex.def Info: class_quick_sorter.pdf used on input line 16.
 (pdftex.def)             Requested size: 177.12155pt x 85.35826pt.
-
+ [39]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[32 <./class_quick_sorter.pdf>] [33]) (./class_sorter.tex
+[40 <./class_quick_sorter.pdf>] [41]) (./class_sorter.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
@@ -1712,26 +1751,75 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
 
-<class_sorter.pdf, id=2134, 501.875pt x 79.34644pt>
+<class_sorter.pdf, id=2459, 501.875pt x 79.34644pt>
 File: class_sorter.pdf Graphic file (type pdf)
  <use class_sorter.pdf>
 Package pdftex.def Info: class_sorter.pdf used on input line 16.
 (pdftex.def)             Requested size: 398.3531pt x 62.97845pt.
 )
+(./bfs_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[34 <./class_sorter.pdf>] (./filestreamer_8h.tex
+[42 <./class_sorter.pdf>]) (./bfs_8h_source.texpdfTeX warning (ext4): destinati
+on with the same identifier (name{bfs_8h}) has been already used, duplicate ign
+ored
+<to be read again> 
+                   \relax 
+l.3 }
+      [43]) (./dfs_8h.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--7
 
  []
 
-[35]) (./filestreamer_8h_source.texpdfTeX warning (ext4): destination with the 
+) (./dfs_8h_source.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.22644pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[44pdfTeX warning (ext4): destination with the same identifier (name{dfs_8h}) h
+as been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.11 00006 \textcolor{comment}{ */}
+                                   ]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [45])
+(./filestreamer_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.22644pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[46]) (./filestreamer_8h_source.texpdfTeX warning (ext4): destination with the 
 same identifier (name{filestreamer_8h}) has been already used, duplicate ignore
 d
+<to be read again> 
+                   \relax 
+l.3 }
+     ) (./graph_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+[47]) (./graph_8h_source.texpdfTeX warning (ext4): destination with the same id
+entifier (name{graph_8h}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.3 }
@@ -1740,44 +1828,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
  []
 
-) (./heapsorter_8h_source.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[36pdfTeX warning (ext4): destination with the same identifier (name{heapsorter
-_8h}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.8 00003 \textcolor{comment}{ *}
-                                 ]) (./linkedlist_8h.tex
+[48]) (./heapsorter_8h_source.texpdfTeX warning (ext4): destination with the sa
+me identifier (name{heapsorter_8h}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3 }
+      [49]) (./linkedlist_8h.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--9
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [37])
-(./linkedlist_8h_source.texpdfTeX warning (ext4): destination with the same ide
-ntifier (name{linkedlist_8h}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3 }
-     
+) (./linkedlist_8h_source.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[38]
+[50pdfTeX warning (ext4): destination with the same identifier (name{linkedlist
+_8h}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.60 00058         \}
+                     ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39]
+ [51]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1787,19 +1870,18 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[40]) (./linkedlistelement_8h.tex
+[52]) (./linkedlistelement_8h.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
-) (./linkedlistelement_8h_source.tex [41pdfTeX warning (ext4): destination with
+[53]) (./linkedlistelement_8h_source.texpdfTeX warning (ext4): destination with
  the same identifier (name{linkedlistelement_8h}) has been already used, duplic
 ate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.6 00001 \textcolor{comment}{/*}
-                                 ]) (./list_8h.tex
+<to be read again> 
+                   \relax 
+l.3 }
+     ) (./list_8h.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
@@ -1811,197 +1893,196 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[42pdfTeX warning (ext4): destination with the same identifier (name{list_8h}) 
+[54pdfTeX warning (ext4): destination with the same identifier (name{list_8h}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.23 00023
-          ]) (./listsaver_8h.tex
+l.14 ...textcolor{preprocessor}{#define LIST\_H\_}
+                                                  ]) (./listsaver_8h.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
  []
 
-) (./listsaver_8h_source.tex [43pdfTeX warning (ext4): destination with the sam
+) (./listsaver_8h_source.tex [55pdfTeX warning (ext4): destination with the sam
 e identifier (name{listsaver_8h}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.29 00033         \{
-                     ]) (./main_8cpp.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--15
+l.20 ...s }\hyperlink{class_list_saver}{ListSaver}
+                                                  ]) (./main_8cpp.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
 
  []
 
+) (./main_8cpp_source.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[44]) (./main_8cpp_source.texpdfTeX warning (ext4): destination with the same i
-dentifier (name{main_8cpp}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
+[56pdfTeX warning (ext4): destination with the same identifier (name{main_8cpp}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
 l.3 }
-      [45]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 12.22644pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[46]) (./mergesorter_8h.tex
+     ]) (./mergesorter_8h.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--7
 
  []
 
-) (./mergesorter_8h_source.tex [47pdfTeX warning (ext4): destination with the s
+) (./mergesorter_8h_source.tex [57pdfTeX warning (ext4): destination with the s
 ame identifier (name{mergesorter_8h}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.64 ...right[i]); \textcolor{keywordflow}{break};
+l.24 ..._a2fdeadd95d226a04243bab8b5104e324}{list};
                                                   ]) (./mybenchmark_8cpp.tex)
-(./mybenchmark_8cpp_source.tex) (./mybenchmark_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--7
-
- []
-
+(./mybenchmark_8cpp_source.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[48pdfTeX warning (ext4): destination with the same identifier (name{mybenchmar
+[58pdfTeX warning (ext4): destination with the same identifier (name{mybenchmar
 k_8cpp}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.11 ...estowania algorytmu. \end{DoxyCompactList}
-                                                  \item])
-(./mybenchmark_8h_source.texpdfTeX warning (ext4): destination with the same id
-entifier (name{mybenchmark_8h}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3 }
-     ) (./numbergenerator_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--10
-
- []
-
-[49]) (./numbergenerator_8h_source.texpdfTeX warning (ext4): destination with t
-he same identifier (name{numbergenerator_8h}) has been already used, duplicate 
-ignored
-<to be read again> 
-                   \relax 
-l.3 }
-     ) (./observable_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--6
-
- []
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 12.22644pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[50]) (./observable_8h_source.texpdfTeX warning (ext4): destination with the sa
-me identifier (name{observable_8h}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3 }
-     ) (./observableheapsorter_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--6
-
- []
-
-) (./observableheapsorter_8h_source.tex [51pdfTeX warning (ext4): destination w
-ith the same identifier (name{observableheapsorter_8h}) has been already used, 
-duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
 l.6 00001 \textcolor{comment}{/*}
-                                 ]) (./observablemergesorter_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--6
-
- []
-
-) (./observablemergesorter_8h_source.tex
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 12.22644pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[52pdfTeX warning (ext4): destination with the same identifier (name{observable
-mergesorter_8h}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.30 ...979186a6ba}{sendStartUpdateToObservers}();
-                                                  ])
-(./observablequicksorter_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--6
-
- []
-
-) (./observablequicksorter_8h_source.tex) (./observer_8h.tex)
-(./observer_8h_source.tex [53pdfTeX warning (ext4): destination with the same i
-dentifier (name{observablequicksorter_8h}) has been already used, duplicate ign
-ored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.3 }
-     pdfTeX warning (ext4): destination with the same identifier (name{observer
-_8h}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.3 }
-     ]) (./quicksorter_8h.tex
+                                 ]) (./mybenchmark_8h.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--7
 
  []
 
-) (./quicksorter_8h_source.tex
+) (./mybenchmark_8h_source.tex [59pdfTeX warning (ext4): destination with the s
+ame identifier (name{mybenchmark_8h}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.43 ...37ead670bd438f249ee82c8eff}{timerValue};\}
+                                                  ]) (./numbergenerator_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
+
+ []
+
+) (./numbergenerator_8h_source.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.22644pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[54pdfTeX warning (ext4): destination with the same identifier (name{quicksorte
-r_8h}) has been already used, duplicate ignored
+[60pdfTeX warning (ext4): destination with the same identifier (name{numbergene
+rator_8h}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.32 ...8075353547d6fc5da57e2267e}{enablePivot}=1;
-                                                  ]) (./sorter_8h.tex
+l.23 00019 \textcolor{preprocessor}{}
+                                     ]) (./observable_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+) (./observable_8h_source.tex [61pdfTeX warning (ext4): destination with the sa
+me identifier (name{observable_8h}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.36 ...1dc929c705e9cba628ae1f29254}{size}(); i++)
+                                                  ])
+(./observableheapsorter_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+) (./observableheapsorter_8h_source.tex) (./observablemergesorter_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.22644pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[62pdfTeX warning (ext4): destination with the same identifier (name{observable
+heapsorter_8h}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.10 \begin{DoxyCompactList}\small\item\em
+                                           Klasa sluzaca do obslugi sortowan...
+]) (./observablemergesorter_8h_source.texpdfTeX warning (ext4): destination wit
+h the same identifier (name{observablemergesorter_8h}) has been already used, d
+uplicate ignored
+<to be read again> 
+                   \relax 
+l.3 }
+     ) (./observablequicksorter_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+) (./observablequicksorter_8h_source.tex [63pdfTeX warning (ext4): destination 
+with the same identifier (name{observablequicksorter_8h}) has been already used
+, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.21 ...}{Observable}, \textcolor{keyword}{public}
+                                                  ]) (./observer_8h.tex)
+(./observer_8h_source.tex) (./quicksorter_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.22644pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[64pdfTeX warning (ext4): destination with the same identifier (name{observer_8
+h}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.11 \begin{DoxyCompactList}\small\item\em
+                                           Klasa sluzaca do obslugi sortowan...
+]) (./quicksorter_8h_source.texpdfTeX warning (ext4): destination with the same
+ identifier (name{quicksorter_8h}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3 }
+     ) (./sorter_8h.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
-) (./sorter_8h_source.tex) [55pdfTeX warning (ext4): destination with the same 
-identifier (name{sorter_8h}) has been already used, duplicate ignored
+[65]) (./sorter_8h_source.texpdfTeX warning (ext4): destination with the same i
+dentifier (name{sorter_8h}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3 }
+     )
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.195 \newpage
-              ]
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.22644pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[66]
 No file refman.ind.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 200.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 200.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 209.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 209.
 (./refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 200.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 200.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 209.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 209.
 
 
 Package rerunfilecheck Warning: File `refman.out' has changed.
@@ -2009,8 +2090,8 @@ Package rerunfilecheck Warning: File `refman.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `refman.out':
-(rerunfilecheck)             Before: D7B9FE64EDB022D309DE7D4A9EABC77A;27088
-(rerunfilecheck)             After:  B2BC4D3A02496499C55CA83426666327;25471.
+(rerunfilecheck)             Before: B2BC4D3A02496499C55CA83426666327;25471
+(rerunfilecheck)             After:  C12952FA185E20F5C9D723AB94E9B564;29952.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -2020,16 +2101,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 200.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 209.
  ) 
 Here is how much of TeX's memory you used:
- 13447 strings out of 494952
- 200543 string characters out of 6179606
- 272759 words of memory out of 5000000
- 15729 multiletter control sequences out of 15000+600000
+ 13553 strings out of 494952
+ 201008 string characters out of 6179606
+ 273573 words of memory out of 5000000
+ 15692 multiletter control sequences out of 15000+600000
  82028 words of font info for 129 fonts, out of 8000000 for 9000
  56 hyphenation exceptions out of 8191
- 48i,16n,43p,1158b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,16n,43p,1158b,546s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{main_8cpp_source} has been referenced but does no
 t exist, replaced by a fixed one
 
@@ -2084,49 +2165,31 @@ not exist, replaced by a fixed one
 pdfTeX warning (dest): name{heapsorter_8h_source} has been referenced but does 
 not exist, replaced by a fixed one
 
-pdfTeX warning (dest): name{subsection.5.38} has been referenced but does not e
+pdfTeX warning (dest): name{graph_8h_source} has been referenced but does not e
 xist, replaced by a fixed one
 
-pdfTeX warning (dest): name{subsection.5.37} has been referenced but does not e
-xist, replaced by a fixed one
+pdfTeX warning (dest): name{dfs_8h_source} has been referenced but does not exi
+st, replaced by a fixed one
 
-pdfTeX warning (dest): name{subsubsection.5.23.1} has been referenced but does 
+pdfTeX warning (dest): name{bfs_8h_source} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.5.21.1} has been referenced but does 
 not exist, replaced by a fixed one
 
-pdfTeX warning (dest): name{subsubsection.5.11.2} has been referenced but does 
+pdfTeX warning (dest): name{subsubsection.5.13.2} has been referenced but does 
 not exist, replaced by a fixed one
 
-pdfTeX warning (dest): name{subsubsection.5.11.1} has been referenced but does 
+pdfTeX warning (dest): name{subsubsection.5.13.1} has been referenced but does 
 not exist, replaced by a fixed one
 
-pdfTeX warning (dest): name{subsubsection.4.17.3} has been referenced but does 
+pdfTeX warning (dest): name{subsubsection.4.15.4} has been referenced but does 
 not exist, replaced by a fixed one
 
-pdfTeX warning (dest): name{subsubsection.4.17.2} has been referenced but does 
+pdfTeX warning (dest): name{subsubsection.4.12.3} has been referenced but does 
 not exist, replaced by a fixed one
 
-pdfTeX warning (dest): name{subsubsection.4.17.1} has been referenced but does 
-not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.17} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.4.16.4} has been referenced but does 
-not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.4.11.4} has been referenced but does 
-not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.4.9.4} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.4.9.3} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.4.8.4} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.4.4.4} has been referenced but does n
+pdfTeX warning (dest): name{subsubsection.4.7.4} has been referenced but does n
 ot exist, replaced by a fixed one
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
@@ -2137,10 +2200,10 @@ w/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/u
 hvb8ac.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8ac.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (59 pages, 329002 bytes).
+Output written on refman.pdf (70 pages, 367977 bytes).
 PDF statistics:
- 3144 PDF objects out of 3580 (max. 8388607)
- 3018 compressed objects within 31 object streams
- 607 named destinations out of 1000 (max. 500000)
- 1066 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3582 PDF objects out of 4296 (max. 8388607)
+ 3435 compressed objects within 35 object streams
+ 731 named destinations out of 1000 (max. 500000)
+ 1033 words of extra memory for PDF output out of 10000 (max. 10000000)
 

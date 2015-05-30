@@ -1,6 +1,9 @@
 var files =
 [
+    [ "bfs.h", "bfs_8h.html", "bfs_8h" ],
+    [ "dfs.h", "dfs_8h.html", "dfs_8h" ],
     [ "filestreamer.h", "filestreamer_8h.html", "filestreamer_8h" ],
+    [ "graph.h", "graph_8h.html", "graph_8h" ],
     [ "heapsorter.h", "heapsorter_8h.html", [
       [ "HeapSorter", "class_heap_sorter.html", "class_heap_sorter" ]
     ] ],

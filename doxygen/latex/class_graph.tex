@@ -1,0 +1,202 @@
+\hypertarget{class_graph}{\subsection{Dokumentacja klasy Graph}
+\label{class_graph}\index{Graph@{Graph}}
+}
+
+
+{\ttfamily \#include $<$graph.\-h$>$}
+
+Diagram dziedziczenia dla Graph\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_graph}
+\end{center}
+\end{figure}
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_graph_adf2b7f7e78c0ac66f7f604021133561e}{find\-Shortest\-Path} (int from\-Number, int to\-Number)=0
+\item 
+virtual \hyperlink{class_graph_a1621cd1ffcf6a135cbc7e039c305627b}{$\sim$\-Graph} ()
+\item 
+void \hyperlink{class_graph_aca8b8f4b419f1495b6fe881e53811098}{add\-Edge} (int a, int b)
+\item 
+void \hyperlink{class_graph_a2ecf3dd3c4897aa924da8e5c221a8509}{print} ()
+\begin{DoxyCompactList}\small\item\em Wyświetla graf. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_graph_a957781c55ace92dc6703b8d890b73ca7}{clean} ()=0
+\begin{DoxyCompactList}\small\item\em Zwalniam zasoby i przygotowuje do nowego rozruchu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_graph_ae948381c05ffc60825e5810328c0451c}{M} \mbox{[}\hyperlink{graph_8h_a392fb874e547e582e9c66a08a1f23326}{M\-A\-X}\mbox{]}\mbox{[}\hyperlink{graph_8h_a392fb874e547e582e9c66a08a1f23326}{M\-A\-X}\mbox{]}
+\item 
+int \hyperlink{class_graph_aa13a7c7c066a77cc6dd21e4380deb649}{colour} \mbox{[}\hyperlink{graph_8h_a392fb874e547e582e9c66a08a1f23326}{M\-A\-X}\mbox{]}
+\begin{DoxyCompactList}\small\item\em macierz numerów/indexów \end{DoxyCompactList}\item 
+int \hyperlink{class_graph_a73d1b5ba16c84f8eb1f6cf009b8ea532}{biggest\-Value}
+\begin{DoxyCompactList}\small\item\em tablica kolorów \end{DoxyCompactList}\item 
+int \hyperlink{class_graph_a895fee5bcf86093c8f57de9ed2304d8e}{num}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Opis szczegółowy}
+
+
+Definicja w linii \hyperlink{graph_8h_source_l00014}{14} pliku \hyperlink{graph_8h_source}{graph.\-h}.
+
+
+
+\subsubsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_graph_a1621cd1ffcf6a135cbc7e039c305627b}{\index{Graph@{Graph}!$\sim$\-Graph@{$\sim$\-Graph}}
+\index{$\sim$\-Graph@{$\sim$\-Graph}!Graph@{Graph}}
+\paragraph[{$\sim$\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}virtual Graph\-::$\sim$\-Graph (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_graph_a1621cd1ffcf6a135cbc7e039c305627b}
+
+
+Definicja w linii \hyperlink{graph_8h_source_l00028}{28} pliku \hyperlink{graph_8h_source}{graph.\-h}.
+
+
+\begin{DoxyCode}
+00028 \{\}
+\end{DoxyCode}
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_graph_aca8b8f4b419f1495b6fe881e53811098}{\index{Graph@{Graph}!add\-Edge@{add\-Edge}}
+\index{add\-Edge@{add\-Edge}!Graph@{Graph}}
+\paragraph[{add\-Edge}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\-::add\-Edge (
+\begin{DoxyParamCaption}
+\item[{int}]{a, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_graph_aca8b8f4b419f1495b6fe881e53811098}
+połączenia miedzy elementami
+
+Dodaje je obustronne powiązenie między nimi aby łatwiej bylo potem generować dane do testowania 
+\begin{DoxyParams}{Parametry}
+{\em a} & jedna krawędz \\
+\hline
+{\em b} & druga krawędz \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \hyperlink{graph_8h_source_l00036}{36} pliku \hyperlink{graph_8h_source}{graph.\-h}.
+
+
+
+Odwołania w \hyperlink{main_8cpp_source_l00014}{main()}.
+
+
+\begin{DoxyCode}
+00037          \{
+00038                   \hyperlink{class_graph_ae948381c05ffc60825e5810328c0451c}{M}[a][b] = 1;
+00039                   \hyperlink{class_graph_ae948381c05ffc60825e5810328c0451c}{M}[b][a] = 1;
+00040                   \textcolor{comment}{//n++;}
+00041                   \textcolor{keywordflow}{if}(a>=\hyperlink{class_graph_a73d1b5ba16c84f8eb1f6cf009b8ea532}{biggestValue}) \hyperlink{class_graph_a73d1b5ba16c84f8eb1f6cf009b8ea532}{biggestValue}=a+1;
+00042                   \textcolor{keywordflow}{if}(b>=\hyperlink{class_graph_a73d1b5ba16c84f8eb1f6cf009b8ea532}{biggestValue}) \hyperlink{class_graph_a73d1b5ba16c84f8eb1f6cf009b8ea532}{biggestValue}=b+1;
+00043          \}
+\end{DoxyCode}
+\hypertarget{class_graph_a957781c55ace92dc6703b8d890b73ca7}{\index{Graph@{Graph}!clean@{clean}}
+\index{clean@{clean}!Graph@{Graph}}
+\paragraph[{clean}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Graph\-::clean (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_graph_a957781c55ace92dc6703b8d890b73ca7}
+
+
+Implementowany w \hyperlink{class_d_f_s_ac335b86dce7cfab6655ca7eeaf2f9e10}{D\-F\-S} i \hyperlink{class_b_f_s_a5d7b36488122996dc5877cd611afcaef}{B\-F\-S}.
+
+
+
+Odwołania w \hyperlink{main_8cpp_source_l00014}{main()}.
+
+\hypertarget{class_graph_adf2b7f7e78c0ac66f7f604021133561e}{\index{Graph@{Graph}!find\-Shortest\-Path@{find\-Shortest\-Path}}
+\index{find\-Shortest\-Path@{find\-Shortest\-Path}!Graph@{Graph}}
+\paragraph[{find\-Shortest\-Path}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Graph\-::find\-Shortest\-Path (
+\begin{DoxyParamCaption}
+\item[{int}]{from\-Number, }
+\item[{int}]{to\-Number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_graph_adf2b7f7e78c0ac66f7f604021133561e}
+najkrótszą drogę i wypusuje ją na ekran 
+\begin{DoxyParams}{Parametry}
+{\em from\-Number} & star poszukiwan \\
+\hline
+{\em end\-Number} & Koniec poszukiwan \\
+\hline
+\end{DoxyParams}
+
+
+Implementowany w \hyperlink{class_d_f_s_a7243745e5d6162b7106803ac1cd70d91}{D\-F\-S} i \hyperlink{class_b_f_s_a42789813e256a0225a26cf418c7754a2}{B\-F\-S}.
+
+
+
+Odwołania w \hyperlink{main_8cpp_source_l00014}{main()}.
+
+\hypertarget{class_graph_a2ecf3dd3c4897aa924da8e5c221a8509}{\index{Graph@{Graph}!print@{print}}
+\index{print@{print}!Graph@{Graph}}
+\paragraph[{print}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\-::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_graph_a2ecf3dd3c4897aa924da8e5c221a8509}
+
+
+Definicja w linii \hyperlink{graph_8h_source_l00048}{48} pliku \hyperlink{graph_8h_source}{graph.\-h}.
+
+
+\begin{DoxyCode}
+00049           \{
+00050                   cout<<\textcolor{stringliteral}{"\(\backslash\)t"};
+00051                   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{class_graph_a73d1b5ba16c84f8eb1f6cf009b8ea532}{biggestValue}; i++) cout<<i<<\textcolor{stringliteral}{"\(\backslash\)t"};
+00052                   cout<<\textcolor{stringliteral}{"\(\backslash\)n"};
+00053                   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{class_graph_a73d1b5ba16c84f8eb1f6cf009b8ea532}{biggestValue}; i++)
+00054                   \{
+00055                           cout<<i<<\textcolor{stringliteral}{"\(\backslash\)t"};
+00056                           \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<\hyperlink{class_graph_a73d1b5ba16c84f8eb1f6cf009b8ea532}{biggestValue}; j++)
+00057                           \{
+00058                                   cout<<\hyperlink{class_graph_ae948381c05ffc60825e5810328c0451c}{M}[i][j]<<\textcolor{stringliteral}{"\(\backslash\)t"};
+00059                           \}
+00060                           cout<<\textcolor{stringliteral}{"\(\backslash\)n"};
+00061                   \}
+00062           \}
+\end{DoxyCode}
+
+
+\subsubsection{Dokumentacja atrybutów składowych}
+\hypertarget{class_graph_a73d1b5ba16c84f8eb1f6cf009b8ea532}{\index{Graph@{Graph}!biggest\-Value@{biggest\-Value}}
+\index{biggest\-Value@{biggest\-Value}!Graph@{Graph}}
+\paragraph[{biggest\-Value}]{\setlength{\rightskip}{0pt plus 5cm}int Graph\-::biggest\-Value}}\label{class_graph_a73d1b5ba16c84f8eb1f6cf009b8ea532}
+
+
+Definicja w linii \hyperlink{graph_8h_source_l00019}{19} pliku \hyperlink{graph_8h_source}{graph.\-h}.
+
+\hypertarget{class_graph_aa13a7c7c066a77cc6dd21e4380deb649}{\index{Graph@{Graph}!colour@{colour}}
+\index{colour@{colour}!Graph@{Graph}}
+\paragraph[{colour}]{\setlength{\rightskip}{0pt plus 5cm}int Graph\-::colour\mbox{[}{\bf M\-A\-X}\mbox{]}}}\label{class_graph_aa13a7c7c066a77cc6dd21e4380deb649}
+
+
+Definicja w linii \hyperlink{graph_8h_source_l00018}{18} pliku \hyperlink{graph_8h_source}{graph.\-h}.
+
+\hypertarget{class_graph_ae948381c05ffc60825e5810328c0451c}{\index{Graph@{Graph}!M@{M}}
+\index{M@{M}!Graph@{Graph}}
+\paragraph[{M}]{\setlength{\rightskip}{0pt plus 5cm}bool Graph\-::\-M\mbox{[}{\bf M\-A\-X}\mbox{]}\mbox{[}{\bf M\-A\-X}\mbox{]}}}\label{class_graph_ae948381c05ffc60825e5810328c0451c}
+
+
+Definicja w linii \hyperlink{graph_8h_source_l00017}{17} pliku \hyperlink{graph_8h_source}{graph.\-h}.
+
+\hypertarget{class_graph_a895fee5bcf86093c8f57de9ed2304d8e}{\index{Graph@{Graph}!num@{num}}
+\index{num@{num}!Graph@{Graph}}
+\paragraph[{num}]{\setlength{\rightskip}{0pt plus 5cm}int Graph\-::num}}\label{class_graph_a895fee5bcf86093c8f57de9ed2304d8e}
+
+
+Definicja w linii \hyperlink{graph_8h_source_l00020}{20} pliku \hyperlink{graph_8h_source}{graph.\-h}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{graph_8h}{graph.\-h}\end{DoxyCompactItemize}

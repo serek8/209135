@@ -1,9 +1,17 @@
 var hierarchy =
 [
+    [ "Graph", "class_graph.html", [
+      [ "BFS", "class_b_f_s.html", null ],
+      [ "DFS", "class_d_f_s.html", null ]
+    ] ],
     [ "LinkedListElement< ContentType >", "class_linked_list_element.html", null ],
+    [ "LinkedListElement< int >", "class_linked_list_element.html", null ],
     [ "LinkedListElement< Observer * >", "class_linked_list_element.html", null ],
     [ "List< ContentType >", "class_list.html", [
       [ "LinkedList< ContentType >", "class_linked_list.html", null ]
+    ] ],
+    [ "List< int >", "class_list.html", [
+      [ "LinkedList< int >", "class_linked_list.html", null ]
     ] ],
     [ "List< Observer * >", "class_list.html", [
       [ "LinkedList< Observer * >", "class_linked_list.html", null ]

@@ -67,7 +67,7 @@
 \hypertarget{linkedlist_8h_source_l00073}{}\hyperlink{class_linked_list_ad7634e21b0ccd370906c4f28baaffa38}{00073}         ContentType \hyperlink{class_linked_list_ad7634e21b0ccd370906c4f28baaffa38}{pop\_back}()
 00074         \{
 00075                 \textcolor{keywordflow}{if}(!(\hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList}--)) \{ \hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList}=0; std::cerr<<\textcolor{stringliteral}{"Nie ma takiego elementu
-      \(\backslash\)n"}; \textcolor{keywordflow}{return} 0; \}
+      \(\backslash\)n"};\}
 00076                 ContentType tmpNumber = (*(\textcolor{keyword}{this} -> \hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement})).content;
 00077                 \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>} *originLinkedListElement = \textcolor{keyword}{
       this} -> \hyperlink{class_linked_list_a8ca0cc6c38131c17f1626bb04a472fc9}{lastElement};
@@ -79,7 +79,7 @@
 \hypertarget{linkedlist_8h_source_l00087}{}\hyperlink{class_linked_list_a64abea886f0dadf69a3726d1880c514a}{00087}         ContentType \hyperlink{class_linked_list_a64abea886f0dadf69a3726d1880c514a}{pop\_front}()
 00088         \{
 00089                 \textcolor{keywordflow}{if}(!(\hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList}--)) \{ \hyperlink{class_linked_list_acfd83fe531d962d6260a633dfca98a9f}{sizeOfList}=0; std::cerr<<\textcolor{stringliteral}{"Nie ma takiego elementu
-      \(\backslash\)n"}; \textcolor{keywordflow}{return} 0; \}
+      \(\backslash\)n"};\}
 00090                 ContentType tmpNumber = (*(\textcolor{keyword}{this} -> \hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement})).content;
 00091                 \hyperlink{class_linked_list_element}{LinkedListElement<ContentType>} *originLinkedListElement = \textcolor{keyword}{
       this} -> \hyperlink{class_linked_list_a51c0816c49528a63eea2adae2d503ada}{firstElement};
